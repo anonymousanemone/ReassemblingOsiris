@@ -1,0 +1,105 @@
+Debugging log of inform7
+inform7 was called as: /Applications/Inform.app/Contents/MacOS/ni -internal /Applications/Inform.app/Contents/Resources/Internal -external /Users/sophial/Library/Inform -project /Users/sophial/Documents/githubs/NoChopFamily/DCproject.inform -format=ulx
+Reading further switches from file: <no file>
+Completed expert settings file
+Using Inform kit 'BasicInformKit' (priority 0).
+Using Inform kit 'EnglishLanguageKit' (priority 1).
+Using Inform kit 'WorldModelKit' (priority 2).
+Using Inform kit 'CommandParserKit' (priority 3).
+756 Preform nonterminals read from /Applications/Inform.app/Contents/Resources/Internal/Languages/English/Syntax.preform
+I've now read your source text, which is 1213 words long.
+Included: core, naming, instance counting, interactive fiction, spatial model, backdrops, bibliographic data, chronology, devices, mapping, persons, player, regions, scenes, scoring, timed rules, times of day, actions, going, command, showme, multimedia, figures, sounds, glulx external files
+Excluded: 
+I've also read Basic Inform by Graham Nelson, which is 7691 words long.
+I've also read English Language by Graham Nelson, which is 2328 words long.
+I've also read Standard Rules by Graham Nelson, which is 32164 words long.
+I've also read Basic Screen Effects by Emily Short, which is 2223 words long.
+
+
+-----------------------------------------------------
+Phase I ... Dividing source into compilation units
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase II ... Making built in infrastructure
+-----------------------------------------------------
+
+Loading kinds definitions from /Applications/Inform.app/Contents/Resources/Internal/Inter/BasicInformKit/kinds/Macros.neptune
+Loading kinds definitions from /Applications/Inform.app/Contents/Resources/Internal/Inter/BasicInformKit/kinds/Protocols.neptune
+Loading kinds definitions from /Applications/Inform.app/Contents/Resources/Internal/Inter/BasicInformKit/kinds/Core.neptune
+Loading kinds definitions from /Applications/Inform.app/Contents/Resources/Internal/Inter/BasicInformKit/kinds/Punctuation.neptune
+Loading kinds definitions from /Applications/Inform.app/Contents/Resources/Internal/Inter/BasicInformKit/kinds/Files.neptune
+Loading kinds definitions from /Applications/Inform.app/Contents/Resources/Internal/Inter/WorldModelKit/kinds/Actions.neptune
+Loading kinds definitions from /Applications/Inform.app/Contents/Resources/Internal/Inter/WorldModelKit/kinds/Times.neptune
+Loading kinds definitions from /Applications/Inform.app/Contents/Resources/Internal/Inter/WorldModelKit/kinds/Scenes.neptune
+Loading kinds definitions from /Applications/Inform.app/Contents/Resources/Internal/Inter/WorldModelKit/kinds/Figures.neptune
+Loading kinds definitions from /Applications/Inform.app/Contents/Resources/Internal/Inter/WorldModelKit/kinds/Sounds.neptune
+Loading kinds definitions from /Applications/Inform.app/Contents/Resources/Internal/Inter/CommandParserKit/kinds/Parsing.neptune
+
+
+-----------------------------------------------------
+Phase III ... Pre-pass through major nodes
+-----------------------------------------------------
+
+Problem PM_NonflushRule issued from inform7/assertions-module/Chapter 2/Imperative Subtrees.w, line 385
+Trying to close p at line 139 of 'services/problems-module/Chapter 2/Problems, Level 1.w', but:
+Tag error: closed HTML tag which wasn't open
+HTML tag stack:
+    1. td (opened at line 597 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+    2. tr (opened at line 557 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+    3. table (opened at line 540 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+    4. body (opened at line 370 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+    5. html (opened at line 236 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+
+
+
+In Section 6 - Penis Fish:
+
+
+  >--> The phrase or rule definition 'otherwise' (source text, line 139) is
+    written using tab indentations to show how its phrases are to be grouped
+    together. But in that case the opening line needs to be on the left margin,
+    not indented.
+
+.... MajorNodes__pre_pass() took 11cs
+Compile CPU time: 13 centiseconds
+Trying to close td at line 641 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w', but:
+Tag error: closed HTML tag which wasn't open
+HTML tag stack:
+    1. tr (opened at line 557 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+    2. table (opened at line 540 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+    3. body (opened at line 370 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+    4. html (opened at line 236 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+
+
+Trying to close tr at line 642 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w', but:
+Tag error: closed HTML tag which wasn't open
+HTML tag stack:
+    1. table (opened at line 540 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+    2. body (opened at line 370 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+    3. html (opened at line 236 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+
+
+Trying to close table at line 645 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w', but:
+Tag error: closed HTML tag which wasn't open
+HTML tag stack:
+    1. body (opened at line 370 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+    2. html (opened at line 236 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+
+
+Trying to close body at line 374 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w', but:
+Tag error: closed HTML tag which wasn't open
+HTML tag stack:
+    1. html (opened at line 236 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w')
+
+
+Trying to close html at line 375 of '/Users/tobynelson/Code/Inform Core/inweb/foundation-module/Chapter 5/HTML.w', but:
+Tag error: closed HTML tag which wasn't open
+HTML tag stack:
+
+
+Total of 3 files written as streams.
+Vacant escapes: %: ..CDE.GH..K.M.O.QR.TU...YZab..e..h.jklm.o.qr......yz0123456789
+Vacant escapes: $: .....F...J..........UVW.....................s.u..x.........789

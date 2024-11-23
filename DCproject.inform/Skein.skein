@@ -1,0 +1,1882 @@
+<?xml version="1.0"?>
+
+<Skein rootNode="node-1229">
+    <generator>Inform Mac Client (Inform version 1.82/6.41/10.1.2)</generator>
+    <item nodeId="node-1229">
+        <command xml:space="preserve">DCproject</command>
+        <result xml:space="preserve">
+
+
+
+DCproject
+An Interactive Fiction by Sophia Ling
+Release 1 / Serial number 241115 / Inform 7 v10.1.2 / D
+
+Transporter Room
+You can see a sun chariot and Osiris' head here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1400"></child>
+            <child nodeId="node-1389"></child>
+            <child nodeId="node-1384"></child>
+            <child nodeId="node-1382"></child>
+            <child nodeId="node-1379"></child>
+            <child nodeId="node-1375"></child>
+            <child nodeId="node-1369"></child>
+            <child nodeId="node-1352"></child>
+            <child nodeId="node-1316"></child>
+            <child nodeId="node-1309"></child>
+            <child nodeId="node-1300"></child>
+            <child nodeId="node-1294"></child>
+            <child nodeId="node-1292"></child>
+            <child nodeId="node-1291"></child>
+            <child nodeId="node-1288"></child>
+            <child nodeId="node-1286"></child>
+            <child nodeId="node-1270"></child>
+            <child nodeId="node-1262"></child>
+            <child nodeId="node-1258"></child>
+            <child nodeId="node-1254"></child>
+            <child nodeId="node-1252"></child>
+            <child nodeId="node-1250"></child>
+            <child nodeId="node-1236"></child>
+            <child nodeId="node-1230"></child>
+        </children>
+    </item>
+    <item nodeId="node-1230">
+        <command xml:space="preserve">x catfish</command>
+        <result xml:space="preserve">You see nothing special about the catfish.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1232"></child>
+            <child nodeId="node-1231"></child>
+        </children>
+    </item>
+    <item nodeId="node-1231">
+        <command xml:space="preserve">take penis from catfish</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1232">
+        <command xml:space="preserve">fish catfish</command>
+        <result xml:space="preserve">I only understood you as far as wanting to fish.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1233"></child>
+        </children>
+    </item>
+    <item nodeId="node-1233">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You've got nothing to fish with. Your hands won't suffice, unfortunately.
+It probably won't be very productive without any bait.
+
+You cast the baited fishing pole into the river and wait patiently...
+After a few moments, you feel a tug and pull up a large catfish!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1234"></child>
+        </children>
+    </item>
+    <item nodeId="node-1234">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a catfish
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1235"></child>
+        </children>
+    </item>
+    <item nodeId="node-1235">
+        <command xml:space="preserve">cut</command>
+        <result xml:space="preserve">(the catfish)
+Your fingernails are not sharp enough.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1236">
+        <command xml:space="preserve">x book</command>
+        <result xml:space="preserve">It is entitled Why Not To Take A Stuffed Bear, A Chocolate Cookie And A Book To The Moon.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1237"></child>
+        </children>
+    </item>
+    <item nodeId="node-1237">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1238"></child>
+        </children>
+    </item>
+    <item nodeId="node-1238">
+        <command xml:space="preserve">n book</command>
+        <result xml:space="preserve">I only understood you as far as wanting to (go) north.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1239"></child>
+        </children>
+    </item>
+    <item nodeId="node-1239">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1240"></child>
+        </children>
+    </item>
+    <item nodeId="node-1240">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1241"></child>
+        </children>
+    </item>
+    <item nodeId="node-1241">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1242"></child>
+        </children>
+    </item>
+    <item nodeId="node-1242">
+        <command xml:space="preserve">x book</command>
+        <result xml:space="preserve">It is entitled Why Not To Take A Stuffed Bear, A Chocolate Cookie And A Book To The Moon.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1243"></child>
+        </children>
+    </item>
+    <item nodeId="node-1243">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1244"></child>
+        </children>
+    </item>
+    <item nodeId="node-1244">
+        <command xml:space="preserve">actions</command>
+        <result xml:space="preserve">Actions listing on.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1245"></child>
+        </children>
+    </item>
+    <item nodeId="node-1245">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">[going north]
+You can't go that way.
+[going north - failed the can't go that way rule]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1246"></child>
+        </children>
+    </item>
+    <item nodeId="node-1246">
+        <command xml:space="preserve">x</command>
+        <result xml:space="preserve">What do you want to examine?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1247"></child>
+        </children>
+    </item>
+    <item nodeId="node-1247">
+        <command xml:space="preserve">x book</command>
+        <result xml:space="preserve">[examining the book]
+It is entitled Why Not To Take A Stuffed Bear, A Chocolate Cookie And A Book To The Moon.
+
+[examining the book - succeeded]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1248"></child>
+        </children>
+    </item>
+    <item nodeId="node-1248">
+        <command xml:space="preserve">actions</command>
+        <result xml:space="preserve">Actions listing on.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1249"></child>
+        </children>
+    </item>
+    <item nodeId="node-1249">
+        <command xml:space="preserve">actions off</command>
+        <result xml:space="preserve">Actions listing off.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1250">
+        <command xml:space="preserve">think</command>
+        <result xml:space="preserve">What a good idea.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1251"></child>
+        </children>
+    </item>
+    <item nodeId="node-1251">
+        <command xml:space="preserve">think about trees</command>
+        <result xml:space="preserve">I only understood you as far as wanting to think.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1252">
+        <command xml:space="preserve">talk to osiris</command>
+        <result xml:space="preserve">Hi, there," you say confidently.
+
+Lucy wears a size 9 shoe.
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1253"></child>
+        </children>
+    </item>
+    <item nodeId="node-1253">
+        <command xml:space="preserve">talk to head</command>
+        <result xml:space="preserve">Hi, there," you say confidently.
+
+"What's happening?" he replies casually.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1254">
+        <command xml:space="preserve">talk to head</command>
+        <result xml:space="preserve">Hi, there," you say confidently.
+
+"What's happening?" he replies casually.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1255"></child>
+        </children>
+    </item>
+    <item nodeId="node-1255">
+        <command xml:space="preserve">take head</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1256"></child>
+        </children>
+    </item>
+    <item nodeId="node-1256">
+        <command xml:space="preserve">talk to head</command>
+        <result xml:space="preserve">Hi, there," you say confidently.
+
+"What's happening?" he replies casually.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1257"></child>
+        </children>
+    </item>
+    <item nodeId="node-1257">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  Osiris' head
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1258">
+        <command xml:space="preserve">talk to Osiris</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1259"></child>
+        </children>
+    </item>
+    <item nodeId="node-1259">
+        <command xml:space="preserve">talk to head</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1260"></child>
+        </children>
+    </item>
+    <item nodeId="node-1260">
+        <command xml:space="preserve">take heae</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1261"></child>
+        </children>
+    </item>
+    <item nodeId="node-1261">
+        <command xml:space="preserve">take head</command>
+        <result xml:space="preserve">I don't suppose Osiris' head would care for that.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1262">
+        <command xml:space="preserve">take penis from catfish</command>
+        <result xml:space="preserve">&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1263"></child>
+        </children>
+    </item>
+    <item nodeId="node-1263">
+        <command xml:space="preserve">ls</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1264"></child>
+        </children>
+    </item>
+    <item nodeId="node-1264">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1265"></child>
+        </children>
+    </item>
+    <item nodeId="node-1265">
+        <command xml:space="preserve">take catfish</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1266"></child>
+        </children>
+    </item>
+    <item nodeId="node-1266">
+        <command xml:space="preserve">k</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1267"></child>
+        </children>
+    </item>
+    <item nodeId="node-1267">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a catfish
+    Osiris' penis
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1268"></child>
+        </children>
+    </item>
+    <item nodeId="node-1268">
+        <command xml:space="preserve">take penis from catfish</command>
+        <result xml:space="preserve">&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1269"></child>
+        </children>
+    </item>
+    <item nodeId="node-1269">
+        <command xml:space="preserve">kill catfish</command>
+        <result xml:space="preserve">Violence isn't the answer to this one.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1270">
+        <command xml:space="preserve">take head</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1281"></child>
+            <child nodeId="node-1274"></child>
+            <child nodeId="node-1271"></child>
+        </children>
+    </item>
+    <item nodeId="node-1271">
+        <command xml:space="preserve">talk to osiris</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1272"></child>
+        </children>
+    </item>
+    <item nodeId="node-1272">
+        <command xml:space="preserve">talk to head</command>
+        <result xml:space="preserve">&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1273"></child>
+        </children>
+    </item>
+    <item nodeId="node-1273">
+        <command xml:space="preserve">hi</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1274">
+        <command xml:space="preserve">talk to osiri</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1275"></child>
+        </children>
+    </item>
+    <item nodeId="node-1275">
+        <command xml:space="preserve">talk to osiris</command>
+        <result xml:space="preserve">Hi, there," you say confidently.
+
+Sunset is at 8:22 PM this evening.
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1276"></child>
+        </children>
+    </item>
+    <item nodeId="node-1276">
+        <command xml:space="preserve">talk to osiris</command>
+        <result xml:space="preserve">Hi, there," you say confidently.
+
+boop1
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1277"></child>
+        </children>
+    </item>
+    <item nodeId="node-1277">
+        <command xml:space="preserve">talk to osiris</command>
+        <result xml:space="preserve">Hi, there," you say confidently.
+
+boop2
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1278"></child>
+        </children>
+    </item>
+    <item nodeId="node-1278">
+        <command xml:space="preserve">talk to osiris</command>
+        <result xml:space="preserve">Hi, there," you say confidently.
+
+boop2
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1279"></child>
+        </children>
+    </item>
+    <item nodeId="node-1279">
+        <command xml:space="preserve">talk to osiris</command>
+        <result xml:space="preserve">Hi, there," you say confidently.
+
+Lucy wears a size 9 shoe.
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1280"></child>
+        </children>
+    </item>
+    <item nodeId="node-1280">
+        <command xml:space="preserve">talk to osiris</command>
+        <result xml:space="preserve">Hi, there," you say confidently.
+
+Sunset is at 8:22 PM this evening.
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1281">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1282"></child>
+        </children>
+    </item>
+    <item nodeId="node-1282">
+        <command xml:space="preserve">talk to Osiris</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1283"></child>
+        </children>
+    </item>
+    <item nodeId="node-1283">
+        <command xml:space="preserve">talk to head</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1284"></child>
+        </children>
+    </item>
+    <item nodeId="node-1284">
+        <command xml:space="preserve">take out head</command>
+        <result xml:space="preserve">I only understood you as far as wanting to take outside.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1285"></child>
+        </children>
+    </item>
+    <item nodeId="node-1285">
+        <command xml:space="preserve">take head</command>
+        <result xml:space="preserve">You already have that.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1286">
+        <command xml:space="preserve">sorry</command>
+        <result xml:space="preserve">Oh, don't apologise.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1287"></child>
+        </children>
+    </item>
+    <item nodeId="node-1287">
+        <command xml:space="preserve">boop</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1288">
+        <command xml:space="preserve">say saying some spell</command>
+        <result xml:space="preserve">(to yourself)
+There is no reply.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1289"></child>
+        </children>
+    </item>
+    <item nodeId="node-1289">
+        <command xml:space="preserve">say hello</command>
+        <result xml:space="preserve">(to yourself)
+There is no reply.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1290"></child>
+        </children>
+    </item>
+    <item nodeId="node-1290">
+        <command xml:space="preserve">say hello to head</command>
+        <result xml:space="preserve">You can only do that to something animate.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1291">
+        <command xml:space="preserve">say hi to head</command>
+        <result xml:space="preserve">There is no reply.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1292">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">Are the stuffed bear, the chocolate cookie and the book really suitable gear to take to the moon?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1293"></child>
+        </children>
+    </item>
+    <item nodeId="node-1293">
+        <command xml:space="preserve">x book</command>
+        <result xml:space="preserve">It is entitled Why Not To Take A Stuffed Bear, A Chocolate Cookie And A Book To The Moon.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1294">
+        <command xml:space="preserve">kill catfish</command>
+        <result xml:space="preserve">Violence isn't the answer to this one.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1295"></child>
+        </children>
+    </item>
+    <item nodeId="node-1295">
+        <command xml:space="preserve">talk to catfish</command>
+        <result xml:space="preserve">&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1296"></child>
+        </children>
+    </item>
+    <item nodeId="node-1296">
+        <command xml:space="preserve">say hi to catfish</command>
+        <result xml:space="preserve">There is no reply.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1297"></child>
+        </children>
+    </item>
+    <item nodeId="node-1297">
+        <command xml:space="preserve">take penis</command>
+        <result xml:space="preserve">&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1298"></child>
+        </children>
+    </item>
+    <item nodeId="node-1298">
+        <command xml:space="preserve">take catfish</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1299"></child>
+        </children>
+    </item>
+    <item nodeId="node-1299">
+        <command xml:space="preserve">take catfish</command>
+        <result xml:space="preserve">You already have that.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1300">
+        <command xml:space="preserve">home</command>
+        <result xml:space="preserve">I didn't understand that number.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1306"></child>
+            <child nodeId="node-1301"></child>
+        </children>
+    </item>
+    <item nodeId="node-1301">
+        <command xml:space="preserve">home</command>
+        <result xml:space="preserve">I didn't understand that number.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1302"></child>
+        </children>
+    </item>
+    <item nodeId="node-1302">
+        <command xml:space="preserve">chariot</command>
+        <result xml:space="preserve">You're already here!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1303"></child>
+        </children>
+    </item>
+    <item nodeId="node-1303">
+        <command xml:space="preserve">get on chariot</command>
+        <result xml:space="preserve">As you step onto the chariot, the serpents in front hiss joyfully, happy to see you again. From here you could choose to go to: 
+  1: Thebes
+  2: Memphis
+  3: Avaris
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1304"></child>
+        </children>
+    </item>
+    <item nodeId="node-1304">
+        <command xml:space="preserve">1</command>
+        <result xml:space="preserve">Thebes
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1305"></child>
+        </children>
+    </item>
+    <item nodeId="node-1305">
+        <command xml:space="preserve">chariot</command>
+        <result xml:space="preserve">Transporter Room
+You quickly head towards your sun chariot. You've got somewhere to get to!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1306">
+        <command xml:space="preserve">chariot</command>
+        <result xml:space="preserve">You're already here!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1307"></child>
+        </children>
+    </item>
+    <item nodeId="node-1307">
+        <command xml:space="preserve">go to chariot</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1308"></child>
+        </children>
+    </item>
+    <item nodeId="node-1308">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1309">
+        <command xml:space="preserve">go to chariot</command>
+        <result xml:space="preserve">You're already here!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1310"></child>
+        </children>
+    </item>
+    <item nodeId="node-1310">
+        <command xml:space="preserve">potato</command>
+        <result xml:space="preserve">I didn't understand that number.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1311"></child>
+        </children>
+    </item>
+    <item nodeId="node-1311">
+        <command xml:space="preserve">1</command>
+        <result xml:space="preserve">You can get there only with the sun chariot. From other places than the transporter room, you can HOME to your base ship, but not leap sideways to other locations.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1312"></child>
+        </children>
+    </item>
+    <item nodeId="node-1312">
+        <command xml:space="preserve">potato</command>
+        <result xml:space="preserve">I didn't understand that number.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1313"></child>
+        </children>
+    </item>
+    <item nodeId="node-1313">
+        <command xml:space="preserve">boop</command>
+        <result xml:space="preserve">I didn't understand that number.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1314"></child>
+        </children>
+    </item>
+    <item nodeId="node-1314">
+        <command xml:space="preserve">eat</command>
+        <result xml:space="preserve">(the sun chariot)
+That's plainly inedible.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1315"></child>
+        </children>
+    </item>
+    <item nodeId="node-1315">
+        <command xml:space="preserve">poof</command>
+        <result xml:space="preserve">I didn't understand that number.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1316">
+        <command xml:space="preserve">get on pad</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1336"></child>
+            <child nodeId="node-1330"></child>
+            <child nodeId="node-1328"></child>
+            <child nodeId="node-1322"></child>
+            <child nodeId="node-1317"></child>
+        </children>
+    </item>
+    <item nodeId="node-1317">
+        <command xml:space="preserve">get on chariot</command>
+        <result xml:space="preserve">The transporter beeps and glows amber as you step onto its surface. A moment later a hologram displays your options. From here you could choose to go to: 
+  1: Region 1
+  2: Region 2
+  3: Region 3
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1318"></child>
+        </children>
+    </item>
+    <item nodeId="node-1318">
+        <command xml:space="preserve">5</command>
+        <result xml:space="preserve">5 is not a valid option. From here you could choose to go to: 
+  1: Region 1
+  2: Region 2
+  3: Region 3
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1319"></child>
+        </children>
+    </item>
+    <item nodeId="node-1319">
+        <command xml:space="preserve">3</command>
+        <result xml:space="preserve">Region 3
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1320"></child>
+        </children>
+    </item>
+    <item nodeId="node-1320">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">
+Region2
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1321"></child>
+        </children>
+    </item>
+    <item nodeId="node-1321">
+        <command xml:space="preserve">chariot</command>
+        <result xml:space="preserve">Transporter Room
+The sun chariot in the middle of the floor is currently dull blue: powered but unoccupied.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1322">
+        <command xml:space="preserve">eat</command>
+        <result xml:space="preserve">(the transporter pad)
+That's plainly inedible.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1323"></child>
+        </children>
+    </item>
+    <item nodeId="node-1323">
+        <command xml:space="preserve">4</command>
+        <result xml:space="preserve">4 is not a valid option. From here you could choose to go to: 
+  1: Region1
+  2: Region2
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1324"></child>
+        </children>
+    </item>
+    <item nodeId="node-1324">
+        <command xml:space="preserve">-1</command>
+        <result xml:space="preserve">-1 is not a valid option. From here you could choose to go to: 
+  1: Region1
+  2: Region2
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1325"></child>
+        </children>
+    </item>
+    <item nodeId="node-1325">
+        <command xml:space="preserve">2</command>
+        <result xml:space="preserve">Region2
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1326"></child>
+        </children>
+    </item>
+    <item nodeId="node-1326">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">
+Region3
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1327"></child>
+        </children>
+    </item>
+    <item nodeId="node-1327">
+        <command xml:space="preserve">3</command>
+        <result xml:space="preserve">You can transport only from the transporter pad. From other places than the transporter room, you can HOME to your base ship, but not leap sideways to other locations.
+
+3 is not a valid option. From here you could choose to go to: 
+  1: Region1
+  2: Region2
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1328">
+        <command xml:space="preserve">3</command>
+        <result xml:space="preserve">3 is not a valid option. From here you could choose to go to: 
+  1: Region1
+  2: Region2
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1329"></child>
+        </children>
+    </item>
+    <item nodeId="node-1329">
+        <command xml:space="preserve">1</command>
+        <result xml:space="preserve">Region1
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1330">
+        <command xml:space="preserve">2</command>
+        <result xml:space="preserve">Region2
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1331"></child>
+        </children>
+    </item>
+    <item nodeId="node-1331">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">
+Region3
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1332"></child>
+        </children>
+    </item>
+    <item nodeId="node-1332">
+        <command xml:space="preserve">5</command>
+        <result xml:space="preserve">You can transport only from the transporter pad. From other places than the transporter room, you can HOME to your base ship, but not leap sideways to other locations.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1333"></child>
+        </children>
+    </item>
+    <item nodeId="node-1333">
+        <command xml:space="preserve">4</command>
+        <result xml:space="preserve">You can transport only from the transporter pad. From other places than the transporter room, you can HOME to your base ship, but not leap sideways to other locations.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1334"></child>
+        </children>
+    </item>
+    <item nodeId="node-1334">
+        <command xml:space="preserve">2</command>
+        <result xml:space="preserve">You can transport only from the transporter pad. From other places than the transporter room, you can HOME to your base ship, but not leap sideways to other locations.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1335"></child>
+        </children>
+    </item>
+    <item nodeId="node-1335">
+        <command xml:space="preserve">1</command>
+        <result xml:space="preserve">You can transport only from the transporter pad. From other places than the transporter room, you can HOME to your base ship, but not leap sideways to other locations.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1336">
+        <command xml:space="preserve">0</command>
+        <result xml:space="preserve">0 is not a valid option. From here you could choose to go to: 
+  1: Oodville
+  2: Midnight
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1337"></child>
+        </children>
+    </item>
+    <item nodeId="node-1337">
+        <command xml:space="preserve">1</command>
+        <result xml:space="preserve">Oodville
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1338"></child>
+        </children>
+    </item>
+    <item nodeId="node-1338">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Oodville
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1339"></child>
+        </children>
+    </item>
+    <item nodeId="node-1339">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1340"></child>
+        </children>
+    </item>
+    <item nodeId="node-1340">
+        <command xml:space="preserve">home</command>
+        <result xml:space="preserve">Transporter Room
+The transporter pad in the middle of the floor is currently dull blue: powered but unoccupied.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1341"></child>
+        </children>
+    </item>
+    <item nodeId="node-1341">
+        <command xml:space="preserve">get on pad</command>
+        <result xml:space="preserve">The transporter beeps and glows amber as you step onto its surface. A moment later a hologram displays your options. From here you could choose to go to: 
+  1: Oodville
+  2: Midnight
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1342"></child>
+        </children>
+    </item>
+    <item nodeId="node-1342">
+        <command xml:space="preserve">0</command>
+        <result xml:space="preserve">0 is not a valid option. From here you could choose to go to: 
+  1: Oodville
+  2: Midnight
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1343"></child>
+        </children>
+    </item>
+    <item nodeId="node-1343">
+        <command xml:space="preserve">-1</command>
+        <result xml:space="preserve">-1 is not a valid option. From here you could choose to go to: 
+  1: Oodville
+  2: Midnight
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1344"></child>
+        </children>
+    </item>
+    <item nodeId="node-1344">
+        <command xml:space="preserve">8</command>
+        <result xml:space="preserve">8 is not a valid option. From here you could choose to go to: 
+  1: Oodville
+  2: Midnight
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1345"></child>
+        </children>
+    </item>
+    <item nodeId="node-1345">
+        <command xml:space="preserve">2</command>
+        <result xml:space="preserve">Midnight
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1346"></child>
+        </children>
+    </item>
+    <item nodeId="node-1346">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Midnight
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1347"></child>
+        </children>
+    </item>
+    <item nodeId="node-1347">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">
+Diamond City
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1348"></child>
+        </children>
+    </item>
+    <item nodeId="node-1348">
+        <command xml:space="preserve">home</command>
+        <result xml:space="preserve">Transporter Room
+The transporter pad in the middle of the floor is currently dull blue: powered but unoccupied.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1349"></child>
+        </children>
+    </item>
+    <item nodeId="node-1349">
+        <command xml:space="preserve">get on pad</command>
+        <result xml:space="preserve">The transporter beeps and glows amber as you step onto its surface. A moment later a hologram displays your options. From here you could choose to go to: 
+  1: Oodville
+  2: Midnight
+  3: Diamond City
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1350"></child>
+        </children>
+    </item>
+    <item nodeId="node-1350">
+        <command xml:space="preserve">get off pad</command>
+        <result xml:space="preserve">You get off the transporter pad.
+
+Transporter Room
+The transporter pad in the middle of the floor is currently dull blue: powered but unoccupied.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1351"></child>
+        </children>
+    </item>
+    <item nodeId="node-1351">
+        <command xml:space="preserve">1</command>
+        <result xml:space="preserve">You can transport only from the transporter pad. From other places than the transporter room, you can HOME to your base ship, but not leap sideways to other locations.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1352">
+        <command xml:space="preserve">get on chariot</command>
+        <result xml:space="preserve">As you step onto the chariot, the serpents in front hiss joyfully, happy to see you again. From here you could choose to go to: 
+  1: Thebes
+  2: Memphis
+  3: Avaris
+  4: Nile Riverbank
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1353"></child>
+        </children>
+    </item>
+    <item nodeId="node-1353">
+        <command xml:space="preserve">4</command>
+        <result xml:space="preserve">Nile Riverbank
+You are at the bank of the Nile.
+
+You can see a fishing pole, Fish-food, a knife and a catfish here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1356"></child>
+            <child nodeId="node-1354"></child>
+        </children>
+    </item>
+    <item nodeId="node-1354">
+        <command xml:space="preserve">take fish-food</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1355"></child>
+        </children>
+    </item>
+    <item nodeId="node-1355">
+        <command xml:space="preserve">take fishing pole</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1356">
+        <command xml:space="preserve">take catfish</command>
+        <result xml:space="preserve">The catfish is swimming freely in the Nile. Maybe you could try fishing for it.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1357"></child>
+        </children>
+    </item>
+    <item nodeId="node-1357">
+        <command xml:space="preserve">take fish</command>
+        <result xml:space="preserve">You pick up the fish food. Maybe it can be used as bait on the fishing pole.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1358"></child>
+        </children>
+    </item>
+    <item nodeId="node-1358">
+        <command xml:space="preserve">take pole</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1359"></child>
+        </children>
+    </item>
+    <item nodeId="node-1359">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a fishing pole
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1360"></child>
+        </children>
+    </item>
+    <item nodeId="node-1360">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">It probably won't be very productive without any bait.
+
+You cast the baited fishing pole into the river and wait patiently...
+After a few moments, you feel a tug and pull up a large catfish!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1361"></child>
+        </children>
+    </item>
+    <item nodeId="node-1361">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a catfish
+  a fishing pole
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1362"></child>
+        </children>
+    </item>
+    <item nodeId="node-1362">
+        <command xml:space="preserve">eat fish</command>
+        <result xml:space="preserve">That's plainly inedible.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1363"></child>
+        </children>
+    </item>
+    <item nodeId="node-1363">
+        <command xml:space="preserve">eat catfish</command>
+        <result xml:space="preserve">You look at it with immense distrust. It just looks so awfully... fishy... Better not.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1364"></child>
+        </children>
+    </item>
+    <item nodeId="node-1364">
+        <command xml:space="preserve">x</command>
+        <result xml:space="preserve">What do you want to examine?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1365"></child>
+        </children>
+    </item>
+    <item nodeId="node-1365">
+        <command xml:space="preserve">scene</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1366"></child>
+        </children>
+    </item>
+    <item nodeId="node-1366">
+        <command xml:space="preserve">x room</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1367"></child>
+        </children>
+    </item>
+    <item nodeId="node-1367">
+        <command xml:space="preserve">x pole</command>
+        <result xml:space="preserve">A sturdy fishing pole, but it could use some bait.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1368"></child>
+        </children>
+    </item>
+    <item nodeId="node-1368">
+        <command xml:space="preserve">take food</command>
+        <result xml:space="preserve">You attach the fish food to the fishing pole as bait.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1369">
+        <command xml:space="preserve">eat catfish</command>
+        <result xml:space="preserve">You look at it with immense distrust. It just looks so awfully... fishy... Better not.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1370"></child>
+        </children>
+    </item>
+    <item nodeId="node-1370">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Transporter Room
+You can see a sun chariot, Osiris' head and a catfish here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1371"></child>
+        </children>
+    </item>
+    <item nodeId="node-1371">
+        <command xml:space="preserve">take catfish</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1372"></child>
+        </children>
+    </item>
+    <item nodeId="node-1372">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a catfish
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1373"></child>
+        </children>
+    </item>
+    <item nodeId="node-1373">
+        <command xml:space="preserve">eat catfish</command>
+        <result xml:space="preserve">You look at it with immense distrust. It just looks so awfully... fishy... Better not.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1374"></child>
+        </children>
+    </item>
+    <item nodeId="node-1374">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a catfish
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1375">
+        <command xml:space="preserve">ds</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1376"></child>
+        </children>
+    </item>
+    <item nodeId="node-1376">
+        <command xml:space="preserve">1</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1377"></child>
+        </children>
+    </item>
+    <item nodeId="node-1377">
+        <command xml:space="preserve">get on chariot</command>
+        <result xml:space="preserve">As you step onto the chariot, the serpents in front hiss joyfully, happy to see you again. From here you could choose to go to: 
+  1: Thebes
+  2: Memphis
+  3: Avaris
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1378"></child>
+        </children>
+    </item>
+    <item nodeId="node-1378">
+        <command xml:space="preserve">1</command>
+        <result xml:space="preserve">You quickly head towards your sun chariot. You've got somewhere to get to!
+
+Thebes
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1379">
+        <command xml:space="preserve">chanting</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1380"></child>
+        </children>
+    </item>
+    <item nodeId="node-1380">
+        <command xml:space="preserve">chant</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1381"></child>
+        </children>
+    </item>
+    <item nodeId="node-1381">
+        <command xml:space="preserve">your mom is gay</command>
+        <result xml:space="preserve">oh yeah she is
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1382">
+        <command xml:space="preserve">chant</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1383"></child>
+        </children>
+    </item>
+    <item nodeId="node-1383">
+        <command xml:space="preserve">your mom is gay</command>
+        <result xml:space="preserve">&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1384">
+        <command xml:space="preserve">asd</command>
+        <result xml:space="preserve">I didn't understand that number.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1385"></child>
+        </children>
+    </item>
+    <item nodeId="node-1385">
+        <command xml:space="preserve">west</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1386"></child>
+        </children>
+    </item>
+    <item nodeId="node-1386">
+        <command xml:space="preserve">get on chariot</command>
+        <result xml:space="preserve">As you step onto the chariot, the serpents in front hiss joyfully, happy to see you again. From here you could choose to go to: 
+  1: Thebes
+  2: Memphis
+  3: Avaris
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1387"></child>
+        </children>
+    </item>
+    <item nodeId="node-1387">
+        <command xml:space="preserve">1</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1388"></child>
+        </children>
+    </item>
+    <item nodeId="node-1388">
+        <command xml:space="preserve">1</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1389">
+        <command xml:space="preserve">3</command>
+        <result xml:space="preserve">You can transport only from the transporter pad. From other places than the transporter room, you can HOME to your base ship, but not leap sideways to other locations.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1390"></child>
+        </children>
+    </item>
+    <item nodeId="node-1390">
+        <command xml:space="preserve">get on pad</command>
+        <result xml:space="preserve">The transporter beeps and glows amber as you step onto its surface. A moment later a hologram displays your options. From here you could choose to go to: 
+  1: Region1
+  2: Region2
+  3: Region3
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1391"></child>
+        </children>
+    </item>
+    <item nodeId="node-1391">
+        <command xml:space="preserve">5</command>
+        <result xml:space="preserve">5 is not a valid option. From here you could choose to go to: 
+  1: Region1
+  2: Region2
+  3: Region3
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1392"></child>
+        </children>
+    </item>
+    <item nodeId="node-1392">
+        <command xml:space="preserve">1</command>
+        <result xml:space="preserve">Region1
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1393"></child>
+        </children>
+    </item>
+    <item nodeId="node-1393">
+        <command xml:space="preserve">home</command>
+        <result xml:space="preserve">Transporter Room
+The transporter pad in the middle of the floor is currently dull blue: powered but unoccupied.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1394"></child>
+        </children>
+    </item>
+    <item nodeId="node-1394">
+        <command xml:space="preserve">get on pad</command>
+        <result xml:space="preserve">The transporter beeps and glows amber as you step onto its surface. A moment later a hologram displays your options. From here you could choose to go to: 
+  1: Region1
+  2: Region2
+  3: Region3
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1395"></child>
+        </children>
+    </item>
+    <item nodeId="node-1395">
+        <command xml:space="preserve">4</command>
+        <result xml:space="preserve">4 is not a valid option. From here you could choose to go to: 
+  1: Region1
+  2: Region2
+  3: Region3
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1396"></child>
+        </children>
+    </item>
+    <item nodeId="node-1396">
+        <command xml:space="preserve">3</command>
+        <result xml:space="preserve">Region3
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1397"></child>
+        </children>
+    </item>
+    <item nodeId="node-1397">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1398"></child>
+        </children>
+    </item>
+    <item nodeId="node-1398">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1399"></child>
+        </children>
+    </item>
+    <item nodeId="node-1399">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1400">
+        <command xml:space="preserve">2</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1401"></child>
+        </children>
+    </item>
+    <item nodeId="node-1401">
+        <command xml:space="preserve">get on chariot</command>
+        <result xml:space="preserve">As you step onto the chariot, the serpents in front hiss joyfully, happy to see you again. From here you could choose to go to: 
+  1: Thebes
+  2: Memphis
+  3: Avaris
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1402"></child>
+        </children>
+    </item>
+    <item nodeId="node-1402">
+        <command xml:space="preserve">2</command>
+        <result xml:space="preserve">Memphis
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1403"></child>
+        </children>
+    </item>
+    <item nodeId="node-1403">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1404"></child>
+        </children>
+    </item>
+    <item nodeId="node-1404">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1405"></child>
+        </children>
+    </item>
+    <item nodeId="node-1405">
+        <command xml:space="preserve">jn</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1406"></child>
+        </children>
+    </item>
+    <item nodeId="node-1406">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+Avaris
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1407"></child>
+        </children>
+    </item>
+    <item nodeId="node-1407">
+        <command xml:space="preserve">get on chariot</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1408"></child>
+        </children>
+    </item>
+    <item nodeId="node-1408">
+        <command xml:space="preserve">1</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1409"></child>
+        </children>
+    </item>
+    <item nodeId="node-1409">
+        <command xml:space="preserve">go to chariot</command>
+        <result xml:space="preserve">You quickly head towards your sun chariot. You've got somewhere to get to!
+
+Transporter Room
+You can see a sun chariot here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1410"></child>
+        </children>
+    </item>
+    <item nodeId="node-1410">
+        <command xml:space="preserve">get off chariot</command>
+        <result xml:space="preserve">But you aren't on the sun chariot at the moment.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1411"></child>
+        </children>
+    </item>
+    <item nodeId="node-1411">
+        <command xml:space="preserve">clear</command>
+        <result xml:space="preserve">(the sun chariot)
+It is fixed in place.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1412"></child>
+        </children>
+    </item>
+    <item nodeId="node-1412">
+        <command xml:space="preserve">eat</command>
+        <result xml:space="preserve">(the sun chariot)
+That's plainly inedible.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1413"></child>
+        </children>
+    </item>
+    <item nodeId="node-1413">
+        <command xml:space="preserve">eat chariot</command>
+        <result xml:space="preserve">That's plainly inedible.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1414"></child>
+        </children>
+    </item>
+    <item nodeId="node-1414">
+        <command xml:space="preserve">boooooo</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1415"></child>
+        </children>
+    </item>
+    <item nodeId="node-1415">
+        <command xml:space="preserve">kill myself</command>
+        <result xml:space="preserve">Violence isn't the answer to this one.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1416"></child>
+        </children>
+    </item>
+    <item nodeId="node-1416">
+        <command xml:space="preserve">kill chariot</command>
+        <result xml:space="preserve">Violence isn't the answer to this one.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1417"></child>
+        </children>
+    </item>
+    <item nodeId="node-1417">
+        <command xml:space="preserve">chop up chariot</command>
+        <result xml:space="preserve">I only understood you as far as wanting to chop up.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1418"></child>
+        </children>
+    </item>
+    <item nodeId="node-1418">
+        <command xml:space="preserve">chop chariot</command>
+        <result xml:space="preserve">Cutting it up would achieve little.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1419"></child>
+        </children>
+    </item>
+    <item nodeId="node-1419">
+        <command xml:space="preserve">take chariot</command>
+        <result xml:space="preserve">That's fixed in place.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1420"></child>
+        </children>
+    </item>
+    <item nodeId="node-1420">
+        <command xml:space="preserve">test</command>
+        <result xml:space="preserve">&gt;--&gt; The following tests are available:
+'test me'
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1421"></child>
+        </children>
+    </item>
+    <item nodeId="node-1421">
+        <command xml:space="preserve">test me</command>
+        <result xml:space="preserve">(Testing.)
+
+&gt;[1] get on chariot
+As you step onto the chariot, the serpents in front hiss joyfully, happy to see you again. From here you could choose to go to: 
+  1: Thebes
+  2: Memphis
+  3: Avaris
+
+&gt;[2] 0
+0 is not a valid option. From here you could choose to go to: 
+  1: Thebes
+  2: Memphis
+  3: Avaris
+
+&gt;[3] -1
+-1 is not a valid option. From here you could choose to go to: 
+  1: Thebes
+  2: Memphis
+  3: Avaris
+
+&gt;[4] 8
+8 is not a valid option. From here you could choose to go to: 
+  1: Thebes
+  2: Memphis
+  3: Avaris
+
+&gt;[5] 2
+Memphis
+
+&gt;[6] look
+Memphis
+
+&gt;[7] w
+You can't go that way.
+
+&gt;[8] home
+I didn't understand that sentence.
+
+&gt;[9] get on chariot
+You can't see any such thing.
+
+&gt;[10] get off chariot
+You can't see any such thing.
+
+&gt;[11] 3
+I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve">[1] get on chariot
+[2] 0
+[3] -1
+[4] 8
+[5] 2
+[6] look
+[7] w
+[8] home
+[9] get on chariot
+[10] get off chariot
+[11] 3
+</commentary>
+        <children></children>
+    </item>
+</Skein>
