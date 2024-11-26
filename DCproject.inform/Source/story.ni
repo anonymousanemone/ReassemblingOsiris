@@ -9,6 +9,10 @@ Talking to is an action applying to one visible thing. Understand "talk to [some
 
 Carry out talking to someone:
 	say "There is no reply."
+	
+
+Putting is an action applying to two carried things. Understand "put [something preferably held] on [something]" as putting. 
+
 
 
 Section 2 - Sun Chariot Travel
@@ -44,17 +48,15 @@ To list the transport options:
 
 Table of Transport Options
 transport
-Thebes
-Memphis
 Avaris
-Nile Riverbank
-[Elephantine
-Amarna
+Busiris
 Heliopolis
-Faiyum
+Memphis
+Oxyrhynchos
+Amarna
 Abydos
-Lahun
-Hermopolis]
+Thebes
+Elephantine
 
 Understand "chariot" or "go to chariot" as homing. Homing is an action applying to nothing.
 
@@ -80,11 +82,14 @@ After entering the sun chariot:
 
 [Test me with "get on chariot / 0 / -1 / 8 / 2 / look / w / chariot / get on chariot / get off chariot / 3".]
 
+Avaris is a room.
+Busiris is a room.
+Heliopolis is a room.
+Memphis is a room.
+Amarna is a room.
+Abydos is a room.
 Thebes is a room.
-
-Memphis is a room. 
-
-Avaris is a room. It is north of Memphis.
+Elephantine is a room.
 
 Section 4 - Osiris' Head
 
@@ -120,45 +125,17 @@ Section 5 - Exposition
     say "... flashback content...";
     wait for any key.]
 
-Section 6 - Penis Fish
 
-
-[Osiris' penis is a thing in the catfish. 
-
-Instead of examining the catfish:
-	say "You look it in the eyes with great suspicion. It looks back at you, and reveals nothing. But maybe its silence can be resolved by a good gutting."
-	
-Instead of killing the catfish:
-	say "".]
-
-Fishing is an action applying to one visible thing. Understand "fish" or "go fish" as fishing.
-
-Check fishing:
-	if the fishing pole is not carried:
-		say "You've got nothing to fish with. Your hands won't suffice, unfortunately." instead.
-	otherwise:
-		if the fishing pole is unbaited:
-			say "It probably won't be very productive without any bait." instead.
-
-Carry out fishing:
-	say "You cast the baited fishing pole into the river and wait patiently...";
-	say "After a few moments, you feel a tug and pull up a large catfish!";
-	now the catfish is caught;
-	now the player carries the catfish.
+Section 6 - Oxyrhynchos
 
 A blade is a kind of thing.
 		
-Understand "cut [something] with [something preferably held]" as cutting it with. Cutting it with is an action applying to two carried things.
+Cutting it with is an action applying to two carried things. Understand "cut [something] with [something preferably held]" as cutting it with. Understand "gut [something] with [something preferably held]" as cutting it with. 
 
-Understand "gut [something] with [something preferably held]" as cutting it with.
-
-Understand "slice [something] with [something preferably held]" as cutting it with.
-
-Understand "slice open [something] with [something preferably held]" as cutting it with.
-
-Check cutting:
-	if the knife is not carried:
+Check cutting something with something:
+	if a blade is not carried:
 		say "You can hardly cut open the fish without a proper tool.";
+	if the noun is a blade, say "You can't do that." instead;
 	if we have cut the noun:
 		say "The fish hardly deserves to be gutted twice."
 
@@ -204,51 +181,74 @@ After printing the name of a closed unopenable container:
 	
 [Finished identifying actions]
 
-The Nile Riverbank is a room. "You are at the bank of the Nile."
+Oxyrhynchos is a room. "You are in Oxyrhynchos, home of the medjed elephantfish. A little further east is the riverbank of the Nile."
 
-A fishing pole is in the Nile Riverbank. The fishing pole can be baited or unbaited. It is unbaited.
+Some bait is an edible thing in Oxyrhynchos.
 
-Fish-food is in the Nile riverbank. 
+Instead of eating the bait:
+	say "Edible, sure, but you're no fish.".
 
-The catfish is a closed container in the nile riverbank. The catfish can be caught, uncaught, or gutted. The catfish is uncaught. 
+A fishing rod is in Oxyrhynchos. The fishing rod can be baited or unbaited. It is unbaited. The printed name of the fishing rod is "fishing rod[if fishing rod is baited] with bait". The description is "[if fishing rod is unbaited] A sturdy fishing rod, but it could use some bait.[end if] [if fishing rod is baited] The fishing pole is now baited with some fish food."
 
-Osiris' penis is a thing in the catfish. Understand "penis/phallus/dick/cock" as Osiris' penis.
+A knife is a blade in Oxyrhynchos. 
+
+The Nile Riverbank is a room. It is east of Oxyrhynchos. "You are at the bank of the Nile."
+
+Fish are a kind of container. Fish are edible. A catfish is a fish. Fish can be found in the Nile Riverbank.
+
+The catfish is a closed container in the nile riverbank. The description of the catfish is "[if player is not carrying catfish] It's a catfish... I wonder if that has any significance? [end if] [if player is carrying closed catfish] You eye the catfish with great suspicion. It looks back at you and reveals nothing. Maybe its silence can be resolved by a good gutting."
+
+Osiris' penis is a thing in the catfish. Understand "penis/phallus" as Osiris' penis.
 
 Instead of taking the catfish:
-	if the catfish is uncaught:
-		say "The catfish is swimming freely in the Nile. Maybe you could try fishing for it."
+	say "The catfish is swimming freely in the Nile. Maybe you could try fishing for it."
 
 Instead of eating the catfish:
 	say "You look at it with immense distrust. It just looks so awfully... fishy... Better not.".
+	
+Baiting is an action applying to one carried thing. Understand "bait [something]" as baiting.
 
+Before baiting something:
+	if the player is not carrying the noun, say "You don't have that." instead;
+	if the noun is not the fishing rod, say "You can't bait that." instead.
 
-Instead of examining the fishing pole:
-	if the fishing pole is unbaited:
-		say "A sturdy fishing pole, but it could use some bait.";
+Carry out baiting:
+	if the fishing rod is unbaited:
+		if the player is carrying bait:
+			say "You attach the bait carefully to the fishing rod." ;
+			now the bait is nowhere;
+			now the fishing rod is baited;
+		otherwise:
+			say "You don't have anything to bait it with.";
 	otherwise:
-		say "The fishing pole is now baited with some fish food.".
+		say "More is not always better."
+			
 
-Instead of taking the fish-food when the player is holding the fishing pole:
-    say "You attach the fish food to the fishing pole as bait.";
-    now the fishing pole is baited;
-    now the fish-food is nowhere.
+Understand "fish" as fishing. Fishing is an action applying to nothing. 
 
-A knife is a blade in the nile riverbank. 
-
-Instead of cutting the catfish with the knife:
-	if the catfish is caught:
-		say "You carefully cut open the catfish with the knife. Inside its stomach, you find a shiny gold coin!";
-		now the penis is in the Nile riverbank;
+Before fishing:
+	if the fishing rod is not carried:
+		 say "You've got nothing to fish with. Your hands won't suffice, unfortunately." instead;
+	otherwise if the fishing rod is unbaited:
+		say "You won't catch much without bait on the hook."  instead;
+	otherwise if player is not in Nile Riverbank:
+		say "This is not a viable place to be fishing." instead;
+	otherwise if player is carrying the catfish:
+		say "You already have a fish in your posession. Don't be so greedy." instead;
 	otherwise:
-		say "You have to catch the catfish first."
-
-Instead of taking the penis:
-	if the penis is in the Nile Riverbank:
-		say "You pick up the penis with an expression of disgust.";
+		say "You cast your fishing rod out with a strong throw..."
+		
+Carry out fishing:
+	if a random chance of 1 in 5 succeeds:
+		move the catfish to the player;
+		say “You have caught the catfish!”;		
+		now the fishing rod is unbaited;
 	otherwise:
-		say "There's no penis here to take."
+		say “You missed the fish!”;
 
-
+[testing just the fishing section!]
+Test fish with "take all / bait rod / e / fish" in Oxyrhynchos.
+			
 
 
 
