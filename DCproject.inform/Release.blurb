@@ -15,6 +15,9 @@ storyfile "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.inform/Build/
 ifiction "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.inform/Metadata.iFiction" include
 cover "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/DefaultCover.jpg"
 picture 1 "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/DefaultCover.jpg"
+release file "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/DefaultCover.jpg"
+release file "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/Small Cover.jpg"
+picture 3 "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Figures/chariot.png"
 
 ! Placeholder variables
 
@@ -27,9 +30,28 @@ placeholder [BLURB] = "A work of interactive fiction."
 
 ! Other material to release
 
+
+! Website instructions
+
+placeholder [ENCODEDSTORYFILE] = "DCproject.gblorb.js"
+template path "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Templates"
+template path "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Templates"
+template path "/Users/sophial/Library/Inform/Templates"
+template path "/Applications/Inform.app/Contents/Resources/Internal/Templates"
+placeholder [INTERPRETERSCRIPTS] = " "
+interpreter "Quixe" "g"
+base64 "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.inform/Build/output.ulx" to "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Release/interpreter/DCproject.gblorb.js"
+
+! Website instructions
+
+template path "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Templates"
+template path "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Templates"
+template path "/Users/sophial/Library/Inform/Templates"
+template path "/Applications/Inform.app/Contents/Resources/Internal/Templates"
+css
+website "Standard"
+status instruction ||&nbsp;<a href="source:story.ni#line4"><img border=0 src=inform:/doc_images/Reveal.png></a>||
 status alternative ||Using 'Release along with cover art', to provide something more distinctive than the default artwork above&nbsp;<a href=inform:/doc401.html><img border=0 src=inform:/doc_images/help.png></a>||
-status alternative ||Using 'Release along with a website'&nbsp;<a href=inform:/doc403.html><img border=0 src=inform:/doc_images/help.png></a>||
-status alternative ||Using 'Release along with an interpreter', for in-browser play on your website&nbsp;<a href=inform:/doc404.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with a file of "Such-and-Such" called "whatever.pdf"', perhaps to add a manual, or a welcoming note&nbsp;<a href=inform:/doc399.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with the source text'&nbsp;<a href=inform:/doc410.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with a solution'&nbsp;<a href=inform:/doc409.html><img border=0 src=inform:/doc_images/help.png></a>||

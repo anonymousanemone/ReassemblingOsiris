@@ -4,6 +4,8 @@
     <dict>
         <key>Graphics</key>
         <dict>
+            <key>3</key>
+            <string>Figures/chariot.png</string>
         </dict>
     </dict>
 </plist>
