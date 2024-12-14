@@ -12,12 +12,21 @@ DCproject
 An Interactive Fiction by Sophia Ling
 Release 1 / Serial number 241213 / Inform 7 v10.1.2 / D
 
-Avaris-Marketplace
+Gate to the Osireion
+The doorway to the temple stands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded. (please add more historical info and revise this)
+
+You can see a sun chariot here.
+
+Gate to the Osireion
+The doorway to the temple stands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded. (please add more historical info and revise this)
+
+You can see a sun chariot here.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-2345"></child>
             <child nodeId="node-2334"></child>
+            <child nodeId="node-2783"></child>
             <child nodeId="node-2329"></child>
             <child nodeId="node-2318"></child>
             <child nodeId="node-2303"></child>
@@ -29,6 +38,7 @@ Avaris-Marketplace
             <child nodeId="node-2277"></child>
             <child nodeId="node-2271"></child>
             <child nodeId="node-2260"></child>
+            <child nodeId="node-2867"></child>
             <child nodeId="node-2397"></child>
             <child nodeId="node-2226"></child>
             <child nodeId="node-2196"></child>
@@ -39,6 +49,7 @@ Avaris-Marketplace
             <child nodeId="node-2130"></child>
             <child nodeId="node-2128"></child>
             <child nodeId="node-2416"></child>
+            <child nodeId="node-2642"></child>
             <child nodeId="node-2429"></child>
             <child nodeId="node-2127"></child>
             <child nodeId="node-2124"></child>
@@ -51,6 +62,7 @@ Avaris-Marketplace
             <child nodeId="node-2044"></child>
             <child nodeId="node-2529"></child>
             <child nodeId="node-2440"></child>
+            <child nodeId="node-2744"></child>
             <child nodeId="node-1994"></child>
             <child nodeId="node-1992"></child>
             <child nodeId="node-1978"></child>
@@ -1191,6 +1203,645 @@ Visible within is Osiris' penis.
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
     </item>
+    <item nodeId="node-2744">
+        <command xml:space="preserve">test amarna</command>
+        <result xml:space="preserve">(first acquiring Osiris' head)
+(Testing.)
+
+&gt;[1] say hi
+(to Osiris' head)
+There is no reply.
+
+Your sun chariot is parked at the Gate to the Oseiron, fiercely guarded by your pet serpents.
+
+&gt;[2] get on chariot
+As you step onto the chariot, the serpents in front hiss joyfully, happy to see you again. From here you could choose to go to: 
+  1: Avaris
+  2: Busiris
+  3: Heliopolis
+  4: Memphis
+  5: Oxyrhynchos
+  6: Amarna
+  7: Abydos
+  8: Thebes
+  9: Elephantine
+
+&gt;[3] 6
+Workmen's Village
+A dusty cluster of homes and workshops, bustling with activity. The air smells of clay and stone.
+
+You can see a workman here.
+
+Your sun chariot is parked at the Workmen's Village, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve">[1] say hi
+[2] get on chariot
+[3] 6
+</commentary>
+        <children><child nodeId="node-2746"></child>
+            <child nodeId="node-2824"></child>
+            <child nodeId="node-2771"></child>
+            <child nodeId="node-2798"></child>
+        </children>
+    </item>
+    <item nodeId="node-2798">
+        <command xml:space="preserve">show head to workman</command>
+        <result xml:space="preserve">The workman is unimpressed.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2799"></child>
+        </children>
+    </item>
+    <item nodeId="node-2799">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">"Hey you," you called to the workman.  
+
+The workman turns around with a disgruntled expression. "What do you want?" he asks.  
+
+You explain that you're looking for information about the village.  
+
+The workman gestures around. "This village," he says, "it's where the elite tombs nearby are prepared. Hard work, but someone's got to do it." He looks at you curiously. "What are you doing here, anyway? And good gods, are you pregnant?!"
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2800"></child>
+            <child nodeId="node-2811"></child>
+        </children>
+    </item>
+    <item nodeId="node-2811">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">The workman looks at you expectantly. "What are you doing here, anyway? And what's up with the stomach?"
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2812"></child>
+        </children>
+    </item>
+    <item nodeId="node-2812">
+        <command xml:space="preserve">show head to workman</command>
+        <result xml:space="preserve">You carefully take the head from under your shirt and show it to the workman. "Do you know anything to go along with this?" you ask.
+
+The workman eyes you warily. "You collect heads, huh? Weird. But if you want odd heads, the old Aten cult temple's the place to check. (here, mention more about the cult) "  
+
+You give a curt nod of thanks. Just as you turn to leave, he calls to you. "Hey! I don't know what your whole deal is, but here, it's good manners to keep body parts inside a body bag." He tosses you a body bag.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2813"></child>
+        </children>
+    </item>
+    <item nodeId="node-2813">
+        <command xml:space="preserve">say hi to workman</command>
+        <result xml:space="preserve">There is no reply.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2814"></child>
+        </children>
+    </item>
+    <item nodeId="node-2814">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">The workman looks at you with exasperation. "I've told you everything I know. Go to the old Aten temple for you weird heads.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2815"></child>
+        </children>
+    </item>
+    <item nodeId="node-2815">
+        <command xml:space="preserve">leave</command>
+        <result xml:space="preserve">But you aren't in anything at the moment.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2816"></child>
+        </children>
+    </item>
+    <item nodeId="node-2816">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a body bag
+  Osiris' head
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2817"></child>
+        </children>
+    </item>
+    <item nodeId="node-2817">
+        <command xml:space="preserve">show head</command>
+        <result xml:space="preserve">What do you want to show Osiris' head?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2818"></child>
+        </children>
+    </item>
+    <item nodeId="node-2818">
+        <command xml:space="preserve">workman</command>
+        <result xml:space="preserve">(first taking the workman)
+I don't suppose the workman would care for that.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2819"></child>
+        </children>
+    </item>
+    <item nodeId="node-2819">
+        <command xml:space="preserve">show head to workman</command>
+        <result xml:space="preserve">I don't think showing Osiris" head off again is necessary.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2800">
+        <command xml:space="preserve"></command>
+        <result xml:space="preserve">I beg your pardon?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2801"></child>
+        </children>
+    </item>
+    <item nodeId="node-2801">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">The workman looks at you expectantly. "What are you doing here, anyway? And what's up with the stomach?"
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2802"></child>
+        </children>
+    </item>
+    <item nodeId="node-2802">
+        <command xml:space="preserve">show head to workman</command>
+        <result xml:space="preserve">Hey! I don't know what your whole deal is, but here, it's good manners to keep body parts inside a body bag." He tosses you a body bag.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2803"></child>
+        </children>
+    </item>
+    <item nodeId="node-2803">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">The workman looks at you with exasperation. "I've told you everything I know. Go to the old Aten temple for you weird heads.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2804"></child>
+        </children>
+    </item>
+    <item nodeId="node-2804">
+        <command xml:space="preserve">show head to workman</command>
+        <result xml:space="preserve">Flashing a decapitated head to someone you've never talked to may be a bit much. Try striking a conversation first.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2771">
+        <command xml:space="preserve">say hi</command>
+        <result xml:space="preserve">(to Osiris' head)
+There is no reply.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2772"></child>
+        </children>
+    </item>
+    <item nodeId="node-2772">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Workmen's Village
+A dusty cluster of homes and workshops, bustling with activity. The air smells of clay and stone.
+
+You can see a sun chariot and a workman here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2773"></child>
+        </children>
+    </item>
+    <item nodeId="node-2773">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">The workman gestures around. "This village," he says, "it's where the elite tombs nearby are prepared. Hard work, but someone's got to do it." He looks at you curiously. "What are you doing here, anyway? And good gods, are you pregnant?!"
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2774"></child>
+        </children>
+    </item>
+    <item nodeId="node-2774">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">The workman looks at you expectantly. "What are you doing here, anyway? And what's up with the stomach?"
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2775"></child>
+        </children>
+    </item>
+    <item nodeId="node-2775">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">The workman looks at you expectantly. "What are you doing here, anyway? And what's up with the stomach?"
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2776"></child>
+        </children>
+    </item>
+    <item nodeId="node-2776">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">Maybe try showing him what's hidden under your shirt.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2777"></child>
+        </children>
+    </item>
+    <item nodeId="node-2777">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">Maybe try showing him what's hidden under your shirt.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2778"></child>
+        </children>
+    </item>
+    <item nodeId="node-2778">
+        <command xml:space="preserve">show head to workman</command>
+        <result xml:space="preserve">Hey! I don't know what your whole deal is, but here, it's good manners to keep body parts inside a body bag." He tosses you a body bag.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2779"></child>
+        </children>
+    </item>
+    <item nodeId="node-2779">
+        <command xml:space="preserve"></command>
+        <result xml:space="preserve">I beg your pardon?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2780"></child>
+        </children>
+    </item>
+    <item nodeId="node-2780">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a body bag
+  Osiris' head
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2781"></child>
+        </children>
+    </item>
+    <item nodeId="node-2781">
+        <command xml:space="preserve">put head in body bag</command>
+        <result xml:space="preserve">You put Osiris' head into the body bag.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2782"></child>
+        </children>
+    </item>
+    <item nodeId="node-2782">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a body bag
+    Osiris' head
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2824">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Outside the Walled Village
+You can see an oxcart here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2864"></child>
+            <child nodeId="node-2825"></child>
+            <child nodeId="node-2854"></child>
+        </children>
+    </item>
+    <item nodeId="node-2854">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">
+Ruined City
+This glorious city, once the capital of Egypt, is nothing but ruins and foundations. In the distance, to the north, you see a small standing structure, sticking out like a sore thumb amongst the desolation.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2855"></child>
+        </children>
+    </item>
+    <item nodeId="node-2855">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">It's a long journey to the village: you'll never make it on foot.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2856"></child>
+        </children>
+    </item>
+    <item nodeId="node-2856">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">It's a long journey to the village: you'll never make it on foot.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2857"></child>
+        </children>
+    </item>
+    <item nodeId="node-2857">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">It's a long journey to the village: you'll never make it on foot.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2858"></child>
+        </children>
+    </item>
+    <item nodeId="node-2858">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2825">
+        <command xml:space="preserve">get on oxcart</command>
+        <result xml:space="preserve">You mount the oxcart.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2826"></child>
+        </children>
+    </item>
+    <item nodeId="node-2826">
+        <command xml:space="preserve">go e</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2827"></child>
+        </children>
+    </item>
+    <item nodeId="node-2827">
+        <command xml:space="preserve">go w</command>
+        <result xml:space="preserve">You sit on the oxcart and it takes you there.
+
+Ruined City (on the oxcart)
+This glorious city, once the capital of Egypt, is nothing but ruins and foundations. In the distance, to the north, you see a small standing structure, sticking out like a sore thumb amongst the desolation.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2828"></child>
+        </children>
+    </item>
+    <item nodeId="node-2828">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">
+Outside the Walled Village (on the oxcart)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2829"></child>
+        </children>
+    </item>
+    <item nodeId="node-2829">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You sit on the oxcart and it takes you there.
+
+Ruined City (on the oxcart)
+This glorious city, once the capital of Egypt, is nothing but ruins and foundations. In the distance, to the north, you see a small standing structure, sticking out like a sore thumb amongst the desolation.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2830"></child>
+        </children>
+    </item>
+    <item nodeId="node-2830">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">The workman's directions lead you to a small, ruined temple. Something about its quiet eeriness feels out of place.
+
+Small Aten Temple (on the oxcart)
+A partially reconstructed temple dedicated to the Aten. Sunlight streams through its ruined walls, illuminating faded murals.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2831"></child>
+        </children>
+    </item>
+    <item nodeId="node-2831">
+        <command xml:space="preserve">d</command>
+        <result xml:space="preserve">
+Underground Temple (on the oxcart)
+The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls.
+
+You can see a mural and a brain here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2832"></child>
+        </children>
+    </item>
+    <item nodeId="node-2832">
+        <command xml:space="preserve">get off oxcart</command>
+        <result xml:space="preserve">You dismount the oxcart.
+
+Underground Temple
+The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls.
+
+You can see an oxcart, a mural and a brain here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2833"></child>
+        </children>
+    </item>
+    <item nodeId="node-2833">
+        <command xml:space="preserve">u</command>
+        <result xml:space="preserve">
+Small Aten Temple
+A partially reconstructed temple dedicated to the Aten. Sunlight streams through its ruined walls, illuminating faded murals.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2834"></child>
+        </children>
+    </item>
+    <item nodeId="node-2834">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">It's a long journey to Amarna City: you'll never make it on foot.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2835"></child>
+        </children>
+    </item>
+    <item nodeId="node-2835">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">It's a long journey to Amarna City: you'll never make it on foot.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2864">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2865"></child>
+        </children>
+    </item>
+    <item nodeId="node-2865">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">It's a long journey to Amarna City: you'll never make it on foot.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2866"></child>
+        </children>
+    </item>
+    <item nodeId="node-2866">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">It's a long journey to Amarna City: you'll never make it on foot.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2746">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  Osiris' head
+
+Your sun chariot is parked at the Workmen's Village, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2747"></child>
+        </children>
+    </item>
+    <item nodeId="node-2747">
+        <command xml:space="preserve"></command>
+        <result xml:space="preserve">I beg your pardon?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2748"></child>
+        </children>
+    </item>
+    <item nodeId="node-2748">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Workmen's Village
+A dusty cluster of homes and workshops, bustling with activity. The air smells of clay and stone.
+
+You can see a sun chariot and a workman here.
+
+Your sun chariot is parked at the Workmen's Village, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2749"></child>
+        </children>
+    </item>
+    <item nodeId="node-2749">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">You can't go that way.
+
+Your sun chariot is parked at the Workmen's Village, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2750"></child>
+        </children>
+    </item>
+    <item nodeId="node-2750">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">The workman's directions lead you to a small, ruined temple. Something about its quiet eeriness feels out of place.
+
+Small Aten Temple
+A partially reconstructed temple dedicated to the Aten. Sunlight streams through its ruined walls, illuminating faded murals.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2751"></child>
+        </children>
+    </item>
+    <item nodeId="node-2751">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">
+Workmen's Village
+A dusty cluster of homes and workshops, bustling with activity. The air smells of clay and stone.
+
+You can see a sun chariot and a workman here.
+
+Your sun chariot is parked at the Workmen's Village, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2752"></child>
+        </children>
+    </item>
+    <item nodeId="node-2752">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">There is no reply.
+
+Your sun chariot is parked at the Workmen's Village, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2753"></child>
+        </children>
+    </item>
+    <item nodeId="node-2753">
+        <command xml:space="preserve">scene</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2754"></child>
+        </children>
+    </item>
+    <item nodeId="node-2754">
+        <command xml:space="preserve">SCENE</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2755"></child>
+        </children>
+    </item>
+    <item nodeId="node-2755">
+        <command xml:space="preserve"></command>
+        <result xml:space="preserve">I beg your pardon?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2756"></child>
+        </children>
+    </item>
+    <item nodeId="node-2756">
+        <command xml:space="preserve">list of happening scenes</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2757"></child>
+        </children>
+    </item>
+    <item nodeId="node-2757">
+        <command xml:space="preserve">SCENES</command>
+        <result xml:space="preserve">Scene 'Entire Game' playing (for 6 mins now)
+(Scene monitoring now switched on. Type "scenes off" to switch it off again.)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
     <item nodeId="node-2440">
         <command xml:space="preserve">test abydos</command>
         <result xml:space="preserve">(first moving to Gate to the Oseiron)
@@ -1198,36 +1849,61 @@ Visible within is Osiris' penis.
 (Testing.)
 
 &gt;[1] s
-
-Descending Passage
-A long descending passage. Down south is a great hall. North is the gate.
-
-&gt;[2] s
-
-Great Hall
-South is a small chamber. North is the long descending passage.
-
-&gt;[3] e
-
-First Transverse Chamber
-
-&gt;[4] e
-
-Doorway to the Oseiron
-To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through.
-
-You can see a sun disk key here.
+(first opening the stone door)
+It seems to be locked.
 
 &gt;</result>
         <commentary xml:space="preserve">[1] s
-[2] s
-[3] e
-[4] e
 </commentary>
         <children><child nodeId="node-2457"></child>
+            <child nodeId="node-2664"></child>
+            <child nodeId="node-2677"></child>
             <child nodeId="node-2595"></child>
+            <child nodeId="node-2654"></child>
             <child nodeId="node-2448"></child>
+            <child nodeId="node-2671"></child>
         </children>
+    </item>
+    <item nodeId="node-2671">
+        <command xml:space="preserve">x door</command>
+        <result xml:space="preserve">The heavy stone door is engraved with an ancient riddle: 
+ "I am yesterday, veiled in shadows. 
+ I am tomorrw, cloaked in flames. 
+ A union of gods, a cycle complete." 
+
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2672"></child>
+        </children>
+    </item>
+    <item nodeId="node-2672">
+        <command xml:space="preserve">answer sun to the door</command>
+        <result xml:space="preserve">Nothing happens. Perhaps that is not the correct answer.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2673"></child>
+        </children>
+    </item>
+    <item nodeId="node-2673">
+        <command xml:space="preserve">say echo to the door</command>
+        <result xml:space="preserve">As you speak the word "stone door," the massive stone door grinds open, revealing the temple's interior.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2674"></child>
+        </children>
+    </item>
+    <item nodeId="node-2674">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">(first opening the stone door)
+
+descending passage
+A long descending passage. Down south is a great hall. North is the gate.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-2448">
         <command xml:space="preserve">x</command>
@@ -1265,6 +1941,91 @@ The chamber opens to reveal a deep moat, filled with dark, murky water. The far 
         <command xml:space="preserve">e</command>
         <result xml:space="preserve">
 Central Nave
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2654">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">
+First Transverse Chamber
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2655"></child>
+        </children>
+    </item>
+    <item nodeId="node-2655">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">
+Great Hall
+South is a small chamber. North is the long descending passage.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2656"></child>
+        </children>
+    </item>
+    <item nodeId="node-2656">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2657"></child>
+        </children>
+    </item>
+    <item nodeId="node-2657">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+descending passage
+A long descending passage. Down south is a great hall. North is the gate.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2658"></child>
+        </children>
+    </item>
+    <item nodeId="node-2658">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+Gate to the Oseiron
+The doorway to the temple tands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2659"></child>
+        </children>
+    </item>
+    <item nodeId="node-2659">
+        <command xml:space="preserve">x door</command>
+        <result xml:space="preserve">The heavy stone door is engraved with an ancient riddle: 
+ "I am yesterday, veiled in shadows. 
+ I am tomorrw, cloaked in flames. 
+ A union of gods, a cycle complete." 
+
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2660"></child>
+        </children>
+    </item>
+    <item nodeId="node-2660">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+descending passage
+A long descending passage. Down south is a great hall. North is the gate.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2661"></child>
+        </children>
+    </item>
+    <item nodeId="node-2661">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+Gate to the Oseiron
+The doorway to the temple tands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -1382,6 +2143,141 @@ There is no reply.
         <command xml:space="preserve">say hjklkbljnkasdarhwben eahfsdf</command>
         <result xml:space="preserve">(to Osiris' head)
 There is no reply.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2677">
+        <command xml:space="preserve">say sun</command>
+        <result xml:space="preserve">(to the stone door)
+As you speak the word "stone door," the massive stone door grinds open, revealing the temple's interior.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2678"></child>
+        </children>
+    </item>
+    <item nodeId="node-2678">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+descending passage
+A long descending passage. Down south is a great hall. North is the gate.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2679"></child>
+        </children>
+    </item>
+    <item nodeId="node-2679">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2680"></child>
+        </children>
+    </item>
+    <item nodeId="node-2680">
+        <command xml:space="preserve">d</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2681"></child>
+        </children>
+    </item>
+    <item nodeId="node-2681">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Great Hall
+South is a small chamber. North is the long descending passage.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2682"></child>
+        </children>
+    </item>
+    <item nodeId="node-2682">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+descending passage
+A long descending passage. Down south is a great hall. North is the gate.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2683"></child>
+        </children>
+    </item>
+    <item nodeId="node-2683">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+Gate to the Oseiron
+The doorway to the temple tands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2684"></child>
+        </children>
+    </item>
+    <item nodeId="node-2684">
+        <command xml:space="preserve">enter door</command>
+        <result xml:space="preserve">
+descending passage
+A long descending passage. Down south is a great hall. North is the gate.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2664">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+Gate to the Oseiron
+The doorway to the temple tands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2665"></child>
+        </children>
+    </item>
+    <item nodeId="node-2665">
+        <command xml:space="preserve">x door</command>
+        <result xml:space="preserve">The heavy stone door is engraved with an ancient riddle: 
+ "I am yesterday, veiled in shadows. 
+ I am tomorrw, cloaked in flames. 
+ A union of gods, a cycle complete." 
+
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2666"></child>
+        </children>
+    </item>
+    <item nodeId="node-2666">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+Abydos-Marketplace
+Your sun chariot is parked at Abydos-Marketplace, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2667"></child>
+        </children>
+    </item>
+    <item nodeId="node-2667">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Gate to the Oseiron
+The doorway to the temple tands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2668"></child>
+        </children>
+    </item>
+    <item nodeId="node-2668">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">(first opening the stone door)
+It seems to be locked.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -2778,16 +3674,286 @@ There is no reply.
     </item>
     <item nodeId="node-2429">
         <command xml:space="preserve">say hi</command>
-        <result xml:space="preserve">(to yourself)
-There is no reply.
-
-Your sun chariot is parked at Avaris-Marketplace, fiercely guarded by your pet serpents.
+        <result xml:space="preserve">(to the stone door)
+Nothing happens. Perhaps that is not the correct answer.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-2431"></child>
             <child nodeId="node-2435"></child>
+            <child nodeId="node-2870"></child>
+            <child nodeId="node-2759"></child>
         </children>
+    </item>
+    <item nodeId="node-2759">
+        <command xml:space="preserve">get on chariot</command>
+        <result xml:space="preserve">As you step onto the chariot, the serpents in front hiss joyfully, happy to see you again. From here you could choose to go to: 
+  1: Avaris
+  2: Busiris
+  3: Heliopolis
+  4: Memphis
+  5: Oxyrhynchos
+  6: Amarna
+  7: Abydos
+  8: Thebes
+  9: Elephantine
+
+Your sun chariot is parked at Avaris-Marketplace, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2760"></child>
+        </children>
+    </item>
+    <item nodeId="node-2760">
+        <command xml:space="preserve">6</command>
+        <result xml:space="preserve">Workmen's Village
+A dusty cluster of homes and workshops, bustling with activity. The air smells of clay and stone.
+
+You can see a workman here.
+
+Your sun chariot is parked at the Workmen's Village, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2761"></child>
+        </children>
+    </item>
+    <item nodeId="node-2761">
+        <command xml:space="preserve">SCENES</command>
+        <result xml:space="preserve">Scene 'Entire Game' playing (for 3 mins now)
+Scene 'Discovery' playing (for 1 mins now)
+(Scene monitoring now switched on. Type "scenes off" to switch it off again.)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2766"></child>
+        </children>
+    </item>
+    <item nodeId="node-2766">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">The workman gestures around. "This village," he says, "it's where the elite tombs nearby are prepared. Hard work, but someone's got to do it." He looks at you curiously. "What are you doing here, anyway? And good gods, are you pregnant?!"
+
+[Scene 'Discovery' ends]
+[Scene 'Acquisition' begins]
+Your sun chariot is parked at the Workmen's Village, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2870">
+        <command xml:space="preserve">enter door</command>
+        <result xml:space="preserve">(first opening the stone door)
+It seems to be locked.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2871"></child>
+        </children>
+    </item>
+    <item nodeId="node-2871">
+        <command xml:space="preserve">enter oseiron</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2872"></child>
+        </children>
+    </item>
+    <item nodeId="node-2872">
+        <command xml:space="preserve">enter building</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2873"></child>
+        </children>
+    </item>
+    <item nodeId="node-2873">
+        <command xml:space="preserve">enter temple</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2874"></child>
+        </children>
+    </item>
+    <item nodeId="node-2874">
+        <command xml:space="preserve">enter door</command>
+        <result xml:space="preserve">(first opening the stone door)
+It seems to be locked.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2875"></child>
+        </children>
+    </item>
+    <item nodeId="node-2875">
+        <command xml:space="preserve">x door</command>
+        <result xml:space="preserve">The heavy stone door is engraved with an ancient riddle: 
+ "I am yesterday, veiled in shadows. 
+ I am tomorrw, cloaked in flames. 
+ A union of gods, a cycle complete."
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2876"></child>
+        </children>
+    </item>
+    <item nodeId="node-2876">
+        <command xml:space="preserve">sun</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2877"></child>
+        </children>
+    </item>
+    <item nodeId="node-2877">
+        <command xml:space="preserve">answer sun</command>
+        <result xml:space="preserve">(to the stone door)
+As you speak the word "stone door," the massive stone door grinds open, revealing a long narrow passa
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2878"></child>
+        </children>
+    </item>
+    <item nodeId="node-2878">
+        <command xml:space="preserve">enter door</command>
+        <result xml:space="preserve">
+descending passage
+A long descending passage. Down south is a great hall. North is the gate.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2879"></child>
+        </children>
+    </item>
+    <item nodeId="node-2879">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Great Hall
+South is a small chamber. North is the long descending passage.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2880"></child>
+        </children>
+    </item>
+    <item nodeId="node-2880">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Southern Chamber
+The small chamber contains... something? North is the great hall
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2881"></child>
+        </children>
+    </item>
+    <item nodeId="node-2881">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+Great Hall
+South is a small chamber. North is the long descending passage.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2882"></child>
+        </children>
+    </item>
+    <item nodeId="node-2882">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+descending passage
+A long descending passage. Down south is a great hall. North is the gate.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2883"></child>
+        </children>
+    </item>
+    <item nodeId="node-2883">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Great Hall
+South is a small chamber. North is the long descending passage.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2884"></child>
+        </children>
+    </item>
+    <item nodeId="node-2884">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">
+First Transverse Chamber
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2885"></child>
+        </children>
+    </item>
+    <item nodeId="node-2885">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">
+Doorway to the Oseiron
+To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through.
+
+You can see a sun disk key here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2886"></child>
+        </children>
+    </item>
+    <item nodeId="node-2886">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You approach the edge of the moat, but there is no way across. The waters churn ominously, as if warning you to stay back.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2887"></child>
+        </children>
+    </item>
+    <item nodeId="node-2887">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You approach the edge of the moat, but there is no way across. The waters churn ominously, as if warning you to stay back.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2888"></child>
+        </children>
+    </item>
+    <item nodeId="node-2888">
+        <command xml:space="preserve">take key</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2889"></child>
+        </children>
+    </item>
+    <item nodeId="node-2889">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">The golden sun disk in your possession begins to glow brightly, and a radiant bridge of light forms across the dark waters. With the way now open, you step forward.
+
+Central Nave
+You stand in the middle of the columns lining the central nave and look around. Surrounding you are 17 small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2890"></child>
+        </children>
+    </item>
+    <item nodeId="node-2890">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">
+Tomb of Osiris
+You can see Osiris' head here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-2435">
         <command xml:space="preserve">enter chariot</command>
@@ -2884,16 +4050,145 @@ Your sun chariot is parked at Abydos-Marketplace, fiercely guarded by your pet s
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
     </item>
+    <item nodeId="node-2642">
+        <command xml:space="preserve">say bi</command>
+        <result xml:space="preserve">(to yourself)
+There is no reply.
+
+Your sun chariot is parked at Avaris-Marketplace, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
     <item nodeId="node-2416">
         <command xml:space="preserve">s</command>
-        <result xml:space="preserve">
-Avaris-Marketplace
-Your sun chariot is parked in Avaris-Marketplace, fiercely guarded by your pet serpents.
+        <result xml:space="preserve">(first opening the stone door)
+It seems to be locked.
+
+Your sun chariot is parked at the Gate to the Oseiron, fiercely guarded by your pet serpents.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-2417"></child>
+            <child nodeId="node-2837"></child>
         </children>
+    </item>
+    <item nodeId="node-2837">
+        <command xml:space="preserve">test amarna</command>
+        <result xml:space="preserve">(first acquiring Osiris' head)
+(Testing.)
+
+&gt;[1] say hi
+(to Osiris' head)
+There is no reply.
+
+&gt;[2] get on chariot
+As you step onto the chariot, the serpents in front hiss joyfully, happy to see you again. From here you could choose to go to: 
+  1: Avaris
+  2: Busiris
+  3: Heliopolis
+  4: Memphis
+  5: Oxyrhynchos
+  6: Amarna
+  7: Abydos
+  8: Thebes
+  9: Elephantine
+
+&gt;[3] 6
+Workmen's Village
+A dusty cluster of homes and workshops, bustling with activity. The air smells of clay and stone.
+
+You can see a workman here.
+
+Your sun chariot is parked at the Workmen's Village, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve">[1] say hi
+[2] get on chariot
+[3] 6
+</commentary>
+        <children><child nodeId="node-2841"></child>
+        </children>
+    </item>
+    <item nodeId="node-2841">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Outside the Walled Village
+You can see an oxcart here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2842"></child>
+        </children>
+    </item>
+    <item nodeId="node-2842">
+        <command xml:space="preserve">get on oxcart</command>
+        <result xml:space="preserve">You mount the oxcart.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2843"></child>
+        </children>
+    </item>
+    <item nodeId="node-2843">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2844"></child>
+        </children>
+    </item>
+    <item nodeId="node-2844">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">
+Ruined City (on the oxcart)
+This glorious city, once the capital of Egypt, is nothing but ruins and foundations. In the distance, to the north, you see a small standing structure, sticking out like a sore thumb amongst the desolation.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2845"></child>
+        </children>
+    </item>
+    <item nodeId="node-2845">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">
+Outside the Walled Village (on the oxcart)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2846"></child>
+        </children>
+    </item>
+    <item nodeId="node-2846">
+        <command xml:space="preserve">get off cart</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2847"></child>
+        </children>
+    </item>
+    <item nodeId="node-2847">
+        <command xml:space="preserve">get off oxcart</command>
+        <result xml:space="preserve">You dismount the oxcart.
+
+Outside the Walled Village
+You can see an oxcart here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2848"></child>
+        </children>
+    </item>
+    <item nodeId="node-2848">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">
+Ruined City
+This glorious city, once the capital of Egypt, is nothing but ruins and foundations. In the distance, to the north, you see a small standing structure, sticking out like a sore thumb amongst the desolation.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-2417">
         <command xml:space="preserve">enter chariot</command>
@@ -4388,6 +5683,26 @@ You can see a catfish here.
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
     </item>
+    <item nodeId="node-2867">
+        <command xml:space="preserve">enter door</command>
+        <result xml:space="preserve">(first opening the stone door)
+It seems to be locked.
+
+Your sun chariot is parked at the Gate to the Oseiron, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2868"></child>
+        </children>
+    </item>
+    <item nodeId="node-2868">
+        <command xml:space="preserve">enter door</command>
+        <result xml:space="preserve">(first opening the stone door)
+It seems to be locked.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
     <item nodeId="node-2260">
         <command xml:space="preserve">eat fishing rod</command>
         <result xml:space="preserve">That's plainly inedible.
@@ -5099,6 +6414,112 @@ You can't bait that.
     <item nodeId="node-2333">
         <command xml:space="preserve">1</command>
         <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2783">
+        <command xml:space="preserve">SCENES</command>
+        <result xml:space="preserve">Scene 'Entire Game' playing (for 0 mins now)
+(Scene monitoring now switched on. Type "scenes off" to switch it off again.)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2784"></child>
+        </children>
+    </item>
+    <item nodeId="node-2784">
+        <command xml:space="preserve">test amarna</command>
+        <result xml:space="preserve">(first acquiring Osiris' head)
+(Testing.)
+
+&gt;[1] say hi
+(to Osiris' head)
+There is no reply.
+
+Your sun chariot is parked at Avaris-Marketplace, fiercely guarded by your pet serpents.
+
+&gt;[2] get on chariot
+As you step onto the chariot, the serpents in front hiss joyfully, happy to see you again. From here you could choose to go to: 
+  1: Avaris
+  2: Busiris
+  3: Heliopolis
+  4: Memphis
+  5: Oxyrhynchos
+  6: Amarna
+  7: Abydos
+  8: Thebes
+  9: Elephantine
+
+&gt;[3] 6
+Workmen's Village
+A dusty cluster of homes and workshops, bustling with activity. The air smells of clay and stone.
+
+You can see a workman here.
+
+[Scene 'Discovery' begins]
+Your sun chariot is parked at the Workmen's Village, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve">[1] say hi
+[2] get on chariot
+[3] 6
+</commentary>
+        <children><child nodeId="node-2788"></child>
+        </children>
+    </item>
+    <item nodeId="node-2788">
+        <command xml:space="preserve">takl to workman</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2789"></child>
+        </children>
+    </item>
+    <item nodeId="node-2789">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">The workman gestures around. "This village," he says, "it's where the elite tombs nearby are prepared. Hard work, but someone's got to do it." He looks at you curiously. "What are you doing here, anyway? And good gods, are you pregnant?!"
+
+[Scene 'Discovery' ends]
+[Scene 'Acquisition' begins]
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2790"></child>
+        </children>
+    </item>
+    <item nodeId="node-2790">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">The workman looks at you expectantly. "What are you doing here, anyway? And what's up with the stomach?"
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2791"></child>
+        </children>
+    </item>
+    <item nodeId="node-2791">
+        <command xml:space="preserve">show head to workman</command>
+        <result xml:space="preserve">Hey! I don't know what your whole deal is, but here, it's good manners to keep body parts inside a body bag." He tosses you a body bag.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2792"></child>
+        </children>
+    </item>
+    <item nodeId="node-2792">
+        <command xml:space="preserve">talk to workman</command>
+        <result xml:space="preserve">The workman looks at you expectantly. "What are you doing here, anyway? And what's up with the stomach?"
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2793"></child>
+        </children>
+    </item>
+    <item nodeId="node-2793">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a body bag
+  Osiris' head
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
