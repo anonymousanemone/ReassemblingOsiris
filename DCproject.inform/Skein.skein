@@ -2202,45 +2202,73 @@ Visible within is a fish guts.
     </item>
     <item nodeId="node-2744">
         <command xml:space="preserve">test amarna</command>
-        <result xml:space="preserve">(first acquiring Osiris' head)
+        <result xml:space="preserve">(first moving to Small Aten Temple)
+
+(first acquiring Osiris' head)
 (Testing.)
 
-&gt;[1] say hi
-(to Osiris' head)
-There is no reply.
+&gt;[1] n
 
-Your sun chariot is parked at the Gate to the Oseiron, fiercely guarded by your pet serpents.
+Sanctuary
+Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor the Aten, the sun disk. Around the perimeter of the sanctuary are low, carved altars, decorated with offerings and incense. In the center of the sanctuary, a shrine depicting Aten seems to shine in its golden splendor. (or something like that i guess)
 
-&gt;[2] get on chariot
-As you step onto the chariot, the serpents in front hiss joyfully, happy to see you again. From here you could choose to go to: 
-  1: Avaris
-  2: Busiris
-  3: Heliopolis
-  4: Memphis
-  5: Oxyrhynchos
-  6: Amarna
-  7: Abydos
-  8: Thebes
-  9: Elephantine
+Arranged delicately atop the altars are offerings of (something). Each item looks fresh, as if newly placed by worshippers -- odd.
 
-&gt;[3] 6
-Workmen's Village
-A dusty cluster of homes and workshops, bustling with activity. The air smells of clay and stone.
-
-You can see a workman here.
-
-Your sun chariot is parked at the Workmen's Village, fiercely guarded by your pet serpents.
+You can also see a hidden staircase here.
 
 &gt;</result>
-        <commentary xml:space="preserve">[1] say hi
-[2] get on chariot
-[3] 6
+        <commentary xml:space="preserve">[1] n
 </commentary>
         <children><child nodeId="node-2746"></child>
             <child nodeId="node-2824"></child>
             <child nodeId="node-2771"></child>
             <child nodeId="node-2798"></child>
+            <child nodeId="node-3274"></child>
         </children>
+    </item>
+    <item nodeId="node-3274">
+        <command xml:space="preserve">x shrine</command>
+        <result xml:space="preserve">(description of shrine, pick object?)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3275"></child>
+        </children>
+    </item>
+    <item nodeId="node-3275">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  Osiris' head
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3276"></child>
+        </children>
+    </item>
+    <item nodeId="node-3276">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Sanctuary
+Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor the Aten, the sun disk. Around the perimeter of the sanctuary are low, carved altars, decorated with offerings and incense. In the center of the sanctuary, a shrine depicting Aten seems to shine in its golden splendor. (or something like that i guess)
+
+Arranged delicately atop the altars are offerings of (something). Each item looks fresh, as if newly placed by worshippers -- odd.
+
+You can also see a hidden staircase here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3277"></child>
+        </children>
+    </item>
+    <item nodeId="node-3277">
+        <command xml:space="preserve">enter staircase</command>
+        <result xml:space="preserve">
+Underground chapel
+The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls.
+
+You can see a hidden staircase, a north mural, a south mural, an east mural, a west mural and Osiris' brain here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-2798">
         <command xml:space="preserve">show head to workman</command>
@@ -2940,6 +2968,181 @@ You can also see a sarcophagus (closed) here.
     <item nodeId="node-3243">
         <command xml:space="preserve">take head</command>
         <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3244"></child>
+        </children>
+    </item>
+    <item nodeId="node-3244">
+        <command xml:space="preserve">test amarna</command>
+        <result xml:space="preserve">(Testing.)
+
+&gt;[1] say hi
+(to Osiris' head)
+There is no reply.
+
+&gt;[2] get on chariot
+You can't see any such thing.
+
+&gt;[3] 6
+I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve">[1] say hi
+[2] get on chariot
+[3] 6
+</commentary>
+        <children><child nodeId="node-3248"></child>
+        </children>
+    </item>
+    <item nodeId="node-3248">
+        <command xml:space="preserve">take head</command>
+        <result xml:space="preserve">You already have that.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3249"></child>
+        </children>
+    </item>
+    <item nodeId="node-3249">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Tomb of Osiris
+The roof and walls has Nut and Geb stuff on it. At the center of the room is a sarcophagus, its wooden frame lavishly painted in the style of the New Kingdom. Comedically, it is wrapped in an almost absurd number of golden chains, as if to guard against any attempt to disturb its occupant.
+
+A moat surrounds the entire central nave.
+
+You can also see a sarcophagus (empty) here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3250"></child>
+        </children>
+    </item>
+    <item nodeId="node-3250">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3251"></child>
+        </children>
+    </item>
+    <item nodeId="node-3251">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You place the wood plank down, desperately hoping it'll bear your weight.
+
+Central Nave
+You stand in the middle of the columns lining the central nave and look around. Surrounding you are 17 small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have nly been a god. In front of it, a low altar sits, its surface decorated with scarce items. 
+
+A moat surrounds the entire central nave.
+
+A moat surrounds the entire central nave.
+
+You can also see a statue of Osiris and an altar here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3252"></child>
+        </children>
+    </item>
+    <item nodeId="node-3252">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You place the wood plank down, desperately hoping it'll bear your weight.
+
+First Transverse Chamber
+To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through.
+
+A moat surrounds the entire central nave.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3253"></child>
+        </children>
+    </item>
+    <item nodeId="node-3253">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">
+Great Hall
+South is a small chamber. North is the long descending passage. East is the first transverse chamber.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3254"></child>
+        </children>
+    </item>
+    <item nodeId="node-3254">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3255"></child>
+        </children>
+    </item>
+    <item nodeId="node-3255">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3256"></child>
+        </children>
+    </item>
+    <item nodeId="node-3256">
+        <command xml:space="preserve">wn</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3257"></child>
+        </children>
+    </item>
+    <item nodeId="node-3257">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+descending passage
+A long descending passage. Down south is a great hall. North is the gate.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3258"></child>
+        </children>
+    </item>
+    <item nodeId="node-3258">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">(first opening the stone door)
+It seems to be locked.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3259"></child>
+        </children>
+    </item>
+    <item nodeId="node-3259">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">(first opening the stone door)
+It seems to be locked.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3260"></child>
+        </children>
+    </item>
+    <item nodeId="node-3260">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">(first opening the stone door)
+It seems to be locked.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3261"></child>
+        </children>
+    </item>
+    <item nodeId="node-3261">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">(first opening the stone door)
+It seems to be locked.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -7030,12 +7233,23 @@ The transporter pad in the middle of the floor is currently dull blue: powered b
     </item>
     <item nodeId="node-2196">
         <command xml:space="preserve">get on chariot</command>
-        <result xml:space="preserve">You can't see any such thing.
+        <result xml:space="preserve">As you step onto the chariot, the serpents in front hiss joyfully, happy to see you again. From here you could choose to go to: 
+  1: Avaris
+  2: Busiris
+  3: Heliopolis
+  4: Memphis
+  5: Oxyrhynchos
+  6: Amarna
+  7: Abydos
+  8: Thebes
+  9: Elephantine
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-2210"></child>
             <child nodeId="node-2204"></child>
+            <child nodeId="node-3263"></child>
+            <child nodeId="node-3282"></child>
             <child nodeId="node-2197"></child>
             <child nodeId="node-2426"></child>
         </children>
@@ -7142,6 +7356,70 @@ You can see some bait, a fishing rod and a knife here.
         <result xml:space="preserve">bait: Taken.
 fishing rod: Taken.
 knife: Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-3282">
+        <command xml:space="preserve">8</command>
+        <result xml:space="preserve">Temple of Tawosret
+The Temple of Tawosret stands here.
+
+Your sun chariot is parked at the Temple of Tawosret, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-3263">
+        <command xml:space="preserve">6</command>
+        <result xml:space="preserve">Outside the Walled Village
+more description here
+
+Your sun chariot is parked at Outside the Walled Village, fiercely guarded by your pet serpents.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3264"></child>
+        </children>
+    </item>
+    <item nodeId="node-3264">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3265"></child>
+        </children>
+    </item>
+    <item nodeId="node-3265">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+Workmen's Village
+A dusty cluster of homes and workshops, bustling with activity.
+
+You can see a workman here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3266"></child>
+        </children>
+    </item>
+    <item nodeId="node-3266">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Outside the Walled Village
+more description here
+
+You can see a sun chariot here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3267"></child>
+        </children>
+    </item>
+    <item nodeId="node-3267">
+        <command xml:space="preserve">enter Workmen's Village</command>
+        <result xml:space="preserve">You can't see any such thing.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>

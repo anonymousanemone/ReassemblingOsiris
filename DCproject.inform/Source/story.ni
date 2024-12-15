@@ -46,6 +46,9 @@ Section 2 - New Definitions
 
 A Body Part is a kind of thing.
 
+Instead of dropping a body part:
+	say "You'll need that."
+
 A thing can be acquired or unacquired. A thing is usually unacquired.
 
 A thing can be examined or unexamined. A thing is usually unexamined.
@@ -101,7 +104,7 @@ id	transport (a region)	home (a room)
 5	Oxyrhynchos	Oxyrhynchos-Marketplace
 6	Amarna	Outside the Walled Village
 7	Abydos	Gate to the Osireion
-8	Thebes	Thebes-Marketplace
+8	Thebes	Temple of Tawosret 
 9	Elephantine	Elephantine-Marketplace
 
 Avaris, Busiris, Heliopolis, Memphis, Oxyrhynchos, Amarna, Abydos, Thebes, and Elephantine are regions. 
@@ -129,7 +132,6 @@ Avaris-Marketplace is a room in Avaris.
 Busiris-Marketplace is a room in Busiris.
 Heliopolis-Marketplace is a room in Heliopolis.
 Memphis-Marketplace is a room in Memphis.
-Thebes-Marketplace is a room in Thebes.
 Elephantine-Marketplace is a room in Elephantine.
 
 
@@ -266,11 +268,11 @@ Next Instructions is a scene. Next Instructions begin when Exploration Ends.
 	
 Section 2 - Workmen's village
 
-Outside the Walled Village is a room in Amarna. "more description here"
+Outside the Walled Village is a room in Amarna. "more description here. The entrance to the walled village is directly north of you. The walled workmen's villlage only has one gate."
+
+[maybe add security checkpoint moment as Medea walks through gate?]
 
 The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, bustling with activity."
-
-[make Medea park her chariot outside the village, and then get into the village. could include mention of how there's only one gate to the walled village. maybe she goes through security?]
 
 A body bag is a container. The carrying capacity of the body bag is 14. The description of the body bag is "A heavy cloth sack used for transporting... questionable things."
 
@@ -312,8 +314,9 @@ Instead of showing the head to the uncurious workman during Exploration:
 	
 Section 3 - Traveling to the temple
 
-[add a way she acquires oxcart]
-The oxcart is a rideable vehicle.
+[add a way she acquires oxcart maybe? or just a dialogue/reaction from the person she stole it from]
+
+The oxcart is a rideable vehicle. The description of the oxcart is "A sturdy wooden cart, drawn by a strong hunky ox."
 
 When Exploration begins:
 	now the oxcart is in Outside the Walled Village.
@@ -347,9 +350,25 @@ Instead of going to the Small Aten Temple when the player is on the oxcart:
 
 The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "Despite being the smaller Aten Temple, you could still see the foundations that stretched far. It was made of three courts, the first, second, and sanctuary court. You are standing in what used to be the sanctuary court, now demolished into nothingness. A partially reconstructed sanctuary stands before you. It looked glorious, despite being only a fraction of what would've once been there. "
 
-[make hidden stairway down to underground temple]
+The Sanctuary is a room in Amarna. It is north of the Small Aten Temple. "Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor the Aten, the sun disk. Around the perimeter of the sanctuary are low, carved altars, decorated with offerings and incense. In the center of the sanctuary, a shrine depicting Aten seems to shine in its golden splendor. (or something like that i guess)"
 
-Underground Chapel is a room in Amarna. It is below the Small Aten Temple. "The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls."
+The carved altars are scenery in the Sanctuary. "The low altars are made of sandstone, each inscribed with dedications to Aten. "
+
+The offerings are things in the Sanctuary. "Arranged delicately atop the altars are offerings of (something). Each item looks fresh, as if newly placed by worshippers -- odd."
+
+The Aten shrine is scenery in the Sanctuary. "(description of shrine, pick object?)"
+
+The hidden staircase is a closed unopenable door. The hidden staircase is above the Underground chapel and below the Small Aten Temple. 
+
+[remove reporting of the hidden door somehow]
+
+Instead of examining the shrine:
+	now the hidden staircase is open;
+	say "(description of shrine, pick object?)";
+	say "You hear an odd rumbling noise. (here the hidden staircase is revealed).";
+	continue the action.
+
+Underground Chapel is a room in Amarna. It is below the hidden staircase. "The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls."
 
 
 Section 4 - At the Small Aten Temple
@@ -363,7 +382,6 @@ A east mural is a thing in the Underground Chapel.
 A west mural is a thing in the Underground Chapel.
 
 
-
 [make several statues and murals so that she has to examine almost all of them. one contains a hint ]
 
 Instead of examining a mural in the Underground Chapel:
@@ -375,13 +393,69 @@ Section 5 - Back to the village
 
 
 
-test Amarna with "say hi / get on chariot / 6" holding the head.
+test Amarna with "n" in The small aten temple holding the head.
 
 Chapter 3 - Thebes-Heart
 
 Heart Acquisition is a scene. Heart Acquisition begins when Brain Acquisition ends. Heart Acquisition ends when Osiris' heart is acquired.
 
 Osiris' heart is a body part. 
+
+Section 1 - All the Locations
+
+The Temple of Thutmosis III is a room. It is in Thebes. "This temple honors Thutmosis III."
+
+The Ramesseum is south of The Temple of Thutmosis III. It is in Thebes. "The mortuary temple of Ramesses II looms large with its colossal statues. You can see a sign or something pointing to a 'house of life' further inside to the west. "
+
+The Temple of Thutmosis IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmosis IV."
+
+The Temple of Tawosret is south of the Temple of Thutmosis IV. It is in Thebes. "The Temple of Tawosret stands here."
+
+The Temple of Merenptah is south of the Temple of Tawosret. It is in Thebes. "The Temple of Merenptah is here."
+
+A collection of three temples is a room. It is south of the Temple of Merenptah. It is in Thebes. "This includes the temple of Thutmosis I, Amenhotep son of Hapu, and Thutmosis III."
+
+The Temple of Thutmosis I is scenery in the collection of three temples. "The Temple of Thutmosis I is here."
+
+The Temple of Amenhotep Son of Hapu is scenery in the collection of three temples. "The Temple of Amenhotep Son of Hapu is here."
+
+The Smaller Temple of Thutmosis III is scenery in the collection of three temples. "The (other smaller) Temple of Thutmosis III is here."
+
+The Temple of Amenhotep III is east of the the collection of three temples. It is in Thebes. "Amenhotep III's vast mortuary temple lies here."
+
+The Memnon Colossi is east of the Temple of Amenhotep III. It is in Thebes. "Two massive statues of Amenhotep III stand watch over the land."
+
+[the heart will be hidden in one of these two statues at the base]
+
+The Temple of Horemheb is south of the collection of three temples. It is in Thebes. "This temple stands as  tribute to Aÿ and Horemheb."
+
+[put Heracles at Horemheb]
+
+The Temple of Ramesses III is south of the Temple of Horemheb. It is in Thebes. "Here be Ramesses III's temple."
+
+Section 2 - The library
+
+[add something description or code to make entering house of life more intuitive: aka somehow medea knows house of life is library and it is in side the ramesseum. maybe a trigger of dialogue like the priest asks medea her purpose and she says for medicine]
+
+[longer dialogue first time, shorter dialogue for repeat visits]
+
+The House of Life is west of the Ramesseum. It is in Thebes. "This is the library! Often houses of life have been hinted to be attached/close to a temple precinct." 
+
+[also cannot be kidnapped in house of life]
+
+[some mechanic for finding correct papyri or simple description]
+
+Medical papyri is scenery in the Ramesseum. "You look around the shelves of papyri and found a shelf that caught your eye. something about the papyri. Incorporate a spell"
+
+[after examining papyri, player can type "think" to remember what she needs]
+
+Section 3 - 
+
+[when medea first lands, say "maybe it's time to explore to gather some hints about where Osiris might be]
+
+[Medea lands in Tawosret]
+
+Heracles is a person in the Temple of Horemheb.
 
 
 Chapter 4 - Busiris-Organs
