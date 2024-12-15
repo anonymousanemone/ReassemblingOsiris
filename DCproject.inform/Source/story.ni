@@ -22,6 +22,14 @@ When play begins:
 
 The carrying capacity of the player is 5.
 
+[This prevents the player from using the TAKE ALL command]
+Rule for deciding whether all includes a thing:
+	it does not.
+
+[This changes the default message “There are none at all available!”]
+Rule for printing a parser error when the latest parser error is the nothing to do error:
+	say “Now, now, don’t be greedy.”
+
 Section 1 - New Actions
 
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "talk to [something]" or “converse with [someone]” or "converse with [something]" as talking to.
@@ -39,6 +47,12 @@ Section 2 - New Definitions
 A Body Part is a kind of thing.
 
 A thing can be acquired or unacquired. A thing is usually unacquired.
+
+A thing can be examined or unexamined. A thing is usually unexamined.
+
+Instead of examining something:
+	continue the action;
+	now the noun is examined.
 
 
 Section 3 - Sun Chariot Travel
@@ -61,7 +75,7 @@ Check selecting:
 
 Carry out selecting:
 	let N be the number understood; [not actually a necessary step, but it makes the next line easier to understand]
-	choose row N in the Table of Chariot-Parking;
+	choose row N in the Table of Transport Options;
 	if the home entry is a room:
 		clear the screen;
 		[display the Figure of chariot;
@@ -79,30 +93,18 @@ To list the transport options:
 		increment N.
 
 Table of Transport Options
-id	transport (a region)
-1	Avaris
-2	Busiris
-3	Heliopolis
-4	Memphis
-5	Oxyrhynchos
-6	Amarna
-7	Abydos
-8	Thebes
-9	Elephantine
+id	transport (a region)	home (a room)
+1	Avaris	Avaris-Marketplace
+2	Busiris	Busiris-Marketplace
+3	Heliopolis	Heliopolis-Marketplace
+4	Memphis	Memphis-Marketplace
+5	Oxyrhynchos	Oxyrhynchos-Marketplace
+6	Amarna	Outside the Walled Village
+7	Abydos	Gate to the Osireion
+8	Thebes	Thebes-Marketplace
+9	Elephantine	Elephantine-Marketplace
 
 Avaris, Busiris, Heliopolis, Memphis, Oxyrhynchos, Amarna, Abydos, Thebes, and Elephantine are regions. 
-
-Table of Chariot-Parking
-id	home (a room)
-1	Avaris-Marketplace
-2	Busiris-Marketplace
-3	Heliopolis-Marketplace
-4	Memphis-Marketplace
-5	Oxyrhynchos-Marketplace
-6	Workmen's Village
-7	Gate to the Osireion
-8	Thebes-Marketplace
-9	Elephantine-Marketplace
 
 
 The sun chariot is an enterable supporter. It is in the Gate to the Osireion.
@@ -114,7 +116,7 @@ The sun chariot is an enterable supporter. It is in the Gate to the Osireion.
 		say "Your sun chariot is parked at [the location], fiercely guarded by your pet serpents.".]
 
 Every turn:
-	if there is a home of the location in the Table of Chariot-Parking and the sun chariot is not in the location:
+	if there is a home of the location in the Table of Transport Options and the sun chariot is not in the location:
 		move the sun chariot to the location;
 		say "Your sun chariot is parked at [the location], fiercely guarded by your pet serpents.".
 
@@ -142,7 +144,6 @@ Section 1 - Head capabilities
 
 Table of Osiris' unrelated knowledge
 comment
-"Lucy wears a size 9 shoe."
 "boop1"
 "boop2"
 
@@ -170,33 +171,60 @@ Instead of answering the door that something:
 	if the player's command includes "sun":
 		now the stone door is unlocked;
 		now the stone door is open;
-		say "As you speak the word 'sun,' the massive stone door grinds open, revealing a long narrow passa";
+		say "As you speak the word 'sun,' the massive stone door grinds open, revealing a long narrow passage.";
 	otherwise:
 		say "Nothing happens. Perhaps that is not the correct answer.";
 
 
-The Descending Passage is a room in Abydos. It is south of the stone door. "A long descending passage. Down south is a great hall. North is the gate. Easet is the first transverse chamber."
+The Descending Passage is a room in Abydos. It is south of the stone door. "A long descending passage. Down south is a great hall. North is the gate."
 
-The Great Hall is a room in Abydos. It is south of the Descending Passage. "South is a small chamber. North is the long descending passage."
+The Great Hall is a room in Abydos. It is south of the Descending Passage. "South is a small chamber. North is the long descending passage. East is the first transverse chamber."
 
-The Southern Chamber is a room in Abydos. It is south of the great hall. "The small chamber contains... something? North is the great hall" 
+The South Chamber is a room in Abydos. It is south of the great hall. "The small chamber contains... something? North is the great hall. Mention the things in the room in this description of the room. player can examine for more details." 
 
-The First Transverse Chamber is a room in Abydos. It is east of the Great Hall. [on first entrance, mention the long passage way between the two as well] 
+The sandstone walls are scenery in the South Chamber. The description of the sandstone walls is "Parts of the Book of the Dead is inscribed across these walls."
 
-The Doorway to the Osireion is a room in Abydos. It is east of the First Transverse Chamber. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through."
+The faience ankh is in the South Chamber. The description of the small ankh is "A delicate yet sturdy ankh, the symbol of life, carved from faience. " 
 
-The sun disk key is a thing in the Doorway.
+A bundle of dried thyme is in the South Chamber. The description of the dried herbs is "A bundle of dried thyme is tied together with simple strands of twine. It was so old and decrepit you could barely smell it."
 
-[instead of a sun disk key, program it so medea has to find a ladder/wood plank to cross]
+An ostracon is in the South Chamber. The description of the ostracon is "A shard of pottery is stained with hastily written hieratic."
 
-Instead of going to the Central Nave:
-	 if the player does not have the sun disk key:
+Some pottery jars are in the South Chamber. The description of the pottery jars is " Several small jars of varying shapes and sizes rest against the wall. Their surfaces are worn, with traces of paint suggesting they once bore vibrant designs. Among them, you see a broken jar with unguents and another fallen to the floor, with dried red stains around the rim."
+
+A wooden plank is in the South Chamber. The description of the wooden plank is "A short, splintered plank of cedar wood lies on the floor."
+
+Some knick-knacks are in the South Chamber. The description of the knick-knacks is "You sift through the assorted items: a bead that may have been part of a necklace, a sliver of ivory perhaps used as a tool, and a draining liquid clepsydra (water clock)."
+
+The First Transverse Chamber is a room in Abydos. It is east of the Great Hall. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through." [on first entrance, mention the long passage way between the two as well]
+
+
+The west moat is east of the First Transverse Chamber and west of the Central Nave. The west moat is an open unopenable door. "A moat surrounds the entire central nave." The description of the west moat is "Deep and murky." 
+
+The east moat is west of the Tomb of Osiris and east of the Central Nave. The east moat is an open unopenable door. "A moat surrounds the entire central nave." The description of the east moat is "Deep and murky." 
+
+[one day i fight the battle and make the plank have to be placed down and picked up grrr but not for the demo]
+
+Instead of going through the west moat:
+	if the player does not have the wooden plank:
     		say "You approach the edge of the moat, but there is no way across. The waters churn ominously, as if warning you to stay back.";
 	otherwise: 
-    		say "The golden sun disk in your possession begins to glow brightly, and a radiant bridge of light forms across the dark waters. With the way now open, you step forward.";
-    		continue the action.
+    		say "You place the wood plank down, desperately hoping it'll bear your weight.";
+		continue the action;
+		
+Instead of going through the east moat:
+	if the player does not have the wooden plank:
+    		say "You approach the edge of the moat, but there is no way across. The waters churn ominously, as if warning you to stay back.";
+	otherwise: 
+    		say "You place the wood plank down, desperately hoping it'll bear your weight.";
+		continue the action;
+		
+The Central Nave is a room in Abydos. It is east of the west moat. "You stand in the middle of the columns lining the central nave and look around. Surrounding you are 17 small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have nly been a god. In front of it, a low altar sits, its surface decorated with scarce items. "
+[only print the description of one moat when in central nave, currently it prints twice]
 
-The Central Nave is a room in Abydos. It is east of the Doorway. "You stand in the middle of the columns lining the central nave and look around. Surrounding you are 17 small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west."
+The statue of Osiris is in the Central Nave. The description of the statue of Osiris is "Carved from greywacke, it exudes power and authority. Osiris sits on a throne in a mummified form wearing a close-fitting enveloping garment, a divine beard attached to his chin, and the Atef crown flanked by two ostrich feathers, adorned with the uraeus cobra. He holds the royal crook and flail with his arms crossed on his chest. The base of the statue is inscribed with an offering prayer, while the back pillar of the statue is not inscribed. (from the cairo museum, feel free to change) He sure looks put together-- a drastic difference from his current state."
+
+The altar is in the Central Nave. The description of the altar is "The altar is a simple stone slab, weathered and chipped at the edges but still retaining an air of solemnity. On its surface are the remains of some incense."
 
 Before going when the location is the Central Nave:
 	if the noun is east or the noun is west:
@@ -204,13 +232,17 @@ Before going when the location is the Central Nave:
 	otherwise:
 		say "With the moat surrounding the central nave, it's a struggle to go anywhere." instead.
 
-The Tomb of Osiris is a room in Abydos. It is east of the Central Nave. 
+The Tomb of Osiris is a room in Abydos. It is east of the east moat. "The roof and walls has Nut and Geb stuff on it. At the center of the room is a sarcophagus, its wooden frame lavishly painted in the style of the New Kingdom. Comedically, it is wrapped in an almost absurd number of golden chains, as if to guard against any attempt to disturb its occupant."
 
-[lock his head in a box/sarcophagus and make it require a key]
+The painted roof is scenery in the Tomb of Osiris. The description of the painted roof is "The depiction of Nut, her star-strewn body stretching across the heavens, is both graceful and imposing. Beneath her, Geb lies in repose, his green-toned skin symbolizing fertility and life. The colors have dulled over time, but the craftsmanship remains evident."
 
-Osiris' head is a body part. It is in the Tomb. Osiris' head can be taken. Understand "Osiris" as Osiris' head. Include (- has animate -) when defining Osiris' head. Osiris' head can be smart or dumb. Osiris' head is dumb.
+The inscribed walls are scenery in the Tomb of Osiris. The description of the inscribed walls is "The hieroglyphs here are meticulously carved, detailing invocations to the gods and protective spells. Some portions of the text are damaged, yet the overall message of guidance and protection is clear."
 
-Test Abydos with "s" in the Gate to the Osireion.
+The sarcophagus is a closed container. It is locked. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Osiris, the vain man, must have made it auto-update every now and then to keep up with the most popular coffin style." The sarcophagus has matching key the faience ankh.
+
+Osiris' head is a body part. It is in the sarcophagus. Osiris' head can be taken. Understand "Osiris" as Osiris' head. Include (- has animate -) when defining Osiris' head. Osiris' head can be smart or dumb. Osiris' head is dumb. The description of Osiris' head is "Osiris, in all his glorious, head-only form."
+
+Test Abydos with "e" in the First Transverse Chamber holding the wooden plank and faience ankh.
 
 
 Part 4 - Talking Osiris Agenda
@@ -234,11 +266,17 @@ Next Instructions is a scene. Next Instructions begin when Exploration Ends.
 	
 Section 2 - Workmen's village
 
-The Workmen's Village is a room in Amarna. "A dusty cluster of homes and workshops, bustling with activity. The air smells of clay and stone."
+Outside the Walled Village is a room in Amarna. "more description here"
+
+The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, bustling with activity."
 
 [make Medea park her chariot outside the village, and then get into the village. could include mention of how there's only one gate to the walled village. maybe she goes through security?]
 
 A body bag is a container. The carrying capacity of the body bag is 14. The description of the body bag is "A heavy cloth sack used for transporting... questionable things."
+
+Check inserting something into the body bag:
+	if the noun is not a body part:
+		say "The body bag isn't for this." instead.
 
 A workman is a person. The workman is in the Workmen's Village. The workman carries a body bag. The workman can be curious or uncurious. The workman is uncurious.
 
@@ -274,8 +312,6 @@ Instead of showing the head to the uncurious workman during Exploration:
 	
 Section 3 - Traveling to the temple
 
-Outside the Walled Village is a room in Amarna. It is south of Workmen's Village. "more description here"
-
 [add a way she acquires oxcart]
 The oxcart is a rideable vehicle.
 
@@ -309,7 +345,7 @@ After going to Outside the Walled Village:
 Instead of going to the Small Aten Temple when the player is on the oxcart:
 	say "You can hardly ride a cart into the temple!"
 
-The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "A partially reconstructed temple dedicated to the Aten. Sunlight streams through its ruined walls, illuminating faded murals."
+The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "Despite being the smaller Aten Temple, you could still see the foundations that stretched far. It was made of three courts, the first, second, and sanctuary court. You are standing in what used to be the sanctuary court, now demolished into nothingness. A partially reconstructed sanctuary stands before you. It looked glorious, despite being only a fraction of what would've once been there. "
 
 [make hidden stairway down to underground temple]
 
@@ -326,7 +362,6 @@ A east mural is a thing in the Underground Chapel.
 
 A west mural is a thing in the Underground Chapel.
 
-A statue is a thing in the Underground Chapel.
 
 
 [make several statues and murals so that she has to examine almost all of them. one contains a hint ]
@@ -452,27 +487,64 @@ A knife is a blade in Oxyrhynchos-Marketplace.
 
 Section 3 - Tawaret conflict
 
-The Nile Riverbank is in Oxyrhynchos. It is east of Oxyrhynchos-Marketplace. "You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something)"
+The Nile Riverbank is in Oxyrhynchos. It is east of Oxyrhynchos-Marketplace. "You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace."
+
+The Taweret Amulet is a thing. 
+
+Tawaret Conflict is a scene. Tawaret Conflict begins when the player is in the Nile Riverbank for the first time. Tawaret Conflict ends when the Taweret Amulet is acquired.
 
 [add lots of dialogue and the whole conflict relating to tawaret]
 
+[Ruya makes the Tawaret character and all associated interactions]
+
 Section 4 - Fishing game
 
-Fish are a kind of container. Fish are edible. A catfish is a fish. Fish can be found in the Nile Riverbank.
+[maybe change the description of the Nile once Tawaret is gone. mention the fish in it]
 
-The catfish is a closed container in the nile riverbank. The description of the catfish is "[if player is not carrying catfish] It's a catfish... I wonder if that has any significance? [end if] [if player is carrying closed catfish] You eye the catfish with great suspicion. It looks back at you and reveals nothing. Maybe its silence can be resolved by a good gutting."
+A species is a kind of value. The plural of species is species. The species are perch, tilapia, mormyrid, and tigerfish. 
 
-Osiris' penis is a body part in the catfish. Understand "penis/phallus" as Osiris' penis.
+A fish is a kind of container. A fish are edible. A fish is closed. A fish can be found in the Nile Riverbank. The plural of fish is fish. A fish has a species. The species of a fish is usually tilapia. The description of a fish is usually "A fish." Understand the species property as describing a fish.
+
+In the Nile Riverbank there is 10 fish.
+
+After printing the name of a fish:
+	omit contents in listing.
+
+A fish gut is a kind of thing. The description of fish guts is "Fish guts." Fish gut is in every fish.
+
+Rule for printing the name of fish gut:
+	say "fish guts".
+
+Before listing contents: group fish together.
+
+Rule for printing the name of a fish:
+	say "[species]".
+
+[Rule for printing a number of fish (called the target): 
+	if the listing group size is less than 4:
+		say "a few "; 
+	else if the listing group size is less than 6:
+		say "some ";
+	else if the listing group size is less than 8:
+		say "a bunch of ";
+	else:
+		 say "many ";
+	carry out the printing the plural name activity with the target.]
+
+A catfish is a closed container. The description of the catfish is "[if player is not carrying catfish] It's a catfish... I wonder if that has any significance? [end if] [if player is carrying closed catfish] You eye the catfish with great suspicion. It looks back at you and reveals nothing. Maybe its silence can be resolved by a good gutting.[end if] [if catfish is open] It's been gutted. Poor catfish."
+
+Instead of taking a fish:
+	say "The fish are swimming freely in the Nile. Maybe you could try fishing for it."
+
+Instead of eating the catfish:
+	say "You look at it with immense distrust. It just looks so awfully... fishy... Better not.".
+	
+
+Osiris' penis is a body part in catfish. Understand "penis/phallus" as Osiris' penis.
 
 Instead of taking Osiris' penis:
 	continue the action;
 	now Osiris' penis is acquired.
-
-Instead of taking the catfish:
-	say "The catfish is swimming freely in the Nile. Maybe you could try fishing for it."
-
-Instead of eating the catfish:
-	say "You look at it with immense distrust. It just looks so awfully... fishy... Better not.".
 	
 Baiting is an action applying to one carried thing. Understand "bait [something]" as baiting.
 
@@ -491,7 +563,7 @@ Carry out baiting:
 	otherwise:
 		say "More is not always better."
 			
-Understand "fish" as fishing. Fishing is an action applying to nothing. 
+Fishing is an action applying to nothing. Understand "fish" or "go fishing" or "go fish" as fishing.
 
 Before fishing:
 	if the fishing rod is not carried:
@@ -500,22 +572,37 @@ Before fishing:
 		say "You won't catch much without bait on the hook."  instead;
 	otherwise if player is not in Nile Riverbank:
 		say "This is not a viable place to be fishing." instead;
-	otherwise if player is carrying the catfish:
-		say "You already have a fish in your posession. Don't be so greedy." instead;
+[	otherwise if player is carrying the catfish:
+		say "You already have a fish in your posession. Don't be so greedy." instead;]
 	otherwise:
 		say "You cast your fishing rod out with a strong throw..."
 		
-[maybe change format of the fishing game? instead of missing and rethrowing, let her fish up trash? or someting else]
+		
+Instead of dropping a fish:
+	now the noun is nowhere;
+	say "You drop the fish. It makes a valiant leap for the river and succeeds! It swims away aggressively."
 		
 Carry out fishing:
+	if a random chance of 1 in 5 succeeds:
+		move the catfish to the player;
+		say “You have caught the catfish!”;
+	otherwise:
+		let X be a fish;
+		unless X is nothing:
+			now the species of X is a random species;
+			move X to the player;
+			say “You have caught a [species of X].”
+		
+		
+[Carry out fishing:
 	if a random chance of 1 in 5 succeeds:
 		move the catfish to the player;
 		say “You have caught the catfish!”;		
 		now the fishing rod is unbaited;
 	otherwise:
-		say “And pulled up nothing.”;
+		say “And pulled up nothing.”;]
 
-Test fish with "take all / bait rod / e / fish" in Oxyrhynchos-Marketplace.
+Test fish with "take rod / take knife / take bait / bait rod / e" in Oxyrhynchos-Marketplace.
 			
 Chapter 7 - Elephantine-Torso
 

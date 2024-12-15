@@ -10,7 +10,7 @@
 
 DCproject
 An Interactive Fiction by Sophia Ling
-Release 1 / Serial number 241213 / Inform 7 v10.1.2 / D
+Release 1 / Serial number 241215 / Inform 7 v10.1.2 / D
 
 Gate to the Osireion
 The doorway to the temple stands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded. (please add more historical info and revise this)
@@ -53,13 +53,16 @@ You can see a sun chariot here.
             <child nodeId="node-2429"></child>
             <child nodeId="node-2127"></child>
             <child nodeId="node-2124"></child>
+            <child nodeId="node-3127"></child>
             <child nodeId="node-2122"></child>
+            <child nodeId="node-3136"></child>
             <child nodeId="node-2078"></child>
             <child nodeId="node-2062"></child>
             <child nodeId="node-2054"></child>
             <child nodeId="node-2050"></child>
             <child nodeId="node-2046"></child>
             <child nodeId="node-2044"></child>
+            <child nodeId="node-2963"></child>
             <child nodeId="node-2529"></child>
             <child nodeId="node-2440"></child>
             <child nodeId="node-2744"></child>
@@ -67,6 +70,7 @@ You can see a sun chariot here.
             <child nodeId="node-1992"></child>
             <child nodeId="node-1978"></child>
             <child nodeId="node-1972"></child>
+            <child nodeId="node-3115"></child>
             <child nodeId="node-1961"></child>
             <child nodeId="node-1931"></child>
         </children>
@@ -486,6 +490,126 @@ You see three rips in the catfish, revealing Osiris' penis.
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
     </item>
+    <item nodeId="node-3115">
+        <command xml:space="preserve">x door</command>
+        <result xml:space="preserve">The heavy stone door is engraved with an ancient riddle: 
+ "I am yesterday, veiled in shadows. 
+ I am tomorrw, cloaked in flames. 
+ A union of gods, a cycle complete."
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3116"></child>
+        </children>
+    </item>
+    <item nodeId="node-3116">
+        <command xml:space="preserve">say sun</command>
+        <result xml:space="preserve">(to the stone door)
+As you speak the word "sun," the massive stone door grinds open, revealing a long narrow passa
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3117"></child>
+        </children>
+    </item>
+    <item nodeId="node-3117">
+        <command xml:space="preserve">hello</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3118"></child>
+        </children>
+    </item>
+    <item nodeId="node-3118">
+        <command xml:space="preserve">enter door</command>
+        <result xml:space="preserve">
+descending passage
+A long descending passage. Down south is a great hall. North is the gate. Easet is the first transverse chamber.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3119"></child>
+        </children>
+    </item>
+    <item nodeId="node-3119">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3120"></child>
+        </children>
+    </item>
+    <item nodeId="node-3120">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3121"></child>
+        </children>
+    </item>
+    <item nodeId="node-3121">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Great Hall
+South is a small chamber. North is the long descending passage.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3122"></child>
+        </children>
+    </item>
+    <item nodeId="node-3122">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">
+First Transverse Chamber
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3123"></child>
+        </children>
+    </item>
+    <item nodeId="node-3123">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">First Transverse Chamber
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3124"></child>
+        </children>
+    </item>
+    <item nodeId="node-3124">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">
+Great Hall
+South is a small chamber. North is the long descending passage.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3125"></child>
+        </children>
+    </item>
+    <item nodeId="node-3125">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+South Chamber
+The small chamber contains... something? North is the great hall. Mention the things in the room in this description of the room. player can examine for more details.
+
+You can see a faience ankh, a bundle of dried thyme, an ostracon, some pottery jars, a wooden plank and some knick-knacks here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3126"></child>
+        </children>
+    </item>
+    <item nodeId="node-3126">
+        <command xml:space="preserve">take plank</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
     <item nodeId="node-1972">
         <command xml:space="preserve">x catfish</command>
         <result xml:space="preserve">You see nothing special about the catfish.
@@ -690,48 +814,99 @@ It is entitled Why Not To Take A Stuffed Bear, A Chocolate Cookie And A Book To 
     </item>
     <item nodeId="node-1994">
         <command xml:space="preserve">test fish</command>
-        <result xml:space="preserve">(first moving to Oxyrhynchus)
+        <result xml:space="preserve">(first moving to Oxyrhynchos-Marketplace)
 
 (Testing.)
 
-&gt;[1] take all
-bait: Taken.
-fishing rod: Taken.
-knife: Taken.
+&gt;[1] take rod
+Taken.
 
-&gt;[2] bait rod
+Your sun chariot is parked at Oxyrhynchos-Marketplace, fiercely guarded by your pet serpents.
+
+&gt;[2] take knife
+Taken.
+
+&gt;[3] take bait
+Taken.
+
+&gt;[4] bait rod
 You attach the bait carefully to the fishing rod.
 
-&gt;[3] e
+&gt;[5] e
 
 Nile Riverbank
-You are at the bank of the Nile.
-
-You can see a catfish here.
-
-&gt;[4] fish
-You cast your fishing rod out with a strong throw...
-
-You missed the fish!
+You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace.
 
 &gt;</result>
-        <commentary xml:space="preserve">[1] take all
-[2] bait rod
-[3] e
-[4] fish
+        <commentary xml:space="preserve">[1] take rod
+[2] take knife
+[3] take bait
+[4] bait rod
+[5] e
 </commentary>
         <children><child nodeId="node-1995"></child>
+            <child nodeId="node-2925"></child>
+            <child nodeId="node-2931"></child>
         </children>
+    </item>
+    <item nodeId="node-2931">
+        <command xml:space="preserve">x fish</command>
+        <result xml:space="preserve">You see nothing special about many fish.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2932"></child>
+        </children>
+    </item>
+    <item nodeId="node-2932">
+        <command xml:space="preserve">take fish</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2933"></child>
+        </children>
+    </item>
+    <item nodeId="node-2933">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  many fish
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2925">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Nile Riverbank
+You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace.
+
+You can see many fish here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2926"></child>
+        </children>
+    </item>
+    <item nodeId="node-2926">
+        <command xml:space="preserve">x fish</command>
+        <result xml:space="preserve">You see nothing special about many fish.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-1995">
         <command xml:space="preserve">fish</command>
         <result xml:space="preserve">You cast your fishing rod out with a strong throw...
 
-You missed the fish!
+You have caught a perch.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
-        <children><child nodeId="node-2009"></child>
+        <children><child nodeId="node-3075"></child>
+            <child nodeId="node-2009"></child>
+            <child nodeId="node-2984"></child>
             <child nodeId="node-1996"></child>
         </children>
     </item>
@@ -852,15 +1027,566 @@ You are in Oxyrhynchus, home of the medjed elephantfish. A little further east i
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
     </item>
+    <item nodeId="node-2984">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a tigerfish
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2985"></child>
+            <child nodeId="node-3006"></child>
+        </children>
+    </item>
+    <item nodeId="node-3006">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a mormyrid.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3007"></child>
+        </children>
+    </item>
+    <item nodeId="node-3007">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a mormyrid
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3008"></child>
+        </children>
+    </item>
+    <item nodeId="node-3008">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a perch.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3050"></child>
+            <child nodeId="node-3009"></child>
+        </children>
+    </item>
+    <item nodeId="node-3009">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a perch
+  a catfish
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3010"></child>
+        </children>
+    </item>
+    <item nodeId="node-3010">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Nile Riverbank
+You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace.
+
+You can see nine fish (closed) here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3011"></child>
+        </children>
+    </item>
+    <item nodeId="node-3011">
+        <command xml:space="preserve">drop perch</command>
+        <result xml:space="preserve">You drop the fish. It makes a valiant leap for the river and succeeds! It swims away aggressively.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3012"></child>
+        </children>
+    </item>
+    <item nodeId="node-3012">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a catfish
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3013"></child>
+        </children>
+    </item>
+    <item nodeId="node-3013">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Nile Riverbank
+You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace.
+
+You can see nine fish (closed) here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3014"></child>
+        </children>
+    </item>
+    <item nodeId="node-3014">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught the catfish!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3015"></child>
+        </children>
+    </item>
+    <item nodeId="node-3015">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught the catfish!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3016"></child>
+        </children>
+    </item>
+    <item nodeId="node-3016">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a mormyrid.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3017"></child>
+        </children>
+    </item>
+    <item nodeId="node-3017">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a mormyrid
+  a catfish
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3018"></child>
+        </children>
+    </item>
+    <item nodeId="node-3018">
+        <command xml:space="preserve">drop fish</command>
+        <result xml:space="preserve">(the mormyrid)
+You drop the fish. It makes a valiant leap for the river and succeeds! It swims away aggressively.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3019"></child>
+        </children>
+    </item>
+    <item nodeId="node-3019">
+        <command xml:space="preserve">drop catfish</command>
+        <result xml:space="preserve">Dropped.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3020"></child>
+        </children>
+    </item>
+    <item nodeId="node-3020">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3021"></child>
+        </children>
+    </item>
+    <item nodeId="node-3021">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Nile Riverbank
+You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace.
+
+You can see a catfish and nine fish (closed) here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3022"></child>
+        </children>
+    </item>
+    <item nodeId="node-3022">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a tilapia.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3023"></child>
+        </children>
+    </item>
+    <item nodeId="node-3023">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a tilapia
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3024"></child>
+        </children>
+    </item>
+    <item nodeId="node-3024">
+        <command xml:space="preserve">cut fish</command>
+        <result xml:space="preserve">You slash the tilapia with the knife.
+
+Visible within is a fish guts.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3025"></child>
+        </children>
+    </item>
+    <item nodeId="node-3025">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a tilapia
+    a fish guts
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3026"></child>
+        </children>
+    </item>
+    <item nodeId="node-3026">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Nile Riverbank
+You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace.
+
+You can see a catfish and nine fish (closed) here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3027"></child>
+        </children>
+    </item>
+    <item nodeId="node-3027">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a perch.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3028"></child>
+        </children>
+    </item>
+    <item nodeId="node-3028">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a perch
+    a fish guts
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-3050">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a tigerfish.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3051"></child>
+        </children>
+    </item>
+    <item nodeId="node-3051">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a mormyrid.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3052"></child>
+        </children>
+    </item>
+    <item nodeId="node-3052">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a mormyrid.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3053"></child>
+        </children>
+    </item>
+    <item nodeId="node-3053">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught the catfish!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3054"></child>
+        </children>
+    </item>
+    <item nodeId="node-3054">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a catfish
+  a mormyrid
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3055"></child>
+        </children>
+    </item>
+    <item nodeId="node-3055">
+        <command xml:space="preserve">cut catfish</command>
+        <result xml:space="preserve">You slash the catfish with the knife.
+
+Visible within is Osiris' penis.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3056"></child>
+        </children>
+    </item>
+    <item nodeId="node-3056">
+        <command xml:space="preserve">cut catfish</command>
+        <result xml:space="preserve">You slash the catfish with the knife.
+
+Visible within is Osiris' penis.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3057"></child>
+        </children>
+    </item>
+    <item nodeId="node-3057">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a catfish
+    Osiris' penis
+  a mormyrid
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3058"></child>
+        </children>
+    </item>
+    <item nodeId="node-3058">
+        <command xml:space="preserve">x catfish</command>
+        <result xml:space="preserve"> 
+
+You see two rips in the catfish, revealing Osiris' penis.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3059"></child>
+        </children>
+    </item>
+    <item nodeId="node-3059">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a perch.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3060"></child>
+        </children>
+    </item>
+    <item nodeId="node-3060">
+        <command xml:space="preserve">x perch</command>
+        <result xml:space="preserve">A fish.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2985">
+        <command xml:space="preserve">cut fish</command>
+        <result xml:space="preserve">(the fish)
+You slash the fish with the knife.
+
+Visible within is a Fish guts.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2986"></child>
+        </children>
+    </item>
+    <item nodeId="node-2986">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a fish
+    a Fish guts
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2987"></child>
+        </children>
+    </item>
+    <item nodeId="node-2987">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a perch.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2988"></child>
+        </children>
+    </item>
+    <item nodeId="node-2988">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a fish
+    a Fish guts
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2989"></child>
+        </children>
+    </item>
+    <item nodeId="node-2989">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a fish
+    a Fish guts
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2990"></child>
+        </children>
+    </item>
+    <item nodeId="node-2990">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Nile Riverbank
+You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace.
+
+You can see nine fish (closed) here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2991"></child>
+        </children>
+    </item>
+    <item nodeId="node-2991">
+        <command xml:space="preserve">drop fish</command>
+        <result xml:space="preserve">(the fish)
+You drop the fish. It makes a valiant leap for the river and succeeds! It swims away aggressively.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2992"></child>
+        </children>
+    </item>
+    <item nodeId="node-2992">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2993"></child>
+        </children>
+    </item>
+    <item nodeId="node-2993">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Nile Riverbank
+You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace.
+
+You can see nine fish (closed) here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2994"></child>
+        </children>
+    </item>
+    <item nodeId="node-2994">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a tigerfish.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2995"></child>
+        </children>
+    </item>
+    <item nodeId="node-2995">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a fish
+    a Fish guts
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2996"></child>
+        </children>
+    </item>
+    <item nodeId="node-2996">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Nile Riverbank
+You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace.
+
+You can see nine fish (closed) here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2997"></child>
+        </children>
+    </item>
+    <item nodeId="node-2997">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Nile Riverbank
+You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace.
+
+You can see nine fish (closed) here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
     <item nodeId="node-2009">
         <command xml:space="preserve">fish</command>
         <result xml:space="preserve">You cast your fishing rod out with a strong throw...
 
-You missed the fish!
+You have caught a perch.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-2014"></child>
+            <child nodeId="node-3112"></child>
             <child nodeId="node-2010"></child>
         </children>
     </item>
@@ -900,15 +1626,47 @@ Visible within is Osiris' penis.
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
     </item>
-    <item nodeId="node-2014">
-        <command xml:space="preserve">fish</command>
-        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
-
-You have caught the catfish!
+    <item nodeId="node-3112">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a perch
+  a knife
+  a fishing rod with bait
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
-        <children><child nodeId="node-2026"></child>
+        <children><child nodeId="node-3113"></child>
+        </children>
+    </item>
+    <item nodeId="node-3113">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a tilapia.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3114"></child>
+        </children>
+    </item>
+    <item nodeId="node-3114">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a tilapia
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2014">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You already have a fish in your posession. Don't be so greedy.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2948"></child>
+            <child nodeId="node-2026"></child>
             <child nodeId="node-2024"></child>
             <child nodeId="node-2015"></child>
         </children>
@@ -1026,11 +1784,10 @@ Visible within is Osiris' penis.
         <command xml:space="preserve">fish</command>
         <result xml:space="preserve">You cast your fishing rod out with a strong throw...
 
-You missed the fish!
-
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
-        <children><child nodeId="node-2038"></child>
+        <children><child nodeId="node-2914"></child>
+            <child nodeId="node-2038"></child>
             <child nodeId="node-2027"></child>
         </children>
     </item>
@@ -1199,6 +1956,246 @@ Visible within is Osiris' penis.
   a catfish
   a knife
   a fishing rod
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2914">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2915"></child>
+        </children>
+    </item>
+    <item nodeId="node-2915">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2916"></child>
+        </children>
+    </item>
+    <item nodeId="node-2916">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2917"></child>
+        </children>
+    </item>
+    <item nodeId="node-2917">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2918"></child>
+        </children>
+    </item>
+    <item nodeId="node-2918">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2919"></child>
+        </children>
+    </item>
+    <item nodeId="node-2919">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2920"></child>
+        </children>
+    </item>
+    <item nodeId="node-2920">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught the catfish!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2948">
+        <command xml:space="preserve">drop catfish</command>
+        <result xml:space="preserve">Dropped.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2949"></child>
+        </children>
+    </item>
+    <item nodeId="node-2949">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a perch.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2950"></child>
+        </children>
+    </item>
+    <item nodeId="node-2950">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a perch.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2951"></child>
+        </children>
+    </item>
+    <item nodeId="node-2951">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a perch.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2952"></child>
+        </children>
+    </item>
+    <item nodeId="node-2952">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a tilapia.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2953"></child>
+        </children>
+    </item>
+    <item nodeId="node-2953">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a Fish
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2954"></child>
+        </children>
+    </item>
+    <item nodeId="node-2954">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a perch.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2955"></child>
+        </children>
+    </item>
+    <item nodeId="node-2955">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Nile Riverbank
+You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace.
+
+You can see a catfish and nine fish (closed) here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2956"></child>
+        </children>
+    </item>
+    <item nodeId="node-2956">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a Fish
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2957"></child>
+        </children>
+    </item>
+    <item nodeId="node-2957">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a perch.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2958"></child>
+        </children>
+    </item>
+    <item nodeId="node-2958">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a Fish
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2959"></child>
+        </children>
+    </item>
+    <item nodeId="node-2959">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a perch.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2960"></child>
+        </children>
+    </item>
+    <item nodeId="node-2960">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a Fish
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2961"></child>
+        </children>
+    </item>
+    <item nodeId="node-2961">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a perch.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2962"></child>
+        </children>
+    </item>
+    <item nodeId="node-2962">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a Fish
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-3075">
+        <command xml:space="preserve">cut fish</command>
+        <result xml:space="preserve">(the tigerfish)
+You slash the tigerfish with the knife.
+
+Visible within is a fish guts.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -1844,25 +2841,108 @@ Your sun chariot is parked at the Workmen's Village, fiercely guarded by your pe
     </item>
     <item nodeId="node-2440">
         <command xml:space="preserve">test abydos</command>
-        <result xml:space="preserve">(first moving to Gate to the Oseiron)
+        <result xml:space="preserve">(first moving to First Transverse Chamber)
 
+(first acquiring the faience ankh)
+(first acquiring the wooden plank)
 (Testing.)
 
-&gt;[1] s
-(first opening the stone door)
-It seems to be locked.
+&gt;[1] e
+You place the wood plank down, desperately hoping it'll bear your weight.
+
+Central Nave
+You stand in the middle of the columns lining the central nave and look around. Surrounding you are 17 small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have nly been a god. In front of it, a low altar sits, its surface decorated with scarce items. 
+
+A moat surrounds the entire central nave.
+
+A moat surrounds the entire central nave.
+
+You can also see a statue of Osiris and an altar here.
 
 &gt;</result>
-        <commentary xml:space="preserve">[1] s
+        <commentary xml:space="preserve">[1] e
 </commentary>
-        <children><child nodeId="node-2457"></child>
+        <children><child nodeId="node-3215"></child>
+            <child nodeId="node-2457"></child>
             <child nodeId="node-2664"></child>
             <child nodeId="node-2677"></child>
             <child nodeId="node-2595"></child>
+            <child nodeId="node-3194"></child>
             <child nodeId="node-2654"></child>
             <child nodeId="node-2448"></child>
             <child nodeId="node-2671"></child>
+            <child nodeId="node-3237"></child>
         </children>
+    </item>
+    <item nodeId="node-3237">
+        <command xml:space="preserve">x statue</command>
+        <result xml:space="preserve">Carved from greywacke, it exudes power and authority. Osiris sits on a throne in a mummified form wearing a close-fitting enveloping garment, a divine beard attached to his chin, and the Atef crown flanked by two ostrich feathers, adorned with the uraeus cobra. He holds the royal crook and flail with his arms crossed on his chest. The base of the statue is inscribed with an offering prayer, while the back pillar of the statue is not inscribed. (from the cairo museum, feel free to change) He sure looks put together-- a drastic difference from his current state.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3238"></child>
+        </children>
+    </item>
+    <item nodeId="node-3238">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a wooden plank
+  a faience ankh
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3239"></child>
+        </children>
+    </item>
+    <item nodeId="node-3239">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You place the wood plank down, desperately hoping it'll bear your weight.
+
+Tomb of Osiris
+The roof and walls has Nut and Geb stuff on it. At the center of the room is a sarcophagus, its wooden frame lavishly painted in the style of the New Kingdom. Comedically, it is wrapped in an almost absurd number of golden chains, as if to guard against any attempt to disturb its occupant.
+
+A moat surrounds the entire central nave.
+
+You can also see a sarcophagus (closed) here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3240"></child>
+        </children>
+    </item>
+    <item nodeId="node-3240">
+        <command xml:space="preserve">open sarcophagus with ankh</command>
+        <result xml:space="preserve">You unlock the sarcophagus.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3241"></child>
+        </children>
+    </item>
+    <item nodeId="node-3241">
+        <command xml:space="preserve">open sarcophagus</command>
+        <result xml:space="preserve">You open the sarcophagus, revealing Osiris' head.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3242"></child>
+        </children>
+    </item>
+    <item nodeId="node-3242">
+        <command xml:space="preserve">x head</command>
+        <result xml:space="preserve">Osiris, in all his glorious, head-only form.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3243"></child>
+        </children>
+    </item>
+    <item nodeId="node-3243">
+        <command xml:space="preserve">take head</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-2671">
         <command xml:space="preserve">x door</command>
@@ -1947,12 +3027,20 @@ Central Nave
     </item>
     <item nodeId="node-2654">
         <command xml:space="preserve">w</command>
-        <result xml:space="preserve">
+        <result xml:space="preserve">You cross the precarious wood plank again.
+
 First Transverse Chamber
+To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through.
+
+A moat surrounds the entire central nave.
+
+You can also see a sun disk key here.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
-        <children><child nodeId="node-2655"></child>
+        <children><child nodeId="node-3171"></child>
+            <child nodeId="node-3187"></child>
+            <child nodeId="node-2655"></child>
         </children>
     </item>
     <item nodeId="node-2655">
@@ -2026,6 +3114,299 @@ A long descending passage. Down south is a great hall. North is the gate.
         <result xml:space="preserve">
 Gate to the Oseiron
 The doorway to the temple tands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-3187">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3188"></child>
+        </children>
+    </item>
+    <item nodeId="node-3188">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">First Transverse Chamber
+To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through.
+
+A moat surrounds the entire central nave.
+
+You can also see a sun disk key here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3189"></child>
+        </children>
+    </item>
+    <item nodeId="node-3189">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You cross the precarious wood plank again.
+
+Central Nave
+You stand in the middle of the columns lining the central nave and look around. Surrounding you are 17 small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have nly been a god. In front of it, a low altar sits, its surface decorated with scarce items. 
+
+A moat surrounds the entire central nave.
+
+A moat surrounds the entire central nave.
+
+You can also see a statue of Osiris and an altar here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3190"></child>
+        </children>
+    </item>
+    <item nodeId="node-3190">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Central Nave
+You stand in the middle of the columns lining the central nave and look around. Surrounding you are 17 small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have nly been a god. In front of it, a low altar sits, its surface decorated with scarce items. 
+
+A moat surrounds the entire central nave.
+
+A moat surrounds the entire central nave.
+
+You can also see a statue of Osiris and an altar here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3191"></child>
+        </children>
+    </item>
+    <item nodeId="node-3191">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-3171">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You cross the precarious wood plank again.
+
+Central Nave
+You stand in the middle of the columns lining the central nave and look around. Surrounding you are 17 small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have nly been a god. In front of it, a low altar sits, its surface decorated with scarce items. 
+
+A moat surrounds the entire central nave.
+
+A moat surrounds the entire central nave.
+
+You can also see a statue of Osiris and an altar here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3203"></child>
+            <child nodeId="node-3172"></child>
+        </children>
+    </item>
+    <item nodeId="node-3172">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You place the wood plank down, desperately hoping it'll bear your weight.
+
+First Transverse Chamber
+To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through.
+
+A moat surrounds the entire central nave.
+
+You can also see a sun disk key here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3173"></child>
+        </children>
+    </item>
+    <item nodeId="node-3173">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You place the wood plank down, desperately hoping it'll bear your weight.
+
+Central Nave
+You stand in the middle of the columns lining the central nave and look around. Surrounding you are 17 small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have nly been a god. In front of it, a low altar sits, its surface decorated with scarce items. 
+
+A moat surrounds the entire central nave.
+
+A moat surrounds the entire central nave.
+
+You can also see a statue of Osiris and an altar here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3180"></child>
+        </children>
+    </item>
+    <item nodeId="node-3180">
+        <command xml:space="preserve">x</command>
+        <result xml:space="preserve">(the wooden plank)
+A short, splintered plank of cedar wood lies on the floor.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3181"></child>
+        </children>
+    </item>
+    <item nodeId="node-3181">
+        <command xml:space="preserve">x</command>
+        <result xml:space="preserve">(the wooden plank)
+A short, splintered plank of cedar wood lies on the floor.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3182"></child>
+        </children>
+    </item>
+    <item nodeId="node-3182">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Central Nave
+You stand in the middle of the columns lining the central nave and look around. Surrounding you are 17 small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have nly been a god. In front of it, a low altar sits, its surface decorated with scarce items. 
+
+A moat surrounds the entire central nave.
+
+A moat surrounds the entire central nave.
+
+You can also see a statue of Osiris and an altar here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3183"></child>
+        </children>
+    </item>
+    <item nodeId="node-3183">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a wooden plank
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-3203">
+        <command xml:space="preserve">take plank</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3204"></child>
+        </children>
+    </item>
+    <item nodeId="node-3204">
+        <command xml:space="preserve">take</command>
+        <result xml:space="preserve">What do you want to take?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3205"></child>
+        </children>
+    </item>
+    <item nodeId="node-3205">
+        <command xml:space="preserve">take myself</command>
+        <result xml:space="preserve">&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3206"></child>
+        </children>
+    </item>
+    <item nodeId="node-3206">
+        <command xml:space="preserve">take</command>
+        <result xml:space="preserve">What do you want to take?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3207"></child>
+        </children>
+    </item>
+    <item nodeId="node-3207">
+        <command xml:space="preserve">take me</command>
+        <result xml:space="preserve">&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3208"></child>
+        </children>
+    </item>
+    <item nodeId="node-3208">
+        <command xml:space="preserve">take myself</command>
+        <result xml:space="preserve">&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3209"></child>
+        </children>
+    </item>
+    <item nodeId="node-3209">
+        <command xml:space="preserve">hello</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3210"></child>
+        </children>
+    </item>
+    <item nodeId="node-3210">
+        <command xml:space="preserve">guys</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3211"></child>
+        </children>
+    </item>
+    <item nodeId="node-3211">
+        <command xml:space="preserve">why</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3212"></child>
+        </children>
+    </item>
+    <item nodeId="node-3212">
+        <command xml:space="preserve">kill me</command>
+        <result xml:space="preserve">Violence isn't the answer to this one.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-3194">
+        <command xml:space="preserve">take plank</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3195"></child>
+        </children>
+    </item>
+    <item nodeId="node-3195">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3196"></child>
+        </children>
+    </item>
+    <item nodeId="node-3196">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You cross the precarious wood plank again.
+
+First Transverse Chamber
+To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through.
+
+A moat surrounds the entire central nave.
+
+You can also see a sun disk key here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3197"></child>
+        </children>
+    </item>
+    <item nodeId="node-3197">
+        <command xml:space="preserve">tkae plank</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3198"></child>
+        </children>
+    </item>
+    <item nodeId="node-3198">
+        <command xml:space="preserve">take plank</command>
+        <result xml:space="preserve">You can't see any such thing.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -2284,17 +3665,93 @@ It seems to be locked.
     </item>
     <item nodeId="node-2457">
         <command xml:space="preserve">e</command>
-        <result xml:space="preserve">The golden sun disk in your possession begins to glow brightly, and a radiant bridge of light forms across the dark waters. With the way now open, you step forward.
+        <result xml:space="preserve">You place the wood plank down, desperately hoping it'll bear your weight.
 
-Central Nave
+Tomb of Osiris
+The roof and walls has Nut and Geb stuff on it. At the center of the room is a sarcophagus, its wooden frame lavishly painted in the style of the New Kingdom. Comedically, it is wrapped in an almost absurd number of golden chains, as if to guard against any attempt to disturb its occupant.
+
+A moat surrounds the entire central nave.
+
+You can also see a sarcophagus (closed) here.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-2518"></child>
             <child nodeId="node-2497"></child>
+            <child nodeId="node-3227"></child>
             <child nodeId="node-2464"></child>
             <child nodeId="node-2475"></child>
+            <child nodeId="node-3158"></child>
         </children>
+    </item>
+    <item nodeId="node-3158">
+        <command xml:space="preserve">x</command>
+        <result xml:space="preserve">(the wooden plank)
+A short, splintered plank of cedar wood lies on the floor.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3159"></child>
+        </children>
+    </item>
+    <item nodeId="node-3159">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">First Transverse Chamber
+To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through.
+
+A moat surrounds the entire central nave.
+
+You can also see a sun disk key here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3160"></child>
+        </children>
+    </item>
+    <item nodeId="node-3160">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a wooden plank
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3161"></child>
+        </children>
+    </item>
+    <item nodeId="node-3161">
+        <command xml:space="preserve">unlock moat</command>
+        <result xml:space="preserve">(with the wooden plank)
+You unlock the west moat.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3162"></child>
+        </children>
+    </item>
+    <item nodeId="node-3162">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You approach the edge of the moat, but there is no way across. The waters churn ominously, as if warning you to stay back.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3163"></child>
+        </children>
+    </item>
+    <item nodeId="node-3163">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You approach the edge of the moat, but there is no way across. The waters churn ominously, as if warning you to stay back.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3164"></child>
+        </children>
+    </item>
+    <item nodeId="node-3164">
+        <command xml:space="preserve">x moat</command>
+        <result xml:space="preserve">Deep and murky.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-2475">
         <command xml:space="preserve">w</command>
@@ -2499,6 +3956,79 @@ Central Nave
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
     </item>
+    <item nodeId="node-3227">
+        <command xml:space="preserve">open sarcophagus</command>
+        <result xml:space="preserve">It seems to be locked.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3228"></child>
+        </children>
+    </item>
+    <item nodeId="node-3228">
+        <command xml:space="preserve">open sarcophagus with key</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3229"></child>
+        </children>
+    </item>
+    <item nodeId="node-3229">
+        <command xml:space="preserve">open sarcophagus with ankh</command>
+        <result xml:space="preserve">You unlock the sarcophagus.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3230"></child>
+        </children>
+    </item>
+    <item nodeId="node-3230">
+        <command xml:space="preserve">open sarcophagus</command>
+        <result xml:space="preserve">You open the sarcophagus, revealing Osiris' head.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3231"></child>
+        </children>
+    </item>
+    <item nodeId="node-3231">
+        <command xml:space="preserve">take head</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3232"></child>
+        </children>
+    </item>
+    <item nodeId="node-3232">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  Osiris' head
+  a wooden plank
+  a faience ankh
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3233"></child>
+        </children>
+    </item>
+    <item nodeId="node-3233">
+        <command xml:space="preserve">sx head</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3234"></child>
+        </children>
+    </item>
+    <item nodeId="node-3234">
+        <command xml:space="preserve">x head</command>
+        <result xml:space="preserve">You see nothing special about Osiris' head.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
     <item nodeId="node-2497">
         <command xml:space="preserve">n</command>
         <result xml:space="preserve">You can't go that way.
@@ -2593,6 +4123,115 @@ Central Nave
     <item nodeId="node-2528">
         <command xml:space="preserve">n</command>
         <result xml:space="preserve">With the moat surrounding the central nave, it's a struggle to go anywhere.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-3215">
+        <command xml:space="preserve"></command>
+        <result xml:space="preserve">I beg your pardon?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3216"></child>
+        </children>
+    </item>
+    <item nodeId="node-3216">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You place the wood plank down, desperately hoping it'll bear your weight.
+
+First Transverse Chamber
+To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through.
+
+A moat surrounds the entire central nave.
+
+You can also see a sun disk key here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3217"></child>
+        </children>
+    </item>
+    <item nodeId="node-3217">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">
+Great Hall
+South is a small chamber. North is the long descending passage. East is the first transverse chamber.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3218"></child>
+        </children>
+    </item>
+    <item nodeId="node-3218">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">
+First Transverse Chamber
+To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through.
+
+A moat surrounds the entire central nave.
+
+You can also see a sun disk key here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3219"></child>
+        </children>
+    </item>
+    <item nodeId="node-3219">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You place the wood plank down, desperately hoping it'll bear your weight.
+
+Central Nave
+You stand in the middle of the columns lining the central nave and look around. Surrounding you are 17 small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have nly been a god. In front of it, a low altar sits, its surface decorated with scarce items. 
+
+A moat surrounds the entire central nave.
+
+A moat surrounds the entire central nave.
+
+You can also see a statue of Osiris and an altar here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3220"></child>
+        </children>
+    </item>
+    <item nodeId="node-3220">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You place the wood plank down, desperately hoping it'll bear your weight.
+
+Tomb of Osiris
+The roof and walls has Nut and Geb stuff on it. At the center of the room is a sarcophagus, its wooden frame lavishly painted in the style of the New Kingdom. Comedically, it is wrapped in an almost absurd number of golden chains, as if to guard against any attempt to disturb its occupant.
+
+A moat surrounds the entire central nave.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3221"></child>
+        </children>
+    </item>
+    <item nodeId="node-3221">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a wooden plank
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3222"></child>
+        </children>
+    </item>
+    <item nodeId="node-3222">
+        <command xml:space="preserve">x sarcophagus</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3223"></child>
+        </children>
+    </item>
+    <item nodeId="node-3223">
+        <command xml:space="preserve">x sarcophagus</command>
+        <result xml:space="preserve">You can't see any such thing.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -2734,6 +4373,135 @@ boop2
     <item nodeId="node-2562">
         <command xml:space="preserve">talk to me</command>
         <result xml:space="preserve">There is no reply.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-2963">
+        <command xml:space="preserve">test</command>
+        <result xml:space="preserve">&gt;--&gt; The following tests are available:
+'test abydos'
+'test amarna'
+'test fish'
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2964"></child>
+        </children>
+    </item>
+    <item nodeId="node-2964">
+        <command xml:space="preserve">test fish</command>
+        <result xml:space="preserve">(first moving to Oxyrhynchos-Marketplace)
+
+(Testing.)
+
+&gt;[1] take rod
+Taken.
+
+Your sun chariot is parked at Oxyrhynchos-Marketplace, fiercely guarded by your pet serpents.
+
+&gt;[2] take knife
+Taken.
+
+&gt;[3] take bait
+Taken.
+
+&gt;[4] bait rod
+You attach the bait carefully to the fishing rod.
+
+&gt;[5] e
+
+Nile Riverbank
+You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace.
+
+You can see ten fish (closed) here.
+
+&gt;</result>
+        <commentary xml:space="preserve">[1] take rod
+[2] take knife
+[3] take bait
+[4] bait rod
+[5] e
+</commentary>
+        <children><child nodeId="node-2970"></child>
+        </children>
+    </item>
+    <item nodeId="node-2970">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a mormyrid.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2971"></child>
+        </children>
+    </item>
+    <item nodeId="node-2971">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a fish
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2972"></child>
+        </children>
+    </item>
+    <item nodeId="node-2972">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught a mormyrid.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2973"></child>
+        </children>
+    </item>
+    <item nodeId="node-2973">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a fish
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2974"></child>
+        </children>
+    </item>
+    <item nodeId="node-2974">
+        <command xml:space="preserve">fish</command>
+        <result xml:space="preserve">You cast your fishing rod out with a strong throw...
+
+You have caught the catfish!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2975"></child>
+        </children>
+    </item>
+    <item nodeId="node-2975">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying:
+  a catfish
+  a fish
+  a knife
+  a fishing rod with bait
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-2976"></child>
+        </children>
+    </item>
+    <item nodeId="node-2976">
+        <command xml:space="preserve">cut fish</command>
+        <result xml:space="preserve">(the fish)
+You slash the fish with the knife.
+
+Visible within is a Fish guts.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -3622,6 +5390,200 @@ Visible within is Osiris' penis.
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
     </item>
+    <item nodeId="node-3136">
+        <command xml:space="preserve">sun</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3137"></child>
+        </children>
+    </item>
+    <item nodeId="node-3137">
+        <command xml:space="preserve">say sun</command>
+        <result xml:space="preserve">(to the stone door)
+As you speak the word "sun," the massive stone door grinds open, revealing a long narrow passage.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3138"></child>
+        </children>
+    </item>
+    <item nodeId="node-3138">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3139"></child>
+        </children>
+    </item>
+    <item nodeId="node-3139">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3140"></child>
+        </children>
+    </item>
+    <item nodeId="node-3140">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3141"></child>
+        </children>
+    </item>
+    <item nodeId="node-3141">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+descending passage
+A long descending passage. Down south is a great hall. North is the gate.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3142"></child>
+        </children>
+    </item>
+    <item nodeId="node-3142">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3143"></child>
+        </children>
+    </item>
+    <item nodeId="node-3143">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Great Hall
+South is a small chamber. North is the long descending passage. East is the first transverse chamber.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3144"></child>
+        </children>
+    </item>
+    <item nodeId="node-3144">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">
+First Transverse Chamber
+To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through.
+
+A moat surrounds the entire central nave.
+
+You can also see a sun disk key here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3145"></child>
+        </children>
+    </item>
+    <item nodeId="node-3145">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">
+Great Hall
+South is a small chamber. North is the long descending passage. East is the first transverse chamber.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3146"></child>
+        </children>
+    </item>
+    <item nodeId="node-3146">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+South Chamber
+The small chamber contains... something? North is the great hall. Mention the things in the room in this description of the room. player can examine for more details.
+
+You can see a faience ankh, a bundle of dried thyme, an ostracon, some pottery jars, a wooden plank and some knick-knacks here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3147"></child>
+        </children>
+    </item>
+    <item nodeId="node-3147">
+        <command xml:space="preserve">take plank</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3148"></child>
+        </children>
+    </item>
+    <item nodeId="node-3148">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+Great Hall
+South is a small chamber. North is the long descending passage. East is the first transverse chamber.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3149"></child>
+        </children>
+    </item>
+    <item nodeId="node-3149">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">
+First Transverse Chamber
+To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through.
+
+A moat surrounds the entire central nave.
+
+You can also see a sun disk key here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3150"></child>
+        </children>
+    </item>
+    <item nodeId="node-3150">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">Nope.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3151"></child>
+        </children>
+    </item>
+    <item nodeId="node-3151">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">Nope.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3152"></child>
+        </children>
+    </item>
+    <item nodeId="node-3152">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">Nope.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3153"></child>
+        </children>
+    </item>
+    <item nodeId="node-3153">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">Nope.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3154"></child>
+        </children>
+    </item>
+    <item nodeId="node-3154">
+        <command xml:space="preserve"></command>
+        <result xml:space="preserve">I beg your pardon?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
     <item nodeId="node-2122">
         <command xml:space="preserve">sorry</command>
         <result xml:space="preserve">Oh, don't apologise.
@@ -3634,6 +5596,92 @@ Visible within is Osiris' penis.
     <item nodeId="node-2123">
         <command xml:space="preserve">boop</command>
         <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-3127">
+        <command xml:space="preserve">say sun</command>
+        <result xml:space="preserve">(to the stone door)
+As you speak the word "sun," the massive stone door grinds open, revealing a long narrow passage.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3129"></child>
+        </children>
+    </item>
+    <item nodeId="node-3129">
+        <command xml:space="preserve">x</command>
+        <result xml:space="preserve">(the sun chariot)
+You see nothing special about the sun chariot.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3130"></child>
+        </children>
+    </item>
+    <item nodeId="node-3130">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Gate to the Osireion
+The doorway to the temple stands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded. (please add more historical info and revise this)
+
+You can see a sun chariot here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3131"></child>
+        </children>
+    </item>
+    <item nodeId="node-3131">
+        <command xml:space="preserve">enter doorway</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3132"></child>
+        </children>
+    </item>
+    <item nodeId="node-3132">
+        <command xml:space="preserve">enter door</command>
+        <result xml:space="preserve">
+descending passage
+A long descending passage. Down south is a great hall. North is the gate.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3133"></child>
+        </children>
+    </item>
+    <item nodeId="node-3133">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Great Hall
+South is a small chamber. North is the long descending passage. East is the first transverse chamber.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3134"></child>
+        </children>
+    </item>
+    <item nodeId="node-3134">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">
+First Transverse Chamber
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3135"></child>
+        </children>
+    </item>
+    <item nodeId="node-3135">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">
+Doorway to the Osireion
+To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through.
+
+A moat surrounds the entire central nave.
+
+You can also see a sun disk key here.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
