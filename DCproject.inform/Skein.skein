@@ -10,7 +10,7 @@
 
 DCproject
 An Interactive Fiction by Sophia Ling
-Release 1 / Serial number 241215 / Inform 7 v10.1.2 / D
+Release 1 / Serial number 241216 / Inform 7 v10.1.2 / D
 
 Gate to the Osireion
 The doorway to the temple stands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded. (please add more historical info and revise this)
@@ -2214,12 +2214,11 @@ Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a d
 
 Arranged delicately atop the altars are offerings of (something). Each item looks fresh, as if newly placed by worshippers -- odd.
 
-You can also see a hidden staircase here.
-
 &gt;</result>
         <commentary xml:space="preserve">[1] n
 </commentary>
         <children><child nodeId="node-2746"></child>
+            <child nodeId="node-3306"></child>
             <child nodeId="node-2824"></child>
             <child nodeId="node-2771"></child>
             <child nodeId="node-2798"></child>
@@ -2229,11 +2228,219 @@ You can also see a hidden staircase here.
     <item nodeId="node-3274">
         <command xml:space="preserve">x shrine</command>
         <result xml:space="preserve">(description of shrine, pick object?)
+You hear an odd rumbling noise. (here the hidden staircase is revealed).
+
+(description of shrine, pick object?)
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-3275"></child>
+            <child nodeId="node-3319"></child>
         </children>
+    </item>
+    <item nodeId="node-3319">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Small Aten Temple
+Despite being the smaller Aten Temple, you could still see the foundations that stretched far. It was made of three courts, the first, second, and sanctuary court. You are standing in what used to be the sanctuary court, now demolished into nothingness. A partially reconstructed sanctuary stands before you. It looked glorious, despite being only a fraction of what would've once been there. 
+
+You can see a staircase here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3320"></child>
+        </children>
+    </item>
+    <item nodeId="node-3320">
+        <command xml:space="preserve">go down staircase</command>
+        <result xml:space="preserve">I only understood you as far as wanting to go down.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3321"></child>
+        </children>
+    </item>
+    <item nodeId="node-3321">
+        <command xml:space="preserve">go down</command>
+        <result xml:space="preserve">
+Underground chapel
+The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls.
+
+You can see a staircase here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3322"></child>
+        </children>
+    </item>
+    <item nodeId="node-3322">
+        <command xml:space="preserve">x statue</command>
+        <result xml:space="preserve">Which do you mean, the first statue, the second statue or the third statue?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3323"></child>
+        </children>
+    </item>
+    <item nodeId="node-3323">
+        <command xml:space="preserve">x east mural</command>
+        <result xml:space="preserve"> a weathered relief shows nothing but a round disk in the center. surely etchings used to be around it, but we cant see them.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3324"></child>
+        </children>
+    </item>
+    <item nodeId="node-3324">
+        <command xml:space="preserve">touch east mural</command>
+        <result xml:space="preserve">You touch the east mural, and something clicks into place.
+
+You feel nothing unexpected.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3325"></child>
+        </children>
+    </item>
+    <item nodeId="node-3325">
+        <command xml:space="preserve">touch west mural</command>
+        <result xml:space="preserve">That doesn't seem to be the right item to touch right now.
+
+You feel nothing unexpected.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3326"></child>
+        </children>
+    </item>
+    <item nodeId="node-3326">
+        <command xml:space="preserve">touch third statue</command>
+        <result xml:space="preserve">That doesn't seem to be the right item to touch right now.
+
+You feel nothing unexpected.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3327"></child>
+        </children>
+    </item>
+    <item nodeId="node-3327">
+        <command xml:space="preserve">touch east mural</command>
+        <result xml:space="preserve">You touch the east mural, and something clicks into place.
+
+You feel nothing unexpected.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3328"></child>
+        </children>
+    </item>
+    <item nodeId="node-3328">
+        <command xml:space="preserve">touch north mural</command>
+        <result xml:space="preserve">You touch the north mural, and something clicks into place.
+
+You feel nothing unexpected.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3329"></child>
+        </children>
+    </item>
+    <item nodeId="node-3329">
+        <command xml:space="preserve">touch third statue</command>
+        <result xml:space="preserve">You touch the third statue, and something clicks into place.
+
+You feel nothing unexpected.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3330"></child>
+        </children>
+    </item>
+    <item nodeId="node-3330">
+        <command xml:space="preserve">x ceiling</command>
+        <result xml:space="preserve">has some hint revealing the sequence in which to touch stuff - for example-- in a laid out sequence, you see the a sun disk, reaching out hand rays, onto the offerings of lotus flowers, held by a person with a very long head. 
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3331"></child>
+        </children>
+    </item>
+    <item nodeId="node-3331">
+        <command xml:space="preserve">touch second statue</command>
+        <result xml:space="preserve">You touch the second statue, and something clicks into place.
+
+You feel nothing unexpected.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3332"></child>
+        </children>
+    </item>
+    <item nodeId="node-3332">
+        <command xml:space="preserve">up</command>
+        <result xml:space="preserve">
+Small Aten Temple
+Despite being the smaller Aten Temple, you could still see the foundations that stretched far. It was made of three courts, the first, second, and sanctuary court. You are standing in what used to be the sanctuary court, now demolished into nothingness. A partially reconstructed sanctuary stands before you. It looked glorious, despite being only a fraction of what would've once been there. 
+
+You can see a staircase here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3333"></child>
+        </children>
+    </item>
+    <item nodeId="node-3333">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Small Aten Temple
+Despite being the smaller Aten Temple, you could still see the foundations that stretched far. It was made of three courts, the first, second, and sanctuary court. You are standing in what used to be the sanctuary court, now demolished into nothingness. A partially reconstructed sanctuary stands before you. It looked glorious, despite being only a fraction of what would've once been there. 
+
+You can see a staircase here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3334"></child>
+        </children>
+    </item>
+    <item nodeId="node-3334">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3335"></child>
+        </children>
+    </item>
+    <item nodeId="node-3335">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3336"></child>
+        </children>
+    </item>
+    <item nodeId="node-3336">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+Sanctuary
+Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor the Aten, the sun disk. Around the perimeter of the sanctuary are low, carved altars, decorated with offerings and incense. In the center of the sanctuary, a shrine depicting Aten seems to shine in its golden splendor. (or something like that i guess)
+
+Arranged delicately atop the altars are offerings of (something). Each item looks fresh, as if newly placed by worshippers -- odd.
+
+You can also see Osiris' brain here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3337"></child>
+        </children>
+    </item>
+    <item nodeId="node-3337">
+        <command xml:space="preserve">take brain</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-3275">
         <command xml:space="preserve">i</command>
@@ -2735,6 +2942,119 @@ A partially reconstructed temple dedicated to the Aten. Sunlight streams through
     <item nodeId="node-2866">
         <command xml:space="preserve">w</command>
         <result xml:space="preserve">It's a long journey to Amarna City: you'll never make it on foot.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-3306">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Sanctuary
+Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor the Aten, the sun disk. Around the perimeter of the sanctuary are low, carved altars, decorated with offerings and incense. In the center of the sanctuary, a shrine depicting Aten seems to shine in its golden splendor. (or something like that i guess)
+
+Arranged delicately atop the altars are offerings of (something). Each item looks fresh, as if newly placed by worshippers -- odd.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3307"></child>
+        </children>
+    </item>
+    <item nodeId="node-3307">
+        <command xml:space="preserve">x shrine</command>
+        <result xml:space="preserve">(description of shrine, pick object?)
+You hear an odd rumbling noise. (here the hidden staircase is revealed).
+
+(description of shrine, pick object?)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3308"></child>
+        </children>
+    </item>
+    <item nodeId="node-3308">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Sanctuary
+Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor the Aten, the sun disk. Around the perimeter of the sanctuary are low, carved altars, decorated with offerings and incense. In the center of the sanctuary, a shrine depicting Aten seems to shine in its golden splendor. (or something like that i guess)
+
+Arranged delicately atop the altars are offerings of (something). Each item looks fresh, as if newly placed by worshippers -- odd.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3309"></child>
+        </children>
+    </item>
+    <item nodeId="node-3309">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3310"></child>
+        </children>
+    </item>
+    <item nodeId="node-3310">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Small Aten Temple
+Despite being the smaller Aten Temple, you could still see the foundations that stretched far. It was made of three courts, the first, second, and sanctuary court. You are standing in what used to be the sanctuary court, now demolished into nothingness. A partially reconstructed sanctuary stands before you. It looked glorious, despite being only a fraction of what would've once been there. 
+
+You can see a hidden staircase here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3311"></child>
+        </children>
+    </item>
+    <item nodeId="node-3311">
+        <command xml:space="preserve">enter staircase</command>
+        <result xml:space="preserve">
+Underground chapel
+The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls.
+
+You can see a hidden staircase here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3312"></child>
+        </children>
+    </item>
+    <item nodeId="node-3312">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Underground chapel
+The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls.
+
+You can see a hidden staircase here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3313"></child>
+        </children>
+    </item>
+    <item nodeId="node-3313">
+        <command xml:space="preserve">x statue</command>
+        <result xml:space="preserve">Which do you mean, the first statue, the second statue or the third statue?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3314"></child>
+        </children>
+    </item>
+    <item nodeId="node-3314">
+        <command xml:space="preserve">x first statue</command>
+        <result xml:space="preserve">this is a broken statue. this probably used to be depicting a person. guess we'll never find out.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-3315"></child>
+        </children>
+    </item>
+    <item nodeId="node-3315">
+        <command xml:space="preserve">touch east mural</command>
+        <result xml:space="preserve">
+*** Run-time problem P23: Attempt to look up a non-existent entry at column 2, row 1 of the table 'Table of Current Sequence'.
+
+That doesn't seem to be the right item to touch right now.
+
+You feel nothing unexpected.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>

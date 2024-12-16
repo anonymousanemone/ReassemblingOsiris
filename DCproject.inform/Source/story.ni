@@ -96,16 +96,16 @@ To list the transport options:
 		increment N.
 
 Table of Transport Options
-id	transport (a region)	home (a room)
-1	Avaris	Avaris-Marketplace
-2	Busiris	Busiris-Marketplace
-3	Heliopolis	Heliopolis-Marketplace
-4	Memphis	Memphis-Marketplace
-5	Oxyrhynchos	Oxyrhynchos-Marketplace
-6	Amarna	Outside the Walled Village
-7	Abydos	Gate to the Osireion
-8	Thebes	Temple of Tawosret 
-9	Elephantine	Elephantine-Marketplace
+transport (a region)	home (a room)
+Avaris	Avaris-Marketplace
+Heliopolis	Heliopolis-Marketplace
+Memphis	Memphis-Marketplace
+Oxyrhynchos	Oxyrhynchos-Marketplace
+Amarna	Outside the Walled Village
+Abydos	Gate to the Osireion
+Thebes	Temple of Tawosret 
+Elephantine	Elephantine-Marketplace
+[Busiris	Busiris-Marketplace]
 
 Avaris, Busiris, Heliopolis, Memphis, Oxyrhynchos, Amarna, Abydos, Thebes, and Elephantine are regions. 
 
@@ -113,11 +113,6 @@ Avaris, Busiris, Heliopolis, Memphis, Oxyrhynchos, Amarna, Abydos, Thebes, and E
 The sun chariot is an enterable supporter. It is in the Gate to the Osireion.
 
 ["the location" refers to the current location of the player]
-[Before going to the location:
-	if there is a home of the location in the Table of Chariot-Parking:
-		move the sun chariot to the location;
-		say "Your sun chariot is parked at [the location], fiercely guarded by your pet serpents.".]
-
 Every turn:
 	if there is a home of the location in the Table of Transport Options and the sun chariot is not in the location:
 		move the sun chariot to the location;
@@ -129,7 +124,6 @@ After entering the sun chariot:
 
 [temp room declarations]
 Avaris-Marketplace is a room in Avaris.
-Busiris-Marketplace is a room in Busiris.
 Heliopolis-Marketplace is a room in Heliopolis.
 Memphis-Marketplace is a room in Memphis.
 Elephantine-Marketplace is a room in Elephantine.
@@ -264,7 +258,9 @@ Get Body Bag is a scene. Get Body Bag begins when Discovery ends. Get Body Bag e
 
 Exploration is a scene. Exploration begins when Get Body Bag ends. Exploration ends when Osiris' brain is acquired.
 
-Next Instructions is a scene. Next Instructions begin when Exploration Ends. 
+[Brain Revealed is a scene. Brain Revealed begins when ]
+
+Next Instructions is a scene. Next Instructions begin when Exploration Ends. Next Instructions end when the workman is uncurious.
 	
 Section 2 - Workmen's village
 
@@ -358,39 +354,96 @@ The offerings are things in the Sanctuary. "Arranged delicately atop the altars 
 
 The Aten shrine is scenery in the Sanctuary. "(description of shrine, pick object?)"
 
-The hidden staircase is a closed unopenable door. The hidden staircase is above the Underground chapel and below the Small Aten Temple. 
+The staircase is a closed unopenable door. The staircase is above the Underground chapel and below the Small Aten Temple. 
 
 [remove reporting of the hidden door somehow]
 
 Instead of examining the shrine:
-	now the hidden staircase is open;
-	say "(description of shrine, pick object?)";
+	now the staircase is open;
 	say "You hear an odd rumbling noise. (here the hidden staircase is revealed).";
 	continue the action.
 
-Underground Chapel is a room in Amarna. It is below the hidden staircase. "The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls."
+Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls."
+[description very important for next game! all to you :)))))]
+[it could be myth based or something? related to aten? or to osiris]
 
 
 Section 4 - At the Small Aten Temple
 	
-A north mural is a thing in the Underground Chapel.
+The north mural is scenery in the Underground Chapel. The description is "a sun with rays that end in little ends dominate the picture."
 
-A south mural is a thing in the Underground Chapel.
+The south mural is scenery in the Underground Chapel. The description is "the figures here have very defined toes."
 
-A east mural is a thing in the Underground Chapel.
+The east mural is scenery in the Underground Chapel. The description is " a weathered relief shows nothing but a round disk in the center. surely etchings used to be around it, but we cant see them."
 
-A west mural is a thing in the Underground Chapel.
+The west mural is scenery in the Underground Chapel. The description is "a man holds out probably a little duck to the demanding hand sun ray things."
 
+The ceiling is scenery in the Underground Chapel. The description is "has some hint revealing the sequence in which to touch stuff - for example-- in a laid out sequence, you see the a sun disk, reaching out hand rays, onto the offerings of lotus flowers, held by a person with a very long head. "
 
-[make several statues and murals so that she has to examine almost all of them. one contains a hint ]
+The first statue is scenery in the Underground Chapel. The description is "this is a broken statue. this probably used to be depicting a person. guess we'll never find out."
 
-Instead of examining a mural in the Underground Chapel:
-	say "You lean in close to inspect the strange paintings. One mural depicts an elongated figure with exaggerated features holding a glowing orb near their head. A sense of revelation washes over you."
+The second statue is scenery in the Underground Chapel. The description is "a statue of a tall man with a long face and long hat sits there."
 
-Osiris' brain is a body part in the Underground Chapel. The description of the brain is "An unnervingly lifelike, pulsating organ."
+The third statue is scenery in the Underground Chapel. The description is "statue of a man with a giant lotus sprouting out the top of his head. hope he's ok"
+
+[Every turn:
+	showme the contents of Table of Current Sequence.]
+	
+[When Brain Acquisition begins:
+	refill the sequence.]
+
+Instead of touching something in the Underground Chapel:
+	choose row 1 in the Table of Current Sequence;
+	if the noun is the item entry:
+		blank out the whole row;
+		sort the sequence;
+		say "You touch the [noun], and something clicks into place.";
+		if there is no item in row 1 of the Table of Current Sequence:
+			trigger the end sequence;
+			
+	otherwise:
+		say "Nothing happens.";
+		refill the sequence.
+
+Table of Full Sequence
+seq	item
+1	east mural
+2	north mural
+3	third statue
+4	second statue
+
+Table of Current Sequence
+seq	item
+1	east mural
+2	north mural
+3	third statue
+4	second statue
+with 1 blank row
+
+To sort the sequence:
+	sort the Table of Current Sequence in seq order;
+
+To refill the sequence:
+	blank out the whole of the Table of Current Sequence;
+	repeat with N running from 1 to the number of rows in the Table of Full Sequence:
+		choose row N in the Table of Full Sequence;
+		let seq-val be the seq entry;
+		let item-val be the item entry;
+		choose row N in the Table of Current Sequence;
+		now the seq entry is seq-val;
+		now the item entry is item-val.
+
+To trigger the end sequence:
+	say "You hear something. something is happening. woaaah.";
+	move Osiris' brain to the Sanctuary.
+
+Osiris' brain is a body part. The description of the brain is "An unnervingly lifelike, pulsating organ."
 
 Section 5 - Back to the village
 
+When Exploration ends:
+	now the workman is curious.
+	
 
 
 test Amarna with "n" in The small aten temple holding the head.
@@ -399,7 +452,15 @@ Chapter 3 - Thebes-Heart
 
 Heart Acquisition is a scene. Heart Acquisition begins when Brain Acquisition ends. Heart Acquisition ends when Osiris' heart is acquired.
 
-Osiris' heart is a body part. 
+Heal Heracles is a scene. Heal Heracles begins when Heart Acquisition begins. Heal Heracles ends when Heracles is healthy. 
+
+Buddy Heracles is a scene. Buddy Heracles begins when Heal Heracles ends. Buddy Heracles ends when the location of the player is not in Busiris.
+
+Every turn during Buddy Heracles:
+	if the location of Heracles is not the location of the player:
+		now Heracles is in the location;
+		say "Heracles follows you with a grunt."
+
 
 Section 1 - All the Locations
 
@@ -426,10 +487,10 @@ The Temple of Amenhotep III is east of the the collection of three temples. It i
 The Memnon Colossi is east of the Temple of Amenhotep III. It is in Thebes. "Two massive statues of Amenhotep III stand watch over the land."
 
 [the heart will be hidden in one of these two statues at the base]
+Osiris' heart is a body part. 
 
 The Temple of Horemheb is south of the collection of three temples. It is in Thebes. "This temple stands as  tribute to Aÿ and Horemheb."
-
-[put Heracles at Horemheb]
+[Heracles is at Horemheb]
 
 The Temple of Ramesses III is south of the Temple of Horemheb. It is in Thebes. "Here be Ramesses III's temple."
 
@@ -445,7 +506,7 @@ The House of Life is west of the Ramesseum. It is in Thebes. "This is the librar
 
 [some mechanic for finding correct papyri or simple description]
 
-Medical papyri is scenery in the Ramesseum. "You look around the shelves of papyri and found a shelf that caught your eye. something about the papyri. Incorporate a spell"
+Medical papyri is scenery in the House of LIfe. "You look around the shelves of papyri and found a shelf that caught your eye. something about the papyri. Incorporate a spell"
 
 [after examining papyri, player can type "think" to remember what she needs]
 
@@ -455,14 +516,42 @@ Section 3 -
 
 [Medea lands in Tawosret]
 
-Heracles is a person in the Temple of Horemheb.
+Heracles is a person in the Temple of Horemheb. Heracles can be sick or healthy. Heracles is sick.
 
 
 Chapter 4 - Busiris-Organs
 
-Organ Acquisition is a scene. Organ Acquisition begins when Heart Acquisition ends. Organ Acquisition ends when Osiris' liver is acquired.
+Organ Acquisition is a scene. Organ Acquisition begins when Heal Heracles ends. Organ Acquisition ends when Osiris' liver is acquired.
 
-Osiris' liver is a body part. It is in Busiris-Marketplace
+Table of Countdown
+num_moves
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+Every turn during Organ Acquisition:
+	if the location is not the House of Life:
+		repeat through Table of Countdown:
+			blank out the whole row;
+			rule succeeds.
+
+The Kidnapping is a scene. The Kidnapping begins when the number of filled rows in the Table of Countdown is 0. The Kidnapping ends when King Busiris is dead.
+
+Osiris' liver is a body part. It is in Busiris-Marketplace.
+
+Section 1 - Busiris Palace
+
+Central Court is a room in Busiris.
+
+King Busiris is a person. King Busiris can be alive or dead. King Busiris is alive.
+
 
 
 Part 5 - Complete Any Time
@@ -478,7 +567,7 @@ Osiris' right hand is a body part. It is in Avaris-Marketplace.
 
 
 Part 6 - Tour Guide Osiris
-[this part can be completed out of order, although some chapters require objects from other chapters to be compelted]
+[this part can be completed out of order, although some chapters require objects from other chapters to be completed]
 
 Tour Guide Osiris is a scene. Tour Guide Osiris begins when Talking Osiris Agenda ends. [doesn't really end]
 
