@@ -1,8 +1,10 @@
-"That Time I Got Out of Jail by Reassembling Osiris" by Sophia Ling and Ruya Tazebay 
+"DCproject" by Sophia Ling
 
 Include Basic Screen Effects by Emily Short.
 Include Rideable Vehicles by Graham Nelson.
 Release along with an interpreter.
+
+[When play begins: try switching the story transcript on.]
 
 Part 1 - Prologue
 
@@ -252,7 +254,7 @@ Section 2 - Entering the Osireion
 The Gate to the Osireion is a room in Abydos. "The doorway to the temple stands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded. Perhaps you should attempt to ENTER the door. You might also consider DESCRIBING the door. (please add more historical info and revise this)"
 
 The stone door is a locked closed door. It is scenery. The stone door is south of the gate and north of the descending passage. Include (- has animate -) when defining the door.
-The description of the stone door is "The heavy stone door is engraved with an ancient riddle: [line break] 'I am yesterday, veiled in shadows. [line break] I am tomorrow, cloaked in flames. [line break] A union of gods, a cycle complete. [line break]  [line break] Using your genius intellect, you carefully contemplate the riddle. The door seems to be awaiting your ANSWER.'"
+The description of the stone door is "The heavy stone door is engraved with an ancient riddle: [line break] 'I am yesterday, veiled in shadows. [line break] I am tomorrw, cloaked in flames. [line break] A union of gods, a cycle complete.'"
 
 Instead of answering the door that something:
 	if the player's command includes "sun":
@@ -260,7 +262,7 @@ Instead of answering the door that something:
 		now the stone door is open;
 		say "As you speak the word 'sun,' the massive stone door grinds open, revealing a long narrow passage.";
 	otherwise:
-		say "Nothing happens. Perhaps that is not the correct answer. You look up into the sky, hoping for some god to give you a hint.";
+		say "Nothing happens. Perhaps that is not the correct answer.";
 
 
 The Descending Passage is a room in Abydos. It is south of the stone door. "A long descending passage. Down south is a great hall. North is the gate."
@@ -490,7 +492,7 @@ Instead of touching something in the Underground Chapel:
 		sort the sequence;
 		say "You touch the [noun], and something clicks into place.";
 		if there is no item in row 1 of the Table of Current Sequence:
-			trigger the end sequence;		
+			trigger the end sequence;
 	otherwise:
 		say "Nothing happens.";
 		refill the sequence.

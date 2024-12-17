@@ -8,6 +8,8 @@
 
 
 
+Start of a transcript of:
+
 That Time I Got Out of Jail by Reassembling Osiris
 An Interactive Fiction by Sophia Ling and Ruya Tazebay
 Release 1 / Serial number 241217 / Inform 7 v10.1.2 / D
@@ -6539,7 +6541,9 @@ Your sun chariot is parked at Avaris-Marketplace, fiercely guarded by your pet s
     </item>
     <item nodeId="node-1619">
         <command xml:space="preserve">7</command>
-        <result xml:space="preserve"></result>
+        <result xml:space="preserve">
+
+</result>
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-1620"></child>
         </children>
