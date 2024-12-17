@@ -7,11 +7,98 @@ Release along with an interpreter.
 Part 1 - Prologue
 
 After printing the banner text:
-	[say "-----------------------------------------[line break]";
-    	say "This reminds you of the summer of '69...";
+	say "'It’s a complete disaster!'[line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break]";
+	wait for any key;
+	say "[line break]'I’ve pleaded and pleaded, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris to Osiris!'[line break]";
     	wait for any key;
-    	say "... flashback content...";
-    	wait for any key.]
+    	say "[line break]'I had thought,' an especially haggard-looking Anubis replied, 'that we agreed Isis would be no help. Have our previous Emergency Meetings taught you nothing? I am starting to hear whispers--mere whispers, mind you, but whispers nonetheless--about a certain Serapis. Serapis! If Osiris falls, Kemet will fall alongside him. Amun, you must do something!'[line break]";
+    	wait for any key;
+	say "[line break]Amun ignored Nephthys’ laments and Anubis’ whines. There was a more important avenue to pursue: 'Maʽat, what have you heard from Thoth?'[line break]Maʽat looked rather unhappy to be the bearer of bad news. 'He’s tried every spell he knows--to no effect. He’s sequestered himself in a library, but…'[line break][line break]It seemed that Ma’at had little hope that Thoth would be successful in his efforts.[line break]";
+    	wait for any key;
+    	say "[line break]'More than that'--and her expression became grave--'Chaos is running rampant. I fear that if we do not take action soon, irreversible disorder will conquer all.'[line break]";
+    	wait for any key;
+    	say "[line break]Indeed, this was a complete disaster. 'And what of Ptah?' Amun asked.[line break]";
+	wait for any key;
+    	say "[line break]Silence rang in the room. [line break]";
+	wait for any key;
+    	say "[line break]'...Has he made any progress in fashioning an Osiris?'[line break]";
+	wait for any key;
+    	say "[line break]Sekhmet's displeased grimace was answer enough.  [line break]";
+	wait for any key;
+    	say "[line break]'...I see,' Amun said. 'Perhaps…we should all check in next week.' [line break]";
+	wait for any key;
+    	say "[line break]His admittedly lackluster statement incited Anubis. 'This is the ninety-ninth Emergency Meeting we’ve held—we cannot prolong this emergency! The unweighed souls are piling up and spilling into the streets of the living, and poor Medjed is too spooked to do his duties! I cannot contend with this alone!' [line break]";
+	wait for any key;
+    	say "[line break]'And what am I to do, Anubis?' Amun bit back. 'Seth is rejoicing in his victory, and clearly, none of us here have the aptitude to counter him!' [line break]";
+	wait for any key;
+    	say "[line break]'If I may.' A quiet voice resounded from the back of the room, and everyone turned to look at Khonsu, who had to speak in this meeting--or any of the previous ninety-nine Emergency Meetings.[line break]";
+	wait for any key;
+    	say "[line break]'I have hesitated to bring this up. But it might be our only hope. There have been murmurs, in the darkest and gloomiest of shadows, of a terrible woman who had made the sky her own. A woman whose misdeeds put those of our Seth to shame. A woman whose pride and cleverness knew no bounds. A woman who had… [line break]";
+	wait for any key;
+    	say "[line break]…[line break]";
+	wait for any key;
+    	say "[line break]…I can’t bear to say it.'[line break]";
+	wait for any key;
+    	say "[line break]'Well, go on. Say it!' [line break]";
+	wait for any key;
+    	say "[line break]As the room broke again into squabbling, Amun felt a chill come over him. There was no need for Khonsu to elaborate--he remembered this story from long ago. It had happened under a Greek sun, yes, but the light of the sun has no limits nor borders. [line break]";
+	wait for any key;
+    	say "[line break]A case in which innocents were slaughtered and the guilty were left unpunished. [line break]";
+	wait for any key;
+    	say "[line break]The story of the Colchian witch Medea. [line break]";
+	wait for any key;
+    	say "[line break]'Khonsu,' Amun interjected. 'You speak of Medea. Why her?'[line break]";
+	wait for any key;
+	say "[line break]At the sound of 'Medea,' the room fell into a hush. [line break]";
+	wait for any key;
+    	say "[line break]'I had known of her before her crimes had reached the corners of the world,'  Khonsu said. 'Before she had slaughtered her children and tricked the Corinthian princess. Her story was simpler then but striking in its resemblance to the issue that plagues us today.[line break]";
+	wait for any key;
+    	say "[line break]To further her own goals, she had cut her brother into many pieces and scattered him into the sea.'[line break]";
+	wait for any key;
+    	say "[line break]'I believe,' Khonsu continued, 'that when all else has failed us, we must attempt to think like our adversary.'[line break]";
+	wait for any key;
+	say "[line break]Ma’at’s eyes were bright with a newfound hope. 'How,' she said slowly, 'can we expect to counter Seth when none of us possess his mindset? Who else but a Seth to defeat Seth?'[line break]";
+	wait for any key;
+	say "[line break]Amun was at once both horrified and intrigued. 'To invite such a barbaric woman into our homeland. What have we come to?' [line break]";
+	wait for any key;
+    	say "[line break]But it was their best shot. 'I know a certain Greek sun god. I will ask what can be done.' [line break][line break][line break]";
+	wait for any key;
+	say "[line break][line break]Your name is Medea. [line break]";
+	wait for any key;
+    	say "[line break]You did not know, despite your contingency plans, where you would go after your triumphant flight from Corinth. [line break]";
+	wait for any key;
+	say "[line break]You weren’t expecting to end up in a holding cell. [line break]";
+	wait for any key;
+	say "[line break]Your case has been tied up in divine court for a long, long time.[line break]";
+	wait for any key;
+	say "[line break]Hadn’t the gods supported your actions? Why have they punished you in this way?[line break]";
+	wait for any key;
+	say "[line break]And what of Jason? He who had flagrantly broken the most sacred divine oaths. What about his punishment? [line break]";
+	wait for any key;
+	say "[line break][line break]…Oh, right. You already took care of that. [line break][line break]";
+	wait for any key;
+	say "[line break][line break]One day, Helios comes to your cell. On his face, you see a mixture of pity, aversion, and a strange respect. [line break]";
+	wait for any key;
+	say "[line break]'My dear granddaughter. For many years, my allies and I have argued on your behalf, to little success. [line break]";
+	wait for any key;
+	say "[line break]I have received word from the Egyptian Sun. Egypt has been plagued by an evil it is thoroughly unequipped to combat. Its gods seem to believe that you alone can assist them. [line break]";
+	wait for any key;
+	say "[line break]If you successfully restore order to Egypt, you will be pardoned.'[line break]";
+	wait for any key;
+	say "[line break]'Will I be free?' you ask.[line break]";
+	wait for any key;
+	say "[line break]If so, the answer is clear. [line break]";
+	wait for any key;
+	say "[line break]'What do I need to do?'[line break]";
+	wait for any key;
+	say "[line break][line break]'Your name is Medea.[line break]";
+	wait for any key;
+	say "[line break]In order to stay out of divine jail, you must gather and reassemble Osiris’ body parts. [line break]";
+	wait for any key;
+	say "[line break]Your sun chariot has been returned to you. You missed your dragons. After catching up with your darlings, you traveled to Egypt. [line break]";
+	wait for any key;
+	say "[line break][line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. [line break]".
+
 	now the player is in Gate to the Osireion.
 
 
@@ -158,7 +245,7 @@ Check talking to head:
 
 Section 2 - Entering the Osireion
 
-The Gate to the Osireion is a room in Abydos. "The doorway to the temple stands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded. (please add more historical info and revise this)"
+The Gate to the Osireion is a room in Abydos. "The doorway to the temple stands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded. Perhaps you should attempt to ENTER the door. You might also consider DESCRIBING the door. (please add more historical info and revise this)"
 
 The stone door is a locked closed door. It is scenery. The stone door is south of the gate and north of the descending passage. Include (- has animate -) when defining the door.
 The description of the stone door is "The heavy stone door is engraved with an ancient riddle: [line break] 'I am yesterday, veiled in shadows. [line break] I am tomorrow, cloaked in flames. [line break] A union of gods, a cycle complete. [line break]  [line break] Using your genius intellect, you carefully contemplate the riddle. The door seems to be awaiting your ANSWER.'"
@@ -399,8 +486,7 @@ Instead of touching something in the Underground Chapel:
 		sort the sequence;
 		say "You touch the [noun], and something clicks into place.";
 		if there is no item in row 1 of the Table of Current Sequence:
-			trigger the end sequence;
-			
+			trigger the end sequence;		
 	otherwise:
 		say "Nothing happens.";
 		refill the sequence.
