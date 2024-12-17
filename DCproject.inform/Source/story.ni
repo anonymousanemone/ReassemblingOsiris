@@ -1,4 +1,4 @@
-"DCproject" by Sophia Ling
+"That Time I Got Out of Jail by Reassembling Osiris" by Sophia Ling and Ruya Tazebay 
 
 Include Basic Screen Effects by Emily Short.
 Include Rideable Vehicles by Graham Nelson.
