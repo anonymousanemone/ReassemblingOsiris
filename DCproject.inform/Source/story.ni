@@ -442,11 +442,15 @@ Osiris' brain is a body part. The description of the brain is "An unnervingly li
 Section 5 - Back to the village
 
 When Exploration ends:
+	now the workman is in Outside the Walled Village;
 	now the workman is curious.
 	
+[so medea goes back to the village on oxcart, immediately she is greeted by the workman (aka dialogue triggered automatically, they start talking]
 
+[workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greec,e i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
+	
 
-test Amarna with "n" in The small aten temple holding the head.
+test Amarna with "look / n" in The small aten temple holding the head.
 
 Chapter 3 - Thebes-Heart
 
