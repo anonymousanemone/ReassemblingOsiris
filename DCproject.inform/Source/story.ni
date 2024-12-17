@@ -161,7 +161,7 @@ Section 2 - Entering the Osireion
 The Gate to the Osireion is a room in Abydos. "The doorway to the temple stands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded. (please add more historical info and revise this)"
 
 The stone door is a locked closed door. It is scenery. The stone door is south of the gate and north of the descending passage. Include (- has animate -) when defining the door.
-The description of the stone door is "The heavy stone door is engraved with an ancient riddle: [line break] 'I am yesterday, veiled in shadows. [line break] I am tomorrw, cloaked in flames. [line break] A union of gods, a cycle complete.'"
+The description of the stone door is "The heavy stone door is engraved with an ancient riddle: [line break] 'I am yesterday, veiled in shadows. [line break] I am tomorrow, cloaked in flames. [line break] A union of gods, a cycle complete. [line break]  [line break] Using your genius intellect, you carefully contemplate the riddle. The door seems to be awaiting your ANSWER.'"
 
 Instead of answering the door that something:
 	if the player's command includes "sun":
@@ -169,7 +169,7 @@ Instead of answering the door that something:
 		now the stone door is open;
 		say "As you speak the word 'sun,' the massive stone door grinds open, revealing a long narrow passage.";
 	otherwise:
-		say "Nothing happens. Perhaps that is not the correct answer.";
+		say "Nothing happens. Perhaps that is not the correct answer. You look up into the sky, hoping for some god to give you a hint.";
 
 
 The Descending Passage is a room in Abydos. It is south of the stone door. "A long descending passage. Down south is a great hall. North is the gate."
