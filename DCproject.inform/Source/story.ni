@@ -7,13 +7,17 @@ Release along with an interpreter.
 Part 1 - Prologue
 
 After printing the banner text:
-	say "'It’s a complete disaster!'[line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break]";
+	say "[line break]'It’s a complete disaster!'[line break][line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break]";
 	wait for any key;
 	say "[line break]'I’ve pleaded and pleaded, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris to Osiris!'[line break]";
     	wait for any key;
     	say "[line break]'I had thought,' an especially haggard-looking Anubis replied, 'that we agreed Isis would be no help. Have our previous Emergency Meetings taught you nothing? I am starting to hear whispers--mere whispers, mind you, but whispers nonetheless--about a certain Serapis. Serapis! If Osiris falls, Kemet will fall alongside him. Amun, you must do something!'[line break]";
     	wait for any key;
-	say "[line break]Amun ignored Nephthys’ laments and Anubis’ whines. There was a more important avenue to pursue: 'Maʽat, what have you heard from Thoth?'[line break]Maʽat looked rather unhappy to be the bearer of bad news. 'He’s tried every spell he knows--to no effect. He’s sequestered himself in a library, but…'[line break][line break]It seemed that Ma’at had little hope that Thoth would be successful in his efforts.[line break]";
+	say "[line break]Amun ignored Nephthys’ laments and Anubis’ whines. There was a more important avenue to pursue: 'Maʽat, what have you heard from Thoth?'[line break]";
+	wait for any key;
+	say "[line break]Maʽat looked rather unhappy to be the bearer of bad news. 'He’s tried every spell he knows--to no effect. He’s sequestered himself in a library, but…'[line break][line break]";
+	wait for any key;
+	say "It seemed that Ma’at had little hope that Thoth would be successful in his efforts.[line break]";
     	wait for any key;
     	say "[line break]'More than that'--and her expression became grave--'Chaos is running rampant. I fear that if we do not take action soon, irreversible disorder will conquer all.'[line break]";
     	wait for any key;
@@ -57,7 +61,7 @@ After printing the banner text:
 	wait for any key;
     	say "[line break]'I believe,' Khonsu continued, 'that when all else has failed us, we must attempt to think like our adversary.'[line break]";
 	wait for any key;
-	say "[line break]Ma’at’s eyes were bright with a newfound hope. 'How,' she said slowly, 'can we expect to counter Seth when none of us possess his mindset? Who else but a Seth to defeat Seth?'[line break]";
+	say "[line break]Ma’at’s eyes were bright with a newfound hope. 'How,' she said slowly, 'can we expect to counter Seth when none of us possess his cruel cunning? Who else but a Seth to defeat Seth?'[line break]";
 	wait for any key;
 	say "[line break]Amun was at once both horrified and intrigued. 'To invite such a barbaric woman into our homeland. What have we come to?' [line break]";
 	wait for any key;
@@ -67,13 +71,13 @@ After printing the banner text:
 	wait for any key;
     	say "[line break]You did not know, despite your contingency plans, where you would go after your triumphant flight from Corinth. [line break]";
 	wait for any key;
-	say "[line break]You weren’t expecting to end up in a holding cell. [line break]";
+	say "[line break]You really weren’t expecting to end up in a holding cell. [line break]";
 	wait for any key;
 	say "[line break]Your case has been tied up in divine court for a long, long time.[line break]";
 	wait for any key;
 	say "[line break]Hadn’t the gods supported your actions? Why have they punished you in this way?[line break]";
 	wait for any key;
-	say "[line break]And what of Jason? He who had flagrantly broken the most sacred divine oaths. What about his punishment? [line break]";
+	say "[line break]And what of Jason? He who had flagrantly broken the most sacred divine oaths. What about his divine punishment? [line break]";
 	wait for any key;
 	say "[line break][line break]…Oh, right. You already took care of that. [line break][line break]";
 	wait for any key;
