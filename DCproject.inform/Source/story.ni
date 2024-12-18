@@ -534,11 +534,15 @@ Osiris' brain is a body part. The description of the brain is "An unnervingly li
 Section 5 - Back to the village
 
 When Exploration ends:
+	now the workman is in Outside the Walled Village;
 	now the workman is curious.
 	
+[so medea goes back to the village on oxcart, immediately she is greeted by the workman (aka dialogue triggered automatically, they start talking]
 
+[workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greec,e i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
+	
 
-test Amarna with "n" in The small aten temple holding the head.
+test Amarna with "look / n" in The small aten temple holding the head.
 
 Chapter 3 - Thebes-Heart
 
@@ -643,6 +647,61 @@ Section 1 - Busiris Palace
 Central Court is a room in Busiris.
 
 King Busiris is a person. King Busiris can be alive or dead. King Busiris is alive.
+
+A corridor is a kind of room. 
+
+Pillar Hall is a room in Busiris. It is north of Central Court. Pillar Hall is northeast of Hallway.
+
+Cult Rooms is a room in Busiris. It is west of Central Court.
+
+Repository is a room in Busiris. It is north of Cult Rooms.
+
+Osiris Crypt is a room in Busiris. It is east of Hallway. West of Osiris Crypt is nothing.
+
+Pillar Crypt is a room in Busiris. It is west of Cult Rooms. It is east of Osiris Crypt. Nothing is west of Pillar Crypt.
+
+Corridor of Procession East is a corridor in Busiris. It is south of Central Court.
+
+Shrine Room is a room in Busiris. It is east of Corridor of Procession. 
+
+Double Axe Hall is a room in Busiris. It is north of the Shrine Room. It is east of Central Court.
+
+Corridor of Procession West is a corridor in Busiris. It is west of Corridor of Procession.
+
+Hallway is a corridor in Busiris. It is north of Corridor of Procession West. 
+
+Magazines1 is a room in Busiris. It is west of Hallway.
+
+Magazines2 is a room in Busiris. It is northwest of Hallway.
+
+South Propylaeum is a room in Busiris. It is southwest of Central Court. It is northeast of Corridor of Procession West. It is northwest of Corridor of Procession East.
+
+North Corridor is a corridor in Busiris. It is east of Pillar Hall.
+
+Corridor of the Draught Board is a corridor. It is south of North Corridor.
+
+Workrooms is a room. It is south of the Corridor of the Draught Board.
+
+Northeast Magazines is a room in Busiris. It is west of Corridor of the Draught Board. 
+
+More Workshops is a room. It is east of the Corridor of the Draught Board.
+
+Court of the Stone Spout is a room. It is south of More Workshops. It is north of Double Axe Hall. It is southeast of the Corridor of the Draught Board.
+
+Lobby is a room in Busiris. It is above the South Propylaeum.
+
+Tricolumnar Hall is a room in Busiris. It is north of Lobby.
+
+Hall1 is a corridor in Busiris. It is east of Tricolumnar Hall. 
+
+Loggia is a room in Busiris. It is south of Hall1.
+
+Hall2 is a corridor in Busiris. It is west of Tricolumnar Hall.
+
+Great Hall-Busiris is a room in Busiris. It is west of Hall2. The printed name of Great Hall-Busiris is "Great Hall".
+
+Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Hall2.
+
 
 
 
