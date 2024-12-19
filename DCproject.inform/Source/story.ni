@@ -582,8 +582,25 @@ The Temple of Amenhotep III is east of the the collection of three temples. It i
 
 The Memnon Colossi is east of the Temple of Amenhotep III. It is in Thebes. "Two massive statues of Amenhotep III stand watch over the land."
 
-[the heart will be hidden in one of these two statues at the base]
-Osiris' heart is a body part. 
+Colossi1 is a closed unopenable container. 
+
+Colossi2 is a closed unopenable container. 
+
+Instead of cutting the Colossi1, do nothing.
+
+Instead of cutting the Colossi2, do nothing.
+
+Osiris' heart is a body part in Colossi1.
+
+The heart scarab is a thing. 
+
+Instead of examining Colossi1:
+	If the player is holding the heart scarab:
+		now Colossi1 is open;
+		now Colossi1 is unopenable;
+		say "The panel at the base of the statue slides open to reveal Osiris' heart.";
+	otherwise:
+		continue the action.
 
 The Temple of Horemheb is south of the collection of three temples. It is in Thebes. "This temple stands as  tribute to Aÿ and Horemheb."
 [Heracles is at Horemheb]
@@ -604,15 +621,24 @@ The House of Life is west of the Ramesseum. It is in Thebes. "This is the librar
 
 Medical papyri is scenery in the House of LIfe. "You look around the shelves of papyri and found a shelf that caught your eye. something about the papyri. Incorporate a spell"
 
+Instead of thinking during Heal Heracles:
+	if the papyri is examined:
+		say "the headache spell info".
+
 [after examining papyri, player can type "think" to remember what she needs]
 
-Section 3 - 
+Section 3 - Landing in Thebes
 
 [when medea first lands, say "maybe it's time to explore to gather some hints about where Osiris might be]
 
 [Medea lands in Tawosret]
 
 Heracles is a person in the Temple of Horemheb. Heracles can be sick or healthy. Heracles is sick.
+
+Section 4 - Back in Thebes
+
+[go acquire the things!]
+[heracles says tata]
 
 
 Chapter 4 - Busiris-Organs
@@ -632,11 +658,19 @@ num_moves
 9
 10
 
+Table of Heracles' Yapping
+yappery
+"Heracles grunts loudly."
+"'What are you even doing,' Heracles whines."
+
 Every turn during Organ Acquisition:
-	if the location is not the House of Life:
-		repeat through Table of Countdown:
-			blank out the whole row;
-			rule succeeds.
+	if the Table of Countdown is not empty:
+		choose a random row in Table of Heracles' Yapping;
+		say "[yappery entry]";
+		if the location is not the House of Life:
+			repeat through Table of Countdown:
+				blank out the whole row;
+				rule succeeds.
 
 The Kidnapping is a scene. The Kidnapping begins when the number of filled rows in the Table of Countdown is 0. The Kidnapping ends when King Busiris is dead.
 
