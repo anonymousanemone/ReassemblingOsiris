@@ -2,6 +2,7 @@
 
 Include Basic Screen Effects by Emily Short.
 Include Rideable Vehicles by Graham Nelson.
+Include Secret Doors by Gavin Lambert.
 Release along with an interpreter.
 
 [When play begins: try switching the story transcript on.]
@@ -447,12 +448,11 @@ The offerings are things in the Sanctuary. "Arranged delicately atop the altars 
 
 The Aten shrine is scenery in the Sanctuary. "(description of shrine, pick object?)"
 
-The staircase is a closed unopenable door. The staircase is above the Underground chapel and below the Small Aten Temple. 
-
-[remove reporting of the hidden door somehow]
+The hidden staircase is a secret door. The staircase is above the Underground chapel and below the Small Aten Temple. 
 
 Instead of examining the shrine:
-	now the staircase is open;
+	now the hidden staircase is revealed;
+	now the hidden staircase is open;
 	say "You hear an odd rumbling noise. (here the hidden staircase is revealed).";
 	continue the action.
 
@@ -648,16 +648,18 @@ Escape is a scene. Escape begins when the location is the Jail Cell. Escape ends
 
 Heracles can be caught or uncaught. Heracles is uncaught.
 
-The invisible timer is a thing. 
+The invisible tool is a thing. 
 
-[The player has a number that varies called hallway passes. Hallway passes is initially 0.
+The hallway count is a number that varies. The hallway count is initially 0.
 
 Every turn when the player is in the Hallway:
-	increment hallway passes;
-	if hallway passes is 5 or more:
-		now the crypt door is unlocked;
-		say "A hidden door creaks open, revealing the crypt!";
-		stop the action.]
+	showme hallway count;
+	if hallway count is 5:
+		now the hidden entrance is revealed;
+		now the hidden entrance is open;
+		say "A large noise sounds, revealing a hidden entrance to a dark room. It is east of you.";
+	otherwise:
+		increment hallway count.
 
 When Escape begins:
 	say "You have been taken by the guards into a jail cell.";
@@ -676,6 +678,7 @@ Every turn during Escape:
 
 Instead of going when the location is a corridor during Escape:
 	if a random chance of 1 in 6 succeeds:
+		say "You amble down the winding corridors...";
 		teleport the player;	
 	otherwise:
 		continue the action.
@@ -695,12 +698,12 @@ After going during Escape:
 	continue the action.
 	
 To set the timer:
-	the invisible timer rings in 5 minutes from now.
+	the invisible tool rings in 5 minutes from now.
 	
 To delay the timer:
-	the invisible timer rings in one hour from now.
+	the invisible tool rings in one hour from now.
 	
-At the time when the invisible timer rings:
+At the time when the invisible tool rings:
 	if the location is a place listed in the Table of Dangerous Places:
 		[say "ring, this is a possible place";]
 		if a random chance of 1 in 3 succeeds:
@@ -736,9 +739,6 @@ Corridor of the Draught Board
 Hall1
 Hall2
 
-
-Osiris' liver is a body part. It is in Crypt of Osiris.
-
 Section 2 - Busiris Palace
 
 Central Court is a room in Busiris.
@@ -753,7 +753,11 @@ Cult Rooms is a room in Busiris. It is west of Central Court.
 
 Repository is a room in Busiris. It is north of Cult Rooms.
 
-Crypt of Osiris is a room in Busiris. It is east of Hallway. West of Crypt of Osiris is nothing.
+Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of Crypt of Osiris is nothing.
+
+The hidden entrance is a secret door. The hidden entrance is east of Hallway. 
+
+Osiris' liver is a body part. It is in Crypt of Osiris.
 
 Pillar Crypt is a room in Busiris. It is west of Cult Rooms. It is east of Crypt of Osiris. Nothing is west of Pillar Crypt.
 
@@ -777,7 +781,9 @@ Corridor of the Draught Board is a corridor in Busiris. It is south of North Cor
 
 Workshops is a room in Busiris. It is south of the Corridor of the Draught Board.
 
-The Jail Cell is a room in Busiris. It is west of Corridor of the Draught Board. 
+The Jail Cell is a room in Busiris. It is west of the Cell Door. 
+
+The Cell Door is a locked open door. The Cell Door is east of the Jail Cell and west of the Corridor of the Draught Board.
 
 More Workrooms is a room in Busiris. It is east of the Corridor of the Draught Board.
 
@@ -796,8 +802,6 @@ Hall2 is a corridor in Busiris. It is west of Tricolumnar Hall.
 Great Hall-Busiris is a room in Busiris. It is west of Hall2. The printed name of Great Hall-Busiris is "Great Hall".
 
 Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Hall2.
-
-
 
 Part 5 - Complete Any Time
 [can be completed any time after acquiring the head]
