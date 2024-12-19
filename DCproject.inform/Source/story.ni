@@ -352,8 +352,6 @@ Get Body Bag is a scene. Get Body Bag begins when Discovery ends. Get Body Bag e
 
 Exploration is a scene. Exploration begins when Get Body Bag ends. Exploration ends when Osiris' brain is acquired.
 
-[Brain Revealed is a scene. Brain Revealed begins when ]
-
 Next Instructions is a scene. Next Instructions begin when Exploration Ends. Next Instructions end when the workman is uncurious.
 	
 Section 2 - Workmen's village
@@ -536,19 +534,31 @@ Section 5 - Back to the village
 When Exploration ends:
 	now the workman is in Outside the Walled Village;
 	now the workman is curious.
+
+Instead of entering the sun chariot when the player is on the oxcart:
+	say "You have to get off of one carriage to get on another."
 	
 [so medea goes back to the village on oxcart, immediately she is greeted by the workman (aka dialogue triggered automatically, they start talking]
+Every turn during Next Instructions:
+	if the location is Outside the Walled village and the player is not on the oxcart:
+		now the workman is in Outside the Walled Village;
+		say "Workman talks to Medea for stuff";
+		now the workman is uncurious. [therefore next instructions end]
 
 [workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greec,e i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
+Instead of selecting when Next Instructions has happened and Heal Heracles has not happened:
+	if the number understood is not seven: [the number for thebes]
+		say "i really miss greec,e i'm feeling nostalgic, time to go to thebes";
+	otherwise:
+		continue the action.
 	
-
 test Amarna with "look / n" in The small aten temple holding the head.
 
 Chapter 3 - Thebes-Heart
 
 Heart Acquisition is a scene. Heart Acquisition begins when Brain Acquisition ends. Heart Acquisition ends when Osiris' heart is acquired.
 
-Heal Heracles is a scene. Heal Heracles begins when Heart Acquisition begins. Heal Heracles ends when Heracles is healthy. 
+Heal Heracles is a scene. Heal Heracles begins when the player is in the Temple of Horemheb for the first time. Heal Heracles ends when Heracles is healthy. 
 
 Buddy Heracles is a scene. Buddy Heracles begins when Heal Heracles ends. Buddy Heracles ends when the location of the player is not in Busiris.
 
@@ -602,7 +612,7 @@ Instead of examining Colossi1:
 	otherwise:
 		continue the action.
 
-The Temple of Horemheb is south of the collection of three temples. It is in Thebes. "This temple stands as  tribute to Aÿ and Horemheb."
+The Temple of Horemheb is south of the collection of three temples. It is in Thebes. "This temple stands as tribute to Aÿ and Horemheb."
 [Heracles is at Horemheb]
 
 The Temple of Ramesses III is south of the Temple of Horemheb. It is in Thebes. "Here be Ramesses III's temple."
@@ -675,8 +685,6 @@ Every turn during Organ Acquisition:
 The Kidnapping is a scene. The Kidnapping begins when the number of filled rows in the Table of Countdown is 0. The Kidnapping ends when King Busiris is dead.
 
 Section 1 - Event Management
-
-The time of day is 1:00 PM.
 
 Escape is a scene. Escape begins when the location is the Jail Cell. Escape ends when Heracles is caught. Escape is a recurring scene.
 
