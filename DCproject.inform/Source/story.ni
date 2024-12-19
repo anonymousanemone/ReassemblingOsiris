@@ -3,6 +3,7 @@
 Include Basic Screen Effects by Emily Short.
 Include Rideable Vehicles by Graham Nelson.
 Include Secret Doors by Gavin Lambert.
+Include Basic Help Menu by Emily Short.
 Release along with an interpreter.
 
 [When play begins: try switching the story transcript on.]
@@ -12,11 +13,11 @@ Part 1 - Prologue
 After printing the banner text:
 	say "[line break]'It’s a complete disaster!'[line break][line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break]";
 	wait for any key;
-	say "[line break]'I’ve pleaded and pleaded, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris to Osiris!'[line break]";
+	say "[line break]'I’ve pleaded and pleaded, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris herself!'[line break]";
     	wait for any key;
     	say "[line break]'I had thought,' an especially haggard-looking Anubis replied, 'that we agreed Isis would be no help. Have our previous Emergency Meetings taught you nothing? I am starting to hear whispers--mere whispers, mind you, but whispers nonetheless--about a certain Serapis. Serapis! If Osiris falls, Kemet will fall alongside him. Amun, you must do something!'[line break]";
     	wait for any key;
-	say "[line break]Amun ignored Nephthys’ laments and Anubis’ whines. There was a more important avenue to pursue: 'Maʽat, what have you heard from Thoth?'[line break]";
+	say "[line break]Amun ignored these laments and whines with a practiced patience. There was a more important discussion to be had: 'Maʽat, what have you heard from Thoth?'[line break]";
 	wait for any key;
 	say "[line break]Maʽat looked rather unhappy to be the bearer of bad news. 'He’s tried every spell he knows--to no effect. He’s sequestered himself in a library, but…'[line break][line break]";
 	wait for any key;
@@ -30,11 +31,11 @@ After printing the banner text:
 	wait for any key;
     	say "[line break]'...Has he made any progress in fashioning an Osiris?'[line break]";
 	wait for any key;
-    	say "[line break]Sekhmet's displeased grimace was answer enough.  [line break]";
+    	say "[line break]Sekhmet's snarl was answer enough.  [line break]";
 	wait for any key;
     	say "[line break]'...I see,' Amun said. 'Perhaps…we should all check in next week.' [line break]";
 	wait for any key;
-    	say "[line break]His admittedly lackluster statement incited Anubis. 'This is the ninety-ninth Emergency Meeting we’ve held—we cannot prolong this emergency! The unweighed souls are piling up and spilling into the streets of the living, and poor Medjed is too spooked to do his duties! I cannot contend with this alone!' [line break]";
+    	say "[line break]This lackluster statement provoked an angry response from Anubis. 'This is the ninety-ninth Emergency Meeting we’ve held—we cannot prolong this emergency! The unweighed souls are piling up and spilling into the streets of the living, and poor Medjed is too spooked to do his duties! I cannot contend with this alone!' [line break]";
 	wait for any key;
     	say "[line break]'And what am I to do, Anubis?' Amun bit back. 'Seth is rejoicing in his victory, and clearly, none of us here have the aptitude to counter him!' [line break]";
 	wait for any key;
@@ -66,7 +67,7 @@ After printing the banner text:
 	wait for any key;
 	say "[line break]Ma’at’s eyes were bright with a newfound hope. 'How,' she said slowly, 'can we expect to counter Seth when none of us possess his cruel cunning? Who else but a Seth to defeat Seth?'[line break]";
 	wait for any key;
-	say "[line break]Amun was at once both horrified and intrigued. 'To invite such a barbaric woman into our homeland. What have we come to?' [line break]";
+	say "[line break]Amun was at once both horrified and intrigued. 'To invite such a barbaric woman into our home. What have we come to?' [line break]";
 	wait for any key;
     	say "[line break]But it was their best shot. 'I know a certain Greek sun god. I will ask what can be done.' [line break][line break][line break]";
 	wait for any key;
@@ -82,10 +83,13 @@ After printing the banner text:
 	wait for any key;
 	say "[line break]And what of Jason? He who had flagrantly broken the most sacred divine oaths. What about his divine punishment? [line break]";
 	wait for any key;
-	say "[line break][line break]…Oh, right. You already took care of that. [line break][line break]";
+	say "[line break][line break][line break]…Oh, right. You already took care of that. [line break][line break]";
+	wait for any key;
+	wait for any key;
+	say "[line break][line break][line break]LOL.[line break][line break][line break]";
 	wait for any key;
 	say "[line break][line break]One day, Helios comes to your cell. On his face, you see a mixture of pity, aversion, and a strange respect. [line break]";
-	wait for any key;
+	wait for any key; 
 	say "[line break]'My dear granddaughter. For many years, my allies and I have argued on your behalf, to little success. [line break]";
 	wait for any key;
 	say "[line break]I have received word from the Egyptian Sun. Egypt has been plagued by an evil it is thoroughly unequipped to combat. Its gods seem to believe that you alone can assist them. [line break]";
@@ -98,13 +102,16 @@ After printing the banner text:
 	wait for any key;
 	say "[line break]'What do I need to do?'[line break]";
 	wait for any key;
-	say "[line break][line break]'Your name is Medea.[line break]";
+	say "[line break][line break]Your name is Medea.[line break]";
 	wait for any key;
 	say "[line break]In order to stay out of divine jail, you must gather and reassemble Osiris’ body parts. [line break]";
 	wait for any key;
-	say "[line break]Your sun chariot has been returned to you. You missed your dragons. After catching up with your darlings, you traveled to Egypt. [line break]";
 	wait for any key;
-	say "[line break][line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. [line break]".
+	say "[line break]The Egyptians, despite their request for your assistance, are rather wary of you. Currently, you cannot access your INNATE MAGIC and DIVINE POWERS. You will need to rely on your CLEVERNESS and CUNNING to complete your mission. [line break]";
+	wait for any key;
+	say "[line break]But your sun chariot has been returned to you. You missed your darling dragons. After catching up with your sweeties, you traveled to Egypt. [line break]";
+	wait for any key;
+	say "[line break][line break]Right now you are outside of a temple in Abydos, which, according to Helios, is home to the cult of Osiris. [line break]".
 
 	now the player is in Gate to the Osireion.
 
@@ -632,6 +639,8 @@ num_moves
 9
 10
 
+[put something for heracles to say, put a table and have a few different things that heracles cycles through each time.]
+
 Every turn during Organ Acquisition:
 	if the location is not the House of Life:
 		repeat through Table of Countdown:
@@ -740,6 +749,10 @@ Hall1
 Hall2
 
 Section 2 - Busiris Palace
+
+[end up in throne room, busiris says he says "muhaha" i am sacrificing you to zeus and this prompts the info here. they get kicked to the jail cell until the ritual preparations are done]
+
+[final confrontation between all three, forcefeed the jar to busiris, he is knocked out, heracles say no fun killing a sleeping man]
 
 Central Court is a room in Busiris.
 
