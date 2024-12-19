@@ -1,4 +1,4 @@
-"DCproject" by Sophia Ling
+"That Time I Got Gout" by Sophia Ling and Ruya Tazebay
 
 Include Basic Screen Effects by Emily Short.
 Include Rideable Vehicles by Graham Nelson.
