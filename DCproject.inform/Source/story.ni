@@ -640,9 +640,106 @@ Every turn during Organ Acquisition:
 
 The Kidnapping is a scene. The Kidnapping begins when the number of filled rows in the Table of Countdown is 0. The Kidnapping ends when King Busiris is dead.
 
-Osiris' liver is a body part. It is in Busiris-Marketplace.
+Section 1 - Event Management
 
-Section 1 - Busiris Palace
+The time of day is 1:00 PM.
+
+Escape is a scene. Escape begins when the location is the Jail Cell. Escape ends when Heracles is caught. Escape is a recurring scene.
+
+Heracles can be caught or uncaught. Heracles is uncaught.
+
+The invisible timer is a thing. 
+
+[The player has a number that varies called hallway passes. Hallway passes is initially 0.
+
+Every turn when the player is in the Hallway:
+	increment hallway passes;
+	if hallway passes is 5 or more:
+		now the crypt door is unlocked;
+		say "A hidden door creaks open, revealing the crypt!";
+		stop the action.]
+
+When Escape begins:
+	say "You have been taken by the guards into a jail cell.";
+	now Heracles is uncaught.
+	
+When Escape ends:
+	say "The guards rush into the room and apprehend you.";
+	now Heracles is uncaught;
+	now Heracles is in the Jail Cell;
+	now the player is in the jail Cell.
+	
+Every turn during Escape:
+	if the location is Central Court:
+		if a random chance of 1 in 2 succeeds:
+			now Heracles is caught;			
+
+Instead of going when the location is a corridor during Escape:
+	if a random chance of 1 in 6 succeeds:
+		teleport the player;	
+	otherwise:
+		continue the action.
+		
+To teleport the player:
+	choose a random row in the Table of Corridor Confusion;
+	now the player is in the corr_name entry;
+	now Heracles is in the corr_name entry.
+	
+After going during Escape:
+	if the location is not a corridor:
+		[say "timer set";]
+		set the timer;
+	otherwise:
+		[say "delay timer";]
+		delay the timer;
+	continue the action.
+	
+To set the timer:
+	the invisible timer rings in 5 minutes from now.
+	
+To delay the timer:
+	the invisible timer rings in one hour from now.
+	
+At the time when the invisible timer rings:
+	if the location is a place listed in the Table of Dangerous Places:
+		[say "ring, this is a possible place";]
+		if a random chance of 1 in 3 succeeds:
+			now Heracles is caught;
+		
+		
+Table of Dangerous Places
+place (a room)
+Pillar Hall
+Cult Rooms
+Repository
+Pillar Crypt
+Shrine Room
+Double Axe Hall 
+West Magazines
+South Propylaeum
+Workshops
+More Workrooms
+Court of the Stone Spout
+Lobby
+Tricolumnar Hall
+Loggia
+Great Hall-Busiris
+Porch
+
+Table of Corridor Confusion
+corr_name (a room)
+Corridor of Procession East
+Corridor of Procession West
+Hallway
+North Corridor
+Corridor of the Draught Board
+Hall1
+Hall2
+
+
+Osiris' liver is a body part. It is in Crypt of Osiris.
+
+Section 2 - Busiris Palace
 
 Central Court is a room in Busiris.
 
@@ -656,9 +753,9 @@ Cult Rooms is a room in Busiris. It is west of Central Court.
 
 Repository is a room in Busiris. It is north of Cult Rooms.
 
-Osiris Crypt is a room in Busiris. It is east of Hallway. West of Osiris Crypt is nothing.
+Crypt of Osiris is a room in Busiris. It is east of Hallway. West of Crypt of Osiris is nothing.
 
-Pillar Crypt is a room in Busiris. It is west of Cult Rooms. It is east of Osiris Crypt. Nothing is west of Pillar Crypt.
+Pillar Crypt is a room in Busiris. It is west of Cult Rooms. It is east of Crypt of Osiris. Nothing is west of Pillar Crypt.
 
 Corridor of Procession East is a corridor in Busiris. It is south of Central Court.
 
@@ -670,23 +767,21 @@ Corridor of Procession West is a corridor in Busiris. It is west of Corridor of 
 
 Hallway is a corridor in Busiris. It is north of Corridor of Procession West. 
 
-Magazines1 is a room in Busiris. It is west of Hallway.
-
-Magazines2 is a room in Busiris. It is northwest of Hallway.
+West Magazines is a room in Busiris. It is west of Hallway.
 
 South Propylaeum is a room in Busiris. It is southwest of Central Court. It is northeast of Corridor of Procession West. It is northwest of Corridor of Procession East.
 
 North Corridor is a corridor in Busiris. It is east of Pillar Hall.
 
-Corridor of the Draught Board is a corridor. It is south of North Corridor.
+Corridor of the Draught Board is a corridor in Busiris. It is south of North Corridor.
 
-Workrooms is a room. It is south of the Corridor of the Draught Board.
+Workshops is a room in Busiris. It is south of the Corridor of the Draught Board.
 
-Northeast Magazines is a room in Busiris. It is west of Corridor of the Draught Board. 
+The Jail Cell is a room in Busiris. It is west of Corridor of the Draught Board. 
 
-More Workshops is a room. It is east of the Corridor of the Draught Board.
+More Workrooms is a room in Busiris. It is east of the Corridor of the Draught Board.
 
-Court of the Stone Spout is a room. It is south of More Workshops. It is north of Double Axe Hall. It is southeast of the Corridor of the Draught Board.
+Court of the Stone Spout is a room in Busiris. It is south of More Workrooms. It is north of Double Axe Hall. It is southeast of the Corridor of the Draught Board.
 
 Lobby is a room in Busiris. It is above the South Propylaeum.
 
@@ -701,7 +796,6 @@ Hall2 is a corridor in Busiris. It is west of Tricolumnar Hall.
 Great Hall-Busiris is a room in Busiris. It is west of Hall2. The printed name of Great Hall-Busiris is "Great Hall".
 
 Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Hall2.
-
 
 
 
