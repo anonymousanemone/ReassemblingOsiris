@@ -109,6 +109,8 @@ After printing the banner text:
 	wait for any key;
 	say "[line break]The Egyptians, despite their request for your assistance, are rather wary of you. Currently, you cannot access your INNATE MAGIC and DIVINE POWERS. You will need to rely on your CLEVERNESS and CUNNING to complete your mission. [line break]";
 	wait for any key;
+	say "[line break]Your grandfather seems to feel a modicum of sympathy for you. Before he dropped you off in Egypt, he left you with a help book [line break]"; [ruya when help book extension]
+	wait for any key;
 	say "[line break]But your sun chariot has been returned to you. You missed your darling dragons. After catching up with your sweeties, you traveled to Egypt. [line break]";
 	wait for any key;
 	say "[line break][line break]Right now you are outside of a temple in Abydos, which, according to Helios, is home to the cult of Osiris. [line break]".
@@ -248,6 +250,7 @@ Table of Osiris' useful knowledge
 fact	summary
 1	"Go to Oxyrhynchos! I have fair confidence that my.... a very important.... an important member of my body will be there. "
 2	"Fishing may result in some happy results."
+3 	"Egyptians these days are so weak and feeble. I remember the good old days when everyone brought a knife to the afterlife..."
 
 Check talking to head:
 	if the head is dumb:
@@ -259,10 +262,10 @@ Check talking to head:
 
 Section 2 - Entering the Osireion
 
-The Gate to the Osireion is a room in Abydos. "The doorway to the temple stands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded. Perhaps you should attempt to ENTER the door. You might also consider DESCRIBING the door. (please add more historical info and revise this)"
+The Gate to the Osireion is a room in Abydos. "The doorway to the temple stands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded. Perhaps you should considering ENTER or EXAMINING the door. (please add more historical info and revise this)"
 
 The stone door is a locked closed door. It is scenery. The stone door is south of the gate and north of the descending passage. Include (- has animate -) when defining the door.
-The description of the stone door is "The heavy stone door is engraved with an ancient riddle: [line break] 'I am yesterday, veiled in shadows. [line break] I am tomorrw, cloaked in flames. [line break] A union of gods, a cycle complete.'"
+The description of the stone door is "The heavy stone door is engraved with an ancient riddle: [line break] 'I am yesterday, veiled in shadows. [line break] I am tomorrow, cloaked in flames. [line break] A union of gods, a cycle complete.'"
 
 Instead of answering the door that something:
 	if the player's command includes "sun":
@@ -667,7 +670,7 @@ num_moves
 
 Table of Heracles' Yapping
 yappery
-"Heracles grunts loudly."
+"'Are we there yet?' Heracles ask. You feel a terrible RAGE. Heracles takes a look at your expression and wisely decides to shut up."
 "'What are you even doing,' Heracles whines."
 
 Every turn during Organ Acquisition:
