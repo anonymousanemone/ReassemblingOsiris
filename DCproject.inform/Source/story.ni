@@ -1,22 +1,25 @@
-"DCproject" by Sophia Ling
+"That Time I Got Gout" by Sophia Ling and Ruya Tazebay
 
 Include Basic Screen Effects by Emily Short.
 Include Rideable Vehicles by Graham Nelson.
 Include Secret Doors by Gavin Lambert.
+Include Basic Help Menu by Emily Short.
 Release along with an interpreter.
 
 [When play begins: try switching the story transcript on.]
+
+When play begins: choose row 1 in Table of Basic Help Options; now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt."
 
 Part 1 - Prologue
 
 After printing the banner text:
 	say "[line break]'It’s a complete disaster!'[line break][line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break]";
 	wait for any key;
-	say "[line break]'I’ve pleaded and pleaded, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris to Osiris!'[line break]";
+	say "[line break]'I’ve pleaded and pleaded, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris herself!'[line break]";
     	wait for any key;
     	say "[line break]'I had thought,' an especially haggard-looking Anubis replied, 'that we agreed Isis would be no help. Have our previous Emergency Meetings taught you nothing? I am starting to hear whispers--mere whispers, mind you, but whispers nonetheless--about a certain Serapis. Serapis! If Osiris falls, Kemet will fall alongside him. Amun, you must do something!'[line break]";
     	wait for any key;
-	say "[line break]Amun ignored Nephthys’ laments and Anubis’ whines. There was a more important avenue to pursue: 'Maʽat, what have you heard from Thoth?'[line break]";
+	say "[line break]Amun ignored these laments and whines with a practiced patience. There was a more important discussion to be had: 'Maʽat, what have you heard from Thoth?'[line break]";
 	wait for any key;
 	say "[line break]Maʽat looked rather unhappy to be the bearer of bad news. 'He’s tried every spell he knows--to no effect. He’s sequestered himself in a library, but…'[line break][line break]";
 	wait for any key;
@@ -30,11 +33,11 @@ After printing the banner text:
 	wait for any key;
     	say "[line break]'...Has he made any progress in fashioning an Osiris?'[line break]";
 	wait for any key;
-    	say "[line break]Sekhmet's displeased grimace was answer enough.  [line break]";
+    	say "[line break]Sekhmet's snarl was answer enough.  [line break]";
 	wait for any key;
     	say "[line break]'...I see,' Amun said. 'Perhaps…we should all check in next week.' [line break]";
 	wait for any key;
-    	say "[line break]His admittedly lackluster statement incited Anubis. 'This is the ninety-ninth Emergency Meeting we’ve held—we cannot prolong this emergency! The unweighed souls are piling up and spilling into the streets of the living, and poor Medjed is too spooked to do his duties! I cannot contend with this alone!' [line break]";
+    	say "[line break]This lackluster statement provoked an angry response from Anubis. 'This is the ninety-ninth Emergency Meeting we’ve held—we cannot prolong this emergency! The unweighed souls are piling up and spilling into the streets of the living, and poor Medjed is too spooked to do his duties! I cannot contend with this alone!' [line break]";
 	wait for any key;
     	say "[line break]'And what am I to do, Anubis?' Amun bit back. 'Seth is rejoicing in his victory, and clearly, none of us here have the aptitude to counter him!' [line break]";
 	wait for any key;
@@ -66,7 +69,7 @@ After printing the banner text:
 	wait for any key;
 	say "[line break]Ma’at’s eyes were bright with a newfound hope. 'How,' she said slowly, 'can we expect to counter Seth when none of us possess his cruel cunning? Who else but a Seth to defeat Seth?'[line break]";
 	wait for any key;
-	say "[line break]Amun was at once both horrified and intrigued. 'To invite such a barbaric woman into our homeland. What have we come to?' [line break]";
+	say "[line break]Amun was at once both horrified and intrigued. 'To invite such a barbaric woman into our home. What have we come to?' [line break]";
 	wait for any key;
     	say "[line break]But it was their best shot. 'I know a certain Greek sun god. I will ask what can be done.' [line break][line break][line break]";
 	wait for any key;
@@ -82,10 +85,13 @@ After printing the banner text:
 	wait for any key;
 	say "[line break]And what of Jason? He who had flagrantly broken the most sacred divine oaths. What about his divine punishment? [line break]";
 	wait for any key;
-	say "[line break][line break]…Oh, right. You already took care of that. [line break][line break]";
+	say "[line break][line break][line break]…Oh, right. You already took care of that. [line break][line break]";
+	wait for any key;
+	wait for any key;
+	say "[line break][line break][line break]LOL.[line break][line break][line break]";
 	wait for any key;
 	say "[line break][line break]One day, Helios comes to your cell. On his face, you see a mixture of pity, aversion, and a strange respect. [line break]";
-	wait for any key;
+	wait for any key; 
 	say "[line break]'My dear granddaughter. For many years, my allies and I have argued on your behalf, to little success. [line break]";
 	wait for any key;
 	say "[line break]I have received word from the Egyptian Sun. Egypt has been plagued by an evil it is thoroughly unequipped to combat. Its gods seem to believe that you alone can assist them. [line break]";
@@ -98,13 +104,21 @@ After printing the banner text:
 	wait for any key;
 	say "[line break]'What do I need to do?'[line break]";
 	wait for any key;
-	say "[line break][line break]'Your name is Medea.[line break]";
+	say "[line break][line break]Your name is Medea, and you can't wait to be free.[line break]";
 	wait for any key;
-	say "[line break]In order to stay out of divine jail, you must gather and reassemble Osiris’ body parts. [line break]";
+	say "[line break]In order to get out of jail, you must gather and reassemble Osiris` body parts. You don't know how many there are or where they might be hidden. [line break]";
 	wait for any key;
-	say "[line break]Your sun chariot has been returned to you. You missed your dragons. After catching up with your darlings, you traveled to Egypt. [line break]";
 	wait for any key;
-	say "[line break][line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. [line break]".
+	say "[line break]...You have to hand it to this Seth character. You weren't nearly as creative. [line break]";
+	wait for any key;
+	wait for any key;
+	say "[line break]The Egyptian gods, despite pleading for your assistance, are rather frightened by you. They've placed some restrictions on your behavior--a parole, if you will. Currently, you cannot access your innate magic and divine power. You will need to rely on your genius, cunning, and astonishingly gorgeous face to complete your mission. [line break]";
+	[wait for any key;
+	say "[line break]Your grandfather seems to feel a modicum of sympathy for you. Before he dropped you off in Egypt, he left you with a HELP book [line break]"; [ruya says help later but maybe here also good]]
+	wait for any key;
+	say "[line break]But your sun chariot has been returned to you. You missed your darling dragons. After catching up with your sweeties, you traveled to Egypt. [line break]";
+	wait for any key;
+	say "[line break][line break]Right now you are outside of a temple in Abydos, which, according to Helios, is home to the cult of Osiris. [line break]".
 
 	now the player is in Gate to the Osireion.
 
@@ -141,7 +155,7 @@ Section 2 - New Definitions
 A Body Part is a kind of thing.
 
 Instead of dropping a body part:
-	say "You'll need that."
+	say "You'll need that.[line break][line break]Or, well, Osiris will."
 
 A thing can be acquired or unacquired. A thing is usually unacquired.
 
@@ -162,7 +176,7 @@ Selecting is an action applying to one number.
 
 Check selecting: [assuming we don't want to be able to transport from just anywhere]
 	if the player is not on the sun chariot:
-		say "You can get there only with the sun chariot";
+		say "You can travel there only with your sun chariot. Your darling dragons will feel neglected.";
 		do nothing instead.
 
 Check selecting:
@@ -241,6 +255,7 @@ Table of Osiris' useful knowledge
 fact	summary
 1	"Go to Oxyrhynchos! I have fair confidence that my.... a very important.... an important member of my body will be there. "
 2	"Fishing may result in some happy results."
+3 	"Egyptians these days are so weak and feeble. I remember the good old days when everyone brought a knife to the afterlife..."
 
 Check talking to head:
 	if the head is dumb:
@@ -252,16 +267,16 @@ Check talking to head:
 
 Section 2 - Entering the Osireion
 
-The Gate to the Osireion is a room in Abydos. "The doorway to the temple stands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded. Perhaps you should attempt to ENTER the door. You might also consider DESCRIBING the door. (please add more historical info and revise this)"
+The Gate to the Osireion is a room in Abydos. "The doorway to the temple stands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded. [line break]You contemplate the ways that you can interact with the door. Can you ENTER it or EXAMININE it? If you ever feel confused, perhaps you should ask for some HELP."
 
 The stone door is a locked closed door. It is scenery. The stone door is south of the gate and north of the descending passage. Include (- has animate -) when defining the door.
-The description of the stone door is "The heavy stone door is engraved with an ancient riddle: [line break] 'I am yesterday, veiled in shadows. [line break] I am tomorrw, cloaked in flames. [line break] A union of gods, a cycle complete.'"
+The description of the stone door is "The heavy stone door is engraved with an ancient riddle: [line break] 'I am yesterday, veiled in shadows. [line break] I am tomorrow, cloaked in flames. [line break] A union of gods, a cycle complete.'[paragraph break]The door patiently awaits your ANSWER."
 
 Instead of answering the door that something:
 	if the player's command includes "sun":
 		now the stone door is unlocked;
 		now the stone door is open;
-		say "As you speak the word 'sun,' the massive stone door grinds open, revealing a long narrow passage.";
+		say "As you speak the word 'sun,' the massive stone door grinds open, revealing a long narrow passage south of you.";
 	otherwise:
 		say "Nothing happens. Perhaps that is not the correct answer.";
 
@@ -356,49 +371,49 @@ Next Instructions is a scene. Next Instructions begin when Exploration Ends. Nex
 	
 Section 2 - Workmen's village
 
-Outside the Walled Village is a room in Amarna. "more description here. The entrance to the walled village is directly north of you. The walled workmen's villlage only has one gate."
+Outside the Walled Village is a room in Amarna. "You have reached Amarna, although you don't really know where to go from here. You are surrounded by quite a bit of rubble. This seems to have once been a great city. Yet directly north of you see a walled cluster of buildings and hear the faint sound of hubbub. This might be a workmen's village. But it is entirely walled and only has one gate. That seems to be a fire hazard. [paragraph break]You would know about those."
 
 [maybe add security checkpoint moment as Medea walks through gate?]
 
-The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, bustling with activity."
+The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, bustling with activity and labor."
 
-A body bag is a container. The carrying capacity of the body bag is 14. The description of the body bag is "A heavy cloth sack used for transporting... questionable things."
+A body bag is a container. The carrying capacity of the body bag is 14. The description of the body bag is "A heavy cloth sack used for transporting... questionable things. You're not quite sure how everything fits into here. Some strange Egyptian magic?"
 
 Check inserting something into the body bag:
 	if the noun is not a body part:
-		say "The body bag isn't for this." instead.
+		say "The body bag isn't for this. If you put something unrelated, it would just be a bag!" instead.
 
 A workman is a person. The workman is in the Workmen's Village. The workman carries a body bag. The workman can be curious or uncurious. The workman is uncurious.
 
 Instead of talking to the workman during Discovery:
-	say "'Hey you,' you called to the workman.  [paragraph break]";
-	say "The workman turns around with a disgruntled expression. 'What do you want?' he asks.  [paragraph break]";
-	say "You explain that you're looking for information about the village.  [paragraph break]";
-	say "The workman gestures around. 'This village,' he says, 'it's where the elite tombs nearby are prepared. Hard work, but someone's got to do it.' He looks at you curiously. 'What are you doing here, anyway? And good gods, are you pregnant?!'";
+	say "'Hey, you.' you called to the workman.  [paragraph break]";
+	say "The workman turns around with a disgruntled expression. 'What do you want, lady?' he asks.  [paragraph break]";
+	say "You explain that you're looking for information about the village, conveniently omitting why you are interested.  [paragraph break]";
+	say "The workman gestures around. 'This village,' he says, 'it's where the elite tombs nearby are prepared. Hard work, grueling work, but someone's got to do it. Not that they treat us well for it.' He looks a little more closely at you. 'What are you doing here, anyway? And good gods, are you pregnant? Triplets?!'";
 	now the workman is curious.
 	
 Instead of talking to the workman during Get Body Bag:
-	say "The workman looks at you expectantly. 'What are you doing here, anyway? And what's up with the stomach?'"
+	say "The workman looks at you expectantly. 'What are you doing here, anyway? And what's up with your stomach?'"
 
 Instead of talking to the workman at least four times during Get Body Bag:
-	say "He seems to be expecting an answer from you. Maybe try showing him what's hidden under your shirt."
+	say "He seems to be expecting an answer from you. Maybe try showing him what's hidden under your shirt. The scary part, not the sexy part."
 	
 Instead of showing the head to the uncurious workman during Discovery:
-	say "Flashing a decapitated head to someone you've never talked to may be a bit much. Try striking a conversation first."
+	say "Flashing a decapitated head to someone you've never talked to before could be overkill. Try striking a conversation first."
 		
 Instead of showing the head to the curious workman:
-	say "You carefully take the head from under your shirt and show it to the workman. 'Do you know anything to go along with this?' you ask.[paragraph break]";
-	say "The workman eyes you warily. 'You collect heads, huh? Weird. But if you want odd heads, the old Aten cult temple's the place to check. (here, mention more about the cult) '  [paragraph break]"; 
-	say "You give a curt nod of thanks. Just as you turn to leave, he calls to you. 'Hey! I don't know what your whole deal is, but here, it's good manners to keep body parts inside a body bag.' He tosses you a body bag.";
+	say "You carefully take the head from under your shirt and show it to the workman. 'Do you have anything to go along with this?' you ask.[paragraph break]";
+	say "The workman eyes you warily. 'You collect heads, huh? I knew a guy like that once. There's a reason we put up walls around here, you know... If you want heads, the old Aten cult temple's the place to check. (here, mention more about the cult) '  [paragraph break]"; 
+	say "You give a nod of thanks and turn to leave. Before you can go, he calls to you. 'Hey! I don't know what your whole deal is, but here. It's good manners to keep body parts inside a body bag--they start to stink when left out under the sun. Trust me, I would know.' [paragraph break] He tosses you a body bag. It smells strange, but you've dealt with--and dealt--worse.";
 	now the workman is uncurious;
 	now the player is holding the body bag;
 	now the body bag is acquired.
 
 Instead of talking to the workman during Exploration:
-	say "The workman looks at you with exasperation. 'I've told you everything I know. Go to the old Aten temple for you weird heads."
+	say "The workman looks at you with exasperation. 'Lady, can't you see I've got a job to do? I've told you everything I know. Go to that old Aten temple for your weird heads."
 	
 Instead of showing the head to the uncurious workman during Exploration:
-	say "I don't think showing off Osiris` head again is necessary.".
+	say "You don't think showing off Osiris` head again is necessary. Even if it might be funny.".
 	
 Section 3 - Traveling to the temple
 
@@ -670,7 +685,7 @@ num_moves
 
 Table of Heracles' Yapping
 yappery
-"Heracles grunts loudly."
+"'Are we there yet?' Heracles ask. You feel a terrible RAGE. Heracles takes a look at your expression and wisely decides to shut up."
 "'What are you even doing,' Heracles whines."
 
 Every turn during Organ Acquisition:
@@ -782,6 +797,10 @@ Hall1
 Hall2
 
 Section 2 - Busiris Palace
+
+[end up in throne room, busiris says he says "muhaha" i am sacrificing you to zeus and this prompts the info here. they get kicked to the jail cell until the ritual preparations are done]
+
+[final confrontation between all three, forcefeed the jar to busiris, he is knocked out, heracles say no fun killing a sleeping man]
 
 Central Court is a room in Busiris.
 
