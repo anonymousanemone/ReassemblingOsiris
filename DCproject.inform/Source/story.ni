@@ -382,7 +382,7 @@ After taking Osiris' head:
 	wait for any key;
 	say "...Wait a moment![paragraph break]";
 	wait for any key;
-	say "There's a little papyrus scrap tangled in the beard of Osiris. You pull it out and unfold it, reading the following:[paragraph break]The sun of the shattered city awaits you,[line break]where you may find the largest brains in the largest skulls.[paragraph break]";
+	say "There's a little papyrus scrap tangled in the beard of Osiris. You pull it out and unfold it, reading the following:[paragraph break]	The sun of the shattered city awaits you,[line break]	where you can find the largest brains in the largest skulls.[paragraph break]";
 	wait for any key;
 	say "Hmm. What could that mean?[paragraph break]";
 	wait for any key;
@@ -403,7 +403,7 @@ Next Instructions is a scene. Next Instructions begin when Exploration Ends. Nex
 	
 Section 2 - Workmen's village
 
-Outside the Walled Village is a room in Amarna. "You have reached Amarna, although you don't really know where to go from here. You are surrounded by quite a bit of rubble. This seems to have once been a great city. Yet directly north of you see a walled cluster of buildings and hear the faint sound of hubbub. This might be a workmen's village. But it is entirely walled and only has one gate. That seems to be a fire hazard. [paragraph break]You would know about those.";
+Outside the Walled Village is a room in Amarna. "You have reached Amarna, although you don't really know where to go from here. You are surrounded by quite a bit of rubble. This seems to have once been a great city to the west. Directly north, you see a walled cluster of buildings and hear the faint sound of hubbub. This might be a workmen's village. But it is entirely walled and only has one gate. That seems to be a fire hazard. You would know about those.";
 
 [in the future, maybe add security checkpoint moment as Medea walks through gate?]
 
