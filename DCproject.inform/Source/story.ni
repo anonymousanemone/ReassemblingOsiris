@@ -858,6 +858,7 @@ The Kidnapping is a scene. The Kidnapping begins when the number of filled rows 
 
 When the Kidnapping begins:
 	say "Suddenly a gang of soldiers rush at the two of you. You've been kidnapped!";
+	wait for any key;
 	now the player is in the Jail Cell;
 	now Heracles is in the Jail Cell.
 	
@@ -885,7 +886,7 @@ After going to the Hallway during Escape:
 	continue the action.
 
 When Escape begins:
-	say "You have been taken by the guards into a jail cell!";
+	say "You have been taken by the guards into a jail cell.";
 	now Heracles is uncaught.
 	
 When Escape ends:
@@ -996,7 +997,7 @@ Double Axe Hall is a room in Busiris. It is north of the Shrine Room. It is east
 
 Corridor of Procession West is a corridor in Busiris. It is west of Corridor of Procession East.
 
-Palace exit is a secret door. It is west of Corridor of Procession West. 
+Palace exit is a secret door. It is west of Corridor of Procession West and east of the Temple of Tawosret. 
 
 Hallway is a corridor in Busiris. It is north of Corridor of Procession West. 
 
@@ -1068,7 +1069,7 @@ To end the sacrifice:
 	now palace exit is revealed;
 	now palace exit is open.
 	
-Instead of going through palace exit:
+Before going through palace exit:
 	now the player is in The Temple of Tawosret;
 	now Heracles is in the Temple of Tawosret;
 	wait for any key;
@@ -1088,7 +1089,9 @@ To trigger Heracles leaving:
 	say "You now have a heart scarab made of shining carnelian. And with that, Heracles leaves.[paragraph break]";
 	wait for any key;
 	say "He certainly was obnoxious, but it was nice to travel with a companion.";
-	now the player is holding the heart scarab. 
+	now the player is holding the heart scarab;
+	now palace exit is unrevealed;
+	now palace exit is closed.
 
 
 Part 5 - Complete Any Time
