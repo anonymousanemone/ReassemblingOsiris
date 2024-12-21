@@ -343,11 +343,15 @@ The inscribed walls are scenery in the Tomb of Osiris. The description of the in
 
 The sarcophagus is a closed container. It is locked. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Its occupant must have made it auto-update every now and then to keep up with the most popular trends. Perhaps you can use something to UNLOCK it." The sarcophagus has matching key the faience ankh.
 
-[something here after unlocking sarcophagus to prompt viewer to first see that head is in sarcophagus and then take it]
+[something here after unlocking sarcophagus to prompt viewer to first see that head is in sarcophagus and then take it - done]
+Instead of unlocking the sarcophagus with the faience ankh:
+	now the sarcophagus is unlocked;
+	now the sarcophagus is open;
+	say "You unlock the sarcophagus. Osiris' head sits inside.".
+	
+Test open-unlock with "look / unlock sarcophagus with ankh" in Tomb of Osiris holding faience ankh.
 
 Osiris' head is a body part. It is in the sarcophagus. Osiris' head can be taken. Understand "Osiris" as Osiris' head. Include (- has animate -) when defining Osiris' head. Osiris' head can be smart or dumb. Osiris' head is dumb. The description of Osiris' head is "Osiris, in all his glorious, head-only form."
-
-[Ruya having trouble examining or taking the head once sarcophagus is unlocked]
 
 Test Abydos with "e" in the First Transverse Chamber holding the wooden plank and faience ankh.
 	
