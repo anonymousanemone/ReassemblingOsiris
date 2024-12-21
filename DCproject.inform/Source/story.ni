@@ -653,9 +653,9 @@ Every turn during Buddy Heracles:
 
 Section 1 - All the Locations
 
-The Temple of Thutmosis III is a room. It is in Thebes. "This temple honors Thutmosis III."
+The Temple of Thutmosis III is a room. It is in Thebes. "This temple honors Thutmosis III. There seems to be a lot of honoring going on around here."
 
-The Ramesseum is south of The Temple of Thutmosis III. It is in Thebes. "The mortuary temple of Ramesses II looms large with its colossal statues. You can see a sign or something pointing to a 'house of life' further inside to the west. "
+The Ramesseum is south of The Temple of Thutmosis III. It is in Thebes. "The mortuary temple of Ramesses II looms large with its colossal statues. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
 
 The Temple of Thutmosis IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmosis IV."
 
@@ -663,13 +663,13 @@ The Temple of Tawosret is south of the Temple of Thutmosis IV. It is in Thebes. 
 
 The Temple of Merenptah is south of the Temple of Tawosret. It is in Thebes. "The Temple of Merenptah is here."
 
-A collection of three temples is a room. It is south of the Temple of Merenptah. It is in Thebes. "This includes the temple of Thutmosis I, Amenhotep son of Hapu, and Thutmosis III."
+A collection of three temples is a room. It is south of the Temple of Merenptah. It is in Thebes. "You see the temples of Thutmosis I, Amenhotep son of Hapu, and Thutmosis III."
 
 The Temple of Thutmosis I is scenery in the collection of three temples. "The Temple of Thutmosis I is here."
 
-The Temple of Amenhotep Son of Hapu is scenery in the collection of three temples. "The Temple of Amenhotep Son of Hapu is here."
+The Temple of Amenhotep Son of Hapu is scenery in the collection of three temples. "The Temple of Amenhotep Son of Hapu is here. He was revered as a scribe and later deified for his wisdom."
 
-The Smaller Temple of Thutmosis III is scenery in the collection of three temples. "The (other smaller) Temple of Thutmosis III is here."
+The Smaller Temple of Thutmosis III is scenery in the collection of three temples. "The smaller Temple of Thutmosis III is here. It's also honoring Thutmosis III  -- just at a smaller scale."
 
 The Temple of Amenhotep III is east of the the collection of three temples. It is in Thebes. "Amenhotep III's vast mortuary temple lies here."
 
@@ -685,20 +685,20 @@ Instead of cutting the The left statue of Amenhotep III, do nothing.
 
 Osiris' heart is a body part. It is in right statue of Amenhotep III.
 
-The heart scarab is a thing. The description is "The scarab a small but intricately made item. Inscribed on the bottom is a king's cartouche: Amenhotep III. [if heart is unacquired] Perhaps it's worth investigating..."
+The heart scarab is a thing. The description is "The scarab is a small but intricately made item. Inscribed on the bottom is a king's cartouche: Amenhotep III. [if heart is unacquired] Perhaps it's worth investigating..."
 
 Instead of examining right statue of Amenhotep III:
 	If the player is holding the heart scarab:
 		now right statue of Amenhotep III is open;
 		now right statue of Amenhotep III is unopenable;
-		say "The panel at the base of the statue slides open to reveal Osiris' heart.";
+		say "The panel at the base of the statue slides open to reveal the heart of Osiris. Hooray!";
 	otherwise:
 		continue the action.
 
 The Temple of Horemheb is south of the collection of three temples. It is in Thebes. "This temple stands as tribute to Aÿ and Horemheb."
 [Heracles is at Horemheb]
 
-The Temple of Ramesses III is south of the Temple of Horemheb. It is in Thebes. "Here be Ramesses III's temple."
+The Temple of Ramesses III is south of the Temple of Horemheb. It is in Thebes. "Here be Ramesses III's temple. You feel that this man met a bitter end. You can respect that."
 
 Section 2 - The library
 
@@ -942,7 +942,7 @@ Ritual Sacrifice is scene. Ritual Sacrifice begins when Osiris' liver is acquire
 
 Instead of going during Ritual Sacrifice:
 	if Escape is not happening:
-		say "You can hardly leave with all the guards around you.";
+		say "You can hardly leave with all the guards around you!";
 	otherwise:
 		continue the action.
 
@@ -966,7 +966,7 @@ Rule for listing exits when the location is Central Court during Ritual Sacrific
 To end the sacrifice:
 	say "story moment of Heracles killin busiri.";
 	now King Busiris is dead;
-	say "the court descends into chaos. now is a good chance to find your way out.";
+	say "The court descends into total chaos. Now is a good time to find your way out!";
 	now palace exit is revealed;
 	now palace exit is open.
 	
@@ -978,7 +978,17 @@ Instead of going through palace exit:
 
 [watch out for player carrying capacity, fix in future]
 To trigger Heracles leaving:
-	say "Tata, I'm off, here's a heart scarab.";
+	say "After escaping from that fiasco, Heracles turns to you. 'Dearest Medea!' He beams at you. 'How glorious it was to adventure with you attending to me! You have a very promising career as a sidekick ahead of you.'[paragraph break]";
+	wait for any key;
+	say "You remain silent, although you're not sure if that's because of self-restraint, accustomation to his antics, or just pure exhaustion.[paragraph break]";
+	wait for any key;
+	say "I truly must thank you for your help,' Heracles says, 'and, of course, for healing me with your witchy powers.[paragraph break]";
+	say "I've heard stories about you, but it seems that one should never judge a hero (or heroine) by their tragedies--especially those written by that snooze Euripides!'[paragraph break]";
+	say "'I'll be off now to pursue my own quests, but I hope you'll take this trinket as a token of my gratitude.'[paragraph break]";
+	wait for any key;
+	say "You now have a heart scarab made of shining carnelian. And with that, Heracles leaves.[paragraph break]";
+	wait for any key;
+	say "He certainly was obnoxious, but it was nice to travel with a companion.";
 	now the player is holding the heart scarab. 
 	
 
@@ -1089,7 +1099,7 @@ Tawaret Conflict is a scene. Tawaret Conflict begins when the player is in the N
 
 [add lots of dialogue and the whole conflict relating to tawaret]
 
-[Ruya makes the Tawaret character and all associated interactions]
+[Ruya can do the Tawaret character and all associated interactions with hippos]
 
 Section 4 - Fishing game
 
