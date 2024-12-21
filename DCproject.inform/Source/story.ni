@@ -14,7 +14,7 @@ When play begins: try switching the story transcript on.
 
 Part 1 - Prologue - For release only
 
-When play begins: choose row 1 in Table of Basic Help Options; now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt."
+When play begins: choose row 1 in Table of Basic Help Options; now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt.[paragraph break]Some general guidelines for this game:[line break]	Make sure to examinine everything![line break]	If you're stuck, it may be time to travel to a new place.[line break]	Medea is very clever, so make sure to pay attention to how she describes things!"
 
 After printing the banner text:
 	say "[line break]'It’s a complete disaster!'[line break][line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break]";
@@ -25,7 +25,7 @@ After printing the banner text:
     	wait for any key;
 	say "[line break]Amun ignored Nephthys’ laments and Anubis’ whines. There was a more important avenue to pursue: 'Maʽat, what have you heard from Thoth?'[line break]";
 	wait for any key;
-	say "[line break]Maʽat looked rather unhappy to be the bearer of bad news. 'He’s tried every spell he knows--to no effect. He’s sequestered himself in a library, but…'[line break][line break]";
+	say "[line break]Maʽat looked rather unhappy to be the bearer of bad news. 'He’s tried every spell he knows--to no effect. He’s sequestered himself in the library, but…'[line break][line break]";
 	wait for any key;
 	say "It seemed that Ma’at had little hope that Thoth would be successful in his efforts.[line break]";
     	wait for any key;
@@ -294,13 +294,13 @@ The Descending Passage is a room in Abydos. It is south of the stone door. "A lo
 
 The Great Hall is a room in Abydos. It is south of the Descending Passage. "You can see a small chamber south of you. North is a long descending passage. East is a transverse chamber."
 
-The South Chamber is a room in Abydos. It is south of the great hall. "You are now in the south chamber. North is the great hall. [paragraph break]The small chamber contains some potentially useful items...[paragraph break]" 
+The South Chamber is a room in Abydos. It is south of the great hall. "You are now in the south chamber. North is the great hall. [line break]The small chamber contains some potentially useful items you can EXAMINE or TAKE..." 
 
 The sandstone walls are scenery in the South Chamber. The description of the sandstone walls is "Parts of the Book of the Dead is inscribed across these walls."
 
-The faience ankh is in the South Chamber. The description of the small ankh is "A delicate yet sturdy ankh, the symbol of life, carved from faience. " 
+The faience ankh is in the South Chamber. The description of the faience ankh is "A delicate yet sturdy ankh, the symbol of life, carved from faience. " 
 
-A bundle of dried thyme is in the South Chamber. The description of the dried herbs is "A bundle of dried thyme is tied together with simple strands of twine. It is so old and decrepit you could barely smell it."
+A bundle of dried thyme is in the South Chamber. The description of the bundle of dried thyme is "A bundle of dried thyme is tied together with simple strands of twine. It is so old and decrepit you could barely smell it."
 
 An ostracon is scenery in the South Chamber. The description of the ostracon is "A shard of pottery is stained with hastily written hieratic."
 
@@ -308,14 +308,14 @@ Some pottery jars are in the South Chamber. The description of the pottery jars 
 
 A wooden plank is in the South Chamber. The description of the wooden plank is "A short, splintered plank of cedar wood lies on the floor."
 
-Some knick-knacks are in the South Chamber. The description of the knick-knacks is "You sift through the assorted items: a bead that may have been part of a necklace, a sliver of ivory that was used as a tool, and a draining liquid water clock."
+Some knick-knacks are in the South Chamber. The description of some knick-knacks is "You sift through the assorted items: a bead that may have been part of a necklace, a sliver of ivory that was used as a tool, and a draining liquid water clock."
 
 The First Transverse Chamber is a room in Abydos. It is east of the Great Hall. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from going through. You might be able to GO east if you had something that help you cross the water..." [on first entrance, mention the long passage way between the two as well]
 
 
-The west moat is east of the First Transverse Chamber and west of the Central Nave. The west moat is an open unopenable door. "A moat surrounds the entire central nave." The description of the west moat is "Deep and murky." 
+The west moat is east of the First Transverse Chamber and west of the Central Nave. The west moat is an open unopenable door. ["A moat surrounds the entire central nave."]The description of the west moat is "Deep and murky." 
 
-The east moat is west of the Tomb of Osiris and east of the Central Nave. The east moat is an open unopenable door. "A moat surrounds the entire central nave." The description of the east moat is "Deep and murky." 
+The east moat is west of the Tomb of Osiris and east of the Central Nave. The east moat is an open unopenable door. ["A moat surrounds the entire central nave."]The description of the east moat is "Deep and murky." 
 
 [one day the plank will have be placed down and picked up...but not for the demo! ]
 
@@ -357,7 +357,7 @@ The sarcophagus is a closed container. It is locked. It is in the Tomb of Osiris
 Instead of unlocking the sarcophagus with the faience ankh:
 	now the sarcophagus is unlocked;
 	now the sarcophagus is open;
-	say "You unlock the sarcophagus. Osiris' head sits inside.".
+	say "You unlock the sarcophagus. The head of Osiris is inside! You should TAKE it.".
 	
 Test open-unlock with "look / unlock sarcophagus with ankh" in Tomb of Osiris holding faience ankh.
 
@@ -371,7 +371,7 @@ Part 4 - Talking Osiris Agenda
 
 Talking Osiris Agenda is a scene. Talking Osiris Agenda begins when Head Acquisition ends. Talking Osiris Agenda ends when Organ Acquisition ends. 
 
-After taking Osiris' head:
+After taking Osiris' head for the first time:
 	say "Aha! The head! You triumphantly hold the head of Osiris. How easy! Even someone like J*son could have solved this riddle! You'll be free in no time. You just need the torso, legs, and arms--then you're done! [paragraph break]";
 	wait for any key;
 	say "Although his eyes are open, Osiris remains silent.[paragraph break]";
@@ -388,11 +388,11 @@ After taking Osiris' head:
 	wait for any key;
 	say "It seems this will be more difficult than you anticipated.[paragraph break]";
 	wait for any key;
-	say "The head, in its stubborn silence seems to taunt you.[paragraph break]";
+	say "The head, in its stubborn silence, seems to taunt you.[paragraph break]";
 	wait for any key;
 	say "...Wait a moment![paragraph break]";
 	wait for any key;
-	say "There's a little papyrus scrap tangled in the beard of Osiris. You pull it out and unfold it, reading the following:[line break]The sun of the shattered city awaits you,[line break]where you may find the largest brains in the largest skulls.[paragraph break]";
+	say "There's a little papyrus scrap tangled in the beard of Osiris. You pull it out and unfold it, reading the following:[paragraph break]	The sun of the shattered city awaits you,[line break]	where you can find the largest brains in the largest skulls.[paragraph break]";
 	wait for any key;
 	say "Hmm. What could that mean?[paragraph break]";
 	wait for any key;
@@ -413,11 +413,11 @@ Next Instructions is a scene. Next Instructions begin when Exploration Ends. Nex
 	
 Section 2 - Workmen's village
 
-Outside the Walled Village is a room in Amarna. "You have reached Amarna, although you don't really know where to go from here. You are surrounded by quite a bit of rubble. This seems to have once been a great city. Yet directly north of you see a walled cluster of buildings and hear the faint sound of hubbub. This might be a workmen's village. But it is entirely walled and only has one gate. That seems to be a fire hazard. [paragraph break]You would know about those.";
+Outside the Walled Village is a room in Amarna. "You have reached Amarna, although you don't really know where to go from here. You are surrounded by quite a bit of rubble. This seems to have once been a great city to the west. Directly north, you see a walled cluster of buildings and hear the faint sound of hubbub. This might be a workmen's village. But it is entirely walled and only has one gate. That seems to be a fire hazard. You would know about those.";
 
-[maybe add security checkpoint moment as Medea walks through gate?]
+[in the future, maybe add security checkpoint moment as Medea walks through gate?]
 
-The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, bustling with activity and labor."
+The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, bustling with activity and labor. Maybe you can TALK to someone? [paragraph break]You suddenly realize that you are holding a decapitated head in broad daylight. You hastily cram the head under your shirt and try not to look suspicious."
 
 A body bag is a container. The carrying capacity of the body bag is 14. The description of the body bag is "A heavy cloth sack used for transporting... questionable things. You're not quite sure how everything fits into here. Some strange Egyptian magic?"
 
@@ -429,8 +429,11 @@ A workman is a person. The workman is in the Workmen's Village. The workman carr
 
 Instead of talking to the workman during Discovery:
 	say "'Hey, you.' you called to the workman.  [paragraph break]";
+	wait for any key;
 	say "The workman turns around with a disgruntled expression. 'What do you want, lady?' he asks.  [paragraph break]";
+	wait for any key;
 	say "You explain that you're looking for information about the village, conveniently omitting why exactly you are interested.  [paragraph break]";
+	wait for any key;
 	say "The workman gestures around. 'This village,' he says, 'it's where the elite tombs nearby are prepared. Hard work, grueling work, but someone's got to do it. Not that they treat us well for it.' He looks a little more closely at you. 'What are you doing here, anyway? And good gods, are you pregnant? Triplets?!'";
 	now the workman is curious.
 	
@@ -445,7 +448,9 @@ Instead of showing the head to the uncurious workman during Discovery:
 		
 Instead of showing the head to the curious workman:
 	say "You carefully take the head from under your shirt and show it to the workman. 'Do you have anything to go along with this?' you ask.[paragraph break]";
+	wait for any key;
 	say "The workman eyes you warily. 'You collect heads, huh? I knew a guy like that once. There's a reason we put up walls around here, you know... If you want heads, that old Aten cult temple's the place to check. Or what remains of it, at least.'  [paragraph break]"; 
+	wait for any key;
 	say "You give a nod of thanks and turn to leave. Before you can go, he calls to you. 'Hey! I don't know what your whole deal is, but here. It's good manners to keep body parts inside a body bag--they start to stink when left out under the sun. Trust me, I would know.' [paragraph break] He tosses you a body bag. It smells strange, but you've dealt with--and dealt--worse.";
 	now the workman is uncurious;
 	now the player is holding the body bag;
@@ -458,8 +463,6 @@ Instead of showing the head to the uncurious workman during Exploration:
 	say "You don't think showing off Osiris` head again is necessary. Even if it might be funny.".
 	
 Section 3 - Traveling to the temple
-
-[add a way she acquires oxcart maybe? or just a dialogue/reaction from the person she stole it from]
 
 The oxcart is a rideable vehicle. "An oxcart sits here unattended." The description of the oxcart is "A sturdy wooden cart, drawn by a strong hunky ox."
 
@@ -493,25 +496,25 @@ After going to Outside the Walled Village:
 Instead of going to the Small Aten Temple when the player is on the oxcart:
 	say "You can hardly ride an oxcart into the temple!"
 
-The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "The traces of this Aten Temple still hint at its former grandeur. It once comprised three courts—the first, the second, and the sanctuary. Now you stand in what used to be the sanctuary court, its original form long since demolished. A partially reconstructed sanctuary is to your north. It still impressive despite representing only a fraction of its former splendor."
+The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "The traces of this Aten Temple still hint at its former grandeur. It once comprised three courts—the first, the second, and the sanctuary. Now you stand in what used to be the sanctuary court, its original form long since demolished. A partially reconstructed sanctuary is to your north. It is still impressive despite representing only a fraction of its former splendor."
 
 The Sanctuary is a room in Amarna. It is north of the Small Aten Temple. "Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor Aten, the sun disk. Around the perimeter of the sanctuary are low, carved altars, decorated with offerings and incense. In the center of the sanctuary, a shrine depicting Aten shines in its golden splendor."
 
 The carved altars are scenery in the Sanctuary. "The low altars are made of sandstone, each inscribed with dedications to Aten."
 
-The offerings are things in the Sanctuary. "Arranged delicately atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers -- odd [line break] Wasn't this place abandoned?"
+The offerings are things in the Sanctuary. "Arranged delicately atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers. Odd. Wasn't this place abandoned?"
 
-The Aten shrine is scenery in the Sanctuary. "At the heart of the sanctuary stands a majestic shrine dedicated to Aten. The shrine captures and reflects the abundant sunlight that bathes the room. The central depiction of the Aten radiates golden beams that dance across the walls, filling the space with a divine glow. [paragraph break] You feel more at home."
+The Aten shrine is scenery in the Sanctuary. "At the heart of the sanctuary stands a majestic shrine dedicated to Aten. The shrine captures and reflects the abundant sunlight that bathes the room. The central depiction of the Aten radiates golden beams that dance across the walls, filling the space with a divine glow."
 
-The hidden staircase is a secret door. The staircase is above the Underground chapel and below the Small Aten Temple. 
+The hidden staircase is a secret door. The staircase is above the Underground chapel and below the Sanctuary. 
 
 Instead of examining the shrine:
 	now the hidden staircase is revealed;
 	now the hidden staircase is open;
-	say "You hear an odd rumbling noise. There was a hidden staircase!";
+	say "You hear an odd rumbling noise. There was a hidden staircase! You can go down to see what's there.";
 	continue the action.
 
-Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls. The ceiling depicts an intricate scene. [paragraph break] What odd surroundings. Perhaps you should take a closer look. The chapel is completely empty, so there's no harm in TOUCHing something."
+Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. There are three strange statues, and murals with eerily etched toes line all four walls. The ceiling depicts an intricate scene. [paragraph break] What odd surroundings. Perhaps you should take a closer look and EXAMINE some things. The chapel is completely empty, so there's also no harm in TOUCHing something--in fact, that might help you figure things out."
 
 
 Section 4 - At the Small Aten Temple
@@ -524,7 +527,7 @@ The east mural is scenery in the Underground Chapel. The description is "The wea
 
 The west mural is scenery in the Underground Chapel. The description is "This mural shows a man makes an offering to Aten. Cradled carefully in his hands is...a small duck?[paragraph break] Ha. You would never settle for such meager offerings."
 
-The ceiling is scenery in the Underground Chapel. The description is "You crane your head up to look at the ceiling. There seems to be a lot going on here. A sun disk is being held in the palms of a praying man. Across from him, a man with a very long head is smelling a lotus."
+The ceiling is scenery in the Underground Chapel. The description is "You crane your head up to look at the ceiling. There seems to be a lot going on here. You can see 1...2...3...4 major components. A sun disk is being held in the hands of a praying man. Across from him, a man with a very long head is smelling a lotus."
 
 The first statue is scenery in the Underground Chapel. The description is "A broken statue that probably once depicted a person. Guess we'll never find out. You feel a strange kinship with this statue."
 
@@ -576,10 +579,32 @@ To refill the sequence:
 		now the item entry is item-val.
 
 To trigger the end sequence:
-	say "You hear something from up above! Looking up at the ceiling, you see a gray lump drop from the duck-bearing man's head down to the room you are in. Is that...?";
-	move Osiris' brain to the Sanctuary.
+	say "You hear something from up above! Looking up at the ceiling, you see a gray lump fall from the duck-bearing man's head right to your feet. Is that a...?";
+	move Osiris' brain to the Underground Chapel.
 
-Osiris' brain is a body part. The description of the brain is "A brain. It feels like it is pulsating in your hands."
+Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands."
+
+After taking Osiris' brain:
+	say "With great anticipation, you take the brain and plop it right into the head.[paragraph break]You patiently wait for Osiris to regain intelligent thought and offer you his utmost thanks.[paragraph break]";
+	wait for any key;
+	say "...[paragraph break]";
+	wait for any key;
+	say "...[paragraph break]";
+	wait for any key;
+	say "...[paragraph break]";
+	wait for any key;
+	say "Any moment now.[paragraph break]";
+	wait for any key;
+	say "...[paragraph break]";
+	wait for any key;
+	say "...[paragraph break]";
+	wait for any key;
+	say "Nothing happened.[paragraph break]";
+	wait for any key;
+	say "Is he just stupid?!?[paragraph break]";
+	wait for any key;
+	say "Well, at least you have one more piece of the puzzle. But you might need to go speak with someone else in Amarna if you want any actual clues.";
+	wait for any key;
 
 Section 5 - Back to the village
 
@@ -592,16 +617,34 @@ Instead of entering the sun chariot when the player is on the oxcart:
 	
 [so medea goes back to the village on oxcart, immediately she is greeted by the workman (aka dialogue triggered automatically, they start talking]
 Every turn during Next Instructions:
-	if the location is Outside the Walled village and the player is not on the oxcart:
+	if the location is Outside the Walled village:
 		now the workman is in Outside the Walled Village;
-		say "Workman talks to Medea for stuff. Workman points Medea to Thebes.";
+		say "As you disembark from the oxcart, you spot into the same workman you had spoken with earlier.[paragraph break]";
+		wait for any key;
+		say "'Hey, lady!' he says. 'You got those heads of yours now?' He looks a little less wary.[paragraph break]";
+		wait for any key;[workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greece i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
+Instead of selecting when Next Instructions has happened and Heal Heracles has not happened:
+
+		say "'Close enough,' you say.[paragraph break]";
+		wait for any key;
+		say "'It's nice to see a new face, even if it's a creepy one,'  the workman continued. 'This place has been a ghost town for so long. We used to be as big as Thebes, you know!'[paragraph break]";
+		say "...Thebes?[paragraph break]";
+		wait for any key;
+		say "The workman notices your confusion. 'You must really be a foreigner! Don't you know of Thebes? All the tomb workers are there nowadays.[paragraph break]";
+		wait for any key; 
+		say "...Interesting.[paragraph break]";
+		wait for any key; 
+		say "...[paragraph break]";
+		wait for any key; 
+		say "...[paragraph break]";
+		wait for any key; 
+		say "One of your potential escape plans -- not that you had the opportunity to go through with it -- was to flee from Corinth to Thebes. But you never had the chance to execute this plan. Perhaps this is a sign.";
 		now the workman is uncurious. [therefore next instructions end]
 
-[lock Medea into only being able to travel fro thebes - rethinking this now, commented out to prevent possible bugs]
+[workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greec,e i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
 [Instead of selecting when Next Instructions has happened and Heal Heracles has not happened:
-[	say "BOOP";]
 	if the number understood is not seven: [the number for thebes]
-		say "i really miss greece i'm feeling nostalgic, time to go to thebes";
+		say "You want to go to Thebes instead. You're near-certain the workman mentioned a different 'Thebes,' but the shared name intrigues you.";
 	otherwise:
 		continue the action.]
 	
@@ -623,23 +666,23 @@ Every turn during Buddy Heracles:
 
 Section 1 - All the Locations
 
-The Temple of Thutmosis III is a room. It is in Thebes. "This temple honors Thutmosis III."
+The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III. There seems to be a lot of honoring going on around here."
 
-The Ramesseum is south of The Temple of Thutmosis III. It is in Thebes. "The mortuary temple of Ramesses II looms large with its colossal statues. You can see a sign or something pointing to a 'house of life' further inside to the west. "
+The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. "The mortuary temple of Ramesses II looms large with its colossal statues. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
 
-The Temple of Thutmosis IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmosis IV."
+The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmoses IV."
 
 The Temple of Tawosret is south of the Temple of Thutmosis IV. It is in Thebes. "The Temple of Tawosret stands here."
 
 The Temple of Merenptah is south of the Temple of Tawosret. It is in Thebes. "The Temple of Merenptah is here."
 
-A collection of three temples is a room. It is south of the Temple of Merenptah. It is in Thebes. "This includes the temple of Thutmosis I, Amenhotep son of Hapu, and Thutmosis III."
+A collection of three temples is a room. It is south of the Temple of Merenptah. It is in Thebes. "You see the temples of Thutmoses I, Amenhotep Son of Hapu, and Thutmoses III."
 
-The Temple of Thutmosis I is scenery in the collection of three temples. "The Temple of Thutmosis I is here."
+The Temple of Thutmoses I is scenery in the collection of three temples. "The Temple of Thutmoses I is here."
 
-The Temple of Amenhotep Son of Hapu is scenery in the collection of three temples. "The Temple of Amenhotep Son of Hapu is here."
+The Temple of Amenhotep Son of Hapu is scenery in the collection of three temples. "The Temple of Amenhotep Son of Hapu is here. He was revered as a scribe and later deified for his wisdom."
 
-The Smaller Temple of Thutmosis III is scenery in the collection of three temples. "The (other smaller) Temple of Thutmosis III is here."
+The Smaller Temple of Thutmoses III is scenery in the collection of three temples. "The smaller Temple of Thutmoses III is here. It's also honoring Thutmoses III  -- just at a smaller scale."
 
 The Temple of Amenhotep III is east of the the collection of three temples. It is in Thebes. "Amenhotep III's vast mortuary temple lies here."
 
@@ -655,19 +698,19 @@ Instead of cutting the The left statue of Amenhotep III, do nothing.
 
 Osiris' heart is a body part. It is in right statue of Amenhotep III.
 
-The heart scarab is a thing. The description is "The scarab a small but intricately made item. Inscribed on the bottom is a king's cartouche: Amenhotep III. [if heart is unacquired] Perhaps it's worth investigating..."
+The heart scarab is a thing. The description is "The scarab is a small but intricately made item. Inscribed on the bottom is a king's cartouche: Amenhotep III. [if heart is unacquired] Perhaps it's worth investigating..."
 
 Instead of examining right statue of Amenhotep III:
 	If the player is holding the heart scarab:
 		now right statue of Amenhotep III is open;
 		now right statue of Amenhotep III is unopenable;
-		say "The panel at the base of the statue slides open to reveal Osiris' heart.";
+		say "The panel at the base of the statue slides open to reveal the heart of Osiris. Hooray!";
 	otherwise:
 		continue the action.
 
 The Temple of Horemheb is south of the collection of three temples. It is in Thebes. "This temple stands as tribute to Aÿ and Horemheb."
 
-The Temple of Ramesses III is south of the Temple of Horemheb. It is in Thebes. "Here be Ramesses III's temple."
+The Temple of Ramesses III is south of the Temple of Horemheb. It is in Thebes. "Here be Ramesses III's temple. You feel that this man met a bitter end. You can respect that."
 
 Section 2 - The library
 
@@ -699,7 +742,6 @@ When brain acquisition ends:
 	now Heracles is in the Temple of Horemheb.
 
 [make healing heracles sequence, refer to spell]
-
 
 
 Chapter 4 - Busiris-Organs
@@ -755,11 +797,11 @@ After going to the Hallway during Escape:
 	continue the action.
 
 When Escape begins:
-	say "You have been taken by the guards into a jail cell.";
+	say "You have been taken by the guards into a jail cell!";
 	now Heracles is uncaught.
 	
 When Escape ends:
-	say "The guards rush into the room and apprehend you.";
+	say "The guards rush into the room and apprehend you!";
 	now Heracles is uncaught;
 	now Heracles is in the Jail Cell;
 	now the player is in the jail Cell.
@@ -904,18 +946,18 @@ Ritual Sacrifice is scene. Ritual Sacrifice begins when Osiris' liver is acquire
 
 Instead of going during Ritual Sacrifice:
 	if Escape is not happening:
-		say "You can hardly leave with all the guards around you.";
+		say "You can hardly leave with all the guards around you!";
 	otherwise:
 		continue the action.
 
 Every turn during Ritual Sacrifice:
 	If the location is the Jail Cell:
-		say "'The ritual is ready. We will finally deal with you errant prisoners! Zeus our lord and savior lph will be pleased with this sacrifice. ' someone says, or something like that. ";
-		say "Now, to the central court! ";
+		say "'The ritual is ready. We will finally deal with you errant prisoners! Zeus our lord and savior will certainly be pleased with this sacrifice,' a boorish guard jeers.";
+		say "Now to the central court! ";
 		wait for any key;
 		now the player is in the Central Court;
 		now Heracles is in the Central Court;
-		say "You see that preparations for the sacrifice has been complete. (describe sacrificial altar)";
+		say "You can see that preparations for the sacrifice has been complete. A massive stone altar stands at the center, surrounded by flickering torches and gleeful guards.";
 		wait for any key;
 		start the sacrifice.
 	
@@ -928,7 +970,7 @@ Rule for listing exits when the location is Central Court during Ritual Sacrific
 To end the sacrifice:
 	say "story moment of Heracles killin busiri.";
 	now King Busiris is dead;
-	say "the court descends into chaos. now is a good chance to find your way out.";
+	say "The court descends into total chaos. Now is a good time to find your way out!";
 	now palace exit is revealed;
 	now palace exit is open.
 	
@@ -940,11 +982,20 @@ Instead of going through palace exit:
 	
 
 [watch out for player carrying capacity, fix in future]
-To trigger Heracles leaving:
-	say "Tata, I'm off, here's a heart scarab.";
-	now the player is holding the heart scarab. 
-	
 
+To trigger Heracles leaving:
+	say "After escaping from that fiasco, Heracles turns to you. 'Dearest Medea!' He beams at you. 'How glorious it was to adventure with you attending to me! You have a very promising career as a sidekick ahead of you.'[paragraph break]";
+	wait for any key;
+	say "You remain silent, although you're not sure if that's because of self-restraint, accustomation to his antics, or just pure exhaustion.[paragraph break]";
+	wait for any key;
+	say "I truly must thank you for your help,' Heracles says, 'and, of course, for healing me with your witchy powers.[paragraph break]";
+	say "I've heard stories about you, but it seems that one should never judge a hero (or heroine) by their tragedies--especially those written by that snooze Euripides!'[paragraph break]";
+	say "'I'll be off now to pursue my own quests, but I hope you'll take this trinket as a token of my gratitude.'[paragraph break]";
+	wait for any key;
+	say "You now have a heart scarab made of shining carnelian. And with that, Heracles leaves.[paragraph break]";
+	wait for any key;
+	say "He certainly was obnoxious, but it was nice to travel with a companion.";
+	now the player is holding the heart scarab. 
 
 
 Part 5 - Complete Any Time
@@ -1045,7 +1096,7 @@ A knife is a blade in Oxyrhynchos-Marketplace.
 
 Section 3 - Tawaret conflict
 
-The Nile Riverbank is in Oxyrhynchos. It is east of Oxyrhynchos-Marketplace. "You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace."
+The Nile Riverbank is in Oxyrhynchos. It is east of Oxyrhynchos-Marketplace. "You are at the bank of the Nile. West of you is the marketplace."
 
 The Taweret Amulet is a thing. 
 
@@ -1053,7 +1104,7 @@ Tawaret Conflict is a scene. Tawaret Conflict begins when the player is in the N
 
 [add lots of dialogue and the whole conflict relating to tawaret]
 
-[Ruya makes the Tawaret character and all associated interactions]
+[Ruya can do the Tawaret character and all associated interactions with hippos]
 
 Section 4 - Fishing game
 
