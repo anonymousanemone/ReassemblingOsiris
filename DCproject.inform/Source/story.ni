@@ -4,14 +4,17 @@ Include Basic Screen Effects by Emily Short.
 Include Rideable Vehicles by Graham Nelson.
 Include Secret Doors by Gavin Lambert.
 Include Basic Help Menu by Emily Short.
+Include Exit Lister by Gavin Lambert.
 
 Release along with an interpreter.
 
-[When play begins: try switching the story transcript on.]
+Section 1 - Story Transcript - For release only
 
-When play begins: choose row 1 in Table of Basic Help Options; now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt."
+When play begins: try switching the story transcript on.
 
 Part 1 - Prologue
+
+When play begins: choose row 1 in Table of Basic Help Options; now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt."
 
 After printing the banner text:
 	say "[line break]'It’s a complete disaster!'[line break][line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break]";
@@ -114,8 +117,9 @@ After printing the banner text:
 	wait for any key;
 	say "[line break]Your sun chariot has been returned to you. You missed your dragons. After catching up with your darlings, you traveled to Egypt. [line break]";
 	wait for any key;
-	say "[line break][line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. There's no better place to start. [line break]";
-	now the player is in Gate to the Osireion.
+	say "[line break][line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. There's no better place to start. [line break]".
+	
+The player is in Gate to the Osireion.
 
 
 Part 2 - General Game Declarations
@@ -339,11 +343,15 @@ The inscribed walls are scenery in the Tomb of Osiris. The description of the in
 
 The sarcophagus is a closed container. It is locked. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Its occupant must have made it auto-update every now and then to keep up with the most popular trends. Perhaps you can use something to UNLOCK it." The sarcophagus has matching key the faience ankh.
 
-[something here after unlocking sarcophagus to prompt viewer to first see that head is in sarcophagus and then take it]
+[something here after unlocking sarcophagus to prompt viewer to first see that head is in sarcophagus and then take it - done]
+Instead of unlocking the sarcophagus with the faience ankh:
+	now the sarcophagus is unlocked;
+	now the sarcophagus is open;
+	say "You unlock the sarcophagus. Osiris' head sits inside.".
+	
+Test open-unlock with "look / unlock sarcophagus with ankh" in Tomb of Osiris holding faience ankh.
 
 Osiris' head is a body part. It is in the sarcophagus. Osiris' head can be taken. Understand "Osiris" as Osiris' head. Include (- has animate -) when defining Osiris' head. Osiris' head can be smart or dumb. Osiris' head is dumb. The description of Osiris' head is "Osiris, in all his glorious, head-only form."
-
-[Ruya having trouble examining or taking the head once sarcophagus is unlocked]
 
 Test Abydos with "e" in the First Transverse Chamber holding the wooden plank and faience ankh.
 	
@@ -730,15 +738,15 @@ Heracles can be caught or uncaught. Heracles is uncaught.
 The invisible tool is a thing. 
 
 The hallway count is a number that varies. The hallway count is initially 0.
-
-Every turn when the player is in the Hallway:
+		
+After going to the Hallway during Escape:
+	increment hallway count;
 	showme hallway count;
 	if hallway count is 5:
 		now the hidden entrance is revealed;
 		now the hidden entrance is open;
 		say "A large noise sounds, revealing a hidden entrance to a dark room. It is east of you.";
-	otherwise:
-		increment hallway count.
+	continue the action.
 
 When Escape begins:
 	say "You have been taken by the guards into a jail cell.";
@@ -769,10 +777,10 @@ To teleport the player:
 	
 After going during Escape:
 	if the location is not a corridor:
-		[say "timer set";]
+		say "timer set";
 		set the timer;
 	otherwise:
-		[say "delay timer";]
+		say "delay timer";
 		delay the timer;
 	continue the action.
 	
@@ -815,12 +823,12 @@ Corridor of Procession West
 Hallway
 North Corridor
 Corridor of the Draught Board
-Hall1
-Hall2
+Upper Hall West
+Upper Hall East
 
 Section 2 - Busiris Palace
 
-Central Court is a room in Busiris.
+Central Court is a room in Busiris. "Center of public life in Busiris."
 
 King Busiris is a person. King Busiris can be alive or dead. King Busiris is alive.
 
@@ -836,11 +844,11 @@ Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of
 
 The hidden entrance is a secret door. The hidden entrance is east of Hallway. 
 
-Osiris' liver is a body part. It is in Crypt of Osiris.
+Osiris' liver is a body part. It is in Crypt of Osiris. It is unacquired.
 
-[make canopic jar game]
-
-[also add bes jar]
+Instead of taking a body part:
+	now the noun is acquired;
+	continue the action.
 
 Pillar Crypt is a room in Busiris. It is west of Cult Rooms. It is east of Crypt of Osiris. Nothing is west of Pillar Crypt.
 
@@ -850,7 +858,9 @@ Shrine Room is a room in Busiris. It is east of Corridor of Procession.
 
 Double Axe Hall is a room in Busiris. It is north of the Shrine Room. It is east of Central Court.
 
-Corridor of Procession West is a corridor in Busiris. It is west of Corridor of Procession.
+Corridor of Procession West is a corridor in Busiris. It is west of Corridor of Procession East.
+
+Palace exit is a secret door. It is west of Corridor of Procession West. 
 
 Hallway is a corridor in Busiris. It is north of Corridor of Procession West. 
 
@@ -876,22 +886,65 @@ Lobby is a room in Busiris. It is above the South Propylaeum.
 
 Tricolumnar Hall is a room in Busiris. It is north of Lobby.
 
-Hall1 is a corridor in Busiris. It is east of Tricolumnar Hall. 
+Upper Hall West is a corridor in Busiris. It is east of Tricolumnar Hall. 
 
-Loggia is a room in Busiris. It is south of Hall1.
+Loggia is a room in Busiris. It is south of Upper Hall West.
 
-Hall2 is a corridor in Busiris. It is west of Tricolumnar Hall.
+Upper Hall East is a corridor in Busiris. It is west of Tricolumnar Hall.
 
-Great Hall-Busiris is a room in Busiris. It is west of Hall2. The printed name of Great Hall-Busiris is "Great Hall".
+Great Hall-Busiris is a room in Busiris. It is west of Upper Hall East. The printed name of Great Hall-Busiris is "Great Hall".
 
-Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Hall2.
+Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Upper Hall East.
 
 Section 3 - Ritual Sacrifice
 
 Ritual Sacrifice is scene. Ritual Sacrifice begins when Osiris' liver is acquired. Ritual Sacrifice ends when King Busiris is dead.
 
 Instead of going during Ritual Sacrifice:
-	say "You can hardy leave with all the guards around you.";
+	if Escape is not happening:
+		say "You can hardly leave with all the guards around you.";
+	otherwise:
+		continue the action.
+
+Every turn during Ritual Sacrifice:
+	If the location is the Jail Cell:
+		say "'The ritual is ready. We will finally deal with you errant prisoners! Zeus our lord and savior lph will be pleased with this sacrifice. ' someone says, or something like that. ";
+		say "Now, to the central court! ";
+		wait for any key;
+		now the player is in the Central Court;
+		now Heracles is in the Central Court;
+		say "You see that preparations for the sacrifice has been complete. (describe sacrificial altar)";
+		wait for any key;
+		start the sacrifice.
+	
+To start the sacrifice:
+	say "sacrifice scene and dialogue begins."
+
+Rule for listing exits when the location is Central Court during Ritual Sacrifice: 
+	do nothing.
+
+To end the sacrifice:
+	say "story moment of Heracles killin busiri.";
+	now King Busiris is dead;
+	say "the court descends into chaos. now is a good chance to find your way out.";
+	now palace exit is revealed;
+	now palace exit is open.
+	
+Instead of going through palace exit:
+	now the player is in The Temple of Tawosret;
+	now Heracles is in the Temple of Tawosret;
+	wait for any key;
+	trigger Heracles leaving.
+	
+
+[watch out for player carrying capacity, fix in future]
+To trigger Heracles leaving:
+	say "Tata, I'm off, here's a heart scarab.";
+	now the player is holding the heart scarab. 
+	
+
+
+	
 
 
 
