@@ -407,7 +407,7 @@ Outside the Walled Village is a room in Amarna. "You have reached Amarna, althou
 
 [in the future, maybe add security checkpoint moment as Medea walks through gate?]
 
-The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, bustling with activity and labor."
+The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, bustling with activity and labor. Maybe you can TALK to someone? [paragraph break]You suddenly realize that you are holding a decapitated head in broad daylight. You hastily cram the head under your shirt and try not to look suspicious."
 
 A body bag is a container. The carrying capacity of the body bag is 14. The description of the body bag is "A heavy cloth sack used for transporting... questionable things. You're not quite sure how everything fits into here. Some strange Egyptian magic?"
 
@@ -419,8 +419,11 @@ A workman is a person. The workman is in the Workmen's Village. The workman carr
 
 Instead of talking to the workman during Discovery:
 	say "'Hey, you.' you called to the workman.  [paragraph break]";
+	wait for any key;
 	say "The workman turns around with a disgruntled expression. 'What do you want, lady?' he asks.  [paragraph break]";
+	wait for any key;
 	say "You explain that you're looking for information about the village, conveniently omitting why exactly you are interested.  [paragraph break]";
+	wait for any key;
 	say "The workman gestures around. 'This village,' he says, 'it's where the elite tombs nearby are prepared. Hard work, grueling work, but someone's got to do it. Not that they treat us well for it.' He looks a little more closely at you. 'What are you doing here, anyway? And good gods, are you pregnant? Triplets?!'";
 	now the workman is curious.
 	
@@ -435,7 +438,9 @@ Instead of showing the head to the uncurious workman during Discovery:
 		
 Instead of showing the head to the curious workman:
 	say "You carefully take the head from under your shirt and show it to the workman. 'Do you have anything to go along with this?' you ask.[paragraph break]";
+	wait for any key;
 	say "The workman eyes you warily. 'You collect heads, huh? I knew a guy like that once. There's a reason we put up walls around here, you know... If you want heads, that old Aten cult temple's the place to check. Or what remains of it, at least.'  [paragraph break]"; 
+	wait for any key;
 	say "You give a nod of thanks and turn to leave. Before you can go, he calls to you. 'Hey! I don't know what your whole deal is, but here. It's good manners to keep body parts inside a body bag--they start to stink when left out under the sun. Trust me, I would know.' [paragraph break] He tosses you a body bag. It smells strange, but you've dealt with--and dealt--worse.";
 	now the workman is uncurious;
 	now the player is holding the body bag;
