@@ -10,7 +10,7 @@ release to "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Re
 
 ! Blorb instructions
 
-storyfile leafname "DCproject.gblorb"
+storyfile leafname "That Time I Got Out of Jail by .gblorb"
 storyfile "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.inform/Build/output.ulx" include
 ifiction "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.inform/Metadata.iFiction" include
 cover "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/DefaultCover.jpg"
@@ -24,8 +24,8 @@ picture 3 "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Fig
 placeholder [IFID] = "898C0670-C5C4-47A2-99BB-FBE5F18E52C2"
 placeholder [RELEASE] = "1"
 placeholder [YEAR] = "2024"
-placeholder [TITLE] = "DCproject"
-placeholder [AUTHOR] = "Sophia Ling"
+placeholder [TITLE] = "That Time I Got Out of Jail by Reassembling Osiris"
+placeholder [AUTHOR] = "Sophia Ling and Ruya Tazebay"
 placeholder [BLURB] = "A work of interactive fiction."
 
 ! Other material to release
@@ -33,14 +33,14 @@ placeholder [BLURB] = "A work of interactive fiction."
 
 ! Website instructions
 
-placeholder [ENCODEDSTORYFILE] = "DCproject.gblorb.js"
+placeholder [ENCODEDSTORYFILE] = "That Time I Got Out of Jail by .gblorb.js"
 template path "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Templates"
 template path "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Templates"
 template path "/Users/sophial/Library/Inform/Templates"
 template path "/Applications/Inform.app/Contents/Resources/Internal/Templates"
 placeholder [INTERPRETERSCRIPTS] = " "
 interpreter "Quixe" "g"
-base64 "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.inform/Build/output.ulx" to "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Release/interpreter/DCproject.gblorb.js"
+base64 "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.inform/Build/output.ulx" to "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Release/interpreter/That Time I Got Out of Jail by .gblorb.js"
 
 ! Website instructions
 
@@ -50,7 +50,7 @@ template path "/Users/sophial/Library/Inform/Templates"
 template path "/Applications/Inform.app/Contents/Resources/Internal/Templates"
 css
 website "Standard"
-status instruction ||&nbsp;<a href="source:story.ni#line8"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line9"><img border=0 src=inform:/doc_images/Reveal.png></a>||
 status alternative ||Using 'Release along with cover art', to provide something more distinctive than the default artwork above&nbsp;<a href=inform:/doc401.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with a file of "Such-and-Such" called "whatever.pdf"', perhaps to add a manual, or a welcoming note&nbsp;<a href=inform:/doc399.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with the source text'&nbsp;<a href=inform:/doc410.html><img border=0 src=inform:/doc_images/help.png></a>||

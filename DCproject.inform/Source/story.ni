@@ -1,8 +1,9 @@
-"DCproject" by Sophia Ling
+"That Time I Got Out of Jail by Reassembling Osiris" by Sophia Ling and Ruya Tazebay
 
 Include Basic Screen Effects by Emily Short.
 Include Rideable Vehicles by Graham Nelson.
 Include Secret Doors by Gavin Lambert.
+Include Basic Help Menu by Emily Short.
 Include Exit Lister by Gavin Lambert.
 
 Release along with an interpreter.
@@ -12,6 +13,8 @@ Section 1 - Story Transcript - For release only
 When play begins: try switching the story transcript on.
 
 Part 1 - Prologue
+
+When play begins: choose row 1 in Table of Basic Help Options; now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt."
 
 After printing the banner text:
 	say "[line break]'It’s a complete disaster!'[line break][line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break]";
@@ -70,7 +73,7 @@ After printing the banner text:
 	wait for any key;
 	say "[line break]Ma’at’s eyes were bright with a newfound hope. 'How,' she said slowly, 'can we expect to counter Seth when none of us possess his cruel cunning? Who else but a Seth to defeat Seth?'[line break]";
 	wait for any key;
-	say "[line break]Amun was at once both horrified and intrigued. 'To invite such a barbaric woman into our homeland. What have we come to?' [line break]";
+	say "[line break]Amun was at once both horrified and intrigued. 'To invite such a barbaric woman into our home. What have we come to?' [line break]";
 	wait for any key;
     	say "[line break]But it was their best shot. 'I know a certain Greek sun god. I will ask what can be done.' [line break][line break][line break]";
 	wait for any key;
@@ -84,7 +87,7 @@ After printing the banner text:
 	wait for any key;
 	say "[line break]Hadn’t the gods supported your actions? Why have they punished you in this way?[line break]";
 	wait for any key;
-	say "[line break]And what of Jason? He who had flagrantly broken the most sacred divine oaths. What about his divine punishment? [line break]";
+	say "[line break]And what of Jason? He who had flagrantly broken the most sacred of all oaths. What about his divine punishment? [line break][line break] ";
 	wait for any key;
 	say "[line break][line break]…Oh, right. You already took care of that. [line break][line break]";
 	wait for any key;
@@ -102,13 +105,19 @@ After printing the banner text:
 	wait for any key;
 	say "[line break]'What do I need to do?'[line break]";
 	wait for any key;
-	say "[line break][line break]'Your name is Medea.[line break]";
+	say "[line break][line break]Your name is Medea, and you can't wait to be free.[line break]";
 	wait for any key;
-	say "[line break]In order to stay out of divine jail, you must gather and reassemble Osiris’ body parts. [line break]";
+	say "[line break]In order to get out of jail, you must gather and reassemble Osiris` body parts. You don't know how many there are or where they might be hidden. [line break]";
+	wait for any key;
+	say "[line break]...You have to hand it to this Seth character. You weren't nearly as creative. [line break]";
+	wait for any key;
+	say "[line break]The Egyptian gods, despite pleading for your assistance, seem to be frightened by you. They've placed some restrictions on your behavior--a parole, if you will. Currently, you cannot access your innate magic and divine power. You will need to rely on your genius, cunning, and astonishingly gorgeous face to complete your mission. [line break]";
+	wait for any key;
+	[say "[line break]Your grandfather seems to feel a modicum of sympathy for you. Before he dropped you off in Egypt, he left you with a help book [line break]"; [might re-add if the initial help prompt is not clear for readers]]
 	wait for any key;
 	say "[line break]Your sun chariot has been returned to you. You missed your dragons. After catching up with your darlings, you traveled to Egypt. [line break]";
 	wait for any key;
-	say "[line break][line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. [line break]".
+	say "[line break][line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. There's no better place to start. [line break]".
 	
 The player is in Gate to the Osireion.
 
@@ -145,7 +154,7 @@ Section 2 - New Definitions
 A Body Part is a kind of thing.
 
 Instead of dropping a body part:
-	say "You'll need that."
+	say "You'll need that.[line break][line break]Or, well, Osiris will."
 
 A thing can be acquired or unacquired. A thing is usually unacquired.
 
@@ -166,8 +175,7 @@ Selecting is an action applying to one number.
 
 Check selecting: [assuming we don't want to be able to transport from just anywhere]
 	if the player is not on the sun chariot:
-		say "You can get there only with the sun chariot";
-		do nothing instead.
+		say "You can travel there only with your sun chariot. Your darling dragons will feel neglected.";		do nothing instead.
 
 Check selecting:
 	if the number understood is greater than the number of filled rows in the Table of Transport Options or the number understood is less than one:
@@ -214,10 +222,10 @@ The sun chariot is an enterable supporter. It is in the Gate to the Osireion.
 Every turn:
 	if there is a home of the location in the Table of Transport Options and the sun chariot is not in the location:
 		move the sun chariot to the location;
-		say "Your sun chariot is parked at [the location], fiercely guarded by your pet serpents.".
+		say "Your sun chariot is parked at [the location], fiercely guarded by your pet dragons.".
 
 After entering the sun chariot:
-	say "As you step onto the chariot, the serpents in front hiss joyfully, happy to see you again. [run paragraph on]";
+	say "As you step onto the chariot, your darling dragons hiss joyfully, happy to see you again. [run paragraph on]";
 	list the transport options.
 
 [temp room declarations]
@@ -238,13 +246,14 @@ Section 1 - Head capabilities
 
 Table of Osiris' unrelated knowledge
 comment
-"boop1"
-"boop2"
+"Boop."
+"Boop-boop."
 
 Table of Osiris' useful knowledge
 fact	summary
 1	"Go to Oxyrhynchos! I have fair confidence that my.... a very important.... an important member of my body will be there. "
 2	"Fishing may result in some happy results."
+2	"If you ever run into a god...you can never go wrong with flattery."
 
 Check talking to head:
 	if the head is dumb:
@@ -256,48 +265,48 @@ Check talking to head:
 
 Section 2 - Entering the Osireion
 
-The Gate to the Osireion is a room in Abydos. "The doorway to the temple stands before you, an unassuming looking side door. It was sturdy and made of good material, but seems to be lightly trafficked. It was even unguarded. Perhaps you should attempt to ENTER the door. You might also consider DESCRIBING the door. (please add more historical info and revise this)"
+The Gate to the Osireion is a room in Abydos."The doorway to the temple stands before you. It's an unassuming looking side door that seems to be lightly trafficked. There are no guards... [line break]You contemplate the ways that you can interact with the door. Can you ENTER the door or EXAMININE the door? If you ever feel confused, perhaps you should ask for some HELP."
 
 The stone door is a locked closed door. It is scenery. The stone door is south of the gate and north of the descending passage. Include (- has animate -) when defining the door.
-The description of the stone door is "The heavy stone door is engraved with an ancient riddle: [line break] 'I am yesterday, veiled in shadows. [line break] I am tomorrw, cloaked in flames. [line break] A union of gods, a cycle complete.'"
+The description of the stone door is "The heavy stone door is engraved with an ancient riddle: [line break] 'I am yesterday, veiled in shadows. [line break] I am tomorrow, cloaked in flames. [line break] A union of gods, a cycle complete.'[paragraph break]The door patiently awaits your ANSWER.";
 
 Instead of answering the door that something:
 	if the player's command includes "sun":
 		now the stone door is unlocked;
 		now the stone door is open;
-		say "As you speak the word 'sun,' the massive stone door grinds open, revealing a long narrow passage.";
+		say "As you speak the word 'sun,' the massive stone door grinds open, revealing a long narrow passage directly south of you.";
 	otherwise:
-		say "Nothing happens. Perhaps that is not the correct answer.";
+		say "Nothing happens. Perhaps that is not the correct answer. You look up at the sky, hoping for some benevolent god to send you a hint.";
 
 
 The Descending Passage is a room in Abydos. It is south of the stone door. "A long descending passage. Down south is a great hall. North is the gate."
 
-The Great Hall is a room in Abydos. It is south of the Descending Passage. "South is a small chamber. North is the long descending passage. East is the first transverse chamber."
+The Great Hall is a room in Abydos. It is south of the Descending Passage. "You can see a small chamber south of you. North is a long descending passage. East is a transverse chamber."
 
-The South Chamber is a room in Abydos. It is south of the great hall. "The small chamber contains... something? North is the great hall. Mention the things in the room in this description of the room. player can examine for more details." 
+The South Chamber is a room in Abydos. It is south of the great hall. "You are now in the south chamber. North is the great hall. [paragraph break]The small chamber contains some potentially useful items...[paragraph break]" 
 
 The sandstone walls are scenery in the South Chamber. The description of the sandstone walls is "Parts of the Book of the Dead is inscribed across these walls."
 
 The faience ankh is in the South Chamber. The description of the small ankh is "A delicate yet sturdy ankh, the symbol of life, carved from faience. " 
 
-A bundle of dried thyme is in the South Chamber. The description of the dried herbs is "A bundle of dried thyme is tied together with simple strands of twine. It was so old and decrepit you could barely smell it."
+A bundle of dried thyme is in the South Chamber. The description of the dried herbs is "A bundle of dried thyme is tied together with simple strands of twine. It is so old and decrepit you could barely smell it."
 
 An ostracon is in the South Chamber. The description of the ostracon is "A shard of pottery is stained with hastily written hieratic."
 
-Some pottery jars are in the South Chamber. The description of the pottery jars is " Several small jars of varying shapes and sizes rest against the wall. Their surfaces are worn, with traces of paint suggesting they once bore vibrant designs. Among them, you see a broken jar with unguents and another fallen to the floor, with dried red stains around the rim."
+Some pottery jars are in the South Chamber. The description of the pottery jars is " Several small jars of varying shapes and sizes rest against the wall. Their surfaces are worn. Traces of paint suggesting they once bore vibrant designs. Among them, you see a broken jar with unguents and another fallen to the floor, with dried red stains around the rim."
 
 A wooden plank is in the South Chamber. The description of the wooden plank is "A short, splintered plank of cedar wood lies on the floor."
 
-Some knick-knacks are in the South Chamber. The description of the knick-knacks is "You sift through the assorted items: a bead that may have been part of a necklace, a sliver of ivory perhaps used as a tool, and a draining liquid clepsydra (water clock)."
+Some knick-knacks are in the South Chamber. The description of the knick-knacks is "You sift through the assorted items: a bead that may have been part of a necklace, a sliver of ivory that was used as a tool, and a draining liquid water clock."
 
-The First Transverse Chamber is a room in Abydos. It is east of the Great Hall. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from continuing through." [on first entrance, mention the long passage way between the two as well]
+The First Transverse Chamber is a room in Abydos. It is east of the Great Hall. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from going through. You might be able to GO east if you had something that help you cross the water..." [on first entrance, mention the long passage way between the two as well]
 
 
 The west moat is east of the First Transverse Chamber and west of the Central Nave. The west moat is an open unopenable door. "A moat surrounds the entire central nave." The description of the west moat is "Deep and murky." 
 
 The east moat is west of the Tomb of Osiris and east of the Central Nave. The east moat is an open unopenable door. "A moat surrounds the entire central nave." The description of the east moat is "Deep and murky." 
 
-[one day i fight the battle and make the plank have to be placed down and picked up grrr but not for the demo]
+[one day the plank will have be placed down and picked up...but not for the demo! ]
 
 Instead of going through the west moat:
 	if the player does not have the wooden plank:
@@ -313,10 +322,10 @@ Instead of going through the east moat:
     		say "You place the wood plank down, desperately hoping it'll bear your weight.";
 		continue the action;
 		
-The Central Nave is a room in Abydos. It is east of the west moat. "You stand in the middle of the columns lining the central nave and look around. Surrounding you are 17 small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have nly been a god. In front of it, a low altar sits, its surface decorated with scarce items. "
+The Central Nave is a room in Abydos. It is east of the west moat. "You stand in the middle of the columns lining the central nave and look around. Surrounding you are seventeen small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. [paragraph break] The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have only been a god. A low altar sits in front of it, its surface decorated with scarce items. "
 [only print the description of one moat when in central nave, currently it prints twice]
 
-The statue of Osiris is in the Central Nave. The description of the statue of Osiris is "Carved from greywacke, it exudes power and authority. Osiris sits on a throne in a mummified form wearing a close-fitting enveloping garment, a divine beard attached to his chin, and the Atef crown flanked by two ostrich feathers, adorned with the uraeus cobra. He holds the royal crook and flail with his arms crossed on his chest. The base of the statue is inscribed with an offering prayer, while the back pillar of the statue is not inscribed. (from the cairo museum, feel free to change) He sure looks put together-- a drastic difference from his current state."
+The statue of Osiris is in the Central Nave. The description of the statue of Osiris is "Carved from greywacke, it exudes power and authority. Osiris sits on a throne in a mummified form wearing a close-fitting enveloping garment, a divine beard attached to his chin, and the Atef crown flanked by two ostrich feathers, adorned with the uraeus cobra. He holds the royal crook and flail with his arms crossed on his chest. The base of the statue is inscribed with an offering prayer, while the back pillar of the statue is not inscribed. He sure looks put together -- such a shame he's all chopped up now."
 
 The altar is in the Central Nave. The description of the altar is "The altar is a simple stone slab, weathered and chipped at the edges but still retaining an air of solemnity. On its surface are the remains of some incense."
 
@@ -326,23 +335,53 @@ Before going when the location is the Central Nave:
 	otherwise:
 		say "With the moat surrounding the central nave, it's a struggle to go anywhere." instead.
 
-The Tomb of Osiris is a room in Abydos. It is east of the east moat. "The roof and walls has Nut and Geb stuff on it. At the center of the room is a sarcophagus, its wooden frame lavishly painted in the style of the New Kingdom. Comedically, it is wrapped in an almost absurd number of golden chains, as if to guard against any attempt to disturb its occupant."
+The Tomb of Osiris is a room in Abydos. It is east of the east moat. "The roof and walls has depictions of Nut and Geb. At the center of the room is a sarcophagus, its wooden frame lavishly painted in the style of the New Kingdom. It is wrapped in an almost absurd number of golden chains, as if to guard against any attempt to disturb its occupant. You feel that there is something--or someone--important inside..."
 
-The painted roof is scenery in the Tomb of Osiris. The description of the painted roof is "The depiction of Nut, her star-strewn body stretching across the heavens, is both graceful and imposing. Beneath her, Geb lies in repose, his green-toned skin symbolizing fertility and life. The colors have dulled over time, but the craftsmanship remains evident."
+The painted roof is scenery in the Tomb of Osiris. The description of the painted roof is "The depiction of Nut, her star-strewn body stretching across the heavens, is both graceful and imposing. Beneath her, Geb lies in repose, his green-toned skin symbolizing fertility and life. The colors have dulled over time, but the craftsmanship is evident."
 
 The inscribed walls are scenery in the Tomb of Osiris. The description of the inscribed walls is "The hieroglyphs here are meticulously carved, detailing invocations to the gods and protective spells. Some portions of the text are damaged, yet the overall message of guidance and protection is clear."
 
-The sarcophagus is a closed container. It is locked. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Osiris, the vain man, must have made it auto-update every now and then to keep up with the most popular coffin style." The sarcophagus has matching key the faience ankh.
+The sarcophagus is a closed container. It is locked. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Its occupant must have made it auto-update every now and then to keep up with the most popular trends. Perhaps you can use something to UNLOCK it." The sarcophagus has matching key the faience ankh.
+
+[something here after unlocking sarcophagus to prompt viewer to first see that head is in sarcophagus and then take it]
 
 Osiris' head is a body part. It is in the sarcophagus. Osiris' head can be taken. Understand "Osiris" as Osiris' head. Include (- has animate -) when defining Osiris' head. Osiris' head can be smart or dumb. Osiris' head is dumb. The description of Osiris' head is "Osiris, in all his glorious, head-only form."
 
-Test Abydos with "e" in the First Transverse Chamber holding the wooden plank and faience ankh.
+[Ruya having trouble examining or taking the head once sarcophagus is unlocked]
 
+Test Abydos with "e" in the First Transverse Chamber holding the wooden plank and faience ankh.
+	
 
 Part 4 - Talking Osiris Agenda
 [this entire part must be completed in order]
 
 Talking Osiris Agenda is a scene. Talking Osiris Agenda begins when Head Acquisition ends. Talking Osiris Agenda ends when Organ Acquisition ends. 
+
+After taking Osiris' head:
+	say "Aha! The head! You triumphantly hold the head of Osiris. How easy! Even someone like J*son could have solved this riddle! You'll be free in no time. You just need the torso, legs, and arms--then you're done! [paragraph break]";
+	wait for any key;
+	say "Although his eyes are open, Osiris remains silent.[paragraph break]";
+	wait for any key;
+	say "You've got a bad feeling about this.[paragraph break]";
+	wait for any key;
+	say "'Hello?' you ask. [paragraph break]";
+	wait for any key;
+	say "...No reply.[paragraph break]";
+	wait for any key;
+	say "You shake the head, hoping to wake it up. There's still silence. And it's remarkably light for its size. Could it be..that there's no brain inside?[paragraph break]";
+	wait for any key;
+	say "...[paragraph break]";
+	wait for any key;
+	say "It seems this will be more difficult than you anticipated.[paragraph break]";
+	wait for any key;
+	say "The head, in its stubborn silence seems to taunt you.[paragraph break]";
+	wait for any key;
+	say "...Wait a moment![paragraph break]";
+	wait for any key;
+	say "There's a little papyrus scrap tangled in the beard of Osiris. You pull it out and unfold it, reading the following:[line break]The sun of the shattered city awaits you,[line break]where you may find the largest brains in the largest skulls.[paragraph break]";
+	wait for any key;
+	say "Hmm. What could that mean?[paragraph break]";
+	wait for any key;
 
 Chapter 2 - Amarna-Brain
 
@@ -360,49 +399,49 @@ Next Instructions is a scene. Next Instructions begin when Exploration Ends. Nex
 	
 Section 2 - Workmen's village
 
-Outside the Walled Village is a room in Amarna. "more description here. The entrance to the walled village is directly north of you. The walled workmen's villlage only has one gate."
+Outside the Walled Village is a room in Amarna. "You have reached Amarna, although you don't really know where to go from here. You are surrounded by quite a bit of rubble. This seems to have once been a great city. Yet directly north of you see a walled cluster of buildings and hear the faint sound of hubbub. This might be a workmen's village. But it is entirely walled and only has one gate. That seems to be a fire hazard. [paragraph break]You would know about those.";
 
 [maybe add security checkpoint moment as Medea walks through gate?]
 
-The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, bustling with activity."
+The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, bustling with activity and labor."
 
-A body bag is a container. The carrying capacity of the body bag is 14. The description of the body bag is "A heavy cloth sack used for transporting... questionable things."
+A body bag is a container. The carrying capacity of the body bag is 14. The description of the body bag is "A heavy cloth sack used for transporting... questionable things. You're not quite sure how everything fits into here. Some strange Egyptian magic?"
 
 Check inserting something into the body bag:
 	if the noun is not a body part:
-		say "The body bag isn't for this." instead.
+		say "The body bag isn't for this. If you put something unrelated, it would just be a bag!" instead.
 
 A workman is a person. The workman is in the Workmen's Village. The workman carries a body bag. The workman can be curious or uncurious. The workman is uncurious.
 
 Instead of talking to the workman during Discovery:
-	say "'Hey you,' you called to the workman.  [paragraph break]";
-	say "The workman turns around with a disgruntled expression. 'What do you want?' he asks.  [paragraph break]";
-	say "You explain that you're looking for information about the village.  [paragraph break]";
-	say "The workman gestures around. 'This village,' he says, 'it's where the elite tombs nearby are prepared. Hard work, but someone's got to do it.' He looks at you curiously. 'What are you doing here, anyway? And good gods, are you pregnant?!'";
+	say "'Hey, you.' you called to the workman.  [paragraph break]";
+	say "The workman turns around with a disgruntled expression. 'What do you want, lady?' he asks.  [paragraph break]";
+	say "You explain that you're looking for information about the village, conveniently omitting why exactly you are interested.  [paragraph break]";
+	say "The workman gestures around. 'This village,' he says, 'it's where the elite tombs nearby are prepared. Hard work, grueling work, but someone's got to do it. Not that they treat us well for it.' He looks a little more closely at you. 'What are you doing here, anyway? And good gods, are you pregnant? Triplets?!'";
 	now the workman is curious.
 	
 Instead of talking to the workman during Get Body Bag:
-	say "The workman looks at you expectantly. 'What are you doing here, anyway? And what's up with the stomach?'"
+	say "The workman looks at you expectantly. 'What are you doing here, anyway? And what's up with your stomach?'"
 
 Instead of talking to the workman at least four times during Get Body Bag:
-	say "He seems to be expecting an answer from you. Maybe try showing him what's hidden under your shirt."
+	say "He seems to be expecting an answer from you. Maybe try SHOWing him what's hidden under your shirt. [paragraph break] The scary part, not the sexy part."
 	
 Instead of showing the head to the uncurious workman during Discovery:
-	say "Flashing a decapitated head to someone you've never talked to may be a bit much. Try striking a conversation first."
+	say "Flashing a decapitated head to someone you've never talked to before could be overkill. Try striking a conversation first."
 		
 Instead of showing the head to the curious workman:
-	say "You carefully take the head from under your shirt and show it to the workman. 'Do you know anything to go along with this?' you ask.[paragraph break]";
-	say "The workman eyes you warily. 'You collect heads, huh? Weird. But if you want odd heads, the old Aten cult temple's the place to check. (here, mention more about the cult) '  [paragraph break]"; 
-	say "You give a curt nod of thanks. Just as you turn to leave, he calls to you. 'Hey! I don't know what your whole deal is, but here, it's good manners to keep body parts inside a body bag.' He tosses you a body bag.";
+	say "You carefully take the head from under your shirt and show it to the workman. 'Do you have anything to go along with this?' you ask.[paragraph break]";
+	say "The workman eyes you warily. 'You collect heads, huh? I knew a guy like that once. There's a reason we put up walls around here, you know... If you want heads, that old Aten cult temple's the place to check. Or what remains of it, at least.'  [paragraph break]"; 
+	say "You give a nod of thanks and turn to leave. Before you can go, he calls to you. 'Hey! I don't know what your whole deal is, but here. It's good manners to keep body parts inside a body bag--they start to stink when left out under the sun. Trust me, I would know.' [paragraph break] He tosses you a body bag. It smells strange, but you've dealt with--and dealt--worse.";
 	now the workman is uncurious;
 	now the player is holding the body bag;
 	now the body bag is acquired.
 
 Instead of talking to the workman during Exploration:
-	say "The workman looks at you with exasperation. 'I've told you everything I know. Go to the old Aten temple for you weird heads."
+	say "The workman looks at you with exasperation. 'Lady, can't you see I've got a job to do? I've told you everything I know. Go to that old Aten temple for your weird heads."
 	
 Instead of showing the head to the uncurious workman during Exploration:
-	say "I don't think showing off Osiris` head again is necessary.".
+	say "You don't think showing off Osiris` head again is necessary. Even if it might be funny.".
 	
 Section 3 - Traveling to the temple
 
@@ -413,7 +452,7 @@ The oxcart is a rideable vehicle. "An oxcart sits here unattended." The descript
 When Exploration begins:
 	now the oxcart is in Outside the Walled Village.
 
-The Ruined City is a room in Amarna. It is west of Outside the Walled Village. "This glorious city, once the capital of Egypt, is nothing but ruins and foundations. In the distance, to the north, you see a small standing structure, sticking out like a sore thumb amongst the desolation."
+The Ruined City is a room in Amarna. It is west of Outside the Walled Village. "This glorious city, once the capital of Egypt, is nothing but ruins and foundations. In the distance, to the north, you see a small standing structure. It sticks out like a sore thumb amongst the desolation."
 
 Instead of going to the Ruined City when the player is not on the oxcart:
 	if player is in Outside the Walled Village:
@@ -429,57 +468,55 @@ Instead of going to Outside the Walled Village when the player is not on the oxc
 
 After going to the Ruined City:
 	if the player is in Outside: 
-		say "You sit on the oxcart and it takes you there.";
+		say "You board the oxcart and start traveling to the temple.";
 	continue the action.
 	
 After going to Outside the Walled Village:
 	if the player is in the Ruined City:
-		say "You sit on the oxcart and it takes you there.";
+		say "You board the oxcart and start traveling to the temple.";
 	continue the action.
 
 Instead of going to the Small Aten Temple when the player is on the oxcart:
-	say "You can hardly ride a cart into the temple!"
+	say "You can hardly ride an oxcart into the temple!"
 
-The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "Despite being the smaller Aten Temple, you could still see the foundations that stretched far. It was made of three courts, the first, second, and sanctuary court. You are standing in what used to be the sanctuary court, now demolished into nothingness. A partially reconstructed sanctuary stands before you. It looked glorious, despite being only a fraction of what would've once been there. "
+The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "The traces of this Aten Temple still hint at its former grandeur. It once comprised three courts—the first, the second, and the sanctuary. Now you stand in what used to be the sanctuary court, its original form long since demolished. A partially reconstructed sanctuary is to your north. It still impressive despite representing only a fraction of its former splendor."
 
-The Sanctuary is a room in Amarna. It is north of the Small Aten Temple. "Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor the Aten, the sun disk. Around the perimeter of the sanctuary are low, carved altars, decorated with offerings and incense. In the center of the sanctuary, a shrine depicting Aten seems to shine in its golden splendor. (or something like that i guess)"
+The Sanctuary is a room in Amarna. It is north of the Small Aten Temple. "Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor Aten, the sun disk. Around the perimeter of the sanctuary are low, carved altars, decorated with offerings and incense. In the center of the sanctuary, a shrine depicting Aten shines in its golden splendor."
 
-The carved altars are scenery in the Sanctuary. "The low altars are made of sandstone, each inscribed with dedications to Aten. "
+The carved altars are scenery in the Sanctuary. "The low altars are made of sandstone, each inscribed with dedications to Aten."
 
-The offerings are things in the Sanctuary. "Arranged delicately atop the altars are offerings of (something). Each item looks fresh, as if newly placed by worshippers -- odd."
+The offerings are things in the Sanctuary. "Arranged delicately atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers -- odd [line break] Wasn't this place abandoned?"
 
-The Aten shrine is scenery in the Sanctuary. "(description of shrine, pick object?)"
+The Aten shrine is scenery in the Sanctuary. "At the heart of the sanctuary stands a majestic shrine dedicated to Aten. The shrine captures and reflects the abundant sunlight that bathes the room. The central depiction of the Aten radiates golden beams that dance across the walls, filling the space with a divine glow. [paragraph break] You feel more at home."
 
 The hidden staircase is a secret door. The staircase is above the Underground chapel and below the Small Aten Temple. 
 
 Instead of examining the shrine:
 	now the hidden staircase is revealed;
 	now the hidden staircase is open;
-	say "You hear an odd rumbling noise. (here the hidden staircase is revealed).";
+	say "You hear an odd rumbling noise. There was a hidden staircase!";
 	continue the action.
 
-Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls."
-[description very important for next game! all to you :)))))]
-[it could be myth based or something? related to aten? or to osiris]
+Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls. The ceiling depicts an intricate scene. [paragraph break] What odd surroundings. Perhaps you should take a closer look. The chapel is completely empty, so there's no harm in TOUCHing something."
 
 
 Section 4 - At the Small Aten Temple
 	
-The north mural is scenery in the Underground Chapel. The description is "a sun with rays that end in little ends dominate the picture."
+The north mural is scenery in the Underground Chapel. The description is "A radiant sun dominates the mural, its rays reaching outward. Each ray ends in delicate, finger-like extensions, as though grasping for the world below. It's as if the sun itself were alive, bestowing its blessings on all it touches."
 
-The south mural is scenery in the Underground Chapel. The description is "the figures here have very defined toes."
+The south mural is scenery in the Underground Chapel. The description is "This mural depicts a gathering of figures, each etched with exquisite detail. Curiously, the figures here have extremely defined toes...you're not quite sure why."
 
-The east mural is scenery in the Underground Chapel. The description is " a weathered relief shows nothing but a round disk in the center. surely etchings used to be around it, but we cant see them."
+The east mural is scenery in the Underground Chapel. The description is "The weathered relief on the eastern wall shows nothing but a simple, unadorned sun disk. Time has erased the surrounding details, leaving only faint traces of the elaborate etchings."
 
-The west mural is scenery in the Underground Chapel. The description is "a man holds out probably a little duck to the demanding hand sun ray things."
+The west mural is scenery in the Underground Chapel. The description is "This mural shows a man makes an offering to Aten. Cradled carefully in his hands is...a small duck?[paragraph break] Ha. You would never settle for such meager offerings."
 
-The ceiling is scenery in the Underground Chapel. The description is "has some hint revealing the sequence in which to touch stuff - for example-- in a laid out sequence, you see the a sun disk, reaching out hand rays, onto the offerings of lotus flowers, held by a person with a very long head. "
+The ceiling is scenery in the Underground Chapel. The description is "You crane your head up to look at the ceiling. There seems to be a lot going on here. A sun disk is being held in the palms of a praying man. Across from him, a man with a very long head is smelling a lotus."
 
-The first statue is scenery in the Underground Chapel. The description is "this is a broken statue. this probably used to be depicting a person. guess we'll never find out."
+The first statue is scenery in the Underground Chapel. The description is "A broken statue that probably once depicted a person. Guess we'll never find out. You feel a strange kinship with this statue."
 
-The second statue is scenery in the Underground Chapel. The description is "a statue of a tall man with a long face and long hat sits there."
+The second statue is scenery in the Underground Chapel. The description is "A statue of a man with a ridiculously long head. He looks remarkably like a man you once knew."
 
-The third statue is scenery in the Underground Chapel. The description is "statue of a man with a giant lotus sprouting out the top of his head. hope he's ok"
+The third statue is scenery in the Underground Chapel. The description is "A statue of a man with a giant lotus sprouting out the top of his head. That looks painful."
 
 [Every turn:
 	showme the contents of Table of Current Sequence.]
@@ -499,16 +536,16 @@ Instead of touching something in the Underground Chapel:
 Table of Full Sequence
 seq	item
 1	east mural
-2	north mural
-3	third statue
-4	second statue
+2	west mural
+3	second statue
+4	third statue
 
 Table of Current Sequence
 seq	item
 1	east mural
-2	north mural
-3	third statue
-4	second statue
+2	west mural
+3	second statue
+4	third statue
 with 1 blank row
 
 To sort the sequence:
@@ -525,10 +562,10 @@ To refill the sequence:
 		now the item entry is item-val.
 
 To trigger the end sequence:
-	say "You hear something. something is happening. woaaah.";
+	say "You hear something from up above! Looking up at the ceiling, you see a gray lump drop from the duck-bearing man's head down to the room you are in. Is that...?";
 	move Osiris' brain to the Sanctuary.
 
-Osiris' brain is a body part. The description of the brain is "An unnervingly lifelike, pulsating organ."
+Osiris' brain is a body part. The description of the brain is "A brain. It feels like it is pulsating in your hands."
 
 Section 5 - Back to the village
 
