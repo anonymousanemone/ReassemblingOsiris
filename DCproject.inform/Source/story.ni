@@ -14,18 +14,18 @@ When play begins: try switching the story transcript on.
 
 Part 1 - Prologue
 
-When play begins: choose row 1 in Table of Basic Help Options; now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt."
+When play begins: choose row 1 in Table of Basic Help Options; now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt[paragraph break]Some general guidelines for this game:[line break]	Make sure to examinine everything![line break]	If you're stuck, it may be time to travel to a new place.[line break]	Medea is very clever, so make sure to pay attention to how she describes things!"
 
 After printing the banner text:
 	say "[line break]'It’s a complete disaster!'[line break][line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break]";
 	wait for any key;
 	say "[line break]'I’ve pleaded and pleaded, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris to Osiris!'[line break]";
     	wait for any key;
-    	say "[line break]'I had thought,' an especially haggard-looking Anubis replied, 'that we agreed Isis would be no help. Have our previous Emergency Meetings taught you nothing? I am starting to hear whispers--mere whispers, mind you, but whispers nonetheless--about a certain Serapis. Serapis! If Osiris falls, Kemet will fall alongside him. Amun, you must do something!'[line break]";
+    	say "[line break]'I had thought,' an especially haggard-looking Anubis replied, 'that we agreed Isis would be no help. Have our previous Emergency Meetings taught you nothing? I  am starting to hear whispers--mere whispers, mind you, but whispers nonetheless--about a certain Serapis. Serapis! If Osiris falls, Kemet will fall alongside him. Amun, you must do something!'[line break]";
     	wait for any key;
 	say "[line break]Amun ignored Nephthys’ laments and Anubis’ whines. There was a more important avenue to pursue: 'Maʽat, what have you heard from Thoth?'[line break]";
 	wait for any key;
-	say "[line break]Maʽat looked rather unhappy to be the bearer of bad news. 'He’s tried every spell he knows--to no effect. He’s sequestered himself in a library, but…'[line break][line break]";
+	say "[line break]Maʽat looked rather unhappy to be the bearer of bad news. 'He’s tried every spell he knows--to no effect. He’s sequestered himself in the library, but…'[line break][line break]";
 	wait for any key;
 	say "It seemed that Ma’at had little hope that Thoth would be successful in his efforts.[line break]";
     	wait for any key;
@@ -283,13 +283,13 @@ The Descending Passage is a room in Abydos. It is south of the stone door. "A lo
 
 The Great Hall is a room in Abydos. It is south of the Descending Passage. "You can see a small chamber south of you. North is a long descending passage. East is a transverse chamber."
 
-The South Chamber is a room in Abydos. It is south of the great hall. "You are now in the south chamber. North is the great hall. [paragraph break]The small chamber contains some potentially useful items...[paragraph break]" 
+The South Chamber is a room in Abydos. It is south of the great hall. "You are now in the south chamber. North is the great hall. [line break]The small chamber contains some potentially useful items you can EXAMINE or TAKE..." 
 
 The sandstone walls are scenery in the South Chamber. The description of the sandstone walls is "Parts of the Book of the Dead is inscribed across these walls."
 
-The faience ankh is in the South Chamber. The description of the small ankh is "A delicate yet sturdy ankh, the symbol of life, carved from faience. " 
+The faience ankh is in the South Chamber. The description of the faience ankh is "A delicate yet sturdy ankh, the symbol of life, carved from faience. " 
 
-A bundle of dried thyme is in the South Chamber. The description of the dried herbs is "A bundle of dried thyme is tied together with simple strands of twine. It is so old and decrepit you could barely smell it."
+A bundle of dried thyme is in the South Chamber. The description of the bundle of dried thyme is "A bundle of dried thyme is tied together with simple strands of twine. It is so old and decrepit you could barely smell it."
 
 An ostracon is in the South Chamber. The description of the ostracon is "A shard of pottery is stained with hastily written hieratic."
 
@@ -297,14 +297,14 @@ Some pottery jars are in the South Chamber. The description of the pottery jars 
 
 A wooden plank is in the South Chamber. The description of the wooden plank is "A short, splintered plank of cedar wood lies on the floor."
 
-Some knick-knacks are in the South Chamber. The description of the knick-knacks is "You sift through the assorted items: a bead that may have been part of a necklace, a sliver of ivory that was used as a tool, and a draining liquid water clock."
+Some knick-knacks are in the South Chamber. The description of some knick-knacks is "You sift through the assorted items: a bead that may have been part of a necklace, a sliver of ivory that was used as a tool, and a draining liquid water clock."
 
 The First Transverse Chamber is a room in Abydos. It is east of the Great Hall. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from going through. You might be able to GO east if you had something that help you cross the water..." [on first entrance, mention the long passage way between the two as well]
 
 
-The west moat is east of the First Transverse Chamber and west of the Central Nave. The west moat is an open unopenable door. "A moat surrounds the entire central nave." The description of the west moat is "Deep and murky." 
+The west moat is east of the First Transverse Chamber and west of the Central Nave. The west moat is an open unopenable door. ["A moat surrounds the entire central nave."] The description of the west moat is "Deep and murky." 
 
-The east moat is west of the Tomb of Osiris and east of the Central Nave. The east moat is an open unopenable door. "A moat surrounds the entire central nave." The description of the east moat is "Deep and murky." 
+The east moat is west of the Tomb of Osiris and east of the Central Nave. The east moat is an open unopenable door. ["A moat surrounds the entire central nave."] The description of the east moat is "Deep and murky." 
 
 [one day the plank will have be placed down and picked up...but not for the demo! ]
 
@@ -347,7 +347,7 @@ The sarcophagus is a closed container. It is locked. It is in the Tomb of Osiris
 Instead of unlocking the sarcophagus with the faience ankh:
 	now the sarcophagus is unlocked;
 	now the sarcophagus is open;
-	say "You unlock the sarcophagus. Osiris' head sits inside.".
+	say "You unlock the sarcophagus. The head of Osiris is inside! You should TAKE it.".
 	
 Test open-unlock with "look / unlock sarcophagus with ankh" in Tomb of Osiris holding faience ankh.
 
@@ -378,13 +378,13 @@ After taking Osiris' head:
 	wait for any key;
 	say "It seems this will be more difficult than you anticipated.[paragraph break]";
 	wait for any key;
-	say "The head, in its stubborn silence seems to taunt you.[paragraph break]";
+	say "The head, in its stubborn silence, seems to taunt you.[paragraph break]";
 	wait for any key;
 	say "...Wait a moment![paragraph break]";
 	wait for any key;
-	say "There's a little papyrus scrap tangled in the beard of Osiris. You pull it out and unfold it, reading the following:[line break]The sun of the shattered city awaits you,[line break]where you may find the largest brains in the largest skulls.[paragraph break]";
+	say "There's a little papyrus scrap tangled in the beard of Osiris. You pull it out and unfold it, reading the following:[paragraph break]The sun of the shattered city awaits you,[line break]where you may find the largest brains in the largest skulls.[paragraph break]";
 	wait for any key;
-	say "Hmm. What could that mean?[paragraph break]";
+	say "Hmm. What could that mean? [paragraph break]";
 	wait for any key;
 
 Chapter 2 - Amarna-Brain
@@ -405,7 +405,7 @@ Section 2 - Workmen's village
 
 Outside the Walled Village is a room in Amarna. "You have reached Amarna, although you don't really know where to go from here. You are surrounded by quite a bit of rubble. This seems to have once been a great city. Yet directly north of you see a walled cluster of buildings and hear the faint sound of hubbub. This might be a workmen's village. But it is entirely walled and only has one gate. That seems to be a fire hazard. [paragraph break]You would know about those.";
 
-[maybe add security checkpoint moment as Medea walks through gate?]
+[in the future, can add security checkpoint moment as Medea walks through gate?]
 
 The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, bustling with activity and labor."
 
@@ -566,10 +566,32 @@ To refill the sequence:
 		now the item entry is item-val.
 
 To trigger the end sequence:
-	say "You hear something from up above! Looking up at the ceiling, you see a gray lump drop from the duck-bearing man's head down to the room you are in. Is that...?";
+	say "You hear something from up above! Looking up at the ceiling, you see a gray lump fall from the duck-bearing man's head right to your feet. Is that a...?";
 	move Osiris' brain to the Sanctuary.
 
 Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands."
+
+After taking Osiris' brain:
+	say "With great anticipation, you take the brain and plop it right into the head.[paragraph break]You patiently wait for Osiris to regain intelligent thought and offer you his utmost thanks.";
+	wait for any key;
+	say "...";
+	wait for any key;
+	say "...";
+	wait for any key;
+	say "...";
+	wait for any key;
+	say "Any moment now.";
+	wait for any key;
+	say "...";
+	wait for any key;
+	say "...";
+	wait for any key;
+	say "Nothing happened.";
+	wait for any key;
+	say "Is he just stupid?!?";
+	wait for any key;
+	say "Well, at least you have one more piece of the puzzle. But you might need to go speak with someone else in Amarna if you want any actual clues.";
+	wait for any key;
 
 Section 5 - Back to the village
 
@@ -581,17 +603,35 @@ Instead of entering the sun chariot when the player is on the oxcart:
 	say "You have to get off of one carriage to get on another."
 	
 [so medea goes back to the village on oxcart, immediately she is greeted by the workman (aka dialogue triggered automatically, they start talking]
+
 Every turn during Next Instructions:
 	if the location is Outside the Walled village and the player is not on the oxcart:
 		now the workman is in Outside the Walled Village;
-		say "Workman talks to Medea for stuff";
+		say "As you disembark from the oxcart, you spot into the same workman who you had spoken with earlier.";
+		wait for any key;
+		say "'Hey, lady!' he says. 'You got those heads of yours now?' He looks a little less wary.";
+		wait for any key;
+		say "'Close enough,' you say.";
+		wait for any key;
+		say "'It's nice to see a new face, even if it's a creepy one,'  the workman continued. 'This place has been a ghost town for so long. We used to be as big as Thebes, you know!'";
+		say "...Thebes?";
+		wait for any key;
+		say "The workman notices your confusion. 'You must really be a foreigner! Don't you know of Thebes? All the tomb workers are there nowadays";
+		wait for any key; 
+		say "...Interesting.";
+		wait for any key; 
+		say "...";
+		wait for any key; 
+		say "...";
+		wait for any key; 
+		say "One of your potential escape plans -- not that you had the opportunity to go through with it -- was to flee from Corinth to Thebes. But you never had the chance to execute this plan. Perhaps this is a sign.";
 		now the workman is uncurious. [therefore next instructions end]
 
-[workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greec,e i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
+[workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greece i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
 
 Instead of selecting when Next Instructions has happened and Heal Heracles has not happened:
 	if the number understood is not seven: [the number for thebes]
-		say "i really miss greece i'm feeling nostalgic, time to go to thebes";
+		say "You want to go to Thebes instead. You're near-certain the workman mentioned a different 'Thebes,' but the shared name intrigues you.";
 	otherwise:
 		continue the action.
 	
@@ -908,12 +948,12 @@ Instead of going during Ritual Sacrifice:
 
 Every turn during Ritual Sacrifice:
 	If the location is the Jail Cell:
-		say "'The ritual is ready. We will finally deal with you errant prisoners! Zeus our lord and savior lph will be pleased with this sacrifice. ' someone says, or something like that. ";
-		say "Now, to the central court! ";
+		say "'The ritual is ready. We will finally deal with you errant prisoners! Zeus our lord and savior will certainly be pleased with this sacrifice,' a boorish guard jeers.";
+		say "Now to the central court!";
 		wait for any key;
 		now the player is in the Central Court;
 		now Heracles is in the Central Court;
-		say "You see that preparations for the sacrifice has been complete. (describe sacrificial altar)";
+		say "You can see that preparations for the sacrifice has been complete. A massive stone altar stands at the center, surrounded by flickering torches and gleeful guards.";
 		wait for any key;
 		start the sacrifice.
 	
@@ -935,7 +975,6 @@ Instead of going through palace exit:
 	now Heracles is in the Temple of Tawosret;
 	wait for any key;
 	trigger Heracles leaving.
-	
 
 [watch out for player carrying capacity, fix in future]
 To trigger Heracles leaving:
@@ -945,8 +984,6 @@ To trigger Heracles leaving:
 
 
 	
-
-
 
 Part 5 - Complete Any Time
 [can be completed any time after acquiring the head]
@@ -1038,13 +1075,13 @@ Some bait is an edible thing in Oxyrhynchos-Marketplace.
 Instead of eating the bait:
 	say "Edible, sure, but you're no fish.".
 
-A fishing rod is in Oxyrhynchos-Marketplace. The fishing rod can be baited or unbaited. It is unbaited. The printed name of the fishing rod is "fishing rod[if fishing rod is baited] with bait". The description is "[if fishing rod is unbaited] A sturdy fishing rod, but it could use some bait.[end if] [if fishing rod is baited] The fishing pole is now baited with some fish food."
+A fishing rod is in Oxyrhynchos-Marketplace. The fishing rod can be baited or unbaited. It is unbaited. The printed name of the fishing rod is "fishing rod[if fishing rod is baited] with bait". The description is "[if fishing rod is unbaited] A sturdy fishing rod. It could use some bait.[end if] [if fishing rod is baited] The fishing pole is now baited with some fish food."
 
 A knife is a blade in Oxyrhynchos-Marketplace. 
 
 Section 3 - Tawaret conflict
 
-The Nile Riverbank is in Oxyrhynchos. It is east of Oxyrhynchos-Marketplace. "You are at the bank of the Nile. (like kind of, it's a natural offshoot, now called the yussuf bahr canal or something) West of you is the marketplace."
+The Nile Riverbank is in Oxyrhynchos. It is east of Oxyrhynchos-Marketplace. "You are at the bank of the Nile. West of you is the marketplace."
 
 The Taweret Amulet is a thing. 
 
