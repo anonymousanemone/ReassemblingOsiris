@@ -144,11 +144,6 @@ Talking to is an action applying to one visible thing. Understand "talk to [some
 
 Carry out talking to someone:
 	say "There is no reply."
-
-Chanting is an action applying to nothing.
-Understand "saying some spell rn" as chanting.
-Instead of chanting:
-	say "oh yeah get it".
 	
 Section 2 - New Definitions
 
@@ -369,7 +364,7 @@ Test Abydos with "e" in the First Transverse Chamber holding the wooden plank an
 Part 4 - Talking Osiris Agenda
 [this entire part must be completed in order]
 
-Talking Osiris Agenda is a scene. Talking Osiris Agenda begins when Head Acquisition ends. Talking Osiris Agenda ends when Organ Acquisition ends. 
+Talking Osiris Agenda is a scene. Talking Osiris Agenda begins when Head Acquisition ends. Talking Osiris Agenda ends when Heart Acquisition ends. 
 
 After taking Osiris' head for the first time:
 	say "Aha! The head! You triumphantly hold the head of Osiris. How easy! Even someone like J*son could have solved this riddle! You'll be free in no time. You just need the torso, legs, and arms--then you're done! [paragraph break]";
@@ -622,9 +617,7 @@ Every turn during Next Instructions:
 		say "As you disembark from the oxcart, you spot into the same workman you had spoken with earlier.[paragraph break]";
 		wait for any key;
 		say "'Hey, lady!' he says. 'You got those heads of yours now?' He looks a little less wary.[paragraph break]";
-		wait for any key;[workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greece i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
-Instead of selecting when Next Instructions has happened and Heal Heracles has not happened:
-
+		wait for any key;
 		say "'Close enough,' you say.[paragraph break]";
 		wait for any key;
 		say "'It's nice to see a new face, even if it's a creepy one,'  the workman continued. 'This place has been a ghost town for so long. We used to be as big as Thebes, you know!'[paragraph break]";
@@ -680,13 +673,13 @@ A collection of three temples is a room. It is south of the Temple of Merenptah.
 
 The Temple of Thutmoses I is scenery in the collection of three temples. "The Temple of Thutmoses I is here."
 
-The Temple of Amenhotep Son of Hapu is scenery in the collection of three temples. "The Temple of Amenhotep Son of Hapu is here. He was revered as a scribe and later deified for his wisdom."
+The Temple of Amenhotep Son of Hapu is scenery in the collection of three temples. "The Temple of Amenhotep, Son of Hapu is here. He was revered as a scribe and later deified for his wisdom."
 
 The Smaller Temple of Thutmoses III is scenery in the collection of three temples. "The smaller Temple of Thutmoses III is here. It's also honoring Thutmoses III  -- just at a smaller scale."
 
 The Temple of Amenhotep III is east of the the collection of three temples. It is in Thebes. "Amenhotep III's vast mortuary temple lies here."
 
-The Memnon Colossi is east of the Temple of Amenhotep III. It is in Thebes. "Two massive statues of Amenhotep III stand watch over the land."
+The Memnon Colossi is east of the Temple of Amenhotep III. It is in Thebes. "Two massive statues of Amenhotep III watch over the land."
 
 The left statue of Amenhotep III is a closed unopenable container. It is in Memnon Colossi.
 
@@ -728,21 +721,107 @@ Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had bro
 Understand "scroll / papyri" as the medical papyri.
 
 [after examining papyri, player can type "think" to remember what she needs]
+[doesn't work right now because papyri is scenery, not a thing]
 Instead of thinking during Heal Heracles:
 	if the papyri is examined:
-		say "the headache spell info".
+		say "ANOTHER CONJURATION FOR THE HEAD [line break] Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.".
 
-Section 3 - Landing in Thebes
+Section 3 - Healing Heracles
 
 [when medea first lands, say "maybe it's time to explore to gather some hints about where Osiris might be]
 
-Heracles is a person. Heracles can be sick or healthy. Heracles is sick.
+Heracles is a man. Heracles can be sick or healthy. Heracles is sick. The description of Heracles is "A muscled man wearing lion skin and carrying a club. [if Heracles is sick] He is lying face down on the floor."
+
+Instead of talking to sick Heracles:
+	say "'Heracles?' you called out in surprise.";
+	say "The only response you received was an agonized groan.";
+	wait for any key;
+	say "You get a little closer. He seems... unwell... again...";
+	say "You poke at him insistently. 'What's wrong with you again?'";
+	say "Heracles flops around to look at you. 'My head is ouchie.'";
+	say "This goddamn man-child. Should I help him?";
+	wait for any key;
+	say "...";
+	wait for any key;
+	say "...";
+	wait for any key;
+	say "I guess so. Might as well take this community service thing to its fullest."
 
 When brain acquisition ends:
 	now Heracles is in the Temple of Horemheb.
 
-[make healing heracles sequence, refer to spell]
+The brewing table is a supporter in the House of Life. "A sturdy wooden table covered with various random items, perfect for preparing magical concoctions. Among the clutter, a vial catches your eye."
 
+Some random items are things on the brewing table. The description is "A collection of unrelated trinkets and items: old coins, scraps of paper, and fragments of pottery. None seem particularly useful."
+
+The vial of plant mucus is on the brewing table. The description is "A small, glass vial with extracted plant mucus inside."
+
+The buds of a Unique Bush are in the Ruined City. The description is "A rare and magical bush said to have healing properties. It bears buds of a mystical nature." 
+
+Rule for printing the name of the Buds of a Unique Bush when the Buds of a Unique Bush are  in the Ruined City:
+	say "a Unique Bush".
+
+A bud of a snb-plant is in the South Chamber. The description is "The bud of a mysterious plant, tied up with some string." 
+
+The twisted Unique Bush buds are a thing. The prepared Unique Bush buds are nowhere.
+The soaked Unique Bush buds are a thing. The soaked Unique Bush buds are nowhere.
+The laced plant bundle is a thing. The laced plant bundle is nowhere.
+The tied plant bundle is a thing. The tied plant bundle is nowhere.
+The prepared medicine is a thing. The prepared medicine is nowhere.
+
+Preparing is an action applying to one carried thing. Understand "prepare [something]" as preparing.
+
+Carry out preparing:
+	if the noun is the buds of a unique bush:
+		now the buds of a Unique Bush is nowhere;
+		now the player is holding the twisted Unique Bush buds;
+		say "You take the buds of the Unique Bush and carefully twist them leftwise.";
+	otherwise if the noun is the twisted Unique Bush buds:
+		if the player is not holding the mucus:
+			say "You can't continue preparing the medicine if you don't have the mucus. The next step is soaking the buds in mucus.";
+		otherwise:
+			say "You submerge the twisted buds in mucus until they are thoroughly soaked.";
+			now the twisted Unique Bush buds is nowhere;
+			now the mucus is nowhere;
+			now the player is holding the soaked Unique Bush buds;
+	otherwise if the noun is the soaked Unique Bush buds:
+		if the player is not holding a bud of a snb-plant:
+			say "You can't continue preparing the medicine without the bud of a snb-plant. You need both the soaked Unique Bush buds and the bud of the snb-plant to lace them together.";
+		otherwise:
+			say "You take the bud of the snb-plant and lace it together with the soaked Unique Bush buds.";
+			now a bud of a snb-plant is nowhere;
+			now the soaked Unique Bush buds is nowhere;
+			now the player is holding the laced plant bundle;
+	otherwise if the noun is the laced plant bundle:
+		say "Using some string, you tie the laced plant buds together with seven evenly spaced knots.";
+		now the laced plant bundle is nowhere;
+		now the player is holding the prepared medicine;
+	otherwise:
+		say "That's not the right thing to prepare."
+		
+
+Understand "apply [other things] on [something]" as putting it on.
+
+Understand "apply [other things] to [something]" as a mistake ("Try applying it ON [the second noun]")
+
+Heracles can be medicated or unmedicated. Heracles is unmedicated. 
+
+Instead of putting the prepared medicine on Heracles:
+	say "You gently place the prepared bundle on the throat of the afflicted Heracles.";
+	now Heracles is medicated.
+	
+Understand "I have indeed applied something to all his sore spots" as chanting. Chanting is an action applying to nothing.
+
+[prevent chanting from randomly being performed in the future]
+Instead of chanting:
+	say "You speak the spell.";
+	say "Heracles sits up violently. 'WOAH I feel better!' he roars.";
+	now Heracles is healthy.
+
+Section 4 - After the heart
+
+[have dialogue of medea putting heart in bag, and osiris' heead coming to life.]
+[fix activation of scenes]
 
 Chapter 4 - Busiris-Organs
 
@@ -776,6 +855,15 @@ Every turn during Organ Acquisition:
 				rule succeeds.
 
 The Kidnapping is a scene. The Kidnapping begins when the number of filled rows in the Table of Countdown is 0. The Kidnapping ends when King Busiris is dead.
+
+When the Kidnapping begins:
+	say "Suddenly a gang of soldiers rush at the two of you. You've been kidnapped!";
+	now the player is in the Jail Cell;
+	now Heracles is in the Jail Cell.
+	
+[have better dialogue for the kidnapping]
+
+[actually Medea and Heracles should end up in the throne room first, and have dialogue with Busiris, then sent to the jail cell]
 
 Section 1 - Escape Management
 
@@ -894,6 +982,10 @@ The hidden entrance is a secret door. The hidden entrance is east of Hallway.
 
 Osiris' liver is a body part. It is in Crypt of Osiris. It is unacquired.
 
+[organ identification mini game here]
+
+[skipped bes jar also here]
+
 Pillar Crypt is a room in Busiris. It is west of Cult Rooms. It is east of Crypt of Osiris. Nothing is west of Pillar Crypt.
 
 Corridor of Procession East is a corridor in Busiris. It is south of Central Court.
@@ -944,6 +1036,7 @@ Section 3 - Ritual Sacrifice
 
 Ritual Sacrifice is scene. Ritual Sacrifice begins when Osiris' liver is acquired. Ritual Sacrifice ends when King Busiris is dead.
 
+[fix the slow capture before they get taken to the sacrifice]
 Instead of going during Ritual Sacrifice:
 	if Escape is not happening:
 		say "You can hardly leave with all the guards around you!";
@@ -959,7 +1052,8 @@ Every turn during Ritual Sacrifice:
 		now Heracles is in the Central Court;
 		say "You can see that preparations for the sacrifice has been complete. A massive stone altar stands at the center, surrounded by flickering torches and gleeful guards.";
 		wait for any key;
-		start the sacrifice.
+		start the sacrifice;
+		end the sacrifice.
 	
 To start the sacrifice:
 	say "sacrifice scene and dialogue begins."
@@ -968,7 +1062,7 @@ Rule for listing exits when the location is Central Court during Ritual Sacrific
 	do nothing.
 
 To end the sacrifice:
-	say "story moment of Heracles killin busiri.";
+	say "story moment of Heracles killin busiris.";
 	now King Busiris is dead;
 	say "The court descends into total chaos. Now is a good time to find your way out!";
 	now palace exit is revealed;
@@ -980,7 +1074,6 @@ Instead of going through palace exit:
 	wait for any key;
 	trigger Heracles leaving.
 	
-
 [watch out for player carrying capacity, fix in future]
 
 To trigger Heracles leaving:
