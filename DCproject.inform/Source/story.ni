@@ -12,7 +12,7 @@ Section 1 - Story Transcript - For release only
 
 When play begins: try switching the story transcript on.
 
-Part 1 - Prologue
+Part 1 - Prologue - For release only
 
 When play begins: choose row 1 in Table of Basic Help Options; now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt."
 
@@ -119,7 +119,6 @@ After printing the banner text:
 	wait for any key;
 	say "[line break][line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. There's no better place to start. [line break]".
 	
-The player is in Gate to the Osireion.
 
 
 Part 2 - General Game Declarations
@@ -128,6 +127,8 @@ When play begins:
     	now the right hand status line is "[map region of the location]".
 
 The carrying capacity of the player is 5.
+
+The player is in Gate to the Osireion. [starting location]
 
 [This prevents the player from using the TAKE ALL command]
 Rule for deciding whether all includes a thing:
@@ -152,6 +153,10 @@ Instead of chanting:
 Section 2 - New Definitions
 
 A Body Part is a kind of thing.
+
+Instead of taking a body part:
+	now the noun is acquired;
+	continue the action.
 
 Instead of dropping a body part:
 	say "You'll need that.[line break][line break]Or, well, Osiris will."
@@ -229,10 +234,13 @@ After entering the sun chariot:
 	list the transport options.
 
 [temp room declarations]
-Avaris-Marketplace is a room in Avaris.
-Heliopolis-Marketplace is a room in Heliopolis.
-Memphis-Marketplace is a room in Memphis.
-Elephantine-Marketplace is a room in Elephantine.
+Avaris-Marketplace is a room in Avaris. "You have reached a part of the game that is still under development. Please check back in the far future! :)"
+
+Heliopolis-Marketplace is a room in Heliopolis. "You have reached a part of the game that is still under development. Please check back in the far future! :)"
+
+Memphis-Marketplace is a room in Memphis. "You have reached a part of the game that is still under development. Please check back in the far future! :)"
+
+Elephantine-Marketplace is a room in Elephantine. "You have reached a part of the game that is still under development. Please check back in the far future! :)"
 
 
 Part 3 - Intro with Osiris' Head
@@ -241,6 +249,9 @@ Head Acquisition is a scene. Head Acquisition begins when play begins. Head Acqu
 
 Chapter 1 - Abydos-Head
 [must be first body piece discovered, no going elsewhere]
+
+Instead of entering the chariot during Head Acquisition:
+	say "You've been sent to Abydos for a reason. Maybe try exploring here first."
 
 Section 1 - Head capabilities
 
@@ -343,7 +354,6 @@ The inscribed walls are scenery in the Tomb of Osiris. The description of the in
 
 The sarcophagus is a closed container. It is locked. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Its occupant must have made it auto-update every now and then to keep up with the most popular trends. Perhaps you can use something to UNLOCK it." The sarcophagus has matching key the faience ankh.
 
-[something here after unlocking sarcophagus to prompt viewer to first see that head is in sarcophagus and then take it - done]
 Instead of unlocking the sarcophagus with the faience ankh:
 	now the sarcophagus is unlocked;
 	now the sarcophagus is open;
@@ -571,10 +581,6 @@ To trigger the end sequence:
 
 Osiris' brain is a body part. The description of the brain is "A brain. It feels like it is pulsating in your hands."
 
-Instead of taking Osiris' brain:
-	now the brain is acquired;
-	continue the action.
-
 Section 5 - Back to the village
 
 When Exploration ends:
@@ -588,16 +594,16 @@ Instead of entering the sun chariot when the player is on the oxcart:
 Every turn during Next Instructions:
 	if the location is Outside the Walled village and the player is not on the oxcart:
 		now the workman is in Outside the Walled Village;
-		say "Workman talks to Medea for stuff";
+		say "Workman talks to Medea for stuff. Workman points Medea to Thebes.";
 		now the workman is uncurious. [therefore next instructions end]
 
-[workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greec,e i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
-Instead of selecting when Next Instructions has happened and Heal Heracles has not happened:
+[lock Medea into only being able to travel fro thebes - rethinking this now, commented out to prevent possible bugs]
+[Instead of selecting when Next Instructions has happened and Heal Heracles has not happened:
 [	say "BOOP";]
 	if the number understood is not seven: [the number for thebes]
 		say "i really miss greece i'm feeling nostalgic, time to go to thebes";
 	otherwise:
-		continue the action.
+		continue the action.]
 	
 test Amarna with "look / n" in The small aten temple holding the head.
 
@@ -605,7 +611,7 @@ Chapter 3 - Thebes-Heart
 
 Heart Acquisition is a scene. Heart Acquisition begins when Brain Acquisition ends. Heart Acquisition ends when Osiris' heart is acquired.
 
-Heal Heracles is a scene. Heal Heracles begins when the player is in the Temple of Horemheb for the first time. Heal Heracles ends when Heracles is healthy. 
+Heal Heracles is a scene. Heal Heracles begins when Brain Acquisition ends. Heal Heracles ends when Heracles is healthy. 
 
 Buddy Heracles is a scene. Buddy Heracles begins when Heal Heracles ends. Buddy Heracles ends when the location of the player is not in Busiris.
 
@@ -660,7 +666,6 @@ Instead of examining right statue of Amenhotep III:
 		continue the action.
 
 The Temple of Horemheb is south of the collection of three temples. It is in Thebes. "This temple stands as tribute to Aÿ and Horemheb."
-[Heracles is at Horemheb]
 
 The Temple of Ramesses III is south of the Temple of Horemheb. It is in Thebes. "Here be Ramesses III's temple."
 
@@ -668,13 +673,16 @@ Section 2 - The library
 
 [add something description or code to make entering house of life more intuitive: aka somehow medea knows house of life is library and it is in side the ramesseum. maybe a trigger of dialogue like the priest asks medea her purpose and she says for medicine - not priority]
 
-[longer dialogue first time, shorter dialogue for repeat visits]
+[longer dialogue first time entering house of life, shorter dialogue for repeat visits]
 
-The House of Life is west of the Ramesseum. It is in Thebes. "This is the library! Often houses of life have been hinted to be attached/close to a temple precinct." 
+The House of Life is west of the Ramesseum. It is in Thebes. "This is the library! Often houses of life have been hinted to be attached/close to a temple precinct. [line break] You look around the shelves of papyri and found a scroll that caught your eye." 
 
 [some mechanic for finding correct papyri or simple description]
 
-Medical papyri is scenery in the House of LIfe. "You look around the shelves of papyri and found a shelf that caught your eye. something about the papyri. Incorporate a spell"
+Medical papyri is scenery in the House of LIfe. The description of the medical papyri is "A headache spell! It reads: [line break] [line break] ANOTHER CONJURATION FOR THE HEAD [line break]
+Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied gsomething to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.".
+
+Understand "scroll / papyri" as the medical papyri.
 
 [after examining papyri, player can type "think" to remember what she needs]
 Instead of thinking during Heal Heracles:
@@ -685,9 +693,10 @@ Section 3 - Landing in Thebes
 
 [when medea first lands, say "maybe it's time to explore to gather some hints about where Osiris might be]
 
-[Medea lands in Tawosret]
+Heracles is a person. Heracles can be sick or healthy. Heracles is sick.
 
-Heracles is a person in the Temple of Horemheb. Heracles can be sick or healthy. Heracles is sick.
+When brain acquisition ends:
+	now Heracles is in the Temple of Horemheb.
 
 [make healing heracles sequence, refer to spell]
 
@@ -843,10 +852,6 @@ The hidden entrance is a secret door. The hidden entrance is east of Hallway.
 
 Osiris' liver is a body part. It is in Crypt of Osiris. It is unacquired.
 
-Instead of taking a body part:
-	now the noun is acquired;
-	continue the action.
-
 Pillar Crypt is a room in Busiris. It is west of Cult Rooms. It is east of Crypt of Osiris. Nothing is west of Pillar Crypt.
 
 Corridor of Procession East is a corridor in Busiris. It is south of Central Court.
@@ -941,9 +946,6 @@ To trigger Heracles leaving:
 	
 
 
-	
-
-
 
 Part 5 - Complete Any Time
 [can be completed any time after acquiring the head]
@@ -1024,7 +1026,9 @@ Instead of cutting a body part:
 
 Section 2 - Marketplace
 
-Oxyrhynchos-Marketplace is a room in Oxyrhynchos. "You are in Oxyrhynchos, home of the medjed elephantfish. A little further east is the riverbank of the Nile."
+Oxyrhynchos-Marketplace is a room in Oxyrhynchos. "(You have reached a part of the game that is still under development. This section is partially complete. Should you want to try the minigame, please take all the items at the market place and head to the riverbank.)  [line break] You are in Oxyrhynchos, home of the medjed elephantfish. A little further east is the riverbank of the Nile."
+
+
 
 [include description of market place and items here.]
 
@@ -1095,10 +1099,6 @@ Instead of eating the catfish:
 	
 
 Osiris' penis is a body part in catfish. Understand "penis/phallus" as Osiris' penis.
-
-Instead of taking Osiris' penis:
-	continue the action;
-	now Osiris' penis is acquired.
 	
 Baiting is an action applying to one carried thing. Understand "bait [something]" as baiting.
 
@@ -1160,7 +1160,7 @@ Test fish with "take rod / take knife / take bait / bait rod / e" in Oxyrhynchos
 			
 Chapter 7 - Elephantine-Torso
 
-Osiris' Torso is a body part in Elephantine-Marketplace.
+Osiris' Torso is a body part in Elephantine-Marketplace. 
 
 Chapter 8 - Memphis-Spine
 
