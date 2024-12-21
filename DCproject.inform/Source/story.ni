@@ -112,14 +112,13 @@ After printing the banner text:
 	say "[line break]...You have to hand it to this Seth character. You weren't nearly as creative. [line break]";
 	wait for any key;
 	say "[line break]The Egyptian gods, despite pleading for your assistance, seem to be frightened by you. They've placed some restrictions on your behavior--a parole, if you will. Currently, you cannot access your innate magic and divine power. You will need to rely on your genius, cunning, and astonishingly gorgeous face to complete your mission. [line break]";
-	wait for any key;
-	[say "[line break]Your grandfather seems to feel a modicum of sympathy for you. Before he dropped you off in Egypt, he left you with a help book [line break]"; [might re-add if the initial help prompt is not clear for readers]]
+	[wait for any key;
+	[say "[line break]Your grandfather seems to feel a modicum of sympathy for you. Before he dropped you off in Egypt, he left you with a help book [line break]"; [might re-add if the initial help prompt is not clear for readers]]]
 	wait for any key;
 	say "[line break]Your sun chariot has been returned to you. You missed your dragons. After catching up with your darlings, you traveled to Egypt. [line break]";
 	wait for any key;
 	say "[line break][line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. There's no better place to start. [line break]".
 	
-
 
 Part 2 - General Game Declarations
 
@@ -229,13 +228,13 @@ After entering the sun chariot:
 	list the transport options.
 
 [temp room declarations]
-Avaris-Marketplace is a room in Avaris. "You have reached a part of the game that is still under development. Please check back in the far future! :)"
+Avaris-Marketplace is a room in Avaris. "You have reached a part of the game that is still under development. Please check back soon! :)"
 
-Heliopolis-Marketplace is a room in Heliopolis. "You have reached a part of the game that is still under development. Please check back in the far future! :)"
+Heliopolis-Marketplace is a room in Heliopolis. "You have reached a part of the game that is still under development. Please check back soon! :)"
 
-Memphis-Marketplace is a room in Memphis. "You have reached a part of the game that is still under development. Please check back in the far future! :)"
+Memphis-Marketplace is a room in Memphis. "You have reached a part of the game that is still under development. Please check back soon! :)"
 
-Elephantine-Marketplace is a room in Elephantine. "You have reached a part of the game that is still under development. Please check back in the far future! :)"
+Elephantine-Marketplace is a room in Elephantine. "You have reached a part of the game that is still under development. Please check back soon! :)"
 
 
 Part 3 - Intro with Osiris' Head
@@ -614,7 +613,7 @@ Instead of entering the sun chariot when the player is on the oxcart:
 Every turn during Next Instructions:
 	if the location is Outside the Walled village:
 		now the workman is in Outside the Walled Village;
-		say "As you disembark from the oxcart, you spot into the same workman you had spoken with earlier.[paragraph break]";
+		say "As you go east with the oxcart, you spot into the same workman you had spoken with earlier.[paragraph break]";
 		wait for any key;
 		say "'Hey, lady!' he says. 'You got those heads of yours now?' He looks a little less wary.[paragraph break]";
 		wait for any key;
@@ -623,7 +622,7 @@ Every turn during Next Instructions:
 		say "'It's nice to see a new face, even if it's a creepy one,'  the workman continued. 'This place has been a ghost town for so long. We used to be as big as Thebes, you know!'[paragraph break]";
 		say "...Thebes?[paragraph break]";
 		wait for any key;
-		say "The workman notices your confusion. 'You must really be a foreigner! Don't you know of Thebes? All the tomb workers are there nowadays.[paragraph break]";
+		say "The workman notices your confusion. 'You must really be a foreigner! Don't you know of Thebes? All the tomb workers are there nowadays.'[paragraph break]";
 		wait for any key; 
 		say "...Interesting.[paragraph break]";
 		wait for any key; 
@@ -634,7 +633,8 @@ Every turn during Next Instructions:
 		say "One of your potential escape plans -- not that you had the opportunity to go through with it -- was to flee from Corinth to Thebes. But you never had the chance to execute this plan. Perhaps this is a sign.";
 		now the workman is uncurious. [therefore next instructions end]
 
-[workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greec,e i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
+[workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greece i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
+
 [Instead of selecting when Next Instructions has happened and Heal Heracles has not happened:
 	if the number understood is not seven: [the number for thebes]
 		say "You want to go to Thebes instead. You're near-certain the workman mentioned a different 'Thebes,' but the shared name intrigues you.";
@@ -659,27 +659,27 @@ Every turn during Buddy Heracles:
 
 Section 1 - All the Locations
 
-The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III. There seems to be a lot of honoring going on around here."
+The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III. Sturdy columns flank a central courtyard where priests once performed daily rites. There seems to be a lot of honoring going on around here."
 
-The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. "The mortuary temple of Ramesses II looms large with its colossal statues. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
+The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. " The mortuary temple of Ramesses II looms large with its colossal statues. Faded reliefs along the walls depict the famous Battle of Kadesh. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
 
-The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmoses IV."
+The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmoses IV. Columns and archways display finely chiseled hieroglyphs extolling the king’s diplomatic prowess."
 
-The Temple of Tawosret is south of the Temple of Thutmosis IV. It is in Thebes. "The Temple of Tawosret stands here."
+The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "The Temple of Tawosret stands here, relatively modest compared to its neighbors but still adorned with intricate carvings."
 
-The Temple of Merenptah is south of the Temple of Tawosret. It is in Thebes. "The Temple of Merenptah is here."
+The Temple of Merenptah is south of the Temple of Tawosret. It is in Thebes. "The Temple of Merenptah is here, partially ruined yet still imposing."
 
-A collection of three temples is a room. It is south of the Temple of Merenptah. It is in Thebes. "You see the temples of Thutmoses I, Amenhotep Son of Hapu, and Thutmoses III."
+A Collection of Three Temples is a room. It is south of the Temple of Merenptah. It is in Thebes. "You see the temples of Thutmoses I, Amenhotep Son of Hapu, and Thutmoses III."
 
-The Temple of Thutmoses I is scenery in the collection of three temples. "The Temple of Thutmoses I is here."
+The Temple of Thutmoses I is scenery in the Collection of Three Temples. "The Temple of Thutmoses I is here, flanked by a row of weathered sphinxes."
 
-The Temple of Amenhotep Son of Hapu is scenery in the collection of three temples. "The Temple of Amenhotep, Son of Hapu is here. He was revered as a scribe and later deified for his wisdom."
+The Temple of Amenhotep Son of Hapu is scenery in the Collection of Three Temples. "The Temple of Amenhotep, Son of Hapu is here. He was revered as a scribe and later deified for his wisdom."
 
-The Smaller Temple of Thutmoses III is scenery in the collection of three temples. "The smaller Temple of Thutmoses III is here. It's also honoring Thutmoses III  -- just at a smaller scale."
+The Smaller Temple of Thutmoses III is scenery in the Collection of Three Temples. "The smaller Temple of Thutmoses III is here. It's also honoring Thutmoses III  -- just at a smaller scale."
 
-The Temple of Amenhotep III is east of the the collection of three temples. It is in Thebes. "Amenhotep III's vast mortuary temple lies here."
+The Temple of Amenhotep III is east of the the Collection of Three Temples. It is in Thebes. "Amenhotep III's vast mortuary temple lies here. Even in partial ruin, the temple reflects the grandeur of his reign."
 
-The Memnon Colossi is east of the Temple of Amenhotep III. It is in Thebes. "Two massive statues of Amenhotep III watch over the land."
+The Memnon Colossi is east of the Temple of Amenhotep III. It is in Thebes. "Perched like silent sentinels, two massive statues of Amenhotep III watch over the land. Legend says their eerie dawn 'singing' once greeted travelers."
 
 The left statue of Amenhotep III is a closed unopenable container. It is in Memnon Colossi.
 
@@ -691,13 +691,15 @@ Instead of cutting the The left statue of Amenhotep III, do nothing.
 
 Osiris' heart is a body part. It is in right statue of Amenhotep III.
 
-The heart scarab is a thing. The description is "The scarab is a small but intricately made item. Inscribed on the bottom is a king's cartouche: Amenhotep III. [if heart is unacquired] Perhaps it's worth investigating..."
+The heart scarab is a thing. The description is "The scarab is a small but intricately made item. Inscribed on the bottom is the cartouche of Amenhotep III. [if heart is unacquired] Perhaps it's worth investigating..."
 
 Instead of examining right statue of Amenhotep III:
 	If the player is holding the heart scarab:
 		now right statue of Amenhotep III is open;
 		now right statue of Amenhotep III is unopenable;
-		say "The panel at the base of the statue slides open to reveal the heart of Osiris. Hooray!";
+		say "The panel at the base of the statue slides open to reveal the heart of Osiris. Hooray! Now you can take the heart.";
+		wait for any key;
+		say "This concludes the demo for 'That Time I Got Out of Jail by Reassembling Osiris.' Thank you so much for playing! [paragraph break] You're welcome to continue exploring the world--and there may be some hints scattered around. :) The fishing minigame in Oxyrhynchos can also be tested. Thanks again, and we look forward to sharing more in the future!"
 	otherwise:
 		continue the action.
 
@@ -707,15 +709,13 @@ The Temple of Ramesses III is south of the Temple of Horemheb. It is in Thebes. 
 
 Section 2 - The library
 
-[add something description or code to make entering house of life more intuitive: aka somehow medea knows house of life is library and it is in side the ramesseum. maybe a trigger of dialogue like the priest asks medea her purpose and she says for medicine - not priority]
+[depending on feedback, can try to make entering house of life more intuitive: aka somehow medea knows house of life is library and it is inside the ramesseum. maybe a trigger of dialogue like the priest asks medea her purpose and she says for medicine - not priority]
 
-[longer dialogue first time entering house of life, shorter dialogue for repeat visits]
-
-The House of Life is west of the Ramesseum. It is in Thebes. "This is the library! Often houses of life have been hinted to be attached/close to a temple precinct. [line break] You look around the shelves of papyri and found a scroll that caught your eye." 
+The House of Life is west of the Ramesseum. It is in Thebes. "The entrance is unassuming—just a low archway tucked beside the temple’s western wall—but when you step inside, you realize you've stumbled upon a vast library.  Soft lamplight flickers across rows of tall shelves, each lined with carefully rolled papyri detailing magical and medical rituals.  [paragraph break] You scan the shelves, looking for something useful. There's a certain scroll that caught your eye..."
 
 [some mechanic for finding correct papyri or simple description]
 
-Medical papyri is scenery in the House of LIfe. The description of the medical papyri is "A headache spell! It reads: [line break] [line break] ANOTHER CONJURATION FOR THE HEAD [line break]
+Medical papyri is scenery in the House of LIfe. The description of the medical papyri is "A headache spell. It reads: [paragraph break] -YET ANOTHER- CONJURATION FOR THE HEAD [line break]
 Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied gsomething to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.".
 
 Understand "scroll / papyri" as the medical papyri.
@@ -724,28 +724,32 @@ Understand "scroll / papyri" as the medical papyri.
 [doesn't work right now because papyri is scenery, not a thing]
 Instead of thinking during Heal Heracles:
 	if the papyri is examined:
-		say "ANOTHER CONJURATION FOR THE HEAD [line break] Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.".
+		say "-YET ANOTHER- CONJURATION FOR THE HEAD [line break] Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.".
 
 Section 3 - Healing Heracles
 
 [when medea first lands, say "maybe it's time to explore to gather some hints about where Osiris might be]
 
-Heracles is a man. Heracles can be sick or healthy. Heracles is sick. The description of Heracles is "A muscled man wearing lion skin and carrying a club. [if Heracles is sick] He is lying face down on the floor."
+Heracles is a man. Heracles can be sick or healthy. Heracles is sick. The description of Heracles is "A muscled man wearing lion skin and carrying a club. [if Heracles is sick] He is lying face down on the floor, moaning in agony. Perhaps you should help him? Only because he might be useful, of course."
 
 Instead of talking to sick Heracles:
-	say "'Heracles?' you called out in surprise.";
-	say "The only response you received was an agonized groan.";
+	say "'Is that...Heracles?' you called out.[paragraph break]";
 	wait for any key;
-	say "You get a little closer. He seems... unwell... again...";
-	say "You poke at him insistently. 'What's wrong with you again?'";
-	say "Heracles flops around to look at you. 'My head is ouchie.'";
-	say "This goddamn man-child. Should I help him?";
+	say "The only response you received was an agonized groan.[paragraph break]";
 	wait for any key;
-	say "...";
+	say "You get a little closer. He seems... unwell, to say the least.[paragraph break]";
 	wait for any key;
-	say "...";
+	say "You reach out and poke him in the shoulder. 'What's wrong with you?'[paragraph break]";
 	wait for any key;
-	say "I guess so. Might as well take this community service thing to its fullest."
+	say "Heracles flops onto his back and looks at you with bleary, half-focused eyes. 'Oh, kind stranger, I am in the most unfathomable pain! A foreign monster has made its home in my skull. Please, help me banish this beast!'[paragraph break]";
+	wait for any key;
+	say "...A headache. Should you help him?[paragraph break]";
+	wait for any key;
+	say "...[paragraph break]";
+	wait for any key;
+	say "...[paragraph break]";
+	wait for any key;
+	say "You might as well take this community service thing to its fullest."
 
 When brain acquisition ends:
 	now Heracles is in the Temple of Horemheb.
@@ -754,7 +758,7 @@ The brewing table is a supporter in the House of Life. "A sturdy wooden table co
 
 Some random items are things on the brewing table. The description is "A collection of unrelated trinkets and items: old coins, scraps of paper, and fragments of pottery. None seem particularly useful."
 
-The vial of plant mucus is on the brewing table. The description is "A small, glass vial with extracted plant mucus inside."
+The vial of plant mucus is on the brewing table. The description is "A small glass vial with extracted plant mucus inside."
 
 The buds of a Unique Bush are in the Ruined City. The description is "A rare and magical bush said to have healing properties. It bears buds of a mystical nature." 
 
@@ -810,12 +814,37 @@ Instead of putting the prepared medicine on Heracles:
 	say "You gently place the prepared bundle on the throat of the afflicted Heracles.";
 	now Heracles is medicated.
 	
-Understand "I have indeed applied something to all his sore spots" as chanting. Chanting is an action applying to nothing.
+Understand "I have indeed applied something to all his sore spots." as chanting. Chanting is an action applying to nothing.
 
 [prevent chanting from randomly being performed in the future]
 Instead of chanting:
-	say "You speak the spell.";
-	say "Heracles sits up violently. 'WOAH I feel better!' he roars.";
+	say "You speak the spell.[paragraph break]";
+	wait for any key;
+	say "You wait for something to happen[paragraph break]";
+	wait for any key;
+	say "...[paragraph break]";
+	wait for any key;
+	say "Still waiting...[paragraph break]";
+	wait for any key;
+	say "...[paragraph break]";
+	wait for any key;
+	say "In a rush, Heracles jumps up!  'WOAH!! I feel better!' he roars.[paragraph break]";
+	wait for any key;
+	say "'I must give you my greatest thanks, dear friend!' He turns to you. 'AHHHHHH!!!! MEDEA!!!!!!' [paragraph break]";
+	wait for any key;
+	say "You patiently wait for him to process the shock. [paragraph break]";
+	wait for any key;
+	say "'Ah-ah-ah-but!! You!!!!! I won't let you harm anyone!!!!! I'll stop you!!!' [paragraph break]";
+	wait for any key;
+	say "'...You have little to fear,' you reply. 'I'm on probation.' [paragraph break]";
+	wait for any key;
+	say "Heracles calms down and takes stock of the situation. 'Is that so? Well...so long as you promise not to do it again.' [paragraph break]";
+	wait for any key;
+	say "Look gloomy, he continues. 'I myself know a little about hurting one's family.' [paragraph break]";
+	wait for any key;
+	say "His sad expression is replaced by determination. 'Well! I'll follow you around to keep an eye on you!' [paragraph break]";
+	wait for any key; 
+	say "Under his breath, he whispers, 'I also don't exactly know where I am...' [paragraph break]";
 	now Heracles is healthy.
 
 Section 4 - After the heart
@@ -1045,26 +1074,49 @@ Instead of going during Ritual Sacrifice:
 
 Every turn during Ritual Sacrifice:
 	If the location is the Jail Cell:
-		say "'The ritual is ready. We will finally deal with you errant prisoners! Zeus our lord and savior will certainly be pleased with this sacrifice,' a boorish guard jeers.";
+		say "'The ritual is ready. We will finally deal with you errant prisoners! Our gods will certainly be pleased with this sacrifice,' a guard jeers.";
+		wait for any key;
 		say "Now to the central court! ";
 		wait for any key;
 		now the player is in the Central Court;
 		now Heracles is in the Central Court;
+		say "Without further ado, you and Heracles are dragged to the central court, kicking and screaming.";
+		wait for any key;
 		say "You can see that preparations for the sacrifice has been complete. A massive stone altar stands at the center, surrounded by flickering torches and gleeful guards.";
 		wait for any key;
+		wait for any key;
+		say "And standing in front of the altar is Busiris, with a sinister smile on his face.";
 		start the sacrifice;
-		end the sacrifice.
 	
 To start the sacrifice:
-	say "sacrifice scene and dialogue begins."
-
+	say "Busiris steps onto a raised dais in the center of the central court. [paragraph break] 'Fools! he booms, his voice echoing off the high stone walls. 'You stand accused by the gods themselves! Fear not--your foreign blood will be a worthy sacrifice!' He throws his head back and cackles with mad delight.";
+	wait for any key;
+	say "Around you, a circle of guards brandish their weapon--no easy escape.[paragraph break] ";
+	wait for any key;
+	say "You desperately try to make eye contact with Heracles, who stands rigid at your side. Your usual cunning won't be enough to save you here--and with your divine powers suppressed by the Egyptian gods, there's nothing you can do![paragraph break] "; 
+	wait for any key;
+	say "You're used to handling all schemes yourself. But you might need to rely on Heracles here...maybe you can whisper instructions to him while Busiris continues rambling.[paragraph break] ";
+	wait for any key;
 Rule for listing exits when the location is Central Court during Ritual Sacrifice: 
 	do nothing.
 
+
+Instead of talking to Heracles during Ritual Sacrifice:
+	say "'Psst! Heracles!' you whisper. [paragraph break]";
+	wait for any key;
+	say "Heracles turns to you with a terrible dread on his face. 'Medea, I fear this is where my story ends.' [paragraph break]";
+	wait for any key;
+	say "You power through: 'Nevermind that!! I know that you can break through these flimsy shackles. Escape now and stop Busiris while he's distracted!' [paragraph break]";
+	wait for any key;
+	say "Heracles looks at you with awe. 'Why, Medea! You're a genius!' [paragraph break]";
+	wait for any key;
+	say "You know. [paragraph break]";
+	end the sacrifice.
+	
 To end the sacrifice:
-	say "story moment of Heracles killin busiris.";
+	say "Just as you begin to lose all hope, .";
 	now King Busiris is dead;
-	say "The court descends into total chaos. Now is a good time to find your way out!";
+	say "The court descends into total chaos, and the guards are rushing about in confusion. Now is a good time to find your way out!";
 	now palace exit is revealed;
 	now palace exit is open.
 	
