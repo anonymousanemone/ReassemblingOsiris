@@ -291,7 +291,7 @@ The faience ankh is in the South Chamber. The description of the small ankh is "
 
 A bundle of dried thyme is in the South Chamber. The description of the dried herbs is "A bundle of dried thyme is tied together with simple strands of twine. It is so old and decrepit you could barely smell it."
 
-An ostracon is in the South Chamber. The description of the ostracon is "A shard of pottery is stained with hastily written hieratic."
+An ostracon is scenery in the South Chamber. The description of the ostracon is "A shard of pottery is stained with hastily written hieratic."
 
 Some pottery jars are in the South Chamber. The description of the pottery jars is " Several small jars of varying shapes and sizes rest against the wall. Their surfaces are worn. Traces of paint suggesting they once bore vibrant designs. Among them, you see a broken jar with unguents and another fallen to the floor, with dried red stains around the rim."
 
@@ -571,6 +571,10 @@ To trigger the end sequence:
 
 Osiris' brain is a body part. The description of the brain is "A brain. It feels like it is pulsating in your hands."
 
+Instead of taking Osiris' brain:
+	now the brain is acquired;
+	continue the action.
+
 Section 5 - Back to the village
 
 When Exploration ends:
@@ -685,13 +689,6 @@ Section 3 - Landing in Thebes
 Heracles is a person in the Temple of Horemheb. Heracles can be sick or healthy. Heracles is sick.
 
 [make healing heracles sequence, refer to spell]
-
-
-
-Section 4 - Back in Thebes
-
-[heracles says bye, hands you a heart scarab]
-
 
 
 
