@@ -561,7 +561,7 @@ To trigger the end sequence:
 	say "You hear something from up above! Looking up at the ceiling, you see a gray lump drop from the duck-bearing man's head down to the room you are in. Is that...?";
 	move Osiris' brain to the Sanctuary.
 
-Osiris' brain is a body part. The description of the brain is "A brain. It feels like it is pulsating in your hands."
+Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands."
 
 Section 5 - Back to the village
 
@@ -580,6 +580,7 @@ Every turn during Next Instructions:
 		now the workman is uncurious. [therefore next instructions end]
 
 [workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greec,e i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
+
 Instead of selecting when Next Instructions has happened and Heal Heracles has not happened:
 	if the number understood is not seven: [the number for thebes]
 		say "i really miss greece i'm feeling nostalgic, time to go to thebes";
