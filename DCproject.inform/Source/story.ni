@@ -361,7 +361,7 @@ Part 4 - Talking Osiris Agenda
 
 Talking Osiris Agenda is a scene. Talking Osiris Agenda begins when Head Acquisition ends. Talking Osiris Agenda ends when Organ Acquisition ends. 
 
-After taking Osiris' head:
+After taking Osiris' head for the first time:
 	say "Aha! The head! You triumphantly hold the head of Osiris. How easy! Even someone like J*son could have solved this riddle! You'll be free in no time. You just need the torso, legs, and arms--then you're done! [paragraph break]";
 	wait for any key;
 	say "Although his eyes are open, Osiris remains silent.[paragraph break]";
@@ -486,25 +486,25 @@ After going to Outside the Walled Village:
 Instead of going to the Small Aten Temple when the player is on the oxcart:
 	say "You can hardly ride an oxcart into the temple!"
 
-The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "The traces of this Aten Temple still hint at its former grandeur. It once comprised three courts—the first, the second, and the sanctuary. Now you stand in what used to be the sanctuary court, its original form long since demolished. A partially reconstructed sanctuary is to your north. It still impressive despite representing only a fraction of its former splendor."
+The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "The traces of this Aten Temple still hint at its former grandeur. It once comprised three courts—the first, the second, and the sanctuary. Now you stand in what used to be the sanctuary court, its original form long since demolished. A partially reconstructed sanctuary is to your north. It is still impressive despite representing only a fraction of its former splendor."
 
 The Sanctuary is a room in Amarna. It is north of the Small Aten Temple. "Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor Aten, the sun disk. Around the perimeter of the sanctuary are low, carved altars, decorated with offerings and incense. In the center of the sanctuary, a shrine depicting Aten shines in its golden splendor."
 
 The carved altars are scenery in the Sanctuary. "The low altars are made of sandstone, each inscribed with dedications to Aten."
 
-The offerings are things in the Sanctuary. "Arranged delicately atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers -- odd [line break] Wasn't this place abandoned?"
+The offerings are things in the Sanctuary. "Arranged delicately atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers. Odd. Wasn't this place abandoned?"
 
-The Aten shrine is scenery in the Sanctuary. "At the heart of the sanctuary stands a majestic shrine dedicated to Aten. The shrine captures and reflects the abundant sunlight that bathes the room. The central depiction of the Aten radiates golden beams that dance across the walls, filling the space with a divine glow. [paragraph break] You feel more at home."
+The Aten shrine is scenery in the Sanctuary. "At the heart of the sanctuary stands a majestic shrine dedicated to Aten. The shrine captures and reflects the abundant sunlight that bathes the room. The central depiction of the Aten radiates golden beams that dance across the walls, filling the space with a divine glow."
 
-The hidden staircase is a secret door. The staircase is above the Underground chapel and below the Small Aten Temple. 
+The hidden staircase is a secret door. The staircase is above the Underground chapel and below the Sanctuary. 
 
 Instead of examining the shrine:
 	now the hidden staircase is revealed;
 	now the hidden staircase is open;
-	say "You hear an odd rumbling noise. There was a hidden staircase!";
+	say "You hear an odd rumbling noise. There was a hidden staircase! You can go down to see what's there.";
 	continue the action.
 
-Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls. The ceiling depicts an intricate scene. [paragraph break] What odd surroundings. Perhaps you should take a closer look. The chapel is completely empty, so there's no harm in TOUCHing something."
+Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. There are three strange statues, and murals with eerily etched toes line all four walls. The ceiling depicts an intricate scene. [paragraph break] What odd surroundings. Perhaps you should take a closer look and EXAMINE some things. The chapel is completely empty, so there's also no harm in TOUCHing something--in fact, that might help you figure things out."
 
 
 Section 4 - At the Small Aten Temple
@@ -517,7 +517,7 @@ The east mural is scenery in the Underground Chapel. The description is "The wea
 
 The west mural is scenery in the Underground Chapel. The description is "This mural shows a man makes an offering to Aten. Cradled carefully in his hands is...a small duck?[paragraph break] Ha. You would never settle for such meager offerings."
 
-The ceiling is scenery in the Underground Chapel. The description is "You crane your head up to look at the ceiling. There seems to be a lot going on here. A sun disk is being held in the palms of a praying man. Across from him, a man with a very long head is smelling a lotus."
+The ceiling is scenery in the Underground Chapel. The description is "You crane your head up to look at the ceiling. There seems to be a lot going on here. You can see 1...2...3...4 major components. A sun disk is being held in the hands of a praying man. Across from him, a man with a very long head is smelling a lotus."
 
 The first statue is scenery in the Underground Chapel. The description is "A broken statue that probably once depicted a person. Guess we'll never find out. You feel a strange kinship with this statue."
 
@@ -570,32 +570,32 @@ To refill the sequence:
 
 To trigger the end sequence:
 	say "You hear something from up above! Looking up at the ceiling, you see a gray lump fall from the duck-bearing man's head right to your feet. Is that a...?";
-	move Osiris' brain to the Sanctuary.
+	move Osiris' brain to the Underground Chapel.
 
-Osiris' brain is a body part. The description of the brain is "A brain. It feels like it is pulsating in your hands."
+Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands."
 
 Instead of taking Osiris' brain:
 	now the brain is acquired;
 	continue the action.
 
 After taking Osiris' brain:
-	say "With great anticipation, you take the brain and plop it right into the head.[paragraph break]You patiently wait for Osiris to regain intelligent thought and offer you his utmost thanks.";
+	say "With great anticipation, you take the brain and plop it right into the head.[paragraph break]You patiently wait for Osiris to regain intelligent thought and offer you his utmost thanks.[paragraph break]";
 	wait for any key;
-	say "...";
+	say "...[paragraph break]";
 	wait for any key;
-	say "...";
+	say "...[paragraph break]";
 	wait for any key;
-	say "...";
+	say "...[paragraph break]";
 	wait for any key;
-	say "Any moment now.";
+	say "Any moment now.[paragraph break]";
 	wait for any key;
-	say "...";
+	say "...[paragraph break]";
 	wait for any key;
-	say "...";
+	say "...[paragraph break]";
 	wait for any key;
-	say "Nothing happened.";
+	say "Nothing happened.[paragraph break]";
 	wait for any key;
-	say "Is he just stupid?!?";
+	say "Is he just stupid?!?[paragraph break]";
 	wait for any key;
 	say "Well, at least you have one more piece of the puzzle. But you might need to go speak with someone else in Amarna if you want any actual clues.";
 	wait for any key;
@@ -611,31 +611,30 @@ Instead of entering the sun chariot when the player is on the oxcart:
 	
 [so medea goes back to the village on oxcart, immediately she is greeted by the workman (aka dialogue triggered automatically, they start talking]
 Every turn during Next Instructions:
-	if the location is Outside the Walled village and the player is not on the oxcart:
+	if the location is Outside the Walled village:
 		now the workman is in Outside the Walled Village;
-		say "As you disembark from the oxcart, you spot into the same workman you had spoken with earlier.";
+		say "As you disembark from the oxcart, you spot into the same workman you had spoken with earlier.[paragraph break]";
 		wait for any key;
-		say "'Hey, lady!' he says. 'You got those heads of yours now?' He looks a little less wary.";
+		say "'Hey, lady!' he says. 'You got those heads of yours now?' He looks a little less wary.[paragraph break]";
 		wait for any key;
-		say "'Close enough,' you say.";
+		say "'Close enough,' you say.[paragraph break]";
 		wait for any key;
-		say "'It's nice to see a new face, even if it's a creepy one,'  the workman continued. 'This place has been a ghost town for so long. We used to be as big as Thebes, you know!'";
-		say "...Thebes?";
+		say "'It's nice to see a new face, even if it's a creepy one,'  the workman continued. 'This place has been a ghost town for so long. We used to be as big as Thebes, you know!'[paragraph break]";
+		say "...Thebes?[paragraph break]";
 		wait for any key;
-		say "The workman notices your confusion. 'You must really be a foreigner! Don't you know of Thebes? All the tomb workers are there nowadays";
+		say "The workman notices your confusion. 'You must really be a foreigner! Don't you know of Thebes? All the tomb workers are there nowadays.[paragraph break]";
 		wait for any key; 
-		say "...Interesting.";
+		say "...Interesting.[paragraph break]";
 		wait for any key; 
-		say "...";
+		say "...[paragraph break]";
 		wait for any key; 
-		say "...";
+		say "...[paragraph break]";
 		wait for any key; 
 		say "One of your potential escape plans -- not that you had the opportunity to go through with it -- was to flee from Corinth to Thebes. But you never had the chance to execute this plan. Perhaps this is a sign.";
 		now the workman is uncurious. [therefore next instructions end]
 
 [workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greece i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
 Instead of selecting when Next Instructions has happened and Heal Heracles has not happened:
-[	say "BOOP";]
 	if the number understood is not seven: [the number for thebes]
 		say "You want to go to Thebes instead. You're near-certain the workman mentioned a different 'Thebes,' but the shared name intrigues you.";
 	otherwise:
@@ -659,23 +658,23 @@ Every turn during Buddy Heracles:
 
 Section 1 - All the Locations
 
-The Temple of Thutmosis III is a room. It is in Thebes. "This temple honors Thutmosis III. There seems to be a lot of honoring going on around here."
+The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III. There seems to be a lot of honoring going on around here."
 
-The Ramesseum is south of The Temple of Thutmosis III. It is in Thebes. "The mortuary temple of Ramesses II looms large with its colossal statues. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
+The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. "The mortuary temple of Ramesses II looms large with its colossal statues. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
 
-The Temple of Thutmosis IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmosis IV."
+The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmoses IV."
 
 The Temple of Tawosret is south of the Temple of Thutmosis IV. It is in Thebes. "The Temple of Tawosret stands here."
 
 The Temple of Merenptah is south of the Temple of Tawosret. It is in Thebes. "The Temple of Merenptah is here."
 
-A collection of three temples is a room. It is south of the Temple of Merenptah. It is in Thebes. "You see the temples of Thutmosis I, Amenhotep son of Hapu, and Thutmosis III."
+A collection of three temples is a room. It is south of the Temple of Merenptah. It is in Thebes. "You see the temples of Thutmoses I, Amenhotep Son of Hapu, and Thutmoses III."
 
-The Temple of Thutmosis I is scenery in the collection of three temples. "The Temple of Thutmosis I is here."
+The Temple of Thutmoses I is scenery in the collection of three temples. "The Temple of Thutmoses I is here."
 
 The Temple of Amenhotep Son of Hapu is scenery in the collection of three temples. "The Temple of Amenhotep Son of Hapu is here. He was revered as a scribe and later deified for his wisdom."
 
-The Smaller Temple of Thutmosis III is scenery in the collection of three temples. "The smaller Temple of Thutmosis III is here. It's also honoring Thutmosis III  -- just at a smaller scale."
+The Smaller Temple of Thutmoses III is scenery in the collection of three temples. "The smaller Temple of Thutmoses III is here. It's also honoring Thutmoses III  -- just at a smaller scale."
 
 The Temple of Amenhotep III is east of the the collection of three temples. It is in Thebes. "Amenhotep III's vast mortuary temple lies here."
 
@@ -734,7 +733,6 @@ Heracles is a person in the Temple of Horemheb. Heracles can be sick or healthy.
 [make healing heracles sequence, refer to spell]
 
 
-
 Chapter 4 - Busiris-Organs
 
 Organ Acquisition is a scene. Organ Acquisition begins when Heal Heracles ends. Organ Acquisition ends when Osiris' liver is acquired.
@@ -788,11 +786,11 @@ After going to the Hallway during Escape:
 	continue the action.
 
 When Escape begins:
-	say "You have been taken by the guards into a jail cell.";
+	say "You have been taken by the guards into a jail cell!";
 	now Heracles is uncaught.
 	
 When Escape ends:
-	say "The guards rush into the room and apprehend you.";
+	say "The guards rush into the room and apprehend you!";
 	now Heracles is uncaught;
 	now Heracles is in the Jail Cell;
 	now the player is in the jail Cell.
