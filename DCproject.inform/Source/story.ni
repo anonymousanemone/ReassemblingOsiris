@@ -493,7 +493,7 @@ Instead of examining the shrine:
 	say "You hear an odd rumbling noise. There was a hidden staircase!";
 	continue the action.
 
-Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls. A detailed ceiling lavishly decorated. [paragraph break] What odd scenery. Perhaps you should take a closer look."
+Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. Strange elongated statues and murals with eerily etched toes line the walls. The ceiling depicts an intricate scene. [paragraph break] What odd surroundings. Perhaps you should take a closer look. The chapel is completely empty, so there's no harm in TOUCHing something."
 
 
 Section 4 - At the Small Aten Temple
@@ -502,15 +502,15 @@ The north mural is scenery in the Underground Chapel. The description is "A radi
 
 The south mural is scenery in the Underground Chapel. The description is "This mural depicts a gathering of figures, each etched with exquisite detail. Curiously, the figures here have extremely defined toes...you're not quite sure why."
 
-The east mural is scenery in the Underground Chapel. The description is "The weathered relief on the eastern wall shows nothing but a simple, unadorned disk. Time has erased the surrounding details, leaving only faint traces of the elaborate etchings."
+The east mural is scenery in the Underground Chapel. The description is "The weathered relief on the eastern wall shows nothing but a simple, unadorned sun disk. Time has erased the surrounding details, leaving only faint traces of the elaborate etchings."
 
 The west mural is scenery in the Underground Chapel. The description is "This mural shows a man makes an offering to Aten. Cradled carefully in his hands is...a small duck?[paragraph break] Ha. You would never settle for such meager offerings."
 
-The ceiling is scenery in the Underground Chapel. The description is "has some hint revealing the sequence in which to touch stuff - for example-- in a laid out sequence, you see the a sun disk, reaching out hand rays, onto the offerings of lotus flowers, held by a person with a very long head. "
+The ceiling is scenery in the Underground Chapel. The description is "You crane your head up to look at the ceiling. There seems to be a lot going on here. A sun disk is being held in the palms of a praying man. Across from him, a man with a very long head is smelling a lotus."
 
 The first statue is scenery in the Underground Chapel. The description is "A broken statue that probably once depicted a person. Guess we'll never find out. You feel a strange kinship with this statue."
 
-The second statue is scenery in the Underground Chapel. The description is "A statue of a bearded man with an disgusted grimace. He looks remarkably like a man you once knew."
+The second statue is scenery in the Underground Chapel. The description is "A statue of a man with a ridiculously long head. He looks remarkably like a man you once knew."
 
 The third statue is scenery in the Underground Chapel. The description is "A statue of a man with a giant lotus sprouting out the top of his head. That looks painful."
 
@@ -532,16 +532,16 @@ Instead of touching something in the Underground Chapel:
 Table of Full Sequence
 seq	item
 1	east mural
-2	north mural
-3	third statue
-4	second statue
+2	west mural
+3	second statue
+4	third statue
 
 Table of Current Sequence
 seq	item
 1	east mural
-2	north mural
-3	third statue
-4	second statue
+2	west mural
+3	second statue
+4	third statue
 with 1 blank row
 
 To sort the sequence:
