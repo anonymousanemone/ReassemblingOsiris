@@ -8,15 +8,15 @@ Include Exit Lister by Gavin Lambert.
 
 Release along with an interpreter.
 
-Section 1 - Story Transcript - For release only
+[Section 1 - Story Transcript - For release only
 
-When play begins: try switching the story transcript on.
+When play begins: 
+	try switching the story transcript on;]
 
 Part 1 - Prologue - For release only
-
-When play begins: choose row 1 in Table of Basic Help Options; now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt.[paragraph break]Some general guidelines for this game:[line break]	Make sure to examinine everything![line break]	If you're stuck, it may be time to travel to a new place.[line break]	Medea is very clever, so make sure to pay attention to how she describes things!"
-
-After printing the banner text:
+	
+After printing the banner text:	
+	choose row 1 in Table of Basic Help Options; now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt.[paragraph break]Some general guidelines for this game:[line break]	Make sure to examinine everything![line break]	If you're stuck, it may be time to travel to a new place.[line break]	Medea is very clever, so make sure to pay attention to how she describes things!";
 	say "[line break]'It’s a complete disaster!'[line break][line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break]";
 	wait for any key;
 	say "[line break]'I’ve pleaded and pleaded, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris herself!'[line break]";
@@ -273,7 +273,7 @@ Section 2 - Entering the Osireion
 The Gate to the Osireion is a room in Abydos."The doorway to the temple stands before you. It's an unassuming looking side door that seems to be lightly trafficked. There are no guards... [line break]You contemplate the ways that you can interact with the door. Can you ENTER the door or EXAMININE the door? If you ever feel confused, perhaps you should ask for some HELP."
 
 The stone door is a locked closed door. It is scenery. The stone door is south of the gate and north of the descending passage. Include (- has animate -) when defining the door.
-The description of the stone door is "The heavy stone door is engraved with an ancient riddle: [line break] 'I am yesterday, veiled in shadows. [line break] I am tomorrow, cloaked in flames. [line break] A union of gods, a cycle complete.'[paragraph break]The door patiently awaits your ANSWER.";
+The description of the stone door is "The heavy stone door is engraved with an ancient riddle: [line break] 'I am yesterday, veiled in shadows. [line break]  I am tomorrow, cloaked in flames. [line break]  A union of gods, a cycle complete.'[paragraph break]The door patiently awaits your ANSWER.";
 
 Instead of answering the door that something:
 	if the player's command includes "sun":
@@ -665,7 +665,7 @@ The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. " The mo
 
 The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmoses IV. Columns and archways display finely chiseled hieroglyphs extolling the king’s diplomatic prowess."
 
-The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "The Temple of Tawosret stands here, relatively modest compared to its neighbors but still adorned with intricate carvings."
+The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "The Temple of Tawosret stands here, relatively modest compared to its neighbors but still adorned with intricate carvings.You can look around Thebes for something—or maybe someone—useful."
 
 The Temple of Merenptah is south of the Temple of Tawosret. It is in Thebes. "The Temple of Merenptah is here, partially ruined yet still imposing."
 
@@ -697,7 +697,7 @@ Instead of examining right statue of Amenhotep III:
 	If the player is holding the heart scarab:
 		now right statue of Amenhotep III is open;
 		now right statue of Amenhotep III is unopenable;
-		say "The panel at the base of the statue slides open to reveal the heart of Osiris. Hooray! Now you can take the heart.";
+		say "The panel at the base of the statue slides open to reveal the heart of Osiris. Hooray![paragraph break]";
 		wait for any key;
 		say "This concludes the demo for 'That Time I Got Out of Jail by Reassembling Osiris.' Thank you so much for playing! [paragraph break] You're welcome to continue exploring the world--and there may be some hints scattered around. :) The fishing minigame in Oxyrhynchos can also be tested. Thanks again, and we look forward to sharing more in the future!";
 	otherwise:
@@ -716,7 +716,7 @@ The House of Life is west of the Ramesseum. It is in Thebes. "The entrance is un
 [some mechanic for finding correct papyri or simple description]
 
 Medical papyri is scenery in the House of LIfe. The description of the medical papyri is "A headache spell. It reads: [paragraph break] -YET ANOTHER- CONJURATION FOR THE HEAD [line break]
-Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied gsomething to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.".
+Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.[paragraph break] Once you have these items, you can PREPARE them to make the medicine. You can always check your inventory to see what you have.".
 
 Understand "scroll / papyri" as the medical papyri.
 
@@ -724,13 +724,13 @@ Understand "scroll / papyri" as the medical papyri.
 [doesn't work right now because papyri is scenery, not a thing]
 Instead of thinking during Heal Heracles:
 	if the papyri is examined:
-		say "-YET ANOTHER- CONJURATION FOR THE HEAD [line break] Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.".
+		say "-YET ANOTHER- CONJURATION FOR THE HEAD [line break] Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.[paragraph break] Once you have these items, you can PREPARE them to make the medicine. You can always check your inventory to see what you have.".
 
 Section 3 - Healing Heracles
 
 [when medea first lands, say "maybe it's time to explore to gather some hints about where Osiris might be]
 
-Heracles is a man. Heracles can be sick or healthy. Heracles is sick. The description of Heracles is "A muscled man wearing lion skin and carrying a club. [if Heracles is sick] He is lying face down on the floor, moaning in agony. Perhaps you should help him? Only because he might be useful, of course."
+Heracles is a man. Heracles can be sick or healthy. Heracles is sick. The description of Heracles is "A muscled man wearing lion skin and carrying a club. [if Heracles is sick] He is lying face down on the floor, moaning in agony. Perhaps you should help him? Only because he might be useful, of course. But how?"
 
 Instead of talking to sick Heracles:
 	say "'Is that...Heracles?' you called out.[paragraph break]";
@@ -811,7 +811,7 @@ Understand "apply [other things] to [something]" as a mistake ("Try applying it 
 Heracles can be medicated or unmedicated. Heracles is unmedicated. 
 
 Instead of putting the prepared medicine on Heracles:
-	say "You gently place the prepared bundle on the throat of the afflicted Heracles.";
+	say "You gently place the prepared bundle on the throat of the afflicted Heracles. You should recite the spell now.";
 	now Heracles is medicated.
 	
 Understand "I have indeed applied something to all his sore spots" as chanting. Chanting is an action applying to nothing.
@@ -820,7 +820,7 @@ Understand "I have indeed applied something to all his sore spots" as chanting. 
 Instead of chanting:
 	say "You speak the spell.[paragraph break]";
 	wait for any key;
-	say "You wait for something to happen[paragraph break]";
+	say "You wait for something to happen.[paragraph break]";
 	wait for any key;
 	say "...[paragraph break]";
 	wait for any key;
@@ -897,7 +897,7 @@ When the Kidnapping begins:
 	wait for any key;
 	say "Despite your struggles, they knock you unconscious and drag you away.You've been kidnapped!![paragraph break]";
 	wait for any key;
-	say "You wait up bleary-eyed in a dark, musty prison cell.[paragraph break]";
+	say "You wake up bleary-eyed in a dark, musty prison cell.[paragraph break]";
 	wait for any key;
 	say "Divine jail was much more luxurious.[paragraph break]";
 	wait for any key;
@@ -908,7 +908,7 @@ When the Kidnapping begins:
 	say "'That weak woman? Are you mad, man?' he says. 'No! It was I, Busiris!' [paragraph break]";	wait for any key;
 	say "You and Heracles stare at him in confusion. You have no idea who that is. [paragraph break]";
 	wait for any key;
-	say "The mysterious man--Busiris, you guess--glares at you. 'Seriously?' he asks. 'You don't know who I am?! I'm in at least three different ancient books!! [paragraph break]";
+	say "The mysterious man--Busiris, you guess--glares at you. 'Seriously?' he asks. 'You don't know who I am?! I'm in at least three different ancient books!!'[paragraph break]";
 	wait for any key;
 	say "'Sorry, dude,' Heracles replies. 'We have no clue who you are.' [paragraph break]";
 	wait for any key;
@@ -916,7 +916,7 @@ When the Kidnapping begins:
 	wait for any key;
 	say "What??? [paragraph break]";
 	wait for any key;
-	say "'Yes!' Burisis continues, pleased by your wariness. 'Shedding foreign blood is an important part of my city's social culture! And you have only that loudmouth to thank for your capture! Normally we have a 35% success rate in successfully capturing a foreigner--but thanks to all of his yapping, we're certain you're Greek! [paragraph break]";
+	say "'Yes!' Burisis continues, pleased by your wariness. 'Shedding foreign blood is an important part of my city's social culture! And you have only that loudmouth to thank for your capture! Normally we have a 35% success rate in successfully capturing a foreigner--but thanks to all of his yapping, we're certain you're Greek!' [paragraph break]";
 	wait for any key;
 	say "You turn to Heracles, giving him a nasty look. He looks at you sheepishly. 'Sorry...' [paragraph break]";
 	wait for any key;
@@ -1058,7 +1058,7 @@ Shrine Room is a room in Busiris. It is east of Corridor of Procession. "The dim
 
 Double Axe Hall is a room in Busiris. It is north of the Shrine Room. It is east of Central Court. "Huge double-axe motifs dominate the walls here."
 
-Corridor of Procession West is a corridor in Busiris. It is west of Corridor of Procession East. "Grand arches line this corridor’s high ceiling, but time and neglect have left cracks in its structure"
+Corridor of Procession West is a corridor in Busiris. It is west of Corridor of Procession East. "Grand arches line this corridor’s high ceiling, but time and neglect have left cracks in its structure."
 
 Palace exit is a secret door. It is west of Corridor of Procession West and east of the Temple of Tawosret. 
 
@@ -1109,22 +1109,22 @@ Instead of going during Ritual Sacrifice:
 
 Every turn during Ritual Sacrifice:
 	If the location is the Jail Cell:
-		say "'The ritual is ready. We will finally deal with you errant prisoners! Our gods will certainly be pleased with this sacrifice,' a guard jeers.";
+		say "'The ritual is ready. We will finally deal with you errant prisoners! Our gods will certainly be pleased with this sacrifice,' a guard jeers.[paragraph break]";
 		wait for any key;
-		say "Now to the central court! ";
+		say "Now to the central court![paragraph break]";
 		wait for any key;
 		now the player is in the Central Court;
 		now Heracles is in the Central Court;
-		say "Without further ado, you and Heracles are dragged to the central court, kicking and screaming.";
+		say "Without further ado, you and Heracles are dragged to the central court, kicking and screaming.[paragraph break]";
 		wait for any key;
-		say "You can see that preparations for the sacrifice has been complete. A massive stone altar stands at the center, surrounded by flickering torches and gleeful guards.";
+		say "You can see that preparations for the sacrifice has been complete. A massive stone altar stands at the center, surrounded by flickering torches and gleeful guards.[paragraph break]";
 		wait for any key;
 		wait for any key;
 		say "And standing in front of the altar is Busiris, with a sinister smile on his face.";
 		start the sacrifice;
 	
 To start the sacrifice:
-	say "Busiris steps onto a raised dais in the center of the central court. [paragraph break] 'Fools! he booms, his voice echoing off the high stone walls. 'You stand accused by the gods themselves! Fear not--your foreign blood will be a worthy sacrifice!' He throws his head back and cackles with mad delight.";
+	say "Busiris steps onto a raised dais in the center of the central court. [paragraph break] 'Fools! he booms, his voice echoing off the high stone walls. 'You stand accused by the gods themselves! Fear not--your foreign blood will be a worthy sacrifice!' He throws his head back and cackles with mad delight.[paragraph break]";
 	wait for any key;
 	say "Around you, a circle of guards brandish their weapon--no easy escape.[paragraph break] ";
 	wait for any key;
@@ -1146,14 +1146,16 @@ Instead of talking to Heracles during Ritual Sacrifice:
 	say "Heracles looks at you with awe. 'Why, Medea! You're a genius!' [paragraph break]";
 	wait for any key;
 	say "You know. [paragraph break]";
+	wait for any key;
 	end the sacrifice.
 	
 To end the sacrifice:
 	say "When you give him the cue, Heracles springs forward with a mighty roar. Busiris turns, but it's too late. The tyrant crumples to the ground, his final scream lost in the sound of the sudden uproar.[paragraph break]";
 	wait for any key;
 	say "Perfect. Why dirty your hands when someone can do it for you? [paragraph break]";
+	wait for any key;
 	now King Busiris is dead;
-	say "The court descends into total chaos, and the guards are rushing about in confusion. Now is a good time to find your way out!";
+	say "The court descends into total chaos, and the guards are rushing about in confusion. Now is a good time to find your way out! Try looking for a palace exit!";
 	now palace exit is revealed;
 	now palace exit is open.
 
@@ -1170,14 +1172,15 @@ To trigger Heracles leaving:
 	wait for any key;
 	say "You remain silent, although you're not sure if that's because of self-restraint, accustomation to his antics, or just pure exhaustion.[paragraph break]";
 	wait for any key;
-	say "I truly must thank you for your help,' Heracles says, 'and, of course, for healing me with your witchy powers.[paragraph break]";
+	say "'I truly must thank you for your help,' Heracles says, 'and, of course, for healing me with your witchy powers.[paragraph break]";
+	wait for any key;
 	say "I've heard stories about you, but it seems that one should never judge a hero (or heroine) by his (or her) tragedies--especially those written by that snooze Euripides!'[paragraph break]";
 	wait for any key;
-	say "...He could have just said 'their'"; 
+	say "...He could have just said 'their.'[paragraph break]"; 
 	wait for any key;
 	say "'I'll be off now to pursue my own quests,' Heracles continues. 'But I hope you'll take this trinket as a token of my gratitude. Until we meet again! Perhaps in a different Thebes...'[paragraph break]";
 	wait for any key;
-	say "You now have a heart scarab made of shining carnelian. And with that, Heracles leaves.[paragraph break]";
+	say "You now have a heart scarab made of shining carnelian. Maybe you can examine it more closely. And with that, Heracles leaves.[paragraph break]";
 	wait for any key;
 	say "He certainly was obnoxious, but it was nice to travel with a companion.";
 	now the player is holding the heart scarab;
