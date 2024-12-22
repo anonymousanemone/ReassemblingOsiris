@@ -19,17 +19,17 @@ When play begins: choose row 1 in Table of Basic Help Options; now description e
 After printing the banner text:
 	say "[line break]'It’s a complete disaster!'[line break][line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break]";
 	wait for any key;
-	say "[line break]'I’ve pleaded and pleaded, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris to Osiris!'[line break]";
+	say "[line break]'I’ve pleaded and pleaded, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris herself!'[line break]";
     	wait for any key;
     	say "[line break]'I had thought,' an especially haggard-looking Anubis replied, 'that we agreed Isis would be no help. Have our previous Emergency Meetings taught you nothing? I am starting to hear whispers--mere whispers, mind you, but whispers nonetheless--about a certain Serapis. Serapis! If Osiris falls, Kemet will fall alongside him. Amun, you must do something!'[line break]";
     	wait for any key;
-	say "[line break]Amun ignored Nephthys’ laments and Anubis’ whines. There was a more important avenue to pursue: 'Maʽat, what have you heard from Thoth?'[line break]";
+	say "[line break]Amun ignored the whining. There was a more important question to ask: 'Maʽat, what have you heard from Thoth?'[line break]";
 	wait for any key;
 	say "[line break]Maʽat looked rather unhappy to be the bearer of bad news. 'He’s tried every spell he knows--to no effect. He’s sequestered himself in the library, but…'[line break][line break]";
 	wait for any key;
-	say "It seemed that Ma’at had little hope that Thoth would be successful in his efforts.[line break]";
+	say "Ma'at seemed to have little faith that Thoth would succeed in his efforts.[line break]";
     	wait for any key;
-    	say "[line break]'More than that'--and her expression became grave--'Chaos is running rampant. I fear that if we do not take action soon, irreversible disorder will conquer all.'[line break]";
+    	say "[line break]'More than that'--and her expression became grave--'Chaos is running rampant. I fear that if we do not take action soon, an irreversible disorder will conquer us all.'[line break]";
     	wait for any key;
     	say "[line break]Indeed, this was a complete disaster. 'And what of Ptah?' Amun asked.[line break]";
 	wait for any key;
@@ -37,17 +37,17 @@ After printing the banner text:
 	wait for any key;
     	say "[line break]'...Has he made any progress in fashioning an Osiris?'[line break]";
 	wait for any key;
-    	say "[line break]Sekhmet's displeased grimace was answer enough.  [line break]";
+    	say "[line break]Sekhmet's snarl was answer enough.  [line break]";
 	wait for any key;
     	say "[line break]'...I see,' Amun said. 'Perhaps…we should all check in next week.' [line break]";
 	wait for any key;
-    	say "[line break]His admittedly lackluster statement incited Anubis. 'This is the ninety-ninth Emergency Meeting we’ve held—we cannot prolong this emergency! The unweighed souls are piling up and spilling into the streets of the living, and poor Medjed is too spooked to do his duties! I cannot contend with this alone!' [line break]";
+    	say "[line break]This admittedly lackluster statement sent Anubis into a fury. 'This is the ninety-ninth Emergency Meeting we’ve held--enough stalling! The unweighed souls are piling up and spilling into the streets of the living, and poor Medjed is too spooked to perform his duties! I cannot contend with this alone!' [line break]";
 	wait for any key;
-    	say "[line break]'And what am I to do, Anubis?' Amun bit back. 'Seth is rejoicing in his victory, and clearly, none of us here have the aptitude to counter him!' [line break]";
+    	say "[line break]'And just what am I supposed to do, Anubis?' Amun bit back. 'Seth is rejoicing in his victory--clearly, none of us here have the aptitude to counter him!' [line break]";
 	wait for any key;
-    	say "[line break]'If I may.' A quiet voice resounded from the back of the room, and everyone turned to look at Khonsu, who had to speak in this meeting--or any of the previous ninety-nine Emergency Meetings.[line break]";
+    	say "[line break]'If I may.' A quiet voice resounded from the back of the room, and everyone turned to look at Khonsu, who had to speak.[line break]";
 	wait for any key;
-    	say "[line break]'I have hesitated to bring this up. But it might be our only hope. There have been murmurs, in the darkest and gloomiest of shadows, of a terrible woman who had made the sky her own. A woman whose misdeeds put those of our Seth to shame. A woman whose pride and cleverness knew no bounds. A woman who had… [line break]";
+    	say "[line break]'I have hesitated to bring this up. But it might be our only hope. There have been murmurs, in the darkest and gloomiest of shadows, of a terrible woman who made the sky her own. A woman whose misdeeds put those of our Seth to shame. A woman whose pride and cleverness knew no bounds. A woman who had… [line break]";
 	wait for any key;
     	say "[line break]…[line break]";
 	wait for any key;
@@ -55,9 +55,9 @@ After printing the banner text:
 	wait for any key;
     	say "[line break]'Well, go on. Say it!' [line break]";
 	wait for any key;
-    	say "[line break]As the room broke again into squabbling, Amun felt a chill come over him. There was no need for Khonsu to elaborate--he remembered this story from long ago. It had happened under a Greek sun, yes, but the light of the sun has no limits nor borders. [line break]";
+    	say "[line break]As the room broke out again into squabbling, Amun felt a chill come over him. There was no need for Khonsu to elaborate--he remembered this story from long ago. It had happened under a Greek sun, yes, but the light of the sun has no limits or borders. [line break]";
 	wait for any key;
-    	say "[line break]A case in which innocents were slaughtered and the guilty were left unpunished. [line break]";
+    	say "[line break]A case where innocents were slaughtered and the guilty were left unpunished. [line break]";
 	wait for any key;
     	say "[line break]The story of the Colchian witch Medea. [line break]";
 	wait for any key;
@@ -65,11 +65,11 @@ After printing the banner text:
 	wait for any key;
 	say "[line break]At the sound of 'Medea,' the room fell into a hush. [line break]";
 	wait for any key;
-    	say "[line break]'I had known of her before her crimes had reached the corners of the world,'  Khonsu said. 'Before she had slaughtered her children and tricked the Corinthian princess. Her story was simpler then but striking in its resemblance to the issue that plagues us today.[line break]";
+    	say "[line break]'I had known of her before her crimes had reached the corners of the world,'  Khonsu said. 'Before she had slaughtered her children and tricked the Corinthian princess. Her story was simpler then. but striking in its resemblance to the issue that plagues us today.[line break]";
 	wait for any key;
-    	say "[line break]To further her own goals, she had cut her brother into many pieces and scattered him into the sea.'[line break]";
+    	say "[line break]To further her own goals, Medea had cut her own brother into many pieces and scattered him into the sea.'[line break]";
 	wait for any key;
-    	say "[line break]'I believe,' Khonsu continued, 'that when all else has failed us, we must attempt to think like our adversary.'[line break]";
+    	say "[line break]'I believe,' Khonsu said, 'that when all else has failed us, we must attempt to think like our adversary.'[line break]";
 	wait for any key;
 	say "[line break]Ma’at’s eyes were bright with a newfound hope. 'How,' she said slowly, 'can we expect to counter Seth when none of us possess his cruel cunning? Who else but a Seth to defeat Seth?'[line break]";
 	wait for any key;
@@ -112,8 +112,8 @@ After printing the banner text:
 	say "[line break]...You have to hand it to this Seth character. You weren't nearly as creative. [line break]";
 	wait for any key;
 	say "[line break]The Egyptian gods, despite pleading for your assistance, seem to be frightened by you. They've placed some restrictions on your behavior--a parole, if you will. Currently, you cannot access your innate magic and divine power. You will need to rely on your genius, cunning, and astonishingly gorgeous face to complete your mission. [line break]";
-	[wait for any key;
-	[say "[line break]Your grandfather seems to feel a modicum of sympathy for you. Before he dropped you off in Egypt, he left you with a help book [line break]"; [might re-add if the initial help prompt is not clear for readers]]]
+	[wait for any key;]
+	[say "[line break]Your grandfather seems to feel a modicum of sympathy for you. Before he dropped you off in Egypt, he left you with a help book [line break]"; [might re-add if the initial help prompt is not clear for readers]]
 	wait for any key;
 	say "[line break]Your sun chariot has been returned to you. You missed your dragons. After catching up with your darlings, you traveled to Egypt. [line break]";
 	wait for any key;
@@ -613,7 +613,7 @@ Instead of entering the sun chariot when the player is on the oxcart:
 Every turn during Next Instructions:
 	if the location is Outside the Walled village:
 		now the workman is in Outside the Walled Village;
-		say "As you go east with the oxcart, you spot into the same workman you had spoken with earlier.[paragraph break]";
+		say "As you arrive, you spot into the same workman you had spoken with earlier.[paragraph break]";
 		wait for any key;
 		say "'Hey, lady!' he says. 'You got those heads of yours now?' He looks a little less wary.[paragraph break]";
 		wait for any key;
@@ -699,7 +699,7 @@ Instead of examining right statue of Amenhotep III:
 		now right statue of Amenhotep III is unopenable;
 		say "The panel at the base of the statue slides open to reveal the heart of Osiris. Hooray! Now you can take the heart.";
 		wait for any key;
-		say "This concludes the demo for 'That Time I Got Out of Jail by Reassembling Osiris.' Thank you so much for playing! [paragraph break] You're welcome to continue exploring the world--and there may be some hints scattered around. :) The fishing minigame in Oxyrhynchos can also be tested. Thanks again, and we look forward to sharing more in the future!"
+		say "This concludes the demo for 'That Time I Got Out of Jail by Reassembling Osiris.' Thank you so much for playing! [paragraph break] You're welcome to continue exploring the world--and there may be some hints scattered around. :) The fishing minigame in Oxyrhynchos can also be tested. Thanks again, and we look forward to sharing more in the future!";
 	otherwise:
 		continue the action.
 
@@ -814,7 +814,7 @@ Instead of putting the prepared medicine on Heracles:
 	say "You gently place the prepared bundle on the throat of the afflicted Heracles.";
 	now Heracles is medicated.
 	
-Understand "I have indeed applied something to all his sore spots." as chanting. Chanting is an action applying to nothing.
+Understand "I have indeed applied something to all his sore spots" as chanting. Chanting is an action applying to nothing.
 
 [prevent chanting from randomly being performed in the future]
 Instead of chanting:
@@ -1060,7 +1060,7 @@ Double Axe Hall is a room in Busiris. It is north of the Shrine Room. It is east
 
 Corridor of Procession West is a corridor in Busiris. It is west of Corridor of Procession East. "Grand arches line this corridor’s high ceiling, but time and neglect have left cracks in its structure"
 
-Palace exit is a secret door. It is west of Corridor of Procession West. 
+Palace exit is a secret door. It is west of Corridor of Procession West and east of the Temple of Tawosret. 
 
 Hallway is a corridor in Busiris. It is north of Corridor of Procession West. "Its walls are streaked with dark soot and grime. This place doesn't have very good upkeep."
 
@@ -1157,7 +1157,7 @@ To end the sacrifice:
 	now palace exit is revealed;
 	now palace exit is open.
 
-Instead of going through palace exit:
+Before going through palace exit:
 	now the player is in The Temple of Tawosret;
 	now Heracles is in the Temple of Tawosret;
 	wait for any key;
@@ -1180,8 +1180,9 @@ To trigger Heracles leaving:
 	say "You now have a heart scarab made of shining carnelian. And with that, Heracles leaves.[paragraph break]";
 	wait for any key;
 	say "He certainly was obnoxious, but it was nice to travel with a companion.";
-	now the player is holding the heart scarab. 
-
+	now the player is holding the heart scarab;
+	now palace exit is unrevealed;
+	now palace exit is closed.
 
 Part 5 - Complete Any Time
 [can be completed any time after acquiring the head]
