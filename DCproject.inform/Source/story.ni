@@ -840,16 +840,16 @@ Instead of chanting:
 	wait for any key;
 	say "Heracles calms down and takes stock of the situation. 'Is that so? Well...so long as you promise not to do it again.' [paragraph break]";
 	wait for any key;
-	say "Look gloomy, he continues. 'I myself know a little about hurting one's family.' [paragraph break]";
+	say "Looking gloomy, he continues. 'I myself know a little about hurting one's family.' [paragraph break]";
 	wait for any key;
-	say "His sad expression is replaced by determination. 'Well! I'll follow you around to keep an eye on you!' [paragraph break]";
+	say "His sad expression is replaced by determination. 'Well! I'll follow you around--to keep an eye on you, of course!' [paragraph break]";
 	wait for any key; 
-	say "Under his breath, he whispers, 'I also don't exactly know where I am...' [paragraph break]";
+	say "Under his breath, he whispers, 'I'm also totally lost...' [paragraph break]";
 	now Heracles is healthy.
 
 Section 4 - After the heart
 
-[have dialogue of medea putting heart in bag, and osiris' heead coming to life.]
+[have dialogue of medea putting heart in bag, and osiris' head coming to life.]
 [fix activation of scenes]
 
 Chapter 4 - Busiris-Organs
@@ -871,8 +871,15 @@ num_moves
 
 Table of Heracles' Yapping
 yappery
-"Heracles grunts loudly."
-"'What are you even doing,' Heracles whines."
+"'Why is every single temple so far apart?' Heracles shouts. 'My heroic feet can't take this abuse! It was so much better in Greece!' [line break]People in the distance start whispering at the commotion..."
+"'So bored... My old battles were never this slow,' Heracles whines. 'Someone give me a monster or something to smash!'"
+"Heracles bellows, 'Why does the sun have to be so bright? Someone extinguish it!' His voice booms across the area, turning every head."
+"This humidity is a mighty adversary,' Heracles complains. 'Medea! Use your Colchian magic to fix it!'[line break]As he speaks, you notice a few people looking at you..."
+"Heracles scratches his head. 'My head’s still a little ouchie. Could you—like, I dunno—magic it away?'"
+"'Thanks again for your help,' Heracles says. 'Athough I totally had it handled."
+"'Have you ever tried cleaning out stables for a living?' Heracles complains. 'Makes any quest seem easy.'"
+"'I just have to ask,' Heracles loudly says. 'What made you do it?' [paragraph break]You give no reply."
+"Heracles groans, clutching his temples. 'All this talk of gods and brothers and chopping...Egypt is so strange! I'd rather wrestle another lion!![line break]His loud voice draws a few curious eyes..." 
 
 Every turn during Organ Acquisition:
 	if the Table of Countdown is not empty:
@@ -886,13 +893,41 @@ Every turn during Organ Acquisition:
 The Kidnapping is a scene. The Kidnapping begins when the number of filled rows in the Table of Countdown is 0. The Kidnapping ends when King Busiris is dead.
 
 When the Kidnapping begins:
-	say "Suddenly a gang of soldiers rush at the two of you. You've been kidnapped!";
+	say "Suddenly a gang of men rush at the two of you, catching you by surprise!![paragraph break]";
+	wait for any key;
+	say "Despite your struggles, they knock you unconscious and drag you away.You've been kidnapped!![paragraph break]";
+	wait for any key;
+	say "You wait up bleary-eyed in a dark, musty prison cell.[paragraph break]";
+	wait for any key;
+	say "Divine jail was much more luxurious.[paragraph break]";
+	wait for any key;
+	say "Heracles, also coming to consciousness, is lying beside you. 'Medea!' he says. 'Where are we?! What happened!? Did you do—?!'[paragraph break]";
+	wait for any key;
+	say "He's interrupted by the menacing laughter of a man standing outside of your cell. His ornate robes are stained at the hem with dried blood. [paragraph break]";
+	wait for any key;
+	say "'That weak woman? Are you mad, man?' he says. 'No! It was I, Busiris!' [paragraph break]";	wait for any key;
+	say "You and Heracles stare at him in confusion. You have no idea who that is. [paragraph break]";
+	wait for any key;
+	say "The mysterious man--Busiris, you guess--glares at you. 'Seriously?' he asks. 'You don't know who I am?! I'm in at least three different ancient books!! [paragraph break]";
+	wait for any key;
+	say "'Sorry, dude,' Heracles replies. 'We have no clue who you are.' [paragraph break]";
+	wait for any key;
+	say "'Don't you call me 'dude,'' Busiris says. 'That would make me want to kill you...if I weren't already going to kill you!!'[paragraph break]";
+	wait for any key;
+	say "What??? [paragraph break]";
+	wait for any key;
+	say "'Yes!' Burisis continues, pleased by your wariness. 'Shedding foreign blood is an important part of my city's social culture! And you have only that loudmouth to thank for your capture! Normally we have a 35% success rate in successfully capturing a foreigner--but thanks to all of his yapping, we're certain you're Greek! [paragraph break]";
+	wait for any key;
+	say "You turn to Heracles, giving him a nasty look. He looks at you sheepishly. 'Sorry...' [paragraph break]";
+	wait for any key;
+	say "'I'll let you two work that out,' Busiris says smugly. 'But don't take too long in making amends! It's never good to die angry!' [paragraph break]";
+	wait for any key;
+	say "With that, he leaves you two alone. But before you can give Heracles a piece of your mind, he says something. [paragraph break]";
+	wait for any key;
+	say "'Umm..Medea...the gaps of the bars are pretty wide! I think we can slip through them!' [paragraph break]";
 	now the player is in the Jail Cell;
 	now Heracles is in the Jail Cell.
-	
-[have better dialogue for the kidnapping]
 
-[actually Medea and Heracles should end up in the throne room first, and have dialogue with Busiris, then sent to the jail cell]
 
 Section 1 - Escape Management
 
@@ -1009,11 +1044,11 @@ Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of
 
 The hidden entrance is a secret door. The hidden entrance is east of Hallway. 
 
-Osiris' liver is a body part. It is in Crypt of Osiris. It is unacquired.
+Osiris' liver is a body part. It is in Crypt of Osiris. It is unacquired. Understand "liver" as Osiris' liver. The description of the liver is "A liver. It is surprisingly spongy."
 
-[organ identification mini game here]
+A Bes Jar is in the Crypt of Osiris. It is unacquired. The description of the Bes Jar is "A vase decorated with the head of Bes. You see traces of hallucinogens in it, along with...breast milk and blood?"
 
-[skipped bes jar also here]
+[in the future, maybe make this an identification mini game]
 
 Pillar Crypt is a room in Busiris. It is west of Cult Rooms. It is east of Crypt of Osiris. Nothing is west of Pillar Crypt.
 
@@ -1114,12 +1149,14 @@ Instead of talking to Heracles during Ritual Sacrifice:
 	end the sacrifice.
 	
 To end the sacrifice:
-	say "Just as you begin to lose all hope, .";
+	say "When you give him the cue, Heracles springs forward with a mighty roar. Busiris turns, but it's too late. The tyrant crumples to the ground, his final scream lost in the sound of the sudden uproar.[paragraph break]";
+	wait for any key;
+	say "Perfect. Why dirty your hands when someone can do it for you? [paragraph break]";
 	now King Busiris is dead;
 	say "The court descends into total chaos, and the guards are rushing about in confusion. Now is a good time to find your way out!";
 	now palace exit is revealed;
 	now palace exit is open.
-	
+
 Instead of going through palace exit:
 	now the player is in The Temple of Tawosret;
 	now Heracles is in the Temple of Tawosret;
@@ -1134,8 +1171,11 @@ To trigger Heracles leaving:
 	say "You remain silent, although you're not sure if that's because of self-restraint, accustomation to his antics, or just pure exhaustion.[paragraph break]";
 	wait for any key;
 	say "I truly must thank you for your help,' Heracles says, 'and, of course, for healing me with your witchy powers.[paragraph break]";
-	say "I've heard stories about you, but it seems that one should never judge a hero (or heroine) by their tragedies--especially those written by that snooze Euripides!'[paragraph break]";
-	say "'I'll be off now to pursue my own quests, but I hope you'll take this trinket as a token of my gratitude.'[paragraph break]";
+	say "I've heard stories about you, but it seems that one should never judge a hero (or heroine) by his (or her) tragedies--especially those written by that snooze Euripides!'[paragraph break]";
+	wait for any key;
+	say "...He could have just said 'their'"; 
+	wait for any key;
+	say "'I'll be off now to pursue my own quests,' Heracles continues. 'But I hope you'll take this trinket as a token of my gratitude. Until we meet again! Perhaps in a different Thebes...'[paragraph break]";
 	wait for any key;
 	say "You now have a heart scarab made of shining carnelian. And with that, Heracles leaves.[paragraph break]";
 	wait for any key;
