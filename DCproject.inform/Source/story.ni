@@ -673,7 +673,7 @@ A Collection of Three Temples is a room. It is south of the Temple of Merenptah.
 
 The Temple of Thutmoses I is scenery in the Collection of Three Temples. "The Temple of Thutmoses I is here, flanked by a row of weathered sphinxes."
 
-The Temple of Amenhotep Son of Hapu is scenery in the Collection of Three Temples. "The Temple of Amenhotep, Son of Hapu is here. He was revered as a scribe and later deified for his wisdom."
+The Temple of Amenhotep Son of Hapu is scenery in the Collection of Three Temples. "The Temple of Amenhotep, Son of Hapu is here. He was revered as a scribe and later deified for his great wisdom."
 
 The Smaller Temple of Thutmoses III is scenery in the Collection of Three Temples. "The smaller Temple of Thutmoses III is here. It's also honoring Thutmoses III  -- just at a smaller scale."
 
