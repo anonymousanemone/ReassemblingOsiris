@@ -16,7 +16,6 @@ When play begins:
 Part 1 - Prologue - For release only
 	
 After printing the banner text:	
-	choose row 1 in Table of Basic Help Options; now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt.[paragraph break]Some general guidelines for this game:[line break]	Make sure to examinine everything![line break]	If you're stuck, it may be time to travel to a new place.[line break]	Medea is very clever, so make sure to pay attention to how she describes things!";
 	say "[line break]'It’s a complete disaster!'[line break][line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break]";
 	wait for any key;
 	say "[line break]'I’ve pleaded and pleaded, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris herself!'[line break]";
@@ -122,12 +121,16 @@ After printing the banner text:
 
 Part 2 - General Game Declarations
 
+Section 1 - Settings
+
 When play begins:
-    	now the right hand status line is "[map region of the location]".
+    	now the right hand status line is "[map region of the location]";
+	choose row 1 in Table of Basic Help Options; 	
+	now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt.[paragraph break]Some general guidelines for this game:[line break]	Make sure to examinine everything![line break]	If you're stuck, it may be time to travel to a new place.[line break]	Medea is very clever, so make sure to pay attention to how she describes things!";
 
-The carrying capacity of the player is 5.
+The carrying capacity of the player is 7.
 
-The player is in Gate to the Osireion. [starting location]
+The player is in the Entrance to the Osireion. [starting location]
 
 [This prevents the player from using the TAKE ALL command]
 Rule for deciding whether all includes a thing:
@@ -136,15 +139,20 @@ Rule for deciding whether all includes a thing:
 [This changes the default message “There are none at all available!”]
 Rule for printing a parser error when the latest parser error is the nothing to do error:
 	say “Now, now, don’t be greedy.”
+	
+[for exit lister, reveals the name of rooms when listing exits]
+A room memory rule:
+	rule succeeds.
 
-Section 1 - New Actions
+
+Section 2 - New Actions
 
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "talk to [something]" or “converse with [someone]” or "converse with [something]" as talking to.
 
-Carry out talking to someone:
+Carry out talking to:
 	say "There is no reply."
 	
-Section 2 - New Definitions
+Section 3 - New Definitions
 
 A Body Part is a kind of thing.
 
@@ -164,15 +172,14 @@ Instead of examining something:
 	now the noun is examined.
 
 
-Section 3 - Sun Chariot Travel
+Section 4 - Sun Chariot Travel
 
 Figure of chariot is the file "chariot.png".
 
-Understand "[number]" as selecting when player is on the sun chariot.
+Understand "[number]" as selecting when player is on the sun chariot. Selecting is an action applying to one number.
 
-Selecting is an action applying to one number.
-
-Check selecting: [assuming we don't want to be able to transport from just anywhere]
+[actually this probably is never checked due to the line above]
+Check selecting: 
 	if the player is not on the sun chariot:
 		say "You can travel there only with your sun chariot. Your darling dragons will feel neglected.";		
 		do nothing instead.
@@ -208,24 +215,26 @@ Heliopolis	Heliopolis-Marketplace
 Memphis	Memphis-Marketplace
 Oxyrhynchos	Oxyrhynchos-Marketplace
 Amarna	Outside the Walled Village
-Abydos	Gate to the Osireion
+Abydos	Entrance to the Osireion
 Thebes	Temple of Tawosret 
 Elephantine	Elephantine-Marketplace
 [Busiris	Busiris-Marketplace]
 
 Avaris, Busiris, Heliopolis, Memphis, Oxyrhynchos, Amarna, Abydos, Thebes, and Elephantine are regions. 
 
-The sun chariot is an enterable supporter. It is in the Gate to the Osireion.
+The sun chariot is an enterable supporter. It is in the Entrance to the Osireion.
 
 ["the location" refers to the current location of the player]
 Every turn:
 	if there is a home of the location in the Table of Transport Options and the sun chariot is not in the location:
-		move the sun chariot to the location;
-		say "Your sun chariot is parked at [the location], fiercely guarded by your pet dragons.".
+		move the sun chariot to the location.
 
 After entering the sun chariot:
 	say "As you step onto the chariot, your darling dragons hiss joyfully, happy to see you again. [run paragraph on]";
 	list the transport options.
+	
+Rule for writing a paragraph about the sun chariot:
+	say "Your sun chariot is parked here, fiercely guarded by your pet dragons."
 
 [temp room declarations]
 Avaris-Marketplace is a room in Avaris. "You have reached a part of the game that is still under development. Please check back soon! :)"
@@ -270,25 +279,45 @@ Check talking to head:
 
 Section 2 - Entering the Osireion
 
-The Gate to the Osireion is a room in Abydos."The doorway to the temple stands before you. It's an unassuming looking side door that seems to be lightly trafficked. There are no guards... [line break]You contemplate the ways that you can interact with the door. Can you ENTER the door or EXAMININE the door? If you ever feel confused, perhaps you should ask for some HELP."
+The Entrance to the Osireion is a room in Abydos. "You stand before the inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the doors are immaculate and fit into the style of the rest of the temple complex, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems pretty empty, with all the traffic going towards the main gates. Hopefully, no one will stop you from breaking in. [if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if][if unvisited]Perhaps you could take a closer look and EXAMINE the door? Or try to ENTER?  If you ever feel confused, you can also ask for some HELP."
+	
+[adjust the entrance so maybe the passage is below? aka brick shaft going down]
 
-The stone door is a locked closed door. It is scenery. The stone door is south of the gate and north of the descending passage. Include (- has animate -) when defining the door.
-The description of the stone door is "The heavy stone door is engraved with an ancient riddle: [line break] 'I am yesterday, veiled in shadows. [line break]  I am tomorrow, cloaked in flames. [line break]  A union of gods, a cycle complete.'[paragraph break]The door patiently awaits your ANSWER.";
+A room memory rule for the Descending Passage:
+	if the descending passage is not visited:
+		rule fails.
+
+The stone door is a locked closed door. It is scenery. The stone door is south of the Entrance to the Osireion and north of the Descending Passage. Include (- has animate -) when defining the door. 
+The description of the stone door is "The forbidding stone door is engraved with a riddle: [line break]    I am yesterday, veiled in shadows. [line break]    I am tomorrow, cloaked in flames. [line break]    A union of gods, a cycle complete.[paragraph break]The door patiently awaits your ANSWER."
+
+Instead of opening the locked stone door:
+	say "You pry at it with your fingers. It doesn't budge.";
+	
+Understand "unlock [the stone door]" as a mistake ("A little hard to unlock a door without a lock.").
 
 Instead of answering the door that something:
 	if the player's command includes "sun":
 		now the stone door is unlocked;
 		now the stone door is open;
+		now the stone door is unopenable;
 		say "As you speak the word 'sun,' the massive stone door grinds open, revealing a long narrow passage directly south of you.";
 	otherwise:
 		say "Nothing happens. Perhaps that is not the correct answer. You look up at the sky, hoping for some benevolent god to send you a hint.";
 
+The Descending Passage is a room in Abydos. It is south of the stone door. "The long narrow passage slopes gently downwards, its walls covered in texts from the Book of the Dead; among them are some negative confessions. (insert gag joke here)"
 
-The Descending Passage is a room in Abydos. It is south of the stone door. "A long descending passage. Down south is a great hall. North is the gate."
+[x wall]
+[add in - tall pottery stand, sculptor's trial pices, plaster casts]
 
 The Great Hall is a room in Abydos. It is south of the Descending Passage. "You can see a small chamber south of you. North is a long descending passage. East is a transverse chamber."
 
+[x wall]
+
 The South Chamber is a room in Abydos. It is south of the great hall. "You are now in the south chamber. North is the great hall. [line break]The small chamber contains some potentially useful items you can EXAMINE or TAKE..." 
+
+[x wall]
+[small squatting statuette]
+[hieratic ostraca]
 
 The sandstone walls are scenery in the South Chamber. The description of the sandstone walls is "Parts of the Book of the Dead is inscribed across these walls."
 
@@ -304,12 +333,22 @@ A wooden plank is in the South Chamber. The description of the wooden plank is "
 
 Some knick-knacks are in the South Chamber. The description of some knick-knacks is "You sift through the assorted items: a bead that may have been part of a necklace, a sliver of ivory that was used as a tool, and a draining liquid water clock."
 
-The First Transverse Chamber is a room in Abydos. It is east of the Great Hall. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from going through. You might be able to GO east if you had something that help you cross the water..." [on first entrance, mention the long passage way between the two as well]
+A Short Passage is a room in Abydos. It is east of the Great Hall.
 
+[x wall]
 
-The west moat is east of the First Transverse Chamber and west of the Central Nave. The west moat is an open unopenable door. ["A moat surrounds the entire central nave."]The description of the west moat is "Deep and murky." 
+The First Transverse Chamber is a room in Abydos. It is east of the short passage. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from going through. You might be able to GO east if you had something that help you cross the water..." 
+	
+[x wall]
 
-The east moat is west of the Tomb of Osiris and east of the Central Nave. The east moat is an open unopenable door. ["A moat surrounds the entire central nave."]The description of the east moat is "Deep and murky." 
+A moat is a kind of open unopenable door. A moat is scenery. The description of a moat is usually "Deep and murky."
+
+The west moat is a moat. It is east of the First Transverse Chamber and west of the Central Nave. 
+
+[somehow add info about the weird moat stuff]
+
+The east moat is a moat. It is west of the Tomb of Osiris and east of the Central Nave.
+	
 
 [one day the plank will have be placed down and picked up...but not for the demo! ]
 
@@ -327,12 +366,15 @@ Instead of going through the east moat:
     		say "You place the wood plank down, desperately hoping it'll bear your weight.";
 		continue the action;
 		
-The Central Nave is a room in Abydos. It is east of the west moat. "You stand in the middle of the columns lining the central nave and look around. Surrounding you are seventeen small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. [paragraph break] The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have only been a god. A low altar sits in front of it, its surface decorated with scarce items. "
-[only print the description of one moat when in central nave, currently it prints twice]
+The Central Nave is a room in Abydos. It is east of the west moat. "You stand in the middle of the columns lining the central nave and look around. Surrounding you are seventeen small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. [paragraph break]A moat surrounds the entire central nave, like the primeval waters around the first land. [paragraph break]The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have only been a god. A low altar sits in front of it, its surface decorated with scarce items. "
+	
+[x cells]
+[x stairs]
+[x pillars, x ceiling]
 
-The statue of Osiris is in the Central Nave. The description of the statue of Osiris is "Carved from greywacke, it exudes power and authority. Osiris sits on a throne in a mummified form wearing a close-fitting enveloping garment, a divine beard attached to his chin, and the Atef crown flanked by two ostrich feathers, adorned with the uraeus cobra. He holds the royal crook and flail with his arms crossed on his chest. The base of the statue is inscribed with an offering prayer, while the back pillar of the statue is not inscribed. He sure looks put together -- such a shame he's all chopped up now."
+The statue of Osiris is in the Central Nave. It is scenery. The description of the statue of Osiris is "Carved from greywacke, it exudes power and authority. Osiris sits on a throne in a mummified form wearing a close-fitting enveloping garment, a divine beard attached to his chin, and the Atef crown flanked by two ostrich feathers, adorned with the uraeus cobra. He holds the royal crook and flail with his arms crossed on his chest. The base of the statue is inscribed with an offering prayer, while the back pillar of the statue is not inscribed. He sure looks put together -- such a shame he's all chopped up now."
 
-The altar is in the Central Nave. The description of the altar is "The altar is a simple stone slab, weathered and chipped at the edges but still retaining an air of solemnity. On its surface are the remains of some incense."
+The altar is in the Central Nave. It is scenery. The description of the altar is "The altar is a simple stone slab, weathered and chipped at the edges but still retaining an air of solemnity. On its surface are the remains of some incense."
 
 Before going when the location is the Central Nave:
 	if the noun is east or the noun is west:
@@ -341,6 +383,8 @@ Before going when the location is the Central Nave:
 		say "With the moat surrounding the central nave, it's a struggle to go anywhere." instead.
 
 The Tomb of Osiris is a room in Abydos. It is east of the east moat. "The roof and walls has depictions of Nut and Geb. At the center of the room is a sarcophagus, its wooden frame lavishly painted in the style of the New Kingdom. It is wrapped in an almost absurd number of golden chains, as if to guard against any attempt to disturb its occupant. You feel that there is something--or someone--important inside..."
+
+[x wall, x ceiling]
 
 The painted roof is scenery in the Tomb of Osiris. The description of the painted roof is "The depiction of Nut, her star-strewn body stretching across the heavens, is both graceful and imposing. Beneath her, Geb lies in repose, his green-toned skin symbolizing fertility and life. The colors have dulled over time, but the craftsmanship is evident."
 
@@ -351,7 +395,7 @@ The sarcophagus is a closed container. It is locked. It is in the Tomb of Osiris
 Instead of unlocking the sarcophagus with the faience ankh:
 	now the sarcophagus is unlocked;
 	now the sarcophagus is open;
-	say "You unlock the sarcophagus. The head of Osiris is inside! You should TAKE it.".
+	say "You unlock the sarcophagus. The head of Osiris is inside!".
 	
 Test open-unlock with "look / unlock sarcophagus with ankh" in Tomb of Osiris holding faience ankh.
 
@@ -395,8 +439,6 @@ Chapter 2 - Amarna-Brain
 
 Brain Acquisition is a scene. Brain Acquisition begins when Talking Osiris Agenda begins. Brain Acquisition ends when Osiris' brain is acquired.
 
-[Discovery is a scene. Discovery begins when player is in Workmen's Village for the first time. Discovery ends when the workman is curious. ]
-
 Discovery is a scene. Discovery begins when Brain Acquisition begins. Discovery ends when the workman is curious. 
 
 Get Body Bag is a scene. Get Body Bag begins when Discovery ends. Get Body Bag ends when the body bag is acquired.
@@ -419,7 +461,10 @@ Check inserting something into the body bag:
 	if the noun is not a body part:
 		say "The body bag isn't for this. If you put something unrelated, it would just be a bag!" instead.
 
-A workman is a person. The workman is in the Workmen's Village. The workman carries a body bag. The workman can be curious or uncurious. The workman is uncurious.
+A workman is a person. The workman carries a body bag. The workman can be curious or uncurious. The workman is uncurious. The description of the workman is "A middle aged man, probably with degenerative joint disease."
+
+When Brain Acquisition begins:
+	now the workman is in the Workmen's Village.
 
 Instead of talking to the workman during Discovery:
 	say "'Hey, you.' you called to the workman.  [paragraph break]";
@@ -440,7 +485,7 @@ Instead of talking to the workman at least four times during Get Body Bag:
 Instead of showing the head to the uncurious workman during Discovery:
 	say "Flashing a decapitated head to someone you've never talked to before could be overkill. Try striking a conversation first."
 		
-Instead of showing the head to the curious workman:
+Instead of showing the head to the curious workman during Discovery:
 	say "You carefully take the head from under your shirt and show it to the workman. 'Do you have anything to go along with this?' you ask.[paragraph break]";
 	wait for any key;
 	say "The workman eyes you warily. 'You collect heads, huh? I knew a guy like that once. There's a reason we put up walls around here, you know... If you want heads, that old Aten cult temple's the place to check. Or what remains of it, at least.'  [paragraph break]"; 
@@ -488,11 +533,14 @@ After going to Outside the Walled Village:
 	continue the action.
 
 Instead of going to the Small Aten Temple when the player is on the oxcart:
-	say "You can hardly ride an oxcart into the temple!"
+	say "You can hardly ride an oxcart into the temple (even a demolished one)! Better not piss off the Egyptian gods as well."
+	
+Instead of going to the Workmen's Village when the player is on the oxcart:
+	say "The security at the entrance stops you. No animal-drawn vehicles in the village!"
 
 The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "The traces of this Aten Temple still hint at its former grandeur. It once comprised three courts—the first, the second, and the sanctuary. Now you stand in what used to be the sanctuary court, its original form long since demolished. A partially reconstructed sanctuary is to your north. It is still impressive despite representing only a fraction of its former splendor."
 
-The Sanctuary is a room in Amarna. It is north of the Small Aten Temple. "Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor Aten, the sun disk. Around the perimeter of the sanctuary are low, carved altars, decorated with offerings and incense. In the center of the sanctuary, a shrine depicting Aten shines in its golden splendor."
+The Sanctuary is a room in Amarna. It is inside of the Small Aten Temple. "Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor Aten, the sun disk. Around the perimeter of the sanctuary are low, carved altars, decorated with offerings and incense. In the center of the sanctuary, a shrine depicting Aten shines in its golden splendor."
 
 The carved altars are scenery in the Sanctuary. "The low altars are made of sandstone, each inscribed with dedications to Aten."
 
@@ -508,7 +556,7 @@ Instead of examining the shrine:
 	say "You hear an odd rumbling noise. There was a hidden staircase! You can go down to see what's there.";
 	continue the action.
 
-Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. There are three strange statues, and murals with eerily etched toes line all four walls. The ceiling depicts an intricate scene. [paragraph break] What odd surroundings. Perhaps you should take a closer look and EXAMINE some things. The chapel is completely empty, so there's also no harm in TOUCHing something--in fact, that might help you figure things out."
+Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. There are three strange statues, and murals with eerily etched toes line all four walls. The ceiling depicts an intricate scene. [if unvisited][paragraph break]What odd surroundings. Perhaps you should take a closer look and EXAMINE some things. The chapel is completely empty, so there's also no harm in TOUCHing something--in fact, that might help you figure things out."
 
 
 Section 4 - At the Small Aten Temple
@@ -529,8 +577,8 @@ The second statue is scenery in the Underground Chapel. The description is "A st
 
 The third statue is scenery in the Underground Chapel. The description is "A statue of a man with a giant lotus sprouting out the top of his head. That looks painful."
 
-[Every turn:
-	showme the contents of Table of Current Sequence.]
+After examining something in the Underground Chapel for more than 3 times during Exploration:
+	say "[the noun] reveals nothing new to you. Maybe it's time to try touching things?"
 
 Instead of touching something in the Underground Chapel:
 	choose row 1 in the Table of Current Sequence;
@@ -631,10 +679,10 @@ Every turn during Next Instructions:
 		say "...[paragraph break]";
 		wait for any key; 
 		say "One of your potential escape plans -- not that you had the opportunity to go through with it -- was to flee from Corinth to Thebes. But you never had the chance to execute this plan. Perhaps this is a sign.";
-		now the workman is uncurious. [therefore next instructions end]
+		now the workman is uncurious. [next instructions end]
+
 
 [workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greece i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
-
 [Instead of selecting when Next Instructions has happened and Heal Heracles has not happened:
 	if the number understood is not seven: [the number for thebes]
 		say "You want to go to Thebes instead. You're near-certain the workman mentioned a different 'Thebes,' but the shared name intrigues you.";
@@ -649,7 +697,7 @@ Heart Acquisition is a scene. Heart Acquisition begins when Brain Acquisition en
 
 Heal Heracles is a scene. Heal Heracles begins when Brain Acquisition ends. Heal Heracles ends when Heracles is healthy. 
 
-Buddy Heracles is a scene. Buddy Heracles begins when Heal Heracles ends. Buddy Heracles ends when the location of the player is not in Busiris.
+Buddy Heracles is a scene. Buddy Heracles begins when Heal Heracles ends. Buddy Heracles ends when the location of the player is not in Busiris and Osiris' liver is acquired.
 
 Every turn during Buddy Heracles:
 	if the location of Heracles is not the location of the player:
@@ -1132,9 +1180,9 @@ To start the sacrifice:
 	wait for any key;
 	say "You're used to handling all schemes yourself. But you might need to rely on Heracles here...maybe you can whisper instructions to him while Busiris continues rambling.[paragraph break] ";
 	wait for any key;
+	
 Rule for listing exits when the location is Central Court during Ritual Sacrifice: 
 	do nothing.
-
 
 Instead of talking to Heracles during Ritual Sacrifice:
 	say "'Psst! Heracles!' you whisper. [paragraph break]";
