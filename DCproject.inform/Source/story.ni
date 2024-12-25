@@ -280,14 +280,12 @@ Check talking to head:
 Section 2 - Entering the Osireion
 
 The Entrance to the Osireion is a room in Abydos. "You stand before the inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the doors are immaculate and fit into the style of the rest of the temple complex, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems pretty empty, with all the traffic going towards the main gates. Hopefully, no one will stop you from breaking in. [if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if][if unvisited]Perhaps you could take a closer look and EXAMINE the door? Or try to ENTER?  If you ever feel confused, you can also ask for some HELP."
-	
-[adjust the entrance so maybe the passage is below? aka brick shaft going down]
 
-A room memory rule for the Descending Passage:
-	if the descending passage is not visited:
+A room memory rule for the North Passage:
+	if the north passage is not visited:
 		rule fails.
 
-The stone door is a locked closed door. It is scenery. The stone door is south of the Entrance to the Osireion and north of the Descending Passage. Include (- has animate -) when defining the door. 
+The stone door is a locked closed door. It is scenery. The stone door is south of the Entrance to the Osireion and north of the North Passage. Include (- has animate -) when defining the door. 
 The description of the stone door is "The forbidding stone door is engraved with a riddle: [line break]    I am yesterday, veiled in shadows. [line break]    I am tomorrow, cloaked in flames. [line break]    A union of gods, a cycle complete.[paragraph break]The door patiently awaits your ANSWER."
 
 Instead of opening the locked stone door:
@@ -304,12 +302,12 @@ Instead of answering the door that something:
 	otherwise:
 		say "Nothing happens. Perhaps that is not the correct answer. You look up at the sky, hoping for some benevolent god to send you a hint.";
 
-The Descending Passage is a room in Abydos. It is south of the stone door. "The long narrow passage slopes gently downwards, its walls covered in texts from the Book of the Dead; among them are some negative confessions. (insert gag joke here)"
+The North Passage is a room in Abydos. It is south of the stone door. "The long narrow passage slopes gently downwards, its walls covered in texts from the Book of the Dead; among them are some negative confessions. (insert gag joke here)"
 
 [x wall]
 [add in - tall pottery stand, sculptor's trial pices, plaster casts]
 
-The Great Hall is a room in Abydos. It is south of the Descending Passage. "You can see a small chamber south of you. North is a long descending passage. East is a transverse chamber."
+The Great Hall is a room in Abydos. It is south of the North Passage. "You can see a small chamber south of you. North is a long descending passage. East is a transverse chamber."
 
 [x wall]
 
@@ -323,8 +321,6 @@ The sandstone walls are scenery in the South Chamber. The description of the san
 
 The faience ankh is in the South Chamber. The description of the faience ankh is "A delicate yet sturdy ankh, the symbol of life, carved from faience. " 
 
-A bundle of dried thyme is in the South Chamber. The description of the bundle of dried thyme is "A bundle of dried thyme is tied together with simple strands of twine. It is so old and decrepit you could barely smell it."
-
 An ostracon is scenery in the South Chamber. The description of the ostracon is "A shard of pottery is stained with hastily written hieratic."
 
 Some pottery jars are in the South Chamber. The description of the pottery jars is " Several small jars of varying shapes and sizes rest against the wall. Their surfaces are worn. Traces of paint suggesting they once bore vibrant designs. Among them, you see a broken jar with unguents and another fallen to the floor, with dried red stains around the rim."
@@ -333,11 +329,11 @@ A wooden plank is in the South Chamber. The description of the wooden plank is "
 
 Some knick-knacks are in the South Chamber. The description of some knick-knacks is "You sift through the assorted items: a bead that may have been part of a necklace, a sliver of ivory that was used as a tool, and a draining liquid water clock."
 
-A Short Passage is a room in Abydos. It is east of the Great Hall.
+The Sloped Passage is a room in Abydos. It is east of the Great Hall.
 
 [x wall]
 
-The First Transverse Chamber is a room in Abydos. It is east of the short passage. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from going through. You might be able to GO east if you had something that help you cross the water..." 
+The First Transverse Chamber is a room in Abydos. It is east of the Sloped Passage. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from going through. You might be able to GO east if you had something that help you cross the water..." 
 	
 [x wall]
 
@@ -368,13 +364,15 @@ Instead of going through the east moat:
 		
 The Central Nave is a room in Abydos. It is east of the west moat. "You stand in the middle of the columns lining the central nave and look around. Surrounding you are seventeen small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. [paragraph break]A moat surrounds the entire central nave, like the primeval waters around the first land. [paragraph break]The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have only been a god. A low altar sits in front of it, its surface decorated with scarce items. "
 	
-[x cells]
-[x stairs]
+[x cells - wooden doors closed until ritual time at reunification] 
+[x stairs - leading into the water]
 [x pillars, x ceiling]
 
 The statue of Osiris is in the Central Nave. It is scenery. The description of the statue of Osiris is "Carved from greywacke, it exudes power and authority. Osiris sits on a throne in a mummified form wearing a close-fitting enveloping garment, a divine beard attached to his chin, and the Atef crown flanked by two ostrich feathers, adorned with the uraeus cobra. He holds the royal crook and flail with his arms crossed on his chest. The base of the statue is inscribed with an offering prayer, while the back pillar of the statue is not inscribed. He sure looks put together -- such a shame he's all chopped up now."
 
 The altar is in the Central Nave. It is scenery. The description of the altar is "The altar is a simple stone slab, weathered and chipped at the edges but still retaining an air of solemnity. On its surface are the remains of some incense."
+
+[not an altar, but two statues, one sitting, and an empty bier on the longer divot (for future osiris pieces to go on)]
 
 Before going when the location is the Central Nave:
 	if the noun is east or the noun is west:
@@ -865,6 +863,7 @@ Instead of putting the prepared medicine on Heracles:
 Understand "I have indeed applied something to all his sore spots" as chanting. Chanting is an action applying to nothing.
 
 [prevent chanting from randomly being performed in the future]
+[ensure that heracles is visible when this happens]
 Instead of chanting:
 	say "You speak the spell.[paragraph break]";
 	wait for any key;
@@ -929,6 +928,7 @@ yappery
 "'I just have to ask,' Heracles loudly says. 'What made you do it?' [paragraph break]You give no reply."
 "Heracles groans, clutching his temples. 'All this talk of gods and brothers and chopping...Egypt is so strange! I'd rather wrestle another lion!![line break]His loud voice draws a few curious eyes..." 
 
+[make him not talk on the first turn]
 Every turn during Organ Acquisition:
 	if the Table of Countdown is not empty:
 		choose a random row in Table of Heracles' Yapping;
@@ -973,8 +973,11 @@ When the Kidnapping begins:
 	say "With that, he leaves you two alone. But before you can give Heracles a piece of your mind, he says something. [paragraph break]";
 	wait for any key;
 	say "'Umm..Medea...the gaps of the bars are pretty wide! I think we can slip through them!' [paragraph break]";
+	wait for any key;
 	now the player is in the Jail Cell;
 	now Heracles is in the Jail Cell.
+
+[change it so you have to talk to heracles to leave the jail cell the first time]
 
 
 Section 1 - Escape Management
@@ -1007,6 +1010,8 @@ When Escape ends:
 	now the player is in the jail Cell.
 	
 Every turn during Escape:
+	if Osiris' liver is acquired and the location is not Crypt of Osiris:
+		now Heracles is caught;
 	if the location is Central Court:
 		if a random chance of 1 in 2 succeeds:
 			now Heracles is caught;			
@@ -1088,7 +1093,7 @@ Cult Rooms is a room in Busiris. It is west of Central Court. "Flickering torchl
 
 Repository is a room in Busiris. It is north of Cult Rooms. "Rows of dusty shelves crammed with scrolls, clay tablets, and magical texts."
 
-Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of Crypt of Osiris is nothing. "Cloaked in a heavy silence, this chamber radiates an eerie chill. Wait...is that?"
+The Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of Crypt of Osiris is nothing. "Cloaked in a heavy silence, this chamber radiates an eerie chill. Wait...is that?"
 
 The hidden entrance is a secret door. The hidden entrance is east of Hallway. "A faint outline on the stone wall indicates a hidden door!"
 
@@ -1157,21 +1162,22 @@ Instead of going during Ritual Sacrifice:
 
 Every turn during Ritual Sacrifice:
 	If the location is the Jail Cell:
-		say "'The ritual is ready. We will finally deal with you errant prisoners! Our gods will certainly be pleased with this sacrifice,' a guard jeers.[paragraph break]";
-		wait for any key;
-		say "Now to the central court![paragraph break]";
-		wait for any key;
-		now the player is in the Central Court;
-		now Heracles is in the Central Court;
-		say "Without further ado, you and Heracles are dragged to the central court, kicking and screaming.[paragraph break]";
-		wait for any key;
-		say "You can see that preparations for the sacrifice has been complete. A massive stone altar stands at the center, surrounded by flickering torches and gleeful guards.[paragraph break]";
-		wait for any key;
-		wait for any key;
-		say "And standing in front of the altar is Busiris, with a sinister smile on his face.";
 		start the sacrifice;
 	
 To start the sacrifice:
+	say "'The ritual is ready. We will finally deal with you errant prisoners! Our gods will certainly be pleased with this sacrifice,' a guard jeers.[paragraph break]";
+	wait for any key;
+	say "Now to the central court![paragraph break]";
+	wait for any key;
+	now the player is in the Central Court;
+	now Heracles is in the Central Court;
+	say "Without further ado, you and Heracles are dragged to the central court, kicking and screaming.[paragraph break]";
+	wait for any key;
+	say "You can see that preparations for the sacrifice has been complete. A massive stone altar stands at the center, surrounded by flickering torches and gleeful guards.[paragraph break]";
+	wait for any key;
+	now King Busiris is in the Central Court;
+	wait for any key;		
+	say "And standing in front of the altar is Busiris, with a sinister smile on his face. [paragraph break]";
 	say "Busiris steps onto a raised dais in the center of the central court. [paragraph break] 'Fools! he booms, his voice echoing off the high stone walls. 'You stand accused by the gods themselves! Fear not--your foreign blood will be a worthy sacrifice!' He throws his head back and cackles with mad delight.[paragraph break]";
 	wait for any key;
 	say "Around you, a circle of guards brandish their weapon--no easy escape.[paragraph break] ";
@@ -1184,7 +1190,11 @@ To start the sacrifice:
 Rule for listing exits when the location is Central Court during Ritual Sacrifice: 
 	do nothing.
 
-Instead of talking to Heracles during Ritual Sacrifice:
+[fix talking to problem - ensure player is in central court when this happens - should be ok, double check]
+Instead of talking to Heracles in the presence of King Busiris during Ritual Sacrifice:
+	end the sacrifice.
+	
+To end the sacrifice:
 	say "'Psst! Heracles!' you whisper. [paragraph break]";
 	wait for any key;
 	say "Heracles turns to you with a terrible dread on his face. 'Medea, I fear this is where my story ends.' [paragraph break]";
@@ -1195,9 +1205,6 @@ Instead of talking to Heracles during Ritual Sacrifice:
 	wait for any key;
 	say "You know. [paragraph break]";
 	wait for any key;
-	end the sacrifice.
-	
-To end the sacrifice:
 	say "When you give him the cue, Heracles springs forward with a mighty roar. Busiris turns, but it's too late. The tyrant crumples to the ground, his final scream lost in the sound of the sudden uproar.[paragraph break]";
 	wait for any key;
 	say "Perfect. Why dirty your hands when someone can do it for you? [paragraph break]";
@@ -1205,9 +1212,10 @@ To end the sacrifice:
 	now King Busiris is dead;
 	say "The court descends into total chaos, and the guards are rushing about in confusion. Now is a good time to find your way out! Try looking for a palace exit!";
 	now palace exit is revealed;
-	now palace exit is open.
+	now palace exit is open;
+	wait for any key;
 
-Before going through palace exit:
+Instead of going through palace exit:
 	now the player is in The Temple of Tawosret;
 	now Heracles is in the Temple of Tawosret;
 	wait for any key;
