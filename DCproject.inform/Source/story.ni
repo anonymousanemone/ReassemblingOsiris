@@ -222,7 +222,7 @@ Elephantine	Elephantine-Marketplace
 
 Avaris, Busiris, Heliopolis, Memphis, Oxyrhynchos, Amarna, Abydos, Thebes, and Elephantine are regions. 
 
-The sun chariot is an enterable supporter. It is in the Entrance to the Osireion.
+The sun chariot is an enterable supporter. It is scenery. The sun chariot is in the Entrance to the Osireion. The description of the sun chariot is "Your sun chariot is parked, fiercely guarded by your pet dragons."
 
 ["the location" refers to the current location of the player]
 Every turn:
@@ -233,8 +233,8 @@ After entering the sun chariot:
 	say "As you step onto the chariot, your darling dragons hiss joyfully, happy to see you again. [run paragraph on]";
 	list the transport options.
 	
-Rule for writing a paragraph about the sun chariot:
-	say "Your sun chariot is parked here, fiercely guarded by your pet dragons."
+[Rule for writing a paragraph about the sun chariot:
+	say "Your sun chariot is parked here, fiercely guarded by your pet dragons."]
 
 [temp room declarations]
 Avaris-Marketplace is a room in Avaris. "You have reached a part of the game that is still under development. Please check back soon! :)"
@@ -256,7 +256,7 @@ Chapter 1 - Abydos-Head
 Instead of entering the chariot during Head Acquisition:
 	say "You've been sent to Abydos for a reason. Maybe try exploring here first."
 
-Section 1 - Head capabilities
+Section 1 - Definitions
 
 Table of Osiris' unrelated knowledge
 comment
@@ -277,16 +277,24 @@ Check talking to head:
 	otherwise:
 		do nothing.
 
+A wall is a kind of thing. A wall is scenery. 
+
+Instead of taking a scenery wall, say "You're not the British Museum. You can't do that."
+
+
+
 Section 2 - Entering the Osireion
 
-The Entrance to the Osireion is a room in Abydos. "You stand before the inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the doors are immaculate and fit into the style of the rest of the temple complex, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems pretty empty, with all the traffic going towards the main gates. Hopefully, no one will stop you from breaking in. [if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if][if unvisited]Perhaps you could take a closer look and EXAMINE the door? Or try to ENTER?  If you ever feel confused, you can also ask for some HELP."
+The Entrance to the Osireion is a room in Abydos. "You stand before the inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the doors are immaculate and fit into the style of the rest of the temple complex, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems pretty empty, with all the traffic going towards the main gates. Hopefully, no one will stop you from breaking in. [if the sun chariot is in the location]Your sun chariot is parked nearby.[end if]
+	[if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if]
+	[if Osiris' head is unacquired][paragraph break][bold type](Beginner's Guide)[roman type] You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER? If you ever feel confused, you can also ask for some HELP."
 
 A room memory rule for the North Passage:
 	if the north passage is not visited:
 		rule fails.
 
 The stone door is a locked closed door. It is scenery. The stone door is south of the Entrance to the Osireion and north of the North Passage. Include (- has animate -) when defining the door. 
-The description of the stone door is "The forbidding stone door is engraved with a riddle: [line break]    I am yesterday, veiled in shadows. [line break]    I am tomorrow, cloaked in flames. [line break]    A union of gods, a cycle complete.[paragraph break]The door patiently awaits your ANSWER."
+The description of the stone door is "The forbidding stone door is engraved with a riddle: [line break]    I am yesterday, veiled in shadows. [line break]    I am tomorrow, cloaked in flames. [line break]    A union of gods, a cycle complete.[if Osiris' head is unacquired][paragraph break][bold type](Beginner's Guide)[roman type]You can SAY your answer TO the door."
 
 Instead of opening the locked stone door:
 	say "You pry at it with your fingers. It doesn't budge.";
@@ -302,30 +310,49 @@ Instead of answering the door that something:
 	otherwise:
 		say "Nothing happens. Perhaps that is not the correct answer. You look up at the sky, hoping for some benevolent god to send you a hint.";
 
-The North Passage is a room in Abydos. It is south of the stone door. "The long narrow passage slopes gently downwards, its walls covered in texts from the Book of the Dead; among them are some negative confessions. (insert gag joke here)"
+The North Passage is a room in Abydos. It is south of the stone door. "The long narrow passage slopes gently downwards. The northern section of the passage is arched and lined with brick. The southern section is stone clad, and its walls are sculpted and painted with scenes from the 'Book of the Gates'. A pitched roof tops this part of the passage. 
+[paragraph break]On the floor, you can see a few miscellaneous items scattered on the floor:[if the ostracon is in the location] a hieratic ostracon,[end if] a tall pottery stand, some trial pieces of a sculptor, and a few plaster casts.
+[paragraph break][bold type](Beginner's Guide)[roman type] Always EXAMINE everything around you! You can try to EXAMINE the walls and the things on the floor. You can also TAKE things. When you are disorientated, feel free to take another LOOK at the room. "
 
-[x wall]
-[add in - tall pottery stand, sculptor's trial pices, plaster casts]
+Rule for listing nondescript items of the North Passage:
+	do nothing.
 
-The Great Hall is a room in Abydos. It is south of the North Passage. "You can see a small chamber south of you. North is a long descending passage. East is a transverse chamber."
+A hieratic ostracon is a thing in the North Passage. The description of the ostracon is "A shard of pottery is stained with hastily written hieratic, seemingly from when the complex was under construction. It reads: 'Fourth month of prt Day 22, Amount of work done by the Gang of the Left. What it dragged from the Quay of the Fortressof Menmaatre to the south of Menmaatre is Beneficial to Osiris...'"	
 
-[x wall]
+The walls of the north passage is a wall in the North Passage. The description is "A representation of the fore Osiris and Nut, who are merely subordinate sunrise, is painted on the East wall. Sculpted on the West wall is the sunset. "
+
+Understand "wall" as the walls of the north passage.
+
+A tall pottery stand is a thing in the North Passage. The description is "An unassuming pottery stand, its form typical of the 19th dynasty."
+
+Instead of taking the tall pottery stand, say "It's awfully burdening to carry around for as little use as it is to you."
+
+A sculptor's trial pieces is a thing in the North Passage. The description is "Two sculpted trial pieces probably from the same school. The first piece is an attempt at the neb sign. Above is the master's hand as an example, and below are the student's attempts 'in every degree of badness'. The other piece shows a scene of the worship of Osiris. It is unfinished, only one figure having been sculpted, the rest being merely sketched out in black ink."
+
+Instead of taking trial pieces, say "You distastefully look at the amateur scribbles. Bleh."
+	
+Plaster casts are a thing in the North Passage. The description is "Casts of eyes of statues and of details of decorations, probably from the temple of Ramesses."
+
+Instead of taking plaster casts, say "Ooh, fun little figures! If only you cared."
+
+The Great Hall is a room in Abydos. It is south of the North Passage. "The Great Hall widens from the Northern Passage into a long rectangular room. The floor, similar to that of the South Chamber and the passages, is paved with sandstone. The roofing stones stretched the whole width of the hall, without any pillars or other support. "
+
+The walls of the great hall is a wall in the Great Hall. "The North and South Walls are covered with inscriptions. The West Wall is divided into three parts vertically; the portion to the left hand is filled with a colossal scene of the Vivification of Osiris; the middle portion contains part of the Chapter of knowing the Names of Osiris; the right hand portion is occupied with the figure of King Merenptah standing before a heaped-up table of offerings, and making an offering of incense. The wall has a frieze of the kheker ornament painted in yellow, blue, green, and black."
+	
+Understand "wall" as the walls of the great hall.
 
 The South Chamber is a room in Abydos. It is south of the great hall. "You are now in the south chamber. North is the great hall. [line break]The small chamber contains some potentially useful items you can EXAMINE or TAKE..." 
 
 [x wall]
 [small squatting statuette]
-[hieratic ostraca]
 
-The sandstone walls are scenery in the South Chamber. The description of the sandstone walls is "Parts of the Book of the Dead is inscribed across these walls."
+The walls of the south chamber is a wall in the South Chamber. The description is "Parts of the Book of the Dead is inscribed across these walls."
 
 The faience ankh is in the South Chamber. The description of the faience ankh is "A delicate yet sturdy ankh, the symbol of life, carved from faience. " 
 
-An ostracon is scenery in the South Chamber. The description of the ostracon is "A shard of pottery is stained with hastily written hieratic."
-
 Some pottery jars are in the South Chamber. The description of the pottery jars is " Several small jars of varying shapes and sizes rest against the wall. Their surfaces are worn. Traces of paint suggesting they once bore vibrant designs. Among them, you see a broken jar with unguents and another fallen to the floor, with dried red stains around the rim."
 
-A wooden plank is in the South Chamber. The description of the wooden plank is "A short, splintered plank of cedar wood lies on the floor."
+A wooden plank is in the South Chamber. The description of the wooden plank is "A short, splintered plank of cedar wood."
 
 Some knick-knacks are in the South Chamber. The description of some knick-knacks is "You sift through the assorted items: a bead that may have been part of a necklace, a sliver of ivory that was used as a tool, and a draining liquid water clock."
 
@@ -341,7 +368,7 @@ A moat is a kind of open unopenable door. A moat is scenery. The description of 
 
 The west moat is a moat. It is east of the First Transverse Chamber and west of the Central Nave. 
 
-[somehow add info about the weird moat stuff]
+[somehow add info about the weird moat stuff, also mention Strabo]
 
 The east moat is a moat. It is west of the Tomb of Osiris and east of the Central Nave.
 	
@@ -362,15 +389,15 @@ Instead of going through the east moat:
     		say "You place the wood plank down, desperately hoping it'll bear your weight.";
 		continue the action;
 		
-The Central Nave is a room in Abydos. It is east of the west moat. "You stand in the middle of the columns lining the central nave and look around. Surrounding you are seventeen small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. The doorway back to the first transverse chamber is to your west. [paragraph break]A moat surrounds the entire central nave, like the primeval waters around the first land. [paragraph break]The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have only been a god. A low altar sits in front of it, its surface decorated with scarce items. "
+The Central Nave is a room in Abydos. It is east of the west moat. "You stand in the middle of the columns lining the central nave and look around. Surrounding you are seventeen small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. [paragraph break]A moat surrounds the entire central nave, like the primeval waters around the first land. [paragraph break]The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have only been a god. A low altar sits in front of it, its surface decorated with scarce items. "
 	
 [x cells - wooden doors closed until ritual time at reunification] 
 [x stairs - leading into the water]
 [x pillars, x ceiling]
 
-The statue of Osiris is in the Central Nave. It is scenery. The description of the statue of Osiris is "Carved from greywacke, it exudes power and authority. Osiris sits on a throne in a mummified form wearing a close-fitting enveloping garment, a divine beard attached to his chin, and the Atef crown flanked by two ostrich feathers, adorned with the uraeus cobra. He holds the royal crook and flail with his arms crossed on his chest. The base of the statue is inscribed with an offering prayer, while the back pillar of the statue is not inscribed. He sure looks put together -- such a shame he's all chopped up now."
+The statue of Osiris is in the Central Nave. It is scenery. The description of the statue of Osiris is "A large statue of Osiris ias seated at the top of a staircase. The enthroned Osiris faces towards the sarcophagus chamber, just as Osiris faces inward with his back to the entrance of the Osireion in the Book of Gates. He holds a crook and the ankh sign, signifying that he rules over his domain, the duat, and is the possessor of life. He sure looks put together -- such a shame he's all chopped up now."
 
-The altar is in the Central Nave. It is scenery. The description of the altar is "The altar is a simple stone slab, weathered and chipped at the edges but still retaining an air of solemnity. On its surface are the remains of some incense."
+The funerary bier is a supporter in the Central Nave. The description of the bier is "mmn"
 
 [not an altar, but two statues, one sitting, and an empty bier on the longer divot (for future osiris pieces to go on)]
 
@@ -400,7 +427,8 @@ Test open-unlock with "look / unlock sarcophagus with ankh" in Tomb of Osiris ho
 Osiris' head is a body part. It is in the sarcophagus. Osiris' head can be taken. Understand "Osiris" as Osiris' head. Include (- has animate -) when defining Osiris' head. Osiris' head can be smart or dumb. Osiris' head is dumb. The description of Osiris' head is "Osiris, in all his glorious, head-only form."
 
 Test Abydos with "e" in the First Transverse Chamber holding the wooden plank and faience ankh.
-	
+
+		
 
 Part 4 - Talking Osiris Agenda
 [this entire part must be completed in order]
