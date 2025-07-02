@@ -5,126 +5,149 @@ Include Rideable Vehicles by Graham Nelson.
 Include Secret Doors by Gavin Lambert.
 Include Basic Help Menu by Emily Short.
 Include Exit Lister by Gavin Lambert.
+Include Vorple by Juhana Leinonen.
+Include Vorple Command Prompt Control by Juhana Leinonen.
+Include Vorple Hyperlinks by Juhana Leinonen.
+Include Vorple Modal Windows by Juhana Leinonen.
+Include Vorple Multimedia by Juhana Leinonen.
+Include Vorple Screen Effects by Juhana Leinonen.
+Include Vorple Status Line by Juhana Leinonen.
+Include Vorple Tooltips by Juhana Leinonen.
 
-Release along with an interpreter.
+Release along with the "Vorple" interpreter.
+Release along with the style sheet "customStyle.css".
+Release along with a file of "bg1" called "chariot.png".
+Release along with a “Custom” website.
+
+Hint is a Vorple style.
+
+
+Release along with cover art ("Vase painting of Medea on her chariot").
 
 [Section 1 - Story Transcript - For release only
 
 When play begins: 
 	try switching the story transcript on;]
 
-Part 1 - Prologue - For release only
-	
+Part 1 - Prologue - for release only
+
 After printing the banner text:	
-	say "[line break]'It’s a complete disaster!'[line break][line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break]";
+	say "[line break]'It’s a complete disaster!'[line break][line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break][line break]";
 	wait for any key;
-	say "[line break]'I’ve pleaded and pleaded, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris herself!'[line break]";
+	say "I’ve pleaded and pleaded, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris herself!'[line break][line break]";
     	wait for any key;
-    	say "[line break]'I had thought,' an especially haggard-looking Anubis replied, 'that we agreed Isis would be no help. Have our previous Emergency Meetings taught you nothing? I am starting to hear whispers--mere whispers, mind you, but whispers nonetheless--about a certain Serapis. Serapis! If Osiris falls, Kemet will fall alongside him. Amun, you must do something!'[line break]";
+    	say "'I had thought,' an especially haggard-looking Anubis replied, 'that we agreed Isis would be no help. Have our previous Emergency Meetings taught you nothing? I am starting to hear whispers--mere whispers, mind you, but whispers nonetheless--about a certain Serapis. Serapis! If Osiris falls, Kemet will fall alongside him. Amun, you must do something!'[line break][line break]";
     	wait for any key;
-	say "[line break]Amun ignored the whining. There was a more important question to ask: 'Maʽat, what have you heard from Thoth?'[line break]";
+	say "Amun ignored the whining. There was a more important question to ask: 'Maʽat, what have you heard from Thoth?'[line break][line break]";
 	wait for any key;
-	say "[line break]Maʽat looked rather unhappy to be the bearer of bad news. 'He’s tried every spell he knows--to no effect. He’s sequestered himself in the library, but…'[line break][line break]";
+	say "Maʽat looked rather unhappy to be the bearer of bad news. 'He’s tried every spell he knows--to no effect. He’s sequestered himself in the library, but…'[line break][line break]";
 	wait for any key;
-	say "Ma'at seemed to have little faith that Thoth would succeed in his efforts.[line break]";
+	say "Ma'at seemed to have little faith that Thoth would succeed in his efforts.[line break][line break]";
     	wait for any key;
-    	say "[line break]'More than that'--and her expression became grave--'Chaos is running rampant. I fear that if we do not take action soon, an irreversible disorder will conquer us all.'[line break]";
+    	say "'More than that'--and her expression became grave--'Chaos is running rampant. I fear that if we do not take action soon, an irreversible disorder will conquer us all.'[line break][line break]";
     	wait for any key;
-    	say "[line break]Indeed, this was a complete disaster. 'And what of Ptah?' Amun asked.[line break]";
+    	say "Indeed, this was a complete disaster. 'And what of Ptah?' Amun asked.[line break][line break]";
 	wait for any key;
-    	say "[line break]Silence rang in the room. [line break]";
+    	say "Silence rang in the room. [line break][line break]";
 	wait for any key;
-    	say "[line break]'...Has he made any progress in fashioning an Osiris?'[line break]";
+    	say "'...Has he made any progress in fashioning an Osiris?'[line break][line break]";
 	wait for any key;
-    	say "[line break]Sekhmet's snarl was answer enough.  [line break]";
+    	say "Sekhmet's snarl was answer enough.  [line break]'[line break]";
 	wait for any key;
-    	say "[line break]'...I see,' Amun said. 'Perhaps…we should all check in next week.' [line break]";
+    	say "...I see,' Amun said. 'Perhaps…we should all check in next week.' [line break][line break]";
 	wait for any key;
-    	say "[line break]This admittedly lackluster statement sent Anubis into a fury. 'This is the ninety-ninth Emergency Meeting we’ve held--enough stalling! The unweighed souls are piling up and spilling into the streets of the living, and poor Medjed is too spooked to perform his duties! I cannot contend with this alone!' [line break]";
+    	say "This admittedly lackluster statement sent Anubis into a fury. 'This is the ninety-ninth Emergency Meeting we’ve held--enough stalling! The unweighed souls are piling up and spilling into the streets of the living, and poor Medjed is too spooked to perform his duties! I cannot contend with this alone!' [line break][line break]";
 	wait for any key;
-    	say "[line break]'And just what am I supposed to do, Anubis?' Amun bit back. 'Seth is rejoicing in his victory--clearly, none of us here have the aptitude to counter him!' [line break]";
+    	say "'And just what am I supposed to do, Anubis?' Amun bit back. 'Seth is rejoicing in his victory--clearly, none of us here have the aptitude to counter him!' [line break][line break]";
 	wait for any key;
-    	say "[line break]'If I may.' A quiet voice resounded from the back of the room, and everyone turned to look at Khonsu, who had to speak.[line break]";
+    	say "'If I may.' A quiet voice resounded from the back of the room, and everyone turned to look at Khonsu, who had to speak.[line break][line break]";
 	wait for any key;
-    	say "[line break]'I have hesitated to bring this up. But it might be our only hope. There have been murmurs, in the darkest and gloomiest of shadows, of a terrible woman who made the sky her own. A woman whose misdeeds put those of our Seth to shame. A woman whose pride and cleverness knew no bounds. A woman who had… [line break]";
+    	say "'I have hesitated to bring this up. But it might be our only hope. There have been murmurs, in the darkest and gloomiest of shadows, of a terrible woman who made the sky her own. A woman whose misdeeds put those of our Seth to shame. A woman whose pride and cleverness knew no bounds. A woman who had… [line break][line break]";
 	wait for any key;
-    	say "[line break]…[line break]";
+    	say "…[line break][line break]";
 	wait for any key;
-    	say "[line break]…I can’t bear to say it.'[line break]";
+    	say "…I can’t bear to say it.'[line break][line break]";
 	wait for any key;
-    	say "[line break]'Well, go on. Say it!' [line break]";
+    	say "'Well, go on. Say it!' [line break][line break]";
 	wait for any key;
-    	say "[line break]As the room broke out again into squabbling, Amun felt a chill come over him. There was no need for Khonsu to elaborate--he remembered this story from long ago. It had happened under a Greek sun, yes, but the light of the sun has no limits or borders. [line break]";
+    	say "As the room broke out again into squabbling, Amun felt a chill come over him. There was no need for Khonsu to elaborate--he remembered this story from long ago. It had happened under a Greek sun, yes, but the light of the sun has no limits or borders. [line break][line break]";
 	wait for any key;
-    	say "[line break]A case where innocents were slaughtered and the guilty were left unpunished. [line break]";
+    	say "A case where innocents were slaughtered and the guilty were left unpunished. [line break][line break]";
 	wait for any key;
-    	say "[line break]The story of the Colchian witch Medea. [line break]";
+    	say "The story of the Colchian witch Medea. [line break][line break]";
 	wait for any key;
     	say "[line break]'Khonsu,' Amun interjected. 'You speak of Medea. Why her?'[line break]";
 	wait for any key;
-	say "[line break]At the sound of 'Medea,' the room fell into a hush. [line break]";
+	say "At the sound of 'Medea,' the room fell into a hush. [line break][line break]";
 	wait for any key;
-    	say "[line break]'I had known of her before her crimes had reached the corners of the world,'  Khonsu said. 'Before she had slaughtered her children and tricked the Corinthian princess. Her story was simpler then. but striking in its resemblance to the issue that plagues us today.[line break]";
+    	say "'I had known of her before her crimes had reached the corners of the world,'  Khonsu said. 'Before she had slaughtered her children and tricked the Corinthian princess. Her story was simpler then. but striking in its resemblance to the issue that plagues us today.[line break][line break]";
 	wait for any key;
-    	say "[line break]To further her own goals, Medea had cut her own brother into many pieces and scattered him into the sea.'[line break]";
+    	say "To further her own goals, Medea had cut her own brother into many pieces and scattered him into the sea.'[line break][line break]";
 	wait for any key;
-    	say "[line break]'I believe,' Khonsu said, 'that when all else has failed us, we must attempt to think like our adversary.'[line break]";
+    	say "'I believe,' Khonsu said, 'that when all else has failed us, we must attempt to think like our adversary.'[line break][line break]";
 	wait for any key;
-	say "[line break]Ma’at’s eyes were bright with a newfound hope. 'How,' she said slowly, 'can we expect to counter Seth when none of us possess his cruel cunning? Who else but a Seth to defeat Seth?'[line break]";
+	say "Ma’at’s eyes were bright with a newfound hope. 'How,' she said slowly, 'can we expect to counter Seth when none of us possess his cruel cunning? Who else but a Seth to defeat Seth?'[line break][line break]";
 	wait for any key;
-	say "[line break]Amun was at once both horrified and intrigued. 'To invite such a barbaric woman into our home. What have we come to?' [line break]";
+	say "Amun was at once both horrified and intrigued. 'To invite such a barbaric woman into our home. What have we come to?' [line break][line break]";
 	wait for any key;
-    	say "[line break]But it was their best shot. 'I know a certain Greek sun god. I will ask what can be done.' [line break][line break][line break]";
+    	say "But it was their best shot. 'I know a certain Greek sun god. I will ask what can be done.' [line break][line break][line break]";
 	wait for any key;
-	say "[line break][line break]Your name is Medea. [line break]";
+	say "[line break][line break]Your name is Medea. [line break][line break]";
 	wait for any key;
-    	say "[line break]You did not know, despite your contingency plans, where you would go after your triumphant flight from Corinth. [line break]";
+    	say "You did not know, despite your contingency plans, where you would go after your triumphant flight from Corinth. [line break][line break]";
 	wait for any key;
-	say "[line break]You really weren’t expecting to end up in a holding cell. [line break]";
+	say "You really weren’t expecting to end up in a holding cell. [line break][line break]";
 	wait for any key;
-	say "[line break]Your case has been tied up in divine court for a long, long time.[line break]";
+	say "Your case has been tied up in divine court for a long, long time.[line break][line break]";
 	wait for any key;
-	say "[line break]Hadn’t the gods supported your actions? Why have they punished you in this way?[line break]";
+	say "Hadn’t the gods supported your actions? Why have they punished you in this way?[line break][line break]";
 	wait for any key;
-	say "[line break]And what of Jason? He who had flagrantly broken the most sacred of all oaths. What about his divine punishment? [line break][line break] ";
+	say "And what of Jason? He who had flagrantly broken the most sacred of all oaths. What about his divine punishment? [line break][line break]";
 	wait for any key;
 	say "[line break][line break]…Oh, right. You already took care of that. [line break][line break]";
 	wait for any key;
-	say "[line break][line break]One day, Helios comes to your cell. On his face, you see a mixture of pity, aversion, and a strange respect. [line break]";
+	say "[line break][line break]One day, Helios comes to your cell. On his face, you see a mixture of pity, aversion, and a strange respect. [line break][line break]";
 	wait for any key;
-	say "[line break]'My dear granddaughter. For many years, my allies and I have argued on your behalf, to little success. [line break]";
+	say "'My dear granddaughter. For many years, my allies and I have argued on your behalf, to little success. [line break][line break]";
 	wait for any key;
-	say "[line break]I have received word from the Egyptian Sun. Egypt has been plagued by an evil it is thoroughly unequipped to combat. Its gods seem to believe that you alone can assist them. [line break]";
+	say "I have received word from the Egyptian Sun. Egypt has been plagued by an evil it is thoroughly unequipped to combat. Its gods seem to believe that you alone can assist them. [line break][line break]";
 	wait for any key;
-	say "[line break]If you successfully restore order to Egypt, you will be pardoned.'[line break]";
+	say "If you successfully restore order to Egypt, you will be pardoned.'[line break][line break]";
 	wait for any key;
-	say "[line break]'Will I be free?' you ask.[line break]";
+	say "'Will I be free?' you ask.[line break][line break]";
 	wait for any key;
-	say "[line break]If so, the answer is clear. [line break]";
+	say "If so, the answer is clear. [line break][line break]";
 	wait for any key;
-	say "[line break]'What do I need to do?'[line break]";
+	say "'What do I need to do?'[line break][line break]";
 	wait for any key;
-	say "[line break][line break]Your name is Medea, and you can't wait to be free.[line break]";
+	say "[line break]Your name is Medea, and you can't wait to be free.[line break][line break]";
 	wait for any key;
-	say "[line break]In order to get out of jail, you must gather and reassemble Osiris` body parts. You don't know how many there are or where they might be hidden. [line break]";
+	say "In order to get out of jail, you must gather and reassemble Osiris` body parts. You don't know how many there are or where they might be hidden. [line break][line break]";
 	wait for any key;
-	say "[line break]...You have to hand it to this Seth character. You weren't nearly as creative. [line break]";
+	say "...You have to hand it to this Seth character. You weren't nearly as creative. [line break][line break]";
 	wait for any key;
-	say "[line break]The Egyptian gods, despite pleading for your assistance, seem to be frightened by you. They've placed some restrictions on your behavior--a parole, if you will. Currently, you cannot access your innate magic and divine power. You will need to rely on your genius, cunning, and astonishingly gorgeous face to complete your mission. [line break]";
+	say "The Egyptian gods, despite pleading for your assistance, seem to be frightened by you. They've placed some restrictions on your behavior--a parole, if you will. Currently, you cannot access your innate magic and divine power. You will need to rely on your genius, cunning, and astonishingly gorgeous face to complete your mission. [line break][line break]";
 	[wait for any key;]
-	[say "[line break]Your grandfather seems to feel a modicum of sympathy for you. Before he dropped you off in Egypt, he left you with a help book [line break]"; [might re-add if the initial help prompt is not clear for readers]]
+	[say "Your grandfather seems to feel a modicum of sympathy for you. Before he dropped you off in Egypt, he left you with a help book [line break][line break]"; [might re-add if the initial help prompt is not clear for readers]]
 	wait for any key;
-	say "[line break]Your sun chariot has been returned to you. You missed your dragons. After catching up with your darlings, you traveled to Egypt. [line break]";
+	say "Your sun chariot has been returned to you. You missed your dragons. After catching up with your darlings, you traveled to Egypt. [line break][line break]";
 	wait for any key;
-	say "[line break][line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. There's no better place to start. [line break]".
+	say "[line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. There's no better place to start. [line break][line break]";
+	now the right hand status line is "[map region of the location]";
+	wait for any key;
+	say "[line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. There's no better place to start. [line break][line break]";
+	pause the game.
 	
 
 Part 2 - General Game Declarations
 
 Section 1 - Settings
 
+The left hand Vorple status line is "[the player's surroundings]".
+The right hand Vorple status line is "[map region of the location]".
+
 When play begins:
-    	now the right hand status line is "[map region of the location]";
+	construct the Vorple status line with 2 columns;
 	choose row 1 in Table of Basic Help Options; 	
 	now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt.[paragraph break]Some general guidelines for this game:[line break]	Make sure to examinine everything![line break]	If you're stuck, it may be time to travel to a new place.[line break]	Medea is very clever, so make sure to pay attention to how she describes things!";
 
@@ -145,15 +168,13 @@ A room memory rule:
 	rule succeeds.
 
 
-Section 2 - New Actions
+Section 2 - New Definitions
 
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "talk to [something]" or “converse with [someone]” or "converse with [something]" as talking to.
 
 Carry out talking to:
 	say "There is no reply."
 	
-Section 3 - New Definitions
-
 A Body Part is a kind of thing.
 
 Instead of taking a body part:
@@ -171,8 +192,25 @@ Instead of examining something:
 	continue the action;
 	now the noun is examined.
 
+A hint-object is a kind of object. It has some text called hint-content.
 
-Section 4 - Sun Chariot Travel
+To say beginner's guide hint (H - a hint-object):
+	say "[hint style][bold type](Beginner's Guide)[roman type] [hint-content of H] [end style]".
+	
+[A Vorple interface update rule:
+	if the location is North passage:
+		clear the element called "location-pictures";
+		set output focus to the element called "location-pictures";
+		place an image "chariot.png" with the description "Chariot";
+		set output focus to the main window.]
+
+To say link to the examination of (target - a thing):
+	let link name be "x[target]";
+	disable all links called link name; [don't let the player click on old links]
+	place a link to the command "examine [target]" called link name reading "[target]".
+	
+
+Section 3 - Sun Chariot Travel
 
 Figure of chariot is the file "chariot.png".
 
@@ -285,10 +323,15 @@ Instead of taking a scenery wall, say "You're not the British Museum. You can't 
 
 Section 2 - Entering the Osireion
 
-The Entrance to the Osireion is a room in Abydos. "You stand before the inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the doors are immaculate and fit into the style of the rest of the temple complex, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems pretty empty, with all the traffic going towards the main gates. Hopefully, no one will stop you from breaking in. [if the sun chariot is in the location]Your sun chariot is parked nearby.[end if]
-	[if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if]
-	[if Osiris' head is unacquired][paragraph break][bold type](Beginner's Guide)[roman type] You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER? If you ever feel confused, you can also ask for some HELP."
+[let boldtext be "You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER? If you ever feel confused, you can also ask for some HELP.";]
 
+
+The Entrance to the Osireion is a room in Abydos. "You stand before the inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the [link to the examination of the stone door] doors are immaculate and fit into the style of the rest of the temple complex, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems pretty empty, with all the traffic going towards the main gates. Hopefully, no one will stop you from breaking in. [if the sun chariot is in the location]Your sun chariot is parked nearby.[end if]
+	[if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if]
+	[if Osiris' head is unacquired][paragraph break][beginner's guide hint the H1]"
+	
+H1 is a hint-object. The hint-content is "You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER? If you ever feel confused, you can also ask for some HELP.".
+	
 A room memory rule for the North Passage:
 	if the north passage is not visited:
 		rule fails.
@@ -372,7 +415,6 @@ The west moat is a moat. It is east of the First Transverse Chamber and west of 
 
 The east moat is a moat. It is west of the Tomb of Osiris and east of the Central Nave.
 	
-
 [one day the plank will have be placed down and picked up...but not for the demo! ]
 
 Instead of going through the west moat:
@@ -707,13 +749,7 @@ Every turn during Next Instructions:
 		say "One of your potential escape plans -- not that you had the opportunity to go through with it -- was to flee from Corinth to Thebes. But you never had the chance to execute this plan. Perhaps this is a sign.";
 		now the workman is uncurious. [next instructions end]
 
-
-[workman hints at thebes, medea is now locked in to go to thebs: aka, i really miss greece i'm feeling nostalgic, time to go to thebes if player tries to travel elsewhere]
-[Instead of selecting when Next Instructions has happened and Heal Heracles has not happened:
-	if the number understood is not seven: [the number for thebes]
-		say "You want to go to Thebes instead. You're near-certain the workman mentioned a different 'Thebes,' but the shared name intrigues you.";
-	otherwise:
-		continue the action.]
+[now when medea thinks -- she is reminded to go to thebes]
 	
 test Amarna with "look / n" in The small aten temple holding the head.
 
@@ -755,9 +791,9 @@ The Temple of Amenhotep III is east of the the Collection of Three Temples. It i
 
 The Memnon Colossi is east of the Temple of Amenhotep III. It is in Thebes. "Perched like silent sentinels, two massive statues of Amenhotep III watch over the land. Legend says their eerie dawn 'singing' once greeted travelers."
 
-The left statue of Amenhotep III is a closed unopenable container. It is in Memnon Colossi.
+The left statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi.
 
-The right statue of Amenhotep III is a closed unopenable container. It is in Memnon Colossi.
+The right statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi.
 
 Instead of cutting the The right statue of Amenhotep III, do nothing.
 
@@ -890,9 +926,10 @@ Instead of putting the prepared medicine on Heracles:
 	
 Understand "I have indeed applied something to all his sore spots" as chanting. Chanting is an action applying to nothing.
 
-[prevent chanting from randomly being performed in the future]
-[ensure that heracles is visible when this happens]
-Instead of chanting:
+Carry out chanting:
+	say "What?"
+
+Instead of chanting in the presence of sick Heracles:	
 	say "You speak the spell.[paragraph break]";
 	wait for any key;
 	say "You wait for something to happen.[paragraph break]";
@@ -956,8 +993,9 @@ yappery
 "'I just have to ask,' Heracles loudly says. 'What made you do it?' [paragraph break]You give no reply."
 "Heracles groans, clutching his temples. 'All this talk of gods and brothers and chopping...Egypt is so strange! I'd rather wrestle another lion!![line break]His loud voice draws a few curious eyes..." 
 
-[make him not talk on the first turn]
 Every turn during Organ Acquisition:
+	if the Table of Countdown is full:
+		do nothing;
 	if the Table of Countdown is not empty:
 		choose a random row in Table of Heracles' Yapping;
 		say "[yappery entry]";

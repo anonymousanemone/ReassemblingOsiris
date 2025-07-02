@@ -13,10 +13,8 @@ release to "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Re
 storyfile leafname "That Time I Got Out of Jail by .gblorb"
 storyfile "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.inform/Build/output.ulx" include
 ifiction "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.inform/Metadata.iFiction" include
-cover "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/DefaultCover.jpg"
-picture 1 "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/DefaultCover.jpg"
-release file "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/DefaultCover.jpg"
-release file "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/Small Cover.jpg"
+cover "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Cover.png"
+picture 1 "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Cover.png"
 picture 3 "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Figures/chariot.png"
 
 ! Placeholder variables
@@ -30,6 +28,8 @@ placeholder [BLURB] = "A work of interactive fiction."
 
 ! Other material to release
 
+auxiliary "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/customStyle.css" "--" "--"
+auxiliary "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/chariot.png" "bg1" "--"
 
 ! Website instructions
 
@@ -38,8 +38,8 @@ template path "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials
 template path "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Templates"
 template path "/Users/sophial/Library/Inform/Templates"
 template path "/Applications/Inform.app/Contents/Resources/Internal/Templates"
-placeholder [INTERPRETERSCRIPTS] = " "
-interpreter "Quixe" "g"
+placeholder [INTERPRETERSCRIPTS] = " <link rel='stylesheet' href='customStyle.css' type='text/css' media='all'></link>"
+interpreter "Vorple" "g"
 base64 "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.inform/Build/output.ulx" to "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Release/interpreter/That Time I Got Out of Jail by .gblorb.js"
 
 ! Website instructions
@@ -49,10 +49,12 @@ template path "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials
 template path "/Users/sophial/Library/Inform/Templates"
 template path "/Applications/Inform.app/Contents/Resources/Internal/Templates"
 css
-website "Standard"
-status instruction ||&nbsp;<a href="source:story.ni#line9"><img border=0 src=inform:/doc_images/Reveal.png></a>||
-status alternative ||Using 'Release along with cover art', to provide something more distinctive than the default artwork above&nbsp;<a href=inform:/doc401.html><img border=0 src=inform:/doc_images/help.png></a>||
-status alternative ||Using 'Release along with a file of "Such-and-Such" called "whatever.pdf"', perhaps to add a manual, or a welcoming note&nbsp;<a href=inform:/doc399.html><img border=0 src=inform:/doc_images/help.png></a>||
+website "Custom"
+status instruction ||&nbsp;<a href="source:story.ni#line17"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line18"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line19"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line20"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line25"><img border=0 src=inform:/doc_images/Reveal.png></a>||
 status alternative ||Using 'Release along with the source text'&nbsp;<a href=inform:/doc410.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with a solution'&nbsp;<a href=inform:/doc409.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with the library card'&nbsp;<a href=inform:/doc410.html><img border=0 src=inform:/doc_images/help.png></a>||

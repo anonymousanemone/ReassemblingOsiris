@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Quattrocento:wght@400;700&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&family=VT323&display=swap');
+
+:root{
+	/* Default Parchment style */
+	--light-fg: #222;
+	--light-bg: #fff;
+	--light-input: #0b4c8e;
+	--light-header: #eee;
+	
+	/* Based on GarGlk's Slate Darker theme */
+	--dark-fg: #e7e8e9;
+	--dark-bg: #232629;
+	--dark-input: #74abff;
+	--dark-header: #464d53;
+	
+	--normal-font: "Quattrocento", serif;
+	--normal-size: 20px;
+	--mono-font: "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", monospace;
+
+	--prefill-color: red;
+}
+
+#vorple {
+	background-color: var(--light-bg);
+	color: var(--light-fg);
+}
+
+body {
+    font-family: var(--normal-font);
+    font-size: var(--normal-size);
+}
+
+#lineinput {
+	padding: 0.5em;
+	border: 2px solid black;
+}
+
+#lineinput-field {
+	font-family: var(--normal-font);
+    font-size: var(--normal-size);
+	padding-left: 0.5em;
+}
+
+.lineinput {
+	font-weight: bold;
+}
+
+.hint {
+	color: rgb(158, 92, 179);
+}
