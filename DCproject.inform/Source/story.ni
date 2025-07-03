@@ -326,7 +326,7 @@ Section 2 - Entering the Osireion
 [let boldtext be "You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER? If you ever feel confused, you can also ask for some HELP.";]
 
 
-The Entrance to the Osireion is a room in Abydos. "You stand before the inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the [link to the examination of the stone door] doors are immaculate and fit into the style of the rest of the temple complex, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems pretty empty, with all the traffic going towards the main gates. Hopefully, no one will stop you from breaking in. [if the sun chariot is in the location]Your sun chariot is parked nearby.[end if]
+The Entrance to the Osireion is a room in Abydos. "You stand before the inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the [link to the examination of the stone door] is immaculate and fit into the style of the rest of the temple complex, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems pretty empty, with all the traffic going towards the main gates. Hopefully, no one will stop you from breaking in. [if the sun chariot is in the location]Your sun chariot is parked nearby.[end if]
 	[if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if]
 	[if Osiris' head is unacquired][paragraph break][beginner's guide hint the H1]"
 	
@@ -337,7 +337,9 @@ A room memory rule for the North Passage:
 		rule fails.
 
 The stone door is a locked closed door. It is scenery. The stone door is south of the Entrance to the Osireion and north of the North Passage. Include (- has animate -) when defining the door. 
-The description of the stone door is "The forbidding stone door is engraved with a riddle: [line break]    I am yesterday, veiled in shadows. [line break]    I am tomorrow, cloaked in flames. [line break]    A union of gods, a cycle complete.[if Osiris' head is unacquired][paragraph break][bold type](Beginner's Guide)[roman type]You can SAY your answer TO the door."
+The description of the stone door is "The forbidding stone door is engraved with a riddle: [line break]    I am yesterday, veiled in shadows. [line break]    I am tomorrow, cloaked in flames. [line break]    A union of gods, a cycle complete.[if Osiris' head is unacquired][paragraph break][beginner's guide hint the H2]"
+
+H2 is a hint-object. The hint-content is "You can SAY your answer TO the door.".
 
 Instead of opening the locked stone door:
 	say "You pry at it with your fingers. It doesn't budge.";
@@ -354,8 +356,10 @@ Instead of answering the door that something:
 		say "Nothing happens. Perhaps that is not the correct answer. You look up at the sky, hoping for some benevolent god to send you a hint.";
 
 The North Passage is a room in Abydos. It is south of the stone door. "The long narrow passage slopes gently downwards. The northern section of the passage is arched and lined with brick. The southern section is stone clad, and its walls are sculpted and painted with scenes from the 'Book of the Gates'. A pitched roof tops this part of the passage. 
-[paragraph break]On the floor, you can see a few miscellaneous items scattered on the floor:[if the ostracon is in the location] a hieratic ostracon,[end if] a tall pottery stand, some trial pieces of a sculptor, and a few plaster casts.
-[paragraph break][bold type](Beginner's Guide)[roman type] Always EXAMINE everything around you! You can try to EXAMINE the walls and the things on the floor. You can also TAKE things. When you are disorientated, feel free to take another LOOK at the room. "
+[paragraph break]On the floor, you can see a few miscellaneous items scattered on the floor:[if the ostracon is in the location] [link to the examination of a hieratic ostracon] ,[end if] [link to the examination of a tall pottery stand], [link to the examination of trial pieces], and a few [link to the examination of plaster casts].
+[paragraph break][beginner's guide hint the H3]"
+
+H3 is a hint-object. The hint-content is "Always EXAMINE everything around you! You can try to EXAMINE the walls and the things on the floor. You can also TAKE things. When you are disorientated, feel free to take another LOOK at the room.".
 
 Rule for listing nondescript items of the North Passage:
 	do nothing.

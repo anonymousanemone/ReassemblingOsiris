@@ -17,7 +17,7 @@
 	--normal-size: 20px;
 	--mono-font: "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", monospace;
 
-	--prefill-color: red;
+	--prefill-color: rgb(64, 64, 64);
 }
 
 #vorple {
@@ -48,3 +48,4 @@ body {
 .hint {
 	color: rgb(158, 92, 179);
 }
+

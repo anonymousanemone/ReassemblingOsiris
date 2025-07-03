@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vorple Command Hover</title>
+  <style>
+    /* Gray text when input is showing prefill */
+    #lineinput-field.prefill {
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sample links -->
+  <a href="#" class="vorple-commandlink" data-command="look">Look</a>
+  <a href="#" class="vorple-commandlink" data-command="inventory">Inventory</a>
+
+  <!-- Input field -->
+  <input type="text" id="lineinput-field" />
+
+  <script>
+    (function() {
+      const input = document.getElementById("lineinput-field");
+
+      // Track whether the input was empty before hovering
+      let userTyped = false;
+
+      document.querySelectorAll(".vorple-commandlink").forEach(link => {
+        link.addEventListener("mouseenter", () => {
+          if (!input.value) {
+            input.value = link.getAttribute("data-command");
+            input.classList.add("prefill");
+            userTyped = false;
+          }
+        });
+
+        link.addEventListener("mouseleave", () => {
+          if (!userTyped) {
+            input.value = "";
+            input.classList.remove("prefill");
+          }
+        });
+      });
+
+      // Clear prefill if user starts typing
+      input.addEventListener("input", () => {
+        if (input.classList.contains("prefill")) {
+          input.classList.remove("prefill");
+          userTyped = true;
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
