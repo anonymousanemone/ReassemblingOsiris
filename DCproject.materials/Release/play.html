@@ -21,9 +21,9 @@
   <link rel="stylesheet" href="style.css"/>
   
  </head>
-<body class="play">
-<div class="container layout">
-	  <!-- LEFT SIDEBAR -->
+<body>
+<div class="layout">
+	<!-- LEFT SIDEBAR -->
   <aside class="sidebar">
     <button class="help-button" onclick="toggleHelp(true)">‚ùì Help Menu</button>
     <a href="index.html">ˇè† Home</a>
@@ -36,9 +36,13 @@
       <li onclick="insertCommand('inventory')">Inventory</li>
     </ul>
   </aside>
-
-	<div id="gameport">
-		<main id="vorple">
+  <div id="game-container">
+	 <!-- move game port here after release -->
+  </div>
+	<div class="container">  
+		<div class="play">
+			<div id="gameport">
+				<main id="vorple">
 <div id="loader">
 <h2 id="loader-message">Loading scripts</h2>
 <div id="spinner">V</div>
@@ -84,9 +88,10 @@ story: ""
 vorple.debug.off();
 vorple.init();
 </script>
+			</div>
+		</div>
 	</div>
-
-	<!-- RIGHT SIDEBAR -->
+  <!-- RIGHT SIDEBAR -->
   <aside class="sidebar">
     <div class="graphic-window">
       <h4>Current Scene</h4>

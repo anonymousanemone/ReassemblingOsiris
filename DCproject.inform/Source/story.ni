@@ -13,7 +13,7 @@ Include Vorple Multimedia by Juhana Leinonen.
 Include Vorple Screen Effects by Juhana Leinonen.
 Include Vorple Status Line by Juhana Leinonen.
 Include Vorple Tooltips by Juhana Leinonen.
-
+ 
 Release along with the "Vorple" interpreter.
 Release along with a file of "bg1" called "chariot.png".
 Release along with a “Custom” website.
