@@ -28,7 +28,6 @@ placeholder [BLURB] = "A work of interactive fiction."
 
 ! Other material to release
 
-auxiliary "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/customStyle.css" "--" "--"
 auxiliary "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/chariot.png" "bg1" "--"
 
 ! Website instructions
@@ -38,7 +37,7 @@ template path "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials
 template path "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Templates"
 template path "/Users/sophial/Library/Inform/Templates"
 template path "/Applications/Inform.app/Contents/Resources/Internal/Templates"
-placeholder [INTERPRETERSCRIPTS] = " <link rel='stylesheet' href='customStyle.css' type='text/css' media='all'></link>"
+placeholder [INTERPRETERSCRIPTS] = " "
 interpreter "Vorple" "g"
 base64 "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.inform/Build/output.ulx" to "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/Release/interpreter/That Time I Got Out of Jail by .gblorb.js"
 
@@ -53,8 +52,7 @@ website "Custom"
 status instruction ||&nbsp;<a href="source:story.ni#line17"><img border=0 src=inform:/doc_images/Reveal.png></a>||
 status instruction ||&nbsp;<a href="source:story.ni#line18"><img border=0 src=inform:/doc_images/Reveal.png></a>||
 status instruction ||&nbsp;<a href="source:story.ni#line19"><img border=0 src=inform:/doc_images/Reveal.png></a>||
-status instruction ||&nbsp;<a href="source:story.ni#line20"><img border=0 src=inform:/doc_images/Reveal.png></a>||
-status instruction ||&nbsp;<a href="source:story.ni#line25"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line24"><img border=0 src=inform:/doc_images/Reveal.png></a>||
 status alternative ||Using 'Release along with the source text'&nbsp;<a href=inform:/doc410.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with a solution'&nbsp;<a href=inform:/doc409.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with the library card'&nbsp;<a href=inform:/doc410.html><img border=0 src=inform:/doc_images/help.png></a>||

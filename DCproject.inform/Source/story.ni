@@ -15,7 +15,6 @@ Include Vorple Status Line by Juhana Leinonen.
 Include Vorple Tooltips by Juhana Leinonen.
 
 Release along with the "Vorple" interpreter.
-Release along with the style sheet "customStyle.css".
 Release along with a file of "bg1" called "chariot.png".
 Release along with a “Custom” website.
 
@@ -374,7 +373,7 @@ A tall pottery stand is a thing in the North Passage. The description is "An una
 
 Instead of taking the tall pottery stand, say "It's awfully burdening to carry around for as little use as it is to you."
 
-A sculptor's trial pieces is a thing in the North Passage. The description is "Two sculpted trial pieces probably from the same school. The first piece is an attempt at the neb sign. Above is the master's hand as an example, and below are the student's attempts 'in every degree of badness'. The other piece shows a scene of the worship of Osiris. It is unfinished, only one figure having been sculpted, the rest being merely sketched out in black ink."
+Trial pieces of a sculptor is a thing in the North Passage. The description is "Two sculpted trial pieces probably from the same school. The first piece is an attempt at the neb sign. Above is the master's hand as an example, and below are the student's attempts 'in every degree of badness'. The other piece shows a scene of the worship of Osiris. It is unfinished, only one figure having been sculpted, the rest being merely sketched out in black ink."
 
 Instead of taking trial pieces, say "You distastefully look at the amateur scribbles. Bleh."
 	

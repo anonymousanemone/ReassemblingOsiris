@@ -8,24 +8,78 @@
   
   [INTERPRETERHEAD]
   
-  <script language="javascript" type="text/javascript" src="darklight.js"></script>
+  <link rel="stylesheet" href="style.css"/>
   
 </head>
 <body class="play">
-<div class="container">
-	<div class="coverimage"><span><a href="Cover.png"><img src="Small Cover.png" border="1"></a></span></div>
-	<div class="links">
-		<div class="smalltitle">That Time I Got Out of Jail by Reassembling Osiris</div>
-		<ul>
-		<li><a href="index.html">Home page</a></li>
-		</ul>
-	</div>
+<div class="container layout">
+	  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <button class="help-button" onclick="toggleHelp(true)">❓ Help Menu</button>
+    <a href="index.html">🏠 Home</a>
+    <p style="margin-top: 10px;">Use quick commands to speed up gameplay:</p>
+    <ul>
+      <li onclick="insertCommand('look')">Look</li>
+      <li onclick="insertCommand('examine')">Examine</li>
+      <li onclick="insertCommand('go')">Go</li>
+      <li onclick="insertCommand('take')">Take</li>
+      <li onclick="insertCommand('inventory')">Inventory</li>
+    </ul>
+  </aside>
+
 	<div id="gameport">
 		[INTERPRETERBODY]
 	</div>
+
+	<!-- RIGHT SIDEBAR -->
+  <aside class="sidebar">
+    <div class="graphic-window">
+      <h4>Current Scene</h4>
+      <img src="https://via.placeholder.com/230x140?text=Scene" alt="Scene graphic">
+    </div>
+    <div class="map-window">
+      <h4>Map</h4>
+      <img src="https://via.placeholder.com/230x140?text=Map" alt="Map">
+    </div>
+  </aside>
+</div>
+
+<!-- HELP POPUP -->
+<div class="overlay" id="overlay" onclick="toggleHelp(false)"></div>
+<div class="help-popup" id="helpPopup">
+  <div class="help-tabs">
+    <button class="tab-button active" onclick="switchTab('commands')">Commands</button>
+    <button class="tab-button" onclick="switchTab('tips')">Tips</button>
+    <button class="tab-button" onclick="switchTab('about')">About</button>
+  </div>
+  <div class="help-content active" id="tab-commands">
+    <h3>Basic Commands</h3>
+    <ul>
+      <li><strong>look</strong> — re-describe the current room</li>
+      <li><strong>examine [object]</strong> — inspect an item</li>
+      <li><strong>go [direction]</strong> — move in a direction</li>
+      <li><strong>take [item]</strong> — pick up an item</li>
+    </ul>
+  </div>
+  <div class="help-content" id="tab-tips">
+    <h3>Gameplay Tips</h3>
+    <ul>
+      <li>Try different verbs: open, use, push, etc.</li>
+      <li>Save often, if the game supports it.</li>
+      <li>Examine everything you find.</li>
+    </ul>
+  </div>
+  <div class="help-content" id="tab-about">
+    <h3>About This Game</h3>
+    <p>This is an experimental interactive fiction adventure built in HTML and JavaScript.</p>
+  </div>
+</div>
+
 </div>
 
 <script language="javascript" type="text/javascript" src="hoverfilllink.js"></script>
+<script language="javascript" type="text/javascript" src="sidebars.js"></script>
+  
 
 </body>
 </html>
