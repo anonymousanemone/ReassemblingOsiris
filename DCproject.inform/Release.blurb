@@ -29,6 +29,7 @@ placeholder [BLURB] = "A work of interactive fiction."
 ! Other material to release
 
 auxiliary "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/chariot.png" "bg1" "--"
+auxiliary "/Users/sophial/Documents/githubs/NoChopFamily/DCproject.materials/map.png" "map1" "--"
 
 ! Website instructions
 
@@ -52,7 +53,8 @@ website "Custom"
 status instruction ||&nbsp;<a href="source:story.ni#line17"><img border=0 src=inform:/doc_images/Reveal.png></a>||
 status instruction ||&nbsp;<a href="source:story.ni#line18"><img border=0 src=inform:/doc_images/Reveal.png></a>||
 status instruction ||&nbsp;<a href="source:story.ni#line19"><img border=0 src=inform:/doc_images/Reveal.png></a>||
-status instruction ||&nbsp;<a href="source:story.ni#line24"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line20"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line25"><img border=0 src=inform:/doc_images/Reveal.png></a>||
 status alternative ||Using 'Release along with the source text'&nbsp;<a href=inform:/doc410.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with a solution'&nbsp;<a href=inform:/doc409.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with the library card'&nbsp;<a href=inform:/doc410.html><img border=0 src=inform:/doc_images/help.png></a>||

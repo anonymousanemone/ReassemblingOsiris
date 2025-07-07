@@ -16,6 +16,7 @@ Include Vorple Tooltips by Juhana Leinonen.
  
 Release along with the "Vorple" interpreter.
 Release along with a file of "bg1" called "chariot.png".
+Release along with a file of "map1" called "map.png".
 Release along with a “Custom” website.
 
 Hint is a Vorple style.

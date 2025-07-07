@@ -8,27 +8,46 @@
   
   [INTERPRETERHEAD]
   
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="customStyle.css"/>
   
 </head>
 <body>
 <div class="layout">
 	<!-- LEFT SIDEBAR -->
-  <aside class="sidebar">
-    <a href="index.html">Home</a>
-	<button class="help-button" onclick="toggleHelp(true)">Help Menu</button>
-    <h4 style="margin-top: 10px;">Quick Commands</h4>
-    <ul>
-      	<li><a class="command-link" onclick="insertCommand('look')">Look</a></li>
-		<li><a class="command-link" onclick="insertCommand('examine')">Examine</a></li>
-		<li><a class="command-link" onclick="insertCommand('go')">Go</a></li>
-		<li><a class="command-link" onclick="insertCommand('take')">Take</a></li>
-		<li><a class="command-link" onclick="insertCommand('inventory')">Inventory</a></li>
-    </ul>
-  </aside>
+
+		<aside class="sidebar left-sidebar">
+			<button class="sidebar-button sidebar-item" onclick="location.href='index.html'">Home</button>
+			<button class="sidebar-button sidebar-item" onclick="toggleHelp(true)">Help</button>
+			<div class="quick-menu">
+				<div class="quick-menu-header sidebar-item">Quick Commands</div>
+				<div class="quick-menu-body">
+					<a class="command-link" onclick="insertCommand('look')">Look</a>
+					<a class="command-link" onclick="insertCommand('inventory')">Inventory</a>
+					<a class="command-link" onclick="insertCommand('go')">Go</a>
+					<a class="command-link" onclick="insertCommand('examine')">Examine</a>
+					<a class="command-link" onclick="insertCommand('take')">Take</a>
+				</div>
+			</div>
+		</aside>
+
+
   <div id="game-container">
 	 <!-- move game port here after release -->
   </div>
+  <!-- RIGHT SIDEBAR -->
+	<aside class="sidebar right-sidebar">
+		<div class="window-block">
+			<h4>Current Scene</h4>
+			<img src="Cover.png" alt="Scene graphic">
+		</div>
+		<div class="window-block">
+			<h4>Map Progress</h4>
+			<img src="map.png" alt="Map">
+		</div>
+	</aside>
+
+
+  <!-- where the game generates -->
 	<div class="container">  
 		<div class="play">
 			<div id="gameport">
@@ -36,18 +55,9 @@
 			</div>
 		</div>
 	</div>
-  <!-- RIGHT SIDEBAR -->
-  <aside class="sidebar">
-    <div class="graphic-window">
-      <h4>Current Scene</h4>
-      <img src="Cover.png" alt="Scene graphic">
-    </div>
-    <div class="map-window">
-      <h4>Map Progress</h4>
-      <img src="https://via.placeholder.com/230x140?text=Map" alt="Map">
-    </div>
-  </aside>
 </div>
+
+
 
 <!-- HELP POPUP -->
 <div class="overlay" id="overlay" onclick="toggleHelp(false)"></div>

@@ -1,171 +1,450 @@
-@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Quattrocento:wght@400;700&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&family=VT323&display=swap');
+/*
 
-:root{
-	/* Default Parchment style */
-	--light-fg: #333;
-	--light-bg: #fff;
-	--light-link: #bb5dd7;
-	--light-linkhover: #cb7ee3;
-	--light-header: #eee;
-	
-	/* Based on GarGlk's Slate Darker theme */
-	--dark-fg: #e7e8e9;
-	--dark-bg: #232629;
-	--dark-link: #74abff;
-	--dark-header: #464d53;
-	
-	--normal-font: "Quattrocento", serif;
-	--normal-size: 20px;
-	--mono-font: "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", monospace;
+Standard CSS file for use with Standard.html and Standard-Source.html. 
 
-	--prefill-color: #656565;
-	--hint-color: #9e5cb3;
+*/
+
+
+body
+{
+	font-family: Georgia, Palatino, "Times New Roman", Times, serif;
+	font-size: 100%;
+	-webkit-text-size-adjust: none;
 }
 
-#vorple {
-	background-color: var(--light-bg);
-	color: var(--light-fg);
+.container
+{
+	margin-top: 2em;
 }
 
-body {
-    font-family: var(--normal-font);
-    font-size: var(--normal-size);
+/* 
+Paragraph features defined here apply without distinction to blurb and
+source paragraphs. 
+*/
+
+p
+{
+	font-size: 1em;
+	line-height: 1.4;
 }
 
-#lineinput {
-	padding: 0.5em;
-	border: 2px solid black;
-	margin-bottom: 2em;
-}
+/* 
+Here we get rid of underlining for links, and provide a more subdued 
+color scheme than the bright-blue HTML standard. 
 
-#lineinput-field {
-	font-family: var(--normal-font);
-    font-size: var(--normal-size);
-	padding-left: 0.5em;
-}
+Best color schemes are likely to vary depending on cover art.
+*/
 
-.lineinput {
-	font-weight: bold;
-}
-
-.hint {
-	color: var(--hint-color)
-}
-
-a {
-	color: var(--light-link);
-}
-
-a:hover{
-	color: var(--light-linkhover);
+a
+{
 	text-decoration: none;
+	color: #369;
 }
 
-    .layout {
-      display: grid;
-      grid-template-columns: 220px 1fr 250px;
-      gap: 20px;
-      padding: 20px;
-      max-width: 1400px;
-      margin: auto;
-    }
+a:visited
+{
+	text-decoration: none;
+	color: #006;
+}
 
-    aside.sidebar {
-      background: #f9f9f9;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
+a:hover
+{
+	text-decoration: none;
+	color: #33C;
+}
 
-    /* #gameport {
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 20px;
-      min-height: 70vh;
-      overflow-y: auto;
-    } */
+.coverimage
+{
+	width: 12.6em;
+	margin-top: 2em;
+	margin-left: 1em;
+	float: left;
+	clear: left;
+	text-align: right;
+} 
 
-    .help-button {
-      margin-bottom: 15px;
-      padding: 10px;
-      width: 100%;
-      font-size: 16px;
-      background: #0055aa;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+/* 
+Here we make invisible the one-pixel border that currently goes around
+the cover image. 
+*/
 
-    .help-popup {
-      position: fixed;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      z-index: 1000;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      display: none;
-      flex-direction: column;
-    }
+.coverimage a
+{
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	color: #FFF;
+}
 
-    .help-tabs {
-      display: flex;
-      border-bottom: 1px solid #ccc;
-    }
+/* 
+The introduction formatting applies to the title, author name, and release
+number, here presented at the top of the page. 
 
-    .help-tabs button {
-      flex: 1;
-      padding: 10px;
-      background: none;
-      border: none;
-      border-bottom: 3px solid transparent;
-      font-weight: bold;
-      cursor: pointer;
-    }
+To change the appearance of specific elements, tweak
 
-    .help-tabs button.active {
-      border-bottom: 3px solid #0055aa;
-      background: #eef3ff;
-    }
+	h1 for the title
+	h2 for the author name
+	.bibliography for the release information
 
-    .help-content {
-      padding: 15px;
-      display: none;
-    }
+*/
 
-    .help-content.active {
-      display: block;
-    }
+.introduction
+{ 
+	padding-top: 2.4em;
+	margin-left: 15.4em;
+	width: 33em;
+	line-height: 1;
+	text-align: left;
+}
 
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: 900;
-      display: none;
-    }
+/* 
+These set the sizes for the title (h1) and the author name (h2). 
 
-    .graphic-window img,
-    .map-window img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
+The ideal font-size for h1 may vary quite a bit depending on how long the 
+game's title is: larger for one-word titles, smaller for longer titles.
 
-    @media (max-width: 900px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
+Should we wish to remove the title entirely and allow the cover art alone
+to represent the game, we need only add the line "display: none;" to the
+definition of h1.
 
-      aside.sidebar {
-        order: -1;
-      }
-    }
+*/
+h1 { font-size: 2em;  }
+h2 { font-size: 1em; line-height: .25;}
+
+/* The about formatting applies to blurb information. */
+
+.about
+{
+	margin-top: 2.8em;
+	margin-left: 15.4em;
+	width: 33em;
+	text-align: left;
+}
+
+/* 
+By setting about p and about p + p, we instruct the first paragraph of the
+blurb to be unindented but subsequent paragraphs to be indented a small 
+distance. 
+*/
+
+.about p { margin-bottom: 0; }
+
+.about p + p
+{
+	text-indent: 1.4em;
+	margin-top: 0;
+}
+
+/* 
+Playinfo affects the paragraph at the bottom of the home-page that supplies
+the IFID for the game and suggests interpreters for the author to use. */
+
+.playinfo
+{
+	margin: 1em 0px 0px 15.4em;
+	width: 33em;
+}
+
+.playinfo p {
+	font-size: .75em;
+}
+
+
+/* 
+The links formatting applies to the story file and auxiliary links found
+on the home page, and to the Contents, Next, and Previous links on the 
+source pages. Here we arrange for them to appear in a column at the left
+side of the page. 
+*/
+
+.links
+{
+	width: 13em;
+	float: left;
+	clear: left;
+	text-align: right; 
+	margin-top: 2.8em;
+}
+
+.links li
+{
+	list-style-type: none;
+	list-style-position: default;
+	padding: .4 em;
+}
+
+/* 
+The filetype id applies only to the little (blorb), (pdf), and similar
+denotations found on the links. Here we make these appear smaller than the 
+surrounding text. In order to get rid of them entirely, we would add 
+"display: none;" to our filetype definition. 
+*/ 
+
+span.filetype { font-size: .5em; }
+
+/* 
+Source formatting applies to the source text on generated pages. 
+*/
+
+.source
+{
+	margin-top: 1.4em;
+	margin-left: 15.4em;
+	width: 33em;
+	line-height: 1.4;
+}
+
+.sourceintroduction
+{
+	margin-left: 15.4em;
+	width: 33em;
+}
+
+.sourceintroduction h1
+{
+	padding-top: 2.8em;
+	font-size: 1em;
+	line-height: 1;
+	text-align: right;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.sourceintroduction h2
+{
+	display: none;
+}
+
+.sourcecoverimage
+{
+	width: 12.6em;
+	margin-top: 2em;
+	margin-left: 1em;
+	float: left;
+	clear: left;
+	text-align: right;
+} 
+
+/* 
+Here we make invisible the one-pixel border that currently goes around
+the cover image. 
+*/
+
+.sourcecoverimage a
+{
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	color: #FFF;
+}
+
+.sourcebibliography
+{
+	display: none;
+}
+
+span.quote { color: #369; }
+
+span.comment {
+	color: #390;}
+
+span.substitution
+{
+	color: #69B;
+	font-variant: small-caps;
+}
+	
+span.i6code { color: #666; font-family: monospace; }
+
+span.columnhead { 
+	font-style: italic; 
+	font-size: 1em;
+}
+
+span.heading
+{
+	font-weight: bold;
+} 
+
+.source td
+{
+	padding-top: .7em;
+	padding-bottom: .7em;
+	padding-right: 1.4em;
+	font-size: .75em;
+	text-align: left;
+	vertical-align: top;
+} 
+
+/*
+We could alter the following in order to make the footnote links in the source
+text appear different from other links, but otherwise they will be the same
+color as other links -- which is fine as a default.
+*/
+
+span.notecue
+{
+	font-size: .75em;
+	vertical-align: super;
+}
+
+/* 
+Here we tell the elements of the table of contents not to be listed with
+bullets because this tends to produce considerable visual clutter especially
+with large project files. 
+*/
+
+.source li
+{
+	list-style-type: none;
+	list-style-position: default;
+}
+
+/* 
+Notes applies to footnotes on the source text. 
+*/
+
+.notes
+{
+	margin-left: 16.8em;
+	width: 33em;
+}
+
+.notes p
+{
+	text-indent: -1.4em;
+	font-size: .75em;
+}
+
+.notesheading { font-style: italic; }
+
+p.indent0 
+{	margin-bottom: 0;  
+}
+
+p.indent1 
+{
+	padding-left: 2.8em;
+	text-indent: -.7em;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+p.indent2 
+{	margin-bottom: 0; 
+	padding-left: 5.6em;
+	text-indent: -.7em;
+	margin-top: 0;
+}
+
+p.indent3 
+{
+	padding-left: 8.4em;
+	text-indent: -.7em;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+p.indent4
+{	margin-bottom: 0; 
+	padding-left: 11.2em;
+	text-indent: -.7em;
+	margin-top: 0;
+}
+
+p.indent5
+{
+	padding-left: 14em;
+	text-indent: -.7em;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+p.indent6
+{	margin-bottom: 0; 
+	padding-left: 16.8em;
+	text-indent: -.7em;
+	margin-top: 0;
+}
+
+p.indent7
+{
+	padding-left: 19.6em;
+	text-indent: -.7em;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+
+p.indent8
+{	margin-bottom: 0; 
+	padding-left: 22.4em;
+	text-indent: -.7em;
+	margin-top: 0;
+}
+
+p.indent9
+{
+	padding-left: 25.2em;
+	text-indent: -.7em;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+/*
+Styles for play.html
+*/
+.play .coverimage
+{
+	position: fixed;
+}
+.play .links
+{
+	margin-top: 200px;
+	position: fixed;
+}
+
+.interpretercredit
+{
+	bottom: 1em;
+	font-size: 80%;
+	position: fixed;
+}
+
+#gameport
+{
+	background: white;
+	bottom: 0px;
+	left: 15.4em;
+	line-height: 1.4;
+	margin: 0px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+/*
+Styles for mobile browsers: change to a one-column layout.
+*/
+
+@media screen and (max-device-width: 480px)
+{
+	.coverimage, .introduction, .links, .about, .playinfo, .source, .sourceintroduction, .sourcecoverimage, .notes
+	{
+		float: none;
+		margin-left: 1em;
+		text-align: left;
+	}
+
+	.play .coverimage, .play .links, .play .interpretercredit
+	{
+		display: none;
+	}
+	
+	#gameport
+	{
+		left: 0px;
+		width: auto;
+	}
+}

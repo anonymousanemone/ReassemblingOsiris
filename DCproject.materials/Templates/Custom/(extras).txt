@@ -1,5 +1,5 @@
 sidebars.js
 hoverfilllink.js
-index.html
 play.html
-style.css
+index.html
+customStyle.css

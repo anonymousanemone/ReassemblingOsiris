@@ -28,6 +28,10 @@ function switchTab(tabName) {
     }
   }
 
+    function goHome() {
+    window.location.href = "index.html"; // or your home URL
+    }
+
 function moveGameport(event) {
     // Wait for Vorple to fully load
     const observer = new MutationObserver(() => {
