@@ -38,6 +38,11 @@
 					<a class="command-link" onclick="insertCommand('take')">Take</a>
 				</div>
 			</div>
+			<button class="sidebar-button sidebar-item" onclick="saveGame()">Save Game</button>
+			<button class="sidebar-button sidebar-item" onclick="loadGame()">Load Game</button>
+			<input type="file" id="gameFileInput">
+			<button class="sidebar-button sidebar-item" onclick="loadGameFromFile()">Load From File</button>
+			<button class="sidebar-button sidebar-item" onclick="saveTranscript()">Save Transcript</button>
 		</aside>
 
 
@@ -69,7 +74,7 @@
 </main>
 
 <script src="interpreter/vorple.min.js"></script>
-<script src="interpreter/That Time I Got Out of Jail by .gblorb.js"></script>
+<script src="That Time I Got Out of Jail by .gblorb"></script>
 
 <script>
 if( location.protocol === "file:" ) {
@@ -234,8 +239,10 @@ vorple.init();
 
 </div>
 
+<script src="https://unpkg.com/browserfs"></script>
 <script language="javascript" type="text/javascript" src="hoverfilllink.js"></script>
 <script language="javascript" type="text/javascript" src="sidebars.js"></script>
+<script language="javascript" type="text/javascript" src="savegame.js"></script>
   
 
 </body>

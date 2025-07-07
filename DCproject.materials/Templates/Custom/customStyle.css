@@ -153,7 +153,7 @@ aside.sidebar {
 }
 
 .quick-menu {
-  /* margin-top: 0rem; */
+  margin-bottom: 0.5rem;
 }
 
 .quick-menu-header {
@@ -310,7 +310,19 @@ aside.sidebar {
   max-height: 500px; /* Adjust based on content length */
 }
 
+.vex.vex-theme-plain .vex-content {
+  border-radius: 10px;
+  font-family: var(--mono-font);
+}
 
+/* dialogue pop ups for saving and restoring game */
+.vex.vex-theme-plain .vex-dialog-button{
+  border-radius: 4px !important;
+}
+
+.vex.vex-theme-plain .vex-dialog-button.vex-dialog-button-primary{
+  background: var(--light-link);
+}
 
 @media (max-width: 700px) {
   .help-popup.side-tabs {

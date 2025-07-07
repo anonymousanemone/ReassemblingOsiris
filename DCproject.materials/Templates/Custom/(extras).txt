@@ -1,5 +1,7 @@
 sidebars.js
 hoverfilllink.js
+savegame.js
+slowscroll.js
 play.html
 index.html
 customStyle.css

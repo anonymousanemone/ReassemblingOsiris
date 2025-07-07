@@ -21,13 +21,17 @@
 			<div class="quick-menu">
 				<div class="quick-menu-header sidebar-item">Quick Commands</div>
 				<div class="quick-menu-body">
-					<a class="command-link" onclick="insertCommand('look')">Look</a>
-					<a class="command-link" onclick="insertCommand('inventory')">Inventory</a>
-					<a class="command-link" onclick="insertCommand('go')">Go</a>
-					<a class="command-link" onclick="insertCommand('examine')">Examine</a>
-					<a class="command-link" onclick="insertCommand('take')">Take</a>
+					<a class="vorple-commandlink command-link" data-command="look" onclick="vorple.prompt.queueCommand('look')">Look</a>
+					<a class="vorple-commandlink command-link" data-command="inventory" onclick="vorple.prompt.queueCommand('inventory')">Inventory</a>
+					<a class="vorple-commandlink command-link" data-command="go" onclick="vorple.prompt.setValue('go')">Go</a>
+					<a class="vorple-commandlink command-link" data-command="look" onclick="vorple.prompt.setValue('examine')">Examine</a>
+					<a class="vorple-commandlink command-link" data-command="take" onclick="vorple.prompt.setValue('take')">Take</a>
 				</div>
 			</div>
+			<button class="sidebar-button sidebar-item" onclick="saveGame()">Save Game</button>
+			<button class="sidebar-button sidebar-item" onclick="restoreGame()">Restore Game</button>
+			<!-- <button class="sidebar-button sidebar-item" onclick="loadGameFromFile()">Load From File</button> -->
+			<button class="sidebar-button sidebar-item" onclick="saveTranscript()">Save Transcript</button>
 		</aside>
 
 
@@ -179,8 +183,11 @@
 
 </div>
 
+<script> const gameId = "[IFID]"; </script>
 <script language="javascript" type="text/javascript" src="hoverfilllink.js"></script>
 <script language="javascript" type="text/javascript" src="sidebars.js"></script>
+<script language="javascript" type="text/javascript" src="savegame.js"></script>
+<script language="javascript" type="text/javascript" src="slowscroll.js"></script>
   
 
 </body>

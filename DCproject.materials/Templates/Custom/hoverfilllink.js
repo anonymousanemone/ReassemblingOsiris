@@ -1,11 +1,12 @@
 
 function HoverFillLink(event) {
-  const outputArea = document.getElementById("vorple");
+  // const outputArea = document.getElementById("vorple");
+  const outputArea = document.body;
 
-  if (!outputArea) {
-    console.error("Required element not found.");
-    return;
-  }
+  // if (!outputArea) {
+  //   console.error("Required element not found.");
+  //   return;
+  // }
 
   outputArea.addEventListener("mouseover", function (event) {
     const link = event.target.closest("a.vorple-commandlink");
