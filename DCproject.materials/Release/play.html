@@ -19,6 +19,16 @@
 <link rel="stylesheet" type="text/css" href="interpreter/vorple.css">
   
   <link rel="stylesheet" href="customStyle.css"/>
+
+  <script>
+    window.addEventListener('beforeunload', function (e) {
+      // Standard message (modern browsers ignore custom messages)
+      e.preventDefault();
+      e.returnValue = '';
+      // For older browsers:
+      return 'Are you sure you want to leave? Your current progress will be lost.';
+    });
+  </script>
   
  </head>
 <body>
@@ -27,7 +37,9 @@
 
 		<aside class="sidebar left-sidebar">
 			<button class="sidebar-button sidebar-item" onclick="location.href='index.html'">Home</button>
+			<hr>
 			<button class="sidebar-button sidebar-item" onclick="toggleHelp(true)">Help</button>
+			<hr>
 			<div class="quick-menu">
 				<div class="quick-menu-header sidebar-item">Quick Commands</div>
 				<div class="quick-menu-body">
@@ -38,10 +50,14 @@
 					<a class="vorple-commandlink command-link" data-command="take" onclick="vorple.prompt.setValue('take')">Take</a>
 				</div>
 			</div>
+			<hr>
 			<button class="sidebar-button sidebar-item" onclick="saveGame()">Save Game</button>
+			<hr>
 			<button class="sidebar-button sidebar-item" onclick="restoreGame()">Restore Game</button>
-			<!-- <button class="sidebar-button sidebar-item" onclick="loadGameFromFile()">Load From File</button> -->
+			<hr>
 			<button class="sidebar-button sidebar-item" onclick="saveTranscript()">Save Transcript</button>
+			<hr>
+			<button class="sidebar-button sidebar-item" onclick="checkFiles()">Files</button>
 		</aside>
 
 

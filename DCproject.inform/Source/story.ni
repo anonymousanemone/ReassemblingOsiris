@@ -167,6 +167,12 @@ Rule for printing a parser error when the latest parser error is the nothing to 
 A room memory rule:
 	rule succeeds.
 
+Screen-clearing is an action applying to nothing. Understand "clear-the-screen-exec-command" as screen-clearing.
+
+Carry out screen-clearing:
+	clear the screen;
+	queue a parser command "look", without showing the command.
+	
 
 Section 2 - New Definitions
 
@@ -330,7 +336,7 @@ The Entrance to the Osireion is a room in Abydos. "You stand before the inconspi
 	[if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if]
 	[if Osiris' head is unacquired][paragraph break][beginner's guide hint the H1]"
 	
-H1 is a hint-object. The hint-content is "You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER? If you ever feel confused, you can also ask for some HELP.".
+H1 is a hint-object. The hint-content is "You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER?".
 	
 A room memory rule for the North Passage:
 	if the north passage is not visited:
@@ -554,7 +560,7 @@ Instead of talking to the workman during Get Body Bag:
 Instead of talking to the workman at least four times during Get Body Bag:
 	say "He seems to be expecting an answer from you. Maybe try SHOWing him what's hidden under your shirt. [paragraph break] The scary part, not the sexy part."
 	
-Instead of showing the head to the uncurious workman during Discovery:
+Instead of showing the head to the uncurious workman during Get Body Bag:
 	say "Flashing a decapitated head to someone you've never talked to before could be overkill. Try striking a conversation first."
 		
 Instead of showing the head to the curious workman during Discovery:
@@ -650,7 +656,7 @@ The second statue is scenery in the Underground Chapel. The description is "A st
 The third statue is scenery in the Underground Chapel. The description is "A statue of a man with a giant lotus sprouting out the top of his head. That looks painful."
 
 After examining something in the Underground Chapel for more than 3 times during Exploration:
-	say "[the noun] reveals nothing new to you. Maybe it's time to try touching things?"
+	say "[The noun] reveals nothing new to you. Maybe it's time to try touching things?"
 
 Instead of touching something in the Underground Chapel:
 	choose row 1 in the Table of Current Sequence;

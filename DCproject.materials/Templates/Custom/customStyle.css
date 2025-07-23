@@ -4,9 +4,9 @@
 	/* Default Parchment style */
 	--light-fg: #333;
 	--light-bg: #fff;
-	--light-link: #6f4393;
-	--light-linkhover: #9f65d0;
-	--light-header: #eee;
+	--light-link: #b67add;
+	--light-linkhover: #c591e8;
+	--light-header: #efefef;
 	
 	/* Based on GarGlk's Slate Darker theme */
 	--dark-fg: #e7e8e9;
@@ -19,8 +19,8 @@
 	--mono-font: "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", monospace;
 
 	--prefill-color: #656565;
-	--hint-color: #9e5cb3;
-	--hint-light: #fcf2ff;
+	--hint-color: #6f4393;
+	--hint-light: #f3e9fb;
 }
 
 #vorple {
@@ -33,7 +33,7 @@
   padding: 0.3rem 0rem;
 }
 
-body {
+body, input, label {
     font-family: var(--normal-font);
     font-size: var(--normal-size);
 }
@@ -43,10 +43,12 @@ body {
 	border: 2px solid black;
 	margin-bottom: 2em;
 }
-
+#lineinput-prefix{
+  font-size: var(--normal-size);
+}
 #lineinput-field {
 	font-family: var(--normal-font);
-    font-size: var(--normal-size);
+  font-size: var(--normal-size);
 	padding-left: 0.5em;
 }
 
@@ -68,6 +70,11 @@ a:hover{
 	text-decoration: none;
 }
 
+hr {
+  border-top: 2px dashed var(--hint-color);
+  width: 95%;
+}
+
 .layout {
 	display: grid;
 	grid-template-columns: 220px 1fr 250px;
@@ -79,9 +86,9 @@ a:hover{
 }
 
 aside.sidebar {
-	background: #efefef;
-	border-radius: 10px;
-	padding: 1rem;
+	background: #f7f4fa;
+	/* border-radius: 10px; */
+	padding: 0.8rem;
 	top: 1rem;
 	height: 90vh;
 	overflow-y: auto;
@@ -96,6 +103,13 @@ aside.sidebar {
 .sidebar.right-sidebar{
   background: none;
   padding: 0;
+  right: 1rem;
+}
+
+.sidebar.left-sidebar {
+  /* box-shadow: 7px 7px 0 #eae3f9; */
+  border: 3px solid var(--hint-color);
+  background: #f7f4fa;
 }
 
 .window-block {
@@ -125,25 +139,21 @@ aside.sidebar {
 	margin-bottom: 15px;
 }
 
-
-.sidebar.left-sidebar {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 .sidebar-button {
   cursor: pointer;
 }
 
 .sidebar-button:hover {
-  background-color:#8558aa;
+  /* background-color:#8558aa; */
+  background-color: #eae3f9;
 }
 
 .sidebar-item {
-	background-color: var(--light-link);
-  color: white;
+	background-color: rgba(0, 0, 0, 0);
+  color: var(--hint-color);
   border: none;
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.5rem;
+  padding: 0.2rem 0.2rem;
+  /* margin-bottom: 0.5rem; */
   cursor: pointer;
   font-weight: bold;
   text-align: left;
@@ -153,7 +163,7 @@ aside.sidebar {
 }
 
 .quick-menu {
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
 }
 
 .quick-menu-header {
@@ -162,8 +172,8 @@ aside.sidebar {
 }
 
 .quick-menu-body {
-  background-color: #eae3f9;
-  padding: 0.5rem 1rem;
+  /* background-color: #eae3f9; */
+  padding: 0rem 1rem;
   /* border: 1px solid #f3eeff; */
   border-top: none;
   border-radius: 0 0 4px 4px;
@@ -295,7 +305,7 @@ aside.sidebar {
 }
 
 .accordion-header:hover {
-  background: #dde;
+  background: var(--hint-light);
 }
 
 .accordion-content {
