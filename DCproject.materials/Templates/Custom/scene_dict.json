@@ -1,0 +1,88 @@
+{
+  "root-path": "/Users/sophial/Documents/githubs/ReassemblingOsiris/SceneImages",
+  "transport-home": {
+    "Avaris": "Avaris-Marketplace",
+    "Heliopolis": "Heliopolis-Marketplace",
+    "Memphis": "Memphis-Marketplace",
+    "Oxyrhynchos": "Oxyrhynchos-Marketplace",
+    "Amarna": "Outside the Walled Village",
+    "Abydos": "Entrance to the Osireion",
+    "Thebes": "Temple of Tawosret",
+    "Elephantine": "Elephantine-Marketplace"
+  },
+  "Avaris": {
+    "Avaris-Marketplace": ""
+  },
+  "Busiris": {
+    "Central Court": "",
+    "Pillar Hall": "",
+    "Hallway": "",
+    "Cult Rooms": "",
+    "Repository": "",
+    "Crypt of Osiris": "",
+    "Pillar Crypt": "",
+    "Corridor of Procession East": "",
+    "Shrine Room": "",
+    "Double Axe Hall": "",
+    "Corridor of Procession West": "",
+    "West Magazines": "",
+    "South Propylaeum": "",
+    "North Corridor": "",
+    "Corridor of the Draught Board": "",
+    "Workshops": "",
+    "Jail Cell": "",
+    "More Workrooms": "",
+    "Court of the Stone Spout": "",
+    "Lobby": "",
+    "Tricolumnar Hall": "",
+    "Upper Hall West": "",
+    "Loggia": "",
+    "Upper Hall East": "",
+    "Great Hall-Busiris": "",
+    "Porch": ""
+  },
+  "Heliopolis": {
+    "Heliopolis-Marketplace": ""
+  },
+  "Memphis": {
+    "Memphis-Marketplace": ""
+  },
+  "Oxyrhynchos": {
+    "Oxyrhynchos-Marketplace": "",
+    "Nile Riverbank": ""
+  },
+  "Amarna": {
+    "Outside the Walled Village": "",
+    "Workmen's Village": "",
+    "Ruined City": "",
+    "Small Aten Temple": "",
+    "Sanctuary": "",
+    "Underground chapel": ""
+  },
+  "Abydos": {
+    "Entrance to the Osireion": "",
+    "North Passage": "",
+    "Great Hall": "",
+    "South Chamber": "",
+    "Sloped Passage": "",
+    "First Transverse Chamber": "",
+    "Central Nave": "",
+    "Tomb of Osiris": ""
+  },
+  "Thebes": {
+    "Temple of Thutmoses III": "",
+    "Ramesseum": "",
+    "Temple of Thutmoses IV": "",
+    "Temple of Tawosret": "",
+    "Temple of Merenptah": "",
+    "Collection of Three Temples": "",
+    "Temple of Amenhotep III": "",
+    "Memnon Colossi": "",
+    "Temple of Horemheb": "",
+    "Temple of Ramesses III": "",
+    "House of Life": ""
+  },
+  "Elephantine": {
+    "Elephantine-Marketplace": ""
+  }
+}

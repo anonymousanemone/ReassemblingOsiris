@@ -5,6 +5,7 @@ Include Rideable Vehicles by Graham Nelson.
 Include Secret Doors by Gavin Lambert.
 Include Basic Help Menu by Emily Short.
 Include Exit Lister by Gavin Lambert.
+
 Include Vorple by Juhana Leinonen.
 Include Vorple Command Prompt Control by Juhana Leinonen.
 Include Vorple Hyperlinks by Juhana Leinonen.
@@ -20,6 +21,7 @@ Release along with a file of "map1" called "map.png".
 Release along with a “Custom” website.
 
 Hint is a Vorple style.
+Notice is a Vorple style.
 
 
 Release along with cover art ("Vase painting of Medea on her chariot").
@@ -197,10 +199,12 @@ A thing can be examined or unexamined. A thing is usually unexamined.
 Instead of examining something:
 	continue the action;
 	now the noun is examined.
+	
+A thing has some text called print-name.
 
 A hint-object is a kind of object. It has some text called hint-content.
 
-To say beginner's guide hint (H - a hint-object):
+To say beginner guide hint (H - a hint-object):
 	say "[hint style][bold type](Beginner's Guide)[roman type] [hint-content of H] [end style]".
 	
 [A Vorple interface update rule:
@@ -213,8 +217,14 @@ To say beginner's guide hint (H - a hint-object):
 To say link to the examination of (target - a thing):
 	let link name be "x[target]";
 	disable all links called link name; [don't let the player click on old links]
-	place a link to the command "examine [target]" called link name reading "[target]".
+	place a link to the command "examine [print-name of target]" called link name reading "[print-name of target]".
 	
+Rule for printing the name of a direction (called way) while listing exits:
+	if Vorple is supported:
+		place a link to the command "go [printed name of way]" reading "[printed name of way]".
+
+Rule for printing the name of a thing (called obj):
+	place a link to the command "examine [printed name of obj]" reading "[printed name of obj]".
 
 Section 3 - Sun Chariot Travel
 
@@ -238,9 +248,6 @@ Carry out selecting:
 	choose row N in the Table of Transport Options;
 	if the home entry is a room:
 		clear the screen;
-		[display the Figure of chariot;
-		wait for any key;
-		clear the screen;]
 		move the player to the home entry;
 	otherwise:
 		say "*** BUG: Improperly filled table of transport options ***"
@@ -331,10 +338,10 @@ Section 2 - Entering the Osireion
 
 [let boldtext be "You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER? If you ever feel confused, you can also ask for some HELP.";]
 
-
+	
 The Entrance to the Osireion is a room in Abydos. "You stand before the inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the [link to the examination of the stone door] is immaculate and fit into the style of the rest of the temple complex, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems pretty empty, with all the traffic going towards the main gates. Hopefully, no one will stop you from breaking in. [if the sun chariot is in the location]Your sun chariot is parked nearby.[end if]
 	[if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if]
-	[if Osiris' head is unacquired][paragraph break][beginner's guide hint the H1]"
+	[if Osiris' head is unacquired][paragraph break][beginner guide hint the H1]"
 	
 H1 is a hint-object. The hint-content is "You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER?".
 	
@@ -342,8 +349,8 @@ A room memory rule for the North Passage:
 	if the north passage is not visited:
 		rule fails.
 
-The stone door is a locked closed door. It is scenery. The stone door is south of the Entrance to the Osireion and north of the North Passage. Include (- has animate -) when defining the door. 
-The description of the stone door is "The forbidding stone door is engraved with a riddle: [line break]    I am yesterday, veiled in shadows. [line break]    I am tomorrow, cloaked in flames. [line break]    A union of gods, a cycle complete.[if Osiris' head is unacquired][paragraph break][beginner's guide hint the H2]"
+The stone door is a locked closed door. It is scenery. The stone door is south of the Entrance to the Osireion and north of the North Passage. Include (- has animate -) when defining the door. The print-name is "stone door".
+The description of the stone door is "The forbidding stone door is engraved with a riddle: [line break]    I am yesterday, veiled in shadows. [line break]    I am tomorrow, cloaked in flames. [line break]    A union of gods, a cycle complete.[if Osiris' head is unacquired][paragraph break][beginner guide hint the H2]"
 
 H2 is a hint-object. The hint-content is "You can SAY your answer TO the door.".
 
@@ -361,32 +368,32 @@ Instead of answering the door that something:
 	otherwise:
 		say "Nothing happens. Perhaps that is not the correct answer. You look up at the sky, hoping for some benevolent god to send you a hint.";
 
-The North Passage is a room in Abydos. It is south of the stone door. "The long narrow passage slopes gently downwards. The northern section of the passage is arched and lined with brick. The southern section is stone clad, and its walls are sculpted and painted with scenes from the 'Book of the Gates'. A pitched roof tops this part of the passage. 
-[paragraph break]On the floor, you can see a few miscellaneous items scattered on the floor:[if the ostracon is in the location] [link to the examination of a hieratic ostracon] ,[end if] [link to the examination of a tall pottery stand], [link to the examination of trial pieces], and a few [link to the examination of plaster casts].
-[paragraph break][beginner's guide hint the H3]"
+The North Passage is a room in Abydos. It is south of the stone door. "The long narrow passage slopes gently downwards. The northern section of the passage is arched and lined with brick. The southern section is stone clad, and its [link to the examination of walls of the north passage] are sculpted and painted with scenes from the 'Book of the Gates'. A pitched roof tops this part of the passage. 
+[paragraph break]On the floor, you can see a few miscellaneous items scattered on the floor:[if the ostracon is in the location] a [link to the examination of a hieratic ostracon] ,[end if] a [link to the examination of a tall pottery stand], [link to the examination of trial pieces], and a few [link to the examination of plaster casts].
+[paragraph break][beginner guide hint the H3]"
 
 H3 is a hint-object. The hint-content is "Always EXAMINE everything around you! You can try to EXAMINE the walls and the things on the floor. You can also TAKE things. When you are disorientated, feel free to take another LOOK at the room.".
 
 Rule for listing nondescript items of the North Passage:
 	do nothing.
 
-A hieratic ostracon is a thing in the North Passage. The description of the ostracon is "A shard of pottery is stained with hastily written hieratic, seemingly from when the complex was under construction. It reads: 'Fourth month of prt Day 22, Amount of work done by the Gang of the Left. What it dragged from the Quay of the Fortressof Menmaatre to the south of Menmaatre is Beneficial to Osiris...'"	
+A hieratic ostracon is a thing in the North Passage. The description of the ostracon is "A shard of pottery is stained with hastily written hieratic, seemingly from when the complex was under construction. It reads: 'Fourth month of prt Day 22, Amount of work done by the Gang of the Left. What it dragged from the Quay of the Fortressof Menmaatre to the south of Menmaatre is Beneficial to Osiris...'". The print-name is "hieratic ostracon"
 
-The walls of the north passage is a wall in the North Passage. The description is "A representation of the fore Osiris and Nut, who are merely subordinate sunrise, is painted on the East wall. Sculpted on the West wall is the sunset. "
+The walls of the north passage is a wall in the North Passage. The description is "A representation of the fore Osiris and Nut, who are merely subordinate sunrise, is painted on the East wall. Sculpted on the West wall is the sunset." The print-name is "walls".
 
 Understand "wall" as the walls of the north passage.
 
-A tall pottery stand is a thing in the North Passage. The description is "An unassuming pottery stand, its form typical of the 19th dynasty."
+A tall pottery stand is a thing in the North Passage. The description is "An unassuming pottery stand, its form typical of the 19th dynasty." The print-name is "tall pottery stand".
 
 Instead of taking the tall pottery stand, say "It's awfully burdening to carry around for as little use as it is to you."
 
-Trial pieces of a sculptor is a thing in the North Passage. The description is "Two sculpted trial pieces probably from the same school. The first piece is an attempt at the neb sign. Above is the master's hand as an example, and below are the student's attempts 'in every degree of badness'. The other piece shows a scene of the worship of Osiris. It is unfinished, only one figure having been sculpted, the rest being merely sketched out in black ink."
+Trial pieces of a sculptor is a thing in the North Passage. The description is "Two sculpted trial pieces probably from the same school. The first piece is an attempt at the neb sign. Above is the master's hand as an example, and below are the student's attempts 'in every degree of badness'. The other piece shows a scene of the worship of Osiris. It is unfinished, only one figure having been sculpted, the rest being merely sketched out in black ink." The print-name is "trial pieces of a sculptor".
 
 Instead of taking trial pieces, say "You distastefully look at the amateur scribbles. Bleh."
 	
-Plaster casts are a thing in the North Passage. The description is "Casts of eyes of statues and of details of decorations, probably from the temple of Ramesses."
+Plaster casts are a thing in the North Passage. The description is "Casts of eyes of statues and of details of decorations, probably from the temple of Ramesses." The print-name is "plaster casts".
 
-Instead of taking plaster casts, say "Ooh, fun little figures! If only you cared."
+Instead of taking plaster casts, say "Ooh, fun little figures! If only you cared." 
 
 The Great Hall is a room in Abydos. It is south of the North Passage. "The Great Hall widens from the Northern Passage into a long rectangular room. The floor, similar to that of the South Chamber and the passages, is paved with sandstone. The roofing stones stretched the whole width of the hall, without any pillars or other support. "
 
@@ -394,7 +401,9 @@ The walls of the great hall is a wall in the Great Hall. "The North and South Wa
 	
 Understand "wall" as the walls of the great hall.
 
-The South Chamber is a room in Abydos. It is south of the great hall. "You are now in the south chamber. North is the great hall. [line break]The small chamber contains some potentially useful items you can EXAMINE or TAKE..." 
+The South Chamber is a room in Abydos. It is south of the great hall. "You are now in the south chamber. [paragraph break][beginner guide hint the H4]"
+
+H4 is a hint-object. The hint-content is "Whenever faced with random objects, try to EXAMINE or TAKE them. There may be some potentially useful items in the mishmash...".
 
 [x wall]
 [small squatting statuette]
@@ -424,8 +433,6 @@ The west moat is a moat. It is east of the First Transverse Chamber and west of 
 [somehow add info about the weird moat stuff, also mention Strabo]
 
 The east moat is a moat. It is west of the Tomb of Osiris and east of the Central Nave.
-	
-[one day the plank will have be placed down and picked up...but not for the demo! ]
 
 Instead of going through the west moat:
 	if the player does not have the wooden plank:
@@ -468,6 +475,8 @@ The painted roof is scenery in the Tomb of Osiris. The description of the painte
 The inscribed walls are scenery in the Tomb of Osiris. The description of the inscribed walls is "The hieroglyphs here are meticulously carved, detailing invocations to the gods and protective spells. Some portions of the text are damaged, yet the overall message of guidance and protection is clear."
 
 The sarcophagus is a closed container. It is locked. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Its occupant must have made it auto-update every now and then to keep up with the most popular trends. Perhaps you can use something to UNLOCK it." The sarcophagus has matching key the faience ankh.
+
+
 
 Instead of unlocking the sarcophagus with the faience ankh:
 	now the sarcophagus is unlocked;
@@ -1076,11 +1085,11 @@ After going to the Hallway during Escape:
 	continue the action.
 
 When Escape begins:
-	say "You have been taken by the guards into a jail cell!";
+	say "[notice style]You have been taken by the guards into a jail cell![end style]";
 	now Heracles is uncaught.
 	
 When Escape ends:
-	say "The guards rush into the room and apprehend you!";
+	say "[notice style]The guards rush into the room and apprehend you![end style]";
 	now Heracles is uncaught;
 	now Heracles is in the Jail Cell;
 	now the player is in the jail Cell.
@@ -1094,7 +1103,7 @@ Every turn during Escape:
 
 Instead of going when the location is a corridor during Escape:
 	if a random chance of 1 in 6 succeeds:
-		say "You amble down the winding corridors...";
+		say "[notice style]You amble down the winding corridors...[end style]";
 		teleport the player;	
 	otherwise:
 		continue the action.

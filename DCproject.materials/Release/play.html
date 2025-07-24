@@ -36,27 +36,27 @@
 	<!-- LEFT SIDEBAR -->
 
 		<aside class="sidebar left-sidebar">
-			<button class="sidebar-button sidebar-item" onclick="location.href='index.html'">Home</button>
-			<hr>
-			<button class="sidebar-button sidebar-item" onclick="toggleHelp(true)">Help</button>
+			<button class="sidebar-button sidebar-item" onclick="location.href='index.html'">< Home</button>
+			<!-- <hr> -->
+			<button class="sidebar-button sidebar-item" onclick="toggleHelp(true)">? Help</button>
 			<hr>
 			<div class="quick-menu">
 				<div class="quick-menu-header sidebar-item">Quick Commands</div>
 				<div class="quick-menu-body">
 					<a class="vorple-commandlink command-link" data-command="look" onclick="vorple.prompt.queueCommand('look')">Look</a>
 					<a class="vorple-commandlink command-link" data-command="inventory" onclick="vorple.prompt.queueCommand('inventory')">Inventory</a>
-					<a class="vorple-commandlink command-link" data-command="go" onclick="vorple.prompt.setValue('go')">Go</a>
-					<a class="vorple-commandlink command-link" data-command="look" onclick="vorple.prompt.setValue('examine')">Examine</a>
-					<a class="vorple-commandlink command-link" data-command="take" onclick="vorple.prompt.setValue('take')">Take</a>
+					<a class="vorple-commandlink command-link click-fill-command" data-command="go" onclick="vorple.prompt.setValue('go')">Go</a>
+					<a class="vorple-commandlink command-link click-fill-command" data-command="examine" onclick="vorple.prompt.setValue('examine')">Examine</a>
+					<a class="vorple-commandlink command-link click-fill-command" data-command="take" onclick="vorple.prompt.setValue('take')">Take</a>
 				</div>
 			</div>
 			<hr>
 			<button class="sidebar-button sidebar-item" onclick="saveGame()">Save Game</button>
-			<hr>
+			<!-- <hr> -->
 			<button class="sidebar-button sidebar-item" onclick="restoreGame()">Restore Game</button>
-			<hr>
+			<!-- <hr> -->
 			<button class="sidebar-button sidebar-item" onclick="saveTranscript()">Save Transcript</button>
-			<hr>
+			<!-- <hr> -->
 			<button class="sidebar-button sidebar-item" onclick="checkFiles()">Files</button>
 		</aside>
 
@@ -66,7 +66,7 @@
   </div>
   <!-- RIGHT SIDEBAR -->
 	<aside class="sidebar right-sidebar">
-		<div class="window-block">
+		<div class="window-block" id="scene-graphic">
 			<h4>Current Scene</h4>
 			<img src="Cover.png" alt="Scene graphic">
 		</div>
@@ -259,6 +259,7 @@ vorple.init();
 <script language="javascript" type="text/javascript" src="sidebars.js"></script>
 <script language="javascript" type="text/javascript" src="savegame.js"></script>
 <script language="javascript" type="text/javascript" src="slowscroll.js"></script>
+<script language="javascript" type="text/javascript" src="scenegraphic.js"></script>
   
 
 </body>

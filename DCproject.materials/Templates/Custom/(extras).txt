@@ -2,6 +2,8 @@ sidebars.js
 hoverfilllink.js
 savegame.js
 slowscroll.js
+scenegraphic.js
+scene_dict.json
 play.html
 index.html
 customStyle.css
