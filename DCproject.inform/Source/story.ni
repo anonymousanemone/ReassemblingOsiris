@@ -268,7 +268,7 @@ To list the transport options:
 		say "[line break]";
 		increment N;
 	if Vorple is supported:
-		place a link to command "get off chariot" reading "[tab](X - Get off chariot)[line break]";
+		place a link to command "get off chariot" reading "[line break]   (X - Get off chariot)[line break]";
 		execute JavaScript command "vorple.prompt.hide()".
 
 After getting off the chariot when Vorple is supported:
