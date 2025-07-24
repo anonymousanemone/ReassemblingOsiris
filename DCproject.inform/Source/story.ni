@@ -221,7 +221,9 @@ To say link to the examination of (target - a thing):
 	
 Rule for printing the name of a direction (called way) while listing exits:
 	if Vorple is supported:
-		place a link to the command "go [printed name of way]" reading "[printed name of way]".
+		place a link to the command "go [printed name of way]" reading "[printed name of way]";
+	otherwise:
+		say "[printed name of way]".
 
 Rule for printing the name of a thing (called obj):
 	place a link to the command "examine [printed name of obj]" reading "[printed name of obj]".
@@ -273,7 +275,7 @@ Elephantine	Elephantine-Marketplace
 
 Avaris, Busiris, Heliopolis, Memphis, Oxyrhynchos, Amarna, Abydos, Thebes, and Elephantine are regions. 
 
-The sun chariot is an enterable supporter. It is scenery. The sun chariot is in the Entrance to the Osireion. The description of the sun chariot is "Your sun chariot is parked, fiercely guarded by your pet dragons."
+The sun chariot is an enterable supporter. It is scenery. The sun chariot is in the Entrance to the Osireion. The description of the sun chariot is "Your [sun chariot] is parked, fiercely guarded by your pet dragons."
 
 ["the location" refers to the current location of the player]
 Every turn:
@@ -284,17 +286,20 @@ After entering the sun chariot:
 	say "As you step onto the chariot, your darling dragons hiss joyfully, happy to see you again. [run paragraph on]";
 	list the transport options.
 	
-[Rule for writing a paragraph about the sun chariot:
-	say "Your sun chariot is parked here, fiercely guarded by your pet dragons."]
+Rule for printing the name of the sun chariot when the sun chariot is in the location:
+	if Vorple is supported:
+		place a link to command "get on [printed name of sun chariot]" reading "[printed name of sun chariot]";
+	otherwise: 
+		say "[printed name of sun chariot]".
 
 [temp room declarations]
-Avaris-Marketplace is a room in Avaris. "You have reached a part of the game that is still under development. Please check back soon! :)"
+Avaris-Marketplace is a room in Avaris. "You have reached a part of the game that is still under development. Please check back soon! :)  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
-Heliopolis-Marketplace is a room in Heliopolis. "You have reached a part of the game that is still under development. Please check back soon! :)"
+Heliopolis-Marketplace is a room in Heliopolis. "You have reached a part of the game that is still under development. Please check back soon! :)  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
-Memphis-Marketplace is a room in Memphis. "You have reached a part of the game that is still under development. Please check back soon! :)"
+Memphis-Marketplace is a room in Memphis. "You have reached a part of the game that is still under development. Please check back soon! :)  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
-Elephantine-Marketplace is a room in Elephantine. "You have reached a part of the game that is still under development. Please check back soon! :)"
+Elephantine-Marketplace is a room in Elephantine. "You have reached a part of the game that is still under development. Please check back soon! :)  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
 
 Part 3 - Intro with Osiris' Head
@@ -339,7 +344,7 @@ Section 2 - Entering the Osireion
 [let boldtext be "You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER? If you ever feel confused, you can also ask for some HELP.";]
 
 	
-The Entrance to the Osireion is a room in Abydos. "You stand before the inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the [link to the examination of the stone door] is immaculate and fit into the style of the rest of the temple complex, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems pretty empty, with all the traffic going towards the main gates. Hopefully, no one will stop you from breaking in. [if the sun chariot is in the location]Your sun chariot is parked nearby.[end if]
+The Entrance to the Osireion is a room in Abydos. "You stand before the inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the [link to the examination of the stone door] is immaculate and fit into the style of the rest of the temple complex, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems pretty empty, with all the traffic going towards the main gates. Hopefully, no one will stop you from breaking in. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]
 	[if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if]
 	[if Osiris' head is unacquired][paragraph break][beginner guide hint the H1]"
 	
@@ -536,7 +541,7 @@ Next Instructions is a scene. Next Instructions begin when Exploration Ends. Nex
 	
 Section 2 - Workmen's village
 
-Outside the Walled Village is a room in Amarna. "You have reached Amarna, although you don't really know where to go from here. You are surrounded by quite a bit of rubble. This seems to have once been a great city to the west. Directly north, you see a walled cluster of buildings and hear the faint sound of hubbub. This might be a workmen's village. But it is entirely walled and only has one gate. That seems to be a fire hazard. You would know about those.";
+Outside the Walled Village is a room in Amarna. "You have reached Amarna, although you don't really know where to go from here. You are surrounded by quite a bit of rubble. This seems to have once been a great city to the west. Directly north, you see a walled cluster of buildings and hear the faint sound of hubbub. This might be a workmen's village. But it is entirely walled and only has one gate. That seems to be a fire hazard. You would know about those.  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]";
 
 [in the future, maybe add security checkpoint moment as Medea walks through gate?]
 
@@ -794,7 +799,7 @@ The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. " The mo
 
 The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmoses IV. Columns and archways display finely chiseled hieroglyphs extolling the king’s diplomatic prowess."
 
-The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "The Temple of Tawosret stands here, relatively modest compared to its neighbors but still adorned with intricate carvings.You can look around Thebes for something—or maybe someone—useful."
+The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "The Temple of Tawosret stands here, relatively modest compared to its neighbors but still adorned with intricate carvings.You can look around Thebes for something—or maybe someone—useful.  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
 The Temple of Merenptah is south of the Temple of Tawosret. It is in Thebes. "The Temple of Merenptah is here, partially ruined yet still imposing."
 
@@ -1407,7 +1412,7 @@ Instead of cutting a body part:
 
 Section 2 - Marketplace
 
-Oxyrhynchos-Marketplace is a room in Oxyrhynchos. "(You have reached a part of the game that is still under development. This section is partially complete. Should you want to try the minigame, please take all the items at the market place and head to the riverbank.)  [line break] You are in Oxyrhynchos, home of the medjed elephantfish. A little further east is the riverbank of the Nile."
+Oxyrhynchos-Marketplace is a room in Oxyrhynchos. "(You have reached a part of the game that is still under development. This section is partially complete. Should you want to try the minigame, please take all the items at the market place and head to the riverbank.)  [paragraph break] You are in Oxyrhynchos, home of the medjed elephantfish. A little further east is the riverbank of the Nile.  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
 
 

@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Quattrocento:wght@400;700&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&family=VT323&display=swap');
 
 :root{
-	--light-fg: #333;
-	--light-bg: #fff;
-	--light-link: #b67add;
-	--light-linkhover: #c591e8;
-	--light-header: #efefef;
+	--fg: #333;
+	--bg: #fff;
+  --header: #efefef;
+	--link: #b67add;
+	--linkhover: #c591e8;
 	
 	--normal-font: "Quattrocento", serif;
 	--normal-size: 20px;
@@ -13,13 +13,13 @@
 
 	--prefill-color: #656565;
 	--hint-color: #6f4393;
-	--hint-light: #f3edf8;
+	--hint-light: #f7f2fb;
   --notice-color: #8d4306;
 }
 
 #vorple {
-	background-color: var(--light-bg);
-	color: var(--light-fg);
+	background-color: var(--bg);
+	color: var(--fg);
 }
 
 .status-line-container {
@@ -34,7 +34,7 @@ body, input, label {
 
 #lineinput {
 	padding: 0.5em;
-	border: 2px solid black;
+	border: 2px solid var(--fg);
 	margin-bottom: 2em;
 }
 #lineinput-prefix{
@@ -64,12 +64,12 @@ body, input, label {
 }
 
 a, a:visited {
-	color: var(--light-link);
+	color: var(--link);
 	font-weight: bold;
 }
 
 a:hover{
-	color: var(--light-linkhover);
+	color: var(--linkhover);
 	text-decoration: none;
 }
 
@@ -183,7 +183,7 @@ aside.sidebar {
 .quick-menu-body a {
   display: block;
   padding: 0.4rem 0;
-  color: var(--light-link);
+  color: var(--link);
   text-decoration: none;
   font-weight: normal;
   position: relative;
@@ -199,7 +199,7 @@ aside.sidebar {
   content: "> ";
   position: absolute;
   left: 0;
-  color: var(--light-link);
+  color: var(--link);
   font-weight: bold;
 }
 
@@ -224,7 +224,7 @@ aside.sidebar {
   display: flex;
   flex-direction: column;
   width: 160px;
-  background: var(--light-header);
+  background: var(--header);
   border-right: 1px solid #ccc;
   overflow-y: auto;
 }
@@ -292,7 +292,7 @@ aside.sidebar {
 
 /* Accordion formatting */
 .accordion-header {
-  background: var(--light-header);
+  background: var(--header);
   border: none;
   padding: 12px;
   width: 100%;
@@ -332,7 +332,7 @@ aside.sidebar {
 }
 
 .vex.vex-theme-plain .vex-dialog-button.vex-dialog-button-primary{
-  background: var(--light-link);
+  background: var(--link);
 }
 
 @media (max-width: 700px) {

@@ -39,7 +39,7 @@ function HoverFillLink(event) {
       const command = link.getAttribute("data-command");
       if (command && input) {
         vorple.prompt.setValue(command);
-        input.style.color = "#000"; // Solid black
+        input.style.color = "var(--fg)"; // Solid black
         clickedLink = link;
         disableHover = true;
 
