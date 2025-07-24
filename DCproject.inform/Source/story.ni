@@ -205,7 +205,7 @@ A thing has some text called print-name.
 A hint-object is a kind of object. It has some text called hint-content.
 
 To say beginner guide hint (H - a hint-object):
-	say "[hint style][bold type](Beginner's Guide)[roman type] [hint-content of H] [end style]".
+	say "[hint style][bold type](Beginner's Guide)[roman type] [hint-content of H] [end style]".			
 	
 [A Vorple interface update rule:
 	if the location is North passage:

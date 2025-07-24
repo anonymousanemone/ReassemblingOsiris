@@ -13,8 +13,8 @@
 
 	--prefill-color: #656565;
 	--hint-color: #6f4393;
-	--hint-light: #f3e9fb;
-  --busiris-color: #8d4306;
+	--hint-light: #f3edf8;
+  --notice-color: #8d4306;
 }
 
 #vorple {
@@ -51,10 +51,16 @@ body, input, label {
 }
 
 .hint {
-	color: var(--hint-color)
+  color: var(--hint-color);
+  background: var(--hint-light);
+  display: block;
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin-bottom: -1.5rem;
 }
-.busiris {
-  color: var()
+
+.notice {
+  color: var(--notice-color)
 }
 
 a, a:visited {
@@ -139,8 +145,7 @@ aside.sidebar {
 }
 
 .sidebar-button:hover {
-  /* background-color:#8558aa; */
-  background-color: #eae3f9;
+  background-color: var(--hint-light);
 }
 
 .sidebar-item {
