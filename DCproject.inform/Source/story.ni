@@ -209,13 +209,6 @@ A hint-object is a kind of object. It has some text called hint-content.
 
 To say beginner guide hint (H - a hint-object):
 	say "[hint style][bold type](Beginner's Guide)[roman type] [hint-content of H] [end style]".			
-	
-[A Vorple interface update rule:
-	if the location is North passage:
-		clear the element called "location-pictures";
-		set output focus to the element called "location-pictures";
-		place an image "chariot.png" with the description "Chariot";
-		set output focus to the main window.]
 
 To say link to the examination of (target - a thing):
 	let link name be "x[target]";
@@ -235,30 +228,33 @@ Section 3 - Sun Chariot Travel
 
 Figure of chariot is the file "chariot.png".
 
-Understand "[number]" as selecting when player is on the sun chariot. Selecting is an action applying to one number.
-
-[actually this probably is never checked due to the line above]
-Check selecting: 
-	if the player is not on the sun chariot:
-		say "You can travel there only with your sun chariot. Your darling dragons will feel neglected.";		
-		do nothing instead.
-
-Check selecting:
-	if the number understood is greater than the number of filled rows in the Table of Transport Options or the number understood is less than one:
-		say "'[The number understood]' is not a valid option. ";
-		list the transport options instead.
+Selecting is an action applying to one topic.
+Understand "[text]" as selecting when the player is on the sun chariot.
 
 Carry out selecting:
-	let N be the number understood; [not actually a necessary step, but it makes the next line easier to understand]
-	choose row N in the Table of Transport Options;
-	if the home entry is a room:
-		clear the screen;
-		move the sun chariot to the home entry;
-		move the player to the home entry;
-		if Vorple is supported:
-			execute JavaScript command "vorple.prompt.unhide()";
-	otherwise:
-		say "*** BUG: Improperly filled table of transport options ***"
+	let T be the topic understood;
+	let input-text be indexed text;
+	now input-text is input-text in title case;
+	let match found be false;
+	repeat through the Table of Transport Options:
+		let region-name be "[transport entry]";
+		let number-text be "[n entry]";
+		if T exactly matches the text region-name, case insensitively or T exactly matches the text number-text, case insensitively:
+			let destination be the home entry;
+			goto destination;
+			now match found is true;
+			break;
+	if match found is false:
+		say "[T] is not a valid destination.";
+		list the transport options instead.
+
+To goto (destination - a room):
+	move the sun chariot to the destination;
+	clear the screen;
+	move the player to the destination;	
+	if Vorple is supported:
+		prefill the command line with "";
+		execute JavaScript command "vorple.prompt.unhide()";
 
 To list the transport options:	
 	let N be 1;
@@ -266,14 +262,14 @@ To list the transport options:
 	repeat through the Table of Transport Options:		
 		say "[tab][N]: ";
 		if Vorple is supported:	
-			place a link to command "[n entry]" reading "[transport entry]";
+			place a link to command "[transport entry]" reading "[transport entry]";
 		otherwise:
 			say "[transport entry]";
 		say "[line break]";
 		increment N;
 	if Vorple is supported:
-		place a link to command "get off chariot" reading "[tab](X - Get off chariot)[line break]".
-		[execute JavaScript command "vorple.prompt.hide()".]
+		place a link to command "get off chariot" reading "[tab](X - Get off chariot)[line break]";
+		execute JavaScript command "vorple.prompt.hide()".
 
 After getting off the chariot when Vorple is supported:
 	execute JavaScript command "vorple.prompt.unhide()".
