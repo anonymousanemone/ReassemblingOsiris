@@ -940,7 +940,7 @@ The twisted Unique Bush buds are a thing. The prepared Unique Bush buds are nowh
 The soaked Unique Bush buds are a thing. The soaked Unique Bush buds are nowhere.
 The laced plant bundle is a thing. The laced plant bundle is nowhere.
 The tied plant bundle is a thing. The tied plant bundle is nowhere.
-The prepared medicine is a thing. The prepared medicine is nowhere.
+The prepared medicine is a thing. The prepared medicine is nowhere. The description is "It has a terrible odor. A great headache cure."
 
 Preparing is an action applying to one carried thing. Understand "prepare [something]" as preparing.
 
