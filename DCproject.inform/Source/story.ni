@@ -178,6 +178,9 @@ Carry out screen-clearing:
 
 Section 2 - New Definitions
 
+To say tab:
+	say "    "; [6 spaces]
+
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "talk to [something]" or “converse with [someone]” or "converse with [something]" as talking to.
 
 Carry out talking to:
@@ -242,7 +245,7 @@ Check selecting:
 
 Check selecting:
 	if the number understood is greater than the number of filled rows in the Table of Transport Options or the number understood is less than one:
-		say "[The number understood] is not a valid option. ";
+		say "'[The number understood]' is not a valid option. ";
 		list the transport options instead.
 
 Carry out selecting:
@@ -250,27 +253,46 @@ Carry out selecting:
 	choose row N in the Table of Transport Options;
 	if the home entry is a room:
 		clear the screen;
+		move the sun chariot to the home entry;
 		move the player to the home entry;
+		if Vorple is supported:
+			execute JavaScript command "vorple.prompt.unhide()";
 	otherwise:
 		say "*** BUG: Improperly filled table of transport options ***"
 
-To list the transport options:
+To list the transport options:	
 	let N be 1;
 	say "From here you could choose to go to: [line break]";
-	repeat through the Table of Transport Options:
-		say "  [N]: [transport entry][line break]";
-		increment N.
+	repeat through the Table of Transport Options:		
+		say "[tab][N]: ";
+		if Vorple is supported:	
+			place a link to command "[n entry]" reading "[transport entry]";
+		otherwise:
+			say "[transport entry]";
+		say "[line break]";
+		increment N;
+	if Vorple is supported:
+		place a link to command "get off chariot" reading "[tab](X - Get off chariot)[line break]".
+		[execute JavaScript command "vorple.prompt.hide()".]
+
+After getting off the chariot when Vorple is supported:
+	execute JavaScript command "vorple.prompt.unhide()".
+	
+Report getting off the chariot:
+	say "You get off the sun chariot. [line break]" instead.
+
+Understand "ride [the chariot]" as entering.
 
 Table of Transport Options
-transport (a region)	home (a room)
-Avaris	Avaris-Marketplace
-Heliopolis	Heliopolis-Marketplace
-Memphis	Memphis-Marketplace
-Oxyrhynchos	Oxyrhynchos-Marketplace
-Amarna	Outside the Walled Village
-Abydos	Entrance to the Osireion
-Thebes	Temple of Tawosret 
-Elephantine	Elephantine-Marketplace
+transport (a region)	home (a room)	n (a number)
+Avaris	Avaris-Marketplace	1
+Heliopolis	Heliopolis-Marketplace	2
+Memphis	Memphis-Marketplace	3
+Oxyrhynchos	Oxyrhynchos-Marketplace	4
+Amarna	Outside the Walled Village	5
+Abydos	Entrance to the Osireion	6
+Thebes	Temple of Tawosret 	7
+Elephantine	Elephantine-Marketplace	8
 [Busiris	Busiris-Marketplace]
 
 Avaris, Busiris, Heliopolis, Memphis, Oxyrhynchos, Amarna, Abydos, Thebes, and Elephantine are regions. 
@@ -481,19 +503,14 @@ The inscribed walls are scenery in the Tomb of Osiris. The description of the in
 
 The sarcophagus is a closed container. It is locked. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Its occupant must have made it auto-update every now and then to keep up with the most popular trends. Perhaps you can use something to UNLOCK it." The sarcophagus has matching key the faience ankh.
 
-
-
 Instead of unlocking the sarcophagus with the faience ankh:
 	now the sarcophagus is unlocked;
 	now the sarcophagus is open;
 	say "You unlock the sarcophagus. The head of Osiris is inside!".
-	
-Test open-unlock with "look / unlock sarcophagus with ankh" in Tomb of Osiris holding faience ankh.
 
 Osiris' head is a body part. It is in the sarcophagus. Osiris' head can be taken. Understand "Osiris" as Osiris' head. Include (- has animate -) when defining Osiris' head. Osiris' head can be smart or dumb. Osiris' head is dumb. The description of Osiris' head is "Osiris, in all his glorious, head-only form."
-
-Test Abydos with "e" in the First Transverse Chamber holding the wooden plank and faience ankh.
-
+		
+Test head with "look / unlock sarcophagus with ankh / take head" in Tomb of Osiris holding faience ankh.
 		
 
 Part 4 - Talking Osiris Agenda
@@ -574,10 +591,10 @@ Instead of talking to the workman during Get Body Bag:
 Instead of talking to the workman at least four times during Get Body Bag:
 	say "He seems to be expecting an answer from you. Maybe try SHOWing him what's hidden under your shirt. [paragraph break] The scary part, not the sexy part."
 	
-Instead of showing the head to the uncurious workman during Get Body Bag:
+Instead of showing the head to the uncurious workman during Discovery:
 	say "Flashing a decapitated head to someone you've never talked to before could be overkill. Try striking a conversation first."
 		
-Instead of showing the head to the curious workman during Discovery:
+Instead of showing the head to the curious workman during Get Body Bag:
 	say "You carefully take the head from under your shirt and show it to the workman. 'Do you have anything to go along with this?' you ask.[paragraph break]";
 	wait for any key;
 	say "The workman eyes you warily. 'You collect heads, huh? I knew a guy like that once. There's a reason we put up walls around here, you know... If you want heads, that old Aten cult temple's the place to check. Or what remains of it, at least.'  [paragraph break]"; 
@@ -659,7 +676,7 @@ The south mural is scenery in the Underground Chapel. The description is "This m
 
 The east mural is scenery in the Underground Chapel. The description is "The weathered relief on the eastern wall shows nothing but a simple, unadorned sun disk. Time has erased the surrounding details, leaving only faint traces of the elaborate etchings."
 
-The west mural is scenery in the Underground Chapel. The description is "This mural shows a man makes an offering to Aten. Cradled carefully in his hands is...a small duck?[paragraph break] Ha. You would never settle for such meager offerings."
+The west mural is scenery in the Underground Chapel. The description is "This mural shows a man makes an offering to Aten. Cradled carefully in his hands is...a small duck?[paragraph break]Ha. You would never settle for such meager offerings."
 
 The ceiling is scenery in the Underground Chapel. The description is "You crane your head up to look at the ceiling. There seems to be a lot going on here. You can see 1...2...3...4 major components. A sun disk is being held in the hands of a praying man. Across from him, a man with a very long head is smelling a lotus."
 
@@ -670,9 +687,11 @@ The second statue is scenery in the Underground Chapel. The description is "A st
 The third statue is scenery in the Underground Chapel. The description is "A statue of a man with a giant lotus sprouting out the top of his head. That looks painful."
 
 After examining something in the Underground Chapel for more than 3 times during Exploration:
-	say "[The noun] reveals nothing new to you. Maybe it's time to try touching things?"
+	say "[The noun] reveals nothing new to you. Maybe it's time to try touching things?".
 
 Instead of touching something in the Underground Chapel:
+	if there is no item in row 1 of the Table of Current Sequence:
+		continue the action;
 	choose row 1 in the Table of Current Sequence;
 	if the noun is the item entry:
 		blank out the whole row;
@@ -716,7 +735,20 @@ To trigger the end sequence:
 	say "You hear something from up above! Looking up at the ceiling, you see a gray lump fall from the duck-bearing man's head right to your feet. Is that a...?";
 	move Osiris' brain to the Underground Chapel.
 
+Test brain with "touch east mural / touch west mural / touch second statue / touch third statue / take brain" in Underground Chapel.
+
 Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands."
+
+Understand "lump" as Osiris' brain.
+
+After examining the brain:
+	now the brain is examined.
+
+Instead of taking the brain when the player's command includes "lump":
+	if Osiris' brain is unexamined:
+		say "Better not take something you don't know.";
+	otherwise:
+		continue the action.
 
 After taking Osiris' brain:
 	say "With great anticipation, you take the brain and plop it right into the head.[paragraph break]You patiently wait for Osiris to regain intelligent thought and offer you his utmost thanks.[paragraph break]";
@@ -774,6 +806,10 @@ Every turn during Next Instructions:
 		now the workman is uncurious. [next instructions end]
 
 [now when medea thinks -- she is reminded to go to thebes]
+
+Carry out talking to the uncurious workman:
+	say "The workman grunts, uninterested in further conversation." instead.
+	
 	
 test Amarna with "look / n" in The small aten temple holding the head.
 
@@ -854,8 +890,11 @@ Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had bro
 
 Understand "scroll / papyri" as the medical papyri.
 
+Instead of examining the papyri:
+	now the papyri is examined;
+	continue the action.
+
 [after examining papyri, player can type "think" to remember what she needs]
-[doesn't work right now because papyri is scenery, not a thing]
 Instead of thinking during Heal Heracles:
 	if the papyri is examined:
 		say "-YET ANOTHER- CONJURATION FOR THE HEAD [line break] Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.[paragraph break] Once you have these items, you can PREPARE them to make the medicine. You can always check your inventory to see what you have.".
@@ -866,7 +905,7 @@ Section 3 - Healing Heracles
 
 Heracles is a man. Heracles can be sick or healthy. Heracles is sick. The description of Heracles is "A muscled man wearing lion skin and carrying a club. [if Heracles is sick] He is lying face down on the floor, moaning in agony. Perhaps you should help him? Only because he might be useful, of course. But how?"
 
-Instead of talking to sick Heracles:
+Instead of talking to sick Heracles for the first time:
 	say "'Is that...Heracles?' you called out.[paragraph break]";
 	wait for any key;
 	say "The only response you received was an agonized groan.[paragraph break]";
@@ -896,8 +935,8 @@ The vial of plant mucus is on the brewing table. The description is "A small gla
 
 The buds of a Unique Bush are in the Ruined City. The description is "A rare and magical bush said to have healing properties. It bears buds of a mystical nature." 
 
-Rule for printing the name of the Buds of a Unique Bush when the Buds of a Unique Bush are  in the Ruined City:
-	say "a Unique Bush".
+Rule for printing the name of the Buds of a Unique Bush when the Buds of a Unique Bush are in the Ruined City:
+	say "Unique Bush".
 
 A bud of a snb-plant is in the South Chamber. The description is "The bud of a mysterious plant, tied up with some string." 
 
@@ -909,11 +948,16 @@ The prepared medicine is a thing. The prepared medicine is nowhere.
 
 Preparing is an action applying to one carried thing. Understand "prepare [something]" as preparing.
 
+Preparing it with is an action applying to two carried things. Understand "prepare [something] with [something]" as preparing it with. Understand "prepare [something] in [something]" as preparing it with.
+
+Understand "prepare medicine" as a mistake ("Try preparing each ingredient according to the spell.") when the papyri is examined.
+
 Carry out preparing:
 	if the noun is the buds of a unique bush:
 		now the buds of a Unique Bush is nowhere;
 		now the player is holding the twisted Unique Bush buds;
 		say "You take the buds of the Unique Bush and carefully twist them leftwise.";
+		say "You now have [twisted Unique Bush buds].";
 	otherwise if the noun is the twisted Unique Bush buds:
 		if the player is not holding the mucus:
 			say "You can't continue preparing the medicine if you don't have the mucus. The next step is soaking the buds in mucus.";
@@ -922,6 +966,7 @@ Carry out preparing:
 			now the twisted Unique Bush buds is nowhere;
 			now the mucus is nowhere;
 			now the player is holding the soaked Unique Bush buds;
+			say "You now have [soaked Unique Bush buds].";
 	otherwise if the noun is the soaked Unique Bush buds:
 		if the player is not holding a bud of a snb-plant:
 			say "You can't continue preparing the medicine without the bud of a snb-plant. You need both the soaked Unique Bush buds and the bud of the snb-plant to lace them together.";
@@ -930,17 +975,62 @@ Carry out preparing:
 			now a bud of a snb-plant is nowhere;
 			now the soaked Unique Bush buds is nowhere;
 			now the player is holding the laced plant bundle;
+			say "You now have [laced plant bundle].";
 	otherwise if the noun is the laced plant bundle:
 		say "Using some string, you tie the laced plant buds together with seven evenly spaced knots.";
 		now the laced plant bundle is nowhere;
 		now the player is holding the prepared medicine;
+		say "You now have [the prepared medicine].";
 	otherwise:
 		say "That's not the right thing to prepare."
 		
+Carry out preparing the something with something:
+	if the noun is the twisted Unique Bush buds:
+		if the second noun is the plant mucus:
+			say "You submerge the twisted buds in mucus until they are thoroughly soaked.";
+			now the twisted Unique Bush buds is nowhere;
+			now the mucus is nowhere;
+			now the player is holding the soaked Unique Bush buds;
+			say "You now have [soaked Unique Bush buds].";
+		otherwise:
+			say "That's not the right thing to prepare twisted unique bush buds with.";
+	otherwise if the noun is the soaked Unique Bush buds:
+		if the second noun is the bud of a snb-plant:
+			say "You take the bud of the snb-plant and lace it together with the soaked Unique Bush buds.";
+			now a bud of a snb-plant is nowhere;
+			now the soaked Unique Bush buds is nowhere;
+			now the player is holding the laced plant bundle;
+			say "You now have [laced plant bundle].";
+		otherwise:
+			say "That's not the right thing to prepare the [soaked unique bush buds] with.";
+	otherwise if the noun is the bud of a snb-plant:
+		if the second noun is the soaked Unique Bush buds:
+			say "You take the bud of the snb-plant and lace it together with the soaked Unique Bush buds.";
+			now a bud of a snb-plant is nowhere;
+			now the soaked Unique Bush buds is nowhere;
+			now the player is holding the laced plant bundle;
+			say "You now have [laced plant bundle].";
+		otherwise:
+			say "That's not the right thing to prepare the [soaked unique bush buds] with.";
+	otherwise:
+		say "That's not the right thing to prepare."
+		
+		
+Understand "twist [buds of a unique bush]" or "twist [buds of a unique bush] left" or "twist [buds of a unique bush] leftwise" as preparing.
+
+Understand "soak [twisted Unique Bush buds]" as preparing.
+
+Understand "soak [twisted Unique Bush buds] in [mucus]" or "soak [twisted Unique Bush buds] with [mucus]" as preparing it with.
+
+Understand "lace [soaked Unique Bush buds]" as preparing.
+
+Understand "lace [soaked Unique Bush buds] with [bud of a snb-plant]" as preparing it with.
+
+Understand "fit [laced plant bundle] with 7 knots" or "fit [laced plant bundle] with seven knots" or "knot [laced plant bundle]" or "knot [laced plant bundle] 7 times" or "knot [laced plant bundle] seven times" as preparing.
 
 Understand "apply [other things] on [something]" as putting it on.
 
-Understand "apply [other things] to [something]" as a mistake ("Try applying it ON [the second noun]")
+Understand "apply [other things] to [something]" as putting it on. [("Try applying it ON [the second noun]")]
 
 Heracles can be medicated or unmedicated. Heracles is unmedicated. 
 
@@ -948,12 +1038,16 @@ Instead of putting the prepared medicine on Heracles:
 	say "You gently place the prepared bundle on the throat of the afflicted Heracles. You should recite the spell now.";
 	now Heracles is medicated.
 	
+Understand "heal [Heracles]" or "help [Heracles]" or "cure [Heracles]" as a mistake ("[if the papyri is examined]Try following the steps in the spell. A sick Heracles can't be healed in one step, after all. [otherwise if the player is carrying the prepared medicine] You gotta APPLY the medicine and get down and dirty with the nitty gritty steps! [otherwise]You don't even know where to start! Now that you can't use your magic, you have to start reading up on the mortal way of things.").
+	
 Understand "I have indeed applied something to all his sore spots" as chanting. Chanting is an action applying to nothing.
 
-Carry out chanting:
-	say "What?"
+Understand "recite spell" or "chant" as a mistake ("Try directly saying the spell without any punctuation.") when the papyri is examined.
 
-Instead of chanting in the presence of sick Heracles:	
+Carry out chanting:
+	say "You feel a little crazy speaking to yourself."
+
+Carry out chanting in the presence of sick Heracles:	
 	say "You speak the spell.[paragraph break]";
 	wait for any key;
 	say "You wait for something to happen.[paragraph break]";
@@ -992,6 +1086,9 @@ Chapter 4 - Busiris-Organs
 
 Organ Acquisition is a scene. Organ Acquisition begins when Heal Heracles ends. Organ Acquisition ends when Osiris' liver is acquired.
 
+Instead of entering the chariot during Organ Acquisition:
+	say "You really didn't want Heracles' filthy paws anywhere near your beautiful chariot.".
+
 Table of Countdown
 num_moves
 1
@@ -1018,7 +1115,7 @@ yappery
 "Heracles groans, clutching his temples. 'All this talk of gods and brothers and chopping...Egypt is so strange! I'd rather wrestle another lion!![line break]His loud voice draws a few curious eyes..." 
 
 Every turn during Organ Acquisition:
-	if the Table of Countdown is full:
+	if the Table of Countdown is empty:
 		do nothing;
 	if the Table of Countdown is not empty:
 		choose a random row in Table of Heracles' Yapping;
