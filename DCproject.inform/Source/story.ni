@@ -221,7 +221,7 @@ Rule for printing the name of a direction (called way) while listing exits:
 	otherwise:
 		say "[printed name of way]".
 
-Rule for printing the name of a thing (called obj):
+Rule for printing the name of a thing (called obj) when printing the locale description of a room:
 	place a link to the command "examine [printed name of obj]" reading "[printed name of obj]".
 
 Section 3 - Sun Chariot Travel
@@ -682,8 +682,12 @@ The second statue is scenery in the Underground Chapel. The description is "A st
 
 The third statue is scenery in the Underground Chapel. The description is "A statue of a man with a giant lotus sprouting out the top of his head. That looks painful."
 
-After examining something in the Underground Chapel for more than 3 times during Exploration:
-	say "[The noun] reveals nothing new to you. Maybe it's time to try touching things?".
+After examining something in the Underground Chapel during Exploration:
+	if the noun is scenery:
+		if the noun is examined:
+			say "[The noun] reveals nothing new to you. Maybe it's time to try touching things?";
+		now the noun is examined.
+
 
 Instead of touching something in the Underground Chapel:
 	if there is no item in row 1 of the Table of Current Sequence:
@@ -730,8 +734,10 @@ To refill the sequence:
 To trigger the end sequence:
 	say "You hear something from up above! Looking up at the ceiling, you see a gray lump fall from the duck-bearing man's head right to your feet. Is that a...?";
 	move Osiris' brain to the Underground Chapel.
+	
+Test brain1 with "talk to workman / show head to workman / gonear chapel" in the Workmen's Village.
 
-Test brain with "touch east mural / touch west mural / touch second statue / touch third statue / take brain" in Underground Chapel.
+Test brain2 with "touch east mural / touch west mural / touch second statue / touch third statue / take brain" in Underground Chapel.
 
 Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands."
 
@@ -1022,6 +1028,8 @@ Understand "lace [soaked Unique Bush buds]" as preparing.
 
 Understand "lace [soaked Unique Bush buds] with [bud of a snb-plant]" as preparing it with.
 
+Understand "lace [bud of a snb-plant] with [soaked Unique Bush buds]" as preparing it with.
+
 Understand "fit [laced plant bundle] with 7 knots" or "fit [laced plant bundle] with seven knots" or "knot [laced plant bundle]" or "knot [laced plant bundle] 7 times" or "knot [laced plant bundle] seven times" as preparing.
 
 Understand "apply [other things] on [something]" as putting it on.
@@ -1213,10 +1221,10 @@ To teleport the player:
 	
 After going during Escape:
 	if the location is not a corridor:
-		say "timer set";
+		[say "timer set";]
 		set the timer;
 	otherwise:
-		say "delay timer";
+		[say "delay timer";]
 		delay the timer;
 	continue the action.
 	
@@ -1421,6 +1429,7 @@ To trigger Heracles leaving:
 	wait for any key;
 	say "You now have a heart scarab made of shining carnelian. Maybe you can examine it more closely. And with that, Heracles leaves.[paragraph break]";
 	wait for any key;
+	now Heracles is nowhere;
 	say "He certainly was obnoxious, but it was nice to travel with a companion.";
 	now the player is holding the heart scarab;
 	now palace exit is unrevealed;
