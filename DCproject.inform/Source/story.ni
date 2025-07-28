@@ -1381,8 +1381,14 @@ To start the sacrifice:
 Rule for listing exits when the location is Central Court during Ritual Sacrifice: 
 	do nothing.
 
-[fix talking to problem - ensure player is in central court when this happens - should be ok, double check]
 Instead of talking to Heracles in the presence of King Busiris during Ritual Sacrifice:
+	say "If you're too loud, Busiris will hear you...it's better to whisper."
+
+Whispering to is an action applying to one visible thing.
+Understand "whisper to [someone]" or "whisper instructions to [someone]" as whispering to.
+
+[fix talking to problem - ensure player is in central court when this happens - should be ok, double check]
+Instead of whispering to Heracles in the presence of King Busiris during Ritual Sacrifice:
 	end the sacrifice.
 	
 To end the sacrifice:
