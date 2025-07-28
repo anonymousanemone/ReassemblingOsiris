@@ -643,7 +643,7 @@ Instead of going to the Small Aten Temple when the player is on the oxcart:
 Instead of going to the Workmen's Village when the player is on the oxcart:
 	say "The security at the entrance stops you. No animal-drawn vehicles in the village!"
 
-The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "The traces of this Aten Temple still hint at its former grandeur. It once comprised three courts—the first, the second, and the sanctuary. Now you stand in what used to be the sanctuary court, its original form long since demolished. It is still impressive despite representing only a fraction of its former splendor."
+The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "The traces of this Aten Temple still hint at its former grandeur. It once comprised three courts—the first, the second, and the sanctuary. Now you stand in what used to be the sanctuary court, its original form long since demolished. A partially reconstructed sanctuary is to your north. It is still impressive despite representing only a fraction of its former splendor."
 
 The Sanctuary is a room in Amarna. It is inside of the Small Aten Temple. "Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor Aten, the sun disk. Around the perimeter of the sanctuary are low, carved altars, decorated with offerings and incense. In the center of the sanctuary, a shrine depicting Aten shines in its golden splendor."
 
@@ -1244,8 +1244,7 @@ At the time when the invisible tool rings:
 Table of Dangerous Places
 place (a room)
 Pillar Hall
-Cult Rooms
-Repository
+Temple Repository
 Pillar Crypt
 Shrine Room
 Double Axe Hall 
@@ -1274,15 +1273,13 @@ Section 2 - Busiris Palace
 
 Central Court is a room in Busiris. "Center of public life in Busiris."
 
-King Busiris is a person. King Busiris can be alive or dead. King Busiris is alive.
+King Busiris is a person. King Busiris can be alive or dead. King Busiris is alive. The description of dead King Busiris is "Dead, just like all your enemies were."
 
 A corridor is a kind of room. 
 
 Pillar Hall is a room in Busiris. It is north of Central Court. Pillar Hall is northeast of Hallway. "The air in this vaulted chamber seems to thrum with a sinister power."
 
-Cult Rooms is a room in Busiris. It is west of Central Court. "Flickering torchlight reveals alcoves lined with deity figurines and offerings."
-
-Repository is a room in Busiris. It is north of Cult Rooms. "Rows of dusty shelves crammed with scrolls, clay tablets, and magical texts."
+Temple Repository is a room in Busiris. It is north of Pillar Crypt. "Rows of dusty shelves crammed with scrolls, clay tablets, and magical texts."
 
 The Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of Crypt of Osiris is nothing. "Cloaked in a heavy silence, this chamber radiates an eerie chill. Wait...is that?"
 
@@ -1294,7 +1291,7 @@ A Bes Jar is in the Crypt of Osiris. It is unacquired. The description of the Be
 
 [in the future, maybe make this an identification mini game]
 
-Pillar Crypt is a room in Busiris. It is west of Cult Rooms. It is east of Crypt of Osiris. Nothing is west of Pillar Crypt.
+Pillar Crypt is a room in Busiris. It is west of Central Court. It is east of Crypt of Osiris. Nothing is west of Pillar Crypt.
 
 Corridor of Procession East is a corridor in Busiris. It is south of Central Court. "A broad ceremonial passage with faded murals, now haunted only by the sound of your footsteps."
 
