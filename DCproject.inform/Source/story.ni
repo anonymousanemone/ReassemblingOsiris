@@ -362,7 +362,7 @@ Section 2 - Entering the Osireion
 [let boldtext be "You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER? If you ever feel confused, you can also ask for some HELP.";]
 
 	
-The Entrance to the Osireion is a room in Abydos. "You stand before the inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the [link to the examination of the stone door] is immaculate and fit into the style of the rest of the temple complex, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems pretty empty, with all the traffic going towards the main gates. Hopefully, no one will stop you from breaking in. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]
+The Entrance to the Osireion is a room in Abydos. "You stand before an inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the [link to the examination of the stone door] is immaculate, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems empty, with all the traffic instead going toward the main gates. Hopefully, no one will stop you from breaking in. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]
 	[if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if]
 	[if Osiris' head is unacquired][paragraph break][beginner guide hint the H1]"
 	
@@ -1378,8 +1378,14 @@ To start the sacrifice:
 Rule for listing exits when the location is Central Court during Ritual Sacrifice: 
 	do nothing.
 
-[fix talking to problem - ensure player is in central court when this happens - should be ok, double check]
 Instead of talking to Heracles in the presence of King Busiris during Ritual Sacrifice:
+	say "If you're too loud, Busiris will hear you...it's better to whisper."
+
+Whispering to is an action applying to one visible thing.
+Understand "whisper to [someone]" or "whisper instructions to [someone]" as whispering to.
+
+[fix talking to problem - ensure player is in central court when this happens - should be ok, double check]
+Instead of whispering to Heracles in the presence of King Busiris during Ritual Sacrifice:
 	end the sacrifice.
 	
 To end the sacrifice:
@@ -1402,6 +1408,8 @@ To end the sacrifice:
 	now palace exit is revealed;
 	now palace exit is open;
 	wait for any key;
+
+The description of palace exit is "An imposing door at the entrance of the central court. With all the chaos, this might be your chance!"
 
 Instead of going through palace exit:
 	now the player is in The Temple of Tawosret;
