@@ -1,61 +1,87 @@
 let imageMap = {};
 let rootPath = "";
+let preloadedImages = {};
+let lastScene = "";
+let lastRegion = "";
 
+// Load JSON first
 fetch('scene_dict.json')
   .then(res => res.json())
   .then(data => {
     rootPath = data["root-path"] || "";
     delete data["root-path"];
     imageMap = data;
-    observeStatusChange();
   })
   .catch(err => console.error("Failed to load scene_dict.json:", err));
 
-vorple.addEventListener("init", observeStatusChange);
+// Wait for Vorple to initialize before starting observation
+vorple.addEventListener("init", () => {
+  waitForElementsThenObserve();
+});
 
-function observeStatusChange() {
-  const sceneEl = document.querySelector(".status-text-left");
+function waitForElementsThenObserve() {
+  const sceneEl = document.querySelector(".status-line-left");
   const regionEl = document.querySelector(".status-line-right");
   const imgEl = document.getElementById("scene-graphic");
 
   if (!sceneEl || !regionEl || !imgEl) {
-    console.warn("Required elements not found. Observer not started.");
+    // Retry in 100ms
+    setTimeout(waitForElementsThenObserve, 100);
     return;
   }
+  console.log("Detected status line.")
+  startObserving(sceneEl, regionEl, imgEl);
+}
 
-  let lastScene = sceneEl.textContent.trim();
-  let lastRegion = regionEl.textContent.trim();
-
+function startObserving(sceneEl, regionEl, imgEl) {
+  const defaultImageSrc = imgEl.src;
   const observer = new MutationObserver(() => {
     const currentScene = sceneEl.textContent.trim();
     const currentRegion = regionEl.textContent.trim();
-    console.log("mutation observed");
+    console.log(currentScene, currentRegion)
 
-    if (!currentScene || !currentRegion ||
-        (currentScene === lastScene && currentRegion === lastRegion)) return;
+    if (!currentScene || !currentRegion) return;
 
-    lastScene = currentScene;
-    lastRegion = currentRegion;
+    const regionChanged = currentRegion !== lastRegion;
+    const sceneChanged = currentScene !== lastScene;
 
-    const regionScenes = imageMap[currentRegion];
-    if (!regionScenes) {
-      console.warn(`Region "${currentRegion}" not found.`);
-      return;
+    if (!regionChanged && !sceneChanged) return;
+
+    if (regionChanged) {
+      clearPreloadedImages();
+      preloadRegionImages(currentRegion);
+      lastRegion = currentRegion;
     }
 
-    const imagePath = regionScenes[currentScene];
-    if (imagePath && typeof imagePath === "string" && imagePath.trim() !== "") {
-      const fullPath = rootPath ? rootPath + imagePath : imagePath;
-      imgEl.src = fullPath;
-    } else {
-      console.warn(`Scene "${currentScene}" not found in region "${currentRegion}" or image path is empty.`);
-      // Do nothing; keep default image
+    if (sceneChanged) {
+      lastScene = currentScene;
+
+      const regionScenes = imageMap[currentRegion];
+      if (!regionScenes) {
+        console.warn(`Region "${currentRegion}" not found.`);
+        imgEl.src = defaultImageSrc;
+        return;
+      }
+
+      const imagePath = regionScenes[currentScene];
+      if (imagePath && typeof imagePath === "string" && imagePath.trim() !== "") {
+        const fullPath = rootPath ? rootPath + imagePath : imagePath;
+        imgEl.src = fullPath;
+      } else {
+        console.warn(`Scene "${currentScene}" not found in region "${currentRegion}" or image path is empty.`);
+        imgEl.src = defaultImageSrc;
+      }
     }
   });
 
   observer.observe(sceneEl, { childList: true, subtree: true });
   observer.observe(regionEl, { childList: true, subtree: true });
+
+  // Run once immediately in case the status bar is already populated
+  observer.takeRecords(); // clears any queued mutations
+  observer.callback?.(); // custom call if you'd like an initial update
 }
+
 function preloadRegionImages(regionName) {
   const regionScenes = imageMap[regionName];
   if (!regionScenes) return;
