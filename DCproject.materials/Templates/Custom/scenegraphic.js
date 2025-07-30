@@ -35,7 +35,18 @@ function waitForElementsThenObserve() {
 
 function startObserving(sceneEl, regionEl, imgEl) {
   const defaultImageSrc = imgEl.src;
+   // initial detection: try once immediately
+  tryToUpdateImage(sceneEl, regionEl, imgEl, defaultImageSrc);
+
+  // observe future changes
   const observer = new MutationObserver(() => {
+    tryToUpdateImage(sceneEl, regionEl, imgEl, defaultImageSrc);
+  });
+
+  observer.observe(sceneEl, { childList: true, subtree: true });
+  observer.observe(regionEl, { childList: true, subtree: true });
+}
+function tryToUpdateImage(sceneEl, regionEl, imgEl, defaultImageSrc) {
     const currentScene = sceneEl.textContent.trim();
     const currentRegion = regionEl.textContent.trim();
     console.log(currentScene, currentRegion)
@@ -72,15 +83,7 @@ function startObserving(sceneEl, regionEl, imgEl) {
         imgEl.src = defaultImageSrc;
       }
     }
-  });
-
-  observer.observe(sceneEl, { childList: true, subtree: true });
-  observer.observe(regionEl, { childList: true, subtree: true });
-
-  // Run once immediately in case the status bar is already populated
-  observer.takeRecords(); // clears any queued mutations
-  observer.callback?.(); // custom call if you'd like an initial update
-}
+  }
 
 function preloadRegionImages(regionName) {
   const regionScenes = imageMap[regionName];
