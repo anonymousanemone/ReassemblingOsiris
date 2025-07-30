@@ -26,10 +26,10 @@ Notice is a Vorple style.
 
 Release along with cover art ("Vase painting of Medea on her chariot").
 
-[Section 1 - Story Transcript - For release only
+Section 1 - Story Transcript - For release only
 
 When play begins: 
-	try switching the story transcript on;]
+	try switching the story transcript on;
 
 Part 1 - Prologue - for release only
 
@@ -645,42 +645,42 @@ Instead of going to the Workmen's Village when the player is on the oxcart:
 
 The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "The traces of this Aten Temple still hint at its former grandeur. It once comprised three courts—the first, the second, and the sanctuary. Now you stand in what used to be the sanctuary court, its original form long since demolished. A partially reconstructed sanctuary is to your north. It is still impressive despite representing only a fraction of its former splendor."
 
-The Sanctuary is a room in Amarna. It is inside of the Small Aten Temple. "Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor Aten, the sun disk. Around the perimeter of the sanctuary are low, carved altars, decorated with offerings and incense. In the center of the sanctuary, a shrine depicting Aten shines in its golden splendor."
+The Sanctuary is a room in Amarna. It is inside of the Small Aten Temple. "Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor Aten, the sun disk. Around the perimeter of the sanctuary are low, carved [link to the examination of carved altars], decorated with [link to the examination of offerings] and incense. In the center of the sanctuary, a [link to the examination of shrine] depicting Aten shines in its golden splendor."
 
-The carved altars are scenery in the Sanctuary. "The low altars are made of sandstone, each inscribed with dedications to Aten."
+The carved altars are scenery in the Sanctuary. "The low altars are made of sandstone, each inscribed with dedications to Aten." The print-name is "altars".
 
-The offerings are things in the Sanctuary. "Arranged delicately atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers. Odd. Wasn't this place abandoned?"
+The offerings are things in the Sanctuary. "Arranged delicately atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers. Odd. Wasn't this place abandoned?". The print-name is "offerings".
 
-The Aten shrine is scenery in the Sanctuary. "At the heart of the sanctuary stands a majestic shrine dedicated to Aten. The shrine captures and reflects the abundant sunlight that bathes the room. The central depiction of the Aten radiates golden beams that dance across the walls, filling the space with a divine glow."
+The Aten shrine is scenery in the Sanctuary. "At the heart of the sanctuary stands a majestic shrine dedicated to Aten. The shrine captures and reflects the abundant sunlight that bathes the room. The central depiction of the Aten radiates golden beams that dance across the walls, filling the space with a divine glow." The print-name is "shrine".
 
 The hidden staircase is a secret door. The staircase is above the Underground chapel and below the Sanctuary. 
 
 Instead of examining the shrine:
 	now the hidden staircase is revealed;
-	now the hidden staircase is open;
+	now the hidden staircase is open;	
 	say "You hear an odd rumbling noise. There was a hidden staircase! You can go down to see what's there.";
 	continue the action.
 
-Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. There are three strange statues, and murals with eerily etched toes line all four walls. The ceiling depicts an intricate scene. [if unvisited][paragraph break]What odd surroundings. Perhaps you should take a closer look and EXAMINE some things. The chapel is completely empty, so there's also no harm in TOUCHing something--in fact, that might help you figure things out."
+Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. There are three strange statues ([link to the examination of first statue], [link to the examination of second statue], [link to the examination of third statue]) and murals ([link to the examination of north mural], [link to the examination of east mural], [link to the examination of south mural], [link to the examination of west mural]) with eerily etched toes line all four walls. The [link to the examination of ceiling] depicts an intricate scene. [if unvisited][paragraph break]What odd surroundings. Perhaps you should take a closer look and EXAMINE some things. The chapel is completely empty, so there's also no harm in TOUCHing something--in fact, that might help you figure things out."
 
 
 Section 4 - At the Small Aten Temple
 	
-The north mural is scenery in the Underground Chapel. The description is "A radiant sun dominates the mural, its rays reaching outward. Each ray ends in delicate, finger-like extensions, as though grasping for the world below. It's as if the sun itself were alive, bestowing its blessings on all it touches."
+The north mural is scenery in the Underground Chapel. The description is "A radiant sun dominates the mural, its rays reaching outward. Each ray ends in delicate, finger-like extensions, as though grasping for the world below. It's as if the sun itself were alive, bestowing its blessings on all it touches." The print-name is "north mural".
 
-The south mural is scenery in the Underground Chapel. The description is "This mural depicts a gathering of figures, each etched with exquisite detail. Curiously, the figures here have extremely defined toes...you're not quite sure why."
+The south mural is scenery in the Underground Chapel. The description is "This mural depicts a gathering of figures, each etched with exquisite detail. Curiously, the figures here have extremely defined toes...you're not quite sure why." The print-name is "south mural".
 
-The east mural is scenery in the Underground Chapel. The description is "The weathered relief on the eastern wall shows nothing but a simple, unadorned sun disk. Time has erased the surrounding details, leaving only faint traces of the elaborate etchings."
+The east mural is scenery in the Underground Chapel. The description is "The weathered relief on the eastern wall shows nothing but a simple, unadorned sun disk. Time has erased the surrounding details, leaving only faint traces of the elaborate etchings." The print-name is "east mural".
 
-The west mural is scenery in the Underground Chapel. The description is "This mural shows a man makes an offering to Aten. Cradled carefully in his hands is...a small duck?[paragraph break]Ha. You would never settle for such meager offerings."
+The west mural is scenery in the Underground Chapel. The description is "This mural shows a man makes an offering to Aten. Cradled carefully in his hands is...a small duck?[paragraph break]Ha. You would never settle for such meager offerings." The print-name is "west mural".
 
-The ceiling is scenery in the Underground Chapel. The description is "You crane your head up to look at the ceiling. There seems to be a lot going on here. You can see 1...2...3...4 major components. A sun disk is being held in the hands of a praying man. Across from him, a man with a very long head is smelling a lotus."
+The ceiling is scenery in the Underground Chapel. The description is "You crane your head up to look at the ceiling. There seems to be a lot going on here. You can see 1...2...3...4 major components. A sun disk is being held in the hands of a praying man. Across from him, a man with a very long head is smelling a lotus." The print-name is "ceiling".
 
-The first statue is scenery in the Underground Chapel. The description is "A broken statue that probably once depicted a person. Guess we'll never find out. You feel a strange kinship with this statue."
+The first statue is scenery in the Underground Chapel. The description is "A broken statue that probably once depicted a person. Guess we'll never find out. You feel a strange kinship with this statue." The print-name is "first statue".
 
-The second statue is scenery in the Underground Chapel. The description is "A statue of a man with a ridiculously long head. He looks remarkably like a man you once knew."
+The second statue is scenery in the Underground Chapel. The description is "A statue of a man with a ridiculously long head. He looks remarkably like a man you once knew." The print-name is "second statue".
 
-The third statue is scenery in the Underground Chapel. The description is "A statue of a man with a giant lotus sprouting out the top of his head. That looks painful."
+The third statue is scenery in the Underground Chapel. The description is "A statue of a man with a giant lotus sprouting out the top of his head. That looks painful." The print-name is "third statue".
 
 After examining something in the Underground Chapel during Exploration:
 	if the noun is scenery:
@@ -837,7 +837,7 @@ The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. " The mo
 
 The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmoses IV. Columns and archways display finely chiseled hieroglyphs extolling the king’s diplomatic prowess."
 
-The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "The Temple of Tawosret stands here, relatively modest compared to its neighbors but still adorned with intricate carvings.You can look around Thebes for something—or maybe someone—useful.  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
+The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "The Temple of Tawosret stands here, relatively modest compared to its neighbors but still adorned with intricate carvings. You can look around Thebes for something—or maybe someone—useful. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
 The Temple of Merenptah is south of the Temple of Tawosret. It is in Thebes. "The Temple of Merenptah is here, partially ruined yet still imposing."
 
@@ -851,11 +851,11 @@ The Smaller Temple of Thutmoses III is scenery in the Collection of Three Temple
 
 The Temple of Amenhotep III is east of the the Collection of Three Temples. It is in Thebes. "Amenhotep III's vast mortuary temple lies here. Even in partial ruin, the temple reflects the grandeur of his reign."
 
-The Memnon Colossi is east of the Temple of Amenhotep III. It is in Thebes. "Perched like silent sentinels, two massive statues of Amenhotep III watch over the land. Legend says their eerie dawn 'singing' once greeted travelers."
+The Memnon Colossi is east of the Temple of Amenhotep III. It is in Thebes. "Perched like silent sentinels, two massive statues of Amenhotep III ([link to the examination of the left statue], [link to the examination of the right statue]) watch over the land. Legend says their eerie dawn 'singing' once greeted travelers."
 
-The left statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi.
+The left statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi. The print-name is "left statue".
 
-The right statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi.
+The right statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi. The print-name is "right statue".
 
 Instead of cutting the The right statue of Amenhotep III, do nothing.
 
