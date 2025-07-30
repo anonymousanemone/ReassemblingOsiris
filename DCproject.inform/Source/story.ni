@@ -1251,11 +1251,10 @@ Double Axe Hall
 West Magazines
 South Propylaeum
 Workshops
-More Workrooms
 Court of the Stone Spout
 Lobby
 Tricolumnar Hall
-Loggia
+Treasury
 Great Hall-Busiris
 Porch
 
@@ -1266,8 +1265,7 @@ Corridor of Procession West
 Hallway
 North Corridor
 Corridor of the Draught Board
-Upper Hall West
-Upper Hall East
+Upper Hallway
 
 Section 2 - Busiris Palace
 
@@ -1313,29 +1311,25 @@ North Corridor is a corridor in Busiris. It is east of Pillar Hall. "A narrow ha
 
 Corridor of the Draught Board is a corridor in Busiris. It is south of North Corridor. "A long and winding corridor."
 
-Workshops is a room in Busiris. It is south of the Corridor of the Draught Board. "You see workbenches and tools scattered about."
-
 The Jail Cell is a room in Busiris. It is west of the Cell Door.  "Dark and claustrophobic. You can see desperate scratches of former prisoners."
 
 The Cell Door is a locked open door. The Cell Door is east of the Jail Cell and west of the Corridor of the Draught Board.
 
-More Workrooms is a room in Busiris. It is east of the Corridor of the Draught Board. "You see workbenches and tools scattered about."
+Workshops is a room in Busiris. It is east of the Corridor of the Draught Board. "You see workbenches and tools scattered about."
 
-Court of the Stone Spout is a room in Busiris. It is south of More Workrooms. It is north of Double Axe Hall. It is southeast of the Corridor of the Draught Board. "A small courtyard where a carved spout juts from the wall."
+Court of the Stone Spout is a room in Busiris. It is south of Workshops. It is north of Double Axe Hall. It is southeast of the Corridor of the Draught Board. "A small courtyard where a carved spout juts from the wall."
 
 Lobby is a room in Busiris. It is above the South Propylaeum. "Another room. But where is the exit?"
 
 Tricolumnar Hall is a room in Busiris. It is north of Lobby. "Three giant pillars fill this hall, casting long shadows across the floor."
 
-Upper Hall West is a corridor in Busiris. It is east of Tricolumnar Hall.  "Another corridor. You've having some trouble keeping track of where you are."
+Upper Hallway is a corridor in Busiris. It is west of Tricolumnar Hall.  "Another corridor. You've having some trouble keeping track of where you are."
 
-Loggia is a room in Busiris. It is south of Upper Hall West. "A half-open arcade overlooking an inner courtyard."
+Treasury is a room in Busiris. It is east of Lobby. "Treasury of the Sanctuary, so called."
 
-Upper Hall East is a corridor in Busiris. It is west of Tricolumnar Hall. "Another hall. At this rate, you're not sure how you'll find the exit."
+Great Hall-Busiris is a room in Busiris. It is west of Upper Hallway. The printed name of Great Hall-Busiris is "Great Hall".
 
-Great Hall-Busiris is a room in Busiris. It is west of Upper Hall East. The printed name of Great Hall-Busiris is "Great Hall".
-
-Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Upper Hall East.
+Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Upper Hallway.
 
 Section 3 - Ritual Sacrifice
 
