@@ -703,11 +703,6 @@ The east mural is scenery in the Underground Chapel. The description is "The wea
 
 The west mural is scenery in the Underground Chapel. The description is "This mural shows a man makes an offering to Aten. Cradled carefully in his hands is...a small duck?[paragraph break]Ha. You would never settle for such meager offerings." The print-name is "west mural".
 
-Understand "north wall" or "n wall" or "north mural" as the north mural when the location is the Underground Chapel.
-Understand "south wall" or "s wall" or "south mural" as the south mural when the location is the Underground Chapel.
-Understand "east wall" or "e wall" or "east mural" as the east mural when the location is the Underground Chapel.
-Understand "west wall" or "w wall" or "west mural" as the west mural when the location is the Underground Chapel.
-
 The ceiling is scenery in the Underground Chapel. The description is "You crane your head up to look at the ceiling. There seems to be a lot going on here. You can see 1...2...3...4 major components. A sun disk is being held in the hands of a praying man. Across from him, a man with a very long head is smelling a lotus." The print-name is "ceiling".
 
 The first statue is scenery in the Underground Chapel. The description is "A broken statue that probably once depicted a person. Guess we'll never find out. You feel a strange kinship with this statue." The print-name is "first statue".
@@ -869,23 +864,9 @@ The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thut
 
 The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. " The mortuary temple of Ramesses II looms large with its colossal statues. Faded reliefs along the walls depict the famous Battle of Kadesh. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
 
-The mortuary temple of Ramesses II is scenery in the Ramesseum. "Ramesses the Great—you had heard of him before, although by a different name. This place had once been a monumental temple suitable for the King of Kings. Now all that remains are sun-bleached ruins."
-
-The faded reliefs is scenery in the Ramesseum. 
-
-Instead of examining the faded reliefs:
-	say "An infamous battle between the Egyptians and Hittites. A thrilling tale of subterfuge, although not one you'd want to repeat. Muwatalli II, the Hittite king, had dispatched two spies who tricked Ramesses II into believing the Hittite army was far off, when in fact it lay in wait. As Ramesses marched on, two more Hittites--this time actual prisoners--confessed that the enemy was just around the corner. The trick had run its course, so the Hittites attacked. Each side commanded thousands of infantrymen and charioteers, and in the end, both sides thought they had won. In other words, it was a stalemate. [paragraph break]";
-	wait for any key;
-	say "But this... appears to show an entirely different kind of battle. A massive Egyptian figure fends off the Hittites alone, with no other Egyptians in sight. Is that towering figure... Ramesses II? [paragraph break]";
-	wait for any key;
-	say "Near the bottom of the relief, you notice grafitti scrawled onto the stone. It reads: 'Did he really fight all alone?'"
-	
-	
-Understand "walls" or "reliefs" or "Battle of Kadesh" as faded reliefs when the location is the Ramesseum. 
-
 The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmoses IV. Columns and archways display finely chiseled hieroglyphs extolling the king’s diplomatic prowess."
 
-The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "The Temple of Tawosret stands here, relatively modest compared to its neighbors but still adorned with intricate carvings. You can look around Thebes for something -- or maybe someone -- useful. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
+The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "The Temple of Tawosret stands here, relatively modest compared to its neighbors but still adorned with intricate carvings. You can look around Thebes for something—or maybe someone—useful. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
 The Temple of Merenptah is south of the Temple of Tawosret. It is in Thebes. "The Temple of Merenptah is here, partially ruined yet still imposing."
 
@@ -1152,15 +1133,15 @@ num_moves
 
 Table of Heracles' Yapping
 yappery
-"'Why is every single temple so far apart?' Heracles shouts. 'My heroic feet can't take this abuse! It was so much better in Greece!' [line break]People in the distance start whispering at the commotion...[paragraph break]"
-"'So bored... My old battles were never this slow,' Heracles whines. 'Someone give me a monster or something to smash!'[paragraph break]"
-"Heracles bellows, 'Why does the sun have to be so bright? Someone extinguish it!' His voice booms across the area, turning every head[paragraph break]."
-"This humidity is a mighty adversary,' Heracles complains. 'Medea! Use your Colchian magic to fix it!'[line break]As he speaks, you notice a few people looking at you...[paragraph break]"
-"Heracles scratches his head. 'My head’s still a little ouchie. Could you—like, I dunno—magic it away?'[paragraph break]"
-"'Thanks again for your help,' Heracles says. 'Athough I totally had it handled.[paragraph break]"
-"'Have you ever tried cleaning out stables for a living?' Heracles complains. 'Makes any quest seem easy.[paragraph break]'"
-"'I just have to ask,' Heracles loudly says. 'What made you do it?' [paragraph break]You give no reply.[paragraph break]"
-"Heracles groans, clutching his temples. 'All this talk of gods and brothers and chopping...Egypt is so strange! I'd rather wrestle another lion!![line break]His loud voice draws a few curious eyes...[paragraph break]" 
+"'Why is every single temple so far apart?' Heracles shouts. 'My heroic feet can't take this abuse! It was so much better in Greece!' [line break]People in the distance start whispering at the commotion..."
+"'So bored... My old battles were never this slow,' Heracles whines. 'Someone give me a monster or something to smash!'"
+"Heracles bellows, 'Why does the sun have to be so bright? Someone extinguish it!' His voice booms across the area, turning every head."
+"This humidity is a mighty adversary,' Heracles complains. 'Medea! Use your Colchian magic to fix it!'[line break]As he speaks, you notice a few people looking at you..."
+"Heracles scratches his head. 'My head’s still a little ouchie. Could you—like, I dunno—magic it away?'"
+"'Thanks again for your help,' Heracles says. 'Athough I totally had it handled."
+"'Have you ever tried cleaning out stables for a living?' Heracles complains. 'Makes any quest seem easy.'"
+"'I just have to ask,' Heracles loudly says. 'What made you do it?' [paragraph break]You give no reply."
+"Heracles groans, clutching his temples. 'All this talk of gods and brothers and chopping...Egypt is so strange! I'd rather wrestle another lion!![line break]His loud voice draws a few curious eyes..." 
 
 Every turn during Organ Acquisition:
 	if the Table of Countdown is empty:
@@ -1199,7 +1180,7 @@ When the Kidnapping begins:
 	wait for any key;
 	say "What??? [paragraph break]";
 	wait for any key;
-	say "'Yes!' Burisis continues, pleased by your wariness. 'Shedding foreign blood is an important part of my city's social culture! And you have only that loudmouth to thank for your capture! Normally we have a 35% success rate in successfully capturing a foreigner--but thanks to that blabbermouth, we're certain you're Greek!' [paragraph break]";
+	say "'Yes!' Burisis continues, pleased by your wariness. 'Shedding foreign blood is an important part of my city's social culture! And you have only that loudmouth to thank for your capture! Normally we have a 35% success rate in successfully capturing a foreigner--but thanks to all of his yapping, we're certain you're Greek!' [paragraph break]";
 	wait for any key;
 	say "You turn to Heracles, giving him a nasty look. He looks at you sheepishly. 'Sorry...' [paragraph break]";
 	wait for any key;
@@ -1234,10 +1215,11 @@ After going to the Hallway during Escape:
 	if hallway count is 5:
 		now the hidden entrance is revealed;
 		now the hidden entrance is open;
-		say "A loud rumbling echoes through the hallway, unveiling a hidden passageway to your east.";
+		say "A large noise sounds, revealing a hidden entrance to a dark room. It is east of you.";
 	continue the action.
 
 When Escape begins:
+	if jail cell is unvisited
 	say "[notice style]You have been taken by the guards into a jail cell![end style]";
 	now Heracles is uncaught.
 	
@@ -1385,7 +1367,7 @@ Ritual Sacrifice is scene. Ritual Sacrifice begins when Osiris' liver is acquire
 [fix the slow capture before they get taken to the sacrifice]
 Instead of going during Ritual Sacrifice:
 	if Escape is not happening:
-		say "You try to leave, but the guards make a grab for you!";
+		say "You can hardly leave with all the guards around you!";
 	otherwise:
 		continue the action.
 
@@ -1393,9 +1375,6 @@ Every turn during Ritual Sacrifice:
 	If the location is the Jail Cell:
 		start the sacrifice;
 	
-Rule for printing the locale description of the Central Court when the Ritual Sacrifice is happening:
-    stop the action.
-
 To start the sacrifice:
 	say "'The ritual is ready. We will finally deal with you errant prisoners! Our gods will certainly be pleased with this sacrifice,' a guard jeers.[paragraph break]";
 	wait for any key;
@@ -1453,7 +1432,7 @@ To end the sacrifice:
 	now palace exit is open;
 	wait for any key;
 
-The description of palace exit is "An imposing door by the Corridor of Procession West. With all the chaos, this might be your chance!"
+The description of palace exit is "An imposing door at the entrance of the central court. With all the chaos, this might be your chance!"
 
 Instead of going through palace exit:
 	now the player is in The Temple of Tawosret;
