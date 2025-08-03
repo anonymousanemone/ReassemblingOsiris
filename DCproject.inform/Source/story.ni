@@ -856,7 +856,7 @@ Understand "walls" or "reliefs" or "Battle of Kadesh" as faded reliefs when the 
 
 The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmoses IV. Columns and archways display finely chiseled hieroglyphs extolling the king’s diplomatic prowess."
 
-The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "The Temple of Tawosret stands here, relatively modest compared to its neighbors but still adorned with intricate carvings. You can look around Thebes for something—or maybe someone—useful. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
+The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "The Temple of Tawosret stands here, relatively modest compared to its neighbors but still adorned with intricate carvings. You can look around Thebes for something -- or maybe someone -- useful. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
 The Temple of Merenptah is south of the Temple of Tawosret. It is in Thebes. "The Temple of Merenptah is here, partially ruined yet still imposing."
 
@@ -1127,15 +1127,15 @@ num_moves
 
 Table of Heracles' Yapping
 yappery
-"'Why is every single temple so far apart?' Heracles shouts. 'My heroic feet can't take this abuse! It was so much better in Greece!' [line break]People in the distance start whispering at the commotion..."
-"'So bored... My old battles were never this slow,' Heracles whines. 'Someone give me a monster or something to smash!'"
-"Heracles bellows, 'Why does the sun have to be so bright? Someone extinguish it!' His voice booms across the area, turning every head."
-"This humidity is a mighty adversary,' Heracles complains. 'Medea! Use your Colchian magic to fix it!'[line break]As he speaks, you notice a few people looking at you..."
-"Heracles scratches his head. 'My head’s still a little ouchie. Could you—like, I dunno—magic it away?'"
-"'Thanks again for your help,' Heracles says. 'Athough I totally had it handled."
-"'Have you ever tried cleaning out stables for a living?' Heracles complains. 'Makes any quest seem easy.'"
-"'I just have to ask,' Heracles loudly says. 'What made you do it?' [paragraph break]You give no reply."
-"Heracles groans, clutching his temples. 'All this talk of gods and brothers and chopping...Egypt is so strange! I'd rather wrestle another lion!![line break]His loud voice draws a few curious eyes..." 
+"'Why is every single temple so far apart?' Heracles shouts. 'My heroic feet can't take this abuse! It was so much better in Greece!' [line break]People in the distance start whispering at the commotion...[paragraph break]"
+"'So bored... My old battles were never this slow,' Heracles whines. 'Someone give me a monster or something to smash!'[paragraph break]"
+"Heracles bellows, 'Why does the sun have to be so bright? Someone extinguish it!' His voice booms across the area, turning every head[paragraph break]."
+"This humidity is a mighty adversary,' Heracles complains. 'Medea! Use your Colchian magic to fix it!'[line break]As he speaks, you notice a few people looking at you...[paragraph break]"
+"Heracles scratches his head. 'My head’s still a little ouchie. Could you—like, I dunno—magic it away?'[paragraph break]"
+"'Thanks again for your help,' Heracles says. 'Athough I totally had it handled.[paragraph break]"
+"'Have you ever tried cleaning out stables for a living?' Heracles complains. 'Makes any quest seem easy.[paragraph break]'"
+"'I just have to ask,' Heracles loudly says. 'What made you do it?' [paragraph break]You give no reply.[paragraph break]"
+"Heracles groans, clutching his temples. 'All this talk of gods and brothers and chopping...Egypt is so strange! I'd rather wrestle another lion!![line break]His loud voice draws a few curious eyes...[paragraph break]" 
 
 Every turn during Organ Acquisition:
 	if the Table of Countdown is empty:
@@ -1174,7 +1174,7 @@ When the Kidnapping begins:
 	wait for any key;
 	say "What??? [paragraph break]";
 	wait for any key;
-	say "'Yes!' Burisis continues, pleased by your wariness. 'Shedding foreign blood is an important part of my city's social culture! And you have only that loudmouth to thank for your capture! Normally we have a 35% success rate in successfully capturing a foreigner--but thanks to all of his yapping, we're certain you're Greek!' [paragraph break]";
+	say "'Yes!' Burisis continues, pleased by your wariness. 'Shedding foreign blood is an important part of my city's social culture! And you have only that loudmouth to thank for your capture! Normally we have a 35% success rate in successfully capturing a foreigner--but thanks to that blabbermouth, we're certain you're Greek!' [paragraph break]";
 	wait for any key;
 	say "You turn to Heracles, giving him a nasty look. He looks at you sheepishly. 'Sorry...' [paragraph break]";
 	wait for any key;
@@ -1357,7 +1357,7 @@ Ritual Sacrifice is scene. Ritual Sacrifice begins when Osiris' liver is acquire
 [fix the slow capture before they get taken to the sacrifice]
 Instead of going during Ritual Sacrifice:
 	if Escape is not happening:
-		say "You can hardly leave with all the guards around you!";
+		say "You try to leave, but the guards make a grab for you!";
 	otherwise:
 		continue the action.
 
@@ -1365,6 +1365,9 @@ Every turn during Ritual Sacrifice:
 	If the location is the Jail Cell:
 		start the sacrifice;
 	
+Rule for printing the locale description of the Central Court when the Ritual Sacrifice is happening:
+    stop the action.
+
 To start the sacrifice:
 	say "'The ritual is ready. We will finally deal with you errant prisoners! Our gods will certainly be pleased with this sacrifice,' a guard jeers.[paragraph break]";
 	wait for any key;
