@@ -26,5 +26,4 @@ function slowScroll() {
   });
 }
 
-// Attach it to Vorple init event
 vorple.addEventListener("init", slowScroll);

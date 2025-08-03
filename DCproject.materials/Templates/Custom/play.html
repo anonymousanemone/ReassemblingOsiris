@@ -42,12 +42,9 @@
 			</div>
 			<hr>
 			<button class="sidebar-button sidebar-item" onclick="saveGame()">Save Game</button>
-			<!-- <hr> -->
 			<button class="sidebar-button sidebar-item" onclick="restoreGame()">Restore Game</button>
-			<!-- <hr> -->
-			<button class="sidebar-button sidebar-item" onclick="saveTranscript()">Save Transcript</button>
-			<!-- <hr> -->
-			<button class="sidebar-button sidebar-item" onclick="checkFiles()">Files</button>
+			<button class="sidebar-button sidebar-item" id="save-transcript" onclick="saveTranscript()">Save Transcript</button>
+			<button class="sidebar-button sidebar-item" onclick="toggleFiles(true); showFileExplorer();">Files</button>
 		</aside>
 
 
@@ -78,10 +75,11 @@
 </div>
 
 
+<!-- Overlay for popups -->
+<div class="overlay" id="overlay" onclick="removeOverlay()"></div>
 
 <!-- HELP POPUP -->
-<div class="overlay" id="overlay" onclick="toggleHelp(false)"></div>
-<div class="help-popup side-tabs" id="helpPopup" style="display: none;">
+<div class="custom-popup side-tabs" id="helpPopup" style="display: none;">
   <div class="tab-sidebar">
 	<button class="tab-button active" onclick="switchTab('about')">About</button>
     <button class="tab-button" onclick="switchTab('command')">What to do with ></button>
@@ -197,14 +195,22 @@
   </div>
 </div>
 
+
+<!-- Files popup -->
+<div class="custom-popup file-explorer" id="file-explorer" style="display: none;">
+	<div class="fs-title">Save Files</div>
+	<div class="fs-title">Transcripts</div>
+
 </div>
 
-<script> const gameId = "[IFID]"; </script>
+</div>
+
+<script> const gameId = "[IFID]"; console.log("Game ID:", gameId);</script>
 <script language="javascript" type="text/javascript" src="hoverfilllink.js"></script>
+<script language="javascript" type="text/javascript" src="scenegraphic.js"></script>
 <script language="javascript" type="text/javascript" src="sidebars.js"></script>
 <script language="javascript" type="text/javascript" src="savegame.js"></script>
 <script language="javascript" type="text/javascript" src="slowscroll.js"></script>
-<script language="javascript" type="text/javascript" src="scenegraphic.js"></script>
   
 
 </body>

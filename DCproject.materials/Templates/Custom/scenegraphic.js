@@ -46,10 +46,11 @@ function startObserving(sceneEl, regionEl, imgEl) {
   observer.observe(sceneEl, { childList: true, subtree: true });
   observer.observe(regionEl, { childList: true, subtree: true });
 }
+
 function tryToUpdateImage(sceneEl, regionEl, imgEl, defaultImageSrc) {
     const currentScene = sceneEl.textContent.trim();
     const currentRegion = regionEl.textContent.trim();
-    console.log(currentScene, currentRegion)
+    // console.log(currentScene, currentRegion)
 
     if (!currentScene || !currentRegion) return;
 
@@ -102,4 +103,15 @@ function preloadRegionImages(regionName) {
 
 function clearPreloadedImages() {
   preloadedImages = {};
+  removeHintStyle();
+}
+
+function removeHintStyle() {
+  const spans = document.querySelectorAll('span.hint');
+  spans.forEach(span => {
+    // if the span's text content is empty
+    if (!/\w+/.test(span.textContent)) {
+      span.classList.remove('hint');
+    }
+  });
 }

@@ -3,6 +3,17 @@ function toggleHelp(show) {
   document.getElementById("helpPopup").style.display = show ? "flex" : "none";
 }
 
+function toggleFiles(show) {
+  document.getElementById("overlay").style.display = show ? "block" : "none";
+  document.getElementById("file-explorer").style.display = show ? "flex" : "none";
+}
+
+function removeOverlay() {
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("helpPopup").style.display = "none";
+  document.getElementById("file-explorer").style.display = "none";
+}
+
 function switchTab(tabName) {
   // Buttons
   document.querySelectorAll('.tab-button').forEach(btn => {
@@ -62,4 +73,11 @@ function toggleAccordion(button) {
 
   // Toggle the clicked one
   content.classList.toggle("open");
+}
+
+function toggleTranscriptButton(disable) {
+  const button = document.getElementById("save-transcript");
+  if (!button) return;
+
+  button.disabled = disable;
 }

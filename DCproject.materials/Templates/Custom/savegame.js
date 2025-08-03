@@ -51,6 +51,7 @@ function restoreGame() {
 }
 
 function clearScreen(){
+  removeHintStyle();
   if (!lastRestore) return;
   const outputArea = document.getElementById("vorple");
   const turn = outputArea.querySelector(".turn.previous");
@@ -72,7 +73,6 @@ function clearScreen(){
     }, 500);
     lastRestore = false;
   }
-  
 }
 
 vorple.addEventListener( 'expectCommand', clearScreen );
@@ -94,29 +94,6 @@ function downloadFile(data, filename, type) {
   URL.revokeObjectURL(url);
 }
 
-async function getVorpleSaveFiles() {
-  console.log("accessed");
-  const fs = vorple.file.getFS();
-  const fullPath = vorple.file.path(gameid, vorple.file.SAVEFILE_PATH);
-
-  if (!fs) {
-    console.warn("Filesystem not available");
-    return [];
-  }
-
-  return new Promise(resolve => {
-    fs.readdir(fullPath, (err, result) => {
-      if (err) {
-        console.error("Error reading savefile directory:", err);
-        resolve([]);
-      } else {
-        resolve(result || []);
-      }
-    });
-  });
-}
-
-
 function checkFiles(){
   getVorpleSaveFiles(gameId).then(savefiles => {
     console.log("Available save files:", savefiles);
@@ -130,4 +107,124 @@ function checkFiles(){
     }
   });
 
+}
+
+async function showFileExplorer() {
+  const explorer = document.getElementById("file-explorer");
+
+  const fs = vorple.file.getFS();
+  const savePath = vorple.file.SAVE_PATH || '/extended/savefiles';
+  const transcriptPath = vorple.file.TRANSCRIPT_PATH || '/extended/transcripts';
+
+  explorer.innerHTML = ''; // Clear previous content
+  explorer.style.display = 'block'; // Show the explorer panel
+
+  if (!fs) {
+    explorer.textContent = "Filesystem not available.";
+    return;
+  }
+
+  function renderDirectory(title, path) {
+    const section = document.createElement("div");
+    section.className = "file-section";
+
+    const header = document.createElement("h2");
+    header.textContent = `${title}: ${path}`;
+    section.appendChild(header);
+    explorer.appendChild(section);
+
+    const container = document.createElement("div");
+    section.appendChild(container);
+    readDir(path, container, 0);
+  }
+
+  function readDir(path, container, depth = 0) {
+    fs.readdir(path, (err, items) => {
+      if (err || !items || items.length === 0) {
+        const empty = document.createElement("div");
+        empty.textContent = `(empty)`;
+        empty.style.marginLeft = `${depth * 20}px`;
+        empty.style.color = "#aaa";
+        container.appendChild(empty);
+        return;
+      }
+      console.log(items[items.length-1]);
+      lastItem = `${path}/${items[items.length-1]}`;
+
+      fs.stat(fullPath, (err, stats) => {
+        if (stats?.isDirectory()) {
+          items = [items[items.length-1]];
+        }
+      });
+
+      items.forEach(item => {
+        const fullPath = `${path}/${item}`;
+        fs.stat(fullPath, (err, stats) => {
+          const entry = document.createElement("div");
+          entry.className = "file-entry";
+          entry.style.marginLeft = `${depth * 20}px`;
+
+          if (stats?.isDirectory()) {
+            entry.classList.add("folder");
+            entry.textContent = `📁 ${item}`;
+
+            const nestedContainer = document.createElement("div");
+            nestedContainer.style.display = "none";
+
+            entry.addEventListener("click", () => {
+              if (nestedContainer.style.display === "none") {
+                nestedContainer.style.display = "block";
+                // Lazy load only once
+                if (nestedContainer.childElementCount === 0) {
+                  readDir(fullPath, nestedContainer, depth + 1);
+                }
+              } else {
+                nestedContainer.style.display = "none";
+              }
+            });
+
+            container.appendChild(entry);
+            container.appendChild(nestedContainer);
+          } else {
+            entry.classList.add("file");
+            entry.textContent = `📄 ${item} `;
+
+            const downloadBtn = document.createElement("button");
+            downloadBtn.textContent = "Download";
+            downloadBtn.className = "download-btn";
+            downloadBtn.addEventListener("click", () => {
+              downloadFromBrowserFS(fs, fullPath, item);
+            });
+            entry.appendChild(downloadBtn);
+            container.appendChild(entry);
+          }
+        });
+      });
+    });
+  }
+
+  // Render both save files and transcripts
+  renderDirectory("Save Files", savePath);
+  renderDirectory("Transcripts", transcriptPath);
+}
+
+function downloadFromBrowserFS(fs, path, filename) {
+  fs.readFile(path, (err, data) => {
+    if (err) {
+      alert("Error reading file: " + err.message);
+      return;
+    }
+
+    // Convert Buffer to Blob
+    const blob = new Blob([data], { type: "application/octet-stream" });
+
+    // Trigger download
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = filename || path.split("/").pop();
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(a.href);
+  });
 }

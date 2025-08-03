@@ -210,7 +210,7 @@ A hint-object is a kind of object. It has some text called hint-content.
 To say beginner guide hint (H - a hint-object):
 	say "[hint style][bold type](Beginner's Guide)[roman type] [hint-content of H] [end style]".			
 
-To say link to the examination of (target - a thing):
+To say set-link (target - a thing):
 	let link name be "x[target]";
 	disable all links called link name; [don't let the player click on old links]
 	place a link to the command "examine [print-name of target]" called link name reading "[print-name of target]".
@@ -318,6 +318,35 @@ Heliopolis-Marketplace is a room in Heliopolis. "You have reached a part of the 
 Memphis-Marketplace is a room in Memphis. "You have reached a part of the game that is still under development. Please check back soon! :)  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
 Elephantine-Marketplace is a room in Elephantine. "You have reached a part of the game that is still under development. Please check back soon! :)  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
+	
+	
+Section 4 - Transcript printing
+	
+[ Copied from: https://intfiction.org/t/extracting-vorple-transcript-from-indexeddb/60125/5]
+
+transcript-on is a truth state that varies. transcript-on is false.
+
+Carry out switching the story transcript on:
+	execute JavaScript command "toggleTranscriptButton(true);";
+	now transcript-on is true.
+
+Carry out switching the story transcript off:
+	execute JavaScript command "toggleTranscriptButton(false);";
+	now transcript-on is false.
+
+command-echo is a Vorple style.
+
+After reading a command:
+	if transcript-on is true and Vorple is supported:
+		let cmd be the player's command;
+		say "[command-echo style]>[cmd][end style]";
+	continue the action.
+
+The end transcript rule is listed in the shutdown rules.
+	
+This is the end transcript rule:
+	if transcript-on is true:
+		try switching the story transcript off.
 
 
 Part 3 - Intro with Osiris' Head
@@ -362,7 +391,7 @@ Section 2 - Entering the Osireion
 [let boldtext be "You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER? If you ever feel confused, you can also ask for some HELP.";]
 
 	
-The Entrance to the Osireion is a room in Abydos. "You stand before an inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the [link to the examination of the stone door] is immaculate, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems empty, with all the traffic instead going toward the main gates. Hopefully, no one will stop you from breaking in. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]
+The Entrance to the Osireion is a room in Abydos. "You stand before an inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the [set-link the stone door] is immaculate, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems empty, with all the traffic instead going toward the main gates. Hopefully, no one will stop you from breaking in. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]
 	[if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if]
 	[if Osiris' head is unacquired][paragraph break][beginner guide hint the H1]"
 	
@@ -391,8 +420,8 @@ Instead of answering the door that something:
 	otherwise:
 		say "Nothing happens. Perhaps that is not the correct answer. You look up at the sky, hoping for some benevolent god to send you a hint.";
 
-The North Passage is a room in Abydos. It is south of the stone door. "The long narrow passage slopes gently downwards. The northern section of the passage is arched and lined with brick. The southern section is stone clad, and its [link to the examination of walls of the north passage] are sculpted and painted with scenes from the 'Book of the Gates'. A pitched roof tops this part of the passage. 
-[paragraph break]On the floor, you can see a few miscellaneous items scattered on the floor:[if the ostracon is in the location] a [link to the examination of a hieratic ostracon] ,[end if] a [link to the examination of a tall pottery stand], [link to the examination of trial pieces], and a few [link to the examination of plaster casts].
+The North Passage is a room in Abydos. It is south of the stone door. "The long narrow passage slopes gently downwards. The northern section of the passage is arched and lined with brick. The southern section is stone clad, and its [set-link walls of the north passage] are sculpted and painted with scenes from the 'Book of the Gates'. A pitched roof tops this part of the passage. 
+[paragraph break]On the floor, you can see a few miscellaneous items scattered on the floor:[if the ostracon is in the location] a [set-link a hieratic ostracon] ,[end if] a [set-link a tall pottery stand], [set-link trial pieces], and a few [set-link plaster casts].
 [paragraph break][beginner guide hint the H3]"
 
 H3 is a hint-object. The hint-content is "Always EXAMINE everything around you! You can try to EXAMINE the walls and the things on the floor. You can also TAKE things. When you are disorientated, feel free to take another LOOK at the room.".
@@ -418,9 +447,9 @@ Plaster casts are a thing in the North Passage. The description is "Casts of eye
 
 Instead of taking plaster casts, say "Ooh, fun little figures! If only you cared." 
 
-The Great Hall is a room in Abydos. It is south of the North Passage. "The Great Hall widens from the Northern Passage into a long rectangular room. The floor, similar to that of the South Chamber and the passages, is paved with sandstone. The roofing stones stretched the whole width of the hall, without any pillars or other support. "
+The Great Hall is a room in Abydos. It is south of the North Passage. "The Great Hall widens from the Northern Passage into a long rectangular room. The floor, similar to that of the South Chamber and the passages, is paved with sandstone, and the [set-link walls of the great hall] are covered with inscriptions. The roofing stones stretched the whole width of the hall, without any pillars or other support. "
 
-The walls of the great hall is a wall in the Great Hall. "The North and South Walls are covered with inscriptions. The West Wall is divided into three parts vertically; the portion to the left hand is filled with a colossal scene of the Vivification of Osiris; the middle portion contains part of the Chapter of knowing the Names of Osiris; the right hand portion is occupied with the figure of King Merenptah standing before a heaped-up table of offerings, and making an offering of incense. The wall has a frieze of the kheker ornament painted in yellow, blue, green, and black."
+The walls of the great hall is a wall in the Great Hall. "The North and South Walls are covered with inscriptions. The West Wall is divided into three parts vertically; the portion to the left hand is filled with a colossal scene of the Vivification of Osiris; the middle portion contains part of the Chapter of knowing the Names of Osiris; the right hand portion is occupied with the figure of King Merenptah standing before a heaped-up table of offerings, and making an offering of incense. The wall has a frieze of the kheker ornament painted in yellow, blue, green, and black." The print-name is "walls".
 	
 Understand "wall" as the walls of the great hall.
 
@@ -445,11 +474,11 @@ The Sloped Passage is a room in Abydos. It is east of the Great Hall.
 
 [x wall]
 
-The First Transverse Chamber is a room in Abydos. It is east of the Sloped Passage. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a moat, preventing you from going through. You might be able to GO east if you had something that help you cross the water..." 
+The First Transverse Chamber is a room in Abydos. It is east of the Sloped Passage. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a [set-link the east moat], preventing you from going through. You might be able to GO east if you had something that help you cross the water..." 
 	
 [x wall]
 
-A moat is a kind of open unopenable door. A moat is scenery. The description of a moat is usually "Deep and murky."
+A moat is a kind of open unopenable door. A moat is scenery. The description of a moat is usually "Deep and murky." The print-name is usually "moat".
 
 The west moat is a moat. It is east of the First Transverse Chamber and west of the Central Nave. 
 
@@ -471,13 +500,13 @@ Instead of going through the east moat:
     		say "You place the wood plank down, desperately hoping it'll bear your weight.";
 		continue the action;
 		
-The Central Nave is a room in Abydos. It is east of the west moat. "You stand in the middle of the columns lining the central nave and look around. Surrounding you are seventeen small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. [paragraph break]A moat surrounds the entire central nave, like the primeval waters around the first land. [paragraph break]The ceiling echoes the structure of a sarcophagus. A large statue dominates the center of the room, its scale representative of what could have only been a god. A low altar sits in front of it, its surface decorated with scarce items. "
+The Central Nave is a room in Abydos. It is east of the west moat. "You stand in the middle of the columns lining the central nave and look around. Surrounding you are seventeen small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. [paragraph break]A [set-link the west moat] surrounds the entire central nave, like the primeval waters around the first land. [paragraph break]The ceiling echoes the structure of a sarcophagus. A large [set-link the statue of Osiris] dominates the center of the room, its scale representative of what could have only been a god. A low altar sits in front of it, its surface decorated with scarce items. "
 	
 [x cells - wooden doors closed until ritual time at reunification] 
 [x stairs - leading into the water]
 [x pillars, x ceiling]
 
-The statue of Osiris is in the Central Nave. It is scenery. The description of the statue of Osiris is "A large statue of Osiris ias seated at the top of a staircase. The enthroned Osiris faces towards the sarcophagus chamber, just as Osiris faces inward with his back to the entrance of the Osireion in the Book of Gates. He holds a crook and the ankh sign, signifying that he rules over his domain, the duat, and is the possessor of life. He sure looks put together -- such a shame he's all chopped up now."
+The statue of Osiris is in the Central Nave. It is scenery. The description of the statue of Osiris is "A large statue of Osiris ias seated at the top of a staircase. The enthroned Osiris faces towards the sarcophagus chamber, just as Osiris faces inward with his back to the entrance of the Osireion in the Book of Gates. He holds a crook and the ankh sign, signifying that he rules over his domain, the duat, and is the possessor of life. He sure looks put together -- such a shame he's all chopped up now." The print-name is "statue".
 
 The funerary bier is a supporter in the Central Nave. The description of the bier is "mmn"
 
@@ -489,15 +518,15 @@ Before going when the location is the Central Nave:
 	otherwise:
 		say "With the moat surrounding the central nave, it's a struggle to go anywhere." instead.
 
-The Tomb of Osiris is a room in Abydos. It is east of the east moat. "The roof and walls has depictions of Nut and Geb. At the center of the room is a sarcophagus, its wooden frame lavishly painted in the style of the New Kingdom. It is wrapped in an almost absurd number of golden chains, as if to guard against any attempt to disturb its occupant. You feel that there is something--or someone--important inside..."
+The Tomb of Osiris is a room in Abydos. It is east of the east moat. "The [set-link the painted roof] and [set-link the inscribed walls] has depictions of Nut and Geb. At the center of the room is a [set-link the sarcophagus], its wooden frame lavishly painted in the style of the New Kingdom. It is wrapped in an almost absurd number of golden chains, as if to guard against any attempt to disturb its occupant. You feel that there is something--or someone--important inside..."
 
 [x wall, x ceiling]
 
-The painted roof is scenery in the Tomb of Osiris. The description of the painted roof is "The depiction of Nut, her star-strewn body stretching across the heavens, is both graceful and imposing. Beneath her, Geb lies in repose, his green-toned skin symbolizing fertility and life. The colors have dulled over time, but the craftsmanship is evident."
+The painted roof is scenery in the Tomb of Osiris. The description of the painted roof is "The depiction of Nut, her star-strewn body stretching across the heavens, is both graceful and imposing. Beneath her, Geb lies in repose, his green-toned skin symbolizing fertility and life. The colors have dulled over time, but the craftsmanship is evident." The print-name is "roof".
 
-The inscribed walls are scenery in the Tomb of Osiris. The description of the inscribed walls is "The hieroglyphs here are meticulously carved, detailing invocations to the gods and protective spells. Some portions of the text are damaged, yet the overall message of guidance and protection is clear."
+The inscribed walls are scenery in the Tomb of Osiris. The description of the inscribed walls is "The hieroglyphs here are meticulously carved, detailing invocations to the gods and protective spells. Some portions of the text are damaged, yet the overall message of guidance and protection is clear." The print-name is "walls".
 
-The sarcophagus is a closed container. It is locked. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Its occupant must have made it auto-update every now and then to keep up with the most popular trends. Perhaps you can use something to UNLOCK it." The sarcophagus has matching key the faience ankh.
+The sarcophagus is a closed container. It is locked. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Its occupant must have made it auto-update every now and then to keep up with the most popular trends. Perhaps you can use something to UNLOCK it." The sarcophagus has matching key the faience ankh. The print-name is "sarcophagus".
 
 Instead of unlocking the sarcophagus with the faience ankh:
 	now the sarcophagus is unlocked;
@@ -645,7 +674,7 @@ Instead of going to the Workmen's Village when the player is on the oxcart:
 
 The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "The traces of this Aten Temple still hint at its former grandeur. It once comprised three courts—the first, the second, and the sanctuary. Now you stand in what used to be the sanctuary court, its original form long since demolished. A partially reconstructed sanctuary is to your north. It is still impressive despite representing only a fraction of its former splendor."
 
-The Sanctuary is a room in Amarna. It is inside of the Small Aten Temple. "Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor Aten, the sun disk. Around the perimeter of the sanctuary are low, carved [link to the examination of carved altars], decorated with [link to the examination of offerings] and incense. In the center of the sanctuary, a [link to the examination of shrine] depicting Aten shines in its golden splendor."
+The Sanctuary is a room in Amarna. It is inside of the Small Aten Temple. "Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor Aten, the sun disk. Around the perimeter of the sanctuary are low, carved [set-link carved altars], decorated with [set-link offerings] and incense. In the center of the sanctuary, a [set-link shrine] depicting Aten shines in its golden splendor."
 
 The carved altars are scenery in the Sanctuary. "The low altars are made of sandstone, each inscribed with dedications to Aten." The print-name is "altars".
 
@@ -661,7 +690,7 @@ Instead of examining the shrine:
 	say "You hear an odd rumbling noise. There was a hidden staircase! You can go down to see what's there.";
 	continue the action.
 
-Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. There are three strange statues ([link to the examination of first statue], [link to the examination of second statue], [link to the examination of third statue]) and murals ([link to the examination of north mural], [link to the examination of east mural], [link to the examination of south mural], [link to the examination of west mural]) with eerily etched toes line all four walls. The [link to the examination of ceiling] depicts an intricate scene. [if unvisited][paragraph break]What odd surroundings. Perhaps you should take a closer look and EXAMINE some things. The chapel is completely empty, so there's also no harm in TOUCHing something--in fact, that might help you figure things out."
+Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. There are three strange statues ([set-link first statue], [set-link second statue], [set-link third statue]) and murals ([set-link north mural], [set-link east mural], [set-link south mural], [set-link west mural]) with eerily etched toes line all four walls. The [set-link ceiling] depicts an intricate scene. [if unvisited][paragraph break]What odd surroundings. Perhaps you should take a closer look and EXAMINE some things. The chapel is completely empty, so there's also no harm in TOUCHing something--in fact, that might help you figure things out."
 
 
 Section 4 - At the Small Aten Temple
@@ -732,14 +761,14 @@ To refill the sequence:
 		now the item entry is item-val.
 
 To trigger the end sequence:
-	say "You hear something from up above! Looking up at the ceiling, you see a gray lump fall from the duck-bearing man's head right to your feet. Is that a...?";
+	say "You hear something from up above! Looking up at the ceiling, you see a gray [set-link the brain] fall from the duck-bearing man's head right to your feet. Is that a...?";
 	move Osiris' brain to the Underground Chapel.
 	
 Test brain1 with "talk to workman / show head to workman / gonear chapel" in the Workmen's Village.
 
 Test brain2 with "touch east mural / touch west mural / touch second statue / touch third statue / take brain" in Underground Chapel.
 
-Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands."
+Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands." The print-name is "[if unexamined]lump[otherwise]brain[end if]".
 
 Understand "lump" as Osiris' brain.
 
@@ -851,7 +880,7 @@ The Smaller Temple of Thutmoses III is scenery in the Collection of Three Temple
 
 The Temple of Amenhotep III is east of the the Collection of Three Temples. It is in Thebes. "Amenhotep III's vast mortuary temple lies here. Even in partial ruin, the temple reflects the grandeur of his reign."
 
-The Memnon Colossi is east of the Temple of Amenhotep III. It is in Thebes. "Perched like silent sentinels, two massive statues of Amenhotep III ([link to the examination of the left statue], [link to the examination of the right statue]) watch over the land. Legend says their eerie dawn 'singing' once greeted travelers."
+The Memnon Colossi is east of the Temple of Amenhotep III. It is in Thebes. "Perched like silent sentinels, two massive statues of Amenhotep III ([set-link the left statue], [set-link the right statue]) watch over the land. Legend says their eerie dawn 'singing' once greeted travelers."
 
 The left statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi. The print-name is "left statue".
 
@@ -865,15 +894,11 @@ Osiris' heart is a body part. It is in right statue of Amenhotep III.
 
 The heart scarab is a thing. The description is "The scarab is a small but intricately made item. Inscribed on the bottom is the cartouche of Amenhotep III. [if heart is unacquired] Perhaps it's worth investigating..."
 
-Instead of examining right statue of Amenhotep III:
-	If the player is holding the heart scarab:
-		now right statue of Amenhotep III is open;
-		now right statue of Amenhotep III is unopenable;
-		say "The panel at the base of the statue slides open to reveal the heart of Osiris. Hooray![paragraph break]";
-		wait for any key;
-		say "This concludes the demo for 'That Time I Got Out of Jail by Reassembling Osiris.' Thank you so much for playing! [paragraph break] You're welcome to continue exploring the world--and there may be some hints scattered around. :) The fishing minigame in Oxyrhynchos can also be tested. Thanks again, and we look forward to sharing more in the future!";
-	otherwise:
-		continue the action.
+Instead of putting the heart scarab on the right statue of Amenhotep III:
+	now right statue of Amenhotep III is open;
+	now right statue of Amenhotep III is unopenable;
+	say "The panel at the base of the statue slides open to reveal the heart of Osiris. Hooray![paragraph break]".
+
 
 The Temple of Horemheb is south of the collection of three temples. It is in Thebes. "This temple stands as tribute to Aÿ and Horemheb."
 
@@ -883,12 +908,12 @@ Section 2 - The library
 
 [depending on feedback, can try to make entering house of life more intuitive: aka somehow medea knows house of life is library and it is inside the ramesseum. maybe a trigger of dialogue like the priest asks medea her purpose and she says for medicine - not priority]
 
-The House of Life is west of the Ramesseum. It is in Thebes. "The entrance is unassuming—just a low archway tucked beside the temple’s western wall—but when you step inside, you realize you've stumbled upon a vast library.  Soft lamplight flickers across rows of tall shelves, each lined with carefully rolled papyri detailing magical and medical rituals.  [paragraph break] You scan the shelves, looking for something useful. There's a certain scroll that caught your eye..."
+The House of Life is west of the Ramesseum. It is in Thebes. "The entrance is unassuming—just a low archway tucked beside the temple’s western wall—but when you step inside, you realize you've stumbled upon a vast library.  Soft lamplight flickers across rows of tall shelves, each lined with carefully rolled [set-link the medical papyri] detailing magical and medical rituals.  [paragraph break] You scan the shelves, looking for something useful. There's a certain scroll that caught your eye..."
 
 [some mechanic for finding correct papyri or simple description]
 
 Medical papyri is scenery in the House of LIfe. The description of the medical papyri is "A headache spell. It reads: [paragraph break] -YET ANOTHER- CONJURATION FOR THE HEAD [line break]
-Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.[paragraph break] Once you have these items, you can PREPARE them to make the medicine. You can always check your inventory to see what you have.".
+Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.[paragraph break] Once you have these items, you can PREPARE them to make the medicine. You can always check your inventory to see what you have.". The print-name is "papyri".
 
 Understand "scroll / papyri" as the medical papyri.
 
@@ -1176,6 +1201,9 @@ Section 1 - Escape Management
 Escape is a scene. Escape begins when the location is the Jail Cell and Osiris' liver is unacquired. Escape ends when Heracles is caught. Escape is a recurring scene.
 
 Heracles can be caught or uncaught. Heracles is uncaught.
+
+Rule for printing the locale description of Heracles during Organ Acquisition:
+	do nothing.
 
 The invisible tool is a thing. 
 

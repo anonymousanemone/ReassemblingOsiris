@@ -25,6 +25,7 @@
 .status-line-container {
   width: 100%;
   padding: 0.3rem 0rem;
+  margin-bottom: 0.6rem;
 }
 
 body, input, label {
@@ -173,9 +174,7 @@ aside.sidebar {
 }
 
 .quick-menu-body {
-  /* background-color: #eae3f9; */
-  padding: 0rem 1rem;
-  /* border: 1px solid #f3eeff; */
+  padding: 0rem 0rem 0rem 1rem;
   border-top: none;
   border-radius: 0 0 4px 4px;
 }
@@ -354,3 +353,58 @@ aside.sidebar {
     text-align: center;
   }
 }
+
+.custom-popup {
+  position: fixed;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80%;
+	max-width: 900px;
+	height: 70vh;
+	background: white;
+	border-radius: 10px;
+	z-index: 1001;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+	display: flex;
+	overflow: hidden;
+}
+
+.file-explorer {
+  padding: 1rem;
+}
+
+.file-section {
+  margin-bottom: 2em;
+}
+
+.file-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.file-entry {
+  cursor: pointer;
+  margin-left: 20px;
+  overflow-wrap:break-word;
+}
+
+.file-entry:hover {
+  background-color: #eef;
+}
+
+.file-preview {
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-top: 0.5em;
+  white-space: pre-wrap;
+}
+
+.fs-title {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+.command-echo { display: none; }
