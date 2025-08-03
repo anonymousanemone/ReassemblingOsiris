@@ -674,6 +674,11 @@ The east mural is scenery in the Underground Chapel. The description is "The wea
 
 The west mural is scenery in the Underground Chapel. The description is "This mural shows a man makes an offering to Aten. Cradled carefully in his hands is...a small duck?[paragraph break]Ha. You would never settle for such meager offerings." The print-name is "west mural".
 
+Understand "north wall" or "n wall" or "north mural" as the north mural when the location is the Underground Chapel.
+Understand "south wall" or "s wall" or "south mural" as the south mural when the location is the Underground Chapel.
+Understand "east wall" or "e wall" or "east mural" as the east mural when the location is the Underground Chapel.
+Understand "west wall" or "w wall" or "west mural" as the west mural when the location is the Underground Chapel.
+
 The ceiling is scenery in the Underground Chapel. The description is "You crane your head up to look at the ceiling. There seems to be a lot going on here. You can see 1...2...3...4 major components. A sun disk is being held in the hands of a praying man. Across from him, a man with a very long head is smelling a lotus." The print-name is "ceiling".
 
 The first statue is scenery in the Underground Chapel. The description is "A broken statue that probably once depicted a person. Guess we'll never find out. You feel a strange kinship with this statue." The print-name is "first statue".
@@ -834,6 +839,20 @@ Section 1 - All the Locations
 The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III. Sturdy columns flank a central courtyard where priests once performed daily rites. There seems to be a lot of honoring going on around here."
 
 The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. " The mortuary temple of Ramesses II looms large with its colossal statues. Faded reliefs along the walls depict the famous Battle of Kadesh. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
+
+The mortuary temple of Ramesses II is scenery in the Ramesseum. "Ramesses the Great—you had heard of him before, although by a different name. This place had once been a monumental temple suitable for the King of Kings. Now all that remains are sun-bleached ruins."
+
+The faded reliefs is scenery in the Ramesseum. 
+
+Instead of examining the faded reliefs:
+	say "An infamous battle between the Egyptians and Hittites. A thrilling tale of subterfuge, although not one you'd want to repeat. Muwatalli II, the Hittite king, had dispatched two spies who tricked Ramesses II into believing the Hittite army was far off, when in fact it lay in wait. As Ramesses marched on, two more Hittites--this time actual prisoners--confessed that the enemy was just around the corner. The trick had run its course, so the Hittites attacked. Each side commanded thousands of infantrymen and charioteers, and in the end, both sides thought they had won. In other words, it was a stalemate. [paragraph break]";
+	wait for any key;
+	say "But this... appears to show an entirely different kind of battle. A massive Egyptian figure fends off the Hittites alone, with no other Egyptians in sight. Is that towering figure... Ramesses II? [paragraph break]";
+	wait for any key;
+	say "Near the bottom of the relief, you notice grafitti scrawled onto the stone. It reads: 'Did he really fight all alone?'"
+	
+	
+Understand "walls" or "reliefs" or "Battle of Kadesh" as faded reliefs when the location is the Ramesseum. 
 
 The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmoses IV. Columns and archways display finely chiseled hieroglyphs extolling the king’s diplomatic prowess."
 
@@ -1187,7 +1206,7 @@ After going to the Hallway during Escape:
 	if hallway count is 5:
 		now the hidden entrance is revealed;
 		now the hidden entrance is open;
-		say "A large noise sounds, revealing a hidden entrance to a dark room. It is east of you.";
+		say "A loud rumbling echoes through the hallway, unveiling a hidden passageway to your east.";
 	continue the action.
 
 When Escape begins:
@@ -1403,7 +1422,7 @@ To end the sacrifice:
 	now palace exit is open;
 	wait for any key;
 
-The description of palace exit is "An imposing door at the entrance of the central court. With all the chaos, this might be your chance!"
+The description of palace exit is "An imposing door by the Corridor of Procession West. With all the chaos, this might be your chance!"
 
 Instead of going through palace exit:
 	now the player is in The Temple of Tawosret;
