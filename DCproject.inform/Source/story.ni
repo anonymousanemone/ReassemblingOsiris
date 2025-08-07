@@ -207,7 +207,7 @@ A thing has some text called print-name.
 
 A hint-object is a kind of object. It has some text called hint-content.
 
-To say beginner guide hint (H - a hint-object):
+To say print-hint (H - a hint-object):
 	say "[hint style][bold type](Beginner's Guide)[roman type] [hint-content of H] [end style]".			
 
 To say set-link (target - a thing):
@@ -393,7 +393,7 @@ Section 2 - Entering the Osireion
 	
 The Entrance to the Osireion is a room in Abydos. "You stand before an inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the [set-link the stone door] is immaculate, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems empty, with all the traffic instead going toward the main gates. Hopefully, no one will stop you from breaking in. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]
 	[if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if]
-	[if Osiris' head is unacquired][paragraph break][beginner guide hint the H1]"
+	[if Osiris' head is unacquired][paragraph break][print-hint the H1]"
 	
 H1 is a hint-object. The hint-content is "You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER?".
 	
@@ -402,7 +402,7 @@ A room memory rule for the North Passage:
 		rule fails.
 
 The stone door is a locked closed door. It is scenery. The stone door is south of the Entrance to the Osireion and north of the North Passage. Include (- has animate -) when defining the door. The print-name is "stone door".
-The description of the stone door is "The forbidding stone door is engraved with a riddle: [line break]    I am yesterday, veiled in shadows. [line break]    I am tomorrow, cloaked in flames. [line break]    A union of gods, a cycle complete.[if Osiris' head is unacquired][paragraph break][beginner guide hint the H2]"
+The description of the stone door is "The forbidding stone door is engraved with a riddle: [line break]    I am yesterday, veiled in shadows. [line break]    I am tomorrow, cloaked in flames. [line break]    A union of gods, a cycle complete.[if Osiris' head is unacquired][paragraph break][print-hint the H2]"
 
 H2 is a hint-object. The hint-content is "You can SAY your answer TO the door.".
 
@@ -422,7 +422,7 @@ Instead of answering the door that something:
 
 The North Passage is a room in Abydos. It is south of the stone door. "The long narrow passage slopes gently downwards. The northern section of the passage is arched and lined with brick. The southern section is stone clad, and its [set-link walls of the north passage] are sculpted and painted with scenes from the 'Book of the Gates'. A pitched roof tops this part of the passage. 
 [paragraph break]On the floor, you can see a few miscellaneous items scattered on the floor:[if the ostracon is in the location] a [set-link a hieratic ostracon] ,[end if] a [set-link a tall pottery stand], [set-link trial pieces], and a few [set-link plaster casts].
-[paragraph break][beginner guide hint the H3]"
+[paragraph break][print-hint the H3]"
 
 H3 is a hint-object. The hint-content is "Always EXAMINE everything around you! You can try to EXAMINE the walls and the things on the floor. You can also TAKE things. When you are disorientated, feel free to take another LOOK at the room.".
 
@@ -453,7 +453,7 @@ The walls of the great hall is a wall in the Great Hall. "The North and South Wa
 	
 Understand "wall" as the walls of the great hall.
 
-The South Chamber is a room in Abydos. It is south of the great hall. "You are now in the south chamber. [paragraph break][beginner guide hint the H4]"
+The South Chamber is a room in Abydos. It is south of the great hall. "You are now in the south chamber. [paragraph break][print-hint the H4]"
 
 H4 is a hint-object. The hint-content is "Whenever faced with random objects, try to EXAMINE or TAKE them. There may be some potentially useful items in the mishmash...".
 
@@ -1113,7 +1113,7 @@ Section 4 - After the heart
 
 Chapter 4 - Busiris-Organs
 
-Organ Acquisition is a scene. Organ Acquisition begins when Heal Heracles ends. Organ Acquisition ends when Osiris' liver is acquired.
+Organ Acquisition is a scene. Organ Acquisition begins when Heal Heracles ends. Organ Acquisition ends when Osiris' liver is acquired and Osiris' lungs is acquired and Osiris' stomach is acquired and Osiris' intestines is acquired.
 
 Instead of entering the chariot during Organ Acquisition:
 	say "You really didn't want Heracles' filthy paws anywhere near your beautiful chariot.".
@@ -1198,7 +1198,7 @@ When the Kidnapping begins:
 
 Section 1 - Escape Management
 
-Escape is a scene. Escape begins when the location is the Jail Cell and Osiris' liver is unacquired. Escape ends when Heracles is caught. Escape is a recurring scene.
+Escape is a scene. Escape begins when the location is the Jail Cell and Osiris' liver is unacquired and Osiris' lungs is unacquired and Osiris' stomach is unacquired and Osiris' intestines is unacquired. Escape ends when Heracles is caught. Escape is a recurring scene.
 
 Heracles can be caught or uncaught. Heracles is uncaught.
 
@@ -1219,7 +1219,6 @@ After going to the Hallway during Escape:
 	continue the action.
 
 When Escape begins:
-	if jail cell is unvisited
 	say "[notice style]You have been taken by the guards into a jail cell![end style]";
 	now Heracles is uncaught.
 	
@@ -1308,17 +1307,11 @@ Pillar Hall is a room in Busiris. It is north of Central Court. Pillar Hall is n
 
 Temple Repository is a room in Busiris. It is north of Pillar Crypt. "Rows of dusty shelves crammed with scrolls, clay tablets, and magical texts."
 
-The Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of Crypt of Osiris is nothing. "Cloaked in a heavy silence, this chamber radiates an eerie chill. Wait...is that?"
+The Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of Crypt of Osiris is nothing. "Cloaked in a heavy silence, this chamber radiates an eerie chill. It's clearly been flooded at some point and never dried, a perpetual dampness permeating every corner and crevice of the room."
 
 The hidden entrance is a secret door. The hidden entrance is east of Hallway. "A faint outline on the stone wall indicates a hidden door!"
 
-Osiris' liver is a body part. It is in Crypt of Osiris. It is unacquired. Understand "liver" as Osiris' liver. The description of the liver is "A liver. It is surprisingly spongy."
-
-A Bes Jar is in the Crypt of Osiris. It is unacquired. The description of the Bes Jar is "A vase decorated with the head of Bes. You see traces of hallucinogens in it, along with...breast milk and blood?"
-
-[in the future, maybe make this an identification mini game]
-
-Pillar Crypt is a room in Busiris. It is west of Central Court. It is east of Crypt of Osiris. Nothing is west of Pillar Crypt.
+Pillar Crypt is a room in Busiris. It is west of Central Court. It is east of Crypt of Osiris. Nothing is west of Pillar Crypt. The description is "A crypt with pillars in it.".
 
 Corridor of Procession East is a corridor in Busiris. It is south of Central Court. "A broad ceremonial passage with faded murals, now haunted only by the sound of your footsteps."
 
@@ -1352,15 +1345,95 @@ Lobby is a room in Busiris. It is above the South Propylaeum. "Another room. But
 
 Tricolumnar Hall is a room in Busiris. It is north of Lobby. "Three giant pillars fill this hall, casting long shadows across the floor."
 
-Upper Hallway is a corridor in Busiris. It is west of Tricolumnar Hall.  "Another corridor. You've having some trouble keeping track of where you are."
+Upper Hallway is a corridor in Busiris. It is west of Tricolumnar Hall and northwest of Lobby.  "Another corridor. You've having some trouble keeping track of where you are." 
 
 Treasury is a room in Busiris. It is east of Lobby. "Treasury of the Sanctuary, so called."
 
 Great Hall-Busiris is a room in Busiris. It is west of Upper Hallway. The printed name of Great Hall-Busiris is "Great Hall".
 
-Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Upper Hallway.
+Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Upper Hallway. The description is "Looking out at the west paviolion of the palace."
 
-Section 3 - Ritual Sacrifice
+	
+Section 3 - Organ Minigame
+	
+A canopic jar is a kind of container. It is openable, closed, and opaque. 
+A canopic jar has a list of texts called acceptable guesses. 
+A canopic jar has some text called the guessed identity.
+A canopic jar can be identified or unidentified. A canopic jar is usually unidentified.
+
+
+Instead of taking a canopic jar:
+	say "A large alabaster vessel does not fit in with your escape plans.".
+
+Instead of taking something which is in a canopic jar:
+	if the noun is in a unidentified canopic jar:
+		say "Better not take somthing you don't know.";
+	
+Instead of examining something which is in a canopic jar:
+	if the noun is in a unidentified canopic jar:
+		say "Better not take somthing you don't know.";
+	
+Instead of examining a canopic jar:
+	try silently opening the noun;
+	say "[the description of the noun][paragraph break]";
+	omit contents in listing.
+
+The description of a canopic jar is "[if identified]You know what's inside.[otherwise]Unknown Goop, mushy and waterlogged.".
+
+Rule for printing the locale description of the Crypt of Osiris:
+	say "You can see an open ";
+	place a link to the command "x stone chest" reading "stone chest";
+	say " sitting atop a pile of sand, its ";
+	place a link to the command "x lid" reading "lid";
+	say " halfway down the mound. Inside the chest are four closed jars, carefully arranged to each face ";
+	place a link to the command "x north jar" reading "north";
+	say ", ";
+	place a link to the command "x east jar" reading "east";
+	say ", ";
+	place a link to the command "x south jar" reading "south";
+	say ", and ";
+	place a link to the command "x west jar" reading "west";
+	say "." instead.
+
+
+The canopic chest is a container in the Crypt of Osiris. It is open and scenery. Understand "stone chest" as the canopic chest. The print-name is "stone chest". The description is "With a closer look, you find that it's actually a canopic chest."
+
+The north canopic jar, east canopic jar, south canopic jar, and west canopic jar are canopic jars in the canopic chest.
+
+The acceptable guesses of north jar are {"lung", "lungs"}.
+The acceptable guesses of east jar are {"stomach"}.
+The acceptable guesses of south jar are {"liver"}.
+The acceptable guesses of west jar are {"intestine", "intestines"}.
+
+The description of north jar is "[if identified]Inside it was, appararently, Osiris' lungs.[otherwise]Unknown Goop north, mushy and waterlogged.".
+			
+The description of east jar is "[if identified]Inside it was, appararently, Osiris' stomach.[otherwise]Unknown Goop east, mushy and waterlogged.".
+		
+The description of south jar is "[if identified]Inside it was, appararently, Osiris' liver.[otherwise]Unknown Goop south, mushy and waterlogged.".
+		
+The description of west jar is "[if identified]Inside it was, appararently, Osiris' intestines.[otherwise]Unknown Goop west, mushy and waterlogged.".
+			
+Understand "examine unkown goop" or "examine goop" or "x unknown goop" or "x goop" as a mistake ("You squint at the goop, willing your eyes to infer some shape from it. Nothing forms.") when the location is the Crypt of Osiris.
+			
+Understand "take unkown goop" or "take goop" as a mistake ("Better not take somthing you don't know.") when the location is the Crypt of Osiris.		
+Osiris' lungs is a body part. It is in the north jar. Understand "lung" or "lungs" as Osiris' lungs. The description is "An overly healthy pair of lungs. You didn't like it all that much."
+	
+Osiris' stomach is a body part. It is in the east jar. The description is "A stomach for digestion. Maybe? What does he even eat anyway."
+	
+Osiris' liver is a body part. It is in the south jar. It is unacquired. Understand "liver" as Osiris' liver. The description is "A liver. It is surprisingly spongy."
+
+Osiris' intestines is a body part. It is in the west jar. Understand "intestine" as Osiris' intestines. The description is "Long. You wonder what it would looks like turned into sausage."
+	
+Understand "take lung" as a mistake ("Osiris would complain endlessly if you only took one lung.") when the location is the Crypt of Osiris
+
+A Bes Jar is in the Crypt of Osiris. It is unacquired. The description of the Bes Jar is "A vase decorated with the head of Bes. You see traces of hallucinogens in it, along with...breast milk and blood?"
+
+
+
+	
+	
+	
+Section 4 - Ritual Sacrifice
 
 Ritual Sacrifice is scene. Ritual Sacrifice begins when Osiris' liver is acquired. Ritual Sacrifice ends when King Busiris is dead.
 
