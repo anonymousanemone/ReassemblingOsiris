@@ -224,6 +224,11 @@ Rule for printing the name of a direction (called way) while listing exits:
 Rule for printing the name of a thing (called obj) when printing the locale description of a room:
 	place a link to the command "examine [printed name of obj]" reading "[printed name of obj]".
 
+Fucking is an action applying to one visible thing.
+Understand "fuck [someone]" as fucking.
+Instead of fucking [someone]:
+	say "You might not like that."
+	
 Section 3 - Sun Chariot Travel
 
 Figure of chariot is the file "chariot.png".
@@ -1120,7 +1125,7 @@ Carry out chanting in the presence of sick Heracles:
 	wait for any key;
 	say "'Ah-ah-ah-but!! You!!!!! I won't let you harm anyone!!!!! I'll stop you!!!' [paragraph break]";
 	wait for any key;
-	say "'...You have little to fear,' you reply. 'I'm on probation.' [paragraph break]";
+	say "'You have little to fear,' you reply. 'I'm on probation.' [paragraph break]";
 	wait for any key;
 	say "Heracles calms down and takes stock of the situation. 'Is that so? Well...so long as you promise not to do it again.' [paragraph break]";
 	wait for any key;
