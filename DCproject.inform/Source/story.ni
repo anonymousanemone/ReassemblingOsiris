@@ -36,13 +36,13 @@ Part 1 - Prologue - for release only
 After printing the banner text:	
 	say "[line break]'It’s a complete disaster!'[line break][line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break][line break]";
 	wait for any key;
-	say "I’ve pleaded and pleaded, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris herself!'[line break][line break]";
+	say "I’ve begged and begged, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris herself!'[line break][line break]";
     	wait for any key;
-    	say "'I had thought,' an especially haggard-looking Anubis replied, 'that we agreed Isis would be no help. Have our previous Emergency Meetings taught you nothing? I am starting to hear whispers--mere whispers, mind you, but whispers nonetheless--about a certain Serapis. Serapis! If Osiris falls, Kemet will fall alongside him. Amun, you must do something!'[line break][line break]";
+    	say "'I had thought,' an especially haggard-looking Anubis replied, 'that we agreed Isis would be no help. Have our previous Emergency Meetings taught us nothing? I am starting to hear whispers--mere whispers, mind you, but whispers nonetheless--about a certain Serapis. Serapis! If Osiris falls, Kemet will fall alongside him. Amun, you must do something!'[line break][line break]";
     	wait for any key;
-	say "Amun ignored the whining. There was a more important question to ask: 'Maʽat, what have you heard from Thoth?'[line break][line break]";
+	say "Amun ignored the whining. There was a more important matter: 'Maʽat, what have you heard from Thoth?'[line break][line break]";
 	wait for any key;
-	say "Maʽat looked rather unhappy to be the bearer of bad news. 'He’s tried every spell he knows--to no effect. He’s sequestered himself in the library, but…'[line break][line break]";
+	say "Maʽat looked rather unhappy to be the bearer of bad news. 'Thoth has tried every spell he knows, but to no effect. Now he’s sequestered himself in the library, but…'[line break][line break]";
 	wait for any key;
 	say "Ma'at seemed to have little faith that Thoth would succeed in his efforts.[line break][line break]";
     	wait for any key;
@@ -56,13 +56,13 @@ After printing the banner text:
 	wait for any key;
     	say "Sekhmet's snarl was answer enough.  [line break]'[line break]";
 	wait for any key;
-    	say "...I see,' Amun said. 'Perhaps…we should all check in next week.' [line break][line break]";
+    	say "...I see,' Amun said. 'Perhaps…we should take a brief recess... and reconvene next week.' [line break][line break]";
 	wait for any key;
     	say "This admittedly lackluster statement sent Anubis into a fury. 'This is the ninety-ninth Emergency Meeting we’ve held--enough stalling! The unweighed souls are piling up and spilling into the streets of the living, and poor Medjed is too spooked to perform his duties! I cannot contend with this alone!' [line break][line break]";
 	wait for any key;
-    	say "'And just what am I supposed to do, Anubis?' Amun bit back. 'Seth is rejoicing in his victory--clearly, none of us here have the aptitude to counter him!' [line break][line break]";
+    	say "'And just what am I supposed to do, Anubis?' Amun spat back. 'Seth is rejoicing in his victory--clearly, none of us here have the aptitude to counter him!' [line break][line break]";
 	wait for any key;
-    	say "'If I may.' A quiet voice resounded from the back of the room, and everyone turned to look at Khonsu, who had to speak.[line break][line break]";
+    	say "'If I may.' A quiet voice resounded from the back of the room, and everyone turned to look at Khonsu, who had yet to speak.[line break][line break]";
 	wait for any key;
     	say "'I have hesitated to bring this up. But it might be our only hope. There have been murmurs, in the darkest and gloomiest of shadows, of a terrible woman who made the sky her own. A woman whose misdeeds put those of our Seth to shame. A woman whose pride and cleverness knew no bounds. A woman who had… [line break][line break]";
 	wait for any key;
@@ -703,6 +703,14 @@ The east mural is scenery in the Underground Chapel. The description is "The wea
 
 The west mural is scenery in the Underground Chapel. The description is "This mural shows a man makes an offering to Aten. Cradled carefully in his hands is...a small duck?[paragraph break]Ha. You would never settle for such meager offerings." The print-name is "west mural".
 
+Understand "north wall" or "n wall" or "north mural" as the north mural when the location is the Underground Chapel.
+
+Understand "south wall" or "s wall" or "south mural" as the south mural when the location is the Underground Chapel.
+
+Understand "east wall" or "e wall" or "east mural" as the east mural when the location is the Underground Chapel.
+
+Understand "west wall" or "w wall" or "west mural" as the west mural when the location is the Underground Chapel.
+
 The ceiling is scenery in the Underground Chapel. The description is "You crane your head up to look at the ceiling. There seems to be a lot going on here. You can see 1...2...3...4 major components. A sun disk is being held in the hands of a praying man. Across from him, a man with a very long head is smelling a lotus." The print-name is "ceiling".
 
 The first statue is scenery in the Underground Chapel. The description is "A broken statue that probably once depicted a person. Guess we'll never find out. You feel a strange kinship with this statue." The print-name is "first statue".
@@ -863,6 +871,20 @@ Section 1 - All the Locations
 The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III. Sturdy columns flank a central courtyard where priests once performed daily rites. There seems to be a lot of honoring going on around here."
 
 The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. " The mortuary temple of Ramesses II looms large with its colossal statues. Faded reliefs along the walls depict the famous Battle of Kadesh. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
+
+The mortuary temple of Ramesses II is scenery in the Ramesseum. "Ramesses the Great—you had heard of him before, although by a different name. This place had once been a monumental temple suitable for the King of Kings. Now all that remains are sun-bleached ruins."
+
+The faded reliefs is scenery in the Ramesseum. 
+
+Instead of examining the faded reliefs:
+	say "An infamous battle between the Egyptians and Hittites. A thrilling tale of subterfuge, although not one you'd want to repeat. Muwatalli II, the Hittite king, had dispatched two spies who tricked Ramesses II into believing the Hittite army was far off, when in fact it lay in wait. As Ramesses marched on, two more Hittites--this time actual prisoners--confessed that the enemy was just around the corner. The trick had run its course, so the Hittites attacked. Each side commanded thousands of infantrymen and charioteers, and in the end, both sides thought they had won. In other words, it was a stalemate. [paragraph break]";
+	wait for any key;
+	say "But this... appears to show an entirely different kind of battle. A massive Egyptian figure fends off the Hittites alone, with no other Egyptians in sight. Is that towering figure... Ramesses II? [paragraph break]";
+	wait for any key;
+	say "Near the bottom of the relief, you notice grafitti scrawled onto the stone. It reads: 'Did he really fight all alone?'"
+	
+	
+Understand "walls" or "reliefs" or "Battle of Kadesh" as faded reliefs when the location is the Ramesseum. 
 
 The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmoses IV. Columns and archways display finely chiseled hieroglyphs extolling the king’s diplomatic prowess."
 
@@ -1133,15 +1155,15 @@ num_moves
 
 Table of Heracles' Yapping
 yappery
-"'Why is every single temple so far apart?' Heracles shouts. 'My heroic feet can't take this abuse! It was so much better in Greece!' [line break]People in the distance start whispering at the commotion..."
-"'So bored... My old battles were never this slow,' Heracles whines. 'Someone give me a monster or something to smash!'"
+"'Why is every single temple so far apart?' Heracles shouts. 'My heroic feet can't take this abuse! It was so much better in Greece!' [paragraph break]People in the distance start whispering at the commotion...[paragraph break]"
+"'So bored... My old battles were never this slow,' Heracles whines. 'Someone give me a monster or something to smash![paragraph break]'"
 "Heracles bellows, 'Why does the sun have to be so bright? Someone extinguish it!' His voice booms across the area, turning every head."
-"This humidity is a mighty adversary,' Heracles complains. 'Medea! Use your Colchian magic to fix it!'[line break]As he speaks, you notice a few people looking at you..."
-"Heracles scratches his head. 'My head’s still a little ouchie. Could you—like, I dunno—magic it away?'"
-"'Thanks again for your help,' Heracles says. 'Athough I totally had it handled."
-"'Have you ever tried cleaning out stables for a living?' Heracles complains. 'Makes any quest seem easy.'"
-"'I just have to ask,' Heracles loudly says. 'What made you do it?' [paragraph break]You give no reply."
-"Heracles groans, clutching his temples. 'All this talk of gods and brothers and chopping...Egypt is so strange! I'd rather wrestle another lion!![line break]His loud voice draws a few curious eyes..." 
+"'This humidity is a mighty adversary,' Heracles complains. 'Medea! Use your Colchian magic to fix it!'[paragraph break]As he speaks, you notice a few people looking at you...[paragraph break]"
+"Heracles scratches his head. 'My head’s still a little ouchie. Could you—like, I dunno—magic it away?'[paragraph break]"
+"'Thanks again for your help,' Heracles says. 'Athough I totally had it handled.[paragraph break]"
+"'Have you ever tried cleaning out stables for a living?' Heracles complains. 'Makes any quest seem easy.'[paragraph break]"
+"'I just have to ask,' Heracles loudly says. 'What made you do it?' [paragraph break]You give no reply..[paragraph break]"
+"Heracles groans, clutching his temples. 'All this talk of gods and brothers and chopping...Egypt is so strange! I'd rather wrestle another lion!!'[paragraph break]His loud voice draws a few curious eyes....[paragraph break]" 
 
 Every turn during Organ Acquisition:
 	if the Table of Countdown is empty:
@@ -1180,7 +1202,7 @@ When the Kidnapping begins:
 	wait for any key;
 	say "What??? [paragraph break]";
 	wait for any key;
-	say "'Yes!' Burisis continues, pleased by your wariness. 'Shedding foreign blood is an important part of my city's social culture! And you have only that loudmouth to thank for your capture! Normally we have a 35% success rate in successfully capturing a foreigner--but thanks to all of his yapping, we're certain you're Greek!' [paragraph break]";
+	say "'Yes!' Burisis continues, pleased by your wariness. 'Shedding foreign blood is an important part of my city's social culture! And you have only that loudmouth to thank for your capture! Normally we have a 35% success rate in successfully capturing a foreigner--but thanks to that blabbermouth, we're certain you're Greek!' [paragraph break]";
 	wait for any key;
 	say "You turn to Heracles, giving him a nasty look. He looks at you sheepishly. 'Sorry...' [paragraph break]";
 	wait for any key;
@@ -1215,12 +1237,13 @@ After going to the Hallway during Escape:
 	if hallway count is 5:
 		now the hidden entrance is revealed;
 		now the hidden entrance is open;
-		say "A large noise sounds, revealing a hidden entrance to a dark room. It is east of you.";
+		say "A loud rumbling echoes through the hallway, unveiling a hidden passageway to your east.";
 	continue the action.
 
 When Escape begins:
-	say "[notice style]You have been taken by the guards into a jail cell![end style]";
-	now Heracles is uncaught.
+	if jail cell is visited:
+		say "[notice style]You have been taken by the guards into a jail cell![end style]";
+		now Heracles is uncaught.
 	
 When Escape ends:
 	say "[notice style]The guards rush into the room and apprehend you![end style]";
@@ -1325,7 +1348,20 @@ Palace exit is a secret door. It is west of Corridor of Procession West and east
 
 Hallway is a corridor in Busiris. It is north of Corridor of Procession West. "Its walls are streaked with dark soot and grime. This place doesn't have very good upkeep."
 
-West Magazines is a room in Busiris. It is west of Hallway. "This dim storage area reeks of stale air and old dust."
+West Magazines is a room in Busiris. It is west of Hallway. "Long, narrow rooms crammed to the brim with hundreds of pithoi. You can hardly move around with all of these jars blocking your way. It's clearly a fire hazard, and you would know about those. There is a papyrus scrap lying on the ground."
+
+The pithoi are plural-named. The pithoi are in the West Magazines. The description of the pithoi are "Jars filled with olive oil, wine, and other delicacies. Enough food to fuel an empire, it seems. Or fund a feast fit for a king. It seems that you (and Heracles) won't go hungry."
+
+Instead of taking pithoi:
+	say "They're much too heavy to carry."
+
+The abandoned medical papyrus scrap is in the West Magazines. The description of the abandoned medical papyrus scrap is "A crumpled and yellowing scrap of papyrus. It reads: 'A liver that is too full of blood can produce all diseases'. Truly salient advice. You ought to bring it up at your next check-up." 
+
+Instead of examining Heracles in the West Magazines:
+	say "Heracles seems a little nervous."
+	
+Instead of talking to Heracles in the West Magazines:
+	say "'Um, Medea.' Heracles looks more antsy than usual. 'I don't like being around all these jars. They're all so smashable!' ...He's like a boar in a pithoi shop."
 
 South Propylaeum is a room in Busiris. It is southwest of Central Court. It is northeast of Corridor of Procession West. It is northwest of Corridor of Procession East. "Massive gateways stand here, their once-intricate reliefs chipped away by time."
 
@@ -1440,18 +1476,19 @@ Ritual Sacrifice is scene. Ritual Sacrifice begins when Osiris' liver is acquire
 [fix the slow capture before they get taken to the sacrifice]
 Instead of going during Ritual Sacrifice:
 	if Escape is not happening:
-		say "You can hardly leave with all the guards around you!";
+		say "You try to leave, but the guards make a grab for you!";
 	otherwise:
 		continue the action.
 
 Every turn during Ritual Sacrifice:
 	If the location is the Jail Cell:
 		start the sacrifice;
+
+Instead of looking in the Central Court when Ritual Sacrifice is happening:
+	say "[run paragraph on]";
 	
 To start the sacrifice:
 	say "'The ritual is ready. We will finally deal with you errant prisoners! Our gods will certainly be pleased with this sacrifice,' a guard jeers.[paragraph break]";
-	wait for any key;
-	say "Now to the central court![paragraph break]";
 	wait for any key;
 	now the player is in the Central Court;
 	now Heracles is in the Central Court;
@@ -1505,7 +1542,7 @@ To end the sacrifice:
 	now palace exit is open;
 	wait for any key;
 
-The description of palace exit is "An imposing door at the entrance of the central court. With all the chaos, this might be your chance!"
+The description of palace exit is "An imposing door by the Corridor of Procession West. With all the chaos, this might be your chance!"
 
 Instead of going through palace exit:
 	now the player is in The Temple of Tawosret;
