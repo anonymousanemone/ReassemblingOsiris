@@ -597,6 +597,9 @@ Check inserting something into the body bag:
 
 A workman is a person. The workman carries a body bag. The workman can be curious or uncurious. The workman is uncurious. The description of the workman is "A middle aged man, probably with degenerative joint disease."
 
+Instead of yelling at workman:
+	say "You can't imagine that'll get you what you want."
+	
 When Brain Acquisition begins:
 	now the workman is in the Workmen's Village.
 
@@ -1128,6 +1131,13 @@ Carry out chanting in the presence of sick Heracles:
 	say "Under his breath, he whispers, 'I'm also totally lost...' [paragraph break]";
 	now Heracles is healthy.
 
+Yelling at is an action applying to one visible thing.
+Understand "yell at [someone]" as yelling at.
+Instead of yelling at Heracles:
+	say "Heracles['] eyes well with tears. 'Why are you yelling at me?' he asks.[paragraph break]";
+	wait for any key;
+	say "...It's like kicking a puppy."
+	
 Section 4 - After the heart
 
 [have dialogue of medea putting heart in bag, and osiris' head coming to life.]
@@ -1322,12 +1332,40 @@ Section 2 - Busiris Palace
 
 Central Court is a room in Busiris. "Center of public life in Busiris."
 
-King Busiris is a person. King Busiris can be alive or dead. King Busiris is alive. The description of dead King Busiris is "Dead, just like all your enemies were."
+King Busiris is a person. King Busiris can be alive or dead. King Busiris is alive. The description of dead King Busiris is "Dead, just like the rest of your enemies."
 
 A corridor is a kind of room. 
 
-Pillar Hall is a room in Busiris. It is north of Central Court. Pillar Hall is northeast of Hallway. "The air in this vaulted chamber seems to thrum with a sinister power."
+Pillar Hall is a room in Busiris. It is north of Central Court. Pillar Hall is northeast of Hallway. "A vast hall stretches before you. At its far end stands a raised daïs with a stone lamp resting on its lower step. The air here thrums with an eerie power."
 
+The raised daïs is in the Pillar Hall. The description of the raised daïs is "A low platform on which a king would presumably preside."
+
+Instead of taking raised daïs:
+	say "You can't even lift it off the ground!" 
+	
+Understand "raised dais" as raised daïs.
+
+The broken fragments of a gypsum throne are a thing. The description of the broken fragments of a gypsum throne is "Once the seat of power, this throne is now nothing but shattered remains. How strange. Why would Busiris leave a broken throne lying here?"
+
+Instead of taking broken fragments of a gypsum throne:
+	say "You can't imagine a use for this."
+	
+Instead of examining the raised daïs:
+	now the broken fragments of a gypsum throne are in the Pillar Hall;
+	say "A low platform on which a king would presumably preside.[paragraph break]";
+	wait for any key;
+	say "Looking closer, you spot broken fragments of a gypsum throne tucked into a discreet niche behind the daïs.[paragraph break]"
+
+The stone lamp is in the Pillar Hall. The description of the stone lamp is "A lovely lamp made of fine lilac gypsum. It seems as though it would be worth a pretty penny."
+
+Instead of examining Heracles in the Pillar Hall:
+	say "Heracles surveys the room with a curious gaze."
+	
+Instead of talking to Heracles in the Pillar Hall:
+	say "Heracles turns to you. 'Most kings keep their throne rooms far tidier than this. I've seen stables kept in better order! Busiris must be hiding out somewhere else.'[paragraph break]";
+	wait for any key; 
+	say "You wonder, then, what purpose this room might have served--or, better yet, to whom it once belonged."
+	
 Temple Repository is a room in Busiris. It is north of Pillar Crypt. "Rows of dusty shelves crammed with scrolls, clay tablets, and magical texts."
 
 The Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of Crypt of Osiris is nothing. "Cloaked in a heavy silence, this chamber radiates an eerie chill. Wait...is that?"
