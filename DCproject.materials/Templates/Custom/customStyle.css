@@ -70,6 +70,16 @@ body, input, label {
   color: var(--notice-color)
 }
 
+.scream {
+  font-size: 3rem;
+  color: var(--notice-color);
+  font-weight: bold;
+  padding-top: 3rem;
+  display: flex;
+  line-height: 3rem;
+  text-align: center;
+}
+
 a, a:visited {
 	color: var(--link);
 	font-weight: bold;
@@ -180,9 +190,7 @@ aside.sidebar {
 }
 
 .quick-menu-body {
-  /* background-color: #eae3f9; */
-  padding: 0rem 1rem;
-  /* border: 1px solid #f3eeff; */
+  padding: 0rem 0rem 0rem 1rem;
   border-top: none;
   border-radius: 0 0 4px 4px;
 }
@@ -382,20 +390,29 @@ aside.sidebar {
   padding: 1rem;
 }
 
+.file-scroll {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
 .file-section {
-  margin-bottom: 2em;
+  margin-bottom: 1rem;
 }
 
 .file-section h2 {
   font-size: 1.2em;
   margin-bottom: 0.5em;
-  border-bottom: 1px solid #aaa;
 }
 
 .file-entry {
   cursor: pointer;
   margin-left: 20px;
   overflow-wrap:break-word;
+  justify-content: space-between;
+  display: flex;
+  word-break: break-all;   
+  margin-bottom: 0.2rem;
 }
 
 .file-entry:hover {
@@ -409,10 +426,5 @@ aside.sidebar {
   margin-top: 0.5em;
   white-space: pre-wrap;
 }
-
-.fs-title {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
 
 .command-echo { display: none; }

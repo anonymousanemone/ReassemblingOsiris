@@ -81,8 +81,12 @@ function loadGameFromFile() {
 }
 
 function saveTranscript() {
-  vorple.prompt.queueCommand('TRANSCRIPT')
+  vorple.prompt.queueCommand('TRANSCRIPT');
 }
+
+vorple.file.transcriptFilePrompt = function (callback) {
+    vorple.file.filePrompt(callback, vorple.file.TRANSCRIPT_PATH+"/");
+};
 
 function downloadFile(data, filename, type) {
   const blob = new Blob([data], { type });
@@ -95,7 +99,7 @@ function downloadFile(data, filename, type) {
 }
 
 function checkFiles(){
-  getVorpleSaveFiles(gameId).then(savefiles => {
+  getVorpleSaveFiles(gameid).then(savefiles => {
     console.log("Available save files:", savefiles);
     if (savefiles.length === 0) {
       alert("No save files found.");
@@ -148,64 +152,70 @@ async function showFileExplorer() {
         container.appendChild(empty);
         return;
       }
-      console.log(items[items.length-1]);
+
       lastItem = `${path}/${items[items.length-1]}`;
+      console.log(lastItem);
 
-      fs.stat(fullPath, (err, stats) => {
-        if (stats?.isDirectory()) {
-          items = [items[items.length-1]];
+      fs.stat(lastItem, (err, stats) => {
+        // console.log(lastItem);
+        if (!err && stats?.isDirectory()) {
+          // If last item is a directory, only explore that directory
+          console.log(lastItem);
+          readDir(lastItem, container, depth);
+          return;
         }
-      });
 
-      items.forEach(item => {
-        const fullPath = `${path}/${item}`;
-        fs.stat(fullPath, (err, stats) => {
-          const entry = document.createElement("div");
-          entry.className = "file-entry";
-          entry.style.marginLeft = `${depth * 20}px`;
+        items.forEach(item => {
+          const fullPath = `${path}/${item}`;
+          fs.stat(fullPath, (err, stats) => {
+            const entry = document.createElement("div");
+            entry.className = "file-entry";
+            entry.style.marginLeft = `${depth * 20}px`;
 
-          if (stats?.isDirectory()) {
-            entry.classList.add("folder");
-            entry.textContent = `📁 ${item}`;
+            if (stats?.isDirectory()) {
+              entry.classList.add("folder");
+              entry.textContent = `📁 ${item}`;
 
-            const nestedContainer = document.createElement("div");
-            nestedContainer.style.display = "none";
+              const nestedContainer = document.createElement("div");
+              nestedContainer.style.display = "none";
 
-            entry.addEventListener("click", () => {
-              if (nestedContainer.style.display === "none") {
-                nestedContainer.style.display = "block";
-                // Lazy load only once
-                if (nestedContainer.childElementCount === 0) {
-                  readDir(fullPath, nestedContainer, depth + 1);
+              entry.addEventListener("click", () => {
+                if (nestedContainer.style.display === "none") {
+                  nestedContainer.style.display = "block";
+                  // Lazy load only once
+                  if (nestedContainer.childElementCount === 0) {
+                    readDir(fullPath, nestedContainer, depth + 1);
+                  }
+                } else {
+                  nestedContainer.style.display = "none";
                 }
-              } else {
-                nestedContainer.style.display = "none";
-              }
-            });
+              });
 
-            container.appendChild(entry);
-            container.appendChild(nestedContainer);
-          } else {
-            entry.classList.add("file");
-            entry.textContent = `📄 ${item} `;
-
-            const downloadBtn = document.createElement("button");
-            downloadBtn.textContent = "Download";
-            downloadBtn.className = "download-btn";
-            downloadBtn.addEventListener("click", () => {
-              downloadFromBrowserFS(fs, fullPath, item);
-            });
-            entry.appendChild(downloadBtn);
-            container.appendChild(entry);
-          }
+              container.appendChild(entry);
+              container.appendChild(nestedContainer);
+            } else {
+              entry.classList.add("file");
+              entry.textContent = `📄 ${item} `;
+              // console.log(fullPath);
+              const downloadBtn = document.createElement("button");
+              downloadBtn.textContent = "Download";
+              downloadBtn.className = "download-btn";
+              downloadBtn.addEventListener("click", () => {
+                downloadFromBrowserFS(fs, fullPath, item);
+              });
+              entry.appendChild(downloadBtn);
+              container.appendChild(entry);
+            }
+          });
         });
       });
     });
   }
 
   // Render both save files and transcripts
-  renderDirectory("Save Files", savePath);
+  
   renderDirectory("Transcripts", transcriptPath);
+  renderDirectory("Save Files", savePath);
 }
 
 function downloadFromBrowserFS(fs, path, filename) {

@@ -1,9 +1,10 @@
 "That Time I Got Out of Jail by Reassembling Osiris" by Sophia Ling and Ruya Tazebay
 
 Include Basic Screen Effects by Emily Short.
+Include Basic Help Menu by Emily Short.
+Include Punctuation Removal by Emily Short.
 Include Rideable Vehicles by Graham Nelson.
 Include Secret Doors by Gavin Lambert.
-Include Basic Help Menu by Emily Short.
 Include Exit Lister by Gavin Lambert.
 
 Include Vorple by Juhana Leinonen.
@@ -22,18 +23,18 @@ Release along with a “Custom” website.
 
 Hint is a Vorple style.
 Notice is a Vorple style.
+Scream is a Vorple style.
 
 
 Release along with cover art ("Vase painting of Medea on her chariot").
 
-Section 1 - Story Transcript - For release only
-
-When play begins: 
-	try switching the story transcript on;
-
 Part 1 - Prologue - for release only
 
-After printing the banner text:	
+When play begins: 
+	say "[scream style]YOU WILL BE PROMPTED TO SAVE A TRANSCRIPT.[end style]";
+	pause the game;
+	try switching the story transcript on;
+	pause the game;
 	say "[line break]'It’s a complete disaster!'[line break][line break]Amun let out a heavy sigh as he massaged his temples. The Emergency Meeting of the Pantheon was, once again, shaping up to be…utterly useless.[line break][line break]";
 	wait for any key;
 	say "I’ve begged and begged, but she refuses to leave her temples,' Nephthys continued, 'And why would she, when those Nubians make such splendid offerings? She’ll become an Osiris herself!'[line break][line break]";
@@ -136,10 +137,7 @@ After printing the banner text:
 	wait for any key;
 	say "[line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. There's no better place to start. [line break][line break]";
 	now the right hand status line is "[map region of the location]";
-	wait for any key;
-	say "[line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. There's no better place to start. [line break][line break]";
-	pause the game.
-	
+	pause the game.	
 
 Part 2 - General Game Declarations
 
@@ -175,6 +173,12 @@ Carry out screen-clearing:
 	clear the screen;
 	queue a parser command "look", without showing the command.
 	
+After reading a command:
+     remove stray punctuation.
+	
+Rule for printing room description details of a door:
+	stop.
+	
 
 Section 2 - New Definitions
 
@@ -200,8 +204,8 @@ A thing can be acquired or unacquired. A thing is usually unacquired.
 A thing can be examined or unexamined. A thing is usually unexamined.
 
 Instead of examining something:
-	continue the action;
-	now the noun is examined.
+	now the noun is examined;
+	continue the action.
 	
 A thing has some text called print-name.
 
@@ -224,11 +228,6 @@ Rule for printing the name of a direction (called way) while listing exits:
 Rule for printing the name of a thing (called obj) when printing the locale description of a room:
 	place a link to the command "examine [printed name of obj]" reading "[printed name of obj]".
 
-Fucking is an action applying to one visible thing.
-Understand "fuck [someone]" as fucking.
-Instead of fucking [someone]:
-	say "You might not like that."
-	
 Section 3 - Sun Chariot Travel
 
 Figure of chariot is the file "chariot.png".
@@ -344,7 +343,7 @@ command-echo is a Vorple style.
 After reading a command:
 	if transcript-on is true and Vorple is supported:
 		let cmd be the player's command;
-		say "[command-echo style]>[cmd][end style]";
+		say "[command-echo style]>[cmd][line break][end style]";
 	continue the action.
 
 The end transcript rule is listed in the shutdown rules.
@@ -543,7 +542,7 @@ Osiris' head is a body part. It is in the sarcophagus. Osiris' head can be taken
 Test head with "look / unlock sarcophagus with ankh / take head" in Tomb of Osiris holding faience ankh.
 		
 
-Part 4 - Talking Osiris Agenda
+ Part 4 - Talking Osiris Agenda
 [this entire part must be completed in order]
 
 Talking Osiris Agenda is a scene. Talking Osiris Agenda begins when Head Acquisition ends. Talking Osiris Agenda ends when Heart Acquisition ends. 
@@ -602,9 +601,6 @@ Check inserting something into the body bag:
 
 A workman is a person. The workman carries a body bag. The workman can be curious or uncurious. The workman is uncurious. The description of the workman is "A middle aged man, probably with degenerative joint disease."
 
-Instead of yelling at workman:
-	say "You can't imagine that'll get you what you want."
-	
 When Brain Acquisition begins:
 	now the workman is in the Workmen's Village.
 
@@ -866,12 +862,15 @@ Heart Acquisition is a scene. Heart Acquisition begins when Brain Acquisition en
 
 Heal Heracles is a scene. Heal Heracles begins when Brain Acquisition ends. Heal Heracles ends when Heracles is healthy. 
 
-Buddy Heracles is a scene. Buddy Heracles begins when Heal Heracles ends. Buddy Heracles ends when the location of the player is not in Busiris and Osiris' liver is acquired.
+Buddy Heracles is a scene. Buddy Heracles begins when Heal Heracles ends. Buddy Heracles ends when the location of the player is not in Busiris and the heart scarab is acquired.
 
 Every turn during Buddy Heracles:
 	if the location of Heracles is not the location of the player:
 		now Heracles is in the location;
-		say "Heracles follows you with a grunt."
+		if the location is in Busiris:
+			say "Heracles follows you with a grunt.".
+
+Test heal with "purloin prepared medicine / I have indeed applied something to all his sore spots" in the temple of Horemheb.
 
 
 Section 1 - All the Locations
@@ -1099,12 +1098,14 @@ Instead of putting the prepared medicine on Heracles:
 	
 Understand "heal [Heracles]" or "help [Heracles]" or "cure [Heracles]" as a mistake ("[if the papyri is examined]Try following the steps in the spell. A sick Heracles can't be healed in one step, after all. [otherwise if the player is carrying the prepared medicine] You gotta APPLY the medicine and get down and dirty with the nitty gritty steps! [otherwise]You don't even know where to start! Now that you can't use your magic, you have to start reading up on the mortal way of things.").
 	
-Understand "I have indeed applied something to all his sore spots" as chanting. Chanting is an action applying to nothing.
+Understand "I have indeed applied something to all his sore spots" or "say I have indeed applied something to all his sore spots" or "say 'I have indeed applied something to all his sore spots'" or "'I have indeed applied something to all his sore spots'" as chanting. Chanting is an action applying to nothing.
 
-Understand "recite spell" or "chant" as a mistake ("Try directly saying the spell without any punctuation.") when the papyri is examined.
+Instead of answering that "spell", say "Try saying out the full spell.".
+
+Understand "recite spell" or "say spell" as a mistake ("Try saying out the full spell.") when the papyri is examined.
 
 Carry out chanting:
-	say "You feel a little crazy speaking to yourself."
+	say "You feel a little crazy muttering to yourself."
 
 Carry out chanting in the presence of sick Heracles:	
 	say "You speak the spell.[paragraph break]";
@@ -1125,7 +1126,7 @@ Carry out chanting in the presence of sick Heracles:
 	wait for any key;
 	say "'Ah-ah-ah-but!! You!!!!! I won't let you harm anyone!!!!! I'll stop you!!!' [paragraph break]";
 	wait for any key;
-	say "'You have little to fear,' you reply. 'I'm on probation.' [paragraph break]";
+	say "'...You have little to fear,' you reply. 'I'm on probation.' [paragraph break]";
 	wait for any key;
 	say "Heracles calms down and takes stock of the situation. 'Is that so? Well...so long as you promise not to do it again.' [paragraph break]";
 	wait for any key;
@@ -1136,13 +1137,6 @@ Carry out chanting in the presence of sick Heracles:
 	say "Under his breath, he whispers, 'I'm also totally lost...' [paragraph break]";
 	now Heracles is healthy.
 
-Yelling at is an action applying to one visible thing.
-Understand "yell at [someone]" as yelling at.
-Instead of yelling at Heracles:
-	say "Heracles['] eyes well with tears. 'Why are you yelling at me?' he asks.[paragraph break]";
-	wait for any key;
-	say "...It's like kicking a puppy."
-	
 Section 4 - After the heart
 
 [have dialogue of medea putting heart in bag, and osiris' head coming to life.]
@@ -1171,7 +1165,7 @@ num_moves
 Table of Heracles' Yapping
 yappery
 "'Why is every single temple so far apart?' Heracles shouts. 'My heroic feet can't take this abuse! It was so much better in Greece!' [paragraph break]People in the distance start whispering at the commotion...[paragraph break]"
-"'So bored... My old battles were never this slow,' Heracles whines. 'Someone give me a monster or something to smash![paragraph break]'"
+"'So bored... My old battles were never this slow,' Heracles whines. 'Someone give me a monster or something to smash!'[paragraph break]"
 "Heracles bellows, 'Why does the sun have to be so bright? Someone extinguish it!' His voice booms across the area, turning every head."
 "'This humidity is a mighty adversary,' Heracles complains. 'Medea! Use your Colchian magic to fix it!'[paragraph break]As he speaks, you notice a few people looking at you...[paragraph break]"
 "Heracles scratches his head. 'My head’s still a little ouchie. Could you—like, I dunno—magic it away?'[paragraph break]"
@@ -1255,10 +1249,16 @@ After going to the Hallway during Escape:
 		say "A loud rumbling echoes through the hallway, unveiling a hidden passageway to your east.";
 	continue the action.
 
+The visit-jail count is a number that varies. The visit-jail count is initially 0.
+
 When Escape begins:
-	if jail cell is visited:
+	if the visit-jail count is not 0:
 		say "[notice style]You have been taken by the guards into a jail cell![end style]";
-		now Heracles is uncaught.
+	now Heracles is uncaught;
+	increment visit-jail count;
+	showme visit-jail count.
+	
+Understand "talk to guards" or "talk to guard" as a mistake ("The guards have left to patrol the palace.").
 	
 When Escape ends:
 	say "[notice style]The guards rush into the room and apprehend you![end style]";
@@ -1275,7 +1275,7 @@ Every turn during Escape:
 
 Instead of going when the location is a corridor during Escape:
 	if a random chance of 1 in 6 succeeds:
-		say "[notice style]You amble down the winding corridors...[end style]";
+		say "[paragraph break][notice style]You amble down the winding corridors...[end style][paragraph break]";
 		teleport the player;	
 	otherwise:
 		continue the action.
@@ -1283,7 +1283,8 @@ Instead of going when the location is a corridor during Escape:
 To teleport the player:
 	choose a random row in the Table of Corridor Confusion;
 	now the player is in the corr_name entry;
-	now Heracles is in the corr_name entry.
+	now Heracles is in the corr_name entry;
+	say "'How did we get here?' Heracles wonders loudly.".
 	
 After going during Escape:
 	if the location is not a corridor:
@@ -1337,40 +1338,12 @@ Section 2 - Busiris Palace
 
 Central Court is a room in Busiris. "Center of public life in Busiris."
 
-King Busiris is a person. King Busiris can be alive or dead. King Busiris is alive. The description of dead King Busiris is "Dead, just like the rest of your enemies."
+King Busiris is a person. King Busiris can be alive or dead. King Busiris is alive. The description of dead King Busiris is "Dead, just like all your enemies were."
 
 A corridor is a kind of room. 
 
-Pillar Hall is a room in Busiris. It is north of Central Court. Pillar Hall is northeast of Hallway. "A vast hall stretches before you. At its far end stands a raised daïs with a stone lamp resting on its lower step. The air here thrums with an eerie power."
+Pillar Hall is a room in Busiris. It is north of Central Court. Pillar Hall is northeast of Hallway. "The air in this vaulted chamber seems to thrum with a sinister power."
 
-The raised daïs is in the Pillar Hall. The description of the raised daïs is "A low platform on which a king would presumably preside."
-
-Instead of taking raised daïs:
-	say "You can't even lift it off the ground!" 
-	
-Understand "raised dais" as raised daïs.
-
-The broken fragments of a gypsum throne are a thing. The description of the broken fragments of a gypsum throne is "Once the seat of power, this throne is now nothing but shattered remains. How strange. Why would Busiris leave a broken throne lying here?"
-
-Instead of taking broken fragments of a gypsum throne:
-	say "You can't imagine a use for this."
-	
-Instead of examining the raised daïs:
-	now the broken fragments of a gypsum throne are in the Pillar Hall;
-	say "A low platform on which a king would presumably preside.[paragraph break]";
-	wait for any key;
-	say "Looking closer, you spot broken fragments of a gypsum throne tucked into a discreet niche behind the daïs.[paragraph break]"
-
-The stone lamp is in the Pillar Hall. The description of the stone lamp is "A lovely lamp made of fine lilac gypsum. It seems as though it would be worth a pretty penny."
-
-Instead of examining Heracles in the Pillar Hall:
-	say "Heracles surveys the room with a curious gaze."
-	
-Instead of talking to Heracles in the Pillar Hall:
-	say "Heracles turns to you. 'Most kings keep their throne rooms far tidier than this. I've seen stables kept in better order! Busiris must be hiding out somewhere else.'[paragraph break]";
-	wait for any key; 
-	say "You wonder, then, what purpose this room might have served--or, better yet, to whom it once belonged."
-	
 Temple Repository is a room in Busiris. It is north of Pillar Crypt. "Rows of dusty shelves crammed with scrolls, clay tablets, and magical texts."
 
 The Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of Crypt of Osiris is nothing. "Cloaked in a heavy silence, this chamber radiates an eerie chill. It's clearly been flooded at some point and never dried, a perpetual dampness permeating every corner and crevice of the room."
@@ -1412,9 +1385,12 @@ North Corridor is a corridor in Busiris. It is east of Pillar Hall. "A narrow ha
 
 Corridor of the Draught Board is a corridor in Busiris. It is south of North Corridor. "A long and winding corridor."
 
-The Jail Cell is a room in Busiris. It is west of the Cell Door.  "Dark and claustrophobic. You can see desperate scratches of former prisoners."
+The Jail Cell is a room in Busiris. It is west of the cell door.  "Dark and claustrophobic. You can see desperate scratches of former prisoners."
 
-The Cell Door is a locked open door. The Cell Door is east of the Jail Cell and west of the Corridor of the Draught Board.
+The cell door is a locked open door. The cell door is east of the Jail Cell and west of the Corridor of the Draught Board. 
+
+Rule for writing a paragraph about the cell door:
+	do nothing instead.
 
 Workshops is a room in Busiris. It is east of the Corridor of the Draught Board. "You see workbenches and tools scattered about."
 
@@ -1430,14 +1406,12 @@ Treasury is a room in Busiris. It is east of Lobby. "Treasury of the Sanctuary, 
 
 Great Hall-Busiris is a room in Busiris. It is west of Upper Hallway. The printed name of Great Hall-Busiris is "Great Hall".
 
-Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Upper Hallway. The description is "Looking out at the west paviolion of the palace."
+Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Upper Hallway. The description is "Looking out at the west pavilion of the palace."
 
 	
 Section 3 - Organ Minigame
 	
 A canopic jar is a kind of container. It is openable, closed, and opaque. 
-A canopic jar has a list of texts called acceptable guesses. 
-A canopic jar has some text called the guessed identity.
 A canopic jar can be identified or unidentified. A canopic jar is usually unidentified.
 
 
@@ -1445,15 +1419,21 @@ Instead of taking a canopic jar:
 	say "A large alabaster vessel does not fit in with your escape plans.".
 
 Instead of taking something which is in a canopic jar:
-	if the noun is in a unidentified canopic jar:
-		say "Better not take somthing you don't know.";
+	say "The putrid waters did not look inviting to stick your hand in. Maybe you could try scooping it instead, like soup.".
+			
+Report opening a unidentified canopic jar:
+	say "As you open the jar, a horrific smell reaches you. Gag. The sight inside does not help.".
+			
+Instead of smelling a canopic jar:
+	say "Gag.".
 	
 Instead of examining something which is in a canopic jar:
 	if the noun is in a unidentified canopic jar:
 		say "Better not take somthing you don't know.";
 	
 Instead of examining a canopic jar:
-	try silently opening the noun;
+	if the noun is closed:
+		try silently opening the noun;
 	say "[the description of the noun][paragraph break]";
 	omit contents in listing.
 
@@ -1475,14 +1455,9 @@ Rule for printing the locale description of the Crypt of Osiris:
 	say "." instead.
 
 
-The canopic chest is a container in the Crypt of Osiris. It is open and scenery. Understand "stone chest" as the canopic chest. The print-name is "stone chest". The description is "With a closer look, you find that it's actually a canopic chest."
+The canopic chest is a container in the Crypt of Osiris. It is open, openable, and scenery. Understand "stone chest" as the canopic chest. The print-name is "stone chest". The description is "With a closer look, you find that it's actually a canopic chest.".
 
 The north canopic jar, east canopic jar, south canopic jar, and west canopic jar are canopic jars in the canopic chest.
-
-The acceptable guesses of north jar are {"lung", "lungs"}.
-The acceptable guesses of east jar are {"stomach"}.
-The acceptable guesses of south jar are {"liver"}.
-The acceptable guesses of west jar are {"intestine", "intestines"}.
 
 The description of north jar is "[if identified]Inside it was, appararently, Osiris' lungs.[otherwise]Unknown Goop north, mushy and waterlogged.".
 			
@@ -1497,7 +1472,7 @@ Understand "examine unkown goop" or "examine goop" or "x unknown goop" or "x goo
 Understand "take unkown goop" or "take goop" as a mistake ("Better not take somthing you don't know.") when the location is the Crypt of Osiris.		
 Osiris' lungs is a body part. It is in the north jar. Understand "lung" or "lungs" as Osiris' lungs. The description is "An overly healthy pair of lungs. You didn't like it all that much."
 	
-Osiris' stomach is a body part. It is in the east jar. The description is "A stomach for digestion. Maybe? What does he even eat anyway."
+Osiris' stomach is a body part. It is in the east jar. The description is "A stomach. Perhaps for digestion."
 	
 Osiris' liver is a body part. It is in the south jar. It is unacquired. Understand "liver" as Osiris' liver. The description is "A liver. It is surprisingly spongy."
 
@@ -1507,7 +1482,28 @@ Understand "take lung" as a mistake ("Osiris would complain endlessly if you onl
 
 A Bes Jar is in the Crypt of Osiris. It is unacquired. The description of the Bes Jar is "A vase decorated with the head of Bes. You see traces of hallucinogens in it, along with...breast milk and blood?"
 
+Scooping is an action applying to two things. Understand "scoop [something] from [something]" or "ladle [something] from [something]" as scooping.
+	
+Carry out scooping:
+	if the player is not carrying the kyathos:
+		say "Your non-webbed fingers make a poor tool for scooping.";
+	otherwise:
+		if the second noun is not a container:
+			if the second noun is the kyathos:
+				say "That's what you're scooping [italic type]with[roman type]. Scoop-ception is not allowed!";
+			otherwise:
+				say "It hardly makes sense to scoop from [second noun].";
+		otherwise if the noun is not in the second noun:
+			say "You may be fishing for something that's not there.";
+		otherwise:
+			if the second noun is a canopic jar:
+				now the second noun is identified;
+				now the player is carrying the noun;
+				say "You swirl the kyathos in the gross mixture, and aha! You are now in possession of the most delicious snack: a [noun]!.".
+	
+[kyathos should not be in crypt of osiris. to be located somewhere that makes more sense]
 
+A silver kyathos is in the Crypt of Osiris. The description is "A silver cup-shaped ladle, with a duck's head at the end of the handle." 
 
 	
 	
@@ -1526,6 +1522,8 @@ Instead of going during Ritual Sacrifice:
 Every turn during Ritual Sacrifice:
 	If the location is the Jail Cell:
 		start the sacrifice;
+
+[another option for suppressing reporting of central court is: "move the player to the Central Court, without printing a room description."]
 
 Instead of looking in the Central Court when Ritual Sacrifice is happening:
 	say "[run paragraph on]";
@@ -1593,7 +1591,7 @@ Instead of going through palace exit:
 	wait for any key;
 	trigger Heracles leaving.
 	
-[watch out for player carrying capacity, fix in future]
+[player carrying capacity is ok, restriction only applies to players ]
 
 To trigger Heracles leaving:
 	say "After escaping from that fiasco, Heracles turns to you. 'Dearest Medea!' He beams at you. 'How glorious it was to adventure with you attending to me! You have a very promising career as a sidekick ahead of you.'[paragraph break]";
@@ -1613,6 +1611,7 @@ To trigger Heracles leaving:
 	now Heracles is nowhere;
 	say "He certainly was obnoxious, but it was nice to travel with a companion.";
 	now the player is holding the heart scarab;
+	now the heart scarab is acquired;
 	now palace exit is unrevealed;
 	now palace exit is closed.
 
