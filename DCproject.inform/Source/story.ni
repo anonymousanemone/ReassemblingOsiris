@@ -391,15 +391,12 @@ Instead of taking a scenery wall, say "You're not the British Museum. You can't 
 
 
 Section 2 - Entering the Osireion
-
-[let boldtext be "You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER? If you ever feel confused, you can also ask for some HELP.";]
-
 	
 The Entrance to the Osireion is a room in Abydos. "You stand before an inconspicuous side door that supposedly leads to the Osireion. While the workmanship on the [set-link the stone door] is immaculate, it doesn't hold a candle to the monumental entrance for the main temple of Seti I. The area nearby seems empty, with all the traffic instead going toward the main gates. Hopefully, no one will stop you from breaking in. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]
 	[if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if]
 	[if Osiris' head is unacquired][paragraph break][print-hint the H1]"
 	
-H1 is a hint-object. The hint-content is "You can try to GO south through the door. Perhaps you can take a closer look and EXAMINE the door? Or try to ENTER?".
+H1 is a hint-object. The hint-content is "You can try to GO south through the door or ENTER it. Or perhaps you can take a closer look and EXAMINE the door?".
 	
 A room memory rule for the North Passage:
 	if the north passage is not visited:
@@ -411,7 +408,7 @@ The description of the stone door is "The forbidding stone door is engraved with
 H2 is a hint-object. The hint-content is "You can SAY your answer TO the door.".
 
 Instead of opening the locked stone door:
-	say "You pry at it with your fingers. It doesn't budge.";
+	say "You pry at [the noun] with your fingers. It doesn't budge.";
 	
 Understand "unlock [the stone door]" as a mistake ("A little hard to unlock a door without a lock.").
 
@@ -457,7 +454,7 @@ The walls of the great hall is a wall in the Great Hall. "The North and South Wa
 	
 Understand "wall" as the walls of the great hall.
 
-The South Chamber is a room in Abydos. It is south of the great hall. "You are now in the south chamber. [paragraph break][print-hint the H4]"
+The South Chamber is a room in Abydos. It is south of the great hall. "You are now in the south chamber. [if Osiris' head is unacquired][paragraph break][print-hint the H4]"
 
 H4 is a hint-object. The hint-content is "Whenever faced with random objects, try to EXAMINE or TAKE them. There may be some potentially useful items in the mishmash...".
 
@@ -478,33 +475,33 @@ The Sloped Passage is a room in Abydos. It is east of the Great Hall.
 
 [x wall]
 
-The First Transverse Chamber is a room in Abydos. It is east of the Sloped Passage. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a [set-link the east moat], preventing you from going through. You might be able to GO east if you had something that help you cross the water..." 
+The First Transverse Chamber is a room in Abydos. It is east of the Sloped Passage. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a [set-link moat], preventing you from going through. If only you had something that help you cross the water..." 
 	
 [x wall]
 
-A moat is a kind of open unopenable door. A moat is scenery. The description of a moat is usually "Deep and murky." The print-name is usually "moat".
-
-The west moat is a moat. It is east of the First Transverse Chamber and west of the Central Nave. 
+A moat is a backdrop. It is in the First Transverse Chamber, the Central Nave, and the Tomb of Osiris. The description is "Deep and murky." The print-name is "moat".
 
 [somehow add info about the weird moat stuff, also mention Strabo]
 
-The east moat is a moat. It is west of the Tomb of Osiris and east of the Central Nave.
-
-Instead of going through the west moat:
+Instead of going from the Central Nave:
 	if the player does not have the wooden plank:
     		say "You approach the edge of the moat, but there is no way across. The waters churn ominously, as if warning you to stay back.";
 	otherwise: 
     		say "You place the wood plank down, desperately hoping it'll bear your weight.";
+		wait for any key;
 		continue the action;
 		
-Instead of going through the east moat:
+Instead of going to the Central Nave:
 	if the player does not have the wooden plank:
     		say "You approach the edge of the moat, but there is no way across. The waters churn ominously, as if warning you to stay back.";
 	otherwise: 
     		say "You place the wood plank down, desperately hoping it'll bear your weight.";
+		wait for any key;
 		continue the action;
 		
-The Central Nave is a room in Abydos. It is east of the west moat. "You stand in the middle of the columns lining the central nave and look around. Surrounding you are seventeen small cells. Most of them are shrouded in darkness and you could barely see inside, but one directly east of you seems to lead out to a bigger chamber. [paragraph break]A [set-link the west moat] surrounds the entire central nave, like the primeval waters around the first land. [paragraph break]The ceiling echoes the structure of a sarcophagus. A large [set-link the statue of Osiris] dominates the center of the room, its scale representative of what could have only been a god. A low altar sits in front of it, its surface decorated with scarce items. "
+The Central Nave is a room in Abydos. It is east of the First Transverse Chamber. "You stand among the columns of the central nave, turning slowly to take in your surroundings. A [moat] surrounds the entire central nave, like primeval waters around the first land. Seventeen small cells line the walls beyond the moat, most of which are shrouded in darkness. One directly east opens toward a bigger chamber. [paragraph break]The ceiling echoes the structure of a sarcophagus. A large [set-link the statue of Osiris] dominates the center of the room, its scale representative of what could have only been a god. A [funerary bier] sits in front of it, shaped like two side by side lions. "
+	
+The cells are scenery in the Central Nave. The description is "Of the seventeen cells, sixteen are covered by rotting wood doors."
 	
 [x cells - wooden doors closed until ritual time at reunification] 
 [x stairs - leading into the water]
@@ -512,9 +509,9 @@ The Central Nave is a room in Abydos. It is east of the west moat. "You stand in
 
 The statue of Osiris is in the Central Nave. It is scenery. The description of the statue of Osiris is "A large statue of Osiris ias seated at the top of a staircase. The enthroned Osiris faces towards the sarcophagus chamber, just as Osiris faces inward with his back to the entrance of the Osireion in the Book of Gates. He holds a crook and the ankh sign, signifying that he rules over his domain, the duat, and is the possessor of life. He sure looks put together -- such a shame he's all chopped up now." The print-name is "statue".
 
-The funerary bier is a supporter in the Central Nave. The description of the bier is "mmn"
+The funerary bier is a supporter in the Central Nave. The description of the bier is "A bier used for embalming practices, fashioned to resemble Sekhmet, the grumpy kitty-cat daughter of Ra, the VEnGeFul EYe."
 
-[not an altar, but two statues, one sitting, and an empty bier on the longer divot (for future osiris pieces to go on)]
+[two statues, one sitting, and an empty bier on the longer divot (for future osiris pieces to go on)]
 
 Before going when the location is the Central Nave:
 	if the noun is east or the noun is west:
@@ -522,7 +519,7 @@ Before going when the location is the Central Nave:
 	otherwise:
 		say "With the moat surrounding the central nave, it's a struggle to go anywhere." instead.
 
-The Tomb of Osiris is a room in Abydos. It is east of the east moat. "The [set-link the painted roof] and [set-link the inscribed walls] has depictions of Nut and Geb. At the center of the room is a [set-link the sarcophagus], its wooden frame lavishly painted in the style of the New Kingdom. It is wrapped in an almost absurd number of golden chains, as if to guard against any attempt to disturb its occupant. You feel that there is something--or someone--important inside..."
+The Tomb of Osiris is a room in Abydos. It is east of the Central Nave. "The [set-link the painted roof] and [set-link the inscribed walls] has depictions of Nut and Geb. At the center of the room is a [set-link the sarcophagus], its wooden frame lavishly painted in the style of the New Kingdom. [if sarcophagus is locked]You feel that there is something--or someone--important inside..."
 
 [x wall, x ceiling]
 
@@ -530,14 +527,23 @@ The painted roof is scenery in the Tomb of Osiris. The description of the painte
 
 The inscribed walls are scenery in the Tomb of Osiris. The description of the inscribed walls is "The hieroglyphs here are meticulously carved, detailing invocations to the gods and protective spells. Some portions of the text are damaged, yet the overall message of guidance and protection is clear." The print-name is "walls".
 
-The sarcophagus is a closed container. It is locked. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Its occupant must have made it auto-update every now and then to keep up with the most popular trends. Perhaps you can use something to UNLOCK it." The sarcophagus has matching key the faience ankh. The print-name is "sarcophagus".
+The sarcophagus is a closed, locked container. It is scenery. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Bright swirls of blue decorated much of the lid, complete with tiny figures and symbols of life, prosperity, and health. Its occupant must have made it auto-update every now and then to keep up with the most popular trends. [if Osiris' head is unacquired][paragraph break][print-hint the H4a]". The sarcophagus has matching key the faience ankh. The print-name is "sarcophagus".
+
+H4a is a hint-object. The hint-content is "To find out what's inside, you better OPEN it first."
+
+Instead of opening the locked sarcophagus:
+	say "The sarcophagus seems stuck, almost as if sealed shut by magic. [if Osiris' head is unacquired][paragraph break][print-hint the H5][line break]".
+
+H5 is a hint-object. The hint-content is "Perhaps you can use something to UNLOCK it."
 
 Instead of unlocking the sarcophagus with the faience ankh:
 	now the sarcophagus is unlocked;
 	now the sarcophagus is open;
-	say "You unlock the sarcophagus. The head of Osiris is inside!".
+	say "You unlock the sarcophagus. The head of Osiris is inside![paragraph break]";
+	wait for any key;
+	say "...but the rest of him isn't. What a pain. As much as you are a firm believer of the old chop-and-scatter method, you wish Seth hadn't been so diligent.".
 
-Osiris' head is a body part. It is in the sarcophagus. Osiris' head can be taken. Understand "Osiris" as Osiris' head. Include (- has animate -) when defining Osiris' head. Osiris' head can be smart or dumb. Osiris' head is dumb. The description of Osiris' head is "Osiris, in all his glorious, head-only form."
+Osiris' head is a body part. It is in the sarcophagus. Osiris' head can be taken. Understand "Osiris" as Osiris' head. Include (- has animate -) when defining Osiris' head. Osiris' head can be smart or dumb. Osiris' head is dumb. The description of Osiris' head is "Osiris, in all his glorious, head-only form. He's green."
 		
 Test head with "look / unlock sarcophagus with ankh / take head" in Tomb of Osiris holding faience ankh.
 		
@@ -591,20 +597,27 @@ Outside the Walled Village is a room in Amarna. "You have reached Amarna, althou
 
 [in the future, maybe add security checkpoint moment as Medea walks through gate?]
 
-The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, bustling with activity and labor. Maybe you can TALK to someone? [paragraph break]You suddenly realize that you are holding a decapitated head in broad daylight. You hastily cram the head under your shirt and try not to look suspicious."
+The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, alive with the clatter of tools and the murmur of voices. The sun shines down aggressively, catching the haze of dust kicked up by passing feet. People move between doorways and shaded courtyards—some carrying baskets of stone chips, others bent over their work."
 
 A body bag is a container. The carrying capacity of the body bag is 14. The description of the body bag is "A heavy cloth sack used for transporting... questionable things. You're not quite sure how everything fits into here. Some strange Egyptian magic?"
 
 Check inserting something into the body bag:
 	if the noun is not a body part:
-		say "The body bag isn't for this. If you put something unrelated, it would just be a bag!" instead.
+		say "The body bag isn't for [the noun]. If you put something unrelated, it would just be a bag!" instead.
 
 A workman is a person. The workman carries a body bag. The workman can be curious or uncurious. The workman is uncurious. The description of the workman is "A middle aged man, probably with degenerative joint disease."
+
+Rule for writing a paragraph about the workman when the location is the Workmen's Village:
+	say "Your scan the crowd and see a [workman], staring irritably at the distance.[first time][line break][print-hint H5a][line break][only]".
+
+H5a is a hint-object. The hint-content is "Maybe you could TALK to someone.".
 
 When Brain Acquisition begins:
 	now the workman is in the Workmen's Village.
 
+[maybe in future make player have to "hide head" first]
 Instead of talking to the workman during Discovery:
+	say "You suddenly realize that you are holding a decapitated head in broad daylight. You hastily cram the head under your shirt and try not to look suspicious. Now you're ready to make human conversation. [paragraph break]";
 	say "'Hey, you.' you called to the workman.  [paragraph break]";
 	wait for any key;
 	say "The workman turns around with a disgruntled expression. 'What do you want, lady?' he asks.  [paragraph break]";
@@ -617,8 +630,10 @@ Instead of talking to the workman during Discovery:
 Instead of talking to the workman during Get Body Bag:
 	say "The workman looks at you expectantly. 'What are you doing here, anyway? And what's up with your stomach?'"
 
-Instead of talking to the workman at least four times during Get Body Bag:
-	say "He seems to be expecting an answer from you. Maybe try SHOWing him what's hidden under your shirt. [paragraph break] The scary part, not the sexy part."
+Instead of talking to the workman at least three times during Get Body Bag:
+	say "He seems to be expecting an answer from you. Maybe try showing him what's hidden under your shirt. [paragraph break] The scary part, not the sexy part. [paragraph break][print-hint the H6]"
+	
+H6 is a hint-object. The hint-content is "Take note of key words hidden in the text. They might just SHOW you what to do...".
 	
 Instead of showing the head to the uncurious workman during Discovery:
 	say "Flashing a decapitated head to someone you've never talked to before could be overkill. Try striking a conversation first."
@@ -641,7 +656,7 @@ Instead of showing the head to the uncurious workman during Exploration:
 	
 Section 3 - Traveling to the temple
 
-The oxcart is a rideable vehicle. "An oxcart sits here unattended." The description of the oxcart is "A sturdy wooden cart, drawn by a strong hunky ox."
+An oxcart is a rideable vehicle. "An [oxcart] sits here unattended." The description of the oxcart is "A sturdy wooden cart, drawn by a strong hunky ox."
 
 When Exploration begins:
 	now the oxcart is in Outside the Walled Village.
@@ -691,10 +706,10 @@ The hidden staircase is a secret door. The staircase is above the Underground ch
 Instead of examining the shrine:
 	now the hidden staircase is revealed;
 	now the hidden staircase is open;	
-	say "You hear an odd rumbling noise. There was a hidden staircase! You can go down to see what's there.";
-	continue the action.
+	say "[the description of the shrine][paragraph break]";
+	say "You hear an odd rumbling noise. There was a hidden staircase! You can go down to see what's there.[paragraph break]".
 
-Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. There are three strange statues ([set-link first statue], [set-link second statue], [set-link third statue]) and murals ([set-link north mural], [set-link east mural], [set-link south mural], [set-link west mural]) with eerily etched toes line all four walls. The [set-link ceiling] depicts an intricate scene. [if unvisited][paragraph break]What odd surroundings. Perhaps you should take a closer look and EXAMINE some things. The chapel is completely empty, so there's also no harm in TOUCHing something--in fact, that might help you figure things out."
+Underground Chapel is a room in Amarna. It is below the staircase. "The air is cool and still. There are three strange statues ([set-link first statue], [set-link second statue], [set-link third statue]) and murals ([set-link north mural], [set-link east mural], [set-link south mural], [set-link west mural]) with eerily etched toes line all four walls. The [set-link ceiling] depicts an intricate scene. [if unvisited][paragraph break]What odd surroundings. Perhaps you should take a closer look. The chapel is completely empty, so there's also no harm in touching something--in fact, that might help you figure things out."
 
 
 Section 4 - At the Small Aten Temple
@@ -848,7 +863,6 @@ Every turn during Next Instructions:
 		say "One of your potential escape plans -- not that you had the opportunity to go through with it -- was to flee from Corinth to Thebes. But you never had the chance to execute this plan. Perhaps this is a sign.";
 		now the workman is uncurious. [next instructions end]
 
-[now when medea thinks -- she is reminded to go to thebes]
 
 Carry out talking to the uncurious workman:
 	say "The workman grunts, uninterested in further conversation." instead.
@@ -860,7 +874,7 @@ Chapter 3 - Thebes-Heart
 
 Heart Acquisition is a scene. Heart Acquisition begins when Brain Acquisition ends. Heart Acquisition ends when Osiris' heart is acquired.
 
-Heal Heracles is a scene. Heal Heracles begins when Brain Acquisition ends. Heal Heracles ends when Heracles is healthy. 
+Heal Heracles is a scene. Heal Heracles begins when Heart Acquisition begins. Heal Heracles ends when Heracles is healthy. 
 
 Buddy Heracles is a scene. Buddy Heracles begins when Heal Heracles ends. Buddy Heracles ends when the location of the player is not in Busiris and the heart scarab is acquired.
 
@@ -877,11 +891,11 @@ Section 1 - All the Locations
 
 The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III. Sturdy columns flank a central courtyard where priests once performed daily rites. There seems to be a lot of honoring going on around here."
 
-The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. " The mortuary temple of Ramesses II looms large with its colossal statues. Faded reliefs along the walls depict the famous Battle of Kadesh. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
+The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. "[set-link mortuary temple] looms large with its colossal statues. [set-link faded reliefs] along the walls depict the famous Battle of Kadesh. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
 
-The mortuary temple of Ramesses II is scenery in the Ramesseum. "Ramesses the Great—you had heard of him before, although by a different name. This place had once been a monumental temple suitable for the King of Kings. Now all that remains are sun-bleached ruins."
+The mortuary temple of Ramesses II is scenery in the Ramesseum. "Ramesses the Great—you had heard of him before, although by a different name. This place had once been a monumental temple suitable for the King of Kings. Now all that remains are sun-bleached ruins." The print-name is "The mortuary temple of Ramesses II".
 
-The faded reliefs is scenery in the Ramesseum. 
+The faded reliefs is scenery in the Ramesseum. The print-name is "Faded reliefs".
 
 Instead of examining the faded reliefs:
 	say "An infamous battle between the Egyptians and Hittites. A thrilling tale of subterfuge, although not one you'd want to repeat. Muwatalli II, the Hittite king, had dispatched two spies who tricked Ramesses II into believing the Hittite army was far off, when in fact it lay in wait. As Ramesses marched on, two more Hittites--this time actual prisoners--confessed that the enemy was just around the corner. The trick had run its course, so the Hittites attacked. Each side commanded thousands of infantrymen and charioteers, and in the end, both sides thought they had won. In other words, it was a stalemate. [paragraph break]";
@@ -1096,7 +1110,7 @@ Instead of putting the prepared medicine on Heracles:
 	say "You gently place the prepared bundle on the throat of the afflicted Heracles. You should recite the spell now.";
 	now Heracles is medicated.
 	
-Understand "heal [Heracles]" or "help [Heracles]" or "cure [Heracles]" as a mistake ("[if the papyri is examined]Try following the steps in the spell. A sick Heracles can't be healed in one step, after all. [otherwise if the player is carrying the prepared medicine] You gotta APPLY the medicine and get down and dirty with the nitty gritty steps! [otherwise]You don't even know where to start! Now that you can't use your magic, you have to start reading up on the mortal way of things.").
+Understand "heal [Heracles]" or "help [Heracles]" or "cure [Heracles]" as a mistake ("[if the player is carrying the prepared medicine]You gotta apply the medicine and get down and dirty with the nitty gritty steps! [otherwise if the papyri is examined]Try following the steps in the spell. A sick Heracles can't be healed in one step, after all.[otherwise]You don't even know where to start! Now that you can't use your magic, you have to start reading up on the mortal way of things.").
 	
 Understand "I have indeed applied something to all his sore spots" or "say I have indeed applied something to all his sore spots" or "say 'I have indeed applied something to all his sore spots'" or "'I have indeed applied something to all his sore spots'" as chanting. Chanting is an action applying to nothing.
 
@@ -1262,6 +1276,7 @@ Understand "talk to guards" or "talk to guard" as a mistake ("The guards have le
 	
 When Escape ends:
 	say "[notice style]The guards rush into the room and apprehend you![end style]";
+	wait for any key;
 	now Heracles is uncaught;
 	now Heracles is in the Jail Cell;
 	now the player is in the jail Cell.
@@ -1276,6 +1291,7 @@ Every turn during Escape:
 Instead of going when the location is a corridor during Escape:
 	if a random chance of 1 in 6 succeeds:
 		say "[paragraph break][notice style]You amble down the winding corridors...[end style][paragraph break]";
+		wait for any key;
 		teleport the player;	
 	otherwise:
 		continue the action.
@@ -1296,7 +1312,7 @@ After going during Escape:
 	continue the action.
 	
 To set the timer:
-	the invisible tool rings in 5 minutes from now.
+	the invisible tool rings in 3 minutes from now.
 	
 To delay the timer:
 	the invisible tool rings in one hour from now.
@@ -1364,14 +1380,14 @@ Palace exit is a secret door. It is west of Corridor of Procession West and east
 
 Hallway is a corridor in Busiris. It is north of Corridor of Procession West. "Its walls are streaked with dark soot and grime. This place doesn't have very good upkeep."
 
-West Magazines is a room in Busiris. It is west of Hallway. "Long, narrow rooms crammed to the brim with hundreds of pithoi. You can hardly move around with all of these jars blocking your way. It's clearly a fire hazard, and you would know about those. There is a papyrus scrap lying on the ground."
+West Magazines is a room in Busiris. It is west of Hallway. "Long, narrow rooms crammed to the brim with hundreds of [set-link pithoi]. You can hardly move around with all of these jars blocking your way. It's clearly a fire hazard, and you would know about those. There is a [set-link papyrus scrap] lying on the ground."
 
-The pithoi are plural-named. The pithoi are in the West Magazines. The description of the pithoi are "Jars filled with olive oil, wine, and other delicacies. Enough food to fuel an empire, it seems. Or fund a feast fit for a king. It seems that you (and Heracles) won't go hungry."
+The pithoi are plural-named. The pithoi are in the West Magazines. The description of the pithoi are "Jars filled with olive oil, wine, and other delicacies. Enough food to fuel an empire, it seems. Or fund a feast fit for a king. It seems that you (and Heracles) won't go hungry." The print-name is "pithoi".
 
 Instead of taking pithoi:
 	say "They're much too heavy to carry."
 
-The abandoned medical papyrus scrap is in the West Magazines. The description of the abandoned medical papyrus scrap is "A crumpled and yellowing scrap of papyrus. It reads: 'A liver that is too full of blood can produce all diseases'. Truly salient advice. You ought to bring it up at your next check-up." 
+The abandoned medical papyrus scrap is in the West Magazines. The description of the abandoned medical papyrus scrap is "A crumpled and yellowing scrap of papyrus. It reads: 'A liver that is too full of blood can produce all diseases'. Truly salient advice. You ought to bring it up at your next check-up.". The print-name is "papyrus scrap".
 
 Instead of examining Heracles in the West Magazines:
 	say "Heracles seems a little nervous."
@@ -1390,7 +1406,7 @@ The Jail Cell is a room in Busiris. It is west of the cell door.  "Dark and clau
 The cell door is a locked open door. The cell door is east of the Jail Cell and west of the Corridor of the Draught Board. 
 
 Rule for writing a paragraph about the cell door:
-	do nothing instead.
+	stop the action.
 
 Workshops is a room in Busiris. It is east of the Corridor of the Draught Board. "You see workbenches and tools scattered about."
 
@@ -1634,7 +1650,7 @@ Tour Guide Osiris is a scene. Tour Guide Osiris begins when Talking Osiris Agend
 
 Chapter 6 - Oxyrhynchos
 
-Penis Acquisition is a scene. Penis Acquisition begins when Tour Guide Osiris ends. Penis Acquisition ends when Osiris' penis is acquired.
+Penis Acquisition is a scene. Penis Acquisition begins when Tour Guide Osiris begins. Penis Acquisition ends when Osiris' penis is acquired.
 
 Section 1 - Cutting as an action
 
@@ -1717,7 +1733,7 @@ The Nile Riverbank is in Oxyrhynchos. It is east of Oxyrhynchos-Marketplace. "Yo
 
 The Taweret Amulet is a thing. 
 
-Tawaret Conflict is a scene. Tawaret Conflict begins when the player is in the Nile Riverbank for the first time. Tawaret Conflict ends when the Taweret Amulet is acquired.
+Tawaret Conflict is a scene. Tawaret Conflict begins when Penis Acquisition begins. Tawaret Conflict ends when the Taweret Amulet is acquired.
 
 [add lots of dialogue and the whole conflict relating to tawaret]
 
