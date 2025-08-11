@@ -166,6 +166,11 @@ Rule for printing a parser error when the latest parser error is the nothing to 
 [for exit lister, reveals the name of rooms when listing exits]
 A room memory rule:
 	rule succeeds.
+	
+For printing a locale paragraph about a door (called the item)
+    (this is the don't mention doors in room descriptions rule):
+    set the locale priority of the item to 0;
+    continue the activity.
 
 Screen-clearing is an action applying to nothing. Understand "clear-the-screen-exec-command" as screen-clearing.
 
@@ -175,9 +180,7 @@ Carry out screen-clearing:
 	
 After reading a command:
      remove stray punctuation.
-	
-Rule for printing room description details of a door:
-	stop.
+
 	
 
 Section 2 - New Definitions
@@ -384,9 +387,9 @@ Check talking to head:
 	otherwise:
 		do nothing.
 
-A wall is a kind of thing. A wall is scenery. 
+The walls are a backdrop. Understand "wall" as the walls. The walls are in Abydos.
 
-Instead of taking a scenery wall, say "You're not the British Museum. You can't do that."
+Instead of taking the walls, say "You're not the British Museum. You can't do that."
 
 
 
@@ -421,65 +424,70 @@ Instead of answering the door that something:
 	otherwise:
 		say "Nothing happens. Perhaps that is not the correct answer. You look up at the sky, hoping for some benevolent god to send you a hint.";
 
-The North Passage is a room in Abydos. It is south of the stone door. "The long narrow passage slopes gently downwards. The northern section of the passage is arched and lined with brick. The southern section is stone clad, and its [set-link walls of the north passage] are sculpted and painted with scenes from the 'Book of the Gates'. A pitched roof tops this part of the passage. 
-[paragraph break]On the floor, you can see a few miscellaneous items scattered on the floor:[if the ostracon is in the location] a [set-link a hieratic ostracon] ,[end if] a [set-link a tall pottery stand], [set-link trial pieces], and a few [set-link plaster casts].
+The North Passage is a room in Abydos. It is south of the stone door. "The long narrow passage slopes gently downwards. The northern section of the passage is arched and lined with brick. The southern section is stone clad, and its [walls] are sculpted and painted with scenes from the 'Book of the Gates'. A pitched roof tops this part of the passage. 
+[paragraph break]On the floor, you can see a few miscellaneous items scattered on the floor:[if the ostracon is in the location] a [hieratic ostracon],[end if] a [tall pottery stand], [trial pieces], and a few [plaster casts].
 [paragraph break][print-hint the H3]"
 
 H3 is a hint-object. The hint-content is "Always EXAMINE everything around you! You can try to EXAMINE the walls and the things on the floor. You can also TAKE things. When you are disorientated, feel free to take another LOOK at the room.".
 
-Rule for listing nondescript items of the North Passage:
-	do nothing.
+[Rule for listing nondescript items of the North Passage:
+	do nothing.]
 
 A hieratic ostracon is a thing in the North Passage. The description of the ostracon is "A shard of pottery is stained with hastily written hieratic, seemingly from when the complex was under construction. It reads: 'Fourth month of prt Day 22, Amount of work done by the Gang of the Left. What it dragged from the Quay of the Fortressof Menmaatre to the south of Menmaatre is Beneficial to Osiris...'". The print-name is "hieratic ostracon"
 
-The walls of the north passage is a wall in the North Passage. The description is "A representation of the fore Osiris and Nut, who are merely subordinate sunrise, is painted on the East wall. Sculpted on the West wall is the sunset." The print-name is "walls".
-
-Understand "wall" as the walls of the north passage.
+Instead of examining the walls in the North Passage, say "A representation of the fore Osiris and Nut, who are merely subordinate sunrise, is painted on the East wall. Sculpted on the West wall is the sunset."
 
 A tall pottery stand is a thing in the North Passage. The description is "An unassuming pottery stand, its form typical of the 19th dynasty." The print-name is "tall pottery stand".
 
 Instead of taking the tall pottery stand, say "It's awfully burdening to carry around for as little use as it is to you."
 
-Trial pieces of a sculptor is a thing in the North Passage. The description is "Two sculpted trial pieces probably from the same school. The first piece is an attempt at the neb sign. Above is the master's hand as an example, and below are the student's attempts 'in every degree of badness'. The other piece shows a scene of the worship of Osiris. It is unfinished, only one figure having been sculpted, the rest being merely sketched out in black ink." The print-name is "trial pieces of a sculptor".
+The trial pieces of a sculptor is a thing in the North Passage. The description is "Two sculpted trial pieces probably from the same school. The first piece is an attempt at the neb sign. Above is the master's hand as an example, and below are the student's attempts 'in every degree of badness'. The other piece shows a scene of the worship of Osiris. It is unfinished, only one figure having been sculpted, the rest being merely sketched out in black ink." 
 
 Instead of taking trial pieces, say "You distastefully look at the amateur scribbles. Bleh."
 	
-Plaster casts are a thing in the North Passage. The description is "Casts of eyes of statues and of details of decorations, probably from the temple of Ramesses." The print-name is "plaster casts".
+The plaster casts are a thing in the North Passage. The plaster casts are plural-named. The description is "Casts of eyes of statues and of details of decorations, probably from the temple of Ramesses." The indefinite article is "a few".
 
 Instead of taking plaster casts, say "Ooh, fun little figures! If only you cared." 
 
-The Great Hall is a room in Abydos. It is south of the North Passage. "The Great Hall widens from the Northern Passage into a long rectangular room. The floor, similar to that of the South Chamber and the passages, is paved with sandstone, and the [set-link walls of the great hall] are covered with inscriptions. The roofing stones stretched the whole width of the hall, without any pillars or other support. "
+The Great Hall is a room in Abydos. It is south of the North Passage. "The Great Hall widens from the Northern Passage into a long rectangular room. The floor, similar to that of the South Chamber and the passages, is paved with sandstone, and the [walls] are covered with inscriptions. The roofing stones stretched the whole width of the hall, without any pillars or other support. "
 
-The walls of the great hall is a wall in the Great Hall. "The North and South Walls are covered with inscriptions. The West Wall is divided into three parts vertically; the portion to the left hand is filled with a colossal scene of the Vivification of Osiris; the middle portion contains part of the Chapter of knowing the Names of Osiris; the right hand portion is occupied with the figure of King Merenptah standing before a heaped-up table of offerings, and making an offering of incense. The wall has a frieze of the kheker ornament painted in yellow, blue, green, and black." The print-name is "walls".
+Instead of examining the walls in the Great Hall, say "The North and South Walls are covered with inscriptions. The West Wall is divided into three parts vertically; the portion to the left hand is filled with a colossal scene of the Vivification of Osiris; the middle portion contains part of the Chapter of knowing the Names of Osiris; the right hand portion is occupied with the figure of King Merenptah standing before a heaped-up table of offerings, and making an offering of incense. The wall has a frieze of the kheker ornament painted in yellow, blue, green, and black." 
+
+The South Chamber is a room in Abydos. It is south of the great hall. "This small side chamber is similarly covered in inscriptions, a narrative continuation of the scenes from the Great Hall. Whatever grand purpose this room used to serve has long been forgotten, evident from the scattered trash on the floor.".
 	
-Understand "wall" as the walls of the great hall.
-
-The South Chamber is a room in Abydos. It is south of the great hall. "You are now in the south chamber. [if Osiris' head is unacquired][paragraph break][print-hint the H4]"
-
+Rule for printing the locale description of the South Chamber:
+	let L be the list of things in the South Chamber;
+	remove the list of scenery from L;
+	remove the player from L;
+	say "Among the pile, you can discern [L with indefinite articles].[if Osiris' head is unacquired][line break][print-hint the H4]";
+	continue the action.
+	
 H4 is a hint-object. The hint-content is "Whenever faced with random objects, try to EXAMINE or TAKE them. There may be some potentially useful items in the mishmash...".
 
 [x wall]
 [small squatting statuette]
 
-The walls of the south chamber is a wall in the South Chamber. The description is "Parts of the Book of the Dead is inscribed across these walls."
+Instead of examining the walls in the South Chamber, say "Parts of the Book of the Dead is inscribed across these walls."
 
 The faience ankh is in the South Chamber. The description of the faience ankh is "A delicate yet sturdy ankh, the symbol of life, carved from faience. " 
 
-Some pottery jars are in the South Chamber. The description of the pottery jars is " Several small jars of varying shapes and sizes rest against the wall. Their surfaces are worn. Traces of paint suggesting they once bore vibrant designs. Among them, you see a broken jar with unguents and another fallen to the floor, with dried red stains around the rim."
+The pottery jars are in the South Chamber. The description of the pottery jars is " Several small jars of varying shapes and sizes rest against the wall. Their surfaces are worn. Traces of paint suggesting they once bore vibrant designs. Among them, you see a broken jar with unguents and another fallen to the floor, with dried red stains around the rim." The indefinite article is "some".
+	
+Instead of taking the pottery jars, say "These? No thank you.".
 
 A wooden plank is in the South Chamber. The description of the wooden plank is "A short, splintered plank of cedar wood."
 
 Some knick-knacks are in the South Chamber. The description of some knick-knacks is "You sift through the assorted items: a bead that may have been part of a necklace, a sliver of ivory that was used as a tool, and a draining liquid water clock."
 
-The Sloped Passage is a room in Abydos. It is east of the Great Hall.
+The Sloped Passage is a room in Abydos. It is east of the Great Hall. The description is "More text covers these walls. You're getting tired of them.".
 
 [x wall]
 
-The First Transverse Chamber is a room in Abydos. It is east of the Sloped Passage. "To your east you see the central hall, grand and collonaded. However, surrounding the entire central hall island is a [set-link moat], preventing you from going through. If only you had something that help you cross the water..." 
+The First Transverse Chamber is a room in Abydos. It is east of the Sloped Passage. "You enter a long narrow chamber with a saddled roof. You see no end to the inscriptions everywhere. To your east there is a grand and collonaded hall. However, surrounding the entire central island is a [moat], preventing you from going through. If only you had something that help you cross the water..." 
 	
 [x wall]
 
-A moat is a backdrop. It is in the First Transverse Chamber, the Central Nave, and the Tomb of Osiris. The description is "Deep and murky." The print-name is "moat".
+A moat is a backdrop. It is in the First Transverse Chamber, the Central Nave, and the Tomb of Osiris. The description is "Deep and murky."
 
 [somehow add info about the weird moat stuff, also mention Strabo]
 
@@ -499,7 +507,7 @@ Instead of going to the Central Nave:
 		wait for any key;
 		continue the action;
 		
-The Central Nave is a room in Abydos. It is east of the First Transverse Chamber. "You stand among the columns of the central nave, turning slowly to take in your surroundings. A [moat] surrounds the entire central nave, like primeval waters around the first land. Seventeen small cells line the walls beyond the moat, most of which are shrouded in darkness. One directly east opens toward a bigger chamber. [paragraph break]The ceiling echoes the structure of a sarcophagus. A large [set-link the statue of Osiris] dominates the center of the room, its scale representative of what could have only been a god. A [funerary bier] sits in front of it, shaped like two side by side lions. "
+The Central Nave is a room in Abydos. It is east of the First Transverse Chamber. "You stand among the columns of the central nave, turning slowly to take in your surroundings. A [moat] surrounds the entire central nave, like primeval waters around the first land. Seventeen small [cells] line the walls beyond the moat, most of which are shrouded in darkness. One directly east opens toward a bigger chamber. [paragraph break]The ceiling echoes the structure of a sarcophagus. A large [set-link the statue of Osiris] dominates the center of the room, its scale representative of what could have only been a god. A [funerary bier] sits in front of it, shaped like two side by side lions. "
 	
 The cells are scenery in the Central Nave. The description is "Of the seventeen cells, sixteen are covered by rotting wood doors."
 	
@@ -519,13 +527,11 @@ Before going when the location is the Central Nave:
 	otherwise:
 		say "With the moat surrounding the central nave, it's a struggle to go anywhere." instead.
 
-The Tomb of Osiris is a room in Abydos. It is east of the Central Nave. "The [set-link the painted roof] and [set-link the inscribed walls] has depictions of Nut and Geb. At the center of the room is a [set-link the sarcophagus], its wooden frame lavishly painted in the style of the New Kingdom. [if sarcophagus is locked]You feel that there is something--or someone--important inside..."
-
-[x wall, x ceiling]
+The Tomb of Osiris is a room in Abydos. It is east of the Central Nave. "A long narrow chamber that mirrors the one across from the central nave, with depictions of Nut and Geb on the [painted roof] and [walls] have depictions of Nut and Geb. At the center of the room is a [sarcophagus], its wooden frame lavishly painted in the style of the New Kingdom. [if sarcophagus is locked]You feel that there is something--or someone--important inside..."
 
 The painted roof is scenery in the Tomb of Osiris. The description of the painted roof is "The depiction of Nut, her star-strewn body stretching across the heavens, is both graceful and imposing. Beneath her, Geb lies in repose, his green-toned skin symbolizing fertility and life. The colors have dulled over time, but the craftsmanship is evident." The print-name is "roof".
 
-The inscribed walls are scenery in the Tomb of Osiris. The description of the inscribed walls is "The hieroglyphs here are meticulously carved, detailing invocations to the gods and protective spells. Some portions of the text are damaged, yet the overall message of guidance and protection is clear." The print-name is "walls".
+Instead of examining the walls in the Tomb of Osiris, say "The hieroglyphs here are meticulously carved, detailing invocations to the gods and protective spells. Some portions of the text are damaged, yet the overall message of guidance and protection is clear.".
 
 The sarcophagus is a closed, locked container. It is scenery. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Bright swirls of blue decorated much of the lid, complete with tiny figures and symbols of life, prosperity, and health. Its occupant must have made it auto-update every now and then to keep up with the most popular trends. [if Osiris' head is unacquired][paragraph break][print-hint the H4a]". The sarcophagus has matching key the faience ankh. The print-name is "sarcophagus".
 
@@ -1119,9 +1125,9 @@ Instead of answering that "spell", say "Try saying out the full spell.".
 Understand "recite spell" or "say spell" as a mistake ("Try saying out the full spell.") when the papyri is examined.
 
 Carry out chanting:
-	say "You feel a little crazy muttering to yourself."
+	say "You mumbled elusively."
 
-Carry out chanting in the presence of sick Heracles:	
+Instead of chanting in the presence of sick Heracles:	
 	say "You speak the spell.[paragraph break]";
 	wait for any key;
 	say "You wait for something to happen.[paragraph break]";
