@@ -5,7 +5,10 @@
 	<key>IFBasicInformSettings</key>
 	<dict/>
 	<key>IFCompilerOptions</key>
-	<dict/>
+	<dict>
+		<key>IFSettingNaturalInform</key>
+		<false/>
+	</dict>
 	<key>IFCompilerVersionSettings</key>
 	<dict/>
 	<key>IFI7OutputSettings</key>
