@@ -1360,13 +1360,54 @@ Section 2 - Busiris Palace
 
 Central Court is a room in Busiris. "Center of public life in Busiris."
 
-King Busiris is a person. King Busiris can be alive or dead. King Busiris is alive. The description of dead King Busiris is "Dead, just like all your enemies were."
+The worker is a person. The worker is in the Central Court. The description of the worker is "A temple grunt."
 
-A corridor is a kind of room. 
+King Busiris is a person. King Busiris can be alive or dead. King Busiris is alive. The description of dead King Busiris is "Dead, just like the rest of your enemies."
 
-Pillar Hall is a room in Busiris. It is north of Central Court. Pillar Hall is northeast of Hallway. "The air in this vaulted chamber seems to thrum with a sinister power."
+[pillar hall]
 
-Temple Repository is a room in Busiris. It is north of Pillar Crypt. "Rows of dusty shelves crammed with scrolls, clay tablets, and magical texts."
+Pillar Hall is a room in Busiris. It is north of Central Court. Pillar Hall is northeast of Hallway. "A vast hall stretches before you. At its far end stands a raised daïs with a stone lamp resting on its lower step. The air here thrums with an eerie power."
+
+The raised daïs is in the Pillar Hall. The description of the raised daïs is "A low platform on which a king would presumably preside."
+
+Instead of taking raised daïs:
+	say "You can't even lift it off the ground!" 
+	
+Understand "raised dais" as raised daïs.
+
+The broken fragments of a gypsum throne are a thing. The description of the broken fragments of a gypsum throne is "Once the seat of power, this throne is now nothing but shattered remains. How strange. Why would Busiris leave a broken throne lying here?"
+
+Instead of taking broken fragments of a gypsum throne:
+	say "You can't imagine a use for this."
+	
+Instead of examining the raised daïs:
+	now the broken fragments of a gypsum throne are in the Pillar Hall;
+	say "A low platform on which a king would presumably preside.[paragraph break]";
+	wait for any key;
+	say "Looking closer, you spot broken fragments of a gypsum throne tucked into a discreet niche behind the daïs.[paragraph break]"
+
+The stone lamp is in the Pillar Hall. The description of the stone lamp is "A lovely lamp made of fine lilac gypsum. It seems as though it would be worth a pretty penny."
+
+Instead of examining Heracles in the Pillar Hall:
+	say "Heracles surveys the room with a curious gaze."
+	
+Instead of talking to Heracles in the Pillar Hall:
+	say "Heracles turns to you. 'Most kings keep their throne rooms far tidier than this. I've seen stables in better order! Busiris must be hiding out somewhere else.'[paragraph break]";
+	wait for any key; 
+	say "You wonder, then, what purpose this room might have served--or, better yet, to whom it once belonged."
+
+[temple repository]
+
+Temple Repository is a room in Busiris. It is north of Pillar Crypt. "A small, unassuming room. But there seems to be something strange about the floor."
+
+The floor is scenery in the Temple Repository. "A wooden lid covers part of the floor in the center of the room."
+
+The wooden lid is scenery in the Temple Repository. The wooden lid can be lifted or unlifted. "When you look at the lid more closely, you can see that it's a bit higher than the floor surrounding it. Maybe there's something underneath, although you wouldn't know until you lift it."
+
+Instead of talking to Heracles in the Temple Repository when the lid is unlifted: 
+	say "Heracles says, 'What a boring little closet! A real shame. Shouldn't a Temple Repository come with a glorious treasure trove?"
+	
+[crypt of osiris]
 
 The Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of Crypt of Osiris is nothing. "Cloaked in a heavy silence, this chamber radiates an eerie chill. It's clearly been flooded at some point and never dried, a perpetual dampness permeating every corner and crevice of the room."
 
