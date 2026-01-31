@@ -1438,7 +1438,7 @@ A canopic jar can be identified or unidentified. A canopic jar is usually uniden
 
 
 Instead of taking a canopic jar:
-	say "A large alabaster vessel does not fit in with your escape plans.".
+	say "Lugging a large alabaster jar would complicate your escape plans.".
 
 Instead of taking something which is in a canopic jar:
 	say "The putrid waters did not look inviting to stick your hand in. Maybe you could try scooping it instead, like soup.".
