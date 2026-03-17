@@ -900,7 +900,9 @@ Section 1 - All the Locations
 
 The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III. Sturdy columns flank a central courtyard where priests once performed daily rites. There seems to be a lot of honoring going on around here."
 
-[The mortuary temple of Thutmoses III is scenery in The Temple of Thutmoses III. ]
+Instead of going North in the Temple of Thutmoses III:
+	say "A few mortuary temples can be seen off in the distance, but something tells you it won't be very productive.".
+
 
 The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. "[set-link mortuary temple] looms large with its colossal statues. [Faded reliefs] along the walls depict the famous Battle of Kadesh. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
 
@@ -920,15 +922,13 @@ Understand "walls" or "reliefs" or "Battle of Kadesh" as faded reliefs when the 
 
 The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "Painted sand stone reliefs cover the [set-link mortuary temple of Thutmoses IV]. The vast temenos wall loom over you, making this temple look the same as any other temple in this area. "
 	
-The mortuary temple of Thutmoses IV is scenery in the Temple of Thutmoses IV. The print-name is "temple". The description is "You see a scattering of faience stelae at the base of the imposing enclosure wall, some of them encrusted in gold. As you look closer at the temple walls itself, you can see images of Thutmose IV (of course), Amun-Min (you wonder if he puts his weapon of mass destructuction for use besides his own hands), and some god  carrying an offering table with scepters, ankhs, and vases (bAH)."
+The mortuary temple of Thutmoses IV is scenery in the Temple of Thutmoses IV. The print-name is "temple". The description is "You see a scattering of faience stelae at the base of the imposing enclosure wall, some of them encrusted in gold. As you look closer at the temple walls itself, you can see images of Thutmose IV (of course), Amun-Min (you wonder if he puts his weapon of mass destructuction for use besides his own hands), and some god  carrying an offering table with scepters, ankhs, and vases."
 
-The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "The [set-link mortuary temple] stands here, relatively modest compared to its neighbors but still adorned with intricate carvings. You can look around Thebes for something—or maybe someone—useful. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
+The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "Little remains of the Temple of Tawosret, thoroughly destroyed after Ramesses III got his grubby hands on it. Tawosret, along with Hatshepsut, were some of the few women who ruled Egypt as a pharaoh. Given their destroyed temples, the Egyptians sure seem to hate women as much the Greeks... 
+[paragraph break]You can look around Thebes for something—or maybe someone—useful. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
-The mortuary temple of Tawosret is scenery in the Temple of Tawosret. The print-name is "Temple of Tawosret".
 
-The Temple of Merenptah is south of the Temple of Tawosret. It is in Thebes. "The [set-link mortuary temple] is here, partially ruined yet still imposing."
-
-[The mortuary temple of Merenptah is scenery in the Temple of Merenptah. The print-name is "Temple of Merenptah".]
+The Temple of Merneptah is south of the Temple of Tawosret. It is in Thebes. "Here, the shadow of Ramesses II's reign looms. Merneptah, his thirteenth son, came into the throne at the advanced age of 55 and died not ten years later. His mortuary temple reflects his hasty ascent and further ascent, made largely from recut and reinscribed stone from nearby temples (Amenhotep III turns in his tomb)."
 
 A Collection of Three Temples is a room. It is south of the Temple of Merenptah. It is in Thebes. "You see the temples of [set-link Temple of Thutmoses I], [set-link Temple of Amenhotep Son of Hapu], and [set-link Smaller Temple of Thutmoses III]."
 
@@ -936,7 +936,7 @@ The Temple of Thutmoses I is scenery in the Collection of Three Temples. "The Te
 
 The Temple of Amenhotep Son of Hapu is scenery in the Collection of Three Temples. "The Temple of Amenhotep, Son of Hapu is here. He was revered as a scribe and later deified for his great wisdom." The print-name is "Amenhotep Son of Hapu".
 
-The Smaller Temple of Thutmoses III is scenery in the Collection of Three Temples. "The smaller Temple of Thutmoses III is here. It's also honoring Thutmoses III  -- just at a smaller scale." The print-name is "Thutmoses III".
+The Smaller Temple of Thutmoses III is scenery in the Collection of Three Temples. "The smaller Temple of Thutmoses III is here. It's also honoring Thutmoses III  -- just at a smaller scale. It's not about the size of the temple but the quality of the offerings." The print-name is "Thutmoses III".
 
 The Temple of Amenhotep III is east of the the Collection of Three Temples. It is in Thebes. "Amenhotep III's vast [set-link mortuary temple] lies here. Even in partial ruin, the temple reflects the grandeur of his reign."
 
@@ -976,7 +976,7 @@ The mortuary temple of Horemheb is in the Temple of Horemheb. The print-name is 
 
 The Temple of Ramesses III is south of the Temple of Horemheb. It is in Thebes. "Here be Ramesses III's [set-link mortuary temple]. You feel that this man met a bitter end. You can respect that."
 	
-The mortuary temple of Ramesses III is scenery in the Temple of Ramesses III. The print-name is "temple".
+The mortuary temple of Ramesses III is scenery in the Temple of Ramesses III. The print-name is "mortuary temple".
 	
 	
 
@@ -1386,6 +1386,8 @@ Rule for writing a paragraph about Heracles during Buddy Heracles:
 The invisible tool is a thing. 
 
 The hallway count is a number that varies. The hallway count is initially 0.
+
+A corridor is a kind of room.
 		
 After going to the Hallway during Escape:
 	increment hallway count;
@@ -1575,11 +1577,11 @@ North Corridor is a corridor in Busiris. It is east of Pillar Hall. "A narrow ha
 
 Corridor of the Draught Board is a corridor in Busiris. It is south of North Corridor. "A long and winding corridor."
 
-The Jail Cell is a room in Busiris. It is west of the cell door.  "Dark and claustrophobic. You can see desperate scratches of former prisoners.[if cell door is broken] The guards evidently did not see the gaping hole between the cell bars. Or they just didn't care."
+The cell door is a locked closed door. The cell door is east of the Jail Cell and west of the Corridor of the Draught Board. The cell door can be broken_a or unbroken_a. The cell door is unbroken_a.
 
-The cell door is a locked closed door. The cell door is east of the Jail Cell and west of the Corridor of the Draught Board. The cell door can be unbroken or broken. It is unbroken.
+The Jail Cell is a room in Busiris. It is west of the cell door.  "Dark and claustrophobic. You can see desperate scratches of former prisoners.[if cell door is broken_a] The guards evidently did not see the gaping hole between the cell bars. Or they just didn't care."
 
-Instead of talking to Heracles in the Jail Cell when the cell door is unbroken:
+Instead of talking to Heracles in the Jail Cell when the cell door is unbroken_a:
 	say "'Hey Heracles', you poked at him. 'Go open the door.[paragraph break]";
 	wait for any key;
 	say "'But it's locked!' he whined indignantly.[paragraph break]";
@@ -1590,10 +1592,10 @@ Instead of talking to Heracles in the Jail Cell when the cell door is unbroken:
 	wait for any key;
 	say "'Didn't say you were. Now go.' [italic type]A baboon. He sure flatters himself.[roman type][paragraph break]";
 	 wait for any key;
-	now the cell door is broken;
+	now the cell door is broken_a;
 	say "Heracles gets up from his dejected huddle on the floor and pries open the bars of the cell. Now you are free to meander!"
 	
-Instead of going through the locked broken cell door:
+Instead of going through the locked broken_a cell door:
 	now Heracles is in the other side of the cell door;
 	now the player is in the other side of the cell door.
 	
