@@ -75,7 +75,7 @@ When play begins:
 	wait for any key;
     	say "As the room broke out again into squabbling, Amun felt a chill come over him. There was no need for Khonsu to elaborate--he remembered this story from long ago. It had happened under a Greek sun, yes, but the light of the sun has no limits or borders. [line break][line break]";
 	wait for any key;
-    	say "A case where innocents were slaughtered and the guilty were left unpunished. [line break][line break]";
+    	say "A case where innocents were slaughtered and the guilty flew free. [line break][line break]";
 	wait for any key;
     	say "The story of the Colchian witch Medea. [line break][line break]";
 	wait for any key;
@@ -83,9 +83,9 @@ When play begins:
 	wait for any key;
 	say "At the sound of 'Medea,' the room fell into a hush. [line break][line break]";
 	wait for any key;
-    	say "'I had known of her before her crimes had reached the corners of the world,'  Khonsu said. 'Before she had slaughtered her children and tricked the Corinthian princess. Her story was simpler then. but striking in its resemblance to the issue that plagues us today.[line break][line break]";
+    	say "'I knew of her before her crimes reached the corners of the world,'  Khonsu said. 'Before she slaughtered her children and tricked the Corinthian princess. Her story was simpler then. but striking in its resemblance to the issue that plagues us today.[line break][line break]";
 	wait for any key;
-    	say "To further her own goals, Medea had cut her own brother into many pieces and scattered him into the sea.'[line break][line break]";
+    	say "To further her own goals, Medea cut her own brother into many pieces and scattered him into the sea.'[line break][line break]";
 	wait for any key;
     	say "'I believe,' Khonsu said, 'that when all else has failed us, we must attempt to think like our adversary.'[line break][line break]";
 	wait for any key;
@@ -97,7 +97,7 @@ When play begins:
 	wait for any key;
 	say "[line break][line break]Your name is Medea. [line break][line break]";
 	wait for any key;
-    	say "You did not know, despite your contingency plans, where you would go after your triumphant flight from Corinth. [line break][line break]";
+    	say "You did not know, despite your many contingency plans, where you would go after your triumphant flight from Corinth. [line break][line break]";
 	wait for any key;
 	say "You really weren’t expecting to end up in a holding cell. [line break][line break]";
 	wait for any key;
@@ -109,15 +109,17 @@ When play begins:
 	wait for any key;
 	say "[line break][line break]…Oh, right. You already took care of that. [line break][line break]";
 	wait for any key;
+	say "[line break][line break] :) [line break][line break]";
+	wait for any key;
 	say "[line break][line break]One day, Helios comes to your cell. On his face, you see a mixture of pity, aversion, and a strange respect. [line break][line break]";
 	wait for any key;
 	say "'My dear granddaughter. For many years, my allies and I have argued on your behalf, to little success. [line break][line break]";
 	wait for any key;
-	say "I have received word from the Egyptian Sun. Egypt has been plagued by an evil it is thoroughly unequipped to combat. Its gods seem to believe that you alone can assist them. [line break][line break]";
+	say "I have received word from the Egyptian Sun. Egypt has been plagued by an evil it is unequipped to combat. Her gods seem to believe that you alone can assist them. [line break][line break]";
 	wait for any key;
 	say "If you successfully restore order to Egypt, you will be pardoned.'[line break][line break]";
 	wait for any key;
-	say "'Will I be free?' you ask.[line break][line break]";
+	say "'I will be free?' you ask.[line break][line break]";
 	wait for any key;
 	say "If so, the answer is clear. [line break][line break]";
 	wait for any key;
@@ -133,7 +135,7 @@ When play begins:
 	[wait for any key;]
 	[say "Your grandfather seems to feel a modicum of sympathy for you. Before he dropped you off in Egypt, he left you with a help book [line break][line break]"; [might re-add if the initial help prompt is not clear for readers]]
 	wait for any key;
-	say "Your sun chariot has been returned to you. You missed your dragons. After catching up with your darlings, you traveled to Egypt. [line break][line break]";
+	say "Your sun chariot has been returned to you. You missed your dragons. After catching up with your babies, you traveled to Egypt. [line break][line break]";
 	wait for any key;
 	say "[line break]You are currently in Abydos, which, according to Helios, is home to the cult of Osiris. There's no better place to start. [line break][line break]";
 	now the right hand status line is "[map region of the location]";
@@ -1466,7 +1468,7 @@ Tricolumnar Hall is a room in Busiris. It is north of Lobby. "Three giant pillar
 Upper Hallway is a corridor in Busiris. It is west of Tricolumnar Hall and northwest of Lobby.  "Another corridor. You've having some trouble keeping track of where you are." 
 
 Treasury is a room in Busiris. It is east of Lobby. "Treasury of the Sanctuary, so called."
-
+h
 Great Hall-Busiris is a room in Busiris. It is west of Upper Hallway. The printed name of Great Hall-Busiris is "Great Hall".
 
 Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Upper Hallway. The description is "Looking out at the west pavilion of the palace."
@@ -1479,13 +1481,13 @@ A canopic jar can be identified or unidentified. A canopic jar is usually uniden
 
 
 Instead of taking a canopic jar:
-	say "Lugging a large alabaster jar would complicate your escape plans.".
+	say "Lugging around a large alabaster jar would complicate your escape plans.".
 
 Instead of taking something which is in a canopic jar:
-	say "The putrid waters did not look inviting to stick your hand in. Maybe you could try scooping it instead, like soup.".
+	say "You've braved many terrible things, but even you are not courageous enough to stick your hand in this goop. Perhaps if you had a ladle...".
 			
 Report opening a unidentified canopic jar:
-	say "As you open the jar, a horrific smell reaches you. Gag. The sight inside does not help.".
+	say "As you open the jar, a horrific smell reaches you. The sight inside does not help.".
 			
 Instead of smelling a canopic jar:
 	say "Gag.".
@@ -1508,19 +1510,23 @@ Rule for printing the locale description of the Crypt of Osiris:
 	say " sitting atop a pile of sand, its ";
 	place a link to the command "x lid" reading "lid";
 	say " halfway down the mound. Inside the chest are four closed jars, carefully arranged to each face ";
-	place a link to the command "x north jar" reading "north";
+	place a link to the command "x northern jar" reading "north";
 	say ", ";
-	place a link to the command "x east jar" reading "east";
+	place a link to the command "x eastern jar" reading "east";
 	say ", ";
-	place a link to the command "x south jar" reading "south";
+	place a link to the command "x southern jar" reading "south";
 	say ", and ";
-	place a link to the command "x west jar" reading "west";
+	place a link to the command "x western jar" reading "west";
 	say "." instead.
 
 
 The canopic chest is a container in the Crypt of Osiris. It is open, openable, and scenery. Understand "stone chest" as the canopic chest. The print-name is "stone chest". The description is "With a closer look, you find that it's actually a canopic chest.".
 
-The north canopic jar, east canopic jar, south canopic jar, and west canopic jar are canopic jars in the canopic chest.
+The northern canopic jar, eastern canopic jar, southern canopic jar, and western canopic jar are canopic jars in the canopic chest.
+
+The southern canopic jar is in the Crypt of Osiris. The description of the southern canopic jar is "A human-headed alabaster jar. The resemblance to Jason is not insignificant...you have the sudden urge to explode the jar with your mind, but you should probably try to open it instead." 
+
+The southern canopic jar is in the Crypt of Osiris. The description of the southern canopic jar is "A human-headed alabaster jar. The resemblance to Jason is not insignificant...you have the sudden urge to explode the jar with your mind, but you should probably think about opening it instead." 
 
 The description of north jar is "[if identified]Inside it was, appararently, Osiris' lungs.[otherwise]Unknown Goop north, mushy and waterlogged.".
 			
@@ -1530,9 +1536,9 @@ The description of south jar is "[if identified]Inside it was, appararently, Osi
 		
 The description of west jar is "[if identified]Inside it was, appararently, Osiris' intestines.[otherwise]Unknown Goop west, mushy and waterlogged.".
 			
-Understand "examine unkown goop" or "examine goop" or "x unknown goop" or "x goop" as a mistake ("You squint at the goop, willing your eyes to infer some shape from it. Nothing forms.") when the location is the Crypt of Osiris.
+Understand "examine unknown goop" or "examine goop" or "x unknown goop" or "x goop" as a mistake ("It's unknown goop. What else is there to say? You feel as though you're receiving instructions from someone rather incompetent...") when the location is the Crypt of Osiris.
 			
-Understand "take unkown goop" or "take goop" as a mistake ("Better not take somthing you don't know.") when the location is the Crypt of Osiris.		
+Understand "take unknown goop" or "take goop" as a mistake ("Better not take something you don't know.") when the location is the Crypt of Osiris.		
 Osiris' lungs is a body part. It is in the north jar. Understand "lung" or "lungs" as Osiris' lungs. The description is "An overly healthy pair of lungs. You didn't like it all that much."
 	
 Osiris' stomach is a body part. It is in the east jar. The description is "A stomach. Perhaps for digestion."
@@ -1545,11 +1551,20 @@ Understand "take lung" as a mistake ("Osiris would complain endlessly if you onl
 
 A Bes Jar is in the Crypt of Osiris. It is unacquired. The description of the Bes Jar is "A vase decorated with the head of Bes. You see traces of hallucinogens in it, along with...breast milk and blood?"
 
+Instead of taking the Bes Jar: 
+	say "You see Heracles eyeing up the Bes Jar. Noticing your gaze, he turns to you. [paragraph break]";
+	wait for any key;
+	say "'Um, you gonna try that, or can I?' [paragraph break]";
+	wait for any key;
+	say "You throw him the filthiest look you can muster. You weren't planning to take it, but now you probably should."; 
+	now the noun is acquired;
+	continue the action.
+	
 Scooping is an action applying to two things. Understand "scoop [something] from [something]" or "ladle [something] from [something]" as scooping.
 	
 Carry out scooping:
 	if the player is not carrying the kyathos:
-		say "Your non-webbed fingers make a poor tool for scooping.";
+		say "With your fingers?! Absolutely not!";
 	otherwise:
 		if the second noun is not a container:
 			if the second noun is the kyathos:
