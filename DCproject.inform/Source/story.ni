@@ -1,7 +1,7 @@
 "That Time I Got Out of Jail by Reassembling Osiris" by Sophia Ling and Ruya Tazebay
 
 Include Basic Screen Effects by Emily Short.
-Include Basic Help Menu by Emily Short.
+[Include Basic Help Menu by Emily Short.]
 Include Punctuation Removal by Emily Short.
 Include Rideable Vehicles by Graham Nelson.
 Include Secret Doors by Gavin Lambert.
@@ -28,7 +28,13 @@ Scream is a Vorple style.
 
 Release along with cover art ("Vase painting of Medea on her chariot").
 
-Part 1 - Prologue - for release only
+Part 1 - Adjustments - not for release
+
+[When play begins:
+	choose row 1 in Table of Basic Help Options; 	
+	now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt.[paragraph break]Some general guidelines for this game:[line break]	Make sure to examinine everything![line break]	If you're stuck, it may be time to travel to a new place.[line break]	Medea is very clever, so make sure to pay attention to how she describes things!";]
+
+Part 2 - Prologue - for release only
 
 When play begins: 
 	say "[scream style]YOU WILL BE PROMPTED TO SAVE A TRANSCRIPT.[end style]";
@@ -141,7 +147,7 @@ When play begins:
 	now the right hand status line is "[map region of the location]";
 	pause the game.	
 
-Part 2 - General Game Declarations
+Part 3 - General Game Declarations
 
 Section 1 - Settings
 
@@ -150,8 +156,6 @@ The right hand Vorple status line is "[map region of the location]".
 
 When play begins:
 	construct the Vorple status line with 2 columns;
-	choose row 1 in Table of Basic Help Options; 	
-	now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt.[paragraph break]Some general guidelines for this game:[line break]	Make sure to examinine everything![line break]	If you're stuck, it may be time to travel to a new place.[line break]	Medea is very clever, so make sure to pay attention to how she describes things!";
 
 The carrying capacity of the player is 7.
 
@@ -361,7 +365,7 @@ This is the end transcript rule:
 		try switching the story transcript off.
 
 
-Part 3 - Intro with Osiris' Head
+Part 4 - Intro with Osiris' Head
 
 Head Acquisition is a scene. Head Acquisition begins when play begins. Head Acquisition ends when Osiris' head is acquired. 
 
@@ -798,15 +802,19 @@ To refill the sequence:
 		now the seq entry is seq-val;
 		now the item entry is item-val.
 
-To trigger the end sequence:
+[To trigger the end sequence:
 	say "You hear something from up above! Looking up at the ceiling, you see a gray [set-link the brain] fall from the duck-bearing man's head right to your feet. Is that a...?";
+	move Osiris' brain to the Underground Chapel.
+	]
+To trigger the end sequence:
+	say "You hear something from up above! Looking up at the ceiling, you see a gray lump fall from the duck-bearing man's head right to your feet. Is that a...?";
 	move Osiris' brain to the Underground Chapel.
 	
 Test brain1 with "talk to workman / show head to workman / gonear chapel" in the Workmen's Village.
 
 Test brain2 with "touch east mural / touch west mural / touch second statue / touch third statue / take brain" in Underground Chapel.
 
-Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands." The print-name is "[if unexamined]lump[otherwise]brain[end if]".
+Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands." The print-name is "[if unexamined]lump[otherwise]brain[end if]". The call-name of Osiris' brain is "OsirisBrain".
 
 Understand "lump" as Osiris' brain.
 
@@ -932,7 +940,7 @@ The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. 
 
 The Temple of Merneptah is south of the Temple of Tawosret. It is in Thebes. "Here, the shadow of Ramesses II's reign looms. Merneptah, his thirteenth son, came into the throne at the advanced age of 55 and died not ten years later. His mortuary temple reflects his hasty ascent and further ascent, made largely from recut and reinscribed stone from nearby temples (Amenhotep III turns in his tomb)."
 
-A Collection of Three Temples is a room. It is south of the Temple of Merenptah. It is in Thebes. "You see the temples of [set-link Temple of Thutmoses I], [set-link Temple of Amenhotep Son of Hapu], and [set-link Smaller Temple of Thutmoses III]."
+A Collection of Three Temples is a room. It is south of the Temple of Merneptah. It is in Thebes. "You see the temples of [set-link Temple of Thutmoses I], [set-link Temple of Amenhotep Son of Hapu], and [set-link Smaller Temple of Thutmoses III]."
 
 The Temple of Thutmoses I is scenery in the Collection of Three Temples. "The Temple of Thutmoses I is here, flanked by a row of weathered sphinxes." The print-name is "Thutmoses I".
 
@@ -1615,7 +1623,6 @@ Tricolumnar Hall is a room in Busiris. It is north of Lobby. "Three giant pillar
 Upper Hallway is a corridor in Busiris. It is west of Tricolumnar Hall and northwest of Lobby.  "Another corridor. You've having some trouble keeping track of where you are." 
 
 Treasury is a room in Busiris. It is east of Lobby. "Treasury of the Sanctuary, so called."
-h
 Great Hall-Busiris is a room in Busiris. It is west of Upper Hallway. The printed name of Great Hall-Busiris is "Great Hall".
 
 Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Upper Hallway. The description is "Looking out at the west pavilion of the palace."
@@ -1671,9 +1678,7 @@ The canopic chest is a container in the Crypt of Osiris. It is open, openable, a
 
 The northern canopic jar, eastern canopic jar, southern canopic jar, and western canopic jar are canopic jars in the canopic chest.
 
-The southern canopic jar is in the Crypt of Osiris. The description of the southern canopic jar is "A human-headed alabaster jar. The resemblance to Jason is not insignificant...you have the sudden urge to explode the jar with your mind, but you should probably try to open it instead." 
-
-The southern canopic jar is in the Crypt of Osiris. The description of the southern canopic jar is "A human-headed alabaster jar. The resemblance to Jason is not insignificant...you have the sudden urge to explode the jar with your mind, but you should probably think about opening it instead." 
+The description of the southern canopic jar is "A human-headed alabaster jar. The resemblance to Jason is not insignificant...you have the sudden urge to explode the jar with your mind, but you should probably try to open it instead." 
 
 The description of north jar is "[if identified]Inside it was, appararently, Osiris' lungs.[otherwise]Unknown Goop north, mushy and waterlogged.".
 			
@@ -1730,8 +1735,6 @@ Carry out scooping:
 
 A silver kyathos is in the Crypt of Osiris. The description is "A silver cup-shaped ladle, with a duck's head at the end of the handle." 
 
-	
-	
 	
 Section 4 - Ritual Sacrifice
 
@@ -1840,7 +1843,7 @@ To trigger Heracles leaving:
 	now palace exit is unrevealed;
 	now palace exit is closed.
 
-Part 5 - Complete Any Time
+Part 6 - Complete Any Time
 [can be completed any time after acquiring the head]
 
 Hand Acquisition is a scene. Hand Acquisition begins when Head Acquisition ends. Hand Acquisition ends when Osiris' left hand is acquired and Osiris' right hand is acquired.
@@ -1852,7 +1855,7 @@ Osiris' left hand is a body part. It is in Avaris-Marketplace.
 Osiris' right hand is a body part. It is in Avaris-Marketplace.
 
 
-Part 6 - Tour Guide Osiris
+Part 7 - Tour Guide Osiris
 [this part can be completed out of order, although some chapters require objects from other chapters to be completed]
 
 Tour Guide Osiris is a scene. Tour Guide Osiris begins when Talking Osiris Agenda ends. [doesn't really end]
@@ -2087,7 +2090,7 @@ Osiris' right leg is a body part in Heliopolis-Marketplace.
 Osiris' left leg is a body part in Heliopolis-Marketplace.
 
 
-Part 7 - Epilogue
+Part 8 - Epilogue
 
 
 
