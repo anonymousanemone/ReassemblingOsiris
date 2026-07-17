@@ -1258,12 +1258,15 @@ Escape is a scene. Escape begins when the location is the Jail Cell and Osiris' 
 
 Heracles can be caught or uncaught. Heracles is uncaught.
 
-Rule for printing the locale description of Heracles during Organ Acquisition:
-	do nothing.
+Rule for writing a paragraph about Heracles during Buddy Heracles:
+	If the location is in Busiris:
+		say "Heracles follows you closely.".
 
 The invisible tool is a thing. 
 
 The hallway count is a number that varies. The hallway count is initially 0.
+
+A corridor is a kind of room.
 		
 After going to the Hallway during Escape:
 	increment hallway count;
@@ -1453,10 +1456,28 @@ North Corridor is a corridor in Busiris. It is east of Pillar Hall. "A narrow ha
 
 Corridor of the Draught Board is a corridor in Busiris. It is south of North Corridor. "A long and winding corridor."
 
-The Jail Cell is a room in Busiris. It is west of the cell door.  "Dark and claustrophobic. You can see desperate scratches of former prisoners."
+The cell door is a locked closed door. The cell door is east of the Jail Cell and west of the Corridor of the Draught Board. The cell door can be broken_a or unbroken_a. The cell door is unbroken_a.
 
-The cell door is a locked open door. The cell door is east of the Jail Cell and west of the Corridor of the Draught Board. 
+The Jail Cell is a room in Busiris. It is west of the cell door.  "Dark and claustrophobic. You can see desperate scratches of former prisoners.[if cell door is broken_a] The guards evidently did not see the gaping hole between the cell bars. Or they just didn't care."
 
+Instead of talking to Heracles in the Jail Cell when the cell door is unbroken_a:
+	say "'Hey Heracles', you poked at him. 'Go open the door.[paragraph break]";
+	wait for any key;
+	say "'But it's locked!' he whined indignantly.[paragraph break]";
+	wait for any key;
+	say "'I know that.' [italic type]You feel a building sense of regret for saving him. [roman type]'Just pry open the bars, you buffoon.'[paragraph break]";
+	wait for any key;
+	say "'Heracles brightens. 'Oh yeah! ...I'm not a baboon![paragraph break]";
+	wait for any key;
+	say "'Didn't say you were. Now go.' [italic type]A baboon. He sure flatters himself.[roman type][paragraph break]";
+	 wait for any key;
+	now the cell door is broken_a;
+	say "Heracles gets up from his dejected huddle on the floor and pries open the bars of the cell. Now you are free to meander!"
+	
+Instead of going through the locked broken_a cell door:
+	now Heracles is in the other side of the cell door;
+	now the player is in the other side of the cell door.
+	
 Rule for writing a paragraph about the cell door:
 	stop the action.
 
@@ -1471,7 +1492,6 @@ Tricolumnar Hall is a room in Busiris. It is north of Lobby. "Three giant pillar
 Upper Hallway is a corridor in Busiris. It is west of Tricolumnar Hall and northwest of Lobby.  "Another corridor. You've having some trouble keeping track of where you are." 
 
 Treasury is a room in Busiris. It is east of Lobby. "Treasury of the Sanctuary, so called."
-
 Great Hall-Busiris is a room in Busiris. It is west of Upper Hallway. The printed name of Great Hall-Busiris is "Great Hall".
 
 Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Upper Hallway. The description is "Looking out at the west pavilion of the palace."
@@ -1527,9 +1547,7 @@ The canopic chest is a container in the Crypt of Osiris. It is open, openable, a
 
 The northern canopic jar, eastern canopic jar, southern canopic jar, and western canopic jar are canopic jars in the canopic chest.
 
-The southern canopic jar is in the Crypt of Osiris. The description of the southern canopic jar is "A human-headed alabaster jar. The resemblance to Jason is not insignificant...you have the sudden urge to explode the jar with your mind, but you should probably try to open it instead." 
-
-The southern canopic jar is in the Crypt of Osiris. The description of the southern canopic jar is "A human-headed alabaster jar. The resemblance to Jason is not insignificant...you have the sudden urge to explode the jar with your mind, but you should probably think about opening it instead." 
+The description of the southern canopic jar is "A human-headed alabaster jar. The resemblance to Jason is not insignificant...you have the sudden urge to explode the jar with your mind, but you should probably try to open it instead." 
 
 The description of north jar is "[if identified]Inside it was, appararently, Osiris' lungs.[otherwise]Unknown Goop north, mushy and waterlogged.".
 			
@@ -1586,8 +1604,6 @@ Carry out scooping:
 
 A silver kyathos is in the Crypt of Osiris. The description is "A silver cup-shaped ladle, with a duck's head at the end of the handle." 
 
-	
-	
 	
 Section 4 - Ritual Sacrifice
 
