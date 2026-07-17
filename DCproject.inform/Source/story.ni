@@ -673,7 +673,9 @@ An oxcart is a rideable vehicle. "An [oxcart] sits here unattended." The descrip
 When Exploration begins:
 	now the oxcart is in Outside the Walled Village.
 
-The Ruined City is a room in Amarna. It is west of Outside the Walled Village. "This glorious city, once the capital of Egypt, is nothing but ruins and foundations. In the distance, to the north, you see a small standing structure. It sticks out like a sore thumb amongst the desolation."
+The Ruined City is a room in Amarna. It is west of Outside the Walled Village. "This glorious city, once the capital of Egypt, is nothing but ruins and foundations. Vegetation is sparse, only a few stubborn weeds grasp at the crumbled one-urban floors. [if the buds of a unique bush is in the location]To the side of a particularly dilapidated building, you see a rather [set-link the buds of a unique bush]. [end if]In the distance, to the north, you see a small standing structure. It sticks out like a sore thumb amongst the desolation."
+
+Understand "unique looking bush" and "bush" as the buds of a unique bush when the location is the ruined city. 
 
 Instead of going to the Ruined City when the player is not on the oxcart:
 	if player is in Outside the Walled Village:
@@ -1142,9 +1144,7 @@ Some random items are things on the brewing table. The description is "A collect
 
 The vial of plant mucus is on the brewing table. The description is "A small glass vial with extracted plant mucus inside."
 
-The buds of a Unique Bush are in the Ruined City. The description is "A rare and magical bush said to have healing properties. It bears buds of a mystical nature." The print-name is "Unique Bush". 
-Rule for printing a locale paragraph of the buds of a unique bush:
-	say "
+The buds of a Unique Bush are in the Ruined City. The description is "A rare and magical bush said to have healing properties. It bears buds of a mystical nature." The print-name is "unique looking bush". 
 
 Rule for printing the name of the Buds of a Unique Bush when the Buds of a Unique Bush are in the Ruined City:
 	say "Unique Bush".
@@ -1810,7 +1810,7 @@ To end the sacrifice:
 	now palace exit is open;
 	wait for any key;
 
-The description of palace exit is "An imposing door by the Corridor of Procession West. With all the chaos, this might be your chance!"
+The description of palace exit is "An imposing door by the Corridor of Procession West. With all the chaos, this might be your chance!".
 
 Instead of going through palace exit:
 	now the player is in The Temple of Tawosret;
@@ -1841,6 +1841,8 @@ To trigger Heracles leaving:
 	now the heart scarab is acquired;
 	now palace exit is unrevealed;
 	now palace exit is closed.
+
+
 
 Part 6 - Complete Any Time
 [can be completed any time after acquiring the head]
