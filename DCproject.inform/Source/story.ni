@@ -1,7 +1,7 @@
 "That Time I Got Out of Jail by Reassembling Osiris" by Sophia Ling and Ruya Tazebay
 
 Include Basic Screen Effects by Emily Short.
-Include Basic Help Menu by Emily Short.
+[Include Basic Help Menu by Emily Short.]
 Include Punctuation Removal by Emily Short.
 Include Rideable Vehicles by Graham Nelson.
 Include Secret Doors by Gavin Lambert.
@@ -28,7 +28,13 @@ Scream is a Vorple style.
 
 Release along with cover art ("Vase painting of Medea on her chariot").
 
-Part 1 - Prologue - for release only
+Part 1 - Adjustments - not for release
+
+[When play begins:
+	choose row 1 in Table of Basic Help Options; 	
+	now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt.[paragraph break]Some general guidelines for this game:[line break]	Make sure to examinine everything![line break]	If you're stuck, it may be time to travel to a new place.[line break]	Medea is very clever, so make sure to pay attention to how she describes things!";]
+
+Part 2 - Prologue - for release only
 
 When play begins: 
 	say "[scream style]YOU WILL BE PROMPTED TO SAVE A TRANSCRIPT.[end style]";
@@ -141,17 +147,43 @@ When play begins:
 	now the right hand status line is "[map region of the location]";
 	pause the game.	
 
-Part 2 - General Game Declarations
+Part 3 - General Game Declarations
 
-Section 1 - Settings
+Section 1 - Transcript printing
+	
+[ Copied from: https://intfiction.org/t/extracting-vorple-transcript-from-indexeddb/60125/5]
+
+transcript-on is a truth state that varies. transcript-on is false.
+
+Carry out switching the story transcript on:
+	execute JavaScript command "toggleTranscriptButton(true);";
+	now transcript-on is true.
+
+Carry out switching the story transcript off:
+	execute JavaScript command "toggleTranscriptButton(false);";
+	now transcript-on is false.
+
+command-echo is a Vorple style.
+
+After reading a command:
+	if transcript-on is true and Vorple is supported:
+		let cmd be the player's command;
+		say "[command-echo style]>[cmd][line break][end style]";
+	continue the action.
+
+The end transcript rule is listed in the shutdown rules.
+	
+This is the end transcript rule:
+	if transcript-on is true:
+		try switching the story transcript off.
+
+Section 2 - Settings
 
 The left hand Vorple status line is "[the player's surroundings]".
 The right hand Vorple status line is "[map region of the location]".
 
 When play begins:
 	construct the Vorple status line with 2 columns;
-	choose row 1 in Table of Basic Help Options; 	
-	now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt.[paragraph break]Some general guidelines for this game:[line break]	Make sure to examinine everything![line break]	If you're stuck, it may be time to travel to a new place.[line break]	Medea is very clever, so make sure to pay attention to how she describes things!";
 
 The carrying capacity of the player is 7.
 
@@ -184,8 +216,7 @@ After reading a command:
      remove stray punctuation.
 
 	
-
-Section 2 - New Definitions
+Section 3 - New Definitions
 
 To say tab:
 	say "    "; [6 spaces]
@@ -212,7 +243,7 @@ Instead of examining something:
 	now the noun is examined;
 	continue the action.
 	
-A thing has some text called print-name.
+A thing has some text called print-name. A thing has some text called call-name.
 
 A hint-object is a kind of object. It has some text called hint-content.
 
@@ -222,7 +253,10 @@ To say print-hint (H - a hint-object):
 To say set-link (target - a thing):
 	let link name be "x[target]";
 	disable all links called link name; [don't let the player click on old links]
-	place a link to the command "examine [print-name of target]" called link name reading "[print-name of target]".
+	if the call-name of target is non-empty:
+		place a link to the command "examine [call-name of target]" called link name reading "[print-name of target]";
+	otherwise:
+		place a link to the command "examine [print-name of target]" called link name reading "[print-name of target]".
 	
 Rule for printing the name of a direction (called way) while listing exits:
 	if Vorple is supported:
@@ -233,7 +267,7 @@ Rule for printing the name of a direction (called way) while listing exits:
 Rule for printing the name of a thing (called obj) when printing the locale description of a room:
 	place a link to the command "examine [printed name of obj]" reading "[printed name of obj]".
 
-Section 3 - Sun Chariot Travel
+Section 4 - Sun Chariot Travel
 
 Figure of chariot is the file "chariot.png".
 
@@ -293,7 +327,7 @@ transport (a region)	home (a room)	n (a number)
 Avaris	Avaris-Marketplace	1
 Heliopolis	Heliopolis-Marketplace	2
 Memphis	Memphis-Marketplace	3
-Oxyrhynchos	Oxyrhynchos-Marketplace	4
+Oxyrhynchos	Marketplace of Oxyrhynchos	4
 Amarna	Outside the Walled Village	5
 Abydos	Entrance to the Osireion	6
 Thebes	Temple of Tawosret 	7
@@ -327,38 +361,9 @@ Heliopolis-Marketplace is a room in Heliopolis. "You have reached a part of the 
 Memphis-Marketplace is a room in Memphis. "You have reached a part of the game that is still under development. Please check back soon! :)  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
 Elephantine-Marketplace is a room in Elephantine. "You have reached a part of the game that is still under development. Please check back soon! :)  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
-	
-	
-Section 4 - Transcript printing
-	
-[ Copied from: https://intfiction.org/t/extracting-vorple-transcript-from-indexeddb/60125/5]
-
-transcript-on is a truth state that varies. transcript-on is false.
-
-Carry out switching the story transcript on:
-	execute JavaScript command "toggleTranscriptButton(true);";
-	now transcript-on is true.
-
-Carry out switching the story transcript off:
-	execute JavaScript command "toggleTranscriptButton(false);";
-	now transcript-on is false.
-
-command-echo is a Vorple style.
-
-After reading a command:
-	if transcript-on is true and Vorple is supported:
-		let cmd be the player's command;
-		say "[command-echo style]>[cmd][line break][end style]";
-	continue the action.
-
-The end transcript rule is listed in the shutdown rules.
-	
-This is the end transcript rule:
-	if transcript-on is true:
-		try switching the story transcript off.
 
 
-Part 3 - Intro with Osiris' Head
+Part 4 - Intro with Osiris' Head
 
 Head Acquisition is a scene. Head Acquisition begins when play begins. Head Acquisition ends when Osiris' head is acquired. 
 
@@ -392,7 +397,6 @@ Check talking to head:
 The walls are a backdrop. Understand "wall" as the walls. The walls are in Abydos.
 
 Instead of taking the walls, say "You're not the British Museum. You can't do that."
-
 
 
 Section 2 - Entering the Osireion
@@ -517,7 +521,7 @@ The cells are scenery in the Central Nave. The description is "Of the seventeen 
 [x stairs - leading into the water]
 [x pillars, x ceiling]
 
-The statue of Osiris is in the Central Nave. It is scenery. The description of the statue of Osiris is "A large statue of Osiris ias seated at the top of a staircase. The enthroned Osiris faces towards the sarcophagus chamber, just as Osiris faces inward with his back to the entrance of the Osireion in the Book of Gates. He holds a crook and the ankh sign, signifying that he rules over his domain, the duat, and is the possessor of life. He sure looks put together -- such a shame he's all chopped up now." The print-name is "statue".
+The statue of Osiris is in the Central Nave. It is scenery. The description of the statue of Osiris is "A large statue of Osiris is seated at the top of a staircase. The enthroned Osiris faces towards the sarcophagus chamber, just as Osiris faces inward with his back to the entrance of the Osireion in the Book of Gates. He holds a crook and the ankh sign, signifying that he rules over his domain, the duat, and is the possessor of life. He sure looks put together -- such a shame he's all chopped up now." The print-name is "statue".
 
 The funerary bier is a supporter in the Central Nave. The description of the bier is "A bier used for embalming practices, fashioned to resemble Sekhmet, the grumpy kitty-cat daughter of Ra, the VEnGeFul EYe."
 
@@ -529,7 +533,7 @@ Before going when the location is the Central Nave:
 	otherwise:
 		say "With the moat surrounding the central nave, it's a struggle to go anywhere." instead.
 
-The Tomb of Osiris is a room in Abydos. It is east of the Central Nave. "A long narrow chamber that mirrors the one across from the central nave, with depictions of Nut and Geb on the [painted roof] and [walls] have depictions of Nut and Geb. At the center of the room is a [sarcophagus], its wooden frame lavishly painted in the style of the New Kingdom. [if sarcophagus is locked]You feel that there is something--or someone--important inside..."
+The Tomb of Osiris is a room in Abydos. It is east of the Central Nave. "A long narrow chamber that mirrors the one across from the central nave, with depictions of Nut and Geb on the [painted roof] and [walls] have depictions of Nut and Geb. At the center of the room is a [set-link the sarcophagus], its wooden frame lavishly painted in the style of the New Kingdom. [if sarcophagus is locked]You feel that there is something--or someone--important inside..."
 
 The painted roof is scenery in the Tomb of Osiris. The description of the painted roof is "The depiction of Nut, her star-strewn body stretching across the heavens, is both graceful and imposing. Beneath her, Geb lies in repose, his green-toned skin symbolizing fertility and life. The colors have dulled over time, but the craftsmanship is evident." The print-name is "roof".
 
@@ -672,7 +676,9 @@ An oxcart is a rideable vehicle. "An [oxcart] sits here unattended." The descrip
 When Exploration begins:
 	now the oxcart is in Outside the Walled Village.
 
-The Ruined City is a room in Amarna. It is west of Outside the Walled Village. "This glorious city, once the capital of Egypt, is nothing but ruins and foundations. In the distance, to the north, you see a small standing structure. It sticks out like a sore thumb amongst the desolation."
+The Ruined City is a room in Amarna. It is west of Outside the Walled Village. "This glorious city, once the capital of Egypt, is nothing but ruins and foundations. Vegetation is sparse, only a few stubborn weeds grasp at the crumbled one-urban floors. [if the buds of a unique bush is in the location]To the side of a particularly dilapidated building, you see a rather [set-link the buds of a unique bush]. [end if]In the distance, to the north, you see a small standing structure. It sticks out like a sore thumb amongst the desolation."
+
+Understand "unique looking bush" and "bush" as the buds of a unique bush when the location is the ruined city. 
 
 Instead of going to the Ruined City when the player is not on the oxcart:
 	if player is in Outside the Walled Village:
@@ -798,15 +804,19 @@ To refill the sequence:
 		now the seq entry is seq-val;
 		now the item entry is item-val.
 
-To trigger the end sequence:
+[To trigger the end sequence:
 	say "You hear something from up above! Looking up at the ceiling, you see a gray [set-link the brain] fall from the duck-bearing man's head right to your feet. Is that a...?";
+	move Osiris' brain to the Underground Chapel.
+	]
+To trigger the end sequence:
+	say "You hear something from up above! Looking up at the ceiling, you see a gray lump fall from the duck-bearing man's head right to your feet. Is that a...?";
 	move Osiris' brain to the Underground Chapel.
 	
 Test brain1 with "talk to workman / show head to workman / gonear chapel" in the Workmen's Village.
 
 Test brain2 with "touch east mural / touch west mural / touch second statue / touch third statue / take brain" in Underground Chapel.
 
-Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands." The print-name is "[if unexamined]lump[otherwise]brain[end if]".
+Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands." The print-name is "[if unexamined]lump[otherwise]brain[end if]". The call-name of Osiris' brain is "OsirisBrain".
 
 Understand "lump" as Osiris' brain.
 
@@ -902,7 +912,11 @@ Section 1 - All the Locations
 
 The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III. Sturdy columns flank a central courtyard where priests once performed daily rites. There seems to be a lot of honoring going on around here."
 
-The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. "[set-link mortuary temple] looms large with its colossal statues. [set-link faded reliefs] along the walls depict the famous Battle of Kadesh. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
+Instead of going North in the Temple of Thutmoses III:
+	say "A few mortuary temples can be seen off in the distance, but something tells you it won't be very productive.".
+
+
+The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. "[set-link mortuary temple] looms large with its colossal statues. [Faded reliefs] along the walls depict the famous Battle of Kadesh. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
 
 The mortuary temple of Ramesses II is scenery in the Ramesseum. "Ramesses the Great—you had heard of him before, although by a different name. This place had once been a monumental temple suitable for the King of Kings. Now all that remains are sun-bleached ruins." The print-name is "The mortuary temple of Ramesses II".
 
@@ -918,67 +932,186 @@ Instead of examining the faded reliefs:
 	
 Understand "walls" or "reliefs" or "Battle of Kadesh" as faded reliefs when the location is the Ramesseum. 
 
-The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "An elegant temple commemorates the reign of Thutmoses IV. Columns and archways display finely chiseled hieroglyphs extolling the king’s diplomatic prowess."
+The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "Painted sand stone reliefs cover the [set-link mortuary temple of Thutmoses IV]. The vast temenos wall loom over you, making this temple look the same as any other temple in this area. "
+	
+The mortuary temple of Thutmoses IV is scenery in the Temple of Thutmoses IV. The print-name is "temple". The description is "You see a scattering of faience stelae at the base of the imposing enclosure wall, some of them encrusted in gold. As you look closer at the temple walls itself, you can see images of Thutmose IV (of course), Amun-Min (you wonder if he puts his weapon of mass destructuction for use besides his own hands), and some god  carrying an offering table with scepters, ankhs, and vases."
 
-The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "The Temple of Tawosret stands here, relatively modest compared to its neighbors but still adorned with intricate carvings. You can look around Thebes for something—or maybe someone—useful. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
+The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "Little remains of the Temple of Tawosret, thoroughly destroyed after Ramesses III got his grubby hands on it. Tawosret, along with Hatshepsut, were some of the few women who ruled Egypt as a pharaoh. Given their destroyed temples, the Egyptians sure seem to hate women as much the Greeks... 
+[paragraph break]You can look around Thebes for something—or maybe someone—useful. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
-The Temple of Merenptah is south of the Temple of Tawosret. It is in Thebes. "The Temple of Merenptah is here, partially ruined yet still imposing."
 
-A Collection of Three Temples is a room. It is south of the Temple of Merenptah. It is in Thebes. "You see the temples of Thutmoses I, Amenhotep Son of Hapu, and Thutmoses III."
+The Temple of Merneptah is south of the Temple of Tawosret. It is in Thebes. "Here, the shadow of Ramesses II's reign looms. Merneptah, his thirteenth son, came into the throne at the advanced age of 55 and died not ten years later. His mortuary temple reflects his hasty ascent and further ascent, made largely from recut and reinscribed stone from nearby temples (Amenhotep III turns in his tomb)."
 
-The Temple of Thutmoses I is scenery in the Collection of Three Temples. "The Temple of Thutmoses I is here, flanked by a row of weathered sphinxes."
+A Collection of Three Temples is a room. It is south of the Temple of Merneptah. It is in Thebes. "You see the temples of [set-link Temple of Thutmoses I], [set-link Temple of Amenhotep Son of Hapu], and [set-link Smaller Temple of Thutmoses III]."
 
-The Temple of Amenhotep Son of Hapu is scenery in the Collection of Three Temples. "The Temple of Amenhotep, Son of Hapu is here. He was revered as a scribe and later deified for his great wisdom."
+The Temple of Thutmoses I is scenery in the Collection of Three Temples. "The Temple of Thutmoses I is here, flanked by a row of weathered sphinxes." The print-name is "Thutmoses I".
 
-The Smaller Temple of Thutmoses III is scenery in the Collection of Three Temples. "The smaller Temple of Thutmoses III is here. It's also honoring Thutmoses III  -- just at a smaller scale."
+The Temple of Amenhotep Son of Hapu is scenery in the Collection of Three Temples. "The Temple of Amenhotep, Son of Hapu is here. He was revered as a scribe and later deified for his great wisdom." The print-name is "Amenhotep Son of Hapu".
 
-The Temple of Amenhotep III is east of the the Collection of Three Temples. It is in Thebes. "Amenhotep III's vast mortuary temple lies here. Even in partial ruin, the temple reflects the grandeur of his reign."
+The Smaller Temple of Thutmoses III is scenery in the Collection of Three Temples. "The smaller Temple of Thutmoses III is here. It's also honoring Thutmoses III  -- just at a smaller scale. It's not about the size of the temple but the quality of the offerings." The print-name is "Thutmoses III".
 
-The Memnon Colossi is east of the Temple of Amenhotep III. It is in Thebes. "Perched like silent sentinels, two massive statues of Amenhotep III ([set-link the left statue], [set-link the right statue]) watch over the land. Legend says their eerie dawn 'singing' once greeted travelers."
+The Temple of Amenhotep III is east of the the Collection of Three Temples. It is in Thebes. "Amenhotep III's vast [set-link mortuary temple] lies here. Even in partial ruin, the temple reflects the grandeur of his reign."
 
-The left statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi. The print-name is "left statue".
+The mortuary temple of Amenhotep III is scenery in the Temple of Amenhotep III. The print-name is "mortuary temple".
 
-The right statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi. The print-name is "right statue".
+The Memnon Colossi is east of the Temple of Amenhotep III. It is in Thebes. "Two massive statues of Amenhotep III squat side by side, one to the [set-link the northern statue], and the other to the [set-link the southern statue]. Their overly pristine condition brings about  your sudden urge to deface these statues. Graffiti, perhaps?"
 
-Instead of cutting the The right statue of Amenhotep III, do nothing.
+Defacing is an action applying to one visible thing. Understand "deface [something]" or "graffiti [something]" as defacing.
 
-Instead of cutting the The left statue of Amenhotep III, do nothing.
+Carry out defacing:
+	say "You can't do that.".
 
-Osiris' heart is a body part. It is in right statue of Amenhotep III.
+Instead of defacing something in the Memnon Colossi:
+	say "You cheerily carve a vagina onto [the noun]. Better not leave a name in case it bites you back later."
+
+The southern statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi. The print-name is "north". The description is "This statue stands mutely (as statues are supposed to do, in your opinion."
+
+The northern statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi. The print-name is "south". The description of the northern statue is "Some people say that if one listens closely, they may be able to hear singing... You thought it sounded like an improperly closed window."
+
+Instead of cutting the The northern statue of Amenhotep III, do nothing.
+
+Instead of cutting the The southern statue of Amenhotep III, do nothing.
+
+Osiris' heart is a body part. It is in northern statue of Amenhotep III.
 
 The heart scarab is a thing. The description is "The scarab is a small but intricately made item. Inscribed on the bottom is the cartouche of Amenhotep III. [if heart is unacquired] Perhaps it's worth investigating..."
 
-Instead of putting the heart scarab on the right statue of Amenhotep III:
-	now right statue of Amenhotep III is open;
-	now right statue of Amenhotep III is unopenable;
+Instead of putting the heart scarab on the northern statue of Amenhotep III:
+	now northern statue of Amenhotep III is open;
+	now northern statue of Amenhotep III is unopenable;
 	say "The panel at the base of the statue slides open to reveal the heart of Osiris. Hooray![paragraph break]".
 
 
-The Temple of Horemheb is south of the collection of three temples. It is in Thebes. "This temple stands as tribute to Aÿ and Horemheb."
+The Temple of Horemheb is south of the collection of three temples. It is in Thebes. "This [set-link mortuary temple of Horemheb] stands as tribute to Aÿ and Horemheb."
 
-The Temple of Ramesses III is south of the Temple of Horemheb. It is in Thebes. "Here be Ramesses III's temple. You feel that this man met a bitter end. You can respect that."
+The mortuary temple of Horemheb is in the Temple of Horemheb. The print-name is "temple".
+
+The Temple of Ramesses III is south of the Temple of Horemheb. It is in Thebes. "Here be Ramesses III's [set-link mortuary temple]. You feel that this man met a bitter end. You can respect that."
+	
+The mortuary temple of Ramesses III is scenery in the Temple of Ramesses III. The print-name is "mortuary temple".
+	
+	
 
 Section 2 - The library
 
 [depending on feedback, can try to make entering house of life more intuitive: aka somehow medea knows house of life is library and it is inside the ramesseum. maybe a trigger of dialogue like the priest asks medea her purpose and she says for medicine - not priority]
 
-The House of Life is west of the Ramesseum. It is in Thebes. "The entrance is unassuming—just a low archway tucked beside the temple’s western wall—but when you step inside, you realize you've stumbled upon a vast library.  Soft lamplight flickers across rows of tall shelves, each lined with carefully rolled [set-link the medical papyri] detailing magical and medical rituals.  [paragraph break] You scan the shelves, looking for something useful. There's a certain scroll that caught your eye..."
+The House of Life is west of the Ramesseum. It is in Thebes. "The entrance is unassuming—just a low archway tucked beside the temple’s western wall—but when you step inside, you realize you've stumbled upon a vast library.  Soft lamplight flickers across rows of tall shelves, each lined with carefully rolled [set-link the medical papyri] detailing magical and medical rituals."
 
-[some mechanic for finding correct papyri or simple description]
-
-Medical papyri is scenery in the House of LIfe. The description of the medical papyri is "A headache spell. It reads: [paragraph break] -YET ANOTHER- CONJURATION FOR THE HEAD [line break]
-Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.[paragraph break] Once you have these items, you can PREPARE them to make the medicine. You can always check your inventory to see what you have.". The print-name is "papyri".
-
-Understand "scroll / papyri" as the medical papyri.
-
-Instead of examining the papyri:
-	now the papyri is examined;
-	continue the action.
+[Medical papyri is scenery in the House of LIfe. The description of the medical papyri is "A headache spell. It reads: [paragraph break] -YET ANOTHER- CONJURATION FOR THE HEAD [line break]
+Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.[paragraph break] Once you have these items, you can PREPARE them to make the medicine. You can always check your inventory to see what you have.". The print-name is "papyri".]
 
 [after examining papyri, player can type "think" to remember what she needs]
 Instead of thinking during Heal Heracles:
 	if the papyri is examined:
 		say "-YET ANOTHER- CONJURATION FOR THE HEAD [line break] Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.[paragraph break] Once you have these items, you can PREPARE them to make the medicine. You can always check your inventory to see what you have.".
+		
+
+Medical papyri is scenery in the House of Life. The papyri are plural-named. Understand "shelves" or "papyrus" or "shelf" or "scroll" or "scrolls" as the papyri. The description is "You approach the shelves labelled for medical papyri. It's organized by body part: treatments for the head, back, ass, foot."
+
+Instead of smelling the papyri: say "The shelves smell of ancient ink and the tears of scribes."
+Instead of tasting the papyri: say "Licking papyrus would be undignified."
+Instead of touching the papyri: say "The papyrus feels rough beneath your fingertips."
+Instead of taking the papyri: say "You are not allowed to take scrolls out."
+
+The remembered scroll is a text that varies. The remembered scroll is "".
+
+Table of Papyri
+Subject(text)	Title	Content
+"head"	"Another Conjuration for the Head"	" Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat."
+"head"	"Treatise on Fevers"	"A papyrus prescribing willow bark infusions for fevers."
+"head"	"Secrets of the Heart"	"Notes on the heart being the seat of thought and emotion."
+"astronomy"	"Chart of the Heavens"	"A detailed star map of Orion and Sirius."
+"astronomy"	"Cycles of the Moon"	"A scroll describing the lunar phases and their omens."
+"astronomy"	"Journey of Ra"	"A mythic text charting Ra's path across the sky."
+"ritual"	"Offerings to Osiris"	"Instructions for preparing ritual offerings to Osiris."
+"ritual"	"Hymn to Thoth"	"A chant in praise of Thoth, lord of wisdom."
+"ritual"	"Opening the Mouth"	"A ritual text for animating statues and the deceased."
+
+
+[Examining and Looking Up]
+Understand "look up [text]" as examining as a book when the player is in the House of Life.
+
+Examining as a book is an action applying to one topic.
+
+[Carry out examining as a book:
+    say "You can't find any such text."]
+
+[Carry out examining as a book:
+	if the noun is a library:
+		say "The papyri here contain the following subjects:";
+		repeat with S running through the table of subjects of the noun:
+			say " - [S][line break]";
+	otherwise if the noun is a subject:
+		let N be the number of rows in the perma-content of the noun;
+		say "There are [N] scrolls on the subject of [the noun]. Try 'read [the noun]'."]
+		
+	[let T be the topic understood;
+	if the topic understood is a topic listed in the Table of Papyri,
+[	let N be the number of rows in the Table of Papyri with the topic understood;]
+ 	repeat with i running from 1 to the number of rows in the Table of Recent Monarchs:
+       		choose row N in the Table of Recent Monarchs;
+        	say "[accession entry]: [name entry] ([family entry])."
+	[if N is 0:
+		say "You find no papyri on '[T]'.";]
+	otherwise:
+		say "There are [N] scrolls on the topic of '[T]'. Try 'read papyri for [T]'."]
+
+
+
+[Reading]
+[
+Reading is an action applying to one topic.  
+Understand "read papyri for [text]" as reading.
+
+A topic-list is a list of numbers that varies.
+
+Carry out reading:
+	let T be the topic understood;
+	let N be the number of rows in the Table of Papyri with topic of T;
+	if N is 0:
+		say "There are no papyri here on '[T]'.";
+		stop;
+	[Initialize/reset cycle if needed]
+	if topic-list is {}:
+		repeat with R running from 1 to N:
+			add R to topic-list;
+	choose a random entry from topic-list;
+	let choice be the chosen number;
+	remove choice from topic-list;
+	choose row choice in the Table of Papyri with topic of T;
+	say "You take out a scroll and peruse its contents: [content entry][line break]";
+	say "(You may 'remember [title entry]' if you wish.)";
+	now the remembered scroll is the title entry.]
+[
+If topic-list is not {}:
+	if the location is not the House of Life:
+		now topic-list is {}.]
+
+[Remembering]
+
+[Remembering is an action applying to one topic.  
+Understand "remember [text]" as remembering.
+
+Carry out remembering:
+	let T be the topic understood;
+	choose row with a title of T in the Table of Papyri;
+	if there is a title of T in the Table of Papyri:
+		now the remembered scroll is the title entry;
+		say "You fix '[title entry]' firmly in your memory.";
+	otherwise:
+		say "You cannot remember such a papyrus; it is not in the library."
+
+Thinking is an action applying to nothing.  
+Understand "think" as thinking.
+
+Carry out thinking:
+	if the remembered scroll is "":
+		say "Nothing comes to mind.";
+	otherwise:
+		choose row with a title of the remembered scroll in the Table of Papyri;
+		say "You recall the scroll '[title entry]': [content entry]"]
+
 
 Section 3 - Healing Heracles
 
@@ -1014,7 +1147,7 @@ Some random items are things on the brewing table. The description is "A collect
 
 The vial of plant mucus is on the brewing table. The description is "A small glass vial with extracted plant mucus inside."
 
-The buds of a Unique Bush are in the Ruined City. The description is "A rare and magical bush said to have healing properties. It bears buds of a mystical nature." 
+The buds of a Unique Bush are in the Ruined City. The description is "A rare and magical bush said to have healing properties. It bears buds of a mystical nature." The print-name is "unique looking bush". 
 
 Rule for printing the name of the Buds of a Unique Bush when the Buds of a Unique Bush are in the Ruined City:
 	say "Unique Bush".
@@ -1680,7 +1813,7 @@ To end the sacrifice:
 	now palace exit is open;
 	wait for any key;
 
-The description of palace exit is "An imposing door by the Corridor of Procession West. With all the chaos, this might be your chance!"
+The description of palace exit is "An imposing door by the Corridor of Procession West. With all the chaos, this might be your chance!".
 
 Instead of going through palace exit:
 	now the player is in The Temple of Tawosret;
@@ -1712,7 +1845,9 @@ To trigger Heracles leaving:
 	now palace exit is unrevealed;
 	now palace exit is closed.
 
-Part 5 - Complete Any Time
+
+
+Part 6 - Complete Any Time
 [can be completed any time after acquiring the head]
 
 Hand Acquisition is a scene. Hand Acquisition begins when Head Acquisition ends. Hand Acquisition ends when Osiris' left hand is acquired and Osiris' right hand is acquired.
@@ -1724,7 +1859,7 @@ Osiris' left hand is a body part. It is in Avaris-Marketplace.
 Osiris' right hand is a body part. It is in Avaris-Marketplace.
 
 
-Part 6 - Tour Guide Osiris
+Part 7 - Tour Guide Osiris
 [this part can be completed out of order, although some chapters require objects from other chapters to be completed]
 
 Tour Guide Osiris is a scene. Tour Guide Osiris begins when Talking Osiris Agenda ends. [doesn't really end]
@@ -1791,26 +1926,43 @@ Instead of cutting a body part:
 
 Section 2 - Marketplace
 
-Oxyrhynchos-Marketplace is a room in Oxyrhynchos. "(You have reached a part of the game that is still under development. This section is partially complete. Should you want to try the minigame, please take all the items at the market place and head to the riverbank.)  [paragraph break] You are in Oxyrhynchos, home of the medjed elephantfish. A little further east is the riverbank of the Nile.  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
+Marketplace of Oxyrhynchos is a room in Oxyrhynchos. "You are in Oxyrhynchos, home of the medjed elephantfish. A busy marketplace stands before you, curdling with people. Vendors crouch behind low mats, their goods spread before them --- fish, fowl, figs, and more. A woman trades herbs with a weary peasant; another offers a bowl of eggs. Nearby, a man squats beside his wares, watching the crowd. On the right, two women barter bread for grain while a trader tips grain into a waiting basket. The hum of haggling fills the dusty square. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
+Understand "examine vendors" or "x vendors" as a mistake ("You scan the vendors, intent on finding anyone who may be selling body parts. You don't find that. What you see instead are an array of foodstuffs and household commodities: meats, fish, fowl, herbs, grain, eggs, bread, and figs; sandals, pottery wares, and linen. [italic type]Enough for the humble peasants here to get by[roman type], you scoffed.").
+
+Understand "examine goods" or "x goods" as a mistake ("You find no body parts for sell. What you see instead are an array of foodstuffs and household commodities: meats, fish, fowl, herbs, grain, eggs, bread, and figs; ointments, sandals, pottery wares, and linen.").
+
+A market-vendor is a kind of person. The printed name of a market-vendor is "[list of things carried by the vendor] vendor". Understand "seller" as a market-vendor. [Understand "man with [something]" as a vendor carrying it.] A market-vendor has a thing called goods.
+
+[A good is a kind of thing. Definition: a thing is a good if a vendor is carrying it. ]
+
+The herb vendor is a market-vendor in the Marketplace of Oxyrhynchos. The herb vendor is female. The herb vendor carries herbs. The description is "She sits behind a small pile of herbs, weighing each offer with a careful eye." Understand "herb/herbs seller/vendor" as the herb vendor.
+
+Instead of talking to the herb vendor, say "'These are fresh,' she insists, holding up a bundle. 'But what have you got to trade?'"
+
+The egg vendor is a female market-vendor in the Marketplace of Oxyrhynchos. The description is "She cradles a shallow bowl of eggs, her gaze darting between possible customers." 
+
+[ Instead of talking to the woman-with-eggs, say "She tilts the bowl toward you. 'They’re from my own hens,' she says. 'Fine shells, strong yolks. What will you give me?'"]
+
+The man-with-wares is a market-vendor in the Marketplace of Oxyrhynchos. The description is "A sharp-eyed trader crouches on a reed mat, his small goods hidden under a cloth." Understand "trader" or "vendor" as the man-with-wares. Instead of talking to the man-with-wares, say "He looks you up and down before replying. 'Depends on what you’ve brought,' he says."
 
 
 [include description of market place and items here.]
 
 [include meeting a couple with a pregnant woman nearing birth time. she is looking for a good luck pendant, but they are too poor to afford it.]
 
-Some bait is an edible thing in Oxyrhynchos-Marketplace.
+Some bait is an edible thing in Marketplace of Oxyrhynchos.
 
 Instead of eating the bait:
 	say "Edible, sure, but you're no fish.".
 
-A fishing rod is in Oxyrhynchos-Marketplace. The fishing rod can be baited or unbaited. It is unbaited. The printed name of the fishing rod is "fishing rod[if fishing rod is baited] with bait". The description is "[if fishing rod is unbaited] A sturdy fishing rod, but it could use some bait.[end if] [if fishing rod is baited] The fishing pole is now baited with some fish food."
+A fishing rod is in Marketplace of Oxyrhynchos. The fishing rod can be baited or unbaited. It is unbaited. The printed name of the fishing rod is "fishing rod[if fishing rod is baited] with bait". The description is "[if fishing rod is unbaited] A sturdy fishing rod, but it could use some bait.[end if] [if fishing rod is baited] The fishing pole is now baited with some fish food."
 
-A knife is a blade in Oxyrhynchos-Marketplace. 
+A knife is a blade in Marketplace of Oxyrhynchos. 
 
 Section 3 - Tawaret conflict
 
-The Nile Riverbank is in Oxyrhynchos. It is east of Oxyrhynchos-Marketplace. "You are at the bank of the Nile. West of you is the marketplace."
+The Nile Riverbank is in Oxyrhynchos. It is east of Marketplace of Oxyrhynchos. "You are at the bank of the Nile. West of you is the marketplace."
 
 The Taweret Amulet is a thing. 
 
@@ -1921,7 +2073,7 @@ Carry out fishing:
 	otherwise:
 		say “And pulled up nothing.”;]
 
-Test fish with "take rod / take knife / take bait / bait rod / e" in Oxyrhynchos-Marketplace.
+Test fish with "take rod / take knife / take bait / bait rod / e" in Marketplace of Oxyrhynchos.
 			
 Chapter 7 - Elephantine-Torso
 
@@ -1942,7 +2094,7 @@ Osiris' right leg is a body part in Heliopolis-Marketplace.
 Osiris' left leg is a body part in Heliopolis-Marketplace.
 
 
-Part 7 - Epilogue
+Part 8 - Epilogue
 
 
 
