@@ -544,7 +544,7 @@ The sarcophagus is a closed, locked container. It is scenery. It is in the Tomb 
 H4a is a hint-object. The hint-content is "To find out what's inside, you better OPEN it first."
 
 Instead of opening the locked sarcophagus:
-	say "The sarcophagus seems stuck, almost as if sealed shut by magic. [if Osiris' head is unacquired][paragraph break][print-hint the H5][line break]".
+	say "The sarcophagus seems stuck, as if sealed shut by magic. [if Osiris' head is unacquired][paragraph break][print-hint the H5][line break]".
 
 H5 is a hint-object. The hint-content is "Perhaps you can use something to UNLOCK it."
 
@@ -566,7 +566,7 @@ Test head with "look / unlock sarcophagus with ankh / take head" in Tomb of Osir
 Talking Osiris Agenda is a scene. Talking Osiris Agenda begins when Head Acquisition ends. Talking Osiris Agenda ends when Heart Acquisition ends. 
 
 After taking Osiris' head for the first time:
-	say "Aha! The head! You triumphantly hold the head of Osiris. How easy! Even someone like J*son could have solved this riddle! You'll be free in no time. You just need the torso, legs, and arms--then you're done! [paragraph break]";
+	say "Aha! The head! You hold the head of Osiris, basking in the glory of your success. How easy! Even someone like J*son could have solved this riddle! You'll be free in no time. You just need the torso, legs, and arms--a smooth journey, with Osiris as your guide! [paragraph break]";
 	wait for any key;
 	say "Although his eyes are open, Osiris remains silent.[paragraph break]";
 	wait for any key;
@@ -576,7 +576,7 @@ After taking Osiris' head for the first time:
 	wait for any key;
 	say "...No reply.[paragraph break]";
 	wait for any key;
-	say "You shake the head, hoping to wake it up. There's still silence. And it's remarkably light for its size. Could it be..that there's no brain inside?[paragraph break]";
+	say "You shake the head, hoping to wake it up. Still silence. And it's remarkably light for its size. Could it be..that there's nothing inside?[paragraph break]";
 	wait for any key;
 	say "...[paragraph break]";
 	wait for any key;
@@ -590,6 +590,9 @@ After taking Osiris' head for the first time:
 	wait for any key;
 	say "Hmm. What could that mean?[paragraph break]";
 	wait for any key;
+	say "In any case, it seems like there's nothing left for you in Abydos.[paragraph break]";
+	wait for any key;
+[until the final body part lol]
 
 Chapter 2 - Amarna-Brain
 
@@ -709,7 +712,7 @@ The Sanctuary is a room in Amarna. It is inside of the Small Aten Temple. "Unlik
 
 The carved altars are scenery in the Sanctuary. "The low altars are made of sandstone, each inscribed with dedications to Aten." The print-name is "altars".
 
-The offerings are things in the Sanctuary. "Arranged delicately atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers. Odd. Wasn't this place abandoned?". The print-name is "offerings".
+The offerings are things in the Sanctuary. "Arranged atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers. Odd. Wasn't this place abandoned?". The print-name is "offerings". Understand "offering" as offerings. 
 
 The Aten shrine is scenery in the Sanctuary. "At the heart of the sanctuary stands a majestic shrine dedicated to Aten. The shrine captures and reflects the abundant sunlight that bathes the room. The central depiction of the Aten radiates golden beams that dance across the walls, filling the space with a divine glow." The print-name is "shrine".
 
@@ -1622,6 +1625,7 @@ Tricolumnar Hall is a room in Busiris. It is north of Lobby. "Three giant pillar
 Upper Hallway is a corridor in Busiris. It is west of Tricolumnar Hall and northwest of Lobby.  "Another corridor. You've having some trouble keeping track of where you are." 
 
 Treasury is a room in Busiris. It is east of Lobby. "Treasury of the Sanctuary, so called."
+
 Great Hall-Busiris is a room in Busiris. It is west of Upper Hallway. The printed name of Great Hall-Busiris is "Great Hall".
 
 Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Upper Hallway. The description is "Looking out at the west pavilion of the palace."
