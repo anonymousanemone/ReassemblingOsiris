@@ -544,7 +544,7 @@ The sarcophagus is a closed, locked container. It is scenery. It is in the Tomb 
 H4a is a hint-object. The hint-content is "To find out what's inside, you better OPEN it first."
 
 Instead of opening the locked sarcophagus:
-	say "The sarcophagus seems stuck, as if sealed shut by magic. [if Osiris' head is unacquired][paragraph break][print-hint the H5][line break]".
+	say "The sarcophagus seems stuck, almost as if sealed shut by magic. [if Osiris' head is unacquired][paragraph break][print-hint the H5][line break]".
 
 H5 is a hint-object. The hint-content is "Perhaps you can use something to UNLOCK it."
 
@@ -566,7 +566,7 @@ Test head with "look / unlock sarcophagus with ankh / take head" in Tomb of Osir
 Talking Osiris Agenda is a scene. Talking Osiris Agenda begins when Head Acquisition ends. Talking Osiris Agenda ends when Heart Acquisition ends. 
 
 After taking Osiris' head for the first time:
-	say "Aha! The head! You hold the head of Osiris, basking in the glory of your success. How easy! Even someone like J*son could have solved this riddle! You'll be free in no time. You just need the torso, legs, and arms--a smooth journey, with Osiris as your guide! [paragraph break]";
+	say "Aha! The head! You triumphantly hold the head of Osiris. How easy! Even someone like J*son could have solved this riddle! You'll be free in no time. You just need the torso, legs, and arms--then you're done! [paragraph break]";
 	wait for any key;
 	say "Although his eyes are open, Osiris remains silent.[paragraph break]";
 	wait for any key;
@@ -576,7 +576,7 @@ After taking Osiris' head for the first time:
 	wait for any key;
 	say "...No reply.[paragraph break]";
 	wait for any key;
-	say "You shake the head, hoping to wake it up. Still silence. And it's remarkably light for its size. Could it be..that there's nothing inside?[paragraph break]";
+	say "You shake the head, hoping to wake it up. There's still silence. And it's remarkably light for its size. Could it be..that there's no brain inside?[paragraph break]";
 	wait for any key;
 	say "...[paragraph break]";
 	wait for any key;
@@ -590,9 +590,6 @@ After taking Osiris' head for the first time:
 	wait for any key;
 	say "Hmm. What could that mean?[paragraph break]";
 	wait for any key;
-	say "In any case, it seems like there's nothing left for you in Abydos.[paragraph break]";
-	wait for any key;
-[until the final body part lol]
 
 Chapter 2 - Amarna-Brain
 
@@ -676,9 +673,18 @@ An oxcart is a rideable vehicle. "An [oxcart] sits here unattended." The descrip
 When Exploration begins:
 	now the oxcart is in Outside the Walled Village.
 
-The Ruined City is a room in Amarna. It is west of Outside the Walled Village. "This glorious city, once the capital of Egypt, is nothing but ruins and foundations. Vegetation is sparse, only a few stubborn weeds grasp at the crumbled one-urban floors. [if the buds of a unique bush is in the location]To the side of a particularly dilapidated building, you see a rather [set-link the buds of a unique bush]. [end if]In the distance, to the north, you see a small standing structure. It sticks out like a sore thumb amongst the desolation."
+The Ruined City is a room in Amarna. It is west of Outside the Walled Village. "This glorious city, once the capital of Egypt, is nothing but ruins and foundations. Vegetation is sparse, only a few stubborn weeds grasp at the crumbled one-urban floors. To the side of a particularly dilapidated building, you see a rather [set-link the unique bush]. In the distance, to the north, you see a small standing structure. It sticks out like a sore thumb amongst the desolation."
 
-Understand "unique looking bush" and "bush" as the buds of a unique bush when the location is the ruined city. 
+The Unique Bush is a supporter. It is in the ruined city. The print-name is "unique looking bush". The description of the unique bush is "The bush is indeed, unique. You see no others in the near vicinity, thus, as far as you're concerned, that must suffice. It was also, unfortunately, in the process of blooming, [if the buds of a unique bush is on top of the unique bush]and you can see [set-link the buds of a unique bush] sneaking out of the leafy mass out like weird green fleas. [else]but your earlier efforts ensured that no flowers would see the light of day. [end if]".
+	
+The buds of a unique bush is undescribed.
+
+Understand "unique looking bush" as the unique bush. 
+Understand "bush" and "unique bush" as the unique bush.
+Understand "buds of the unique bush" and "buds of bush" and "buds of the bush" and "buds of a bush" as the buds of a unique bush.
+
+[Currently a problem with unique bush vs buds of a unique bush disambiguation, probably to do with hierarchy in holding something (vicinity). ]
+
 
 Instead of going to the Ruined City when the player is not on the oxcart:
 	if player is in Outside the Walled Village:
@@ -714,7 +720,7 @@ The Sanctuary is a room in Amarna. It is inside of the Small Aten Temple. "Unlik
 
 The carved altars are scenery in the Sanctuary. "The low altars are made of sandstone, each inscribed with dedications to Aten." The print-name is "altars".
 
-The offerings are things in the Sanctuary. "Arranged atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers. Odd. Wasn't this place abandoned?". The print-name is "offerings". Understand "offering" as offerings. 
+The offerings are things in the Sanctuary. "Arranged delicately atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers. Odd. Wasn't this place abandoned?". The print-name is "offerings".
 
 The Aten shrine is scenery in the Sanctuary. "At the heart of the sanctuary stands a majestic shrine dedicated to Aten. The shrine captures and reflects the abundant sunlight that bathes the room. The central depiction of the Aten radiates golden beams that dance across the walls, filling the space with a divine glow." The print-name is "shrine".
 
@@ -1147,10 +1153,7 @@ Some random items are things on the brewing table. The description is "A collect
 
 The vial of plant mucus is on the brewing table. The description is "A small glass vial with extracted plant mucus inside."
 
-The buds of a Unique Bush are in the Ruined City. The description is "A rare and magical bush said to have healing properties. It bears buds of a mystical nature." The print-name is "unique looking bush". 
-
-Rule for printing the name of the Buds of a Unique Bush when the Buds of a Unique Bush are in the Ruined City:
-	say "Unique Bush".
+The buds of a Unique Bush are on top of the Unique Bush. The description is "A rare and magical bush said to have healing properties. It bears buds of a mystical nature." The print-name is "buds". 
 
 A bud of a snb-plant is in the South Chamber. The description is "The bud of a mysterious plant, tied up with some string." 
 
