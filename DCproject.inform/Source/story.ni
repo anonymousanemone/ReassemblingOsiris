@@ -149,7 +149,35 @@ When play begins:
 
 Part 3 - General Game Declarations
 
-Section 1 - Settings
+Section 1 - Transcript printing
+	
+[ Copied from: https://intfiction.org/t/extracting-vorple-transcript-from-indexeddb/60125/5]
+
+transcript-on is a truth state that varies. transcript-on is false.
+
+Carry out switching the story transcript on:
+	execute JavaScript command "toggleTranscriptButton(true);";
+	now transcript-on is true.
+
+Carry out switching the story transcript off:
+	execute JavaScript command "toggleTranscriptButton(false);";
+	now transcript-on is false.
+
+command-echo is a Vorple style.
+
+After reading a command:
+	if transcript-on is true and Vorple is supported:
+		let cmd be the player's command;
+		say "[command-echo style]>[cmd][line break][end style]";
+	continue the action.
+
+The end transcript rule is listed in the shutdown rules.
+	
+This is the end transcript rule:
+	if transcript-on is true:
+		try switching the story transcript off.
+
+Section 2 - Settings
 
 The left hand Vorple status line is "[the player's surroundings]".
 The right hand Vorple status line is "[map region of the location]".
@@ -188,8 +216,7 @@ After reading a command:
      remove stray punctuation.
 
 	
-
-Section 2 - New Definitions
+Section 3 - New Definitions
 
 To say tab:
 	say "    "; [6 spaces]
@@ -240,7 +267,7 @@ Rule for printing the name of a direction (called way) while listing exits:
 Rule for printing the name of a thing (called obj) when printing the locale description of a room:
 	place a link to the command "examine [printed name of obj]" reading "[printed name of obj]".
 
-Section 3 - Sun Chariot Travel
+Section 4 - Sun Chariot Travel
 
 Figure of chariot is the file "chariot.png".
 
@@ -334,35 +361,6 @@ Heliopolis-Marketplace is a room in Heliopolis. "You have reached a part of the 
 Memphis-Marketplace is a room in Memphis. "You have reached a part of the game that is still under development. Please check back soon! :)  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
 Elephantine-Marketplace is a room in Elephantine. "You have reached a part of the game that is still under development. Please check back soon! :)  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
-	
-	
-Section 4 - Transcript printing
-	
-[ Copied from: https://intfiction.org/t/extracting-vorple-transcript-from-indexeddb/60125/5]
-
-transcript-on is a truth state that varies. transcript-on is false.
-
-Carry out switching the story transcript on:
-	execute JavaScript command "toggleTranscriptButton(true);";
-	now transcript-on is true.
-
-Carry out switching the story transcript off:
-	execute JavaScript command "toggleTranscriptButton(false);";
-	now transcript-on is false.
-
-command-echo is a Vorple style.
-
-After reading a command:
-	if transcript-on is true and Vorple is supported:
-		let cmd be the player's command;
-		say "[command-echo style]>[cmd][line break][end style]";
-	continue the action.
-
-The end transcript rule is listed in the shutdown rules.
-	
-This is the end transcript rule:
-	if transcript-on is true:
-		try switching the story transcript off.
 
 
 Part 4 - Intro with Osiris' Head
@@ -399,7 +397,6 @@ Check talking to head:
 The walls are a backdrop. Understand "wall" as the walls. The walls are in Abydos.
 
 Instead of taking the walls, say "You're not the British Museum. You can't do that."
-
 
 
 Section 2 - Entering the Osireion
@@ -524,7 +521,7 @@ The cells are scenery in the Central Nave. The description is "Of the seventeen 
 [x stairs - leading into the water]
 [x pillars, x ceiling]
 
-The statue of Osiris is in the Central Nave. It is scenery. The description of the statue of Osiris is "A large statue of Osiris ias seated at the top of a staircase. The enthroned Osiris faces towards the sarcophagus chamber, just as Osiris faces inward with his back to the entrance of the Osireion in the Book of Gates. He holds a crook and the ankh sign, signifying that he rules over his domain, the duat, and is the possessor of life. He sure looks put together -- such a shame he's all chopped up now." The print-name is "statue".
+The statue of Osiris is in the Central Nave. It is scenery. The description of the statue of Osiris is "A large statue of Osiris is seated at the top of a staircase. The enthroned Osiris faces towards the sarcophagus chamber, just as Osiris faces inward with his back to the entrance of the Osireion in the Book of Gates. He holds a crook and the ankh sign, signifying that he rules over his domain, the duat, and is the possessor of life. He sure looks put together -- such a shame he's all chopped up now." The print-name is "statue".
 
 The funerary bier is a supporter in the Central Nave. The description of the bier is "A bier used for embalming practices, fashioned to resemble Sekhmet, the grumpy kitty-cat daughter of Ra, the VEnGeFul EYe."
 
@@ -536,7 +533,7 @@ Before going when the location is the Central Nave:
 	otherwise:
 		say "With the moat surrounding the central nave, it's a struggle to go anywhere." instead.
 
-The Tomb of Osiris is a room in Abydos. It is east of the Central Nave. "A long narrow chamber that mirrors the one across from the central nave, with depictions of Nut and Geb on the [painted roof] and [walls] have depictions of Nut and Geb. At the center of the room is a [sarcophagus], its wooden frame lavishly painted in the style of the New Kingdom. [if sarcophagus is locked]You feel that there is something--or someone--important inside..."
+The Tomb of Osiris is a room in Abydos. It is east of the Central Nave. "A long narrow chamber that mirrors the one across from the central nave, with depictions of Nut and Geb on the [painted roof] and [walls] have depictions of Nut and Geb. At the center of the room is a [set-link the sarcophagus], its wooden frame lavishly painted in the style of the New Kingdom. [if sarcophagus is locked]You feel that there is something--or someone--important inside..."
 
 The painted roof is scenery in the Tomb of Osiris. The description of the painted roof is "The depiction of Nut, her star-strewn body stretching across the heavens, is both graceful and imposing. Beneath her, Geb lies in repose, his green-toned skin symbolizing fertility and life. The colors have dulled over time, but the craftsmanship is evident." The print-name is "roof".
 
@@ -1145,7 +1142,9 @@ Some random items are things on the brewing table. The description is "A collect
 
 The vial of plant mucus is on the brewing table. The description is "A small glass vial with extracted plant mucus inside."
 
-The buds of a Unique Bush are in the Ruined City. The description is "A rare and magical bush said to have healing properties. It bears buds of a mystical nature." 
+The buds of a Unique Bush are in the Ruined City. The description is "A rare and magical bush said to have healing properties. It bears buds of a mystical nature." The print-name is "Unique Bush". 
+Rule for printing a locale paragraph of the buds of a unique bush:
+	say "
 
 Rule for printing the name of the Buds of a Unique Bush when the Buds of a Unique Bush are in the Ruined City:
 	say "Unique Bush".
