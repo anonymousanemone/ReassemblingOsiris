@@ -1,21 +1,25 @@
 ! Blurb file created by Inform Inform 10.1.2 (build )
 
+<<<<<<< HEAD
 status "/Volumes/Inform/Inform.app/Contents/Resources/Internal/HTML/CblorbModel.html" "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.inform/Build/StatusCblorb.html"
+=======
+status "/Applications/Inform.app/Contents/Resources/Internal/HTML/CblorbModel.html" "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.inform/Build/StatusCblorb.html"
+>>>>>>> 4aecfad2bac48939336b5b93a9e28c74873c1ece
 
 
 ! Identification
 
-project folder "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.inform"
-release to "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.materials/Release"
+project folder "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.inform"
+release to "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.materials/Release"
 
 ! Blorb instructions
 
 storyfile leafname "That Time I Got Out of Jail by .gblorb"
-storyfile "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.inform/Build/output.ulx" include
-ifiction "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.inform/Metadata.iFiction" include
-cover "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.materials/Cover.png"
-picture 1 "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.materials/Cover.png"
-picture 3 "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.materials/Figures/chariot.png"
+storyfile "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.inform/Build/output.ulx" include
+ifiction "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.inform/Metadata.iFiction" include
+cover "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.materials/Cover.png"
+picture 1 "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.materials/Cover.png"
+picture 3 "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.materials/Figures/chariot.png"
 
 ! Placeholder variables
 
@@ -28,26 +32,40 @@ placeholder [BLURB] = "A work of interactive fiction."
 
 ! Other material to release
 
-auxiliary "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.materials/chariot.png" "bg1" "--"
-auxiliary "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.materials/map.png" "map1" "--"
+auxiliary "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.materials/chariot.png" "bg1" "--"
+auxiliary "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.materials/map.png" "map1" "--"
 
 ! Website instructions
 
 placeholder [ENCODEDSTORYFILE] = "That Time I Got Out of Jail by .gblorb.js"
+<<<<<<< HEAD
 template path "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.materials/Templates"
 template path "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.materials/Templates"
 template path "/Users/ruyatazebay/Library/Inform/Templates"
 template path "/Volumes/Inform/Inform.app/Contents/Resources/Internal/Templates"
+=======
+template path "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.materials/Templates"
+template path "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.materials/Templates"
+template path "/Users/sophial/Library/Inform/Templates"
+template path "/Applications/Inform.app/Contents/Resources/Internal/Templates"
+>>>>>>> 4aecfad2bac48939336b5b93a9e28c74873c1ece
 placeholder [INTERPRETERSCRIPTS] = " "
 interpreter "Vorple" "g"
-base64 "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.inform/Build/output.ulx" to "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.materials/Release/interpreter/That Time I Got Out of Jail by .gblorb.js"
+base64 "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.inform/Build/output.ulx" to "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.materials/Release/interpreter/That Time I Got Out of Jail by .gblorb.js"
 
 ! Website instructions
 
+<<<<<<< HEAD
 template path "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.materials/Templates"
 template path "/Users/ruyatazebay/Desktop/ReassemblingOsiris/ReassemblingOsiris/DCproject.materials/Templates"
 template path "/Users/ruyatazebay/Library/Inform/Templates"
 template path "/Volumes/Inform/Inform.app/Contents/Resources/Internal/Templates"
+=======
+template path "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.materials/Templates"
+template path "/Users/sophial/Documents/githubs/ReassemblingOsiris/DCproject.materials/Templates"
+template path "/Users/sophial/Library/Inform/Templates"
+template path "/Applications/Inform.app/Contents/Resources/Internal/Templates"
+>>>>>>> 4aecfad2bac48939336b5b93a9e28c74873c1ece
 css
 website "Custom"
 status instruction ||&nbsp;<a href="source:story.ni#line19"><img border=0 src=inform:/doc_images/Reveal.png></a>||
