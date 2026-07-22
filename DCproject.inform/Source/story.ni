@@ -192,6 +192,8 @@ To say tab:
 
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "talk to [something]" or “converse with [someone]” or "converse with [something]" as talking to.
 
+Squeezing through is an action applying to one visible thing. Understand "squeeze through [something]" as squeezing through.
+
 Carry out talking to:
 	say "There is no reply."
 	
@@ -541,6 +543,11 @@ H4a is a hint-object. The hint-content is "To find out what's inside, you better
 
 Instead of opening the locked sarcophagus:
 	say "The sarcophagus seems stuck, as if sealed shut by magic. [if Osiris' head is unacquired][paragraph break][print-hint the H5][line break]".
+	
+After reading a command:
+	if the player's command includes "sacrophagus":
+		say "...You feel a mysterious, ancient presence in the room. It's silently judging your spelling. [paragraph break]";
+		replace the matched text with "sarcophagus".
 
 H5 is a hint-object. The hint-content is "Perhaps you can use something to UNLOCK it."
 
@@ -549,7 +556,9 @@ Instead of unlocking the sarcophagus with the faience ankh:
 	now the sarcophagus is open;
 	say "You unlock the sarcophagus. The head of Osiris is inside![paragraph break]";
 	wait for any key;
-	say "...but the rest of him isn't. What a pain. As much as you are a firm believer of the old chop-and-scatter method, you wish Seth hadn't been so diligent.".
+	say "...but the rest of him isn't. What a pain. As much as you are a firm believer of the old chop-and-scatter method, you wish Seth hadn't been so diligent. [paragraph break]";
+	wait for any key;
+	say "Anyhow, now that you've found a body part, you can TAKE it and move on."
 
 Osiris' head is a body part. It is in the sarcophagus. Osiris' head can be taken. Understand "Osiris" as Osiris' head. Include (- has animate -) when defining Osiris' head. Osiris' head can be smart or dumb. Osiris' head is dumb. The description of Osiris' head is "Osiris, in all his glorious, head-only form. He's green."
 		
@@ -562,7 +571,7 @@ Test head with "look / unlock sarcophagus with ankh / take head" in Tomb of Osir
 Talking Osiris Agenda is a scene. Talking Osiris Agenda begins when Head Acquisition ends. Talking Osiris Agenda ends when Heart Acquisition ends. 
 
 After taking Osiris' head for the first time:
-	say "Aha! The head! You hold the head of Osiris, basking in the glory of your success. How easy! Even someone like J*son could have solved this riddle! You'll be free in no time. You just need the torso, legs, and arms--a smooth journey, with Osiris as your guide! [paragraph break]";
+	say "Carefully reaching into the sarcophagus, you take the head of Osiris. You take a moment to gloat. How easy! Even someone like J*son could have solved this riddle. You'll be free in no time. You just need the torso, legs, and arms--a smooth journey, with Osiris as your guide! [paragraph break]";
 	wait for any key;
 	say "Although his eyes are open, Osiris remains silent.[paragraph break]";
 	wait for any key;
@@ -582,7 +591,7 @@ After taking Osiris' head for the first time:
 	wait for any key;
 	say "...Wait a moment![paragraph break]";
 	wait for any key;
-	say "There's a little papyrus scrap tangled in the beard of Osiris. You pull it out and unfold it, reading the following:[paragraph break]	The sun of the shattered city awaits you,[line break]	where you can find the largest brains in the largest skulls.[paragraph break]";
+	say "There's a little papyrus scrap tangled in Osiris' long beard. You pull it out and unfold it, reading the following:[paragraph break]	~The sun of the shattered city awaits you,[line break]	where you can find the largest brains in the largest skulls.~[paragraph break]";
 	wait for any key;
 	say "Hmm. What could that mean?[paragraph break]";
 	wait for any key;
@@ -608,7 +617,7 @@ Outside the Walled Village is a room in Amarna. "You have reached Amarna, althou
 
 [in the future, maybe add security checkpoint moment as Medea walks through gate?]
 
-The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, alive with the clatter of tools and the murmur of voices. The sun shines down aggressively, catching the haze of dust kicked up by passing feet. People move between doorways and shaded courtyards—some carrying baskets of stone chips, others bent over their work."
+The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A cluster of homes and workshops, alive with the clatter of tools and the murmur of voices. The sun shines down aggressively, catching the haze of dust kicked up by passing feet. People move between doorways and shaded courtyards—some carrying baskets of stone chips, others bent over their work."
 
 A body bag is a container. The carrying capacity of the body bag is 14. The description of the body bag is "A heavy cloth sack used for transporting... questionable things. You're not quite sure how everything fits into here. Some strange Egyptian magic?"
 
@@ -619,9 +628,9 @@ Check inserting something into the body bag:
 A workman is a person. The workman carries a body bag. The workman can be curious or uncurious. The workman is uncurious. The description of the workman is "A middle aged man, probably with degenerative joint disease."
 
 Rule for writing a paragraph about the workman when the location is the Workmen's Village:
-	say "Your scan the crowd and see a [workman], staring irritably at the distance.[first time][line break][print-hint H5a][line break][only]".
+	say "You scan the crowd and see a [workman] loitering about.[first time][line break][print-hint H5a][line break][only]".
 
-H5a is a hint-object. The hint-content is "Maybe you could TALK to someone.".
+H5a is a hint-object. The hint-content is "Remember, you can be a smooth TALKer despite your barbed tongue.".
 
 When Brain Acquisition begins:
 	now the workman is in the Workmen's Village.
@@ -635,13 +644,13 @@ Instead of talking to the workman during Discovery:
 	wait for any key;
 	say "You explain that you're looking for information about the village, conveniently omitting why exactly you are interested.  [paragraph break]";
 	wait for any key;
-	say "The workman gestures around. 'This village,' he says, 'it's where the elite tombs nearby are prepared. Hard work, grueling work, but someone's got to do it. Not that they treat us well for it.' He looks a little more closely at you. 'What are you doing here, anyway? And good gods, are you pregnant? Triplets?!'";
+	say "The workman gestures around. 'This village,' he says, 'it's where the elite tombs nearby are prepared. Hard work, grueling work, but someone's got to do it. Not that they pay us well for it.' He looks a little more closely at you, or, well, your stomach. 'What are you doing here, anyway? And good gods, are you pregnant? Triplets?!'";
 	now the workman is curious.
 	
 Instead of talking to the workman during Get Body Bag:
 	say "The workman looks at you expectantly. 'What are you doing here, anyway? And what's up with your stomach?'"
 
-Instead of talking to the workman at least three times during Get Body Bag:
+Instead of talking to the workman at least two times during Get Body Bag:
 	say "He seems to be expecting an answer from you. Maybe try showing him what's hidden under your shirt. [paragraph break] The scary part, not the sexy part. [paragraph break][print-hint the H6]"
 	
 H6 is a hint-object. The hint-content is "Take note of key words hidden in the text. They might just SHOW you what to do...".
@@ -708,7 +717,7 @@ The Sanctuary is a room in Amarna. It is inside of the Small Aten Temple. "Unlik
 
 The carved altars are scenery in the Sanctuary. "The low altars are made of sandstone, each inscribed with dedications to Aten." The print-name is "altars".
 
-The offerings are things in the Sanctuary. "Arranged atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers. Odd. Wasn't this place abandoned?". The print-name is "offerings". Understand "offering" as offerings. 
+The offerings are things in the Sanctuary. The description of offerings is "Arranged atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers. Odd. Wasn't this place abandoned?". The print-name is "offerings". Understand "offering" as offerings. 
 
 The Aten shrine is scenery in the Sanctuary. "At the heart of the sanctuary stands a majestic shrine dedicated to Aten. The shrine captures and reflects the abundant sunlight that bathes the room. The central depiction of the Aten radiates golden beams that dance across the walls, filling the space with a divine glow." The print-name is "shrine".
 
@@ -854,16 +863,16 @@ Instead of entering the sun chariot when the player is on the oxcart:
 Every turn during Next Instructions:
 	if the location is Outside the Walled village:
 		now the workman is in Outside the Walled Village;
-		say "As you arrive, you spot into the same workman you had spoken with earlier.[paragraph break]";
+		say "As you arrive, you spot the same workman you had spoken with earlier.[paragraph break]";
 		wait for any key;
 		say "'Hey, lady!' he says. 'You got those heads of yours now?' He looks a little less wary.[paragraph break]";
 		wait for any key;
 		say "'Close enough,' you say.[paragraph break]";
 		wait for any key;
-		say "'It's nice to see a new face, even if it's a creepy one,'  the workman continued. 'This place has been a ghost town for so long. We used to be as big as Thebes, you know!'[paragraph break]";
+		say "'It's nice to see a new face, even if it's a creepy one,'  the workman continued. 'This place's been a ghost town for so long. We used to be as big as Thebes, you know!'[paragraph break]";
 		say "...Thebes?[paragraph break]";
 		wait for any key;
-		say "The workman notices your confusion. 'You must really be a foreigner! Don't you know of Thebes? All the tomb workers are there nowadays.'[paragraph break]";
+		say "The workman notices your confusion. 'You really are a foreigner! Don't you know about Thebes? All the tomb workers are there nowadays.'[paragraph break]";
 		wait for any key; 
 		say "...Interesting.[paragraph break]";
 		wait for any key; 
@@ -871,12 +880,12 @@ Every turn during Next Instructions:
 		wait for any key; 
 		say "...[paragraph break]";
 		wait for any key; 
-		say "One of your potential escape plans -- not that you had the opportunity to go through with it -- was to flee from Corinth to Thebes. But you never had the chance to execute this plan. Perhaps this is a sign.";
+		say "One of your potential escape plans -- not that you had the opportunity to go through with it, of course -- was to flee from Corinth to Thebes. But you never had the chance to execute this plan... Perhaps this is a sign.";
 		now the workman is uncurious. [next instructions end]
 
 
 Carry out talking to the uncurious workman:
-	say "The workman grunts, uninterested in further conversation." instead.
+	say "The workman grunts, uninterested in further conversation. He's busy loitering." instead.
 	
 	
 test Amarna with "look / n" in The small aten temple holding the head.
@@ -984,26 +993,34 @@ Section 3 - Healing Heracles
 
 [when medea first lands, say "maybe it's time to explore to gather some hints about where Osiris might be]
 
-Heracles is a man. Heracles can be sick or healthy. Heracles is sick. The description of Heracles is "A muscled man wearing lion skin and carrying a club. [if Heracles is sick] He is lying face down on the floor, moaning in agony. Perhaps you should help him? Only because he might be useful, of course. But how?"
+Heracles is a man. Heracles can be sick or healthy. Heracles can be conscious or unconscious. Heracles is sick. Heracles is conscious. Understand "Herakles" as Heracles. The description of Heracles is "A muscled man wearing lion skin and carrying a club. [if Heracles is sick] He is lying face down on the floor, moaning in agony. Perhaps you should help him? Only because he might be useful, of course. But how?"
 
 Instead of talking to sick Heracles for the first time:
-	say "'Is that...Heracles?' you called out.[paragraph break]";
+	say "'Is that...Heracles?' you call out.[paragraph break]";
 	wait for any key;
-	say "The only response you received was an agonized groan.[paragraph break]";
+	say "The only response you receive is an agonized groan.[paragraph break]";
 	wait for any key;
 	say "You get a little closer. He seems... unwell, to say the least.[paragraph break]";
 	wait for any key;
-	say "You reach out and poke him in the shoulder. 'What's wrong with you?'[paragraph break]";
+	say "You nudge him with your foot. 'What's wrong with you?' [paragraph break]";
 	wait for any key;
-	say "Heracles flops onto his back and looks at you with bleary, half-focused eyes. 'Oh, kind stranger, I am in the most unfathomable pain! A foreign monster has made its home in my skull. Please, help me banish this beast!'[paragraph break]";
+	say "Heracles flops onto his back and looks up at you with bleary eyes. 'Oh, kind stranger, I'm plagued with the most unfathomable pain! A foreign monster has made its home in my skull. Please, help me banish this beast!'[paragraph break]";
 	wait for any key;
-	say "...A headache. Should you help him?[paragraph break]";
-	wait for any key;
-	say "...[paragraph break]";
+	say "...A headache, perhaps. Should you help him?[paragraph break]";
 	wait for any key;
 	say "...[paragraph break]";
 	wait for any key;
-	say "You might as well take this community service thing to its fullest."
+	say "...[paragraph break]";
+	wait for any key;
+	say "Heracles lets out a final weak moan before he passes out.[paragraph break]";
+	wait for any key;
+	say "...[paragraph break]";
+	wait for any key;
+	say "You might as well take this community service thing to its fullest.";
+	now Heracles is unconscious. 
+	
+Instead of talking to unconscious Heracles:
+	say "He's passed out from the pain. It seems you'll get no help from him."; 
 
 When brain acquisition ends:
 	now Heracles is in the Temple of Horemheb.
@@ -1118,7 +1135,7 @@ Understand "apply [other things] to [something]" as putting it on. [("Try applyi
 Heracles can be medicated or unmedicated. Heracles is unmedicated. 
 
 Instead of putting the prepared medicine on Heracles:
-	say "You gently place the prepared bundle on the throat of the afflicted Heracles. You should recite the spell now.";
+	say "You gently place the prepared bundle on the throat of the afflicted Heracles. You should say the spell now.";
 	now Heracles is medicated.
 	
 Understand "heal [Heracles]" or "help [Heracles]" or "cure [Heracles]" as a mistake ("[if the player is carrying the prepared medicine]You gotta apply the medicine and get down and dirty with the nitty gritty steps! [otherwise if the papyri is examined]Try following the steps in the spell. A sick Heracles can't be healed in one step, after all.[otherwise]You don't even know where to start! Now that you can't use your magic, you have to start reading up on the mortal way of things.").
@@ -1133,7 +1150,7 @@ Carry out chanting:
 	say "You mumbled elusively."
 
 Instead of chanting in the presence of sick Heracles:	
-	say "You speak the spell.[paragraph break]";
+	say "You recite the spell.[paragraph break]";
 	wait for any key;
 	say "You wait for something to happen.[paragraph break]";
 	wait for any key;
@@ -1160,7 +1177,8 @@ Instead of chanting in the presence of sick Heracles:
 	say "His sad expression is replaced by determination. 'Well! I'll follow you around--to keep an eye on you, of course!' [paragraph break]";
 	wait for any key; 
 	say "Under his breath, he whispers, 'I'm also totally lost...' [paragraph break]";
-	now Heracles is healthy.
+	now Heracles is healthy;
+	now Heracles is conscious.
 
 Section 4 - After the heart
 
@@ -1171,6 +1189,11 @@ Chapter 4 - Busiris-Organs
 
 Organ Acquisition is a scene. Organ Acquisition begins when Heal Heracles ends. Organ Acquisition ends when Osiris' liver is acquired and Osiris' lungs is acquired and Osiris' stomach is acquired and Osiris' intestines is acquired.
 
+Heracles just healed is a truth state that varies.
+
+When Organ Acquisition begins:
+	now Heracles just healed is true.
+	
 Instead of entering the chariot during Organ Acquisition:
 	say "You really didn't want Heracles' filthy paws anywhere near your beautiful chariot.".
 
@@ -1196,10 +1219,13 @@ yappery
 "Heracles scratches his head. 'My head’s still a little ouchie. Could you—like, I dunno—magic it away?'[paragraph break]"
 "'Thanks again for your help,' Heracles says. 'Athough I totally had it handled.[paragraph break]"
 "'Have you ever tried cleaning out stables for a living?' Heracles complains. 'Makes any quest seem easy.'[paragraph break]"
-"'I just have to ask,' Heracles loudly says. 'What made you do it?' [paragraph break]You give no reply..[paragraph break]"
-"Heracles groans, clutching his temples. 'All this talk of gods and brothers and chopping...Egypt is so strange! I'd rather wrestle another lion!!'[paragraph break]His loud voice draws a few curious eyes....[paragraph break]" 
+"'I just have to ask,' Heracles says. 'What made you do it?' [paragraph break]You give no reply...[paragraph break]"
+"Heracles groans, clutching his temples. 'All this talk of gods and brothers and chopping...Egypt is so strange! I'd rather wrestle another lion!!'[paragraph break]His loud voice draws a few curious eyes...[paragraph break]" 
 
 Every turn during Organ Acquisition:
+	if Heracles just healed is true:
+		now Heracles just healed is false;
+		rule succeeds;
 	if the Table of Countdown is empty:
 		do nothing;
 	if the Table of Countdown is not empty:
@@ -1225,27 +1251,30 @@ When the Kidnapping begins:
 	wait for any key;
 	say "He's interrupted by the menacing laughter of a man standing outside of your cell. His ornate robes are stained at the hem with dried blood. [paragraph break]";
 	wait for any key;
-	say "'That weak woman? Are you mad, man?' he says. 'No! It was I, Busiris!' [paragraph break]";	wait for any key;
-	say "You and Heracles stare at him in confusion. You have no idea who that is. [paragraph break]";
+	say "'That weak woman? Are you mad?' he says. 'No! It was I, Busiris!' [paragraph break]";	wait for any key;
+	say "You have no idea who he is. [paragraph break]";
 	wait for any key;
-	say "The mysterious man--Busiris, you guess--glares at you. 'Seriously?' he asks. 'You don't know who I am?! I'm in at least three different ancient books!!'[paragraph break]";
+	say "The mysterious man--Busiris, you guess--glares at you. 'Seriously?' he asks. 'You don't know who I am?! Shame on you for not reading your Isocrates!'[paragraph break]";
 	wait for any key;
-	say "'Sorry, dude,' Heracles replies. 'We have no clue who you are.' [paragraph break]";
+	say "'Sorry, bro,' Heracles replies. 'We have no clue who you are.' [paragraph break]";
 	wait for any key;
-	say "'Don't you call me 'dude,'' Busiris says. 'That would make me want to kill you...if I weren't already going to kill you!!'[paragraph break]";
+	say "'I'm not your bro,' Busiris says. 'But I suppose it hardly matters who I am. What matters is what you'll soon be: sacrificed to the gods. '[paragraph break]";
 	wait for any key;
-	say "What??? [paragraph break]";
+	say "What?! [paragraph break]";
 	wait for any key;
-	say "'Yes!' Burisis continues, pleased by your wariness. 'Shedding foreign blood is an important part of my city's social culture! And you have only that loudmouth to thank for your capture! Normally we have a 35% success rate in successfully capturing a foreigner--but thanks to that blabbermouth, we're certain you're Greek!' [paragraph break]";
+	say "'Yes!' Burisis continues, pleased by your wariness. 'The ritual shedding of foreign blood is the main tourist attraction here. And you have only that loudmouth over there to thank for your capture. Normally we have a 35% success rate in capturing a foreigner--but thanks to him, we're certain you're Greek!' [paragraph break]";
 	wait for any key;
 	say "You turn to Heracles, giving him a nasty look. He looks at you sheepishly. 'Sorry...' [paragraph break]";
 	wait for any key;
-	say "'I'll let you two work that out,' Busiris says smugly. 'But don't take too long in making amends! It's never good to die angry!' [paragraph break]";
+	say "'I'll let you two work that out,' Busiris says smugly. 'But don't take too long in making your amends! It's never good to die angry!' [paragraph break]";
 	wait for any key;
-	say "With that, he leaves you two alone. But before you can give Heracles a piece of your mind, he says something. [paragraph break]";
+	say "With that, he leaves you two alone. You turn to Heracles, ready to give him a piece of your mind, only to find him eyeing the bars of your jail cell. [paragraph break]";
 	wait for any key;
 	say "'Umm..Medea...the gaps of the bars are pretty wide! I think we can slip through them!' [paragraph break]";
 	wait for any key;
+	say " You watch Heracles try to squeeze through the bars. It is a resounding failure. He tries again. It's an even more resounding failure. [paragraph break]";
+	wait for any key;
+	say "'Well,' Heracles says. 'Any other ideas?' [paragraph break]";
 	now the player is in the Jail Cell;
 	now Heracles is in the Jail Cell.
 
@@ -1366,6 +1395,8 @@ Upper Hallway
 
 Section 2 - Busiris Palace
 
+[put in a 'it really tied the room together' from heracles somewhere]
+
 Central Court is a room in Busiris. "Center of public life in Busiris."
 
 The worker is a person. The worker is in the Central Court. The description of the worker is "A temple grunt."
@@ -1456,29 +1487,37 @@ North Corridor is a corridor in Busiris. It is east of Pillar Hall. "A narrow ha
 
 Corridor of the Draught Board is a corridor in Busiris. It is south of North Corridor. "A long and winding corridor."
 
-The cell door is a locked closed door. The cell door is east of the Jail Cell and west of the Corridor of the Draught Board. The cell door can be broken_a or unbroken_a. The cell door is unbroken_a.
+The cell bars is a locked closed door. The cell bars is east of the Jail Cell and west of the Corridor of the Draught Board. The cell bars can be broken_a or unbroken_a. The cell bars is unbroken_a. The description of the cell bars are "Your standard set of vertical prison bars. You can fit a hand through and little else. But it seems to be your only way out. Could they be pried open somehow?"
 
-The Jail Cell is a room in Busiris. It is west of the cell door.  "Dark and claustrophobic. You can see desperate scratches of former prisoners.[if cell door is broken_a] The guards evidently did not see the gaping hole between the cell bars. Or they just didn't care."
+The Jail Cell is a room in Busiris. It is west of the cell bars.  "Dark and claustrophobic. You can see desperate scratches of former prisoners.[if cell bars is broken_a] The guards evidently did not see the gaping hole between the cell bars. Or they just didn't care."
 
-Instead of talking to Heracles in the Jail Cell when the cell door is unbroken_a:
-	say "'Hey Heracles', you poked at him. 'Go open the door.[paragraph break]";
+
+[after making an action for pry open
+Instead of prying open the cell bars:
+	say "You try to pry open the bars, but they don't budge. You just don't have the strength for this."]
+
+Instead of squeezing through the cell bars:
+	say "You have more dignity than that."
+	
+Instead of talking to Heracles in the Jail Cell when the cell bars is unbroken_a:
+	say "'Hey Heracles', you say. 'Try the bars again.' [paragraph break]";
 	wait for any key;
-	say "'But it's locked!' he whined indignantly.[paragraph break]";
+	say "'But the gaps are too small!' he whines.[paragraph break]";
 	wait for any key;
-	say "'I know that.' [italic type]You feel a building sense of regret for saving him. [roman type]'Just pry open the bars, you buffoon.'[paragraph break]";
+	say "'I know that.' You feel a building sense of regret for saving him. 'Just pry open the bars, you buffoon.'[paragraph break]";
 	wait for any key;
-	say "'Heracles brightens. 'Oh yeah! ...I'm not a baboon![paragraph break]";
+	say "'Heracles brightens. 'Oh yeah!' He dims.  '...I'm not a baboon!' [paragraph break]";
 	wait for any key;
-	say "'Didn't say you were. Now go.' [italic type]A baboon. He sure flatters himself.[roman type][paragraph break]";
+	say "'Didn't say you were. Now go.' A baboon. He sure flatters himself. [paragraph break]";
 	 wait for any key;
-	now the cell door is broken_a;
-	say "Heracles gets up from his dejected huddle on the floor and pries open the bars of the cell. Now you are free to meander!"
+	now the cell bars is broken_a;
+	say "Heracles gets up from his dejected huddle on the floor and easily pries open the bars of the cell. Now you are free to meander!"
 	
-Instead of going through the locked broken_a cell door:
-	now Heracles is in the other side of the cell door;
-	now the player is in the other side of the cell door.
+Instead of going through the locked broken_a cell bars:
+	now Heracles is in the other side of the cell bars;
+	now the player is in the other side of the cell bars.
 	
-Rule for writing a paragraph about the cell door:
+Rule for writing a paragraph about the cell bars:
 	stop the action.
 
 Workshops is a room in Busiris. It is east of the Corridor of the Draught Board. "You see workbenches and tools scattered about."
