@@ -2230,3 +2230,21 @@ The subject is "Miscellaneous".
 The content is "Who is knowing like Re? Who knows the like of this god? You who turn the belly black with black coals so as to get even a hold on the upper god! When, just as Seth conjured the Great Green Sea, Seth conjures you in the same manner, oh Asiatic disease, then you will not stride about in the body of NN born of NN.
 
 This spell is to be said four times over fresh moringa-oil and residue of a cooking-vessel. Conjure her with that and close her up with seals of tortoise-shell.".
+
+MISC_007 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "Ritual for the Reassembling of Osiris".
+The subject is "Miscellaneous".
+The content is "Look to the east and say: 'You are the one who thunders, the one who rains
+and hurls lightning at the right time and dries in the same way; come to me,
+reveal' (add the usual or write whatever you want, and anoint your hand).
+
+Preparation of the ink: 3 dried figs, 3 stones of the Nicolaus date, 3 fragments of
+1000 wormwood, and 3 lumps of myrrh; mix together, then after pulverizing them,
+write the following formula. Isis uttered it and wrote it when, after taking up
+Osiris, she fit together his separated members. Asklepios saw Osiris and admitted that he could not put together someone who was dead even with the help
+of Hebe or of anyone else.
+
+This is the formula: 'Come to me, SESEGGENBARPHARAGGES SABAOTH, for
+I conjure you, daimon of the dead, by bitter Necessity; open your ears and
+hear the holy words-----' [bracket]the papyrus was torn here[close bracket]".
