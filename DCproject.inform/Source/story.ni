@@ -6,6 +6,7 @@ Include Punctuation Removal by Emily Short.
 Include Rideable Vehicles by Graham Nelson.
 Include Secret Doors by Gavin Lambert.
 Include Exit Lister by Gavin Lambert.
+Include Papyrus Library by Sophia Ling.
 
 Include Vorple by Juhana Leinonen.
 Include Vorple Command Prompt Control by Juhana Leinonen.
@@ -156,11 +157,11 @@ Section 1 - Transcript printing
 transcript-on is a truth state that varies. transcript-on is false.
 
 Carry out switching the story transcript on:
-	execute JavaScript command "toggleTranscriptButton(true);";
+	execute JavaScript command "toggleTranscriptButton(false);";
 	now transcript-on is true.
 
 Carry out switching the story transcript off:
-	execute JavaScript command "toggleTranscriptButton(false);";
+	execute JavaScript command "toggleTranscriptButton(true);";
 	now transcript-on is false.
 
 command-echo is a Vorple style.
@@ -223,11 +224,11 @@ To say tab:
 
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "talk to [something]" or “converse with [someone]” or "converse with [something]" as talking to.
 
-Squeezing through is an action applying to one visible thing. Understand "squeeze through [something]" as squeezing through.
-
 Carry out talking to:
 	say "There is no reply."
 	
+Squeezing through is an action applying to one visible thing. Understand "squeeze through [something]" as squeezing through.
+
 A Body Part is a kind of thing.
 
 Instead of taking a body part:
@@ -925,7 +926,7 @@ Test heal with "purloin prepared medicine / I have indeed applied something to a
 
 Section 1 - All the Locations
 
-The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III. Sturdy columns flank a central courtyard where priests once performed daily rites. There seems to be a lot of honoring going on around here."
+The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III—no surprise there, given that the man commissioned over fifty temples across Egypt in his lifetime and still somehow felt underappreciated. Known in antiquity as Henket-Ankh, 'Offering-Life,' it was raised in the last decade of his fifty-four-year reign to keep Amun-Re, and his own ka, well fed. Sturdy columns flank a central courtyard where priests once performed daily rites. There seems to be a lot of honoring going on around here."
 
 Instead of going North in the Temple of Thutmoses III:
 	say "A few mortuary temples can be seen off in the distance, but something tells you it won't be very productive.".
@@ -1013,120 +1014,21 @@ Section 2 - The library
 
 The House of Life is west of the Ramesseum. It is in Thebes. "The entrance is unassuming—just a low archway tucked beside the temple’s western wall—but when you step inside, you realize you've stumbled upon a vast library.  Soft lamplight flickers across rows of tall shelves, each lined with carefully rolled [set-link the medical papyri] detailing magical and medical rituals."
 
-[Medical papyri is scenery in the House of LIfe. The description of the medical papyri is "A headache spell. It reads: [paragraph break] -YET ANOTHER- CONJURATION FOR THE HEAD [line break]
-Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.[paragraph break] Once you have these items, you can PREPARE them to make the medicine. You can always check your inventory to see what you have.". The print-name is "papyri".]
+Medical papyri is a papyri-collection in the House of Life. The papyri are plural-named. The print-name is "medical papyri".
+Understand "library" or "shelves" or "shelf" or "scrolls" or "scroll" or "papyrus" or "papyri" as medical papyri.
 
-[after examining papyri, player can type "think" to remember what she needs]
-Instead of thinking during Heal Heracles:
-	if the papyri is examined:
-		say "-YET ANOTHER- CONJURATION FOR THE HEAD [line break] Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.[paragraph break] Once you have these items, you can PREPARE them to make the medicine. You can always check your inventory to see what you have.".
+The subject-list of Medical papyri is
+    {"Headaches", "Excretory", "Demons", "Miscellaneous"}.
+
+The description of Medical papyri is
+    "You approach the medical papyri. [paragraph break]Subjects include:[line break][subject listing of Medical papyri][line break]Try [italic type]READ PAPYRI[roman type] to browse the catalogue."
 		
-
-Medical papyri is scenery in the House of Life. The papyri are plural-named. Understand "shelves" or "papyrus" or "shelf" or "scroll" or "scrolls" as the papyri. The description is "You approach the shelves labelled for medical papyri. It's organized by body part: treatments for the head, back, ass, foot."
-
-Instead of smelling the papyri: say "The shelves smell of ancient ink and the tears of scribes."
-Instead of tasting the papyri: say "Licking papyrus would be undignified."
-Instead of touching the papyri: say "The papyrus feels rough beneath your fingertips."
-Instead of taking the papyri: say "You are not allowed to take scrolls out."
-
-The remembered scroll is a text that varies. The remembered scroll is "".
-
-Table of Papyri
-Subject(text)	Title	Content
-"head"	"Another Conjuration for the Head"	" Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat."
-"head"	"Treatise on Fevers"	"A papyrus prescribing willow bark infusions for fevers."
-"head"	"Secrets of the Heart"	"Notes on the heart being the seat of thought and emotion."
-"astronomy"	"Chart of the Heavens"	"A detailed star map of Orion and Sirius."
-"astronomy"	"Cycles of the Moon"	"A scroll describing the lunar phases and their omens."
-"astronomy"	"Journey of Ra"	"A mythic text charting Ra's path across the sky."
-"ritual"	"Offerings to Osiris"	"Instructions for preparing ritual offerings to Osiris."
-"ritual"	"Hymn to Thoth"	"A chant in praise of Thoth, lord of wisdom."
-"ritual"	"Opening the Mouth"	"A ritual text for animating statues and the deceased."
-
-
-[Examining and Looking Up]
-Understand "look up [text]" as examining as a book when the player is in the House of Life.
-
-Examining as a book is an action applying to one topic.
-
-[Carry out examining as a book:
-    say "You can't find any such text."]
-
-[Carry out examining as a book:
-	if the noun is a library:
-		say "The papyri here contain the following subjects:";
-		repeat with S running through the table of subjects of the noun:
-			say " - [S][line break]";
-	otherwise if the noun is a subject:
-		let N be the number of rows in the perma-content of the noun;
-		say "There are [N] scrolls on the subject of [the noun]. Try 'read [the noun]'."]
-		
-	[let T be the topic understood;
-	if the topic understood is a topic listed in the Table of Papyri,
-[	let N be the number of rows in the Table of Papyri with the topic understood;]
- 	repeat with i running from 1 to the number of rows in the Table of Recent Monarchs:
-       		choose row N in the Table of Recent Monarchs;
-        	say "[accession entry]: [name entry] ([family entry])."
-	[if N is 0:
-		say "You find no papyri on '[T]'.";]
-	otherwise:
-		say "There are [N] scrolls on the topic of '[T]'. Try 'read papyri for [T]'."]
-
-
-
-[Reading]
-[
-Reading is an action applying to one topic.  
-Understand "read papyri for [text]" as reading.
-
-A topic-list is a list of numbers that varies.
-
-Carry out reading:
-	let T be the topic understood;
-	let N be the number of rows in the Table of Papyri with topic of T;
-	if N is 0:
-		say "There are no papyri here on '[T]'.";
-		stop;
-	[Initialize/reset cycle if needed]
-	if topic-list is {}:
-		repeat with R running from 1 to N:
-			add R to topic-list;
-	choose a random entry from topic-list;
-	let choice be the chosen number;
-	remove choice from topic-list;
-	choose row choice in the Table of Papyri with topic of T;
-	say "You take out a scroll and peruse its contents: [content entry][line break]";
-	say "(You may 'remember [title entry]' if you wish.)";
-	now the remembered scroll is the title entry.]
-[
-If topic-list is not {}:
-	if the location is not the House of Life:
-		now topic-list is {}.]
-
-[Remembering]
-
-[Remembering is an action applying to one topic.  
-Understand "remember [text]" as remembering.
-
-Carry out remembering:
-	let T be the topic understood;
-	choose row with a title of T in the Table of Papyri;
-	if there is a title of T in the Table of Papyri:
-		now the remembered scroll is the title entry;
-		say "You fix '[title entry]' firmly in your memory.";
-	otherwise:
-		say "You cannot remember such a papyrus; it is not in the library."
-
-Thinking is an action applying to nothing.  
-Understand "think" as thinking.
-
-Carry out thinking:
-	if the remembered scroll is "":
-		say "Nothing comes to mind.";
-	otherwise:
-		choose row with a title of the remembered scroll in the Table of Papyri;
-		say "You recall the scroll '[title entry]': [content entry]"]
-
+[HEAD_003 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "ANOTHER CONJURATION FOR THE HEAD".
+The subject is "Headaches".
+The content is "Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break]Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.".
+]
 
 Section 3 - Healing Heracles
 
@@ -2142,4 +2044,189 @@ Part 8 - Epilogue
 
 
 
+Part 9 - Papyri Content
 
+
+HEAD_001 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "REMEDY TO DRIVE OUT THE PAIN IN THE HEAD".
+The subject is "Headaches".
+The content is "
+Inner-of-Onions                   I[line break]
+Fruit-of-the-am-tree              I[line break]
+Natron                            I[line break]
+setseft-seeds                     I[line break]
+Bone-of-the-Sword-fish,cooked     I[line break]
+Redfish,cooked                    I[line break]
+Skul-of-the-Crayfish,cooked       I[line break]
+Honey                             I[line break]
+abra-ointment                     I
+
+Smear the Head therewith for four days."
+
+HEAD_002 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "ANOTHER REMEDY WHICH THE GODDESS ISIS PREPARED FORT HE GOD RA TO DRIVE OUT THE PAINS THAT ARE IN HIS HEAD".
+The subject is "Headaches".
+The content is "
+Berry-of-the-Coriander             I[line break]
+Berry-of-the-Poppy-plant           I[line break]
+Wormwood                           I[line break]
+Berry-of-the-sames-plant           I[line break]
+Berry-of-the-Juniper-plant         I[line break]
+Honey                              I
+
+Make into one, mix with Honey, and smear therewith in order to make him well forthwith. When this remedy is used by him against all illnesses in the head and all sufferings and evils of any sort, he will instantly become well."
+
+HEAD_003 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "ANOTHER CONJURATION FOR THE HEAD".
+The subject is "Headaches".
+The content is "Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! 
+
+[italic type]'I have indeed applied something to all his sore spots.'[roman type]
+
+Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.".
+
+
+EXCR_001 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "REMEDY TO STOP THE DIARRHEA".
+The subject is "Excretory".
+The content is "
+Green Onions               I[line break]
+Freshly-cooked-Gruel       I[line break]
+Oil and Honey              I[line break]
+Wax                        I[line break]
+Water                      I
+
+Cook and take for four days."
+
+
+EXCR_002 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "REMEDY TO FORCE OUT THE URINE".
+The subject is "Excretory".
+The content is "
+Crocus-from-the-Hills          1/4[line break]
+Crocus-from-the-Delta          1/8[line break]
+abu-plant-from-Upper-Egypt     1/16[line break]
+abu-plant-from-Lower-Egypt     1/16[line break]
+Berry-of-the-uan-tree          1/16[line break]
+Fresh Gruel                    1/8[line break]
+Linseed                        1/16[line break]
+uam-seeds                      1/16[line break]
+duat-plant                     1/16[line break]
+Water                          1/16
+
+Keep moist, strain, and take for four days."
+
+EXCR_003 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "REMEDY TO REGULATE EVACUATION".
+The subject is "Excretory".
+The content is "
+Honey                           I[line break]
+sasa-seeds                      I[line break]
+Wormwood                        I[line break]
+Elderberry                      I[line break]
+Berries-of-the-uan-tree         I[line break]
+Kernel-of-the-ut'ait-fruit      I[line break]
+Caraway                         I[line break]
+aaam-seeds                      I[line break]
+Xam-seeds                       I[line break]
+Sea-salt                        I
+
+Form into a Suppository and put into the Rectum."
+
+EXCR_004 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "ANOTHER REMEDY TO DRIVE OUT THE DISEASED EXCREMENT IN THE BODY OF A PERSON".
+The subject is "Excretory".
+The content is "
+White-cake            I[line break]
+Red tit-corn          I[line break]
+Milk-of-a-Woman
+
+Mix into one and let the Person drink."
+
+DEMON_001 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "AGAINST THE SEMEN OF A DEMON".
+The subject is "Demons".
+The content is "This here is the ejaculation of Him-who-is-in-his-grimness which Mafdet received in that room wherein Isis rejoiced and wherein the testicles of Seth were cut off. Do not flee away! May the ejaculation of Horus and of Him-who-is-in-his-grimness go forth against a male dead, a female dead, and so on--the name of the enemy, the name of his father, the name of his mother. Oh Mafdet! [italic type]Open your mouth wide against that enemy, the male dead, the female dead and so on--do not let me see him![roman type]
+
+Words to be said over the phallus of an ass, hard-baked in the form of a depet-cake, provided with the name of the enemy, the name of his father and the name of his mother. To be placed within fat of meat and to be given to a cat."
+
+DEMON_002 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "WARDING OFF THE ATTACK OF A DEAD ONE".
+The subject is "Demons".
+The content is "[italic type]The Inundation has approached to set foot on the land of Tait--throw out what is in you![roman type]
+
+Words to be said after you have tied two knots in a strip of the border of a mummy bandage, put at the opening of the inside of her vagina, to ward off what acts against it."
+
+DEMON_003 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "CONJURATION OF THE akhu-DEMON".
+The subject is "Demons".
+The content is "Oh Horus, oh Re, oh Shu, oh Geb, oh Osiris, oh Helm,
+oh Nun! Praise to you, great gods who bring the Upper One to the Underworld, who make him travel to this ceiling, who meet Re' at his departure from the horizon, who travel in the night bark, who sail in the day bark: come to me, ascend to me, unite yourselves for me after that you have brought up for me anything bad, any bad revolting matter, any bad sickness that is in this body of mine, in these limbs of mine, you being the protection of Horus that guards Seth- and vice versa. It is to make an end of the sickness that is cleaving to you, oh gods there that I have fetched a herb that came into existence by itself. [italic type]Make an end of any bad sickness that is cleaving to me![roman type]
+
+Words to be said over an instrument of tamarisk-wood. To conjure the akhu with it."
+
+MISC_001 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "ANOTHER FOR THE GROWTH OF THE HAIR ON A HEAD WHICH IS BECOMING BALD".
+The subject is "Miscellaneous".
+The content is "
+Fat-of-the-Lion[line break]
+Fat-of-the-Hippopotamus[line break]
+Fat-of-the-Crocodile[line break]
+Fat-of-the-Cat[line break]
+Fat-of-the-Serpent[line break]
+Fat-of-the-Egyptian-Goat
+
+Make into one and rub the head of the Bald One therewith."
+
+MISC_002 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "REMEDY TO DRIVE AWAY SWEATY FEET IN A PERSON".
+The subject is "Miscellaneous".
+The content is "
+uadu-plant-of-the-Fields [line break]
+Eel-from-the-Canal
+
+Warm in Oil and smear both feet there with."
+
+MISC_003 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "A SPELL FOR THE DRINKING OF BEER".
+The subject is "Miscellaneous".
+The content is "Hail to you, lady of Heliopolis! When he has set his heart on it, there is no restraining Seth. Let him carry out his heart's desire to bear away a heart-- in that name 'beer' of his, to confuse a heart, to bear away the heart of an enemy, a fiend, a male dead, a female dead, and so on.
+
+This spell is to be said during the drinking of beer; should be spat up. A true means, proved an infinite number of times."
+
+MISC_004 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "TO REMOVE THE AAA-DISEASE".
+The subject is "Miscellaneous".
+The content is "Jochauflegung of the sau-wood
+
+Warm in Oil and give against it."
+
+MISC_005 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "ANOTHER CONJURATION FOR A BURN".
+The subject is "Miscellaneous".
+The content is "'Your son Horus has been burnt in the desert!' 'Is there water there?' 'There is no water there!' 'Water is in my mouth, an Inundation is between my thighs. It is to extinguish the fire that I have arrived. Break out, burn!'
+
+Words to be said over the milk of a woman who has given birth to a male child, gum and hairs of a cat. To be applied to the burn.".
+
+MISC_006 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "A CONJURATION OF THE ASIATIC DISEASE".
+The subject is "Miscellaneous".
+The content is "Who is knowing like Re? Who knows the like of this god? You who turn the belly black with black coals so as to get even a hold on the upper god! When, just as Seth conjured the Great Green Sea, Seth conjures you in the same manner, oh Asiatic disease, then you will not stride about in the body of NN born of NN.
+
+This spell is to be said four times over fresh moringa-oil and residue of a cooking-vessel. Conjure her with that and close her up with seals of tortoise-shell.".
