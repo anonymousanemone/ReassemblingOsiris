@@ -224,6 +224,10 @@ To say tab:
 
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "talk to [something]" or “converse with [someone]” or "converse with [something]" as talking to.
 
+Squeezing through is an action applying to one visible thing. Understand "squeeze through [something]" as squeezing through.
+
+Prying open is an action applying to one visible thing. Understand "pry open [something]" as prying open. 
+
 Carry out talking to:
 	say "There is no reply."
 	
@@ -886,7 +890,7 @@ Every turn during Next Instructions:
 		wait for any key;
 		say "'Close enough,' you say.[paragraph break]";
 		wait for any key;
-		say "'It's nice to see a new face, even if it's a creepy one,'  the workman continued. 'This place's been a ghost town for so long. We used to be as big as Thebes, you know!'[paragraph break]";
+		say "'It's nice to see a new face, even if it's a creepy one,'  the workman continues. 'This place's been a ghost town for so long. We used to be as big as Thebes, you know!'[paragraph break]";
 		say "...Thebes?[paragraph break]";
 		wait for any key;
 		say "The workman notices your confusion. 'You really are a foreigner! Don't you know about Thebes? All the tomb workers are there nowadays.'[paragraph break]";
@@ -980,7 +984,7 @@ Carry out defacing:
 Instead of defacing something in the Memnon Colossi:
 	say "You cheerily carve a vagina onto [the noun]. Better not leave a name in case it bites you back later."
 
-The southern statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi. The print-name is "north". The description is "This statue stands mutely (as statues are supposed to do, in your opinion."
+The southern statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi. The print-name is "north". The description is "This statue stands mutely (as statues ought to do, in your opinion)."
 
 The northern statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi. The print-name is "south". The description of the northern statue is "Some people say that if one listens closely, they may be able to hear singing... You thought it sounded like an improperly closed window."
 
@@ -1034,18 +1038,38 @@ Section 3 - Healing Heracles
 
 [when medea first lands, say "maybe it's time to explore to gather some hints about where Osiris might be]
 
-Heracles is a man. Heracles can be sick or healthy. Heracles can be conscious or unconscious. Heracles is sick. Heracles is conscious. Understand "Herakles" as Heracles. The description of Heracles is "A muscled man wearing lion skin and carrying a club. [if Heracles is sick] He is lying face down on the floor, moaning in agony. Perhaps you should help him? Only because he might be useful, of course. But how?"
+Heracles is a man. Heracles can be sick or healthy. Heracles can be conscious or unconscious. Heracles can be identified or unidentified. Heracles is sick. Heracles is conscious. Heracles is unidentified. 
+
+The printed name of Heracles is "[if Heracles is unidentified]a strange man[otherwise]Heracles[end if]".
+
+Understand "man"and "strange man" as Heracles when Heracles is unidentified.
+Understand "Heracles" or "Herakles" or "man" or "strange man" as Heracles
+    when Heal Heracles is happening and Heracles is identified.
+Understand "Heracles" or "Herakles" as Heracles
+    when Heal Heracles is not happening.
+
+The description of Heracles is
+    "[if Heracles is sick and Heracles is unconscious]
+    Heracles. He's out cold.
+    [otherwise if Heracles is sick and Heracles is conscious]
+    A muscular man is lying face down on the floor, moaning in agony and clutching his club for comfort. Perhaps you should help him? Only because he might be useful, of course. 
+    [otherwise]
+    A muscular man wearing a lion skin and carrying a club.
+    [end if]";
 
 Instead of talking to sick Heracles for the first time:
+	say "...He looks oddly familiar. But why would [italic type]he[roman type] be[italic type] here[roman type]? [paragraph break]";
+	wait for any key; 
 	say "'Is that...Heracles?' you call out.[paragraph break]";
+	now Heracles is identified; 
 	wait for any key;
-	say "The only response you receive is an agonized groan.[paragraph break]";
+	say "You receive an agonized groan of affirmation.[paragraph break]";
 	wait for any key;
 	say "You get a little closer. He seems... unwell, to say the least.[paragraph break]";
 	wait for any key;
 	say "You nudge him with your foot. 'What's wrong with you?' [paragraph break]";
 	wait for any key;
-	say "Heracles flops onto his back and looks up at you with bleary eyes. 'Oh, kind stranger, I'm plagued with the most unfathomable pain! A foreign monster has made its home in my skull. Please, help me banish this beast!'[paragraph break]";
+	say "Heracles rolls over onto his back and looks up at you with bleary eyes. 'Oh, kind stranger, I'm plagued with the most unfathomable pain! A foreign monster has made its home in my skull. Please, help me banish this beast!'[paragraph break]";
 	wait for any key;
 	say "...A headache, perhaps. Should you help him?[paragraph break]";
 	wait for any key;
@@ -1312,7 +1336,7 @@ When the Kidnapping begins:
 	wait for any key;
 	say " You watch Heracles try to squeeze through the bars. It is a resounding failure. He tries again. It's an even more resounding failure. [paragraph break]";
 	wait for any key;
-	say "'Well,' Heracles says. 'Any other ideas?' [paragraph break]";
+	say "'Well,' Heracles says, turning to you. 'Any other ideas?' [paragraph break]";
 	now the player is in the Jail Cell;
 	now Heracles is in the Jail Cell.
 
@@ -1525,19 +1549,37 @@ North Corridor is a corridor in Busiris. It is east of Pillar Hall. "A narrow ha
 
 Corridor of the Draught Board is a corridor in Busiris. It is south of North Corridor. "A long and winding corridor."
 
-The cell bars is a locked closed door. The cell bars is east of the Jail Cell and west of the Corridor of the Draught Board. The cell bars can be broken_a or unbroken_a. The cell bars is unbroken_a. The description of the cell bars are "Your standard set of vertical prison bars. You can fit a hand through and little else. But it seems to be your only way out. Could they be pried open somehow?"
+The cell bars is a locked closed door. The cell bars is east of the Jail Cell and west of the Corridor of the Draught Board. The cell bars can be broken_a or unbroken_a. The cell bars is unbroken_a. The cell bars can be examined or unexamined. The cell bars are unexamined. The description of the cell bars are "Your standard set of vertical prison bars. You can fit a hand through and little else. But it seems to be your only way out. Could they be pried open somehow?"
 
-The Jail Cell is a room in Busiris. It is west of the cell bars.  "Dark and claustrophobic. You can see desperate scratches of former prisoners.[if cell bars is broken_a] The guards evidently did not see the gaping hole between the cell bars. Or they just didn't care."
+After examining the cell bars:
+    now the cell bars are examined.
 
+The Jail Cell is a room in Busiris. It is west of the cell bars.  "Dark and claustrophobic. You can see desperate scratches of former prisoners on the walls and bloodstains on the floor. A rat watches you warily from the corner. [if cell bars is broken_a] The guards evidently did not see the gaping hole between the cell bars. Or they just didn't care."
 
-[after making an action for pry open
+The bloodstain is scenery in the Jail Cell. The description of the bloodstain is "Self-explanatory."
+
+The desperate scratches are scenery in the Jail Cell. The description of the desperate scratches are "Deep grouves carved by prisoners past. You briefly consider adding your own. Maybe later."
+
+The rat is scenery in the Jail Cell. The description of the rat is "A feral rat glares at you from the corner of your cell. You don't imagine you'll be getting any answers from him."
+
+Instead of taking the rat:
+	say "You'd like to keep your hand, thank you very much."
+	
+Instead of talking to the rat:
+	say "The rat hisses at you with extra menace."
+	
 Instead of prying open the cell bars:
-	say "You try to pry open the bars, but they don't budge. You just don't have the strength for this."]
+	say "You try to pry open the bars, but they don't budge. You just don't have enough strength."
 
 Instead of squeezing through the cell bars:
 	say "You have more dignity than that."
+
+Instead of talking to Heracles in the Jail Cell when the cell bars are unexamined:
+	say "Heracles looks at you hopefully. 'Any bright ideas?' [paragraph break]";
+	wait for any key; 
+	say "Maybe you should look around for clues..."
 	
-Instead of talking to Heracles in the Jail Cell when the cell bars is unbroken_a:
+Instead of talking to Heracles in the Jail Cell when the cell bars are examined and the cell bars are unbroken_a:
 	say "'Hey Heracles', you say. 'Try the bars again.' [paragraph break]";
 	wait for any key;
 	say "'But the gaps are too small!' he whines.[paragraph break]";
