@@ -141,11 +141,12 @@ async function showFileExplorer() {
     section.className = "file-section";
 
     const header = document.createElement("h2");
-    header.textContent = `${title}: ${path}`;
+    header.innerHTML = `${title} <span class="file-path">${path}</span>`;
     section.appendChild(header);
     explorer.appendChild(section);
 
     const container = document.createElement("div");
+    container.className = "file-list";
     section.appendChild(container);
     readDir(path, container, 0);
   }
@@ -154,9 +155,9 @@ async function showFileExplorer() {
     fs.readdir(path, (err, items) => {
       if (err || !items || items.length === 0) {
         const empty = document.createElement("div");
+        empty.className = "file-empty";
         empty.textContent = `(empty)`;
         empty.style.marginLeft = `${depth * 20}px`;
-        empty.style.color = "#aaa";
         container.appendChild(empty);
         return;
       }
@@ -182,7 +183,7 @@ async function showFileExplorer() {
 
             if (stats?.isDirectory()) {
               entry.classList.add("folder");
-              entry.textContent = `📁 ${item}`;
+              entry.innerHTML = `<span class="file-icon">📁</span><span class="file-name">${item}</span>`;
 
               const nestedContainer = document.createElement("div");
               nestedContainer.style.display = "none";
@@ -203,7 +204,7 @@ async function showFileExplorer() {
               container.appendChild(nestedContainer);
             } else {
               entry.classList.add("file");
-              entry.textContent = `📄 ${item} `;
+              entry.innerHTML = `<span class="file-icon">📄</span><span class="file-name">${item}</span>`;
               // console.log(fullPath);
               const downloadBtn = document.createElement("button");
               downloadBtn.textContent = "Download";

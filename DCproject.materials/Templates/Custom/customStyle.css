@@ -123,6 +123,7 @@ aside.sidebar {
   background: none;
   padding: 0;
   right: 1rem;
+  overflow: hidden;
 }
 
 .sidebar.left-sidebar {
@@ -136,18 +137,33 @@ aside.sidebar {
   padding: 0.75rem;
   margin-bottom: 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.window-block:last-child {
+  margin-bottom: 0;
 }
 
 .window-block h4 {
   margin: 0 0 0.5rem 0;
   font-size: 1rem;
+  flex: 0 0 auto;
 }
 
 .window-block img {
-  /* max-width: 100%; */
-  width: 100%;
+  flex: 1 1 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
   height: auto;
+  object-fit: contain;
   border-radius: 4px;
+  margin: 0 auto;
 }
 
 .graphic-window img,
@@ -388,6 +404,7 @@ aside.sidebar {
 
 .file-explorer {
   padding: 1rem;
+  flex-direction: column;
 }
 
 .file-scroll {
@@ -397,26 +414,87 @@ aside.sidebar {
 }
 
 .file-section {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.file-section:last-child {
+  margin-bottom: 0;
 }
 
 .file-section h2 {
-  font-size: 1.2em;
-  margin-bottom: 0.5em;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--hint-color);
+  background: var(--header);
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+  margin: 0 0 0.6rem 0;
+}
+
+.file-path {
+  font-family: var(--mono-font);
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: var(--prefill-color);
+}
+
+.file-list {
+  padding-left: 0.5rem;
 }
 
 .file-entry {
   cursor: pointer;
-  margin-left: 20px;
-  overflow-wrap:break-word;
+  overflow-wrap: break-word;
   justify-content: space-between;
+  align-items: center;
   display: flex;
-  word-break: break-all;   
+  word-break: break-all;
   margin-bottom: 0.2rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  font-family: var(--mono-font);
+  font-size: 0.95rem;
 }
 
 .file-entry:hover {
-  background-color: #eef;
+  background-color: var(--hint-light);
+}
+
+.file-entry.folder {
+  color: var(--hint-color);
+  font-weight: bold;
+}
+
+.file-icon {
+  margin-right: 0.4rem;
+}
+
+.file-name {
+  flex: 1;
+}
+
+.file-empty {
+  color: var(--prefill-color);
+  font-style: italic;
+  padding: 0.2rem 0.5rem;
+}
+
+.download-btn {
+  background: var(--link);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.25rem 0.7rem;
+  font-family: var(--normal-font);
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+.download-btn:hover {
+  background: var(--linkhover);
 }
 
 .file-preview {

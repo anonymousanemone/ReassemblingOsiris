@@ -7,6 +7,10 @@ Include Rideable Vehicles by Graham Nelson.
 Include Secret Doors by Gavin Lambert.
 Include Exit Lister by Gavin Lambert.
 Include Papyrus Library by Sophia Ling.
+Include Conversation Framework by Eric Eve.
+
+[Conversation Framework reroutes "talk to [someone]" to its own saying-hello-to action. Restore it to the standard talking-to action so every existing and new "Instead of talking to" rule keeps working exactly as before. HELLO, GOODBYE, ASK X ABOUT Y, TELL X ABOUT Y, and Conversation Framework's friendlier default "no reply" fallback remain available as additional commands on top.]
+Understand "talk to [someone]" as talking to.
 
 Include Vorple by Juhana Leinonen.
 Include Vorple Command Prompt Control by Juhana Leinonen.
@@ -1030,7 +1034,7 @@ The description of Medical papyri is
 [HEAD_003 is a papyrus-scroll. It is in the House of Life. 
 The library is Medical papyri.
 The title is "ANOTHER CONJURATION FOR THE HEAD".
-The subject is "Headaches".
+The papyrus-subject is "Headaches".
 The content is "Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break]Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.".
 ]
 
@@ -1246,6 +1250,206 @@ Section 4 - After the heart
 
 [have dialogue of medea putting heart in bag, and osiris' head coming to life.]
 [fix activation of scenes]
+
+Section 5 - Thebes NPCs
+
+The Horemheb attendant is a man in the Temple of Horemheb. The printed name of the Horemheb attendant is "temple attendant". The description of the Horemheb attendant is "He sweeps in short, irritable strokes, like a man keeping score of something." Understand "attendant" or "priest" as the Horemheb attendant when the location is the Temple of Horemheb.
+
+Rule for writing a paragraph about the Horemheb attendant when the location is the Temple of Horemheb:
+	say "[first time]A temple attendant sweeps the floor with visible resentment.[line break][only]".
+
+A person can be greeted or ungreeted. A person is usually ungreeted. A person has some text called the greeting dialogue. The greeting dialogue of a person is usually "".
+
+Before talking to a person (called the target) when the greeting dialogue of the target is not "" and the target is ungreeted:
+	now the target is greeted;
+	say "[greeting dialogue of the target][paragraph break]".
+
+The greeting dialogue of the Horemheb attendant is "The attendant glances up, surprised anyone's bothered to actually talk to him. 'Oh--a visitor who talks back. Most people just stare at the reliefs and leave.'"
+
+Table of Horemheb Attendant's Early Chatter
+chatter
+"'You've been to the Ramesseum, I take it,' the attendant says sourly. 'Everyone has. Ramesses II, Ramesses II, Ramesses II. You know Horemheb reunified the whole administration after Akhenaten's mess? Cleaned house, restored the temples, fixed the tax rolls. Nobody carves a relief about fixing the tax rolls.'"
+"'Even the dead have to wait in line these days,' he mutters. 'Backed up clear into the underworld, I hear. Frankly, Horemheb would have had that sorted by now.'"
+
+Table of Horemheb Attendant's Healing Chatter
+chatter
+"'There's a man moaning in the back hall,' the attendant grumbles, jerking a thumb over his shoulder. 'Been like that for days. Bad for the temple's atmosphere, if you ask me.'"
+"'Some healer type came through asking about herbs for him,' he says. 'I told her to try the House of Life. Not my job to know medicine. My job is sweeping, apparently.'"
+
+Table of Horemheb Attendant's Countdown Chatter
+chatter
+"'Turns out the moaner was some sort of Greek,' the attendant says, aggrieved. 'Loud recovery. Very loud. I could hear him complaining about our architecture from here.'"
+"'Soldiers have been through twice today, telling us all to report anything suspicious,' he says. 'Frankly, I wouldn't know suspicious from ordinary. Everyone in this city seems half up to something.'"
+
+Instead of talking to the Horemheb attendant when Heal Heracles is not happening and Organ Acquisition is not happening:
+	choose a random row in Table of Horemheb Attendant's Early Chatter;
+	say "[chatter entry]".
+
+Instead of talking to the Horemheb attendant when Heal Heracles is happening:
+	choose a random row in Table of Horemheb Attendant's Healing Chatter;
+	say "[chatter entry]".
+
+Instead of talking to the Horemheb attendant when Organ Acquisition is happening and the Kidnapping is not happening:
+	choose a random row in Table of Horemheb Attendant's Countdown Chatter;
+	say "[chatter entry]".
+
+The Ramesseum attendant is a man in the Ramesseum. The printed name of the Ramesseum attendant is "temple attendant". The description of the Ramesseum attendant is "He looks exceedingly happy at being employed at such a prestigious facility. " Understand "attendant" or "priest" as the Ramesseum attendant when the location is the Ramesseum.
+
+Rule for writing a paragraph about the Ramesseum attendant when the location is the Ramesseum:
+	say "[first time]A temple attendant greets visitors with suspicious enthusiasm.[line break][only]".
+
+The greeting dialogue of the Ramesseum attendant is "'Welcome, welcome!' the attendant beams, delighted to have someone new to talk to. 'First time at the Ramesseum? Everyone should see it at least once.'"
+
+Table of Ramesseum Attendant's Early Chatter
+chatter
+"'Ramesses II himself commissioned this place,' the attendant beams. 'Colossal statues, epic battles, the works. We really don't need to try very hard to impress people.'"
+"'Tourists track sand everywhere,' he says, still smiling. 'But honestly? Good for business. More sand, more visitors. More visitors, more stories to tell.'"
+
+Table of Ramesseum Attendant's Healing Chatter
+chatter
+"'You know the House of Life? Right through there!' she says, pointing west, delighted you asked. 'Enormous library. Scrolls on everything—medicine, magic, more medicine. We're very proud of it.'"
+"'A healer came through gathering herbs earlier,' she says. 'Good for her, taking initiative! We love to see it.'"
+
+Table of Ramesseum Attendant's Countdown Chatter
+chatter
+"'Business is booming,' she says. 'Word's gotten around about some foreign hero wandering the temples. People do love a spectacle.'"
+"'Soldiers came through asking questions,' she says, unbothered. 'Very polite, all things considered. Have you visited the colossi yet? People say they sing!'"
+
+Instead of talking to the Ramesseum attendant when Heal Heracles is not happening and Organ Acquisition is not happening:
+	choose a random row in Table of Ramesseum Attendant's Early Chatter;
+	say "[chatter entry]".
+
+Instead of talking to the Ramesseum attendant when Heal Heracles is happening:
+	choose a random row in Table of Ramesseum Attendant's Healing Chatter;
+	say "[chatter entry]".
+
+Instead of talking to the Ramesseum attendant when Organ Acquisition is happening and the Kidnapping is not happening:
+	choose a random row in Table of Ramesseum Attendant's Countdown Chatter;
+	say "[chatter entry]".
+
+The street vendor is a man in the Temple of Amenhotep III. The description of the street vendor is "He's spread a mat of amulets, tiny perfume jars, and good luck charms just outside the temple steps." Understand "vendor" or "trader" as the street vendor.
+
+Rule for writing a paragraph about the street vendor when the location is the Temple of Amenhotep III:
+	say "[first time]A street vendor has set up shop just outside, hawking trinkets to anyone who slows down.[line break][only]".
+
+Some trinkets are a plural-named thing carried by the street vendor. The description is "Amulets, tiny scent-jars of perfume, and good-luck charms, all sun-bleached to roughly the same color."
+
+Buying is an action applying to one thing. Understand "buy [something]" or "purchase [something]" as buying.
+
+Carry out buying:
+	say "You can't do that.".
+
+Instead of buying the trinkets:
+	say "'You don't look like you have anything to offer me,' the vendor sniffs."
+
+The greeting dialogue of the street vendor is "'Looking to buy?' the vendor asks, brightening at the attention. 'Or just looking? Either way, welcome to the finest--well, the only--trinket stand on these steps.'"
+
+Table of Street Vendor's Early Chatter
+chatter
+"'Got shooed clean off the steps of Ramesses III's temple this morning,' the vendor grumbles, setting out his wares. 'No appreciation for honest commerce around here.'"
+"'You hear the statues sing yet?' he asks, nodding east toward the colossi. 'Neither have I, and I've been sitting here for six years.'"
+
+Table of Street Vendor's Healing Chatter
+chatter
+"'Perfume for the sick room?' he offers, not really listening. 'Something's going around the city, I hear. Bad for foot traffic.'"
+"'If you want real medicine, not my little bottles, the House of Life is west of the Ramesseum,' he admits. 'Don't tell my customers I said that.'"
+
+Table of Street Vendor's Countdown Chatter
+chatter
+"'There's a foreigner somewhere in the city who won't stop shouting,' he says. 'Scared off my best customer.'"
+"'Soldiers walked right past my stall twice today,' he mutters, lowering his voice. 'Whatever they're hunting for, I'd rather not be standing nearby when they find it.'"
+
+Instead of talking to the street vendor when Heal Heracles is not happening and Organ Acquisition is not happening:
+	choose a random row in Table of Street Vendor's Early Chatter;
+	say "[chatter entry]".
+
+Instead of talking to the street vendor when Heal Heracles is happening:
+	choose a random row in Table of Street Vendor's Healing Chatter;
+	say "[chatter entry]".
+
+Instead of talking to the street vendor when Organ Acquisition is happening and the Kidnapping is not happening:
+	choose a random row in Table of Street Vendor's Countdown Chatter;
+	say "[chatter entry]".
+
+The elderly pilgrim is a woman in the Memnon Colossi. The description of the elderly pilgrim is "She squints up at the statues with the patient devotion of someone who has nowhere else to be." Understand "pilgrim" or "old woman" as the elderly pilgrim.
+
+Rule for writing a paragraph about the elderly pilgrim when the location is the Memnon Colossi:
+	say "[first time]An elderly pilgrim sits cross-legged before the statues, waiting--for what, you're not sure.[line break][only]".
+
+The greeting dialogue of the elderly pilgrim is "The pilgrim glances over, mildly surprised to have company. 'Come to see if the statue sings? Sit, sit. It could happen any moment. Or not for years.'"
+
+Table of Elderly Pilgrim's Early Chatter
+chatter
+"'I have sat here every dawn for eleven years,' the pilgrim says, 'waiting to hear the statue sing. Today: nothing. Yesterday: also nothing. But someday!'"
+"'They say a warrior-king is buried beneath these statues,' she murmurs, 'struck down far from home, mourned by his mother's tears every morning. Or it's just old stone settling. Hard to say.'"
+
+Table of Elderly Pilgrim's Healing Chatter
+chatter
+"'Still no singing,' the pilgrim reports, unprompted. 'Though I did hear a rumor of a sick man somewhere in the city. Perhaps the statue's saving its voice out of sympathy.'"
+"'A healer passed through gathering herbs earlier,' she says. 'Didn't say what for. People rarely do, around here.'"
+
+Table of Elderly Pilgrim's Countdown Chatter
+chatter
+"'The statue's been quiet all week,' the pilgrim says. 'Even stone knows when to keep its head down, with soldiers marching about like that.'"
+"'Soldiers, asking questions, disturbing my vigil,' she grumbles. 'I told them the statue sings for no one in a hurry. They did not appreciate that.'"
+
+Instead of talking to the elderly pilgrim when Heal Heracles is not happening and Organ Acquisition is not happening:
+	choose a random row in Table of Elderly Pilgrim's Early Chatter;
+	say "[chatter entry]".
+
+Instead of talking to the elderly pilgrim when Heal Heracles is happening:
+	choose a random row in Table of Elderly Pilgrim's Healing Chatter;
+	say "[chatter entry]".
+
+Instead of talking to the elderly pilgrim when Organ Acquisition is happening and the Kidnapping is not happening:
+	choose a random row in Table of Elderly Pilgrim's Countdown Chatter;
+	say "[chatter entry]".
+
+The temple guard is a man in the Temple of Ramesses III. The description of the temple guard is "He stands a little too stiffly, watching the door like he's still expecting the assassins." Understand "guard" as the temple guard.
+
+Rule for writing a paragraph about the temple guard when the location is the Temple of Ramesses III:
+	say "[first time]A temple guard waves you off before you've taken two steps. 'Move along,' he says, then seems to reconsider and lets you pass anyway.[line break][only]".
+
+The greeting dialogue of the temple guard is "The guard eyes you as you approach. 'State your business,' he says, though he doesn't sound like he much cares what it is."
+
+The temple guard has grown suspicious is a truth state that varies. The temple guard has grown suspicious is false.
+
+Table of Temple Guard's Early Chatter
+chatter
+"'Move along,' the guard snaps, not even looking at you. 'Nothing here for looters, mourners, or the merely curious.'"
+"'They say the dead are backed up clear into the underworld,' he says darkly. 'Ramesses III is still waiting on a proper judgment, if you ask me. Some conspiracies take longer to settle than others.'"
+
+Table of Temple Guard's Healing Chatter
+chatter
+"'Someone's always sick this time of year,' the guard says flatly. 'Not my concern. My concern is this temple.'"
+"'If you need herbs or medicine, the House of Life is that way,' he says, jerking his head west. 'Now get away from the pillars.'"
+
+Table of Temple Guard's Countdown Chatter
+chatter
+"'They pulled half my detachment away on some citywide search,' the guard complains. 'Leaves me alone guarding a dead king. Typical.'"
+"'I've heard enough rumors today to last a lifetime,' he mutters. 'Strangers causing trouble all over the city. Not that it's any concern of mine--yet.'"
+
+Instead of talking to the temple guard when Heal Heracles is not happening and Organ Acquisition is not happening:
+	choose a random row in Table of Temple Guard's Early Chatter;
+	say "[chatter entry]".
+
+Instead of talking to the temple guard when Heal Heracles is happening:
+	choose a random row in Table of Temple Guard's Healing Chatter;
+	say "[chatter entry]".
+
+Instead of talking to the temple guard when Organ Acquisition is happening and the Kidnapping is not happening and the temple guard has grown suspicious is false:
+	choose a random row in Table of Temple Guard's Countdown Chatter;
+	say "[chatter entry][paragraph break]";
+	wait for any key;
+	say "As you turn to go, the guard's eyes catch on you a moment too long. 'Wait,' he says slowly, straightening up. 'Aren't you--' [paragraph break]";
+	wait for any key;
+	say "You don't stick around to hear how he finishes that sentence. Grabbing Heracles by the arm, you hurry back the way you came.";
+	now the temple guard has grown suspicious is true;
+	now the player is in the Temple of Horemheb;
+	now Heracles is in the Temple of Horemheb.
+
+Instead of talking to the temple guard when Organ Acquisition is happening and the Kidnapping is not happening and the temple guard has grown suspicious is true:
+	say "Better not tempt fate in making him recognize you."
 
 Chapter 4 - Busiris-Organs
 
@@ -2092,7 +2296,7 @@ Part 9 - Papyri Content
 HEAD_001 is a papyrus-scroll. It is in the House of Life. 
 The library is Medical papyri.
 The title is "REMEDY TO DRIVE OUT THE PAIN IN THE HEAD".
-The subject is "Headaches".
+The papyrus-subject is "Headaches".
 The content is "
 Inner-of-Onions                   I[line break]
 Fruit-of-the-am-tree              I[line break]
@@ -2109,7 +2313,7 @@ Smear the Head therewith for four days."
 HEAD_002 is a papyrus-scroll. It is in the House of Life. 
 The library is Medical papyri.
 The title is "ANOTHER REMEDY WHICH THE GODDESS ISIS PREPARED FORT HE GOD RA TO DRIVE OUT THE PAINS THAT ARE IN HIS HEAD".
-The subject is "Headaches".
+The papyrus-subject is "Headaches".
 The content is "
 Berry-of-the-Coriander             I[line break]
 Berry-of-the-Poppy-plant           I[line break]
@@ -2123,7 +2327,7 @@ Make into one, mix with Honey, and smear therewith in order to make him well for
 HEAD_003 is a papyrus-scroll. It is in the House of Life. 
 The library is Medical papyri.
 The title is "ANOTHER CONJURATION FOR THE HEAD".
-The subject is "Headaches".
+The papyrus-subject is "Headaches".
 The content is "Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! 
 
 [italic type]'I have indeed applied something to all his sore spots.'[roman type]
@@ -2134,7 +2338,7 @@ Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soake
 EXCR_001 is a papyrus-scroll. It is in the House of Life.
 The library is Medical papyri.
 The title is "REMEDY TO STOP THE DIARRHEA".
-The subject is "Excretory".
+The papyrus-subject is "Excretory".
 The content is "
 Green Onions               I[line break]
 Freshly-cooked-Gruel       I[line break]
@@ -2148,7 +2352,7 @@ Cook and take for four days."
 EXCR_002 is a papyrus-scroll. It is in the House of Life.
 The library is Medical papyri.
 The title is "REMEDY TO FORCE OUT THE URINE".
-The subject is "Excretory".
+The papyrus-subject is "Excretory".
 The content is "
 Crocus-from-the-Hills          1/4[line break]
 Crocus-from-the-Delta          1/8[line break]
@@ -2166,7 +2370,7 @@ Keep moist, strain, and take for four days."
 EXCR_003 is a papyrus-scroll. It is in the House of Life.
 The library is Medical papyri.
 The title is "REMEDY TO REGULATE EVACUATION".
-The subject is "Excretory".
+The papyrus-subject is "Excretory".
 The content is "
 Honey                           I[line break]
 sasa-seeds                      I[line break]
@@ -2184,7 +2388,7 @@ Form into a Suppository and put into the Rectum."
 EXCR_004 is a papyrus-scroll. It is in the House of Life.
 The library is Medical papyri.
 The title is "ANOTHER REMEDY TO DRIVE OUT THE DISEASED EXCREMENT IN THE BODY OF A PERSON".
-The subject is "Excretory".
+The papyrus-subject is "Excretory".
 The content is "
 White-cake            I[line break]
 Red tit-corn          I[line break]
@@ -2195,7 +2399,7 @@ Mix into one and let the Person drink."
 DEMON_001 is a papyrus-scroll. It is in the House of Life.
 The library is Medical papyri.
 The title is "AGAINST THE SEMEN OF A DEMON".
-The subject is "Demons".
+The papyrus-subject is "Demons".
 The content is "This here is the ejaculation of Him-who-is-in-his-grimness which Mafdet received in that room wherein Isis rejoiced and wherein the testicles of Seth were cut off. Do not flee away! May the ejaculation of Horus and of Him-who-is-in-his-grimness go forth against a male dead, a female dead, and so on--the name of the enemy, the name of his father, the name of his mother. Oh Mafdet! [italic type]Open your mouth wide against that enemy, the male dead, the female dead and so on--do not let me see him![roman type]
 
 Words to be said over the phallus of an ass, hard-baked in the form of a depet-cake, provided with the name of the enemy, the name of his father and the name of his mother. To be placed within fat of meat and to be given to a cat."
@@ -2203,7 +2407,7 @@ Words to be said over the phallus of an ass, hard-baked in the form of a depet-c
 DEMON_002 is a papyrus-scroll. It is in the House of Life.
 The library is Medical papyri.
 The title is "WARDING OFF THE ATTACK OF A DEAD ONE".
-The subject is "Demons".
+The papyrus-subject is "Demons".
 The content is "[italic type]The Inundation has approached to set foot on the land of Tait--throw out what is in you![roman type]
 
 Words to be said after you have tied two knots in a strip of the border of a mummy bandage, put at the opening of the inside of her vagina, to ward off what acts against it."
@@ -2211,7 +2415,7 @@ Words to be said after you have tied two knots in a strip of the border of a mum
 DEMON_003 is a papyrus-scroll. It is in the House of Life.
 The library is Medical papyri.
 The title is "CONJURATION OF THE akhu-DEMON".
-The subject is "Demons".
+The papyrus-subject is "Demons".
 The content is "Oh Horus, oh Re, oh Shu, oh Geb, oh Osiris, oh Helm,
 oh Nun! Praise to you, great gods who bring the Upper One to the Underworld, who make him travel to this ceiling, who meet Re' at his departure from the horizon, who travel in the night bark, who sail in the day bark: come to me, ascend to me, unite yourselves for me after that you have brought up for me anything bad, any bad revolting matter, any bad sickness that is in this body of mine, in these limbs of mine, you being the protection of Horus that guards Seth- and vice versa. It is to make an end of the sickness that is cleaving to you, oh gods there that I have fetched a herb that came into existence by itself. [italic type]Make an end of any bad sickness that is cleaving to me![roman type]
 
@@ -2220,7 +2424,7 @@ Words to be said over an instrument of tamarisk-wood. To conjure the akhu with i
 MISC_001 is a papyrus-scroll. It is in the House of Life.
 The library is Medical papyri.
 The title is "ANOTHER FOR THE GROWTH OF THE HAIR ON A HEAD WHICH IS BECOMING BALD".
-The subject is "Miscellaneous".
+The papyrus-subject is "Miscellaneous".
 The content is "
 Fat-of-the-Lion[line break]
 Fat-of-the-Hippopotamus[line break]
@@ -2234,7 +2438,7 @@ Make into one and rub the head of the Bald One therewith."
 MISC_002 is a papyrus-scroll. It is in the House of Life.
 The library is Medical papyri.
 The title is "REMEDY TO DRIVE AWAY SWEATY FEET IN A PERSON".
-The subject is "Miscellaneous".
+The papyrus-subject is "Miscellaneous".
 The content is "
 uadu-plant-of-the-Fields [line break]
 Eel-from-the-Canal
@@ -2244,7 +2448,7 @@ Warm in Oil and smear both feet there with."
 MISC_003 is a papyrus-scroll. It is in the House of Life. 
 The library is Medical papyri.
 The title is "A SPELL FOR THE DRINKING OF BEER".
-The subject is "Miscellaneous".
+The papyrus-subject is "Miscellaneous".
 The content is "Hail to you, lady of Heliopolis! When he has set his heart on it, there is no restraining Seth. Let him carry out his heart's desire to bear away a heart-- in that name 'beer' of his, to confuse a heart, to bear away the heart of an enemy, a fiend, a male dead, a female dead, and so on.
 
 This spell is to be said during the drinking of beer; should be spat up. A true means, proved an infinite number of times."
@@ -2252,7 +2456,7 @@ This spell is to be said during the drinking of beer; should be spat up. A true 
 MISC_004 is a papyrus-scroll. It is in the House of Life. 
 The library is Medical papyri.
 The title is "TO REMOVE THE AAA-DISEASE".
-The subject is "Miscellaneous".
+The papyrus-subject is "Miscellaneous".
 The content is "Jochauflegung of the sau-wood
 
 Warm in Oil and give against it."
@@ -2260,7 +2464,7 @@ Warm in Oil and give against it."
 MISC_005 is a papyrus-scroll. It is in the House of Life. 
 The library is Medical papyri.
 The title is "ANOTHER CONJURATION FOR A BURN".
-The subject is "Miscellaneous".
+The papyrus-subject is "Miscellaneous".
 The content is "'Your son Horus has been burnt in the desert!' 'Is there water there?' 'There is no water there!' 'Water is in my mouth, an Inundation is between my thighs. It is to extinguish the fire that I have arrived. Break out, burn!'
 
 Words to be said over the milk of a woman who has given birth to a male child, gum and hairs of a cat. To be applied to the burn.".
@@ -2268,7 +2472,7 @@ Words to be said over the milk of a woman who has given birth to a male child, g
 MISC_006 is a papyrus-scroll. It is in the House of Life. 
 The library is Medical papyri.
 The title is "A CONJURATION OF THE ASIATIC DISEASE".
-The subject is "Miscellaneous".
+The papyrus-subject is "Miscellaneous".
 The content is "Who is knowing like Re? Who knows the like of this god? You who turn the belly black with black coals so as to get even a hold on the upper god! When, just as Seth conjured the Great Green Sea, Seth conjures you in the same manner, oh Asiatic disease, then you will not stride about in the body of NN born of NN.
 
 This spell is to be said four times over fresh moringa-oil and residue of a cooking-vessel. Conjure her with that and close her up with seals of tortoise-shell.".
@@ -2276,7 +2480,7 @@ This spell is to be said four times over fresh moringa-oil and residue of a cook
 MISC_007 is a papyrus-scroll. It is in the House of Life. 
 The library is Medical papyri.
 The title is "Ritual for the Reassembling of Osiris".
-The subject is "Miscellaneous".
+The papyrus-subject is "Miscellaneous".
 The content is "Look to the east and say: 'You are the one who thunders, the one who rains
 and hurls lightning at the right time and dries in the same way; come to me,
 reveal' (add the usual or write whatever you want, and anoint your hand).
