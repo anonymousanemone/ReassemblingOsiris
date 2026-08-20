@@ -934,7 +934,7 @@ Test heal with "purloin prepared medicine / I have indeed applied something to a
 
 Section 1 - All the Locations
 
-The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III—no surprise there, given that the man commissioned over fifty temples across Egypt in his lifetime and still somehow felt underappreciated. Known in antiquity as Henket-Ankh, 'Offering-Life,' it was raised in the last decade of his fifty-four-year reign to keep Amun-Re, and his own ka, well fed. Sturdy columns flank a central courtyard where priests once performed daily rites. There seems to be a lot of honoring going on around here."
+The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III—no surprise there, given that the man commissioned over fifty temples across Egypt in his lifetime and still somehow felt underappreciated. Sturdy columns flank a central courtyard where priests perform daily rites. "
 
 Instead of going North in the Temple of Thutmoses III:
 	say "A few mortuary temples can be seen off in the distance, but something tells you it won't be very productive.".
