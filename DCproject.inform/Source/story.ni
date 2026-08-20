@@ -1273,12 +1273,10 @@ chatter
 
 Table of Horemheb Attendant's Healing Chatter
 chatter
-"'There's a man moaning in the back hall,' the attendant grumbles, jerking a thumb over his shoulder. 'Been like that for days. Bad for the temple's atmosphere, if you ask me.'"
-"'Some healer type came through asking about herbs for him,' he says. 'I told her to try the House of Life. Not my job to know medicine. My job is sweeping, apparently.'"
+"'Try the House of Life. Not my job to know medicine. My job is sweeping, apparently.'"
 
 Table of Horemheb Attendant's Countdown Chatter
 chatter
-"'Turns out the moaner was some sort of Greek,' the attendant says, aggrieved. 'Loud recovery. Very loud. I could hear him complaining about our architecture from here.'"
 "'Soldiers have been through twice today, telling us all to report anything suspicious,' he says. 'Frankly, I wouldn't know suspicious from ordinary. Everyone in this city seems half up to something.'"
 
 Instead of talking to the Horemheb attendant when Heal Heracles is not happening and Organ Acquisition is not happening:
@@ -1308,12 +1306,10 @@ chatter
 Table of Ramesseum Attendant's Healing Chatter
 chatter
 "'You know the House of Life? Right through there!' she says, pointing west, delighted you asked. 'Enormous library. Scrolls on everything—medicine, magic, more medicine. We're very proud of it.'"
-"'A healer came through gathering herbs earlier,' she says. 'Good for her, taking initiative! We love to see it.'"
 
 Table of Ramesseum Attendant's Countdown Chatter
 chatter
-"'Business is booming,' she says. 'Word's gotten around about some foreign hero wandering the temples. People do love a spectacle.'"
-"'Soldiers came through asking questions,' she says, unbothered. 'Very polite, all things considered. Have you visited the colossi yet? People say they sing!'"
+"'Soldiers came through asking questions about some foreigners,' she says, unbothered. 'Very polite, all things considered. Have you visited the colossi yet? People say they sing!'"
 
 Instead of talking to the Ramesseum attendant when Heal Heracles is not happening and Organ Acquisition is not happening:
 	choose a random row in Table of Ramesseum Attendant's Early Chatter;
@@ -1356,7 +1352,6 @@ chatter
 
 Table of Street Vendor's Countdown Chatter
 chatter
-"'There's a foreigner somewhere in the city who won't stop shouting,' he says. 'Scared off my best customer.'"
 "'Soldiers walked right past my stall twice today,' he mutters, lowering his voice. 'Whatever they're hunting for, I'd rather not be standing nearby when they find it.'"
 
 Instead of talking to the street vendor when Heal Heracles is not happening and Organ Acquisition is not happening:
@@ -1374,24 +1369,21 @@ Instead of talking to the street vendor when Organ Acquisition is happening and 
 The elderly pilgrim is a woman in the Memnon Colossi. The description of the elderly pilgrim is "She squints up at the statues with the patient devotion of someone who has nowhere else to be." Understand "pilgrim" or "old woman" as the elderly pilgrim.
 
 Rule for writing a paragraph about the elderly pilgrim when the location is the Memnon Colossi:
-	say "[first time]An elderly pilgrim sits cross-legged before the statues, waiting--for what, you're not sure.[line break][only]".
+	say "[first time]An elderly pilgrim sits before the statues, waiting--for what, you're not sure.[line break][only]".
 
 The greeting dialogue of the elderly pilgrim is "The pilgrim glances over, mildly surprised to have company. 'Come to see if the statue sings? Sit, sit. It could happen any moment. Or not for years.'"
 
 Table of Elderly Pilgrim's Early Chatter
 chatter
 "'I have sat here every dawn for eleven years,' the pilgrim says, 'waiting to hear the statue sing. Today: nothing. Yesterday: also nothing. But someday!'"
-"'They say a warrior-king is buried beneath these statues,' she murmurs, 'struck down far from home, mourned by his mother's tears every morning. Or it's just old stone settling. Hard to say.'"
 
 Table of Elderly Pilgrim's Healing Chatter
 chatter
 "'Still no singing,' the pilgrim reports, unprompted. 'Though I did hear a rumor of a sick man somewhere in the city. Perhaps the statue's saving its voice out of sympathy.'"
-"'A healer passed through gathering herbs earlier,' she says. 'Didn't say what for. People rarely do, around here.'"
 
 Table of Elderly Pilgrim's Countdown Chatter
 chatter
 "'The statue's been quiet all week,' the pilgrim says. 'Even stone knows when to keep its head down, with soldiers marching about like that.'"
-"'Soldiers, asking questions, disturbing my vigil,' she grumbles. 'I told them the statue sings for no one in a hurry. They did not appreciate that.'"
 
 Instead of talking to the elderly pilgrim when Heal Heracles is not happening and Organ Acquisition is not happening:
 	choose a random row in Table of Elderly Pilgrim's Early Chatter;
