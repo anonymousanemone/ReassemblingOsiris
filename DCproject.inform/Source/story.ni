@@ -494,7 +494,9 @@ Instead of taking the pottery jars, say "These? No thank you.".
 
 A wooden plank is in the South Chamber. The description of the wooden plank is "A short, splintered plank of cedar wood."
 
-Some knick-knacks are in the South Chamber. The description of some knick-knacks is "You sift through the assorted items: a bead that may have been part of a necklace, a sliver of ivory that was used as a tool, and a draining liquid water clock."
+Some knick-knacks are in the South Chamber. The description of some knick-knacks is "You sift through the assorted items: a bead that may have been part of a necklace, a sliver of ivory that was used as a tool, a draining liquid water clock, and a beaded necklace, its string worn thin but its beads still bright."
+
+A mummy bandage strip is in the South Chamber. The description is "A strip torn from the border of an old mummy bandage, stiff with dried resin. Two knots have already been tied into it, as if for some half-finished rite." The print-name is "mummy bandage strip".
 
 The Sloped Passage is a room in Abydos. It is east of the Great Hall. The description is "More text covers these walls. You're getting tired of them.".
 
@@ -623,11 +625,23 @@ Next Instructions is a scene. Next Instructions begin when Exploration Ends. Nex
 	
 Section 2 - Workmen's village
 
-Outside the Walled Village is a room in Amarna. "You have reached Amarna, although you don't really know where to go from here. You are surrounded by quite a bit of rubble. This seems to have once been a great city to the west. Directly north, you see a walled cluster of buildings and hear the faint sound of hubbub. This might be a workmen's village. But it is entirely walled and only has one gate. That seems to be a fire hazard. You would know about those.  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]";
+Outside the Walled Village is a room in Amarna. "You have reached Amarna, although you don't really know where to go from here. You are surrounded by quite a bit of rubble. This seems to have once been a great city to the west. Directly north, you see a walled cluster of buildings and hear the faint sound of hubbub. This might be a workmen's village. But it is entirely walled and only has one gate. That seems to be a fire hazard. You would know about those. A gnarled [set-link wormwood bush] clings to a crack in the rubble nearby, silvery-green and bitter-smelling.  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]";
+
+The wormwood bush is a scenery supporter in Outside the Walled Village. The print-name is "wormwood bush". The description is "A shrub with silvery leaves that's clung onto the rubble, smelling faintly bitter and medicinal. [if wormwood leaves is on the wormwood bush]A few sprigs of [set-link wormwood leaves] look easy enough to strip off.[otherwise]You've already stripped what leaves you could reach.[end if]".
+
+Instead of taking the wormwood bush, say "Leave this poor shrub alone. If you must, a few leaves will suffice."
+
+Wormwood leaves are on the wormwood bush. The description is "A handful of silvery-green leaves, bitter and pungent even before you crush them."
 
 [in the future, maybe add security checkpoint moment as Medea walks through gate?]
 
-The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A cluster of homes and workshops, alive with the clatter of tools and the murmur of voices. The sun shines down aggressively, catching the haze of dust kicked up by passing feet. People move between doorways and shaded courtyards—some carrying baskets of stone chips, others bent over their work."
+The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A cluster of homes and workshops, alive with the clatter of tools and the murmur of voices. The sun shines down aggressively, catching the haze of dust kicked up by passing feet. People move between doorways and shaded courtyards—some carrying baskets of stone chips, others bent over their work. A [set-link fig tree] provides most of the shade, its branches heavy with fruit."
+
+The fig tree is a scenery supporter in the Workmen's Village. The print-name is "fig tree". The description is "A broad, leafy tree providing most of the village's shade. [if figs is on the fig tree]A few ripe [set-link figs] hang low enough to reach.[otherwise]You've already picked the figs within reach.[end if]".
+
+Instead of taking the fig tree, say "The villagers rely on its shade; you're not about to make off with the whole tree. Better to just take some fruit."
+
+Figs are on the fig tree. The figs are plural-named. The description is "A few plump, ripe figs, still warm from the sun."
 
 A body bag is a container. The carrying capacity of the body bag is 14. The description of the body bag is "A heavy cloth sack used for transporting... questionable things. You're not quite sure how everything fits into here. Some strange Egyptian magic?"
 
@@ -734,7 +748,9 @@ Instead of going to the Workmen's Village when the player is on the oxcart:
 
 The Small Aten Temple is a room in Amarna. It is north of the Ruined City. "The traces of this Aten Temple still hint at its former grandeur. It once comprised three courts—the first, the second, and the sanctuary. Now you stand in what used to be the sanctuary court, its original form long since demolished. A partially reconstructed sanctuary is to your north. It is still impressive despite representing only a fraction of its former splendor."
 
-The Sanctuary is a room in Amarna. It is inside of the Small Aten Temple. "Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor Aten, the sun disk. Around the perimeter of the sanctuary are low, carved [set-link carved altars], decorated with [set-link offerings] and incense. In the center of the sanctuary, a [set-link shrine] depicting Aten shines in its golden splendor."
+The Sanctuary is a room in Amarna. It is inside of the Small Aten Temple. "Unlike sanctuaries in traditional temples, this space is bathed in sunlight, a deliberate design to honor Aten, the sun disk. Around the perimeter of the sanctuary are low, carved [set-link carved altars], decorated with [set-link offerings] and [set-link lumps of myrrh]. In the center of the sanctuary, a [set-link shrine] depicting Aten shines in its golden splendor."
+
+Some lumps of myrrh are in the Sanctuary. The lumps of myrrh are plural-named. The description is "Small, hardened lumps of golden-brown resin, left smoldering on the altar until they burned out. They still smell faintly sweet and smoky." The print-name is "lumps of myrrh".
 
 The carved altars are scenery in the Sanctuary. "The low altars are made of sandstone, each inscribed with dedications to Aten." The print-name is "altars".
 
@@ -934,11 +950,16 @@ Test heal with "purloin prepared medicine / I have indeed applied something to a
 
 Section 1 - All the Locations
 
-The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III—no surprise there, given that the man commissioned over fifty temples across Egypt in his lifetime and still somehow felt underappreciated. Sturdy columns flank a central courtyard where priests perform daily rites. "
+The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III—no surprise there, given that the man commissioned over fifty temples across Egypt in his lifetime and still somehow felt underappreciated. Sturdy columns flank a central courtyard where priests perform daily rites. Beside one column, a modest [set-link coriander plant] grows in a shallow bed of soil, kept for the offering incense."
+
+The coriander plant is a scenery supporter in the Temple of Thutmoses III. The print-name is "coriander plant". The description is "A modest, feathery-leaved plant kept in a shallow bed of soil near the columns, grown for the temple's offering incense. [if coriander seeds is on the coriander plant]A couple of stems have yet to fully develop, holding on to a smattering of small round seeds. [otherwise]You've already stripped it of its seeds.[end if]".
+
+Instead of taking the coriander plant, say "The priests would notice if their precious plant went missing. It's not native to here, after all. But no one would notice if you just... ran your fingers through it and grabbed a little something."
+
+Coriander seeds are on the coriander plant. The description is "A pinch of small, round looking seeds."
 
 Instead of going North in the Temple of Thutmoses III:
 	say "A few mortuary temples can be seen off in the distance, but something tells you it won't be very productive.".
-
 
 The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. "[set-link mortuary temple] looms large with its colossal statues. [Faded reliefs] along the walls depict the famous Battle of Kadesh. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
 
@@ -1018,25 +1039,69 @@ The mortuary temple of Ramesses III is scenery in the Temple of Ramesses III. Th
 
 Section 2 - The library
 
-[depending on feedback, can try to make entering house of life more intuitive: aka somehow medea knows house of life is library and it is inside the ramesseum. maybe a trigger of dialogue like the priest asks medea her purpose and she says for medicine - not priority]
-
 The House of Life is west of the Ramesseum. It is in Thebes. "The entrance is unassuming—just a low archway tucked beside the temple’s western wall—but when you step inside, you realize you've stumbled upon a vast library.  Soft lamplight flickers across rows of tall shelves, each lined with carefully rolled [set-link the medical papyri] detailing magical and medical rituals."
 
 Medical papyri is a papyri-collection in the House of Life. The papyri are plural-named. The print-name is "medical papyri".
-Understand "library" or "shelves" or "shelf" or "scrolls" or "scroll" or "papyrus" or "papyri" as medical papyri.
+Understand "library" or "shelves" or "shelf" or "scrolls" or "scroll" or "papyrus" as medical papyri.
 
 The subject-list of Medical papyri is
-    {"Headaches", "Excretory", "Demons", "Miscellaneous"}.
+    {"Headaches", "Excretory", "Demons", "General Diseases", "Miscellaneous"}.
 
 The description of Medical papyri is
     "You approach the medical papyri. [paragraph break]Subjects include:[line break][subject listing of Medical papyri][line break]Try [italic type]READ PAPYRI[roman type] to browse the catalogue."
 		
-[HEAD_003 is a papyrus-scroll. It is in the House of Life. 
+[ (The papyrus is written at the very end.)
+HEAD_003 is a papyrus-scroll. It is in the House of Life. 
 The library is Medical papyri.
 The title is "ANOTHER CONJURATION FOR THE HEAD".
 The papyrus-subject is "Headaches".
-The content is "Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break]Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.".
-]
+The content is "Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break]Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.".]
+
+A wooden table is a supporter in the House of Life. "A sturdy wooden table covered with various random items, perfect for preparing magical concoctions. Among the clutter, a vial catches your eye."
+
+Some random items are things on the wooden table. The description is "A collection of unrelated trinkets and items: old coins, scraps of paper, and fragments of pottery. None seem particularly useful."
+
+The scribal palette is a supporter on the wooden table. The description is "A palette with red and black ink, with some reed pens sitting in its pockets."
+
+A writing implement is a kind of thing. A writing surface is a kind of thing.
+
+Reed pens are a writing implement on the scribal palette. The reed pens are plural named. Understand "pen" or "reed pen" as reed pens. The descriptions is "Three pens of cut reed are in the palette. You can see that some are more battered than others, and all of them stained with ink."
+
+Instead of taking the reed pens, say "You don't really want them. They're all at least a little crusty, if not already reaching the end of its lifespan."
+
+Instead of taking the scribal palette, say "Thin chains attach the palette to the table so to prevent vistors from making off with it. So much for the Ramesseum being a rich and grandiose place.".
+
+The fever phylactery is a thing. The description is "A clean papyrus amulet, inscribed with some magical words:
+
+    IAO SARAOTH ADONAI AKRAMMACHAMMAREI[line break]
+     AO SABAOTH ADONAI AKRAMMACHAMMAREI[line break]
+      O SARAOTH ADONAI AKRAMMACHAMMAREI".
+
+Blank papyri are a writing surface on the wooden table. The description of blank papyri is "A stack of blank papyri, ready to be used."
+
+Instead of taking the blank papyri when the player is carrying the blank papyri:
+	say "You already have a piece of blank papyrus. No need to take more right now."
+
+Every turn when the player is not carrying the blank papyri and the location of the blank papyri is not the location of the player:
+	now the blank papyri is nowhere.
+
+Every turn when the player is in the House of Life and the player is not carrying the blank papyri and the location of the blank papyri is not the House of Life:
+	now the blank papyri is on the wooden table.
+
+Writing is an action applying to one topic and one carried thing. Understand "write [text] on [writing surface]" as writing.
+
+Check writing:
+	if a writing implement is not carried and a writing implement is not in the location:
+		say "You have nothing to write with." instead.
+
+Carry out writing:
+	let T be the topic understood;
+	if T exactly matches the text "IAO SARAOTH ADONAI AKRAMMACHAMMAREI", case insensitively and the noun is the blank papyri:
+		now the blank papyri is nowhere;
+		now the player carries the fever phylactery;
+		say "The words settle into the papyrus, and voila! You now have a fever phylactery.";
+	otherwise:
+		say "You write '[T]' on [the noun]."
 
 Section 3 - Healing Heracles
 
@@ -1093,10 +1158,6 @@ Instead of talking to unconscious Heracles:
 
 When brain acquisition ends:
 	now Heracles is in the Temple of Horemheb.
-
-The brewing table is a supporter in the House of Life. "A sturdy wooden table covered with various random items, perfect for preparing magical concoctions. Among the clutter, a vial catches your eye."
-
-Some random items are things on the brewing table. The description is "A collection of unrelated trinkets and items: old coins, scraps of paper, and fragments of pottery. None seem particularly useful."
 
 The vial of plant mucus is on the brewing table. The description is "A small glass vial with extracted plant mucus inside."
 
@@ -1253,31 +1314,32 @@ Section 4 - After the heart
 
 Section 5 - Thebes NPCs
 
+A person can be greeted or ungreeted. A person is usually ungreeted. A person has some text called the greeting dialogue. The greeting dialogue of a person is usually "Hello, they greeted impassionately.".
+
+Instead of talking to a person (called the target) when the greeting dialogue of the target is not "" and the target is ungreeted:
+	now the target is greeted;
+	say "[greeting dialogue of the target][paragraph break]".
+
+
 The Horemheb attendant is a man in the Temple of Horemheb. The printed name of the Horemheb attendant is "temple attendant". The description of the Horemheb attendant is "He sweeps in short, irritable strokes, like a man keeping score of something." Understand "attendant" or "priest" as the Horemheb attendant when the location is the Temple of Horemheb.
 
 Rule for writing a paragraph about the Horemheb attendant when the location is the Temple of Horemheb:
 	say "[first time]A temple attendant sweeps the floor with visible resentment.[line break][only]".
-
-A person can be greeted or ungreeted. A person is usually ungreeted. A person has some text called the greeting dialogue. The greeting dialogue of a person is usually "".
-
-Before talking to a person (called the target) when the greeting dialogue of the target is not "" and the target is ungreeted:
-	now the target is greeted;
-	say "[greeting dialogue of the target][paragraph break]".
 
 The greeting dialogue of the Horemheb attendant is "The attendant glances up, surprised anyone's bothered to actually talk to him. 'Oh--a visitor who talks back. Most people just stare at the reliefs and leave.'"
 
 Table of Horemheb Attendant's Early Chatter
 chatter
 "'You've been to the Ramesseum, I take it,' the attendant says sourly. 'Everyone has. Ramesses II, Ramesses II, Ramesses II. You know Horemheb reunified the whole administration after Akhenaten's mess? Cleaned house, restored the temples, fixed the tax rolls. Nobody carves a relief about fixing the tax rolls.'"
-"'Even the dead have to wait in line these days,' he mutters. 'Backed up clear into the underworld, I hear. Frankly, Horemheb would have had that sorted by now.'"
+"'I've been hearing terrible rumors everywhere,' he hisses conspiratorally. 'The judgements of the dead have been backed up for months. If Horemheb was in charge, everything would've been sorted by now.'"
 
 Table of Horemheb Attendant's Healing Chatter
 chatter
-"'Try the House of Life. Not my job to know medicine. My job is sweeping, apparently.'"
+"'If you're looking for answers, try the House of Life. That's not my job. My job is sweeping, apparently.'"
 
 Table of Horemheb Attendant's Countdown Chatter
 chatter
-"'Soldiers have been through twice today, telling us all to report anything suspicious,' he says. 'Frankly, I wouldn't know suspicious from ordinary. Everyone in this city seems half up to something.'"
+"'Soldiers have been through twice today, telling us all to report anything suspicious,' he says. 'If I took that seriously, they would never stop hearing from me. Everyone in this city seems half up to something.'"
 
 Instead of talking to the Horemheb attendant when Heal Heracles is not happening and Organ Acquisition is not happening:
 	choose a random row in Table of Horemheb Attendant's Early Chatter;
@@ -1291,17 +1353,17 @@ Instead of talking to the Horemheb attendant when Organ Acquisition is happening
 	choose a random row in Table of Horemheb Attendant's Countdown Chatter;
 	say "[chatter entry]".
 
-The Ramesseum attendant is a man in the Ramesseum. The printed name of the Ramesseum attendant is "temple attendant". The description of the Ramesseum attendant is "He looks exceedingly happy at being employed at such a prestigious facility. " Understand "attendant" or "priest" as the Ramesseum attendant when the location is the Ramesseum.
+The Ramesseum attendant is a man in the Ramesseum. The printed name of the Ramesseum attendant is "temple attendant". The description of the Ramesseum attendant is "He looks exceedingly happy to be employed at such a prestigious facility. " Understand "attendant" or "priest" as the Ramesseum attendant when the location is the Ramesseum.
 
 Rule for writing a paragraph about the Ramesseum attendant when the location is the Ramesseum:
 	say "[first time]A temple attendant greets visitors with suspicious enthusiasm.[line break][only]".
 
-The greeting dialogue of the Ramesseum attendant is "'Welcome, welcome!' the attendant beams, delighted to have someone new to talk to. 'First time at the Ramesseum? Everyone should see it at least once.'"
+The greeting dialogue of the Ramesseum attendant is "'Welcome, welcome!' the attendant beams, delighted to have more people to talk to. 'First time at the Ramesseum? Everyone should see it at least once.'"
 
 Table of Ramesseum Attendant's Early Chatter
 chatter
-"'Ramesses II himself commissioned this place,' the attendant beams. 'Colossal statues, epic battles, the works. We really don't need to try very hard to impress people.'"
-"'Tourists track sand everywhere,' he says, still smiling. 'But honestly? Good for business. More sand, more visitors. More visitors, more stories to tell.'"
+"'You know, Ramesses II himself commissioned this place,' the attendant beams like he didn't just impart the label on the wall. 'Colossal statues, epic battles, the works. We really don't need to try very hard to impress people.'"
+"'You see all this sand? It's from all the tourists.' he says, still smiling. 'Some people hate the sweeping, but it's good for business. More sand, more visitors. More visitors, more stories to tell.'[paragraph break]"
 
 Table of Ramesseum Attendant's Healing Chatter
 chatter
@@ -1323,27 +1385,23 @@ Instead of talking to the Ramesseum attendant when Organ Acquisition is happenin
 	choose a random row in Table of Ramesseum Attendant's Countdown Chatter;
 	say "[chatter entry]".
 
-The street vendor is a man in the Temple of Amenhotep III. The description of the street vendor is "He's spread a mat of amulets, tiny perfume jars, and good luck charms just outside the temple steps." Understand "vendor" or "trader" as the street vendor.
+The street vendor is a vendor in the Temple of Amenhotep III. The street vendor is male. The description of the street vendor is "He's spread a mat of amulets, tiny perfume jars, and good luck charms just outside the temple steps." Understand "vendor" or "trader" as the street vendor.
 
 Rule for writing a paragraph about the street vendor when the location is the Temple of Amenhotep III:
-	say "[first time]A street vendor has set up shop just outside, hawking trinkets to anyone who slows down.[line break][only]".
+	say "[first time]A street vendor has set up shop just outside, peddling trinkets to anyone who slows down.[line break][only]".
 
 Some trinkets are a plural-named thing carried by the street vendor. The description is "Amulets, tiny scent-jars of perfume, and good-luck charms, all sun-bleached to roughly the same color."
 
-Buying is an action applying to one thing. Understand "buy [something]" or "purchase [something]" as buying.
+Understand "buy [something]" or "purchase [something]" as a mistake ("What would you trade for it?").
 
-Carry out buying:
-	say "You can't do that.".
-
-Instead of buying the trinkets:
-	say "'You don't look like you have anything to offer me,' the vendor sniffs."
+The rejection speech of the street vendor is "'You don't look like you have anything to offer me,' the vendor sniffs.".
 
 The greeting dialogue of the street vendor is "'Looking to buy?' the vendor asks, brightening at the attention. 'Or just looking? Either way, welcome to the finest--well, the only--trinket stand on these steps.'"
 
 Table of Street Vendor's Early Chatter
 chatter
-"'Got shooed clean off the steps of Ramesses III's temple this morning,' the vendor grumbles, setting out his wares. 'No appreciation for honest commerce around here.'"
-"'You hear the statues sing yet?' he asks, nodding east toward the colossi. 'Neither have I, and I've been sitting here for six years.'"
+"'Got shooed clean off the steps of Ramesses III's temple this morning,' the vendor grumbles, dusting sand off his wares. 'No appreciation for honest commerce around here.'"
+"'You hear the statues sing yet?' he asks, nodding east toward the Memnon colossi. 'Neither have I, and I've been sitting here for six years.' [paragraph break]He pauses.[paragraph break]'Although... I've been hearing some strange rumors about them these past few months. Can't say exactly what, but people swear they've been hearing swears coming from one of these statues. Not even singing anymore, would you believe! Swears! How scandolous!'"
 
 Table of Street Vendor's Healing Chatter
 chatter
@@ -1366,37 +1424,6 @@ Instead of talking to the street vendor when Organ Acquisition is happening and 
 	choose a random row in Table of Street Vendor's Countdown Chatter;
 	say "[chatter entry]".
 
-The elderly pilgrim is a woman in the Memnon Colossi. The description of the elderly pilgrim is "She squints up at the statues with the patient devotion of someone who has nowhere else to be." Understand "pilgrim" or "old woman" as the elderly pilgrim.
-
-Rule for writing a paragraph about the elderly pilgrim when the location is the Memnon Colossi:
-	say "[first time]An elderly pilgrim sits before the statues, waiting--for what, you're not sure.[line break][only]".
-
-The greeting dialogue of the elderly pilgrim is "The pilgrim glances over, mildly surprised to have company. 'Come to see if the statue sings? Sit, sit. It could happen any moment. Or not for years.'"
-
-Table of Elderly Pilgrim's Early Chatter
-chatter
-"'I have sat here every dawn for eleven years,' the pilgrim says, 'waiting to hear the statue sing. Today: nothing. Yesterday: also nothing. But someday!'"
-
-Table of Elderly Pilgrim's Healing Chatter
-chatter
-"'Still no singing,' the pilgrim reports, unprompted. 'Though I did hear a rumor of a sick man somewhere in the city. Perhaps the statue's saving its voice out of sympathy.'"
-
-Table of Elderly Pilgrim's Countdown Chatter
-chatter
-"'The statue's been quiet all week,' the pilgrim says. 'Even stone knows when to keep its head down, with soldiers marching about like that.'"
-
-Instead of talking to the elderly pilgrim when Heal Heracles is not happening and Organ Acquisition is not happening:
-	choose a random row in Table of Elderly Pilgrim's Early Chatter;
-	say "[chatter entry]".
-
-Instead of talking to the elderly pilgrim when Heal Heracles is happening:
-	choose a random row in Table of Elderly Pilgrim's Healing Chatter;
-	say "[chatter entry]".
-
-Instead of talking to the elderly pilgrim when Organ Acquisition is happening and the Kidnapping is not happening:
-	choose a random row in Table of Elderly Pilgrim's Countdown Chatter;
-	say "[chatter entry]".
-
 The temple guard is a man in the Temple of Ramesses III. The description of the temple guard is "He stands a little too stiffly, watching the door like he's still expecting the assassins." Understand "guard" as the temple guard.
 
 Rule for writing a paragraph about the temple guard when the location is the Temple of Ramesses III:
@@ -1409,17 +1436,16 @@ The temple guard has grown suspicious is a truth state that varies. The temple g
 Table of Temple Guard's Early Chatter
 chatter
 "'Move along,' the guard snaps, not even looking at you. 'Nothing here for looters, mourners, or the merely curious.'"
-"'They say the dead are backed up clear into the underworld,' he says darkly. 'Ramesses III is still waiting on a proper judgment, if you ask me. Some conspiracies take longer to settle than others.'"
+"'The delay in ' he says darkly. 'Ramesses III is still waiting on a proper judgment, if you ask me. Some conspiracies take longer to settle than others.'"
 
 Table of Temple Guard's Healing Chatter
 chatter
-"'Someone's always sick this time of year,' the guard says flatly. 'Not my concern. My concern is this temple.'"
 "'If you need herbs or medicine, the House of Life is that way,' he says, jerking his head west. 'Now get away from the pillars.'"
 
 Table of Temple Guard's Countdown Chatter
 chatter
-"'They pulled half my detachment away on some citywide search,' the guard complains. 'Leaves me alone guarding a dead king. Typical.'"
-"'I've heard enough rumors today to last a lifetime,' he mutters. 'Strangers causing trouble all over the city. Not that it's any concern of mine--yet.'"
+"'They pulled half my unit away on some citywide search,' the guard complains. 'Leaves me alone guarding a dead king. Typical.'"
+"'I've heard enough rumors today to last a lifetime,' he mutters. 'Foreigners causing trouble all over the city. Not that it's any concern of mine--yet.'"
 
 Instead of talking to the temple guard when Heal Heracles is not happening and Organ Acquisition is not happening:
 	choose a random row in Table of Temple Guard's Early Chatter;
@@ -1441,7 +1467,7 @@ Instead of talking to the temple guard when Organ Acquisition is happening and t
 	now Heracles is in the Temple of Horemheb.
 
 Instead of talking to the temple guard when Organ Acquisition is happening and the Kidnapping is not happening and the temple guard has grown suspicious is true:
-	say "Better not tempt fate in making him recognize you."
+	say "Better not tempt fate and make him recognize you."
 
 Chapter 4 - Busiris-Organs
 
@@ -1724,7 +1750,7 @@ Palace exit is a secret door. It is west of Corridor of Procession West and east
 
 Hallway is a corridor in Busiris. It is north of Corridor of Procession West. "Its walls are streaked with dark soot and grime. This place doesn't have very good upkeep."
 
-West Magazines is a room in Busiris. It is west of Hallway. "Long, narrow rooms crammed to the brim with hundreds of [set-link pithoi]. You can hardly move around with all of these jars blocking your way. It's clearly a fire hazard, and you would know about those. There is a [set-link papyrus scrap] lying on the ground."
+West Magazines is a room in Busiris. It is west of Hallway. "Long, narrow rooms crammed to the brim with hundreds of [set-link pithoi]. You can hardly move around with all of these jars blocking your way. It's clearly a fire hazard, and you would know about those. There is a [set-link papyrus scrap] lying on the ground. Tucked among the jars is a small [set-link jar of honey], somehow still sealed."
 
 The pithoi are plural-named. The pithoi are in the West Magazines. The description of the pithoi are "Jars filled with olive oil, wine, and other delicacies. Enough food to fuel an empire, it seems. Or fund a feast fit for a king. It seems that you (and Heracles) won't go hungry." The print-name is "pithoi".
 
@@ -1732,6 +1758,8 @@ Instead of taking pithoi:
 	say "They're much too heavy to carry."
 
 The abandoned medical papyrus scrap is in the West Magazines. The description of the abandoned medical papyrus scrap is "A crumpled and yellowing scrap of papyrus. It reads: 'A liver that is too full of blood can produce all diseases'. Truly salient advice. You ought to bring it up at your next check-up.". The print-name is "papyrus scrap".
+
+A jar of honey is in the West Magazines. The description is "A small clay jar labeled honey." The print-name is "jar".
 
 Instead of examining Heracles in the West Magazines:
 	say "Heracles seems a little nervous."
@@ -2106,6 +2134,8 @@ After printing the name of a closed unopenable container:
 Instead of cutting a body part:
 	say "You'll hardly win any favors by cutting Osiris into even more pieces.".
 
+A knife is a blade.
+
 Section 2 - Marketplace
 
 Marketplace of Oxyrhynchos is a room in Oxyrhynchos. "You are in Oxyrhynchos, home of the medjed elephantfish. A busy marketplace stands before you, curdling with people. Vendors crouch behind low mats, their goods spread before them --- fish, fowl, figs, and more. A woman trades herbs with a weary peasant; another offers a bowl of eggs. Nearby, a man squats beside his wares, watching the crowd. On the right, two women barter bread for grain while a trader tips grain into a waiting basket. The hum of haggling fills the dusty square. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
@@ -2114,45 +2144,198 @@ Understand "examine vendors" or "x vendors" as a mistake ("You scan the vendors,
 
 Understand "examine goods" or "x goods" as a mistake ("You find no body parts for sell. What you see instead are an array of foodstuffs and household commodities: meats, fish, fowl, herbs, grain, eggs, bread, and figs; ointments, sandals, pottery wares, and linen.").
 
-A market-vendor is a kind of person. The printed name of a market-vendor is "[list of things carried by the vendor] vendor". Understand "seller" as a market-vendor. [Understand "man with [something]" as a vendor carrying it.] A market-vendor has a thing called goods.
+A vendor is a kind of person. A vendor can be selling or not-selling. A vendor is usually selling. Understand "seller" as a vendor. A vendor has a table-name called trades. A vendor has some text called the not-selling speech. The not-selling speech of a vendor is usually "Sorry, I'm not selling to you.". A vendor has some text called the rejection speech. The rejection speech of a vendor is usually "That's not of interest to me.".
+
+Instead of talking to a not-selling vendor:
+	say "[not-selling speech of the noun]".
+
+Instead of talking to a selling vendor:
+	say "'What have you got to offer me?' [the noun] asks."
+
+Trading is an action applying to two things. Understand "trade [something] to [someone]" or "barter [something] to [someone]" as trading.
+
+Instead of trading:
+	if the player does not carry the noun:
+		say "You aren't holding [the noun].";
+	otherwise if the second noun is not a vendor:
+		say "[The second noun] doesn't want to trade.";
+	otherwise if the second noun is not selling:
+		say "[not-selling speech of the second noun]";
+	otherwise if there is no sold-good corresponding to an accepted-trade of the noun in the trades of the second noun:
+		say "[rejection speech of the second noun]";
+	otherwise:
+		let the prize be the sold-good corresponding to an accepted-trade of the noun in the trades of the second noun;
+		now the second noun carries the noun;
+		now the player carries the prize;
+		say "[The second noun] takes [the noun] and hands you [the prize]."
 
 [A good is a kind of thing. Definition: a thing is a good if a vendor is carrying it. ]
 
-The herb vendor is a market-vendor in the Marketplace of Oxyrhynchos. The herb vendor is female. The herb vendor carries herbs. The description is "She sits behind a small pile of herbs, weighing each offer with a careful eye." Understand "herb/herbs seller/vendor" as the herb vendor.
+[Each vendor's goods table pairs a sold-good with an accepted-trade]
 
-Instead of talking to the herb vendor, say "'These are fresh,' she insists, holding up a bundle. 'But what have you got to trade?'"
+Table of Trinket Trades
+sold-good	accepted-trade
+the trinkets	the jar of perfume oil
 
-The egg vendor is a female market-vendor in the Marketplace of Oxyrhynchos. The description is "She cradles a shallow bowl of eggs, her gaze darting between possible customers." 
+The trades of the street vendor is Table of Trinket Trades.
 
-[ Instead of talking to the woman-with-eggs, say "She tilts the bowl toward you. 'They’re from my own hens,' she says. 'Fine shells, strong yolks. What will you give me?'"]
+Table of Fish Trades
+sold-good	accepted-trade
+the salted fish	the loaf of bread
+the dried fish	the onions
 
-The man-with-wares is a market-vendor in the Marketplace of Oxyrhynchos. The description is "A sharp-eyed trader crouches on a reed mat, his small goods hidden under a cloth." Understand "trader" or "vendor" as the man-with-wares. Instead of talking to the man-with-wares, say "He looks you up and down before replying. 'Depends on what you’ve brought,' he says."
+Table of Perfume Trades
+sold-good	accepted-trade
+the jar of perfume oil	the linen
+the unguent cones	the vegetables
 
+Table of Sandal Trades
+sold-good	accepted-trade
+the sandals	the beer
+the linen	the dried fish
 
-[include description of market place and items here.]
+Table of Vegetable Trades
+sold-good	accepted-trade
+the vegetables	the jar of perfume oil
+the onions	the salted fish
+the herbs	the loaf of bread
 
-[include meeting a couple with a pregnant woman nearing birth time. she is looking for a good luck pendant, but they are too poor to afford it.]
+Table of Bread Trades
+sold-good	accepted-trade
+the loaf of bread	the fever phylactery
+the eggs	the herbs
 
-Some bait is an edible thing in Marketplace of Oxyrhynchos.
+Table of Beer Trades
+sold-good	accepted-trade
+the beer	the sandals
 
-Instead of eating the bait:
-	say "Edible, sure, but you're no fish.".
+The fisherman is a vendor in the Marketplace of Oxyrhynchos. The fisherman is male. The trades of the fisherman is Table of Fish Trades. The description is "He crouches beside a reed basket, sorting the morning's catch by size." Understand "fisherman" as the fisherman.
 
-A fishing rod is in Marketplace of Oxyrhynchos. The fishing rod can be baited or unbaited. It is unbaited. The printed name of the fishing rod is "fishing rod[if fishing rod is baited] with bait". The description is "[if fishing rod is unbaited] A sturdy fishing rod, but it could use some bait.[end if] [if fishing rod is baited] The fishing pole is now baited with some fish food."
+Some salted fish are a plural-named thing carried by the fisherman. The description is "Silvery bodies packed in salt, still faintly smelling of the river."
 
-A knife is a blade in Marketplace of Oxyrhynchos. 
+The fisherwoman is a vendor in the Marketplace of Oxyrhynchos. The fisherwoman is female. The trades of the fisherwoman is Table of Fish Trades. The description is "She sits beside her husband, threading fish onto a length of cord to dry in the sun." Understand "fisherwoman" or "fisherman's wife" as the fisherwoman.
+
+Some dried fish are a plural-named thing carried by the fisherwoman. The description is "A string of fish, split and dried hard under the Egyptian sun."
+
+The perfume vendor is a vendor in the Marketplace of Oxyrhynchos. The perfume vendor is female. The trades of the perfume vendor is Table of Perfume Trades. The description is "She kneels behind a mat of small clay jars, dabbing scented oil on her wrist to tempt passersby." Understand "oil seller" or "perfume seller" as the perfume vendor.
+
+A jar of perfume oil is a thing carried by the perfume vendor. The description is "A squat clay jar, its stopper sealed with wax, faintly fragrant."
+
+Some unguent cones are a plural-named thing carried by the perfume vendor. The description is "Small cones of scented fat, meant to be worn atop a wig and left to melt slowly through the day."
+
+The sandal vendor is a vendor in the Marketplace of Oxyrhynchos. The sandal vendor is male. The trades of the sandal vendor is Table of Sandal Trades. The description is "He sits cross-legged behind stacks of woven sandals and folded lengths of linen." Understand "sandal seller" or "linen seller" as the sandal vendor.
+
+Some sandals are a plural-named thing carried by the sandal vendor. The description is "Sandals woven from plaited papyrus, sized for every foot."
+
+Some linen is a thing carried by the sandal vendor. The description is "A folded length of pale linen, coarser than what the temples use."
+
+The vegetable vendor is a vendor in the Marketplace of Oxyrhynchos. The vegetable vendor is female. The trades of the vegetable vendor is Table of Vegetable Trades. The description is "She sits behind a heap of vegetables, sorting onions from bundles of fresh herbs." Understand "vegetable seller" or "herb seller" as the vegetable vendor.
+
+Some vegetables are a plural-named thing carried by the vegetable vendor. The description is "A heap of leeks, gourds, and greens, still gritty with field dust."
+
+Some onions are a plural-named thing carried by the vegetable vendor. The description is "A braided string of onions, their papery skins rustling."
+
+Some herbs are a plural-named thing carried by the vegetable vendor. The description is "Bundles of fresh herbs, tied with twine."
+
+The bread vendor is a vendor in the Marketplace of Oxyrhynchos. The bread vendor is female. The trades of the bread vendor is Table of Bread Trades. The description is "She minds a basket of loaves and a shallow bowl of eggs, calling out prices to anyone who slows down." Understand "bread seller" or "egg seller" as the bread vendor.
+
+A loaf of bread is an edible thing carried by the bread vendor. The description is "A round loaf, still faintly warm."
+
+Instead of eating the loaf of bread:
+	say "You should probably save that for the fish.".
+
+Some eggs are a plural-named thing carried by the bread vendor. The description is "A shallow bowl of eggs, carefully nested in straw."
+
+Instead of talking to the bread vendor when the bread vendor carries the loaf of bread during Prepare Fishing:
+	say "'I see you've given the other couple a birth amulet,' the bread vendor says. 'If you want any bread from me, I want something for my daughter's fever.'"
+
+The beer vendor is a vendor in the Marketplace of Oxyrhynchos. The beer vendor is male. The trades of the beer vendor is Table of Beer Trades. The description is "He sits beside a row of jars, ladling out a taste for anyone who looks interested." Understand "beer seller" as the beer vendor.
+
+Beer jars is carried by the beer vendor. The description is "You would much prefer wine, but after so long in jail, anything would suffice."
+
+The birth amulet is a thing. The amulet can be given or ungiven. The birth amulet is ungiven.
+
+Instead of talking to the fisherman when the birth amulet is ungiven:
+	say "fisherman mentions they're looking for a birth amulet[paragraph break]";
+	say "fisherman mentions they never sell catfish, but there are some in the river"
+
+Instead of talking to the fisherwoman when the birth amulet is ungiven:
+	say "fisherwoman mentions they're looking for a birth amulet[paragraph break]";
+	say " fisherwoman mentions they never sell catfish, but there are some in the river"
+
+Instead of giving the birth amulet to the fisherman when the birth amulet is ungiven:
+	say "fisherman says thank you[paragraph break]";
+	wait for any key;
+	say "In return, he hands you a fishing rod.";
+	now the birth amulet is given;
+	now the fisherman carries the birth amulet;
+	now the player carries the fishing rod.
+
+Instead of giving the birth amulet to the fisherwoman when the birth amulet is ungiven:
+	say "fisherwoman says thank you[paragraph break]";
+	wait for any key;
+	say "In return, she hands you a fishing rod.";
+	now the birth amulet is given;
+	now the fisherwoman carries the birth amulet;
+	now the player carries the fishing rod.
+
+Instead of talking to the fisherman when the birth amulet is given:
+	say "'Sorry, we can't give you bait,' the fisherman says, 'but some bread will probably do the trick.'"
+
+Instead of talking to the fisherwoman when the birth amulet is given:
+	say "'Sorry, we can't give you bait,' the fisherwoman says, 'but some bread will probably do the trick.'"
+
+The fishing rod can be baited or unbaited. It is unbaited. The printed name of the fishing rod is "fishing rod[if fishing rod is baited] with bait". The description is "[if fishing rod is unbaited] A sturdy fishing rod, but it could use some bait.[end if] [if fishing rod is baited] The fishing pole is now baited with some fish food."
 
 Section 3 - Tawaret conflict
 
-The Nile Riverbank is in Oxyrhynchos. It is east of Marketplace of Oxyrhynchos. "You are at the bank of the Nile. West of you is the marketplace."
+The Nile Riverbank is in Oxyrhynchos. It is east of Marketplace of Oxyrhynchos. "You are at the bank of the Nile. West of you is the marketplace. A stand of [set-link duat-plant] grows in the damp silt at the water's edge, its dark reedy stalks swaying with the current."
 
-The Taweret Amulet is a thing. 
+The duat-plant is a scenery supporter in the Nile Riverbank. The print-name is "duat-plant". The description is "A reed-like plant grows near the riverbank, its stalks darkening where they meet the water. [if duat-seeds is on the duat-plant]A few dry seed pods cling near the top--you could shake some [set-link duat-seeds] loose.[otherwise]You've already gathered what seeds had ripened.[end if]".
+[ https://thesaurus-linguae-aegyptiae.de/lemma/177980, in: Thesaurus Linguae Aegyptiae (accessed: 20 Aug 2026) ]
 
-Tawaret Conflict is a scene. Tawaret Conflict begins when Penis Acquisition begins. Tawaret Conflict ends when the Taweret Amulet is acquired.
+Instead of taking the duat-plant, say "It's too difficult to pull free. Better to just take the seeds."
 
-[add lots of dialogue and the whole conflict relating to tawaret]
+Duat-seeds are on the duat-plant. The print-name is "duat-seeds". The description is "A handful of small, dark seeds, generic and slightly soggy."
 
-[Ruya can do the Tawaret character and all associated interactions with hippos]
+The birth amulet is a thing. The description is "A small amulet of a hippo holding her belly and an ankh. Much friendlier looking than then one you just met."
+
+Tawaret Conflict is a scene. Tawaret Conflict begins when Penis Acquisition begins. Tawaret Conflict ends when the birth amulet is acquired.
+
+When Tawaret Conflict begins:
+	now Taweret is in the Nile Riverbank.
+
+Taweret is a woman. Understand "hippo" or "hippopotamus" as Taweret. The description of the hippo is "A hippo (?), half-submerged in the shallows."
+
+[taweret convo. after she leaves, she drops the knife and the birth amulet.]
+Instead of doing something to Taweret:
+	say "something about murdering your children is bad[paragraph break]";
+	wait for any key;
+	say "...[paragraph break]";
+	wait for any key;
+	say "...";
+	now Taweret is nowhere;
+	now the knife is in the Nile Riverbank;
+	now the birth amulet is in the Nile Riverbank.
+
+Instead of taking the birth amulet:
+	now the birth amulet is acquired;
+	continue the action.
+
+Prepare Fishing is a scene. Prepare Fishing begins when the birth amulet is given. Prepare Fishing ends when the bread vendor carries the fever phylactery.
+
+Fishing Trip is a scene. Fishing Trip begins when Prepare Fishing ends. Fishing Trip ends when Osiris' penis is acquired. Penis Acquisition ends when Osiris' penis is acquired.
+
+Athena is a woman. Athena can be met or unmet. Athena is unmet.
+
+[Athena accosts Medea too lol]
+If the location is the Nile Riverbank and Athena is unmet during Fishing Trip:
+	say "murdering your children is also bad coming from the greeks[paragraph break]";
+	wait for any key;
+	say "...[paragraph break]";
+	wait for any key;
+	say "...";
+	now Athena is met.
 
 Section 4 - Fishing game
 
@@ -2207,9 +2390,9 @@ Before baiting something:
 
 Carry out baiting:
 	if the fishing rod is unbaited:
-		if the player is carrying bait:
-			say "You attach the bait carefully to the fishing rod." ;
-			now the bait is nowhere;
+		if the player is carrying the loaf of bread:
+			say "You press a bit of bread onto the hook. Not proper bait, but it'll do.";
+			now the loaf of bread is nowhere;
 			now the fishing rod is baited;
 		otherwise:
 			say "You don't have anything to bait it with.";
@@ -2413,6 +2596,34 @@ oh Nun! Praise to you, great gods who bring the Upper One to the Underworld, who
 
 Words to be said over an instrument of tamarisk-wood. To conjure the akhu with it."
 
+DIS_001 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "TO REMOVE THE AAA-DISEASE".
+The papyrus-subject is "General Diseases".
+The content is "Jochauflegung of the sau-wood
+
+Warm in Oil and give against it.".
+
+DIS_002 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "A CONJURATION OF THE ASIATIC DISEASE".
+The papyrus-subject is "General Diseases".
+The content is "Who is knowing like Re? Who knows the like of this god? You who turn the belly black with black coals so as to get even a hold on the upper god! When, just as Seth conjured the Great Green Sea, Seth conjures you in the same manner, oh Asiatic disease, then you will not stride about in the body of NN born of NN.
+
+This spell is to be said four times over fresh moringa-oil and residue of a cooking-vessel. Conjure her with that and close her up with seals of tortoise-shell.".
+
+DIS_003 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "PHYLACTERY FOR DAILY FEVER WITH SHIVERING FITS".
+The papyrus-subject is "General Diseases".
+The content is "Write on a clean piece of papyrus and wear as an amulet:
+
+    IAO SARAOTH ADONAI AKRAMMACHAMMAREI[line break]
+     AO SABAOTH ADONAI AKRAMMACHAMMAREI[line break]
+      O SARAOTH ADONAI AKRAMMACHAMMAREI
+	  
+In a pinch, just the longest line probably suffices.".
+
 MISC_001 is a papyrus-scroll. It is in the House of Life.
 The library is Medical papyri.
 The title is "ANOTHER FOR THE GROWTH OF THE HAIR ON A HEAD WHICH IS BECOMING BALD".
@@ -2447,29 +2658,13 @@ This spell is to be said during the drinking of beer; should be spat up. A true 
 
 MISC_004 is a papyrus-scroll. It is in the House of Life. 
 The library is Medical papyri.
-The title is "TO REMOVE THE AAA-DISEASE".
-The papyrus-subject is "Miscellaneous".
-The content is "Jochauflegung of the sau-wood
-
-Warm in Oil and give against it."
-
-MISC_005 is a papyrus-scroll. It is in the House of Life. 
-The library is Medical papyri.
 The title is "ANOTHER CONJURATION FOR A BURN".
 The papyrus-subject is "Miscellaneous".
 The content is "'Your son Horus has been burnt in the desert!' 'Is there water there?' 'There is no water there!' 'Water is in my mouth, an Inundation is between my thighs. It is to extinguish the fire that I have arrived. Break out, burn!'
 
 Words to be said over the milk of a woman who has given birth to a male child, gum and hairs of a cat. To be applied to the burn.".
 
-MISC_006 is a papyrus-scroll. It is in the House of Life. 
-The library is Medical papyri.
-The title is "A CONJURATION OF THE ASIATIC DISEASE".
-The papyrus-subject is "Miscellaneous".
-The content is "Who is knowing like Re? Who knows the like of this god? You who turn the belly black with black coals so as to get even a hold on the upper god! When, just as Seth conjured the Great Green Sea, Seth conjures you in the same manner, oh Asiatic disease, then you will not stride about in the body of NN born of NN.
-
-This spell is to be said four times over fresh moringa-oil and residue of a cooking-vessel. Conjure her with that and close her up with seals of tortoise-shell.".
-
-MISC_007 is a papyrus-scroll. It is in the House of Life. 
+MISC_005 is a papyrus-scroll. It is in the House of Life. 
 The library is Medical papyri.
 The title is "Ritual for the Reassembling of Osiris".
 The papyrus-subject is "Miscellaneous".
@@ -2477,12 +2672,7 @@ The content is "Look to the east and say: 'You are the one who thunders, the one
 and hurls lightning at the right time and dries in the same way; come to me,
 reveal' (add the usual or write whatever you want, and anoint your hand).
 
-Preparation of the ink: 3 dried figs, 3 stones of the Nicolaus date, 3 fragments of
-1000 wormwood, and 3 lumps of myrrh; mix together, then after pulverizing them,
-write the following formula. Isis uttered it and wrote it when, after taking up
-Osiris, she fit together his separated members. Asklepios saw Osiris and admitted that he could not put together someone who was dead even with the help
-of Hebe or of anyone else.
+Preparation of the ink: 3 dried figs, 3 stones of the Nicolaus date, 3 fragments of 1000 wormwood, and 3 lumps of myrrh; mix together, then after pulverizing them, write the following formula. Isis uttered it and wrote it when, after taking up Osiris, she fit together his separated members. Asklepios saw Osiris and admitted that he could not put together someone who was dead even with the help of Hebe or of anyone else.
 
-This is the formula: 'Come to me, SESEGGENBARPHARAGGES SABAOTH, for
-I conjure you, daimon of the dead, by bitter Necessity; open your ears and
-hear the holy words-----' [bracket]the papyrus was torn here[close bracket]".
+This is the formula: 'Come to me, SESEGGENBARPHARAGGES SABAOTH, for I conjure you, daimon of the dead, by bitter Necessity; open your ears and hear the holy words-----' [bracket]the papyrus was torn here[close bracket]".
+
