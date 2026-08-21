@@ -961,7 +961,7 @@ Coriander seeds are on the coriander plant. The description is "A pinch of small
 Instead of going North in the Temple of Thutmoses III:
 	say "A few mortuary temples can be seen off in the distance, but something tells you it won't be very productive.".
 
-The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. "[set-link mortuary temple] looms large with its colossal statues. [Faded reliefs] along the walls depict the famous Battle of Kadesh. An inscription points west to a mysterious 'House of Life,' rumored to store sacred scrolls."
+The Ramesseum is south of The Temple of Thutmoses III. It is in Thebes. "[set-link mortuary temple] looms large with its colossal statues. [Faded reliefs] along the walls depict the famous Battle of Kadesh."
 
 The mortuary temple of Ramesses II is scenery in the Ramesseum. "Ramesses the Great—you had heard of him before, although by a different name. This place had once been a monumental temple suitable for the King of Kings. Now all that remains are sun-bleached ruins." The print-name is "The mortuary temple of Ramesses II".
 
@@ -974,8 +974,28 @@ Instead of examining the faded reliefs:
 	wait for any key;
 	say "Near the bottom of the relief, you notice grafitti scrawled onto the stone. It reads: 'Did he really fight all alone?'"
 	
-	
 Understand "walls" or "reliefs" or "Battle of Kadesh" as faded reliefs when the location is the Ramesseum. 
+
+The Ramesseum attendant is a man in the Ramesseum. The printed name of the Ramesseum attendant is "temple attendant". The description of the Ramesseum attendant is "He looks exceedingly happy to be employed at such a prestigious facility. " Understand "attendant" or "priest" as the Ramesseum attendant when the location is the Ramesseum.
+
+Rule for writing a paragraph about the Ramesseum attendant when the location is the Ramesseum:
+	say "[first time]A temple attendant greets visitors with suspicious enthusiasm.[line break][only]".
+
+The greeting dialogue of the Ramesseum attendant is "'Welcome, welcome!' the attendant beams, delighted to have more people to talk to. 'First time at the Ramesseum? Everyone should see it at least once.'"
+
+Table of Ramesseum Attendant's General Chatter
+chatter
+"'You know, Ramesses II himself commissioned this place,' the attendant beams like he didn't just impart the label on the wall. 'Colossal statues, epic battles, the works. We really don't need to try very hard to impress people.'"
+"'You see all this sand? It's from all the tourists.' he says, still smiling. 'Some people hate the sweeping, but it's good for business. More sand, more visitors. More visitors, more stories to tell.'[paragraph break]"
+
+Instead of talking to the Ramesseum attendant:
+	if Heal Heracles is happening:
+		say "'The House of Life? Right through there!' she says, pointing west, delighted you asked. 'Enormous library. Scrolls on everything—medicine, magic, more medicine. We're very proud of it.'";
+	if Organ Acquisition is happening and the Kidnapping is not happening:
+		say "'Soldiers came through asking questions about some foreigners,' she says, unbothered. 'Very polite, all things considered.'";
+	otherwise:
+		choose a random row in Table of Ramesseum Attendant's General Chatter;
+		say "[chatter entry]".
 
 The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "Painted sand stone reliefs cover the [set-link mortuary temple of Thutmoses IV]. The vast temenos wall loom over you, making this temple look the same as any other temple in this area. "
 	
@@ -1031,10 +1051,42 @@ The Temple of Horemheb is south of the collection of three temples. It is in The
 
 The mortuary temple of Horemheb is in the Temple of Horemheb. The print-name is "temple".
 
+
+The Horemheb attendant is a man in the Temple of Horemheb. The printed name of the Horemheb attendant is "temple attendant". The description of the Horemheb attendant is "He sweeps in short, irritable strokes, like a man keeping score of something." Understand "attendant" or "priest" as the Horemheb attendant when the location is the Temple of Horemheb.
+
+Rule for writing a paragraph about the Horemheb attendant when the location is the Temple of Horemheb:
+	say "[first time]A temple attendant sweeps the floor with visible resentment.[line break][only]".
+
+The greeting dialogue of the Horemheb attendant is "The attendant glances up, surprised anyone's bothered to actually talk to him. 'Oh--a visitor who talks back. Most people just stare at the reliefs and leave.'"
+
+Table of Horemheb Attendant's Early Chatter
+chatter
+"'You've been to the Ramesseum, I take it,' the attendant says sourly. 'Everyone has. Ramesses II, Ramesses II, Ramesses II. You know Horemheb reunified the whole administration after Akhenaten's mess? Cleaned house, restored the temples, fixed the tax rolls. Nobody carves a relief about fixing the tax rolls.'"
+"'I've been hearing terrible rumors everywhere,' he hisses conspiratorally. 'The judgements of the dead have been backed up for months. If Horemheb was in charge, everything would've been sorted by now.'"
+
+Table of Horemheb Attendant's Healing Chatter
+chatter
+"'If you're looking for answers, try the House of Life. That's not my job. My job is sweeping, apparently.'"
+
+Table of Horemheb Attendant's Countdown Chatter
+chatter
+"'Soldiers have been through twice today, telling us all to report anything suspicious,' he says. 'If I took that seriously, they would never stop hearing from me. Everyone in this city seems half up to something.'"
+
+Instead of talking to the Horemheb attendant when Heal Heracles is not happening and Organ Acquisition is not happening:
+	choose a random row in Table of Horemheb Attendant's Early Chatter;
+	say "[chatter entry]".
+
+Instead of talking to the Horemheb attendant when Heal Heracles is happening:
+	choose a random row in Table of Horemheb Attendant's Healing Chatter;
+	say "[chatter entry]".
+
+Instead of talking to the Horemheb attendant when Organ Acquisition is happening and the Kidnapping is not happening:
+	choose a random row in Table of Horemheb Attendant's Countdown Chatter;
+	say "[chatter entry]".
+
 The Temple of Ramesses III is south of the Temple of Horemheb. It is in Thebes. "Here be Ramesses III's [set-link mortuary temple]. You feel that this man met a bitter end. You can respect that."
 	
 The mortuary temple of Ramesses III is scenery in the Temple of Ramesses III. The print-name is "mortuary temple".
-	
 	
 
 Section 2 - The library
@@ -1320,71 +1372,6 @@ Instead of talking to a person (called the target) when the greeting dialogue of
 	now the target is greeted;
 	say "[greeting dialogue of the target][paragraph break]".
 
-
-The Horemheb attendant is a man in the Temple of Horemheb. The printed name of the Horemheb attendant is "temple attendant". The description of the Horemheb attendant is "He sweeps in short, irritable strokes, like a man keeping score of something." Understand "attendant" or "priest" as the Horemheb attendant when the location is the Temple of Horemheb.
-
-Rule for writing a paragraph about the Horemheb attendant when the location is the Temple of Horemheb:
-	say "[first time]A temple attendant sweeps the floor with visible resentment.[line break][only]".
-
-The greeting dialogue of the Horemheb attendant is "The attendant glances up, surprised anyone's bothered to actually talk to him. 'Oh--a visitor who talks back. Most people just stare at the reliefs and leave.'"
-
-Table of Horemheb Attendant's Early Chatter
-chatter
-"'You've been to the Ramesseum, I take it,' the attendant says sourly. 'Everyone has. Ramesses II, Ramesses II, Ramesses II. You know Horemheb reunified the whole administration after Akhenaten's mess? Cleaned house, restored the temples, fixed the tax rolls. Nobody carves a relief about fixing the tax rolls.'"
-"'I've been hearing terrible rumors everywhere,' he hisses conspiratorally. 'The judgements of the dead have been backed up for months. If Horemheb was in charge, everything would've been sorted by now.'"
-
-Table of Horemheb Attendant's Healing Chatter
-chatter
-"'If you're looking for answers, try the House of Life. That's not my job. My job is sweeping, apparently.'"
-
-Table of Horemheb Attendant's Countdown Chatter
-chatter
-"'Soldiers have been through twice today, telling us all to report anything suspicious,' he says. 'If I took that seriously, they would never stop hearing from me. Everyone in this city seems half up to something.'"
-
-Instead of talking to the Horemheb attendant when Heal Heracles is not happening and Organ Acquisition is not happening:
-	choose a random row in Table of Horemheb Attendant's Early Chatter;
-	say "[chatter entry]".
-
-Instead of talking to the Horemheb attendant when Heal Heracles is happening:
-	choose a random row in Table of Horemheb Attendant's Healing Chatter;
-	say "[chatter entry]".
-
-Instead of talking to the Horemheb attendant when Organ Acquisition is happening and the Kidnapping is not happening:
-	choose a random row in Table of Horemheb Attendant's Countdown Chatter;
-	say "[chatter entry]".
-
-The Ramesseum attendant is a man in the Ramesseum. The printed name of the Ramesseum attendant is "temple attendant". The description of the Ramesseum attendant is "He looks exceedingly happy to be employed at such a prestigious facility. " Understand "attendant" or "priest" as the Ramesseum attendant when the location is the Ramesseum.
-
-Rule for writing a paragraph about the Ramesseum attendant when the location is the Ramesseum:
-	say "[first time]A temple attendant greets visitors with suspicious enthusiasm.[line break][only]".
-
-The greeting dialogue of the Ramesseum attendant is "'Welcome, welcome!' the attendant beams, delighted to have more people to talk to. 'First time at the Ramesseum? Everyone should see it at least once.'"
-
-Table of Ramesseum Attendant's Early Chatter
-chatter
-"'You know, Ramesses II himself commissioned this place,' the attendant beams like he didn't just impart the label on the wall. 'Colossal statues, epic battles, the works. We really don't need to try very hard to impress people.'"
-"'You see all this sand? It's from all the tourists.' he says, still smiling. 'Some people hate the sweeping, but it's good for business. More sand, more visitors. More visitors, more stories to tell.'[paragraph break]"
-
-Table of Ramesseum Attendant's Healing Chatter
-chatter
-"'You know the House of Life? Right through there!' she says, pointing west, delighted you asked. 'Enormous library. Scrolls on everything—medicine, magic, more medicine. We're very proud of it.'"
-
-Table of Ramesseum Attendant's Countdown Chatter
-chatter
-"'Soldiers came through asking questions about some foreigners,' she says, unbothered. 'Very polite, all things considered. Have you visited the colossi yet? People say they sing!'"
-
-Instead of talking to the Ramesseum attendant when Heal Heracles is not happening and Organ Acquisition is not happening:
-	choose a random row in Table of Ramesseum Attendant's Early Chatter;
-	say "[chatter entry]".
-
-Instead of talking to the Ramesseum attendant when Heal Heracles is happening:
-	choose a random row in Table of Ramesseum Attendant's Healing Chatter;
-	say "[chatter entry]".
-
-Instead of talking to the Ramesseum attendant when Organ Acquisition is happening and the Kidnapping is not happening:
-	choose a random row in Table of Ramesseum Attendant's Countdown Chatter;
-	say "[chatter entry]".
-
 The street vendor is a vendor in the Temple of Amenhotep III. The street vendor is male. The description of the street vendor is "He's spread a mat of amulets, tiny perfume jars, and good luck charms just outside the temple steps." Understand "vendor" or "trader" as the street vendor.
 
 Rule for writing a paragraph about the street vendor when the location is the Temple of Amenhotep III:
@@ -1398,42 +1385,40 @@ The rejection speech of the street vendor is "'You don't look like you have anyt
 
 The greeting dialogue of the street vendor is "'Looking to buy?' the vendor asks, brightening at the attention. 'Or just looking? Either way, welcome to the finest--well, the only--trinket stand on these steps.'"
 
-Table of Street Vendor's Early Chatter
+Table of Street Vendor's General Chatter
 chatter
 "'Got shooed clean off the steps of Ramesses III's temple this morning,' the vendor grumbles, dusting sand off his wares. 'No appreciation for honest commerce around here.'"
-"'You hear the statues sing yet?' he asks, nodding east toward the Memnon colossi. 'Neither have I, and I've been sitting here for six years.' [paragraph break]He pauses.[paragraph break]'Although... I've been hearing some strange rumors about them these past few months. Can't say exactly what, but people swear they've been hearing swears coming from one of these statues. Not even singing anymore, would you believe! Swears! How scandolous!'"
+"'You hear the statues sing yet?' he asks, nodding east toward the Memnon colossi. 'Neither have I, and I've been sitting here for six years.' [paragraph break]He pauses.[paragraph break]'Although... I've been hearing some strange rumors about them as of late. Can't say exactly what, but people swear they've been hearing angry mutters coming from one of these statues. Not even singing anymore, would you believe! Swearing! How scandolous!'"
 
 Table of Street Vendor's Healing Chatter
 chatter
 "'Perfume for the sick room?' he offers, not really listening. 'Something's going around the city, I hear. Bad for foot traffic.'"
-"'If you want real medicine, not my little bottles, the House of Life is west of the Ramesseum,' he admits. 'Don't tell my customers I said that.'"
+"'If you want real me.dicine, not my little bottles, the House of Life is west of the Ramesseum,' he admits. 'Don't tell my customers I said that.'"
 
-Table of Street Vendor's Countdown Chatter
-chatter
-"'Soldiers walked right past my stall twice today,' he mutters, lowering his voice. 'Whatever they're hunting for, I'd rather not be standing nearby when they find it.'"
+Instead of talking to the street vendor: 
+	if Heal Heracles is happening:
+		choose a random row in Table of Street Vendor's General Chatter;
+		say "[chatter entry]".
+	if Organ Acquisition is happening:
+	say "'Soldiers walked right past my stall twice today,' he mutters, lowering his voice. 'Whatever they're hunting for, I'd rather not be standing nearby when they find it.'";
+	otherwise:
+		choose a random row in Table of Street Vendor's Early Chatter;
+		say "[chatter entry]".
 
-Instead of talking to the street vendor when Heal Heracles is not happening and Organ Acquisition is not happening:
-	choose a random row in Table of Street Vendor's Early Chatter;
-	say "[chatter entry]".
+Table of Trinket Trades
+sold-good	accepted-trade
+the trinkets	the jar of perfume oil
 
-Instead of talking to the street vendor when Heal Heracles is happening:
-	choose a random row in Table of Street Vendor's Healing Chatter;
-	say "[chatter entry]".
+The trades of the street vendor is Table of Trinket Trades.
 
-Instead of talking to the street vendor when Organ Acquisition is happening and the Kidnapping is not happening:
-	choose a random row in Table of Street Vendor's Countdown Chatter;
-	say "[chatter entry]".
-
-The temple guard is a man in the Temple of Ramesses III. The description of the temple guard is "He stands a little too stiffly, watching the door like he's still expecting the assassins." Understand "guard" as the temple guard.
+The temple guard is a man in the Temple of Ramesses III. The temple guard can be suspicious or unsuspicious. The temple guard is unsuspicious. The description of the temple guard is "He stands a little too stiffly, watching the door like he's still expecting the assassins." Understand "guard" as the temple guard.
 
 Rule for writing a paragraph about the temple guard when the location is the Temple of Ramesses III:
 	say "[first time]A temple guard waves you off before you've taken two steps. 'Move along,' he says, then seems to reconsider and lets you pass anyway.[line break][only]".
 
 The greeting dialogue of the temple guard is "The guard eyes you as you approach. 'State your business,' he says, though he doesn't sound like he much cares what it is."
 
-The temple guard has grown suspicious is a truth state that varies. The temple guard has grown suspicious is false.
-
-Table of Temple Guard's Early Chatter
+Table of Temple Guard's General Chatter
 chatter
 "'Move along,' the guard snaps, not even looking at you. 'Nothing here for looters, mourners, or the merely curious.'"
 "'The delay in ' he says darkly. 'Ramesses III is still waiting on a proper judgment, if you ask me. Some conspiracies take longer to settle than others.'"
@@ -1441,33 +1426,27 @@ chatter
 Table of Temple Guard's Healing Chatter
 chatter
 "'If you need herbs or medicine, the House of Life is that way,' he says, jerking his head west. 'Now get away from the pillars.'"
+"'Move along,' the guard snaps, not even looking at you. 'Nothing here for looters, mourners, or the merely curious.'"
 
-Table of Temple Guard's Countdown Chatter
-chatter
-"'They pulled half my unit away on some citywide search,' the guard complains. 'Leaves me alone guarding a dead king. Typical.'"
-"'I've heard enough rumors today to last a lifetime,' he mutters. 'Foreigners causing trouble all over the city. Not that it's any concern of mine--yet.'"
-
-Instead of talking to the temple guard when Heal Heracles is not happening and Organ Acquisition is not happening:
-	choose a random row in Table of Temple Guard's Early Chatter;
-	say "[chatter entry]".
-
-Instead of talking to the temple guard when Heal Heracles is happening:
-	choose a random row in Table of Temple Guard's Healing Chatter;
-	say "[chatter entry]".
-
-Instead of talking to the temple guard when Organ Acquisition is happening and the Kidnapping is not happening and the temple guard has grown suspicious is false:
-	choose a random row in Table of Temple Guard's Countdown Chatter;
-	say "[chatter entry][paragraph break]";
-	wait for any key;
-	say "As you turn to go, the guard's eyes catch on you a moment too long. 'Wait,' he says slowly, straightening up. 'Aren't you--' [paragraph break]";
-	wait for any key;
-	say "You don't stick around to hear how he finishes that sentence. Grabbing Heracles by the arm, you hurry back the way you came.";
-	now the temple guard has grown suspicious is true;
-	now the player is in the Temple of Horemheb;
-	now Heracles is in the Temple of Horemheb.
-
-Instead of talking to the temple guard when Organ Acquisition is happening and the Kidnapping is not happening and the temple guard has grown suspicious is true:
-	say "Better not tempt fate and make him recognize you."
+Instead of talking to the temple guard:
+	if Heal Heracles is happening:
+		choose a random row in Table of Temple Guard's Healing Chatter;
+		say "[chatter entry]";
+	if  Organ Acquisition is happening:
+		if the temple guard is unsuspicious:
+			say "'They pulled half my unit away on some citywide search,' the guard complains. 'Leaves me alone guarding a dead king. Typical.'[paragraph break]";
+			wait for any key;
+			say "As you turn to go, the guard's eyes catch on you a moment too long. 'Wait,' he says slowly, straightening up. 'Aren't you--' [paragraph break]";
+			wait for any key;
+			say "You don't stick around to hear how he finishes that sentence. Grabbing Heracles by the arm, you hurry away.";
+			now the temple guard is suspicious;
+			now the player is in the Temple of Horemheb;
+			now Heracles is in the Temple of Horemheb;
+		otherwise:
+			ay "Better not tempt fate and make him recognize you.";
+	otherwise:
+		choose a random row in Table of Temple Guard's General Chatter;
+		say "[chatter entry]".
 
 Chapter 4 - Busiris-Organs
 
@@ -2172,12 +2151,6 @@ Instead of trading:
 [A good is a kind of thing. Definition: a thing is a good if a vendor is carrying it. ]
 
 [Each vendor's goods table pairs a sold-good with an accepted-trade]
-
-Table of Trinket Trades
-sold-good	accepted-trade
-the trinkets	the jar of perfume oil
-
-The trades of the street vendor is Table of Trinket Trades.
 
 Table of Fish Trades
 sold-good	accepted-trade
