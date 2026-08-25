@@ -228,8 +228,6 @@ Understand "talk to [someone]" as talking to.
 
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "talk to [something]" or “converse with [someone]” or "converse with [something]" as talking to.
 
-Squeezing through is an action applying to one visible thing. Understand "squeeze through [something]" as squeezing through.
-
 Prying open is an action applying to one visible thing. Understand "pry open [something]" as prying open. 
 
 Carry out talking to:
@@ -277,6 +275,32 @@ Rule for printing the name of a direction (called way) while listing exits:
 
 Rule for printing the name of a thing (called obj) when printing the locale description of a room:
 	place a link to the command "examine [printed name of obj]" reading "[printed name of obj]".
+	
+A thing-seller is a kind of person. A thing-seller can be selling or not-selling. A thing-seller is usually selling. A thing-seller has a table-name called trades. A thing-seller has some text called the not-selling speech. The not-selling speech of a thing-seller is usually "Sorry, I'm not selling to you.". A thing-seller has some text called the rejection speech. The rejection speech of a thing-seller is usually "That's not of interest to me.".
+
+Instead of talking to a not-selling thing-seller:
+	say "[not-selling speech of the noun]".
+
+Instead of talking to a selling thing-seller:
+	say "'What have you got to offer me?' [the noun] asks."
+
+Trading is an action applying to two things. Understand "trade [something] to [someone]" or "barter [something] to [someone]" as trading.
+
+Instead of trading:
+	if the player does not carry the noun:
+		say "You aren't holding [the noun].";
+	otherwise if the second noun is not a thing-seller:
+		say "[The second noun] doesn't want to trade.";
+	otherwise if the second noun is not selling:
+		say "[not-selling speech of the second noun]";
+	otherwise if there is no sold-good corresponding to an accepted-trade of the noun in the trades of the second noun:
+		say "[rejection speech of the second noun]";
+	otherwise:
+		let the prize be the sold-good corresponding to an accepted-trade of the noun in the trades of the second noun;
+		now the second noun carries the noun;
+		now the player carries the prize;
+		say "[The second noun] takes [the noun] and hands you [the prize]."
+
 
 Section 4 - Sun Chariot Travel
 
@@ -978,7 +1002,9 @@ Instead of examining the faded reliefs:
 	
 Understand "walls" or "reliefs" or "Battle of Kadesh" as faded reliefs when the location is the Ramesseum. 
 
-The Ramesseum attendant is a man in the Ramesseum. The printed name of the Ramesseum attendant is "temple attendant". The description of the Ramesseum attendant is "He looks exceedingly happy to be employed at such a prestigious facility. " Understand "attendant" or "priest" as the Ramesseum attendant when the location is the Ramesseum.
+The Ramesseum attendant is a man in the Ramesseum. The printed name of the Ramesseum attendant is "temple attendant". The description of the Ramesseum attendant is "He looks exceedingly happy to be employed at such a prestigious facility." 
+
+[Understand "attendant" or "priest" as the Ramesseum attendant.]
 
 Rule for writing a paragraph about the Ramesseum attendant when the location is the Ramesseum:
 	say "[first time]A temple attendant greets visitors with suspicious enthusiasm.[line break][only]".
@@ -1119,7 +1145,7 @@ The scribal palette is a supporter on the wooden table. The description is "A pa
 
 A writing implement is a kind of thing. A writing surface is a kind of thing.
 
-Reed pens are a writing implement on the scribal palette. The reed pens are plural named. Understand "pen" or "reed pen" as reed pens. The descriptions is "Three pens of cut reed are in the palette. You can see that some are more battered than others, and all of them stained with ink."
+Reed pens are a writing implement on the scribal palette. The reed pens are plural-named. Understand "pen" or "reed pen" as reed pens. The description is "Three pens of cut reed are in the palette. You can see that some are more battered than others, and all of them stained with ink."
 
 Instead of taking the reed pens, say "You don't really want them. They're all at least a little crusty, if not already reaching the end of its lifespan."
 
@@ -1374,7 +1400,7 @@ Instead of talking to a person (called the target) when the greeting dialogue of
 	now the target is greeted;
 	say "[greeting dialogue of the target][paragraph break]".
 
-The street vendor is a vendor in the Temple of Amenhotep III. The street vendor is male. The description of the street vendor is "He's spread a mat of amulets, tiny perfume jars, and good luck charms just outside the temple steps." Understand "vendor" or "trader" as the street vendor.
+The street vendor is a thing-seller in the Temple of Amenhotep III. The street vendor is male. The description of the street vendor is "He's spread a mat of amulets, tiny perfume jars, and good luck charms just outside the temple steps." Understand "vendor" or "trader" as the street vendor.
 
 Rule for writing a paragraph about the street vendor when the location is the Temple of Amenhotep III:
 	say "[first time]A street vendor has set up shop just outside, peddling trinkets to anyone who slows down.[line break][only]".
@@ -1399,12 +1425,12 @@ chatter
 
 Instead of talking to the street vendor: 
 	if Heal Heracles is happening:
-		choose a random row in Table of Street Vendor's General Chatter;
-		say "[chatter entry]".
+		choose a random row in Table of Street Vendor's Healing Chatter;
+		say "[chatter entry]";
 	if Organ Acquisition is happening:
-	say "'Soldiers walked right past my stall twice today,' he mutters, lowering his voice. 'Whatever they're hunting for, I'd rather not be standing nearby when they find it.'";
+		say "'Soldiers walked right past my stall twice today,' he mutters, lowering his voice. 'Whatever they're hunting for, I'd rather not be standing nearby when they find it.'";
 	otherwise:
-		choose a random row in Table of Street Vendor's Early Chatter;
+		choose a random row in Table of Street Vendor's General Chatter;
 		say "[chatter entry]".
 
 Table of Trinket Trades
@@ -1445,7 +1471,7 @@ Instead of talking to the temple guard:
 			now the player is in the Temple of Horemheb;
 			now Heracles is in the Temple of Horemheb;
 		otherwise:
-			ay "Better not tempt fate and make him recognize you.";
+			say "Better not tempt fate and make him recognize you.";
 	otherwise:
 		choose a random row in Table of Temple Guard's General Chatter;
 		say "[chatter entry]".
@@ -2119,6 +2145,12 @@ Instead of cutting a body part:
 
 A knife is a blade.
 
+[fish!]
+A species is a kind of value. The plural of species is species. The species are perch, tilapia, mormyrid, and tigerfish. 
+
+A fish is a kind of container. A fish are edible. A fish is closed. A fish can be found in the Nile Riverbank. The plural of fish is fish. A fish has a species. The species of a fish is usually tilapia. The description of a fish is usually "A fish." Understand the species property as describing a fish.
+
+
 Section 2 - Marketplace
 
 Marketplace of Oxyrhynchos is a room in Oxyrhynchos. "You are in Oxyrhynchos, home of the medjed elephantfish. A busy marketplace stands before you, curdling with people. Vendors crouch behind low mats, their goods spread before them --- fish, fowl, figs, and more. A woman trades herbs with a weary peasant; another offers a bowl of eggs. Nearby, a man squats beside his wares, watching the crowd. On the right, two women barter bread for grain while a trader tips grain into a waiting basket. The hum of haggling fills the dusty square. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
@@ -2127,37 +2159,10 @@ Understand "examine vendors" or "x vendors" as a mistake ("You scan the vendors,
 
 Understand "examine goods" or "x goods" as a mistake ("You find no body parts for sell. What you see instead are an array of foodstuffs and household commodities: meats, fish, fowl, herbs, grain, eggs, bread, and figs; ointments, sandals, pottery wares, and linen.").
 
-A vendor is a kind of person. A vendor can be selling or not-selling. A vendor is usually selling. Understand "seller" as a vendor. A vendor has a table-name called trades. A vendor has some text called the not-selling speech. The not-selling speech of a vendor is usually "Sorry, I'm not selling to you.". A vendor has some text called the rejection speech. The rejection speech of a vendor is usually "That's not of interest to me.".
-
-Instead of talking to a not-selling vendor:
-	say "[not-selling speech of the noun]".
-
-Instead of talking to a selling vendor:
-	say "'What have you got to offer me?' [the noun] asks."
-
-Trading is an action applying to two things. Understand "trade [something] to [someone]" or "barter [something] to [someone]" as trading.
-
-Instead of trading:
-	if the player does not carry the noun:
-		say "You aren't holding [the noun].";
-	otherwise if the second noun is not a vendor:
-		say "[The second noun] doesn't want to trade.";
-	otherwise if the second noun is not selling:
-		say "[not-selling speech of the second noun]";
-	otherwise if there is no sold-good corresponding to an accepted-trade of the noun in the trades of the second noun:
-		say "[rejection speech of the second noun]";
-	otherwise:
-		let the prize be the sold-good corresponding to an accepted-trade of the noun in the trades of the second noun;
-		now the second noun carries the noun;
-		now the player carries the prize;
-		say "[The second noun] takes [the noun] and hands you [the prize]."
-
-[A good is a kind of thing. Definition: a thing is a good if a vendor is carrying it. ]
 
 Table of Fish Trades
 sold-good	accepted-trade
 the salted fish	the loaf of bread
-the dried fish	the onions
 
 Table of Perfume Trades
 sold-good	accepted-trade
@@ -2181,13 +2186,13 @@ Table of Beer Trades
 sold-good	accepted-trade
 the beer	the sandals
 
-The perfume vendor is a vendor in the Marketplace of Oxyrhynchos. The perfume vendor is female. The trades of the perfume vendor is Table of Perfume Trades. The description is "She kneels behind a mat of small clay jars and ready-made unguent cones." Understand "oil seller" or "perfume seller" of "oil vendor" as the perfume vendor.
+The perfume vendor is a thing-seller in the Marketplace of Oxyrhynchos. The perfume vendor is female. The trades of the perfume vendor is Table of Perfume Trades. The description is "She kneels behind a mat of small clay jars and ready-made unguent cones." Understand "oil seller" or "perfume seller" or "oil vendor" as the perfume vendor.
 
 A jar of perfume oil is a thing carried by the perfume vendor. The description is "A squat clay jar, its stopper sealed with wax, faintly fragrant."
 
 Some unguent cones are a plural-named thing carried by the perfume vendor. The description is "Small cones of scented fat, meant to be worn atop a wig and left to melt slowly through the day."
 
-The sandal vendor is a vendor in the Marketplace of Oxyrhynchos. The sandal vendor is male. The trades of the sandal vendor is Table of Sandal Trades. The description is "He sits on a small stool, absently staring at the sandals and linens hung up on the rack in front of him." Understand "sandal seller" or "linen seller" as the sandal vendor.
+The sandal vendor is a thing-seller in the Marketplace of Oxyrhynchos. The sandal vendor is male. The trades of the sandal vendor is Table of Sandal Trades. The description is "He sits on a small stool, absently staring at the sandals and linens hung up on the rack in front of him." Understand "sandal seller" or "linen seller" as the sandal vendor.
 
 Some sandals are a plural-named thing carried by the sandal vendor. The description is "Sandals woven from papyrus, palm leaf, and halfa grass, sized for every foot."
 [https://www.metmuseum.org/art/collection/search/545130]
@@ -2195,11 +2200,11 @@ Some sandals are a plural-named thing carried by the sandal vendor. The descript
 Some linen is a thing carried by the sandal vendor. The description is "A folded length of linen."
 [https://www.metmuseum.org/art/collection/search/545138]
 
-The vegetable vendor is a vendor in the Marketplace of Oxyrhynchos. The vegetable vendor is female. The trades of the vegetable vendor is Table of Vegetable Trades. The description is "She sits behind a basket of onions and other vegetables." Understand "vegetable seller" or "herb seller" as the vegetable vendor.
+The vegetable vendor is a thing-seller in the Marketplace of Oxyrhynchos. The vegetable vendor is female. The trades of the vegetable vendor is Table of Vegetable Trades. The description is "She sits behind a basket of onions and other vegetables." Understand "vegetable seller" or "herb seller" as the vegetable vendor.
 
 Some vegetables are a plural-named thing carried by the vegetable vendor. The description is "A heap of onion, leeks, gourds, and greens, grimy and gritty."
 
-The bread vendor is a vendor in the Marketplace of Oxyrhynchos. The bread vendor is female. The trades of the bread vendor is Table of Bread Trades. The description is "She displays a shocking variety of bread made from different material and in different shapes." Understand "bread seller" the bread vendor.
+The bread vendor is a thing-seller in the Marketplace of Oxyrhynchos. The bread vendor is female. The trades of the bread vendor is Table of Bread Trades. The description is "She displays a shocking variety of bread made from different material and in different shapes." Understand "bread seller" as the bread vendor.
 
 A loaf of bread is an edible thing carried by the bread vendor. The description is "A round loaf, still faintly warm."
 
@@ -2211,13 +2216,13 @@ Some eggs are a plural-named thing carried by the bread vendor. The description 
 Instead of talking to the bread vendor when the bread vendor carries the loaf of bread during Prepare Fishing:
 	say "'I see you've given the other couple a birth amulet,' the bread vendor says. 'If you want any bread from me, I want something for my daughter's fever.'"
 
-The beer vendor is a vendor in the Marketplace of Oxyrhynchos. The beer vendor is male. The trades of the beer vendor is Table of Beer Trades. The description is "He sits beside a row of jars, ladling out a taste for anyone who looks interested." Understand "beer seller" as the beer vendor.
+The beer vendor is a thing-seller in the Marketplace of Oxyrhynchos. The beer vendor is male. The trades of the beer vendor is Table of Beer Trades. The description is "He sits beside a row of jars, ladling out a taste for anyone who looks interested." Understand "beer seller" as the beer vendor.
 
 Beer jars is carried by the beer vendor. The description is "You would much prefer wine, but after so long in jail, anything would suffice."
 
-The fisherman is a vendor in the Marketplace of Oxyrhynchos. The fisherman is male. The trades of the fisherman is Table of Fish Trades. The description is "He crouches beside a reed basket, sorting the morning's catch by size." Understand "fisherman" as the fisherman.
+The fisherman is a thing-seller in the Marketplace of Oxyrhynchos. The fisherman is male. The trades of the fisherman is Table of Fish Trades. The description is "He crouches beside a reed basket, sorting the morning's catch by size." Understand "fisherman" as the fisherman.
 
-The fisherwoman is a vendor in the Marketplace of Oxyrhynchos. The fisherwoman is female. The trades of the fisherwoman is Table of Fish Trades. The description is "She sits beside her husband, stringing fish onto cords to dry in the sun." Understand "fisherwoman" or "fisherman's wife" as the fisherwoman.
+The fisherwoman is a thing-seller in the Marketplace of Oxyrhynchos. The fisherwoman is female. The trades of the fisherwoman is Table of Fish Trades. The description is "She sits beside her husband, stringing fish onto cords to dry in the sun." Understand "fisherwoman" or "fisherman's wife" as the fisherwoman.
 
 [The fishmonger couple is a vendor in the Marketplace of Oxyrhynchos. The trades of the fishmonger couple is Table of Fish Trades. The description is "A couple sits by their reed basket and mat, talking to each other. The man was sorting through morning's catch by size, while the woman threaded fish onto cords to dry. The woman sat a little awkwardly, reaching down sideways " Understand "fishermongers" or "fisherman" or "fishermen" or "couple" as the fishmonger couple.]
 
@@ -2249,11 +2254,13 @@ Instead of talking to the fisherman when the birth amulet is given:
 Instead of talking to the fisherwoman when the birth amulet is given:
 	say "'Sorry, we can't give you bait,' the fisherwoman says, 'but some bread will probably do the trick.'"
 
-The fishing rod can be baited or unbaited. It is unbaited. The printed name of the fishing rod is "fishing rod[if fishing rod is baited] with bait". The description is "[if fishing rod is unbaited] A sturdy fishing rod, but it could use some bait.[end if] [if fishing rod is baited] The fishing pole is now baited with some fish food."
+The fishing rod is a thing. The fishing rod can be baited or unbaited. It is unbaited. The printed name of the fishing rod is "fishing rod[if fishing rod is baited] with bait". The description is "[if fishing rod is unbaited] A sturdy fishing rod, but it could use some bait.[end if] [if fishing rod is baited] The fishing pole is now baited with some fish food."
+
+Section 3 - Papyri junk
 
 The Junkyard is in Oxyrhynchos. It is north of Marketplace of Oxyrhynchos. "Past the last stalls, the town gives way to the desert's edge, where piles of trash blended in with the sandy landscape, buried layer upon layer. As you get closer, you see a particular [set-link trash pile] that mostly consisted of papyrus scraps and fragments."
 
-The trash pile is a papyri-collection in the Papyrus Room. The print-name is "mound". Understand "trash" or "pile" or "rubbish" or "heap" or "junk" or "mound" as the trash pile.
+The trash pile is a papyri-collection in the Junkyard. The print-name is "mound". Understand "trash" or "pile" or "rubbish" or "heap" or "junk" or "mound" as the trash pile.
 
 The subject-list of the trash pile is
     {"Scraps"}.
@@ -2264,9 +2271,8 @@ The description of the trash pile is
 Instead of taking a papyrus-scroll (called S) when the library of S is the trash pile:
 	say "You don't particularly want to pick up someone else's trash."
 
-Section 3 - Tawaret conflict
+Section 4 - Tawaret conflict
 
-The Papyrus Junkyard is in Oxyrhynchos. It is north of Marketplace of Oxyrhynchos. The description is "This seems to be the dumping ground of all sorts of paper and other recyclable trash. Heaps upon heaps of papyrus scraps cover every bit of the ground."
 
 The Nile Riverbank is in Oxyrhynchos. It is east of Marketplace of Oxyrhynchos. "You are at the bank of the Nile. West of you is the marketplace. A stand of [set-link duat-plant] grows in the damp silt at the water's edge, its dark reedy stalks swaying with the current."
 
@@ -2303,26 +2309,28 @@ Instead of taking the birth amulet:
 
 Prepare Fishing is a scene. Prepare Fishing begins when the birth amulet is given. Prepare Fishing ends when the bread vendor carries the fever phylactery.
 
-Fishing Trip is a scene. Fishing Trip begins when Prepare Fishing ends. Fishing Trip ends when Osiris' penis is acquired. Penis Acquisition ends when Osiris' penis is acquired.
+Fishing Trip is a scene. Fishing Trip begins when Prepare Fishing ends. Fishing Trip ends when Osiris' penis is acquired. 
 
 Athena is a woman. Athena can be met or unmet. Athena is unmet.
 
 [Athena accosts Medea too lol]
-If the location is the Nile Riverbank and Athena is unmet during Fishing Trip:
-	say "murdering your children is also bad coming from the greeks[paragraph break]";
-	wait for any key;
-	say "...[paragraph break]";
-	wait for any key;
-	say "...";
-	now Athena is met.
 
-Section 4 - Fishing game
+[If the location is the Nile Riverbank and Athena is unmet:
+	If Fishing Trip is happening:
+		say "murdering your children is also bad coming from the greeks[paragraph break]";
+		wait for any key;
+		say "...[paragraph break]";
+		wait for any key;
+		say "...";
+		now Athena is met.]
+
+Section 5 - Fishing game
 
 [maybe change the description of the Nile once Tawaret is gone. mention the fish in it]
 
-A species is a kind of value. The plural of species is species. The species are perch, tilapia, mormyrid, and tigerfish. 
+[A species is a kind of value. The plural of species is species. The species are perch, tilapia, mormyrid, and tigerfish. 
 
-A fish is a kind of container. A fish are edible. A fish is closed. A fish can be found in the Nile Riverbank. The plural of fish is fish. A fish has a species. The species of a fish is usually tilapia. The description of a fish is usually "A fish." Understand the species property as describing a fish.
+A fish is a kind of container. A fish are edible. A fish is closed. A fish can be found in the Nile Riverbank. The plural of fish is fish. A fish has a species. The species of a fish is usually tilapia. The description of a fish is usually "A fish." Understand the species property as describing a fish.]
 
 In the Nile Riverbank there is 10 fish.
 
