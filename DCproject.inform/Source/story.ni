@@ -2229,7 +2229,7 @@ The birth amulet is a thing. The amulet can be given or ungiven. The birth amule
 Instead of talking to the fisherman when the birth amulet is ungiven:
 	say "'Interested in buying any fish? We have a great variety! The only one we don't sell is catfish, but that's for obvious reasons.[paragraph break]";
 
-[papyrus scraps in oxyrhynchus - something about the elephant fish/catfish. also maybe include something in busiris... 
+[papyrus scraps in oxyrhynchus - something about the elephant fish/catfish. also maybe include something in busiris...]
 
 Instead of talking to the fisherwoman when the birth amulet is ungiven:
 	say "I'm about to give birth, but it's always dangerous business, so we're looking for an amulet.[paragraph break]";
@@ -2249,6 +2249,37 @@ Instead of talking to the fisherwoman when the birth amulet is given:
 	say "'Sorry, we can't give you bait,' the fisherwoman says, 'but some bread will probably do the trick.'"
 
 The fishing rod can be baited or unbaited. It is unbaited. The printed name of the fishing rod is "fishing rod[if fishing rod is baited] with bait". The description is "[if fishing rod is unbaited] A sturdy fishing rod, but it could use some bait.[end if] [if fishing rod is baited] The fishing pole is now baited with some fish food."
+
+The Junkyard is in Oxyrhynchos. It is north of Marketplace of Oxyrhynchos. "Past the last stalls, the town gives way to the desert's edge, where piles of trash blended in with the sandy landscape, buried layer upon layer. As you get closer, you see a particular [set-link trash pile] that mostly consisted of papyrus scraps and fragments."
+
+The trash pile is a papyri-collection in the Papyrus Room. The print-name is "mound". Understand "trash" or "pile" or "rubbish" or "heap" or "junk" or "mound" as the trash pile.
+
+The subject-list of the trash pile is
+    {"Scraps"}.
+
+The description of the trash pile is
+    "A jumble of discarded papyrus, torn and faded. Try to READ the trash pile to see what these scraps offer."
+
+Instead of taking a papyrus-scroll (called S) when the library of S is the trash pile:
+	say "You don't particularly want to pick up someone else's trash."
+
+SCRAP_001 is a papyrus-scroll. It is in the Papyrus Room.
+The library is the trash pile.
+The papyrus-subject is "Scraps".
+The title is "Untitled Fragment".
+The content is "(TBD)".
+
+SCRAP_002 is a papyrus-scroll. It is in the Papyrus Room.
+The library is the trash pile.
+The papyrus-subject is "Scraps".
+The title is "Untitled Fragment".
+The content is "(TBD)".
+
+SCRAP_003 is a papyrus-scroll. It is in the Papyrus Room.
+The library is the trash pile.
+The papyrus-subject is "Scraps".
+The title is "Untitled Fragment".
+The content is "(TBD)".
 
 Section 3 - Tawaret conflict
 
