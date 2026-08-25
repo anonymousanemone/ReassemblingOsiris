@@ -488,15 +488,17 @@ Instead of examining the walls in the South Chamber, say "Parts of the Book of t
 
 The faience ankh is in the South Chamber. The description of the faience ankh is "A delicate yet sturdy ankh, the symbol of life, carved from faience. " 
 
-The pottery jars are in the South Chamber. The description of the pottery jars is " Several small jars of varying shapes and sizes rest against the wall. Their surfaces are worn. Traces of paint suggesting they once bore vibrant designs. Among them, you see a broken jar with unguents and another fallen to the floor, with dried red stains around the rim." The indefinite article is "some".
+The pottery jars are in the South Chamber. The description of the pottery jars is " Several small jars of varying shapes and sizes rest against the wall. Their surfaces are worn. Traces of paint suggesting they once bore vibrant designs. Among them, you see a broken jar with natron and another fallen to the floor, with dried red stains around the rim." The indefinite article is "some".
 	
 Instead of taking the pottery jars, say "These? No thank you.".
 
 A wooden plank is in the South Chamber. The description of the wooden plank is "A short, splintered plank of cedar wood."
 
+A beaded necklace is in the South Chamber. The description is "A beautiful but simple necklace of faience, carnelian, and lapiz lazuli. An eye of horus pendant hangs from it."
+
 Some knick-knacks are in the South Chamber. The description of some knick-knacks is "You sift through the assorted items: a bead that may have been part of a necklace, a sliver of ivory that was used as a tool, a draining liquid water clock, and a beaded necklace, its string worn thin but its beads still bright."
 
-A mummy bandage strip is in the South Chamber. The description is "A strip torn from the border of an old mummy bandage, stiff with dried resin. Two knots have already been tied into it, as if for some half-finished rite." The print-name is "mummy bandage strip".
+A mummy bandage strip is in the South Chamber. The description is "A piece of linen, seemingly part of an old mummy bandage, stiff w ith dried resin." The print-name is "mummy bandage strip".
 
 The Sloped Passage is a room in Abydos. It is east of the Great Hall. The description is "More text covers these walls. You're getting tired of them.".
 
