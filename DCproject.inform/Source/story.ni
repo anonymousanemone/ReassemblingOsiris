@@ -6,6 +6,7 @@ Include Punctuation Removal by Emily Short.
 Include Rideable Vehicles by Graham Nelson.
 Include Secret Doors by Gavin Lambert.
 Include Exit Lister by Gavin Lambert.
+Include Papyrus Library by Sophia Ling.
 
 Include Vorple by Juhana Leinonen.
 Include Vorple Command Prompt Control by Juhana Leinonen.
@@ -156,11 +157,11 @@ Section 1 - Transcript printing
 transcript-on is a truth state that varies. transcript-on is false.
 
 Carry out switching the story transcript on:
-	execute JavaScript command "toggleTranscriptButton(true);";
+	execute JavaScript command "toggleTranscriptButton(false);";
 	now transcript-on is true.
 
 Carry out switching the story transcript off:
-	execute JavaScript command "toggleTranscriptButton(false);";
+	execute JavaScript command "toggleTranscriptButton(true);";
 	now transcript-on is false.
 
 command-echo is a Vorple style.
@@ -223,9 +224,15 @@ To say tab:
 
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "talk to [something]" or “converse with [someone]” or "converse with [something]" as talking to.
 
+Squeezing through is an action applying to one visible thing. Understand "squeeze through [something]" as squeezing through.
+
+Prying open is an action applying to one visible thing. Understand "pry open [something]" as prying open. 
+
 Carry out talking to:
 	say "There is no reply."
 	
+Squeezing through is an action applying to one visible thing. Understand "squeeze through [something]" as squeezing through.
+
 A Body Part is a kind of thing.
 
 Instead of taking a body part:
@@ -545,6 +552,11 @@ H4a is a hint-object. The hint-content is "To find out what's inside, you better
 
 Instead of opening the locked sarcophagus:
 	say "The sarcophagus seems stuck, as if sealed shut by magic. [if Osiris' head is unacquired][paragraph break][print-hint the H5][line break]".
+	
+After reading a command:
+	if the player's command includes "sacrophagus":
+		say "...You feel a mysterious, ancient presence in the room. It's silently judging your spelling. [paragraph break]";
+		replace the matched text with "sarcophagus".
 
 H5 is a hint-object. The hint-content is "Perhaps you can use something to UNLOCK it."
 
@@ -553,7 +565,9 @@ Instead of unlocking the sarcophagus with the faience ankh:
 	now the sarcophagus is open;
 	say "You unlock the sarcophagus. The head of Osiris is inside![paragraph break]";
 	wait for any key;
-	say "...but the rest of him isn't. What a pain. As much as you are a firm believer of the old chop-and-scatter method, you wish Seth hadn't been so diligent.".
+	say "...but the rest of him isn't. What a pain. As much as you are a firm believer of the old chop-and-scatter method, you wish Seth hadn't been so diligent. [paragraph break]";
+	wait for any key;
+	say "Anyhow, now that you've found a body part, you can TAKE it and move on."
 
 Osiris' head is a body part. It is in the sarcophagus. Osiris' head can be taken. Understand "Osiris" as Osiris' head. Include (- has animate -) when defining Osiris' head. Osiris' head can be smart or dumb. Osiris' head is dumb. The description of Osiris' head is "Osiris, in all his glorious, head-only form. He's green."
 		
@@ -566,7 +580,7 @@ Test head with "look / unlock sarcophagus with ankh / take head" in Tomb of Osir
 Talking Osiris Agenda is a scene. Talking Osiris Agenda begins when Head Acquisition ends. Talking Osiris Agenda ends when Heart Acquisition ends. 
 
 After taking Osiris' head for the first time:
-	say "Aha! The head! You hold the head of Osiris, basking in the glory of your success. How easy! Even someone like J*son could have solved this riddle! You'll be free in no time. You just need the torso, legs, and arms--a smooth journey, with Osiris as your guide! [paragraph break]";
+	say "Carefully reaching into the sarcophagus, you take the head of Osiris. You take a moment to gloat. How easy! Even someone like J*son could have solved this riddle. You'll be free in no time. You just need the torso, legs, and arms--a smooth journey, with Osiris as your guide! [paragraph break]";
 	wait for any key;
 	say "Although his eyes are open, Osiris remains silent.[paragraph break]";
 	wait for any key;
@@ -576,7 +590,7 @@ After taking Osiris' head for the first time:
 	wait for any key;
 	say "...No reply.[paragraph break]";
 	wait for any key;
-	say "You shake the head, hoping to wake it up. Still silence. And it's remarkably light for its size. Could it be..that there's nothing inside?[paragraph break]";
+	say "You shake the head, hoping to wake it up. There's still silence. And it's remarkably light for its size. Could it be..that there's no brain inside?[paragraph break]";
 	wait for any key;
 	say "...[paragraph break]";
 	wait for any key;
@@ -586,13 +600,10 @@ After taking Osiris' head for the first time:
 	wait for any key;
 	say "...Wait a moment![paragraph break]";
 	wait for any key;
-	say "There's a little papyrus scrap tangled in the beard of Osiris. You pull it out and unfold it, reading the following:[paragraph break]	The sun of the shattered city awaits you,[line break]	where you can find the largest brains in the largest skulls.[paragraph break]";
+	say "There's a little papyrus scrap tangled in Osiris' long beard. You pull it out and unfold it, reading the following:[paragraph break]	~The sun of the shattered city awaits you,[line break]	where you can find the largest brains in the largest skulls.~[paragraph break]";
 	wait for any key;
 	say "Hmm. What could that mean?[paragraph break]";
 	wait for any key;
-	say "In any case, it seems like there's nothing left for you in Abydos.[paragraph break]";
-	wait for any key;
-[until the final body part lol]
 
 Chapter 2 - Amarna-Brain
 
@@ -612,7 +623,7 @@ Outside the Walled Village is a room in Amarna. "You have reached Amarna, althou
 
 [in the future, maybe add security checkpoint moment as Medea walks through gate?]
 
-The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A dusty cluster of homes and workshops, alive with the clatter of tools and the murmur of voices. The sun shines down aggressively, catching the haze of dust kicked up by passing feet. People move between doorways and shaded courtyards—some carrying baskets of stone chips, others bent over their work."
+The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A cluster of homes and workshops, alive with the clatter of tools and the murmur of voices. The sun shines down aggressively, catching the haze of dust kicked up by passing feet. People move between doorways and shaded courtyards—some carrying baskets of stone chips, others bent over their work."
 
 A body bag is a container. The carrying capacity of the body bag is 14. The description of the body bag is "A heavy cloth sack used for transporting... questionable things. You're not quite sure how everything fits into here. Some strange Egyptian magic?"
 
@@ -623,9 +634,9 @@ Check inserting something into the body bag:
 A workman is a person. The workman carries a body bag. The workman can be curious or uncurious. The workman is uncurious. The description of the workman is "A middle aged man, probably with degenerative joint disease."
 
 Rule for writing a paragraph about the workman when the location is the Workmen's Village:
-	say "Your scan the crowd and see a [workman], staring irritably at the distance.[first time][line break][print-hint H5a][line break][only]".
+	say "You scan the crowd and see a [workman] loitering about.[first time][line break][print-hint H5a][line break][only]".
 
-H5a is a hint-object. The hint-content is "Maybe you could TALK to someone.".
+H5a is a hint-object. The hint-content is "Remember, you can be a smooth TALKer despite your barbed tongue.".
 
 When Brain Acquisition begins:
 	now the workman is in the Workmen's Village.
@@ -639,13 +650,13 @@ Instead of talking to the workman during Discovery:
 	wait for any key;
 	say "You explain that you're looking for information about the village, conveniently omitting why exactly you are interested.  [paragraph break]";
 	wait for any key;
-	say "The workman gestures around. 'This village,' he says, 'it's where the elite tombs nearby are prepared. Hard work, grueling work, but someone's got to do it. Not that they treat us well for it.' He looks a little more closely at you. 'What are you doing here, anyway? And good gods, are you pregnant? Triplets?!'";
+	say "The workman gestures around. 'This village,' he says, 'it's where the elite tombs nearby are prepared. Hard work, grueling work, but someone's got to do it. Not that they pay us well for it.' He looks a little more closely at you, or, well, your stomach. 'What are you doing here, anyway? And good gods, are you pregnant? Triplets?!'";
 	now the workman is curious.
 	
 Instead of talking to the workman during Get Body Bag:
 	say "The workman looks at you expectantly. 'What are you doing here, anyway? And what's up with your stomach?'"
 
-Instead of talking to the workman at least three times during Get Body Bag:
+Instead of talking to the workman at least two times during Get Body Bag:
 	say "He seems to be expecting an answer from you. Maybe try showing him what's hidden under your shirt. [paragraph break] The scary part, not the sexy part. [paragraph break][print-hint the H6]"
 	
 H6 is a hint-object. The hint-content is "Take note of key words hidden in the text. They might just SHOW you what to do...".
@@ -676,7 +687,18 @@ An oxcart is a rideable vehicle. "An [oxcart] sits here unattended." The descrip
 When Exploration begins:
 	now the oxcart is in Outside the Walled Village.
 
-The Ruined City is a room in Amarna. It is west of Outside the Walled Village. "This glorious city, once the capital of Egypt, is nothing but ruins and foundations. In the distance, to the north, you see a small standing structure. It sticks out like a sore thumb amongst the desolation."
+The Ruined City is a room in Amarna. It is west of Outside the Walled Village. "This glorious city, once the capital of Egypt, is nothing but ruins and foundations. Vegetation is sparse, only a few stubborn weeds grasp at the crumbled one-urban floors. To the side of a particularly dilapidated building, you see a rather [set-link the unique bush]. In the distance, to the north, you see a small standing structure. It sticks out like a sore thumb amongst the desolation."
+
+The Unique Bush is a supporter. It is in the ruined city. The print-name is "unique looking bush". The description of the unique bush is "The bush is indeed, unique. You see no others in the near vicinity, thus, as far as you're concerned, that must suffice. It was also, unfortunately, in the process of blooming, [if the buds of a unique bush is on top of the unique bush]and you can see [set-link the buds of a unique bush] sneaking out of the leafy mass out like weird green fleas. [else]but your earlier efforts ensured that no flowers would see the light of day. [end if]".
+	
+The buds of a unique bush is undescribed.
+
+Understand "unique looking bush" as the unique bush. 
+Understand "bush" and "unique bush" as the unique bush.
+Understand "buds of the unique bush" and "buds of bush" and "buds of the bush" and "buds of a bush" as the buds of a unique bush.
+
+[Currently a problem with unique bush vs buds of a unique bush disambiguation, probably to do with hierarchy in holding something (vicinity). ]
+
 
 Instead of going to the Ruined City when the player is not on the oxcart:
 	if player is in Outside the Walled Village:
@@ -712,7 +734,7 @@ The Sanctuary is a room in Amarna. It is inside of the Small Aten Temple. "Unlik
 
 The carved altars are scenery in the Sanctuary. "The low altars are made of sandstone, each inscribed with dedications to Aten." The print-name is "altars".
 
-The offerings are things in the Sanctuary. "Arranged atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers. Odd. Wasn't this place abandoned?". The print-name is "offerings". Understand "offering" as offerings. 
+The offerings are things in the Sanctuary. The description of offerings is "Arranged atop the altars are offerings of bread and beer. They looks fresh, as if newly placed by worshippers. Odd. Wasn't this place abandoned?". The print-name is "offerings". Understand "offering" as offerings. 
 
 The Aten shrine is scenery in the Sanctuary. "At the heart of the sanctuary stands a majestic shrine dedicated to Aten. The shrine captures and reflects the abundant sunlight that bathes the room. The central depiction of the Aten radiates golden beams that dance across the walls, filling the space with a divine glow." The print-name is "shrine".
 
@@ -862,16 +884,16 @@ Instead of entering the sun chariot when the player is on the oxcart:
 Every turn during Next Instructions:
 	if the location is Outside the Walled village:
 		now the workman is in Outside the Walled Village;
-		say "As you arrive, you spot into the same workman you had spoken with earlier.[paragraph break]";
+		say "As you arrive, you spot the same workman you had spoken with earlier.[paragraph break]";
 		wait for any key;
 		say "'Hey, lady!' he says. 'You got those heads of yours now?' He looks a little less wary.[paragraph break]";
 		wait for any key;
 		say "'Close enough,' you say.[paragraph break]";
 		wait for any key;
-		say "'It's nice to see a new face, even if it's a creepy one,'  the workman continued. 'This place has been a ghost town for so long. We used to be as big as Thebes, you know!'[paragraph break]";
+		say "'It's nice to see a new face, even if it's a creepy one,'  the workman continues. 'This place's been a ghost town for so long. We used to be as big as Thebes, you know!'[paragraph break]";
 		say "...Thebes?[paragraph break]";
 		wait for any key;
-		say "The workman notices your confusion. 'You must really be a foreigner! Don't you know of Thebes? All the tomb workers are there nowadays.'[paragraph break]";
+		say "The workman notices your confusion. 'You really are a foreigner! Don't you know about Thebes? All the tomb workers are there nowadays.'[paragraph break]";
 		wait for any key; 
 		say "...Interesting.[paragraph break]";
 		wait for any key; 
@@ -879,12 +901,12 @@ Every turn during Next Instructions:
 		wait for any key; 
 		say "...[paragraph break]";
 		wait for any key; 
-		say "One of your potential escape plans -- not that you had the opportunity to go through with it -- was to flee from Corinth to Thebes. But you never had the chance to execute this plan. Perhaps this is a sign.";
+		say "One of your potential escape plans -- not that you had the opportunity to go through with it, of course -- was to flee from Corinth to Thebes. But you never had the chance to execute this plan... Perhaps this is a sign.";
 		now the workman is uncurious. [next instructions end]
 
 
 Carry out talking to the uncurious workman:
-	say "The workman grunts, uninterested in further conversation." instead.
+	say "The workman grunts, uninterested in further conversation. He's busy loitering." instead.
 	
 	
 test Amarna with "look / n" in The small aten temple holding the head.
@@ -908,7 +930,7 @@ Test heal with "purloin prepared medicine / I have indeed applied something to a
 
 Section 1 - All the Locations
 
-The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III. Sturdy columns flank a central courtyard where priests once performed daily rites. There seems to be a lot of honoring going on around here."
+The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III—no surprise there, given that the man commissioned over fifty temples across Egypt in his lifetime and still somehow felt underappreciated. Sturdy columns flank a central courtyard where priests perform daily rites. "
 
 Instead of going North in the Temple of Thutmoses III:
 	say "A few mortuary temples can be seen off in the distance, but something tells you it won't be very productive.".
@@ -962,7 +984,7 @@ Carry out defacing:
 Instead of defacing something in the Memnon Colossi:
 	say "You cheerily carve a vagina onto [the noun]. Better not leave a name in case it bites you back later."
 
-The southern statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi. The print-name is "north". The description is "This statue stands mutely (as statues are supposed to do, in your opinion."
+The southern statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi. The print-name is "north". The description is "This statue stands mutely (as statues ought to do, in your opinion)."
 
 The northern statue of Amenhotep III is a closed unopenable container. It is scenery in Memnon Colossi. The print-name is "south". The description of the northern statue is "Some people say that if one listens closely, they may be able to hear singing... You thought it sounded like an improperly closed window."
 
@@ -996,145 +1018,74 @@ Section 2 - The library
 
 The House of Life is west of the Ramesseum. It is in Thebes. "The entrance is unassuming—just a low archway tucked beside the temple’s western wall—but when you step inside, you realize you've stumbled upon a vast library.  Soft lamplight flickers across rows of tall shelves, each lined with carefully rolled [set-link the medical papyri] detailing magical and medical rituals."
 
-[Medical papyri is scenery in the House of LIfe. The description of the medical papyri is "A headache spell. It reads: [paragraph break] -YET ANOTHER- CONJURATION FOR THE HEAD [line break]
-Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.[paragraph break] Once you have these items, you can PREPARE them to make the medicine. You can always check your inventory to see what you have.". The print-name is "papyri".]
+Medical papyri is a papyri-collection in the House of Life. The papyri are plural-named. The print-name is "medical papyri".
+Understand "library" or "shelves" or "shelf" or "scrolls" or "scroll" or "papyrus" or "papyri" as medical papyri.
 
-[after examining papyri, player can type "think" to remember what she needs]
-Instead of thinking during Heal Heracles:
-	if the papyri is examined:
-		say "-YET ANOTHER- CONJURATION FOR THE HEAD [line break] Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.[paragraph break] Once you have these items, you can PREPARE them to make the medicine. You can always check your inventory to see what you have.".
+The subject-list of Medical papyri is
+    {"Headaches", "Excretory", "Demons", "Miscellaneous"}.
+
+The description of Medical papyri is
+    "You approach the medical papyri. [paragraph break]Subjects include:[line break][subject listing of Medical papyri][line break]Try [italic type]READ PAPYRI[roman type] to browse the catalogue."
 		
-
-Medical papyri is scenery in the House of Life. The papyri are plural-named. Understand "shelves" or "papyrus" or "shelf" or "scroll" or "scrolls" as the papyri. The description is "You approach the shelves labelled for medical papyri. It's organized by body part: treatments for the head, back, ass, foot."
-
-Instead of smelling the papyri: say "The shelves smell of ancient ink and the tears of scribes."
-Instead of tasting the papyri: say "Licking papyrus would be undignified."
-Instead of touching the papyri: say "The papyrus feels rough beneath your fingertips."
-Instead of taking the papyri: say "You are not allowed to take scrolls out."
-
-The remembered scroll is a text that varies. The remembered scroll is "".
-
-Table of Papyri
-Subject(text)	Title	Content
-"head"	"Another Conjuration for the Head"	" Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break] Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat."
-"head"	"Treatise on Fevers"	"A papyrus prescribing willow bark infusions for fevers."
-"head"	"Secrets of the Heart"	"Notes on the heart being the seat of thought and emotion."
-"astronomy"	"Chart of the Heavens"	"A detailed star map of Orion and Sirius."
-"astronomy"	"Cycles of the Moon"	"A scroll describing the lunar phases and their omens."
-"astronomy"	"Journey of Ra"	"A mythic text charting Ra's path across the sky."
-"ritual"	"Offerings to Osiris"	"Instructions for preparing ritual offerings to Osiris."
-"ritual"	"Hymn to Thoth"	"A chant in praise of Thoth, lord of wisdom."
-"ritual"	"Opening the Mouth"	"A ritual text for animating statues and the deceased."
-
-
-[Examining and Looking Up]
-Understand "look up [text]" as examining as a book when the player is in the House of Life.
-
-Examining as a book is an action applying to one topic.
-
-[Carry out examining as a book:
-    say "You can't find any such text."]
-
-[Carry out examining as a book:
-	if the noun is a library:
-		say "The papyri here contain the following subjects:";
-		repeat with S running through the table of subjects of the noun:
-			say " - [S][line break]";
-	otherwise if the noun is a subject:
-		let N be the number of rows in the perma-content of the noun;
-		say "There are [N] scrolls on the subject of [the noun]. Try 'read [the noun]'."]
-		
-	[let T be the topic understood;
-	if the topic understood is a topic listed in the Table of Papyri,
-[	let N be the number of rows in the Table of Papyri with the topic understood;]
- 	repeat with i running from 1 to the number of rows in the Table of Recent Monarchs:
-       		choose row N in the Table of Recent Monarchs;
-        	say "[accession entry]: [name entry] ([family entry])."
-	[if N is 0:
-		say "You find no papyri on '[T]'.";]
-	otherwise:
-		say "There are [N] scrolls on the topic of '[T]'. Try 'read papyri for [T]'."]
-
-
-
-[Reading]
-[
-Reading is an action applying to one topic.  
-Understand "read papyri for [text]" as reading.
-
-A topic-list is a list of numbers that varies.
-
-Carry out reading:
-	let T be the topic understood;
-	let N be the number of rows in the Table of Papyri with topic of T;
-	if N is 0:
-		say "There are no papyri here on '[T]'.";
-		stop;
-	[Initialize/reset cycle if needed]
-	if topic-list is {}:
-		repeat with R running from 1 to N:
-			add R to topic-list;
-	choose a random entry from topic-list;
-	let choice be the chosen number;
-	remove choice from topic-list;
-	choose row choice in the Table of Papyri with topic of T;
-	say "You take out a scroll and peruse its contents: [content entry][line break]";
-	say "(You may 'remember [title entry]' if you wish.)";
-	now the remembered scroll is the title entry.]
-[
-If topic-list is not {}:
-	if the location is not the House of Life:
-		now topic-list is {}.]
-
-[Remembering]
-
-[Remembering is an action applying to one topic.  
-Understand "remember [text]" as remembering.
-
-Carry out remembering:
-	let T be the topic understood;
-	choose row with a title of T in the Table of Papyri;
-	if there is a title of T in the Table of Papyri:
-		now the remembered scroll is the title entry;
-		say "You fix '[title entry]' firmly in your memory.";
-	otherwise:
-		say "You cannot remember such a papyrus; it is not in the library."
-
-Thinking is an action applying to nothing.  
-Understand "think" as thinking.
-
-Carry out thinking:
-	if the remembered scroll is "":
-		say "Nothing comes to mind.";
-	otherwise:
-		choose row with a title of the remembered scroll in the Table of Papyri;
-		say "You recall the scroll '[title entry]': [content entry]"]
-
+[HEAD_003 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "ANOTHER CONJURATION FOR THE HEAD".
+The subject is "Headaches".
+The content is "Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent (tmn) because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! [line break] 'I have indeed applied something to all his sore spots.' [line break]Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.".
+]
 
 Section 3 - Healing Heracles
 
 [when medea first lands, say "maybe it's time to explore to gather some hints about where Osiris might be]
 
-Heracles is a man. Heracles can be sick or healthy. Heracles is sick. The description of Heracles is "A muscled man wearing lion skin and carrying a club. [if Heracles is sick] He is lying face down on the floor, moaning in agony. Perhaps you should help him? Only because he might be useful, of course. But how?"
+Heracles is a man. Heracles can be sick or healthy. Heracles can be conscious or unconscious. Heracles can be identified or unidentified. Heracles is sick. Heracles is conscious. Heracles is unidentified. 
+
+The printed name of Heracles is "[if Heracles is unidentified]a strange man[otherwise]Heracles[end if]".
+
+Understand "man"and "strange man" as Heracles when Heracles is unidentified.
+Understand "Heracles" or "Herakles" or "man" or "strange man" as Heracles
+    when Heal Heracles is happening and Heracles is identified.
+Understand "Heracles" or "Herakles" as Heracles
+    when Heal Heracles is not happening.
+
+The description of Heracles is
+    "[if Heracles is sick and Heracles is unconscious]
+    Heracles. He's out cold.
+    [otherwise if Heracles is sick and Heracles is conscious]
+    A muscular man is lying face down on the floor, moaning in agony and clutching his club for comfort. Perhaps you should help him? Only because he might be useful, of course. 
+    [otherwise]
+    A muscular man wearing a lion skin and carrying a club.
+    [end if]";
 
 Instead of talking to sick Heracles for the first time:
-	say "'Is that...Heracles?' you called out.[paragraph break]";
+	say "...He looks oddly familiar. But why would [italic type]he[roman type] be[italic type] here[roman type]? [paragraph break]";
+	wait for any key; 
+	say "'Is that...Heracles?' you call out.[paragraph break]";
+	now Heracles is identified; 
 	wait for any key;
-	say "The only response you received was an agonized groan.[paragraph break]";
+	say "You receive an agonized groan of affirmation.[paragraph break]";
 	wait for any key;
 	say "You get a little closer. He seems... unwell, to say the least.[paragraph break]";
 	wait for any key;
-	say "You reach out and poke him in the shoulder. 'What's wrong with you?'[paragraph break]";
+	say "You nudge him with your foot. 'What's wrong with you?' [paragraph break]";
 	wait for any key;
-	say "Heracles flops onto his back and looks at you with bleary, half-focused eyes. 'Oh, kind stranger, I am in the most unfathomable pain! A foreign monster has made its home in my skull. Please, help me banish this beast!'[paragraph break]";
+	say "Heracles rolls over onto his back and looks up at you with bleary eyes. 'Oh, kind stranger, I'm plagued with the most unfathomable pain! A foreign monster has made its home in my skull. Please, help me banish this beast!'[paragraph break]";
 	wait for any key;
-	say "...A headache. Should you help him?[paragraph break]";
-	wait for any key;
-	say "...[paragraph break]";
+	say "...A headache, perhaps. Should you help him?[paragraph break]";
 	wait for any key;
 	say "...[paragraph break]";
 	wait for any key;
-	say "You might as well take this community service thing to its fullest."
+	say "...[paragraph break]";
+	wait for any key;
+	say "Heracles lets out a final weak moan before he passes out.[paragraph break]";
+	wait for any key;
+	say "...[paragraph break]";
+	wait for any key;
+	say "You might as well take this community service thing to its fullest.";
+	now Heracles is unconscious. 
+	
+Instead of talking to unconscious Heracles:
+	say "He's passed out from the pain. It seems you'll get no help from him."; 
 
 When brain acquisition ends:
 	now Heracles is in the Temple of Horemheb.
@@ -1145,12 +1096,7 @@ Some random items are things on the brewing table. The description is "A collect
 
 The vial of plant mucus is on the brewing table. The description is "A small glass vial with extracted plant mucus inside."
 
-The buds of a Unique Bush are in the Ruined City. The description is "A rare and magical bush said to have healing properties. It bears buds of a mystical nature." The print-name is "Unique Bush". 
-Rule for printing a locale paragraph of the buds of a unique bush:
-	say "
-
-Rule for printing the name of the Buds of a Unique Bush when the Buds of a Unique Bush are in the Ruined City:
-	say "Unique Bush".
+The buds of a Unique Bush are on top of the Unique Bush. The description is "A rare and magical bush said to have healing properties. It bears buds of a mystical nature." The print-name is "buds". 
 
 A bud of a snb-plant is in the South Chamber. The description is "The bud of a mysterious plant, tied up with some string." 
 
@@ -1251,7 +1197,7 @@ Understand "apply [other things] to [something]" as putting it on. [("Try applyi
 Heracles can be medicated or unmedicated. Heracles is unmedicated. 
 
 Instead of putting the prepared medicine on Heracles:
-	say "You gently place the prepared bundle on the throat of the afflicted Heracles. You should recite the spell now.";
+	say "You gently place the prepared bundle on the throat of the afflicted Heracles. You should say the spell now.";
 	now Heracles is medicated.
 	
 Understand "heal [Heracles]" or "help [Heracles]" or "cure [Heracles]" as a mistake ("[if the player is carrying the prepared medicine]You gotta apply the medicine and get down and dirty with the nitty gritty steps! [otherwise if the papyri is examined]Try following the steps in the spell. A sick Heracles can't be healed in one step, after all.[otherwise]You don't even know where to start! Now that you can't use your magic, you have to start reading up on the mortal way of things.").
@@ -1266,7 +1212,7 @@ Carry out chanting:
 	say "You mumbled elusively."
 
 Instead of chanting in the presence of sick Heracles:	
-	say "You speak the spell.[paragraph break]";
+	say "You recite the spell.[paragraph break]";
 	wait for any key;
 	say "You wait for something to happen.[paragraph break]";
 	wait for any key;
@@ -1293,7 +1239,8 @@ Instead of chanting in the presence of sick Heracles:
 	say "His sad expression is replaced by determination. 'Well! I'll follow you around--to keep an eye on you, of course!' [paragraph break]";
 	wait for any key; 
 	say "Under his breath, he whispers, 'I'm also totally lost...' [paragraph break]";
-	now Heracles is healthy.
+	now Heracles is healthy;
+	now Heracles is conscious.
 
 Section 4 - After the heart
 
@@ -1304,6 +1251,11 @@ Chapter 4 - Busiris-Organs
 
 Organ Acquisition is a scene. Organ Acquisition begins when Heal Heracles ends. Organ Acquisition ends when Osiris' liver is acquired and Osiris' lungs is acquired and Osiris' stomach is acquired and Osiris' intestines is acquired.
 
+Heracles just healed is a truth state that varies.
+
+When Organ Acquisition begins:
+	now Heracles just healed is true.
+	
 Instead of entering the chariot during Organ Acquisition:
 	say "You really didn't want Heracles' filthy paws anywhere near your beautiful chariot.".
 
@@ -1329,10 +1281,13 @@ yappery
 "Heracles scratches his head. 'My head’s still a little ouchie. Could you—like, I dunno—magic it away?'[paragraph break]"
 "'Thanks again for your help,' Heracles says. 'Athough I totally had it handled.[paragraph break]"
 "'Have you ever tried cleaning out stables for a living?' Heracles complains. 'Makes any quest seem easy.'[paragraph break]"
-"'I just have to ask,' Heracles loudly says. 'What made you do it?' [paragraph break]You give no reply..[paragraph break]"
-"Heracles groans, clutching his temples. 'All this talk of gods and brothers and chopping...Egypt is so strange! I'd rather wrestle another lion!!'[paragraph break]His loud voice draws a few curious eyes....[paragraph break]" 
+"'I just have to ask,' Heracles says. 'What made you do it?' [paragraph break]You give no reply...[paragraph break]"
+"Heracles groans, clutching his temples. 'All this talk of gods and brothers and chopping...Egypt is so strange! I'd rather wrestle another lion!!'[paragraph break]His loud voice draws a few curious eyes...[paragraph break]" 
 
 Every turn during Organ Acquisition:
+	if Heracles just healed is true:
+		now Heracles just healed is false;
+		rule succeeds;
 	if the Table of Countdown is empty:
 		do nothing;
 	if the Table of Countdown is not empty:
@@ -1358,27 +1313,30 @@ When the Kidnapping begins:
 	wait for any key;
 	say "He's interrupted by the menacing laughter of a man standing outside of your cell. His ornate robes are stained at the hem with dried blood. [paragraph break]";
 	wait for any key;
-	say "'That weak woman? Are you mad, man?' he says. 'No! It was I, Busiris!' [paragraph break]";	wait for any key;
-	say "You and Heracles stare at him in confusion. You have no idea who that is. [paragraph break]";
+	say "'That weak woman? Are you mad?' he says. 'No! It was I, Busiris!' [paragraph break]";	wait for any key;
+	say "You have no idea who he is. [paragraph break]";
 	wait for any key;
-	say "The mysterious man--Busiris, you guess--glares at you. 'Seriously?' he asks. 'You don't know who I am?! I'm in at least three different ancient books!!'[paragraph break]";
+	say "The mysterious man--Busiris, you guess--glares at you. 'Seriously?' he asks. 'You don't know who I am?! Shame on you for not reading your Isocrates!'[paragraph break]";
 	wait for any key;
-	say "'Sorry, dude,' Heracles replies. 'We have no clue who you are.' [paragraph break]";
+	say "'Sorry, bro,' Heracles replies. 'We have no clue who you are.' [paragraph break]";
 	wait for any key;
-	say "'Don't you call me 'dude,'' Busiris says. 'That would make me want to kill you...if I weren't already going to kill you!!'[paragraph break]";
+	say "'I'm not your bro,' Busiris says. 'But I suppose it hardly matters who I am. What matters is what you'll soon be: sacrificed to the gods. '[paragraph break]";
 	wait for any key;
-	say "What??? [paragraph break]";
+	say "What?! [paragraph break]";
 	wait for any key;
-	say "'Yes!' Burisis continues, pleased by your wariness. 'Shedding foreign blood is an important part of my city's social culture! And you have only that loudmouth to thank for your capture! Normally we have a 35% success rate in successfully capturing a foreigner--but thanks to that blabbermouth, we're certain you're Greek!' [paragraph break]";
+	say "'Yes!' Burisis continues, pleased by your wariness. 'The ritual shedding of foreign blood is the main tourist attraction here. And you have only that loudmouth over there to thank for your capture. Normally we have a 35% success rate in capturing a foreigner--but thanks to him, we're certain you're Greek!' [paragraph break]";
 	wait for any key;
 	say "You turn to Heracles, giving him a nasty look. He looks at you sheepishly. 'Sorry...' [paragraph break]";
 	wait for any key;
-	say "'I'll let you two work that out,' Busiris says smugly. 'But don't take too long in making amends! It's never good to die angry!' [paragraph break]";
+	say "'I'll let you two work that out,' Busiris says smugly. 'But don't take too long in making your amends! It's never good to die angry!' [paragraph break]";
 	wait for any key;
-	say "With that, he leaves you two alone. But before you can give Heracles a piece of your mind, he says something. [paragraph break]";
+	say "With that, he leaves you two alone. You turn to Heracles, ready to give him a piece of your mind, only to find him eyeing the bars of your jail cell. [paragraph break]";
 	wait for any key;
 	say "'Umm..Medea...the gaps of the bars are pretty wide! I think we can slip through them!' [paragraph break]";
 	wait for any key;
+	say " You watch Heracles try to squeeze through the bars. It is a resounding failure. He tries again. It's an even more resounding failure. [paragraph break]";
+	wait for any key;
+	say "'Well,' Heracles says, turning to you. 'Any other ideas?' [paragraph break]";
 	now the player is in the Jail Cell;
 	now Heracles is in the Jail Cell.
 
@@ -1499,6 +1457,8 @@ Upper Hallway
 
 Section 2 - Busiris Palace
 
+[put in a 'it really tied the room together' from heracles somewhere]
+
 Central Court is a room in Busiris. "Center of public life in Busiris."
 
 The worker is a person. The worker is in the Central Court. The description of the worker is "A temple grunt."
@@ -1589,29 +1549,55 @@ North Corridor is a corridor in Busiris. It is east of Pillar Hall. "A narrow ha
 
 Corridor of the Draught Board is a corridor in Busiris. It is south of North Corridor. "A long and winding corridor."
 
-The cell door is a locked closed door. The cell door is east of the Jail Cell and west of the Corridor of the Draught Board. The cell door can be broken_a or unbroken_a. The cell door is unbroken_a.
+The cell bars is a locked closed door. The cell bars is east of the Jail Cell and west of the Corridor of the Draught Board. The cell bars can be broken_a or unbroken_a. The cell bars is unbroken_a. The cell bars can be examined or unexamined. The cell bars are unexamined. The description of the cell bars are "Your standard set of vertical prison bars. You can fit a hand through and little else. But it seems to be your only way out. Could they be pried open somehow?"
 
-The Jail Cell is a room in Busiris. It is west of the cell door.  "Dark and claustrophobic. You can see desperate scratches of former prisoners.[if cell door is broken_a] The guards evidently did not see the gaping hole between the cell bars. Or they just didn't care."
+After examining the cell bars:
+    now the cell bars are examined.
 
-Instead of talking to Heracles in the Jail Cell when the cell door is unbroken_a:
-	say "'Hey Heracles', you poked at him. 'Go open the door.[paragraph break]";
+The Jail Cell is a room in Busiris. It is west of the cell bars.  "Dark and claustrophobic. You can see desperate scratches of former prisoners on the walls and bloodstains on the floor. A rat watches you warily from the corner. [if cell bars is broken_a] The guards evidently did not see the gaping hole between the cell bars. Or they just didn't care."
+
+The bloodstain is scenery in the Jail Cell. The description of the bloodstain is "Self-explanatory."
+
+The desperate scratches are scenery in the Jail Cell. The description of the desperate scratches are "Deep grouves carved by prisoners past. You briefly consider adding your own. Maybe later."
+
+The rat is scenery in the Jail Cell. The description of the rat is "A feral rat glares at you from the corner of your cell. You don't imagine you'll be getting any answers from him."
+
+Instead of taking the rat:
+	say "You'd like to keep your hand, thank you very much."
+	
+Instead of talking to the rat:
+	say "The rat hisses at you with extra menace."
+	
+Instead of prying open the cell bars:
+	say "You try to pry open the bars, but they don't budge. You just don't have enough strength."
+
+Instead of squeezing through the cell bars:
+	say "You have more dignity than that."
+
+Instead of talking to Heracles in the Jail Cell when the cell bars are unexamined:
+	say "Heracles looks at you hopefully. 'Any bright ideas?' [paragraph break]";
+	wait for any key; 
+	say "Maybe you should look around for clues..."
+	
+Instead of talking to Heracles in the Jail Cell when the cell bars are examined and the cell bars are unbroken_a:
+	say "'Hey Heracles', you say. 'Try the bars again.' [paragraph break]";
 	wait for any key;
-	say "'But it's locked!' he whined indignantly.[paragraph break]";
+	say "'But the gaps are too small!' he whines.[paragraph break]";
 	wait for any key;
-	say "'I know that.' [italic type]You feel a building sense of regret for saving him. [roman type]'Just pry open the bars, you buffoon.'[paragraph break]";
+	say "'I know that.' You feel a building sense of regret for saving him. 'Just pry open the bars, you buffoon.'[paragraph break]";
 	wait for any key;
-	say "'Heracles brightens. 'Oh yeah! ...I'm not a baboon![paragraph break]";
+	say "'Heracles brightens. 'Oh yeah!' He dims.  '...I'm not a baboon!' [paragraph break]";
 	wait for any key;
-	say "'Didn't say you were. Now go.' [italic type]A baboon. He sure flatters himself.[roman type][paragraph break]";
+	say "'Didn't say you were. Now go.' A baboon. He sure flatters himself. [paragraph break]";
 	 wait for any key;
-	now the cell door is broken_a;
-	say "Heracles gets up from his dejected huddle on the floor and pries open the bars of the cell. Now you are free to meander!"
+	now the cell bars is broken_a;
+	say "Heracles gets up from his dejected huddle on the floor and easily pries open the bars of the cell. Now you are free to meander!"
 	
-Instead of going through the locked broken_a cell door:
-	now Heracles is in the other side of the cell door;
-	now the player is in the other side of the cell door.
+Instead of going through the locked broken_a cell bars:
+	now Heracles is in the other side of the cell bars;
+	now the player is in the other side of the cell bars.
 	
-Rule for writing a paragraph about the cell door:
+Rule for writing a paragraph about the cell bars:
 	stop the action.
 
 Workshops is a room in Busiris. It is east of the Corridor of the Draught Board. "You see workbenches and tools scattered about."
@@ -1625,7 +1611,6 @@ Tricolumnar Hall is a room in Busiris. It is north of Lobby. "Three giant pillar
 Upper Hallway is a corridor in Busiris. It is west of Tricolumnar Hall and northwest of Lobby.  "Another corridor. You've having some trouble keeping track of where you are." 
 
 Treasury is a room in Busiris. It is east of Lobby. "Treasury of the Sanctuary, so called."
-
 Great Hall-Busiris is a room in Busiris. It is west of Upper Hallway. The printed name of Great Hall-Busiris is "Great Hall".
 
 Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Upper Hallway. The description is "Looking out at the west pavilion of the palace."
@@ -1814,7 +1799,7 @@ To end the sacrifice:
 	now palace exit is open;
 	wait for any key;
 
-The description of palace exit is "An imposing door by the Corridor of Procession West. With all the chaos, this might be your chance!"
+The description of palace exit is "An imposing door by the Corridor of Procession West. With all the chaos, this might be your chance!".
 
 Instead of going through palace exit:
 	now the player is in The Temple of Tawosret;
@@ -1845,6 +1830,8 @@ To trigger Heracles leaving:
 	now the heart scarab is acquired;
 	now palace exit is unrevealed;
 	now palace exit is closed.
+
+
 
 Part 6 - Complete Any Time
 [can be completed any time after acquiring the head]
@@ -2099,4 +2086,207 @@ Part 8 - Epilogue
 
 
 
+Part 9 - Papyri Content
 
+
+HEAD_001 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "REMEDY TO DRIVE OUT THE PAIN IN THE HEAD".
+The subject is "Headaches".
+The content is "
+Inner-of-Onions                   I[line break]
+Fruit-of-the-am-tree              I[line break]
+Natron                            I[line break]
+setseft-seeds                     I[line break]
+Bone-of-the-Sword-fish,cooked     I[line break]
+Redfish,cooked                    I[line break]
+Skul-of-the-Crayfish,cooked       I[line break]
+Honey                             I[line break]
+abra-ointment                     I
+
+Smear the Head therewith for four days."
+
+HEAD_002 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "ANOTHER REMEDY WHICH THE GODDESS ISIS PREPARED FORT HE GOD RA TO DRIVE OUT THE PAINS THAT ARE IN HIS HEAD".
+The subject is "Headaches".
+The content is "
+Berry-of-the-Coriander             I[line break]
+Berry-of-the-Poppy-plant           I[line break]
+Wormwood                           I[line break]
+Berry-of-the-sames-plant           I[line break]
+Berry-of-the-Juniper-plant         I[line break]
+Honey                              I
+
+Make into one, mix with Honey, and smear therewith in order to make him well forthwith. When this remedy is used by him against all illnesses in the head and all sufferings and evils of any sort, he will instantly become well."
+
+HEAD_003 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "ANOTHER CONJURATION FOR THE HEAD".
+The subject is "Headaches".
+The content is "Horus is fighting with Seth for the Unique Bush -- a hmm-plant which Geb had brought forth. Re, listen to Horus! Should he keep silent because of Geb? Horus is suffering from his head! Give him something to dispel his torments, Isis! Take a decision, mother of Horus! 
+
+[italic type]'I have indeed applied something to all his sore spots.'[roman type]
+
+Words to be said over buds of a Unique Bush. To be twisted leftwise, to be soaked in mucus, and the bud of a snb-plant laced to it. To be fitted with 7 knots and to be applied to a man's throat.".
+
+
+EXCR_001 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "REMEDY TO STOP THE DIARRHEA".
+The subject is "Excretory".
+The content is "
+Green Onions               I[line break]
+Freshly-cooked-Gruel       I[line break]
+Oil and Honey              I[line break]
+Wax                        I[line break]
+Water                      I
+
+Cook and take for four days."
+
+
+EXCR_002 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "REMEDY TO FORCE OUT THE URINE".
+The subject is "Excretory".
+The content is "
+Crocus-from-the-Hills          1/4[line break]
+Crocus-from-the-Delta          1/8[line break]
+abu-plant-from-Upper-Egypt     1/16[line break]
+abu-plant-from-Lower-Egypt     1/16[line break]
+Berry-of-the-uan-tree          1/16[line break]
+Fresh Gruel                    1/8[line break]
+Linseed                        1/16[line break]
+uam-seeds                      1/16[line break]
+duat-plant                     1/16[line break]
+Water                          1/16
+
+Keep moist, strain, and take for four days."
+
+EXCR_003 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "REMEDY TO REGULATE EVACUATION".
+The subject is "Excretory".
+The content is "
+Honey                           I[line break]
+sasa-seeds                      I[line break]
+Wormwood                        I[line break]
+Elderberry                      I[line break]
+Berries-of-the-uan-tree         I[line break]
+Kernel-of-the-ut'ait-fruit      I[line break]
+Caraway                         I[line break]
+aaam-seeds                      I[line break]
+Xam-seeds                       I[line break]
+Sea-salt                        I
+
+Form into a Suppository and put into the Rectum."
+
+EXCR_004 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "ANOTHER REMEDY TO DRIVE OUT THE DISEASED EXCREMENT IN THE BODY OF A PERSON".
+The subject is "Excretory".
+The content is "
+White-cake            I[line break]
+Red tit-corn          I[line break]
+Milk-of-a-Woman
+
+Mix into one and let the Person drink."
+
+DEMON_001 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "AGAINST THE SEMEN OF A DEMON".
+The subject is "Demons".
+The content is "This here is the ejaculation of Him-who-is-in-his-grimness which Mafdet received in that room wherein Isis rejoiced and wherein the testicles of Seth were cut off. Do not flee away! May the ejaculation of Horus and of Him-who-is-in-his-grimness go forth against a male dead, a female dead, and so on--the name of the enemy, the name of his father, the name of his mother. Oh Mafdet! [italic type]Open your mouth wide against that enemy, the male dead, the female dead and so on--do not let me see him![roman type]
+
+Words to be said over the phallus of an ass, hard-baked in the form of a depet-cake, provided with the name of the enemy, the name of his father and the name of his mother. To be placed within fat of meat and to be given to a cat."
+
+DEMON_002 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "WARDING OFF THE ATTACK OF A DEAD ONE".
+The subject is "Demons".
+The content is "[italic type]The Inundation has approached to set foot on the land of Tait--throw out what is in you![roman type]
+
+Words to be said after you have tied two knots in a strip of the border of a mummy bandage, put at the opening of the inside of her vagina, to ward off what acts against it."
+
+DEMON_003 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "CONJURATION OF THE akhu-DEMON".
+The subject is "Demons".
+The content is "Oh Horus, oh Re, oh Shu, oh Geb, oh Osiris, oh Helm,
+oh Nun! Praise to you, great gods who bring the Upper One to the Underworld, who make him travel to this ceiling, who meet Re' at his departure from the horizon, who travel in the night bark, who sail in the day bark: come to me, ascend to me, unite yourselves for me after that you have brought up for me anything bad, any bad revolting matter, any bad sickness that is in this body of mine, in these limbs of mine, you being the protection of Horus that guards Seth- and vice versa. It is to make an end of the sickness that is cleaving to you, oh gods there that I have fetched a herb that came into existence by itself. [italic type]Make an end of any bad sickness that is cleaving to me![roman type]
+
+Words to be said over an instrument of tamarisk-wood. To conjure the akhu with it."
+
+MISC_001 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "ANOTHER FOR THE GROWTH OF THE HAIR ON A HEAD WHICH IS BECOMING BALD".
+The subject is "Miscellaneous".
+The content is "
+Fat-of-the-Lion[line break]
+Fat-of-the-Hippopotamus[line break]
+Fat-of-the-Crocodile[line break]
+Fat-of-the-Cat[line break]
+Fat-of-the-Serpent[line break]
+Fat-of-the-Egyptian-Goat
+
+Make into one and rub the head of the Bald One therewith."
+
+MISC_002 is a papyrus-scroll. It is in the House of Life.
+The library is Medical papyri.
+The title is "REMEDY TO DRIVE AWAY SWEATY FEET IN A PERSON".
+The subject is "Miscellaneous".
+The content is "
+uadu-plant-of-the-Fields [line break]
+Eel-from-the-Canal
+
+Warm in Oil and smear both feet there with."
+
+MISC_003 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "A SPELL FOR THE DRINKING OF BEER".
+The subject is "Miscellaneous".
+The content is "Hail to you, lady of Heliopolis! When he has set his heart on it, there is no restraining Seth. Let him carry out his heart's desire to bear away a heart-- in that name 'beer' of his, to confuse a heart, to bear away the heart of an enemy, a fiend, a male dead, a female dead, and so on.
+
+This spell is to be said during the drinking of beer; should be spat up. A true means, proved an infinite number of times."
+
+MISC_004 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "TO REMOVE THE AAA-DISEASE".
+The subject is "Miscellaneous".
+The content is "Jochauflegung of the sau-wood
+
+Warm in Oil and give against it."
+
+MISC_005 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "ANOTHER CONJURATION FOR A BURN".
+The subject is "Miscellaneous".
+The content is "'Your son Horus has been burnt in the desert!' 'Is there water there?' 'There is no water there!' 'Water is in my mouth, an Inundation is between my thighs. It is to extinguish the fire that I have arrived. Break out, burn!'
+
+Words to be said over the milk of a woman who has given birth to a male child, gum and hairs of a cat. To be applied to the burn.".
+
+MISC_006 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "A CONJURATION OF THE ASIATIC DISEASE".
+The subject is "Miscellaneous".
+The content is "Who is knowing like Re? Who knows the like of this god? You who turn the belly black with black coals so as to get even a hold on the upper god! When, just as Seth conjured the Great Green Sea, Seth conjures you in the same manner, oh Asiatic disease, then you will not stride about in the body of NN born of NN.
+
+This spell is to be said four times over fresh moringa-oil and residue of a cooking-vessel. Conjure her with that and close her up with seals of tortoise-shell.".
+
+MISC_007 is a papyrus-scroll. It is in the House of Life. 
+The library is Medical papyri.
+The title is "Ritual for the Reassembling of Osiris".
+The subject is "Miscellaneous".
+The content is "Look to the east and say: 'You are the one who thunders, the one who rains
+and hurls lightning at the right time and dries in the same way; come to me,
+reveal' (add the usual or write whatever you want, and anoint your hand).
+
+Preparation of the ink: 3 dried figs, 3 stones of the Nicolaus date, 3 fragments of
+1000 wormwood, and 3 lumps of myrrh; mix together, then after pulverizing them,
+write the following formula. Isis uttered it and wrote it when, after taking up
+Osiris, she fit together his separated members. Asklepios saw Osiris and admitted that he could not put together someone who was dead even with the help
+of Hebe or of anyone else.
+
+This is the formula: 'Come to me, SESEGGENBARPHARAGGES SABAOTH, for
+I conjure you, daimon of the dead, by bitter Necessity; open your ears and
+hear the holy words-----' [bracket]the papyrus was torn here[close bracket]".

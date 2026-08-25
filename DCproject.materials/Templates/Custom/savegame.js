@@ -85,7 +85,15 @@ function saveTranscript() {
 }
 
 vorple.file.transcriptFilePrompt = function (callback) {
-    vorple.file.filePrompt(callback, vorple.file.TRANSCRIPT_PATH+"/");
+    // Vorple's default filePrompt() re-uses the same suggested filename across
+    // page reloads, which silently pops up a blocking "File already exists.
+    // Overwrite?" dialog that nothing here answers -- every replay in the same
+    // browser session then collides with the previous one's transcript file.
+    // A timestamped filename can never collide, so we build the path ourselves
+    // and skip the prompt (and the dialog) entirely.
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const filename = "transcript-" + timestamp + ".txt";
+    callback(vorple.file.TRANSCRIPT_PATH + "/" + filename);
 };
 
 function downloadFile(data, filename, type) {
