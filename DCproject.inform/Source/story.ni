@@ -228,7 +228,6 @@ Understand "talk to [someone]" as talking to.
 
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "talk to [something]" or “converse with [someone]” or "converse with [something]" as talking to.
 
-
 Squeezing through is an action applying to one visible thing. Understand "squeeze through [something]" as squeezing through.
 
 Prying open is an action applying to one visible thing. Understand "pry open [something]" as prying open. 
@@ -1396,7 +1395,7 @@ chatter
 Table of Street Vendor's Healing Chatter
 chatter
 "'Perfume for the sick room?' he offers, not really listening. 'Something's going around the city, I hear. Bad for foot traffic.'"
-"'If you want real me.dicine, not my little bottles, the House of Life is west of the Ramesseum,' he admits. 'Don't tell my customers I said that.'"
+"'If you want real medicine, not my little bottles, the House of Life is west of the Ramesseum,' he admits. 'Don't tell my customers I said that.'"
 
 Instead of talking to the street vendor: 
 	if Heal Heracles is happening:
@@ -1424,7 +1423,7 @@ The greeting dialogue of the temple guard is "The guard eyes you as you approach
 Table of Temple Guard's General Chatter
 chatter
 "'Move along,' the guard snaps, not even looking at you. 'Nothing here for looters, mourners, or the merely curious.'"
-"'The delay in ' he says darkly. 'Ramesses III is still waiting on a proper judgment, if you ask me. Some conspiracies take longer to settle than others.'"
+"'With the delay in the underworld,' he says darkly. 'Ramesses III is still waiting on a proper judgment, if you ask me. Some conspiracies take longer to settle than others.'"
 
 Table of Temple Guard's Healing Chatter
 chatter
@@ -2157,6 +2156,7 @@ Instead of trading:
 
 Table of Fish Trades
 sold-good	accepted-trade
+the salted fish	the loaf of bread
 the dried fish	the onions
 
 Table of Perfume Trades
@@ -2263,24 +2263,6 @@ The description of the trash pile is
 
 Instead of taking a papyrus-scroll (called S) when the library of S is the trash pile:
 	say "You don't particularly want to pick up someone else's trash."
-
-SCRAP_001 is a papyrus-scroll. It is in the Papyrus Room.
-The library is the trash pile.
-The papyrus-subject is "Scraps".
-The title is "Untitled Fragment".
-The content is "(TBD)".
-
-SCRAP_002 is a papyrus-scroll. It is in the Papyrus Room.
-The library is the trash pile.
-The papyrus-subject is "Scraps".
-The title is "Untitled Fragment".
-The content is "(TBD)".
-
-SCRAP_003 is a papyrus-scroll. It is in the Papyrus Room.
-The library is the trash pile.
-The papyrus-subject is "Scraps".
-The title is "Untitled Fragment".
-The content is "(TBD)".
 
 Section 3 - Tawaret conflict
 
@@ -2673,3 +2655,21 @@ Preparation of the ink: 3 dried figs, 3 stones of the Nicolaus date, 3 fragments
 
 This is the formula: 'Come to me, SESEGGENBARPHARAGGES SABAOTH, for I conjure you, daimon of the dead, by bitter Necessity; open your ears and hear the holy words-----' [bracket]the papyrus was torn here[close bracket]".
 
+
+SCRAP_001 is a papyrus-scroll. It is in the Papyrus Room.
+The library is the trash pile.
+The papyrus-subject is "Scraps".
+The title is "Untitled Fragment".
+The content is "(TBD)".
+
+SCRAP_002 is a papyrus-scroll. It is in the Papyrus Room.
+The library is the trash pile.
+The papyrus-subject is "Scraps".
+The title is "Untitled Fragment".
+The content is "(TBD)".
+
+SCRAP_003 is a papyrus-scroll. It is in the Papyrus Room.
+The library is the trash pile.
+The papyrus-subject is "Scraps".
+The title is "Untitled Fragment".
+The content is "(TBD)".
