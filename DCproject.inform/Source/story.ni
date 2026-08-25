@@ -1713,7 +1713,9 @@ Instead of talking to Heracles in the Temple Repository when the lid is unlifted
 	
 [crypt of osiris]
 
-The Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of Crypt of Osiris is nothing. "Cloaked in a heavy silence, this chamber radiates an eerie chill. It's clearly been flooded at some point and never dried, a perpetual dampness permeating every corner and crevice of the room."
+The Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of Crypt of Osiris is nothing. "Cloaked in a heavy silence, this chamber radiates an eerie chill. It's clearly been flooded at some point and never dried, a perpetual dampness permeating every corner and crevice of the room. On the wall, you see an odd inscription."
+
+The odd inscription is scenery in the Crypt of Osiris. The description is "You walk closer to read the inscription: Osiris' penis was once known to have been swallowed by the catfish after he was dismembered by Seth."
 
 The hidden entrance is a secret door. The hidden entrance is east of Hallway. "A faint outline on the stone wall indicates a hidden door!"
 
@@ -2152,11 +2154,8 @@ Instead of trading:
 
 [A good is a kind of thing. Definition: a thing is a good if a vendor is carrying it. ]
 
-[Each vendor's goods table pairs a sold-good with an accepted-trade]
-
 Table of Fish Trades
 sold-good	accepted-trade
-the salted fish	the loaf of bread
 the dried fish	the onions
 
 Table of Perfume Trades
@@ -2172,47 +2171,34 @@ the linen	the dried fish
 Table of Vegetable Trades
 sold-good	accepted-trade
 the vegetables	the jar of perfume oil
-the onions	the salted fish
-the herbs	the loaf of bread
 
 Table of Bread Trades
 sold-good	accepted-trade
 the loaf of bread	the fever phylactery
-the eggs	the herbs
 
 Table of Beer Trades
 sold-good	accepted-trade
 the beer	the sandals
 
-The fisherman is a vendor in the Marketplace of Oxyrhynchos. The fisherman is male. The trades of the fisherman is Table of Fish Trades. The description is "He crouches beside a reed basket, sorting the morning's catch by size." Understand "fisherman" as the fisherman.
-
-Some salted fish are a plural-named thing carried by the fisherman. The description is "Silvery bodies packed in salt, still faintly smelling of the river."
-
-The fisherwoman is a vendor in the Marketplace of Oxyrhynchos. The fisherwoman is female. The trades of the fisherwoman is Table of Fish Trades. The description is "She sits beside her husband, threading fish onto a length of cord to dry in the sun." Understand "fisherwoman" or "fisherman's wife" as the fisherwoman.
-
-Some dried fish are a plural-named thing carried by the fisherwoman. The description is "A string of fish, split and dried hard under the Egyptian sun."
-
-The perfume vendor is a vendor in the Marketplace of Oxyrhynchos. The perfume vendor is female. The trades of the perfume vendor is Table of Perfume Trades. The description is "She kneels behind a mat of small clay jars, dabbing scented oil on her wrist to tempt passersby." Understand "oil seller" or "perfume seller" as the perfume vendor.
+The perfume vendor is a vendor in the Marketplace of Oxyrhynchos. The perfume vendor is female. The trades of the perfume vendor is Table of Perfume Trades. The description is "She kneels behind a mat of small clay jars and ready-made unguent cones." Understand "oil seller" or "perfume seller" of "oil vendor" as the perfume vendor.
 
 A jar of perfume oil is a thing carried by the perfume vendor. The description is "A squat clay jar, its stopper sealed with wax, faintly fragrant."
 
 Some unguent cones are a plural-named thing carried by the perfume vendor. The description is "Small cones of scented fat, meant to be worn atop a wig and left to melt slowly through the day."
 
-The sandal vendor is a vendor in the Marketplace of Oxyrhynchos. The sandal vendor is male. The trades of the sandal vendor is Table of Sandal Trades. The description is "He sits cross-legged behind stacks of woven sandals and folded lengths of linen." Understand "sandal seller" or "linen seller" as the sandal vendor.
+The sandal vendor is a vendor in the Marketplace of Oxyrhynchos. The sandal vendor is male. The trades of the sandal vendor is Table of Sandal Trades. The description is "He sits on a small stool, absently staring at the sandals and linens hung up on the rack in front of him." Understand "sandal seller" or "linen seller" as the sandal vendor.
 
-Some sandals are a plural-named thing carried by the sandal vendor. The description is "Sandals woven from plaited papyrus, sized for every foot."
+Some sandals are a plural-named thing carried by the sandal vendor. The description is "Sandals woven from papyrus, palm leaf, and halfa grass, sized for every foot."
+[https://www.metmuseum.org/art/collection/search/545130]
 
-Some linen is a thing carried by the sandal vendor. The description is "A folded length of pale linen, coarser than what the temples use."
+Some linen is a thing carried by the sandal vendor. The description is "A folded length of linen."
+[https://www.metmuseum.org/art/collection/search/545138]
 
-The vegetable vendor is a vendor in the Marketplace of Oxyrhynchos. The vegetable vendor is female. The trades of the vegetable vendor is Table of Vegetable Trades. The description is "She sits behind a heap of vegetables, sorting onions from bundles of fresh herbs." Understand "vegetable seller" or "herb seller" as the vegetable vendor.
+The vegetable vendor is a vendor in the Marketplace of Oxyrhynchos. The vegetable vendor is female. The trades of the vegetable vendor is Table of Vegetable Trades. The description is "She sits behind a basket of onions and other vegetables." Understand "vegetable seller" or "herb seller" as the vegetable vendor.
 
-Some vegetables are a plural-named thing carried by the vegetable vendor. The description is "A heap of leeks, gourds, and greens, still gritty with field dust."
+Some vegetables are a plural-named thing carried by the vegetable vendor. The description is "A heap of onion, leeks, gourds, and greens, grimy and gritty."
 
-Some onions are a plural-named thing carried by the vegetable vendor. The description is "A braided string of onions, their papery skins rustling."
-
-Some herbs are a plural-named thing carried by the vegetable vendor. The description is "Bundles of fresh herbs, tied with twine."
-
-The bread vendor is a vendor in the Marketplace of Oxyrhynchos. The bread vendor is female. The trades of the bread vendor is Table of Bread Trades. The description is "She minds a basket of loaves and a shallow bowl of eggs, calling out prices to anyone who slows down." Understand "bread seller" or "egg seller" as the bread vendor.
+The bread vendor is a vendor in the Marketplace of Oxyrhynchos. The bread vendor is female. The trades of the bread vendor is Table of Bread Trades. The description is "She displays a shocking variety of bread made from different material and in different shapes." Understand "bread seller" the bread vendor.
 
 A loaf of bread is an edible thing carried by the bread vendor. The description is "A round loaf, still faintly warm."
 
@@ -2228,34 +2214,36 @@ The beer vendor is a vendor in the Marketplace of Oxyrhynchos. The beer vendor i
 
 Beer jars is carried by the beer vendor. The description is "You would much prefer wine, but after so long in jail, anything would suffice."
 
+The fisherman is a vendor in the Marketplace of Oxyrhynchos. The fisherman is male. The trades of the fisherman is Table of Fish Trades. The description is "He crouches beside a reed basket, sorting the morning's catch by size." Understand "fisherman" as the fisherman.
+
+The fisherwoman is a vendor in the Marketplace of Oxyrhynchos. The fisherwoman is female. The trades of the fisherwoman is Table of Fish Trades. The description is "She sits beside her husband, stringing fish onto cords to dry in the sun." Understand "fisherwoman" or "fisherman's wife" as the fisherwoman.
+
+[The fishmonger couple is a vendor in the Marketplace of Oxyrhynchos. The trades of the fishmonger couple is Table of Fish Trades. The description is "A couple sits by their reed basket and mat, talking to each other. The man was sorting through morning's catch by size, while the woman threaded fish onto cords to dry. The woman sat a little awkwardly, reaching down sideways " Understand "fishermongers" or "fisherman" or "fishermen" or "couple" as the fishmonger couple.]
+
+Some salted fish are a plural-named thing carried by the fisherman. The description is "Fish packed in salt, still reeking of the river."
+
+Some dried fish are a plural-named thing carried by the fisherwoman. The description is "A string of fish, tragically flayed and dried out under the harsh sun."
+
 The birth amulet is a thing. The amulet can be given or ungiven. The birth amulet is ungiven.
 
 Instead of talking to the fisherman when the birth amulet is ungiven:
-	say "fisherman mentions they're looking for a birth amulet[paragraph break]";
-	say "fisherman mentions they never sell catfish, but there are some in the river"
+	say "'Interested in buying any fish? We have a great variety! The only one we don't sell is catfish, but that's for obvious reasons.[paragraph break]";
+
+[papyrus scraps in oxyrhynchus - something about the elephant fish/catfish. also maybe include something in busiris... 
 
 Instead of talking to the fisherwoman when the birth amulet is ungiven:
-	say "fisherwoman mentions they're looking for a birth amulet[paragraph break]";
-	say " fisherwoman mentions they never sell catfish, but there are some in the river"
-
-Instead of giving the birth amulet to the fisherman when the birth amulet is ungiven:
-	say "fisherman says thank you[paragraph break]";
-	wait for any key;
-	say "In return, he hands you a fishing rod.";
-	now the birth amulet is given;
-	now the fisherman carries the birth amulet;
-	now the player carries the fishing rod.
+	say "I'm about to give birth, but it's always dangerous business, so we're looking for an amulet.[paragraph break]";
 
 Instead of giving the birth amulet to the fisherwoman when the birth amulet is ungiven:
 	say "fisherwoman says thank you[paragraph break]";
 	wait for any key;
-	say "In return, she hands you a fishing rod.";
+	say "In return, her husband hands you a fishing rod.";
 	now the birth amulet is given;
 	now the fisherwoman carries the birth amulet;
 	now the player carries the fishing rod.
 
 Instead of talking to the fisherman when the birth amulet is given:
-	say "'Sorry, we can't give you bait,' the fisherman says, 'but some bread will probably do the trick.'"
+	say "'Sorry, we ran out of bait this morning,' the fisherman says, 'but some bread will probably do the trick.'"
 
 Instead of talking to the fisherwoman when the birth amulet is given:
 	say "'Sorry, we can't give you bait,' the fisherwoman says, 'but some bread will probably do the trick.'"
