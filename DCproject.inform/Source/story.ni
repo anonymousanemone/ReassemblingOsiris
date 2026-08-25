@@ -9,9 +9,6 @@ Include Exit Lister by Gavin Lambert.
 Include Papyrus Library by Sophia Ling.
 Include Conversation Framework by Eric Eve.
 
-[Conversation Framework reroutes "talk to [someone]" to its own saying-hello-to action. Restore it to the standard talking-to action so every existing and new "Instead of talking to" rule keeps working exactly as before. HELLO, GOODBYE, ASK X ABOUT Y, TELL X ABOUT Y, and Conversation Framework's friendlier default "no reply" fallback remain available as additional commands on top.]
-Understand "talk to [someone]" as talking to.
-
 Include Vorple by Juhana Leinonen.
 Include Vorple Command Prompt Control by Juhana Leinonen.
 Include Vorple Hyperlinks by Juhana Leinonen.
@@ -226,7 +223,11 @@ Section 3 - New Definitions
 To say tab:
 	say "    "; [6 spaces]
 
+[Conversation Framework changes "talk to [someone]" to its own saying-hello-to action]
+Understand "talk to [someone]" as talking to.
+
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "talk to [something]" or “converse with [someone]” or "converse with [something]" as talking to.
+
 
 Squeezing through is an action applying to one visible thing. Understand "squeeze through [something]" as squeezing through.
 
@@ -2282,6 +2283,8 @@ The title is "Untitled Fragment".
 The content is "(TBD)".
 
 Section 3 - Tawaret conflict
+
+The Papyrus Junkyard is in Oxyrhynchos. It is north of Marketplace of Oxyrhynchos. The description is "This seems to be the dumping ground of all sorts of paper and other recyclable trash. Heaps upon heaps of papyrus scraps cover every bit of the ground."
 
 The Nile Riverbank is in Oxyrhynchos. It is east of Marketplace of Oxyrhynchos. "You are at the bank of the Nile. West of you is the marketplace. A stand of [set-link duat-plant] grows in the damp silt at the water's edge, its dark reedy stalks swaying with the current."
 
