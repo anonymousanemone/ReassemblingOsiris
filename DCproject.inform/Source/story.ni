@@ -1,13 +1,16 @@
 "That Time I Got Out of Jail by Reassembling Osiris" by Sophia Ling and Ruya Tazebay
 
 Include Basic Screen Effects by Emily Short.
-[Include Basic Help Menu by Emily Short.]
 Include Punctuation Removal by Emily Short.
 Include Rideable Vehicles by Graham Nelson.
 Include Secret Doors by Gavin Lambert.
 Include Exit Lister by Gavin Lambert.
 Include Papyrus Library by Sophia Ling.
 Include Conversation Framework by Eric Eve.
+Include Property Checking by Emily Short.
+Include Object Response Tests by Juhana Leinonen.
+Include Tutorial Mode by Emily Short.
+[Include Smarter Parser by Aaron Reed.]
 
 Include Vorple by Juhana Leinonen.
 Include Vorple Command Prompt Control by Juhana Leinonen.
@@ -30,6 +33,8 @@ Scream is a Vorple style.
 Release along with cover art ("Vase painting of Medea on her chariot").
 
 Part 1 - Adjustments - not for release
+
+[Include Basic Help Menu by Emily Short.]
 
 [When play begins:
 	choose row 1 in Table of Basic Help Options; 	
