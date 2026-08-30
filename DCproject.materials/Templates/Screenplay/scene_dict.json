@@ -4,16 +4,18 @@
     "Avaris": "Avaris-Marketplace",
     "Heliopolis": "Heliopolis-Marketplace",
     "Memphis": "Memphis-Marketplace",
-    "Oxyrhynchos": "Oxyrhynchos-Marketplace",
+    "Oxyrhynchos": "Marketplace of Oxyrhynchos",
     "Amarna": "Outside the Walled Village",
     "Abydos": "Entrance to the Osireion",
     "Thebes": "Temple of Tawosret",
     "Elephantine": "Elephantine-Marketplace"
   },
   "Avaris": {
-    "Avaris-Marketplace": "region-graphics/avaris.png"
+    "default": "region-graphics/avaris.png",
+    "Avaris-Marketplace": ""
   },
   "Busiris": {
+    "default": "region-graphics/busiris.png",
     "Central Court": "busiris_icons/centralcourt.png",
     "Pillar Hall": "busiris_icons/pillarhall.png",
     "Hallway": "busiris_icons/hallway.png",
@@ -35,48 +37,55 @@
     "Tricolumnar Hall": "busiris_icons/tricolumnhall.png",
     "Upper Hallway": "busiris_icons/upperhallway.png",
     "Treasury": "busiris_icons/treasury.png",
-    "Great Hall-Busiris": "busiris_icons/greathall.png",
+    "Great Hall": "busiris_icons/greathall.png",
     "Porch": "busiris_icons/westporch.png"
   },
   "Memphis": {
-    "Memphis-Marketplace": "region-graphics/memphis.png"
+    "default": "region-graphics/memphis.png",
+    "Memphis-Marketplace": ""
   },
   "Oxyrhynchos": {
-    "Oxyrhynchos-Marketplace": "region-graphics/oxyrhynchus.png",
-    "Nile Riverbank": "region-graphics/oxyrhynchus.png"
+    "default": "region-graphics/oxyrhynchus.png",
+    "Marketplace of Oxyrhynchos": "",
+    "Junkyard": "",
+    "Nile Riverbank": ""
   },
   "Amarna": {
-    "Outside the Walled Village": "region-graphics/amarna.png",
-    "Workmen's Village": "region-graphics/amarna.png",
-    "Ruined City": "region-graphics/amarna.png",
-    "Small Aten Temple": "region-graphics/amarna.png",
-    "Sanctuary": "region-graphics/amarna.png",
-    "Underground chapel": "region-graphics/amarna.png"
+    "default": "region-graphics/amarna.png",
+    "Outside the Walled Village": "",
+    "Workmen's Village": "",
+    "Ruined City": "",
+    "Small Aten Temple": "",
+    "Sanctuary": "",
+    "Underground chapel": ""
   },
   "Abydos": {
-    "Entrance to the Osireion": "region-graphics/abydos.png",
-    "North Passage": "region-graphics/abydos.png",
-    "Great Hall": "region-graphics/abydos.png",
-    "South Chamber": "region-graphics/abydos.png",
-    "Sloped Passage": "region-graphics/abydos.png",
-    "First Transverse Chamber": "region-graphics/abydos.png",
-    "Central Nave": "region-graphics/abydos.png",
-    "Tomb of Osiris": "region-graphics/abydos.png"
+    "default": "region-graphics/abydos.png",
+    "Entrance to the Osireion": "",
+    "North Passage": "",
+    "Great Hall": "",
+    "South Chamber": "",
+    "Sloped Passage": "",
+    "First Transverse Chamber": "",
+    "Central Nave": "",
+    "Tomb of Osiris": ""
   },
   "Thebes": {
-    "Temple of Thutmoses III": "region-graphics/thebes.png",
-    "Ramesseum": "region-graphics/thebes.png",
-    "Temple of Thutmoses IV": "region-graphics/thebes.png",
-    "Temple of Tawosret": "region-graphics/thebes.png",
-    "Temple of Merenptah": "region-graphics/thebes.png",
-    "Collection of Three Temples": "region-graphics/thebes.png",
-    "Temple of Amenhotep III": "region-graphics/thebes.png",
-    "Memnon Colossi": "region-graphics/thebes.png",
-    "Temple of Horemheb": "region-graphics/thebes.png",
-    "Temple of Ramesses III": "region-graphics/thebes.png",
-    "House of Life": "region-graphics/thebes.png"
+    "default": "region-graphics/thebes.png",
+    "Temple of Thutmoses III": "",
+    "Ramesseum": "",
+    "Temple of Thutmoses IV": "",
+    "Temple of Tawosret": "",
+    "Temple of Merneptah": "",
+    "Collection of Three Temples": "",
+    "Temple of Amenhotep III": "",
+    "Memnon Colossi": "",
+    "Temple of Horemheb": "",
+    "Temple of Ramesses III": "",
+    "House of Life": ""
   },
   "Elephantine": {
-    "Elephantine-Marketplace": "region-graphics/elephantine.png"
+    "default": "region-graphics/elephantine.png",
+    "Elephantine-Marketplace": ""
   }
 }

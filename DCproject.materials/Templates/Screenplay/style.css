@@ -5,15 +5,15 @@
 	--bg: #fff;
   --box-color: #311e15;
   --header: #efefef;
-  --link: #a988b2;
+  --link: #ad8ccf;
 	--linkhover: #b9a2c6;
 
   --normal-font: "IBM Plex Mono", monospace;
 	--normal-size: 16px;
-	--mono-font: "Courier New", Courier, monospace;
+	--mono-font: "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", monospace;
 
 	--prefill-color: #656565;
-	--hint-color: #6f4393;
+	--hint-color: #804daa;
 	--hint-light: #e4def2;
   --notice-color: #893c11;
   --hover: var(--hint-light);
@@ -643,13 +643,18 @@ hr {
   border-radius: 0 !important;
 }
 
-.border-theme { border: 2px solid var(--fg); }
+.border-theme { 
+  border: 2px solid var(--fg); 
+}
 
-.rule { height: 1.5px; background: var(--fg); }
+.rule { 
+  height: 1.5px; 
+  background: var(--box-color); 
+}
 
 /* buttons: Save Game / Restore / Transcript / Files */
 .btn-theme {
-  border: 1.5px solid var(--fg);
+  border: 1.5px solid var(--box-color);
   background: var(--bg);
   color: var(--fg);
   font-family: inherit;
@@ -660,6 +665,30 @@ hr {
 .btn-theme:hover { background: var(--hover); color: var(--fg); }
 .btn-theme:active { background: var(--fg); color: var(--bg); }
 .btn-theme:disabled { opacity: 0.4; }
+.btn-theme.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+/* help button: circular accent badge next to the COMMANDS title, meant to
+   read as distinct from the rectangular btn-theme / dpad-btn controls */
+.help-btn {
+  height: 26px;
+  flex: 0 0 auto;
+  border-radius: 13px;
+  border: 1.5px solid var(--accent);
+  background: var(--bg);
+  color: var(--accent);
+  font-family: var(--normal-font);
+  font-weight: bold;
+  font-size: 0.85rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.help-btn:hover { background: var(--accent); color: var(--bg); }
+.help-btn:active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
 
 /* quick-command list */
 .command-link {

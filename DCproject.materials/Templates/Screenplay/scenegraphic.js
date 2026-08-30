@@ -84,6 +84,12 @@ function tryToUpdateImage(sceneEl, regionEl, imgEl, defaultImageSrc, captionEl) 
       if (imagePath && typeof imagePath === "string" && imagePath.trim() !== "") {
         const fullPath = rootPath ? rootPath + imagePath : imagePath;
         imgEl.src = fullPath;
+        return;
+      }
+
+      const fallbackPath = regionScenes["default"];
+      if (fallbackPath && typeof fallbackPath === "string" && fallbackPath.trim() !== "") {
+        imgEl.src = rootPath ? rootPath + fallbackPath : fallbackPath;
       } else {
         console.warn(`Scene "${currentScene}" not found in region "${currentRegion}" or image path is empty.`);
         imgEl.src = defaultImageSrc;

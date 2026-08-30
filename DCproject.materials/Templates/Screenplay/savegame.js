@@ -80,8 +80,17 @@ vorple.addEventListener( 'expectCommand', clearScreen );
 function loadGameFromFile() {
 }
 
+let transcriptOn = false;
+
 function saveTranscript() {
-  vorple.prompt.queueCommand('TRANSCRIPT');
+  transcriptOn = !transcriptOn;
+  vorple.prompt.queueCommand(transcriptOn ? 'TRANSCRIPT ON' : 'TRANSCRIPT OFF');
+
+  const button = document.getElementById("save-transcript");
+  if (button) {
+    button.textContent = transcriptOn ? "Stop Transcript" : "Save Transcript";
+    button.classList.toggle("active", transcriptOn);
+  }
 }
 
 vorple.file.transcriptFilePrompt = function (callback) {

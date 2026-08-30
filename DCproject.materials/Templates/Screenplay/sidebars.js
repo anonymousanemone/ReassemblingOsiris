@@ -74,10 +74,3 @@ function toggleAccordion(button) {
   // Toggle the clicked one
   content.classList.toggle("open");
 }
-
-function toggleTranscriptButton(disable) {
-  const button = document.getElementById("save-transcript");
-  if (!button) return;
-
-  button.disabled = disable;
-}
