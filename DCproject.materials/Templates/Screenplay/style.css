@@ -1,0 +1,726 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Quattrocento:wght@400;700&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&family=VT323&display=swap');
+
+:root{
+	--fg: #333;
+	--bg: #fff;
+  --box-color: #311e15;
+  --header: #efefef;
+  --link: #a988b2;
+	--linkhover: #b9a2c6;
+
+  --normal-font: "IBM Plex Mono", monospace;
+	--normal-size: 16px;
+	--mono-font: "Courier New", Courier, monospace;
+
+	--prefill-color: #656565;
+	--hint-color: #6f4393;
+	--hint-light: #e4def2;
+  --notice-color: #893c11;
+  --hover: var(--hint-light);
+  --accent: var(--hint-color);
+
+  --input-color: #542766;
+
+  --game-width: 751px; /* from haven.css:47 for max width of #output */
+}
+
+#game-container {
+  overflow: hidden;
+}
+
+#vorple {
+	background-color: var(--bg);
+	color: var(--fg);
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* old Edge/IE */
+}
+
+#vorple::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+#output {
+  max-width: var(--game-width);
+}
+
+#window0 {
+  /* max-width: var(--game-width); */
+  max-height: 100%;
+}
+
+.status-line-container {
+  width: 100%;
+  padding: 0.3rem 0rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1.5px solid var(--box-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: var(--normal-font);
+}
+
+body, input, label {
+    font-family: var(--normal-font);
+    font-size: var(--normal-size);
+}
+
+
+#lineinput {
+	padding: 0.5em 0.75em;
+	border: 1.5px solid var(--box-color);
+	margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  border-radius: 0;
+}
+#lineinput-prefix{
+  font-size: var(--normal-size);
+  color: var(--hint-color);
+  font-weight: bold;
+}
+#lineinput-field {
+	font-family: var(--normal-font);
+  font-size: var(--normal-size);
+	padding-left: 0.5em;
+}
+
+.lineinput {
+	font-weight: bold;
+  color: var(--input-color);
+
+}
+
+.hint {
+  color: var(--hint-color);
+  background: var(--hint-light);
+  display: block;
+  padding: 0.5rem;
+  border-radius: 0;
+  margin-bottom: -1.5rem;
+}
+
+.notice {
+  color: var(--notice-color)
+}
+
+.scream {
+  font-size: 3rem;
+  color: var(--notice-color);
+  font-weight: bold;
+  padding-top: 3rem;
+  display: flex;
+  line-height: 3rem;
+  text-align: center;
+}
+
+a, a:visited {
+	color: var(--link);
+	font-weight: bold;
+}
+
+a:hover{
+	color: var(--linkhover);
+	text-decoration: none;
+}
+
+hr {
+  border-top: 1.5px solid var(--box-color);
+  width: 95%;
+}
+
+.layout {
+	display: grid;
+	grid-template-columns: 200px var(--game-width) 1fr;
+	gap: 20px;
+	padding: 20px;
+  padding-top: 0px;
+	max-width: 1400px;
+	margin: auto;
+}
+
+.window-block {
+  background-color: var(--bg);
+  border: 1.5px solid var(--fg);
+  border-radius: 0;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.window-block:last-child {
+  margin-bottom: 0;
+}
+
+.window-block h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  flex: 0 0 auto;
+}
+
+.window-block img {
+  flex: 1 1 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  margin: 0 auto;
+}
+
+#scene-graphic {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  margin: 0;
+}
+
+/* Scene graphic: image fills frame edge-to-edge with a caption bar,
+   mirroring the screenplay layout's 4:3 scene panel + caption. */
+.scene-frame {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.scene-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  margin: 0;
+}
+
+
+.graphic-window img,
+.map-window img {
+	width: 100%;
+	border-radius: 0;
+	margin-bottom: 15px;
+}
+
+.sidebar-button {
+  cursor: pointer;
+}
+
+.sidebar-button:hover {
+  background-color: var(--hint-light);
+}
+
+.sidebar-item {
+	background-color: var(--bg);
+  border: 1.5px solid var(--fg);
+  color: var(--fg);
+  padding: 0.3rem 0.6rem;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: left;
+  border-radius: 0;
+  font-family: var(--normal-font);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sidebar-item:hover {
+  background-color: var(--hint-light);
+}
+
+.sidebar-item:active {
+  background-color: var(--fg);
+  color: var(--bg);
+}
+
+.sidebar-item:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.quick-menu {
+  /* background-color: #eae3f9; */
+  /* margin-bottom: 0.5rem; */
+}
+
+.quick-menu-header {
+  border-radius: 0;
+  margin-bottom: 0px;
+}
+
+.quick-menu-body {
+  padding: 0 2rem 0 2rem;
+  border-top: none;
+  border-radius: 0;
+}
+
+.quick-menu-body a {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1.5px solid var(--fg);
+  border-radius: 0 !important;
+  padding: 0.3rem;
+  background: var(--bg);
+  color: var(--fg);
+  text-decoration: none;
+  text-align: center;
+  font-weight: normal;
+  font-family: var(--normal-font);
+  cursor: pointer;
+}
+
+.quick-menu-body a:hover {
+  background: var(--hover);
+  color: var(--fg);
+}
+
+.quick-menu-body a:active {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+/* Compass: directional movement panel. New to the screenplay layout;
+   named to match the existing window-block / sidebar-button conventions. */
+.compass-block {
+  text-align: center;
+}
+
+.compass-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4px;
+  aspect-ratio: 1;
+  width: 100%;
+  max-width: 160px;
+  margin: 0 auto 0.6rem auto;
+}
+
+.compass-updown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  max-width: 160px;
+  margin: 0 auto;
+}
+
+.compass-button {
+  border: 1.5px solid var(--fg);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--normal-font);
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.compass-button:hover {
+  background: var(--hint-light);
+}
+
+.compass-button:active {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.compass-button.compass-look {
+  color: var(--hint-color);
+  border-style: dashed;
+}
+
+/* Help Pop-up */
+.help-popup{
+	display: none;
+	position: fixed;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80%;
+	max-width: 900px;
+	height: 70vh;
+	background: var(--bg);
+	border: 1.5px solid var(--fg);
+	border-radius: 0;
+	z-index: 1001;
+	box-shadow: 8px 8px 0 rgba(51, 51, 51, 0.3);
+	display: flex;
+	overflow: hidden;
+}
+.tab-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+  background: var(--header);
+  border-right: 1.5px solid var(--fg);
+  overflow-y: auto;
+}
+.tab-button {
+  padding: 10px;
+  font-family: var(--mono-font);
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--fg);
+  text-align: left;
+  cursor: pointer;
+}
+.tab-button.active {
+  background: var(--hint-light);
+  color: var(--hint-color);
+}
+
+.help-tabs {
+	display: flex;
+	border-bottom: 1.5px solid var(--fg);
+}
+
+.help-tabs button {
+	flex: 1;
+	padding: 10px;
+	background: none;
+	border: none;
+	border-bottom: 3px solid transparent;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.help-tabs button.active {
+	border-bottom: 3px solid var(--hint-color);
+	background: var(--hint-light);
+}
+
+.help-scroll {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.help-content {
+  display: none;
+  font-size: 18px;
+}
+
+.help-content.active {
+  display: block;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(51, 51, 51, 0.3);
+	z-index: 900;
+	display: none;
+}
+
+/* Accordion formatting */
+.accordion-header {
+  background: var(--header);
+  border: 1px solid var(--fg);
+  padding: 12px;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  font-family: var(--normal-font);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  margin-top: 0.5em;
+  border-radius: 0;
+}
+
+.accordion-header:hover {
+  background: var(--hint-light);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 12px;
+}
+
+.accordion-content.open {
+  padding: 12px;
+  max-height: 500px; /* Adjust based on content length */
+}
+
+.vex.vex-theme-plain .vex-content {
+  border-radius: 0;
+  font-family: var(--mono-font);
+}
+
+/* dialogue pop ups for saving and restoring game */
+.vex.vex-theme-plain .vex-dialog-button{
+  border-radius: 0 !important;
+}
+
+.vex.vex-theme-plain .vex-dialog-button.vex-dialog-button-primary{
+  background: var(--link);
+}
+
+@media (max-width: 700px) {
+  .help-popup.side-tabs {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .tab-sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1.5px solid var(--fg);
+  }
+
+  .tab-button {
+    flex: 1 0 50%;
+    text-align: center;
+  }
+}
+
+.custom-popup {
+  position: fixed;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80%;
+	max-width: 900px;
+	height: 70vh;
+	background: var(--bg);
+	border: 1.5px solid var(--fg);
+	border-radius: 0;
+	z-index: 1001;
+	box-shadow: 8px 8px 0 rgba(51, 51, 51, 0.3);
+	display: flex;
+	overflow: hidden;
+}
+
+.file-explorer {
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.file-scroll {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.file-section {
+  margin-bottom: 1.5rem;
+}
+
+.file-section:last-child {
+  margin-bottom: 0;
+}
+
+.file-section h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--hint-color);
+  background: var(--header);
+  border-radius: 0;
+  padding: 0.5rem 0.75rem;
+  margin: 0 0 0.6rem 0;
+}
+
+.file-path {
+  font-family: var(--mono-font);
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: var(--prefill-color);
+}
+
+.file-list {
+  padding-left: 0.5rem;
+}
+
+.file-entry {
+  cursor: pointer;
+  overflow-wrap: break-word;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  word-break: break-all;
+  margin-bottom: 0.2rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0;
+  font-family: var(--mono-font);
+  font-size: 0.95rem;
+}
+
+.file-entry:hover {
+  background-color: var(--hint-light);
+}
+
+.file-entry.folder {
+  color: var(--hint-color);
+  font-weight: bold;
+}
+
+.file-icon {
+  margin-right: 0.4rem;
+}
+
+.file-name {
+  flex: 1;
+}
+
+.file-empty {
+  color: var(--prefill-color);
+  font-style: italic;
+  padding: 0.2rem 0.5rem;
+}
+
+.download-btn {
+  background: var(--fg);
+  color: var(--bg);
+  border: 1.5px solid var(--fg);
+  border-radius: 0;
+  padding: 0.25rem 0.7rem;
+  font-family: var(--normal-font);
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+.download-btn:hover {
+  background: var(--hint-color);
+  border-color: var(--hint-color);
+}
+
+.file-preview {
+  background: var(--header);
+  border: 1.5px solid var(--fg);
+  border-radius: 0;
+  padding: 1em;
+  margin-top: 0.5em;
+  white-space: pre-wrap;
+}
+
+.command-echo { display: none; }
+
+/* square corners everywhere, overriding Bootstrap's rounded defaults */
+.border-theme, .btn-theme, .cli-wrap, .dpad-btn {
+  border-radius: 0 !important;
+}
+
+.border-theme { border: 2px solid var(--fg); }
+
+.rule { height: 1.5px; background: var(--fg); }
+
+/* buttons: Save Game / Restore / Transcript / Files */
+.btn-theme {
+  border: 1.5px solid var(--fg);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+.btn-theme:hover { background: var(--hover); color: var(--fg); }
+.btn-theme:active { background: var(--fg); color: var(--bg); }
+.btn-theme:disabled { opacity: 0.4; }
+
+/* quick-command list */
+.command-link {
+  font-family: inherit;
+  font-size: 0.8rem;
+  border: none;
+  background: none;
+  color: var(--fg);
+  /* text-start py-1 px-1 */
+}
+.command-link:hover { 
+  color: var(--accent); 
+}
+.command-link.active { 
+  color: var(--accent); 
+  font-weight: 700; 
+}
+
+.vorple-link {
+  text-decoration: none;
+}
+
+
+/* compass d-pad: kept custom since it's a diamond/9-cell shape Bootstrap's grid can't express.
+   The compass and the Up/Down/In/Out row are one fixed-ratio block (dpad-block), not two independently-
+   sized pieces — that's what keeps them the same width without any JS. dpad-wrap fits the largest copy
+   of that block into whichever of width/height is tighter; everything inside is a percentage of
+   dpad-block, so it can't drift out of sync. */
+.dpad-wrap { container-type: size; }
+.dpad-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  aspect-ratio: 0.79;
+  width: min(100cqw, calc(100cqh * 0.79));
+}
+.compass {
+  flex: 0 0 auto;
+  width: 100%;
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1.8fr;
+  grid-template-rows: 1.8fr 1fr 1.8fr;
+  gap: 6px;
+}
+.dpad-btn {
+  border: 1.5px solid var(--fg);
+  background: var(--bg);
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+.dpad-btn:hover { background: var(--hover); }
+.dpad-btn:active { background: var(--fg); color: var(--bg); }
+.dpad-btn.corner { width: 56%; height: 56%; }
+.corner-nw { justify-self: end; align-self: end; }
+.corner-ne { justify-self: start; align-self: end; }
+.corner-sw { justify-self: end; align-self: start; }
+.corner-se { justify-self: start; align-self: start; }
+.compass-center { display: flex; align-items: center; justify-content: center; color: var(--fg); }
+.dpad-btn.square { aspect-ratio: 1; }
