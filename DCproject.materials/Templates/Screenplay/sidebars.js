@@ -61,6 +61,15 @@ function moveGameport(event) {
 
   vorple.addEventListener("init", moveGameport);
 
+function updateDirectionButtons(availableDirections) {
+  const available = new Set(
+    availableDirections.split(",").map(d => d.trim().toUpperCase()).filter(Boolean)
+  );
+  document.querySelectorAll(".dpad-btn[data-command]").forEach(btn => {
+    btn.classList.toggle("disabled", !available.has(btn.dataset.command.toUpperCase()));
+  });
+}
+
 function toggleAccordion(button) {
   const content = button.nextElementSibling;
 

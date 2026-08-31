@@ -19,7 +19,7 @@
   --hover: var(--hint-light);
   --accent: var(--hint-color);
 
-  --input-color: #542766;
+  --input-color: #6b427a;
 
   --game-width: 751px; /* from haven.css:47 for max width of #output */
 }
@@ -600,6 +600,13 @@ hr {
   flex: 1;
 }
 
+.file-timestamp {
+  font-size: 0.75rem;
+  color: var(--prefill-color);
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
 .file-empty {
   color: var(--prefill-color);
   font-style: italic;
@@ -625,6 +632,27 @@ hr {
 .download-btn:hover {
   background: var(--hint-color);
   border-color: var(--hint-color);
+}
+
+.delete-btn {
+  background: var(--bg);
+  color: var(--notice-color);
+  border: 1.5px solid var(--notice-color);
+  border-radius: 0;
+  padding: 0.25rem 0.7rem;
+  font-family: var(--normal-font);
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+.delete-btn:hover {
+  background: var(--notice-color);
+  color: var(--bg);
 }
 
 .file-preview {
@@ -746,6 +774,8 @@ hr {
 }
 .dpad-btn:hover { background: var(--hover); }
 .dpad-btn:active { background: var(--fg); color: var(--bg); }
+.dpad-btn.disabled { opacity: 0.3; pointer-events: none; cursor: default; }
+.dpad-btn.disabled:active { background: var(--bg); color: var(--fg); }
 .dpad-btn.corner { width: 56%; height: 56%; }
 .corner-nw { justify-self: end; align-self: end; }
 .corner-ne { justify-self: start; align-self: end; }

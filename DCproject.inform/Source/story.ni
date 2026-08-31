@@ -7,7 +7,7 @@ Include Rideable Vehicles by Graham Nelson.
 Include Secret Doors by Gavin Lambert.
 Include Exit Lister by Gavin Lambert.
 Include Papyrus Library by Sophia Ling.
-Include Conversation Framework by Eric Eve.
+[Include Conversation Framework by Eric Eve.]
 
 Include Vorple by Juhana Leinonen.
 Include Vorple Command Prompt Control by Juhana Leinonen.
@@ -56,7 +56,7 @@ command-echo is a Vorple style.
 After reading a command:
 	if transcript-on is true and Vorple is supported:
 		let cmd be the player's command;
-		say "[command-echo style]>[cmd][line break][end style]";
+		say "[command-echo style]> [cmd][line break][end style]";
 	continue the action.
 
 The end transcript rule is listed in the shutdown rules.
@@ -95,6 +95,13 @@ For printing a locale paragraph about a door (called the item)
     set the locale priority of the item to 0;
     continue the activity.
 
+An herb-plant is a kind of scenery supporter.
+
+For printing a locale paragraph about a thing (called the item) when the item is on an herb-plant (this is the don't mention things on herb-plants rule):
+	set the locale priority of the item to 0;
+	continue the activity.
+
+Herbs are a kind of thing.
 
 Section 3 - Screen Aesthetics
 
@@ -109,6 +116,7 @@ Screen-clearing is an action applying to nothing. Understand "clear-the-screen-e
 Carry out screen-clearing:
 	clear the screen;
 	queue a parser command "look", without showing the command.
+	
 	
 Section 4 - Conversations
 	
@@ -129,7 +137,7 @@ Instead of taking a body part:
 	continue the action.
 
 Instead of dropping a body part:
-	say "You'll need that.[line break][line break]Or, well, Osiris will."
+	say "You'll need that.[paragraph break]Or, well, Osiris will."
 
 A thing can be acquired or unacquired. A thing is usually unacquired.
 
@@ -159,14 +167,33 @@ Rule for printing the name of a direction (called way) while listing exits:
 
 Rule for printing the name of a thing (called obj) when printing the locale description of a room:
 	place a link to the command "examine [printed name of obj]" reading "[printed name of obj]".
-	
+
+To decide what text is the enabled compass directions:
+	let result be "";
+	repeat with way running through exit-listable directions:
+		if result is "":
+			now result is "[printed name of way]";
+		otherwise:
+			now result is "[result],[printed name of way]";
+	decide on result.
+
+To update the compass buttons:
+	if Vorple is supported:
+		execute JavaScript command "updateDirectionButtons('[the enabled compass directions]')".
+
+When play begins (this is the initialise compass buttons rule):
+	update the compass buttons.
+
+Every turn (this is the sync compass buttons rule):
+	update the compass buttons.
+
 
 Section 7 - Hint/Tutorial System
 
 A tutorial-object is a kind of object. It has some text called hint-content.
 
 To say print-hint (H - a tutorial-object):
-	say "[hint style][bold type](Beginner's Guide)[roman type] [hint-content of H] [end style]".	
+	say "[hint style][bold type][bracket]Beginner's Guide[close bracket][roman type] [hint-content of H] [end style]".	
 	
 Section 8 - Trading with vendors
 	
@@ -334,36 +361,43 @@ The Entrance to the Osireion is a room in Abydos. "You stand before an inconspic
 	[if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if]
 	[if Osiris' head is unacquired][paragraph break][print-hint the H1]"
 	
-H1 is a tutorial-object. The hint-content is "You can try to GO south through the door or ENTER it. Or perhaps you can take a closer look and EXAMINE the door?".
+H1 is a tutorial-object. The hint-content is "Always try to 'EXAMINE [bracket]an object[close bracket]' for more clues. You can also try to 'GO SOUTH' through the door or 'ENTER [bracket]the door[close bracket]'.".
 	
 A room memory rule for the North Passage:
 	if the north passage is not visited:
 		rule fails.
 
 The stone door is a locked closed door. It is scenery. The stone door is south of the Entrance to the Osireion and north of the North Passage. Include (- has animate -) when defining the door. The print-name is "stone door".
-The description of the stone door is "The forbidding stone door is engraved with a riddle: [line break]    I am yesterday, veiled in shadows. [line break]    I am tomorrow, cloaked in flames. [line break]    A union of gods, a cycle complete.[if Osiris' head is unacquired][paragraph break][print-hint the H2]"
+The description of the stone door is "[If the door is open]The dark corridor beyond the open door yawns at you. [end if]The forbidding stone door is engraved with a riddle: [line break]    I am yesterday, veiled in shadows. [line break]    I am tomorrow, cloaked in flames. [line break]    A union of gods, a cycle complete.[if Osiris' head is unacquired][paragraph break][print-hint the H2]"
 
-H2 is a tutorial-object. The hint-content is "You can SAY your answer TO the door.".
+H2 is a tutorial-object. The hint-content is "Time to guess the riddle. But remember, the parser will rarely accept a naked command, even if it just prompted you with a question. Instead, 'SAY [bracket]your answer[close bracket] TO [bracket]the door[close bracket].".
 
-Instead of opening the locked stone door:
-	say "You pry at [the noun] with your fingers. It doesn't budge.";
-	
+Instead of opening the stone door:
+	if the door is locked:
+		say "You pry at [the noun] with your fingers. It doesn't budge. There may be some clues on the door itself.";
+	else if the door is open:
+		say "It is already open.";
+
 Understand "unlock [the stone door]" as a mistake ("A little hard to unlock a door without a lock.").
 
-Instead of answering the door that something:
-	if the player's command includes "sun":
-		now the stone door is unlocked;
-		now the stone door is open;
-		now the stone door is unopenable;
-		say "As you speak the word 'sun,' the massive stone door grinds open, revealing a long narrow passage directly south of you.";
+Instead of answering the stone door that something:
+	if the door is locked:
+		if the player's command includes "sun":
+			now the stone door is unlocked;
+			now the stone door is open;
+			[now the stone door is unopenable;]
+			say "As you speak the word 'sun,' the massive stone door grinds open, revealing a long narrow passage directly south of you.";
+		otherwise:
+			say "Nothing happens. Perhaps that is not the correct answer. You look up at the sky, hoping for some benevolent god to send you a hint.";
 	otherwise:
-		say "Nothing happens. Perhaps that is not the correct answer. You look up at the sky, hoping for some benevolent god to send you a hint.";
+		say "The open door says nothing back.".
+
 
 The North Passage is a room in Abydos. It is south of the stone door. "The long narrow passage slopes gently downwards. The northern section of the passage is arched and lined with brick. The southern section is stone clad, and its [walls] are sculpted and painted with scenes from the 'Book of the Gates'. A pitched roof tops this part of the passage. 
 [paragraph break]On the floor, you can see a few miscellaneous items scattered on the floor:[if the ostracon is in the location] a [hieratic ostracon],[end if] a [tall pottery stand], [trial pieces], and a few [plaster casts].
 [paragraph break][print-hint the H3]"
 
-H3 is a tutorial-object. The hint-content is "Always EXAMINE everything around you! You can try to EXAMINE the walls and the things on the floor. You can also TAKE things. When you are disorientated, feel free to take another LOOK at the room.".
+H3 is a tutorial-object. The hint-content is "'EXAMINE' your surroundings for clues! You can try to EXAMINE anything you see. Most (but not all) interactable objects will be bolded. You can also 'TAKE [bracket]something[close bracket]'. When you are disorientated, you can 'LOOK' to re-print the room description.".
 
 [Rule for listing nondescript items of the North Passage:
 	do nothing.]
@@ -548,7 +582,7 @@ Section 2 - Workmen's village
 
 Outside the Walled Village is a room in Amarna. "You have reached Amarna, although you don't really know where to go from here. You are surrounded by quite a bit of rubble. This seems to have once been a great city to the west. Directly north, you see a walled cluster of buildings and hear the faint sound of hubbub. This might be a workmen's village. But it is entirely walled and only has one gate. That seems to be a fire hazard. You would know about those. A gnarled [set-link wormwood bush] clings to a crack in the rubble nearby, silvery-green and bitter-smelling.  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]";
 
-The wormwood bush is a scenery supporter in Outside the Walled Village. The print-name is "wormwood bush". The description is "A shrub with silvery leaves that's clung onto the rubble, smelling faintly bitter and medicinal. [if wormwood leaves is on the wormwood bush]A few sprigs of [set-link wormwood leaves] look easy enough to strip off.[otherwise]You've already stripped what leaves you could reach.[end if]".
+The wormwood bush is an herb-plant in Outside the Walled Village. The print-name is "wormwood bush". The description is "A shrub with silvery leaves that's clung onto the rubble, smelling faintly bitter and medicinal. [if wormwood leaves is on the wormwood bush]A few sprigs of [set-link wormwood leaves] look easy enough to strip off.[otherwise]You've already stripped what leaves you could reach.[end if]".
 
 Instead of taking the wormwood bush, say "Leave this poor shrub alone. If you must, a few leaves will suffice."
 
@@ -558,7 +592,7 @@ Wormwood leaves are on the wormwood bush. The description is "A handful of silve
 
 The Workmen's Village is a room in Amarna. It is north of Outside the Walled Village. "A cluster of homes and workshops, alive with the clatter of tools and the murmur of voices. The sun shines down aggressively, catching the haze of dust kicked up by passing feet. People move between doorways and shaded courtyards—some carrying baskets of stone chips, others bent over their work. A [set-link fig tree] provides most of the shade, its branches heavy with fruit."
 
-The fig tree is a scenery supporter in the Workmen's Village. The print-name is "fig tree". The description is "A broad, leafy tree providing most of the village's shade. [if figs is on the fig tree]A few ripe [set-link figs] hang low enough to reach.[otherwise]You've already picked the figs within reach.[end if]".
+The fig tree is an herb-plant in the Workmen's Village. The print-name is "fig tree". The description is "A broad, leafy tree providing most of the village's shade. [if figs is on the fig tree]A few ripe [set-link figs] hang low enough to reach.[otherwise]You've already picked the figs within reach.[end if]".
 
 Instead of taking the fig tree, say "The villagers rely on its shade; you're not about to make off with the whole tree. Better to just take some fruit."
 
@@ -628,7 +662,7 @@ When Exploration begins:
 
 The Ruined City is a room in Amarna. It is west of Outside the Walled Village. "This glorious city, once the capital of Egypt, is nothing but ruins and foundations. Vegetation is sparse, only a few stubborn weeds grasp at the crumbled one-urban floors. To the side of a particularly dilapidated building, you see a rather [set-link the unique bush]. In the distance, to the north, you see a small standing structure. It sticks out like a sore thumb amongst the desolation."
 
-The Unique Bush is a supporter. It is in the ruined city. The print-name is "unique looking bush". The description of the unique bush is "The bush is indeed, unique. You see no others in the near vicinity, thus, as far as you're concerned, that must suffice. It was also, unfortunately, in the process of blooming, [if the buds of a unique bush is on top of the unique bush]and you can see [set-link the buds of a unique bush] sneaking out of the leafy mass out like weird green fleas. [else]but your earlier efforts ensured that no flowers would see the light of day. [end if]".
+The Unique Bush is an herb-plant. It is in the ruined city. The print-name is "unique looking bush". The description of the unique bush is "The bush is indeed, unique. You see no others in the near vicinity, thus, as far as you're concerned, it must be a Unique Bush. It was also, unfortunately, in the process of blooming, [if the buds of a unique bush is on top of the unique bush]and you can see [set-link the buds of a unique bush] sneaking out of the leafy mass out like weird green fleas. [else]but your earlier efforts ensured that no flowers would see the light of day. [end if]".
 	
 The buds of a unique bush is undescribed.
 
@@ -728,6 +762,8 @@ After examining something in the Underground Chapel during Exploration:
 		now the noun is examined.
 
 
+The number of correct touches is a number that varies. The number of correct touches is 0.
+
 Instead of touching something in the Underground Chapel:
 	if there is no item in row 1 of the Table of Current Sequence:
 		continue the action;
@@ -735,12 +771,17 @@ Instead of touching something in the Underground Chapel:
 	if the noun is the item entry:
 		blank out the whole row;
 		sort the sequence;
+		increase the number of correct touches by 1;
 		say "You touch the [noun], and something clicks into place.";
 		if there is no item in row 1 of the Table of Current Sequence:
 			trigger the end sequence;
 	otherwise:
-		say "Nothing happens.";
-		refill the sequence.
+		if the number of correct touches is 0:
+			say "Nothing happens.";
+		else:
+			say "You felt something crash.";
+		refill the sequence;
+		now the number of correct touches is 0.
 
 Table of Full Sequence
 seq	item
@@ -782,7 +823,7 @@ Test brain1 with "talk to workman / show head to workman / gonear chapel" in the
 
 Test brain2 with "touch east mural / touch west mural / touch second statue / touch third statue / take brain" in Underground Chapel.
 
-Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands." The print-name is "[if unexamined]lump[otherwise]brain[end if]". The call-name of Osiris' brain is "OsirisBrain".
+Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands." The print-name is "[if unexamined]lump[otherwise]brain[end if]".
 
 Understand "lump" as Osiris' brain.
 
@@ -878,7 +919,7 @@ Section 1 - All the Locations
 
 The Temple of Thutmoses III is a room. It is in Thebes. "This temple honors Thutmoses III—no surprise there, given that the man commissioned over fifty temples across Egypt in his lifetime and still somehow felt underappreciated. Sturdy columns flank a central courtyard where priests perform daily rites. Beside one column, a modest [set-link coriander plant] grows in a shallow bed of soil, kept for the offering incense."
 
-The coriander plant is a scenery supporter in the Temple of Thutmoses III. The print-name is "coriander plant". The description is "A modest, feathery-leaved plant kept in a shallow bed of soil near the columns, grown for the temple's offering incense. [if coriander seeds is on the coriander plant]A couple of stems have yet to fully develop, holding on to a smattering of small round seeds. [otherwise]You've already stripped it of its seeds.[end if]".
+The coriander plant is an herb-plant in the Temple of Thutmoses III. The print-name is "coriander plant". The description is "A modest, feathery-leaved plant kept in a shallow bed of soil near the columns, grown for the temple's offering incense. [if coriander seeds is on the coriander plant]A couple of stems have yet to fully develop, holding on to a smattering of small round seeds. [otherwise]You've already stripped it of its seeds.[end if]".
 
 Instead of taking the coriander plant, say "The priests would notice if their precious plant went missing. It's not native to here, after all. But no one would notice if you just... ran your fingers through it and grabbed a little something."
 
@@ -2181,7 +2222,7 @@ Section 4 - Tawaret conflict
 
 The Nile Riverbank is in Oxyrhynchos. It is east of Marketplace of Oxyrhynchos. "You are at the bank of the Nile. West of you is the marketplace. A stand of [set-link duat-plant] grows in the damp silt at the water's edge, its dark reedy stalks swaying with the current."
 
-The duat-plant is a scenery supporter in the Nile Riverbank. The print-name is "duat-plant". The description is "A reed-like plant grows near the riverbank, its stalks darkening where they meet the water. [if duat-seeds is on the duat-plant]A few dry seed pods cling near the top--you could shake some [set-link duat-seeds] loose.[otherwise]You've already gathered what seeds had ripened.[end if]".
+The duat-plant is an herb-plant in the Nile Riverbank. The print-name is "duat-plant". The description is "A reed-like plant grows near the riverbank, its stalks darkening where they meet the water. [if duat-seeds is on the duat-plant]A few dry seed pods cling near the top--you could shake some [set-link duat-seeds] loose.[otherwise]You've already gathered what seeds had ripened.[end if]".
 [ https://thesaurus-linguae-aegyptiae.de/lemma/177980, in: Thesaurus Linguae Aegyptiae (accessed: 20 Aug 2026) ]
 
 Instead of taking the duat-plant, say "It's too difficult to pull free. Better to just take the seeds."

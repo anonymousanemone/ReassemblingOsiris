@@ -1,8 +1,11 @@
 let lastWrite = false;
 let lastRestore = false;
+let writeInterceptInstalled = false;
 
 function saveGame() {
   vorple.prompt.queueCommand('SAVE')
+  if (writeInterceptInstalled) return;
+  writeInterceptInstalled = true;
   const originalWrite = vorple.file.write;
   vorple.file.write = function (filename, contents, options) {
       const isRelevantFile = filename.startsWith(vorple.file.ASYNC_FS_ROOT);
@@ -33,14 +36,18 @@ function saveGame() {
 
 function changeSave(){
   if (!lastWrite) return;
-  const spans = Array.from(document.querySelectorAll('div.turn > span'));
-  // console.log(spans);
-  const matchingSpans = spans.filter(span => span.textContent.trim()=== 'Save failed.');
-  // console.log(matchingSpans);
-  const lastMatchingSpan = matchingSpans[matchingSpans.length - 1];
-  // console.log(lastMatchingSpan);
-  lastMatchingSpan.textContent = "Ok. \n";
   lastWrite = false;
+
+  const outputArea = document.getElementById("vorple");
+  const turn = outputArea.querySelector(".turn.previous");
+  if (!turn) return;
+
+  const spans = Array.from(turn.querySelectorAll("span"));
+  const matchingSpans = spans.filter(span => span.textContent.trim() === 'Save failed.');
+  const lastMatchingSpan = matchingSpans[matchingSpans.length - 1];
+  if (!lastMatchingSpan) return;
+
+  lastMatchingSpan.textContent = "Ok. \n";
 }
 
 vorple.addEventListener( 'expectCommand', changeSave );
@@ -213,7 +220,8 @@ async function showFileExplorer() {
               container.appendChild(nestedContainer);
             } else {
               entry.classList.add("file");
-              entry.innerHTML = `<span class="file-icon">📄</span><span class="file-name">${item}</span>`;
+              const timestamp = stats?.mtime ? formatTimestamp(stats.mtime) : "";
+              entry.innerHTML = `<span class="file-icon">📄</span><span class="file-name">${item}</span><span class="file-timestamp">${timestamp}</span>`;
               // console.log(fullPath);
               const downloadBtn = document.createElement("button");
               downloadBtn.textContent = "Download";
@@ -222,6 +230,15 @@ async function showFileExplorer() {
                 downloadFromBrowserFS(fs, fullPath, item);
               });
               entry.appendChild(downloadBtn);
+
+              const deleteBtn = document.createElement("button");
+              deleteBtn.textContent = "Delete";
+              deleteBtn.className = "delete-btn";
+              deleteBtn.addEventListener("click", () => {
+                deleteFromBrowserFS(fs, fullPath, item, entry);
+              });
+              entry.appendChild(deleteBtn);
+
               container.appendChild(entry);
             }
           });
@@ -254,5 +271,24 @@ function downloadFromBrowserFS(fs, path, filename) {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(a.href);
+  });
+}
+
+function formatTimestamp(date) {
+  return date.toLocaleString(undefined, {
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
+}
+
+function deleteFromBrowserFS(fs, path, filename, entry) {
+  if (!confirm(`Delete "${filename}"? This cannot be undone.`)) return;
+
+  fs.unlink(path, (err) => {
+    if (err) {
+      alert("Error deleting file: " + err.message);
+      return;
+    }
+    entry.remove();
   });
 }
