@@ -125,6 +125,10 @@ Understand "talk to [someone]" as talking to.
 	
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or "talk to [something]" or “converse with [someone]” or "converse with [something]" as talking to.
 
+Squeezing through is an action applying to one visible thing. Understand "squeeze through [something]" as squeezing through.
+
+Prying open is an action applying to one visible thing. Understand "pry open [something]" as prying open.
+
 Carry out talking to:
 	say "There is no reply."
 
@@ -1629,15 +1633,78 @@ Section 2 - Busiris Palace
 
 [put in a 'it really tied the room together' from heracles somewhere]
 
-Central Court is a room in Busiris. "Center of public life in Busiris."
+[geometric fresco minipuzzle somewhere, check zeugma pics]
 
-The worker is a person. The worker is in the Central Court. The description of the worker is "A temple grunt."
+Central Court is a room in Busiris. "A grandoise courtyard with a massive stone altar at its center. The walls are lined with colorful frescoes. Several doors lead off into other parts of the palace. Despite the size and opulence of this room, it is practically empty, with a single temple grunt idling about."
+The stone altar is scenery in the Central Court. "An enormous altar with the dried blood of your countrymen crusted on its surface. A good spot for sacrificing, it seems."
+Instead of taking stone altar:
+        say "Nice try. Not even Heracles is strong enough for this one."
+        
+The frescoes are scenery in the Central Court. "Intricate scenes depicting the ritual slaughter of your countrymen. You take a moment to admire the artistry. Although fresco-Busiris looks considerably more tall and handsome than the real deal..."
+Understand "colorful frescoes" as frescoes.
+Instead of talking to Heracles in the Central Court for the first time:
+        say "Heracles is staring at the frescoes, gaze fixed on a particularly gruesome scene. 'Do you... do you think we'll end up like them?' [paragraph break]";
+        wait for any key;
+        say "You tell him no. The human body doesn't contain [italic type]that[roman type] much blood. [paragraph break]";
+        wait for any key;
+        say "...Who said you couldn't be comforting? [paragraph break]";
+        wait for any key;
+        
+Instead of talking to Heracles in the Central Court:
+        say "Heracles doesn't look especially comforted...[paragraph break]";
+        wait for any key;
+        
+The temple grunt is a person. The temple grunt is in the Central Court. The description of the temple grunt is "A temple grunt, nothing more, nothing less."
+Grunt-conversation is a truth state that varies.
+Grunt-conversation is false.
+To show the grunt menu:
+        say "What would you like to ask him about?[paragraph break]";
+        say "1. His job[line break]";
+        say "2. King Busiris[line break]"; [clues for liver puzzle and maybe a specific item location]
+        say "3. Escape[line break]"; [hint that the palace is constantly moving around, etc]
+        say "4. End conversation[line break]".
+        
+Instead of talking to the temple grunt:
+        say "The temple grunt gives you the stink eye. 'Whaddya want? I'm on my fifteen.'";
+        now grunt-conversation is true;
+        show the grunt menu.
+        
+After reading a command when grunt-conversation is true:
+	if the player's command matches "1":
+		say "'I mop up the place in between sacrifices. It's rotten work, but someone's gotta do it.' [paragraph break]";
+		wait for any key;
+		say "You glance around the room...it doesn't seem like he's done a good job...[paragraph break]";
+		wait for any key;
+		show the grunt menu;
+		reject the player's command;
+	otherwise if the player's command matches "2":
+		say "'The king? Well, he likes two things: sacrifices and collectibles. Oonly sacrifices Greeks, though he collects all sorts of junk—got this fancy aged liver a while back, but he won't even let us cook it, so it's just rotting in a jar. Actually, he likes three things: sacrifices, collectibles, and starving his employees...'[paragraph break]"; 
+		wait for any key;
+		say "Aged liver? As the temple grunt rants about his exploitive employer, you shoot a glance at Heracles...who wasn't paying attention. [paragraph break]"; 
+		show the grunt menu;
+		reject the player's command;
+	otherwise if the player's command matches "3":
+		say "'Ya know how to escape this place?!' [paragraph break]"; 
+		wait for any key;
+		say "You explain that [italic type]you[roman type] are trying to escape this place. [paragraph break]"; 
+		wait for any key;
+		say "'Oh,' the temple grunt says. 'Well, good luck with that. I've been trying to get out for years, but the king keeps moving around all the rooms.' [paragraph break]"; 
+		show the grunt menu;
+		reject the player's command;
+	otherwise if the player's command matches "4":
+		say "'Good talk,' says the grunt. [paragraph break]";
+		now grunt-conversation is false;
+		reject the player's command;
+	otherwise:
+		say "'Good talk,' says the grunt. [paragraph break]";
+		now grunt-conversation is false;
+		reject the player's command.
 
 King Busiris is a person. King Busiris can be alive or dead. King Busiris is alive. The description of dead King Busiris is "Dead, just like the rest of your enemies."
 
 [pillar hall]
 
-Pillar Hall is a room in Busiris. It is north of Central Court. Pillar Hall is northeast of Hallway. "A vast hall stretches before you. At its far end stands a raised daïs with a stone lamp resting on its lower step. The air here thrums with an eerie power."
+Pillar Hall is a room in Busiris. It is north of Central Court. Pillar Hall is northeast of Hallway. "A vast hall stretches before. At the far end is a raised daïs with a stone lamp resting on its lower step. The air here thrums with an eerie power."
 
 The raised daïs is in the Pillar Hall. The description of the raised daïs is "A low platform on which a king would presumably preside."
 
@@ -1669,36 +1736,70 @@ Instead of talking to Heracles in the Pillar Hall:
 
 [temple repository]
 
-Temple Repository is a room in Busiris. It is north of Pillar Crypt. "A small, unassuming room. But there seems to be something strange about the floor."
+Temple Repository is a room in Busiris. It is north of Pillar Crypt. "A small, unassuming room. Looking more closely, though, you notice something strange about the floor."
 
 The floor is scenery in the Temple Repository. "A wooden lid covers part of the floor in the center of the room."
 
 The wooden lid is scenery in the Temple Repository. The wooden lid can be lifted or unlifted. "When you look at the lid more closely, you can see that it's a bit higher than the floor surrounding it. Maybe there's something underneath, although you wouldn't know until you lift it."
 
+Instead of examining Heracles in the Pillar Hall:
+	say "Heracles surveys the room with a curious gaze."
+	
 Instead of talking to Heracles in the Temple Repository when the lid is unlifted: 
 	say "Heracles says, 'What a boring little closet! A real shame. Shouldn't a Temple Repository come with a glorious treasure trove?"
 	
 [crypt of osiris]
 
-The Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of Crypt of Osiris is nothing. "Cloaked in a heavy silence, this chamber radiates an eerie chill. It's clearly been flooded at some point and never dried, a perpetual dampness permeating every corner and crevice of the room. On the wall, you see an odd inscription."
+The Crypt of Osiris is a room in Busiris. It is east of the hidden entrance. West of Crypt of Osiris is nothing. "Dampness permeates every corner and crevice of this dark room. It's clearly been flooded at some point and never dried. On the wall, you see an odd inscription."
 
-The odd inscription is scenery in the Crypt of Osiris. The description is "You walk closer to read the inscription: Osiris' penis was once known to have been swallowed by the catfish after he was dismembered by Seth."
+The odd inscription is scenery in the Crypt of Osiris. The odd inscription can be examined or unexamined. The odd inscription is unexamined. 
+
+Instead of examining the odd inscription: 
+	say "You walk closer to read the inscription. It's been impacted by water damage, but you can still make out some of the words: penis... swallowed by catfish...after...dismembered by Seth.";
+	now the odd inscription is examined.
+
+Instead of examining Heracles in the Crypt of Osiris:
+	say "Heracles lingers at the room's entrance."
+	
+Instead of talking to Heracles in the Crypt of Osiris when the odd inscription is unexamined:
+	say "Heracles is staring at the wall. 'Medea, can you make out what this says?' [paragraph break]"; 
+	
+Instead of talking to Heracles in the Crypt of Osiris when the odd inscription is examined:
+	say "Heracles declares that from now on, he will stay far away from catfish. [paragraph break]"; 
+	
+[hidden entrance]
 
 The hidden entrance is a secret door. The hidden entrance is east of Hallway. "A faint outline on the stone wall indicates a hidden door!"
 
+[Pillar Crypt]
+
 Pillar Crypt is a room in Busiris. It is west of Central Court. It is east of Crypt of Osiris. Nothing is west of Pillar Crypt. The description is "A crypt with pillars in it.".
+
+[Corridor of Procession East]
 
 Corridor of Procession East is a corridor in Busiris. It is south of Central Court. "A broad ceremonial passage with faded murals, now haunted only by the sound of your footsteps."
 
+[Shrine Room]
+
 Shrine Room is a room in Busiris. It is east of Corridor of Procession. "The dim torchlight illuminates the altars dedicaed to various deities."
+
+[Double Axe Hall]
 
 Double Axe Hall is a room in Busiris. It is north of the Shrine Room. It is east of Central Court. "Huge double-axe motifs dominate the walls here."
 
+[Corridor of Procession West]
+
 Corridor of Procession West is a corridor in Busiris. It is west of Corridor of Procession East. "Grand arches line this corridor’s high ceiling, but time and neglect have left cracks in its structure."
 
-Palace exit is a secret door. It is west of Corridor of Procession West and east of the Temple of Tawosret. 
+[Palace exit]
 
-Hallway is a corridor in Busiris. It is north of Corridor of Procession West. "Its walls are streaked with dark soot and grime. This place doesn't have very good upkeep."
+Palace exit is a secret door. It is west of Corridor of Procession West and east of the Temple of Tawosret. "It's the exit! You feel an immense sense of relief just looking at this door."
+
+[Hallway]
+
+Hallway is a corridor in Busiris. It is north of Corridor of Procession West. "A meandering hallway whose walls are streaked with dark soot and grime. This place doesn't have very good upkeep."
+
+[West Magazines]
 
 West Magazines is a room in Busiris. It is west of Hallway. "Long, narrow rooms crammed to the brim with hundreds of [set-link pithoi]. You can hardly move around with all of these jars blocking your way. It's clearly a fire hazard, and you would know about those. There is a [set-link papyrus scrap] lying on the ground. Tucked among the jars is a small [set-link jar of honey], somehow still sealed."
 
@@ -1717,38 +1818,42 @@ Instead of examining Heracles in the West Magazines:
 Instead of talking to Heracles in the West Magazines:
 	say "'Um, Medea.' Heracles looks more antsy than usual. 'I don't like being around all these jars. They're all so smashable!' ...He's like a boar in a pithoi shop."
 
+[South Propylaeum]
+
 South Propylaeum is a room in Busiris. It is southwest of Central Court. It is northeast of Corridor of Procession West. It is northwest of Corridor of Procession East. "Massive gateways stand here, their once-intricate reliefs chipped away by time."
 
 North Corridor is a corridor in Busiris. It is east of Pillar Hall. "A narrow hall with walls lined by cracked paintings."
 
 Corridor of the Draught Board is a corridor in Busiris. It is south of North Corridor. "A long and winding corridor."
 
-The cell bars is a locked closed door. The cell bars is east of the Jail Cell and west of the Corridor of the Draught Board. The cell bars can be broken_a or unbroken_a. The cell bars is unbroken_a. The cell bars can be examined or unexamined. The cell bars are unexamined. The description of the cell bars are "Your standard set of vertical prison bars. You can fit a hand through and little else. But it seems to be your only way out. Could they be pried open somehow?"
+[Jail Cell]
+
+The cell bars is a locked closed door. The cell bars is east of the Jail Cell and west of the Corridor of the Draught Board. The cell bars can be broken_a or unbroken_a. The cell bars is unbroken_a. The cell bars can be examined or unexamined. The cell bars are unexamined. The description of the cell bars are "[if cell bars is unbroken_a]Your standard set of vertical prison bars. You can fit a hand through and little else. But it seems to be your only way out. Could they be pried open somehow? [otherwise]  It used to be your standard set of vertical prison bars. Thanks to Heracles, though, you can now get through with ease. [end if]"
 
 After examining the cell bars:
     now the cell bars are examined.
 
-The Jail Cell is a room in Busiris. It is west of the cell bars.  "Dark and claustrophobic. You can see desperate scratches of former prisoners on the walls and bloodstains on the floor. A rat watches you warily from the corner. [if cell bars is broken_a] The guards evidently did not see the gaping hole between the cell bars. Or they just didn't care."
+The Jail Cell is a room in Busiris. It is west of the cell bars.  " [if cell bars is unbroken_a] Dark and claustrophobic. You can see desperate scratches of former prisoners on the walls and bloodstains on the floor. A rat watches you warily from the corner. Heracles sulks in the opposite corner. [otherwise] Dark and claustrophobic. You can see desperate scratches of former prisoners on the walls and bloodstains on the floor. The guards evidently did not see the gaping hole between the cell bars. Or they just didn't care. [end if]"
 
 The bloodstain is scenery in the Jail Cell. The description of the bloodstain is "Self-explanatory."
 
 The desperate scratches are scenery in the Jail Cell. The description of the desperate scratches are "Deep grouves carved by prisoners past. You briefly consider adding your own. Maybe later."
 
-The rat is scenery in the Jail Cell. The description of the rat is "A feral rat glares at you from the corner of your cell. You don't imagine you'll be getting any answers from him."
+The rat is scenery in the Jail Cell. The description of the rat is "There's a feral rat huddled at the corner of your cell. It hisses at you. You don't imagine you'll be getting any answers from it..."
 
 Instead of taking the rat:
 	say "You'd like to keep your hand, thank you very much."
 	
+Petting is an action applying to one visible thing. Understand "pet [something]" or "touch [something]" as petting.
+
+Instead of petting the rat:
+        say "You'd like to keep your hand, thank you very much."
+
 Instead of talking to the rat:
 	say "The rat hisses at you with extra menace."
-	
-
-Prying open is an action applying to one visible thing. Understand "pry open [something]" as prying open. 
 
 Instead of prying open the cell bars:
 	say "You try to pry open the bars, but they don't budge. You just don't have enough strength."
-
-Squeezing through is an action applying to one visible thing. Understand "squeeze through [something]" as squeezing through.
 
 Instead of squeezing through the cell bars:
 	say "You have more dignity than that."
@@ -1759,11 +1864,11 @@ Instead of talking to Heracles in the Jail Cell when the cell bars are unexamine
 	say "Maybe you should look around for clues..."
 	
 Instead of talking to Heracles in the Jail Cell when the cell bars are examined and the cell bars are unbroken_a:
-	say "'Hey Heracles', you say. 'Try the bars again.' [paragraph break]";
+	say "'Heracles.' you say. 'Try the bars again.' [paragraph break]";
 	wait for any key;
 	say "'But the gaps are too small!' he whines.[paragraph break]";
 	wait for any key;
-	say "'I know that.' You feel a building sense of regret for saving him. 'Just pry open the bars, you buffoon.'[paragraph break]";
+	say "'I know that.' You feel some regret for saving him. 'Just pry open the bars, you buffoon.'[paragraph break]";
 	wait for any key;
 	say "'Heracles brightens. 'Oh yeah!' He dims.  '...I'm not a baboon!' [paragraph break]";
 	wait for any key;
@@ -1779,18 +1884,40 @@ Instead of going through the locked broken_a cell bars:
 Rule for writing a paragraph about the cell bars:
 	stop the action.
 
+[Workshop]
+
 Workshops is a room in Busiris. It is east of the Corridor of the Draught Board. "You see workbenches and tools scattered about."
+
+[Court of the Stone Spout]
 
 Court of the Stone Spout is a room in Busiris. It is south of Workshops. It is north of Double Axe Hall. It is southeast of the Corridor of the Draught Board. "A small courtyard where a carved spout juts from the wall."
 
+[Lobby]
+
 Lobby is a room in Busiris. It is above the South Propylaeum. "Another room. But where is the exit?"
+
+[Tricolumnar Hall]
 
 Tricolumnar Hall is a room in Busiris. It is north of Lobby. "Three giant pillars fill this hall, casting long shadows across the floor."
 
-Upper Hallway is a corridor in Busiris. It is west of Tricolumnar Hall and northwest of Lobby.  "Another corridor. You've having some trouble keeping track of where you are." 
+[Upper Hallway]
+
+Upper Hallway is a corridor in Busiris. It is west of Tricolumnar Hall and northwest of Lobby.  "Yet another winding corridor." 
+
+Instead of talking to Heracles in the Upper Hallway:
+	say "Heracles turns to you. 'There's something strange about this palace. Weren't we just here?' [paragraph break]";
+	wait for any key;
+	say "Maybe. Or maybe this palace is filled with identical meandering hallways. In any case, Heracles right—there's something off about the palace layout...[paragraph break]";
+
+[Treasury]
 
 Treasury is a room in Busiris. It is east of Lobby. "Treasury of the Sanctuary, so called."
+
+[Great Hall]
+
 Great Hall-Busiris is a room in Busiris. It is west of Upper Hallway. The printed name of Great Hall-Busiris is "Great Hall".
+
+[Porch]
 
 Porch is a room in Busiris. It is north of Great Hall-Busiris. Porch is northwest of Upper Hallway. The description is "Looking out at the west pavilion of the palace."
 
