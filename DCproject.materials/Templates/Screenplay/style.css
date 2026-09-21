@@ -575,6 +575,8 @@ hr {
   justify-content: space-between;
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.3rem;
   word-break: break-all;
   margin-bottom: 0.2rem;
   padding: 0.3rem 0.5rem;
@@ -597,13 +599,24 @@ hr {
 }
 
 .file-name {
-  flex: 1;
+  flex: 1 1 140px;
+  min-width: 0;
+}
+
+/* groups the timestamp and action buttons so they wrap below the name as a
+   single unit on narrow screens, instead of squeezing file-name down to a
+   sliver to keep everything on one line */
+.file-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 .file-timestamp {
   font-size: 0.75rem;
   color: var(--prefill-color);
-  margin-left: 0.5rem;
   flex-shrink: 0;
 }
 
@@ -613,41 +626,34 @@ hr {
   padding: 0.2rem 0.5rem;
 }
 
-.download-btn {
-  background: var(--fg);
-  color: var(--bg);
-  border: 1.5px solid var(--fg);
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background: var(--bg);
+  border: 1.5px solid var(--box-color);
   border-radius: 0;
-  padding: 0.25rem 0.7rem;
-  font-family: var(--normal-font);
-  font-size: 0.85rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  font-size: 0.95rem;
   cursor: pointer;
-  margin-left: 0.5rem;
   flex-shrink: 0;
+}
+
+.download-btn {
+  color: var(--fg);
 }
 
 .download-btn:hover {
   background: var(--hint-color);
   border-color: var(--hint-color);
+  color: var(--bg);
 }
 
 .delete-btn {
-  background: var(--bg);
   color: var(--notice-color);
-  border: 1.5px solid var(--notice-color);
-  border-radius: 0;
-  padding: 0.25rem 0.7rem;
-  font-family: var(--normal-font);
-  font-size: 0.85rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  cursor: pointer;
-  margin-left: 0.5rem;
-  flex-shrink: 0;
+  border-color: var(--notice-color);
 }
 
 .delete-btn:hover {
@@ -695,6 +701,11 @@ hr {
 .btn-theme:disabled { opacity: 0.4; }
 .btn-theme.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
 
+/* keeps buttons from squeezing their label onto two lines before flex-wrap
+   moves them to a new row -- needed at tablet widths, where this row sits in
+   the narrow col-md-4 sidebar rather than the full viewport */
+.game-actions .btn-theme { min-width: 120px; }
+
 /* help button: circular accent badge next to the COMMANDS title, meant to
    read as distinct from the rectangular btn-theme / dpad-btn controls */
 .help-btn {
@@ -740,27 +751,22 @@ hr {
 }
 
 
-/* compass d-pad: kept custom since it's a diamond/9-cell shape Bootstrap's grid can't express.
-   The compass and the Up/Down/In/Out row are one fixed-ratio block (dpad-block), not two independently-
-   sized pieces — that's what keeps them the same width without any JS. dpad-wrap fits the largest copy
-   of that block into whichever of width/height is tighter; everything inside is a percentage of
-   dpad-block, so it can't drift out of sync. */
-.dpad-wrap { container-type: size; }
-.dpad-block {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  aspect-ratio: 0.79;
-  width: min(100cqw, calc(100cqh * 0.79));
+/* compass d-pad: percentage-based absolute positioning, ported from the test.html prototype.
+   .compass-wrapper's own width is the only thing that drives sizing — .compass is a relative-
+   positioned square (width:100% + aspect-ratio:1) and every button is a plain % of that square,
+   so nothing needs a container query or a stable ancestor height. That's what broke on tablet/
+   mobile before: Bootstrap's columns stack there, which left the old cqh-based sizing without a
+   reliable height to measure. max-width caps how large it gets on a wide sidebar. */
+.dpad-wrap { width: 100%; }
+.compass-wrapper {
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
 }
 .compass {
-  flex: 0 0 auto;
+  position: relative;
   width: 100%;
   aspect-ratio: 1;
-  display: grid;
-  grid-template-columns: 1.8fr 1fr 1.8fr;
-  grid-template-rows: 1.8fr 1fr 1.8fr;
-  gap: 6px;
 }
 .dpad-btn {
   border: 1.5px solid var(--fg);
@@ -776,10 +782,25 @@ hr {
 .dpad-btn:active { background: var(--fg); color: var(--bg); }
 .dpad-btn.disabled { opacity: 0.3; pointer-events: none; cursor: default; }
 .dpad-btn.disabled:active { background: var(--bg); color: var(--fg); }
-.dpad-btn.corner { width: 56%; height: 56%; }
-.corner-nw { justify-self: end; align-self: end; }
-.corner-ne { justify-self: start; align-self: end; }
-.corner-sw { justify-self: end; align-self: start; }
-.corner-se { justify-self: start; align-self: start; }
-.compass-center { display: flex; align-items: center; justify-content: center; color: var(--fg); }
-.dpad-btn.square { aspect-ratio: 1; }
+.compass .dpad-btn { position: absolute; box-sizing: border-box; }
+.compass .north      { width: 20%; height: 37%; left: 40%; top: 0%; }
+.compass .north-west  { width: 20%; height: 20%; left: 17%; top: 17%; }
+.compass .north-east  { width: 20%; height: 20%; left: 63%; top: 17%; }
+.compass .west         { width: 37%; height: 20%; left: 0%;  top: 40%; }
+.compass .east         { width: 37%; height: 20%; left: 63%; top: 40%; }
+.compass .south-west  { width: 20%; height: 20%; left: 17%; top: 63%; }
+.compass .south-east  { width: 20%; height: 20%; left: 63%; top: 63%; }
+.compass .south       { width: 20%; height: 37%; left: 40%; top: 63%; }
+.compass-center {
+  position: absolute;
+  left: 40%; top: 40%; width: 20%; height: 20%;
+  display: flex; align-items: center; justify-content: center; color: var(--fg);
+}
+.bottom-controls {
+  width: 100%;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.bottom-controls .dpad-btn { width: 100%; aspect-ratio: 1; }

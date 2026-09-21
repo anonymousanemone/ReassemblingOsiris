@@ -10,6 +10,7 @@
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="style.css"/>
 
   <script>
@@ -34,7 +35,7 @@
 		</div>
   </div>
 	<!-- RIGHT: 4:3 scene + two-column command box -->
-	<div class="col-md-4 h-100 d-flex flex-column gap-3">
+	<div class="col-md-4 h-100 d-none d-md-flex flex-column gap-3">
 		<div class="border-theme position-relative flex-shrink-0">
 			<div class="ratio ratio-4x3">
 				<img src="Cover.png" alt="Scene graphic" id="scene-graphic">
@@ -50,29 +51,29 @@
 				<div class="col-lg-6 col-12 d-flex flex-column gap-2">
 
 					<div class="dpad-wrap flex-grow-1 d-flex align-items-top justify-content-center">
-						<div class="dpad-block">
+						<div class="compass-wrapper">
 							<div class="compass">
-								<div class="vorple-commandlink dpad-btn corner corner-nw" title="Northwest" data-command="NORTHWEST" onclick="vorple.prompt.queueCommand('NORTHWEST')"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" style="transform:rotate(-45deg)"><path d="M12 5 L18 17 L6 17 Z"/></svg></div>
-								<div class="vorple-commandlink dpad-btn cardinal" title="North" data-command="NORTH" onclick="vorple.prompt.queueCommand('NORTH')"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2 L16 12 L12 22 L8 12 Z"/></svg></div>
-								<div class="vorple-commandlink dpad-btn corner corner-ne" title="Northeast" data-command="NORTHEAST" onclick="vorple.prompt.queueCommand('NORTHEAST')"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" style="transform:rotate(45deg)"><path d="M12 5 L18 17 L6 17 Z"/></svg></div>
-								<div class="vorple-commandlink dpad-btn cardinal" title="West" data-command="WEST" onclick="vorple.prompt.queueCommand('WEST')"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="transform:rotate(-90deg)"><path d="M12 2 L16 12 L12 22 L8 12 Z"/></svg></div>
+								<div class="vorple-commandlink dpad-btn north-west" title="Northwest" data-command="NORTHWEST" onclick="vorple.prompt.queueCommand('NORTHWEST')"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" style="transform:rotate(-45deg)"><path d="M12 5 L18 17 L6 17 Z"/></svg></div>
+								<div class="vorple-commandlink dpad-btn north" title="North" data-command="NORTH" onclick="vorple.prompt.queueCommand('NORTH')"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2 L16 12 L12 22 L8 12 Z"/></svg></div>
+								<div class="vorple-commandlink dpad-btn north-east" title="Northeast" data-command="NORTHEAST" onclick="vorple.prompt.queueCommand('NORTHEAST')"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" style="transform:rotate(45deg)"><path d="M12 5 L18 17 L6 17 Z"/></svg></div>
+								<div class="vorple-commandlink dpad-btn west" title="West" data-command="WEST" onclick="vorple.prompt.queueCommand('WEST')"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="transform:rotate(-90deg)"><path d="M12 2 L16 12 L12 22 L8 12 Z"/></svg></div>
 								<div class="compass-center">
 									<svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
 										<line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
 										<line x1="6.3" y1="6.3" x2="17.7" y2="17.7"/><line x1="17.7" y1="6.3" x2="6.3" y2="17.7"/>
 									</svg>
 								</div>
-								<div class="vorple-commandlink dpad-btn cardinal" title="East" data-command="EAST" onclick="vorple.prompt.queueCommand('EAST')"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="transform:rotate(90deg)"><path d="M12 2 L16 12 L12 22 L8 12 Z"/></svg></div>
-								<div class="vorple-commandlink dpad-btn corner corner-sw" title="Southwest" data-command="SOUTHWEST" onclick="vorple.prompt.queueCommand('SOUTHWEST')"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" style="transform:rotate(-135deg)"><path d="M12 5 L18 17 L6 17 Z"/></svg></div>
-								<div class="vorple-commandlink dpad-btn cardinal" title="South" data-command="SOUTH" onclick="vorple.prompt.queueCommand('SOUTH')"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="transform:rotate(180deg)"><path d="M12 2 L16 12 L12 22 L8 12 Z"/></svg></div>
-								<div class="vorple-commandlink dpad-btn corner corner-se" title="Southeast" data-command="SOUTHEAST" onclick="vorple.prompt.queueCommand('SOUTHEAST')"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" style="transform:rotate(135deg)"><path d="M12 5 L18 17 L6 17 Z"/></svg></div>
+								<div class="vorple-commandlink dpad-btn east" title="East" data-command="EAST" onclick="vorple.prompt.queueCommand('EAST')"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="transform:rotate(90deg)"><path d="M12 2 L16 12 L12 22 L8 12 Z"/></svg></div>
+								<div class="vorple-commandlink dpad-btn south-west" title="Southwest" data-command="SOUTHWEST" onclick="vorple.prompt.queueCommand('SOUTHWEST')"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" style="transform:rotate(-135deg)"><path d="M12 5 L18 17 L6 17 Z"/></svg></div>
+								<div class="vorple-commandlink dpad-btn south" title="South" data-command="SOUTH" onclick="vorple.prompt.queueCommand('SOUTH')"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="transform:rotate(180deg)"><path d="M12 2 L16 12 L12 22 L8 12 Z"/></svg></div>
+								<div class="vorple-commandlink dpad-btn south-east" title="Southeast" data-command="SOUTHEAST" onclick="vorple.prompt.queueCommand('SOUTHEAST')"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" style="transform:rotate(135deg)"><path d="M12 5 L18 17 L6 17 Z"/></svg></div>
 							</div>
 
-							<div class="row row-cols-4 g-2 flex-shrink-0 mx-0">
-								<div class="col"><div class="vorple-commandlink dpad-btn square w-100" title="Up" data-command="UP" onclick="vorple.prompt.queueCommand('UP')"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg></div></div>
-								<div class="col"><div class="vorple-commandlink dpad-btn square w-100" title="Down" data-command="DOWN" onclick="vorple.prompt.queueCommand('DOWN')"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(180deg)"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg></div></div>
-								<div class="col"><div class="vorple-commandlink dpad-btn square w-100" title="Inside" data-command="INSIDE" onclick="vorple.prompt.queueCommand('INSIDE')"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></div></div>
-								<div class="col"><div class="vorple-commandlink dpad-btn square w-100" title="Outside" data-command="OUTSIDE" onclick="vorple.prompt.queueCommand('OUTSIDE')"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="9" fill="currentColor"/><circle cx="12" cy="12" r="4" fill="#fdfdfa"/></svg></div></div>
+							<div class="bottom-controls">
+								<div class="vorple-commandlink dpad-btn" title="Up" data-command="UP" onclick="vorple.prompt.queueCommand('UP')"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg></div>
+								<div class="vorple-commandlink dpad-btn" title="Down" data-command="DOWN" onclick="vorple.prompt.queueCommand('DOWN')"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(180deg)"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg></div>
+								<div class="vorple-commandlink dpad-btn" title="Inside" data-command="INSIDE" onclick="vorple.prompt.queueCommand('INSIDE')"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></div>
+								<div class="vorple-commandlink dpad-btn" title="Outside" data-command="OUTSIDE" onclick="vorple.prompt.queueCommand('OUTSIDE')"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="9" fill="currentColor"/><circle cx="12" cy="12" r="4" fill="#fdfdfa"/></svg></div>
 							</div>
 						</div>
 					</div>
@@ -88,7 +89,7 @@
 			</div>
 		</div>
 
-		<div class="d-flex gap-2 flex-shrink-0">
+		<div class="d-flex flex-wrap gap-2 flex-shrink-0 game-actions">
 			<button class="btn-theme flex-fill py-2" onclick="saveGame()">Save Game</button>
 			<button class="btn-theme flex-fill py-2" onclick="restoreGame()">Restore Game</button>
 			<button class="btn-theme flex-fill py-2" id="save-transcript" onclick="saveTranscript()">Save Transcript</button>
