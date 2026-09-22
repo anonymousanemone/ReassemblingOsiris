@@ -221,24 +221,39 @@ async function showFileExplorer() {
             } else {
               entry.classList.add("file");
               const timestamp = stats?.mtime ? formatTimestamp(stats.mtime) : "";
-              entry.innerHTML = `<span class="file-icon">📄</span><span class="file-name">${item}</span><span class="file-timestamp">${timestamp}</span>`;
+              entry.innerHTML = `<span class="file-icon">📄</span><span class="file-name">${item}</span>`;
               // console.log(fullPath);
+              const meta = document.createElement("span");
+              meta.className = "file-meta";
+
+              if (timestamp) {
+                const timestampEl = document.createElement("span");
+                timestampEl.className = "file-timestamp";
+                timestampEl.textContent = timestamp;
+                meta.appendChild(timestampEl);
+              }
+
               const downloadBtn = document.createElement("button");
-              downloadBtn.textContent = "Download";
-              downloadBtn.className = "download-btn";
+              downloadBtn.className = "icon-btn download-btn";
+              downloadBtn.title = "Download";
+              downloadBtn.setAttribute("aria-label", "Download");
+              downloadBtn.innerHTML = '<i class="bi bi-download"></i>';
               downloadBtn.addEventListener("click", () => {
                 downloadFromBrowserFS(fs, fullPath, item);
               });
-              entry.appendChild(downloadBtn);
+              meta.appendChild(downloadBtn);
 
               const deleteBtn = document.createElement("button");
-              deleteBtn.textContent = "Delete";
-              deleteBtn.className = "delete-btn";
+              deleteBtn.className = "icon-btn delete-btn";
+              deleteBtn.title = "Delete";
+              deleteBtn.setAttribute("aria-label", "Delete");
+              deleteBtn.innerHTML = '<i class="bi bi-trash"></i>';
               deleteBtn.addEventListener("click", () => {
                 deleteFromBrowserFS(fs, fullPath, item, entry);
               });
-              entry.appendChild(deleteBtn);
+              meta.appendChild(deleteBtn);
 
+              entry.appendChild(meta);
               container.appendChild(entry);
             }
           });
@@ -275,10 +290,7 @@ function downloadFromBrowserFS(fs, path, filename) {
 }
 
 function formatTimestamp(date) {
-  return date.toLocaleString(undefined, {
-    dateStyle: "medium",
-    timeStyle: "short",
-  });
+  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
 }
 
 function deleteFromBrowserFS(fs, path, filename, entry) {

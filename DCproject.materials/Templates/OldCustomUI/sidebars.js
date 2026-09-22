@@ -61,6 +61,48 @@ function moveGameport(event) {
 
   vorple.addEventListener("init", moveGameport);
 
+  // Mobile/tablet support: "wait for any key" pauses (used ~177 times in the
+  // story) rely on a real keydown event, which touchscreens without a
+  // hardware keyboard never fire. This lets a tap satisfy them instead.
+  function enableTapToContinue() {
+    // Bind directly to the interpreter's own output element, not a wrapper
+    // div, so taps on the scene image / d-pad / command links elsewhere on
+    // the page are never mistaken for "continue". This reference stays
+    // valid even after moveGameport() relocates #vorple into #game-container,
+    // since appendChild moves the existing node rather than cloning it.
+    const target = document.getElementById("vorple");
+    if (!target) return;
+    const isTouchDevice = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+    let hintShown = false;
+    let tapHandler = null;
+
+    vorple.addEventListener("expectKeypress", function () {
+      if (isTouchDevice && !hintShown && typeof toastr !== "undefined") {
+        toastr.info("Tap anywhere to continue", "", { timeOut: 2500 });
+        hintShown = true;
+      }
+
+      tapHandler = function () {
+        target.removeEventListener("touchstart", tapHandler);
+        target.removeEventListener("click", tapHandler);
+        tapHandler = null;
+        vorple.prompt.queueKeypress(" ");
+      };
+      target.addEventListener("touchstart", tapHandler);
+      target.addEventListener("click", tapHandler);
+    });
+
+    vorple.addEventListener("submitKeypress", function () {
+      if (tapHandler) {
+        target.removeEventListener("touchstart", tapHandler);
+        target.removeEventListener("click", tapHandler);
+        tapHandler = null;
+      }
+    });
+  }
+
+  vorple.addEventListener("init", enableTapToContinue);
+
 function toggleAccordion(button) {
   const content = button.nextElementSibling;
 
