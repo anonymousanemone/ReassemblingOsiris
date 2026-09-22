@@ -11,7 +11,7 @@ A papyrus-scroll has a papyri-collection called library.
 A papyrus-scroll has some text called code.
 A papyrus-scroll has some text called title.
 A papyrus-scroll has some text called content.
-A papyrus-scroll has some text called subject.
+A papyrus-scroll has some text called papyrus-subject.
 
 Instead of taking a papyri-collection, say "You are not allowed to remove scrolls from the shelves."
 Instead of touching a papyri-collection, say "The papyrus feels rough beneath your fingertips."
@@ -53,7 +53,7 @@ To say catalogue of (C - a papyri-collection):
 		say "[bold type][S][roman type][line break]";
 		repeat with P running through papyrus-scrolls:
 			if the library of P is C:
-				if the subject of P exactly matches the text S:
+				if the papyrus-subject of P exactly matches the text S:
 					say "    [printed name of P]: [title of P][line break]";
 	say line break.
 

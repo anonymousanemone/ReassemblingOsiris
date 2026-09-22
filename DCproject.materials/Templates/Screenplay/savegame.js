@@ -1,0 +1,306 @@
+let lastWrite = false;
+let lastRestore = false;
+let writeInterceptInstalled = false;
+
+function saveGame() {
+  vorple.prompt.queueCommand('SAVE')
+  if (writeInterceptInstalled) return;
+  writeInterceptInstalled = true;
+  const originalWrite = vorple.file.write;
+  vorple.file.write = function (filename, contents, options) {
+      const isRelevantFile = filename.startsWith(vorple.file.ASYNC_FS_ROOT);
+      const hasContent = (
+        (typeof contents === "string" && contents.length > 0) ||
+        (contents instanceof Uint8Array && contents.length > 0) ||
+        (Array.isArray(contents) && contents.length > 0)
+      );
+
+      if (isRelevantFile && hasContent) {
+        console.log("[write intercepted]");
+        console.log("Filename:", filename);
+        console.log("Contents (preview):", typeof contents === "string" ? contents.slice(0, 100) : contents);
+        // console.log("Options:", options);
+      }
+
+      const result = originalWrite(filename, contents, options);
+
+      if (filename.startsWith(vorple.file.ASYNC_FS_ROOT)) {
+        if (result === true) {
+          console.log("Write result:", result);
+          lastWrite = true;
+        }
+      }
+    return result;
+  }
+}
+
+function changeSave(){
+  if (!lastWrite) return;
+  lastWrite = false;
+
+  const outputArea = document.getElementById("vorple");
+  const turn = outputArea.querySelector(".turn.previous");
+  if (!turn) return;
+
+  const spans = Array.from(turn.querySelectorAll("span"));
+  const matchingSpans = spans.filter(span => span.textContent.trim() === 'Save failed.');
+  const lastMatchingSpan = matchingSpans[matchingSpans.length - 1];
+  if (!lastMatchingSpan) return;
+
+  lastMatchingSpan.textContent = "Ok. \n";
+}
+
+vorple.addEventListener( 'expectCommand', changeSave );
+
+function restoreGame() {
+  vorple.prompt.queueCommand('RESTORE');
+  lastRestore = true;
+}
+
+function clearScreen(){
+  removeHintStyle();
+  if (!lastRestore) return;
+  const outputArea = document.getElementById("vorple");
+  const turn = outputArea.querySelector(".turn.previous");
+  // console.log(turn);
+  if (!turn) return;
+
+  const input = turn.querySelector(".lineinput.last");
+  const spans = turn.querySelectorAll("span");
+
+  const inputText = input?.textContent?.trim().toLowerCase();
+  const spanTexts = Array.from(spans).map(span => span.textContent.trim().toLowerCase());
+  console.log(inputText)
+  console.log(spanTexts)
+
+  if (inputText.includes("restore") && spanTexts.includes("ok.")) {
+    console.log("Restore confirmed, queuing follow-up command...");
+    setTimeout(() => {
+      vorple.prompt.queueCommand('clear-the-screen-exec-command');
+    }, 500);
+    lastRestore = false;
+  }
+}
+
+vorple.addEventListener( 'expectCommand', clearScreen );
+
+function loadGameFromFile() {
+}
+
+let transcriptOn = false;
+
+function saveTranscript() {
+  transcriptOn = !transcriptOn;
+  vorple.prompt.queueCommand(transcriptOn ? 'TRANSCRIPT ON' : 'TRANSCRIPT OFF');
+
+  const button = document.getElementById("save-transcript");
+  if (button) {
+    button.textContent = transcriptOn ? "Stop Transcript" : "Save Transcript";
+    button.classList.toggle("active", transcriptOn);
+  }
+}
+
+vorple.file.transcriptFilePrompt = function (callback) {
+    // Vorple's default filePrompt() re-uses the same suggested filename across
+    // page reloads, which silently pops up a blocking "File already exists.
+    // Overwrite?" dialog that nothing here answers -- every replay in the same
+    // browser session then collides with the previous one's transcript file.
+    // A timestamped filename can never collide, so we build the path ourselves
+    // and skip the prompt (and the dialog) entirely.
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const filename = "transcript-" + timestamp + ".txt";
+    callback(vorple.file.TRANSCRIPT_PATH + "/" + filename);
+};
+
+function downloadFile(data, filename, type) {
+  const blob = new Blob([data], { type });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function checkFiles(){
+  getVorpleSaveFiles(gameid).then(savefiles => {
+    console.log("Available save files:", savefiles);
+    if (savefiles.length === 0) {
+      alert("No save files found.");
+    } else {
+      // Do something with the list, like populate a custom dialog
+      savefiles.forEach(file => {
+        console.log("Savefile:", file);
+      });
+    }
+  });
+
+}
+
+async function showFileExplorer() {
+  const explorer = document.getElementById("file-explorer");
+
+  const fs = vorple.file.getFS();
+  const savePath = vorple.file.SAVE_PATH || '/extended/savefiles';
+  const transcriptPath = vorple.file.TRANSCRIPT_PATH || '/extended/transcripts';
+
+  explorer.innerHTML = ''; // Clear previous content
+  explorer.style.display = 'block'; // Show the explorer panel
+
+  if (!fs) {
+    explorer.textContent = "Filesystem not available.";
+    return;
+  }
+
+  function renderDirectory(title, path) {
+    const section = document.createElement("div");
+    section.className = "file-section";
+
+    const header = document.createElement("h2");
+    header.innerHTML = `${title} <span class="file-path">${path}</span>`;
+    section.appendChild(header);
+    explorer.appendChild(section);
+
+    const container = document.createElement("div");
+    container.className = "file-list";
+    section.appendChild(container);
+    readDir(path, container, 0);
+  }
+
+  function readDir(path, container, depth = 0) {
+    fs.readdir(path, (err, items) => {
+      if (err || !items || items.length === 0) {
+        const empty = document.createElement("div");
+        empty.className = "file-empty";
+        empty.textContent = `(empty)`;
+        empty.style.marginLeft = `${depth * 20}px`;
+        container.appendChild(empty);
+        return;
+      }
+
+      lastItem = `${path}/${items[items.length-1]}`;
+      console.log(lastItem);
+
+      fs.stat(lastItem, (err, stats) => {
+        // console.log(lastItem);
+        if (!err && stats?.isDirectory()) {
+          // If last item is a directory, only explore that directory
+          console.log(lastItem);
+          readDir(lastItem, container, depth);
+          return;
+        }
+
+        items.forEach(item => {
+          const fullPath = `${path}/${item}`;
+          fs.stat(fullPath, (err, stats) => {
+            const entry = document.createElement("div");
+            entry.className = "file-entry";
+            entry.style.marginLeft = `${depth * 20}px`;
+
+            if (stats?.isDirectory()) {
+              entry.classList.add("folder");
+              entry.innerHTML = `<span class="file-icon">📁</span><span class="file-name">${item}</span>`;
+
+              const nestedContainer = document.createElement("div");
+              nestedContainer.style.display = "none";
+
+              entry.addEventListener("click", () => {
+                if (nestedContainer.style.display === "none") {
+                  nestedContainer.style.display = "block";
+                  // Lazy load only once
+                  if (nestedContainer.childElementCount === 0) {
+                    readDir(fullPath, nestedContainer, depth + 1);
+                  }
+                } else {
+                  nestedContainer.style.display = "none";
+                }
+              });
+
+              container.appendChild(entry);
+              container.appendChild(nestedContainer);
+            } else {
+              entry.classList.add("file");
+              const timestamp = stats?.mtime ? formatTimestamp(stats.mtime) : "";
+              entry.innerHTML = `<span class="file-icon">📄</span><span class="file-name">${item}</span>`;
+              // console.log(fullPath);
+              const meta = document.createElement("span");
+              meta.className = "file-meta";
+
+              if (timestamp) {
+                const timestampEl = document.createElement("span");
+                timestampEl.className = "file-timestamp";
+                timestampEl.textContent = timestamp;
+                meta.appendChild(timestampEl);
+              }
+
+              const downloadBtn = document.createElement("button");
+              downloadBtn.className = "icon-btn download-btn";
+              downloadBtn.title = "Download";
+              downloadBtn.setAttribute("aria-label", "Download");
+              downloadBtn.innerHTML = '<i class="bi bi-download"></i>';
+              downloadBtn.addEventListener("click", () => {
+                downloadFromBrowserFS(fs, fullPath, item);
+              });
+              meta.appendChild(downloadBtn);
+
+              const deleteBtn = document.createElement("button");
+              deleteBtn.className = "icon-btn delete-btn";
+              deleteBtn.title = "Delete";
+              deleteBtn.setAttribute("aria-label", "Delete");
+              deleteBtn.innerHTML = '<i class="bi bi-trash"></i>';
+              deleteBtn.addEventListener("click", () => {
+                deleteFromBrowserFS(fs, fullPath, item, entry);
+              });
+              meta.appendChild(deleteBtn);
+
+              entry.appendChild(meta);
+              container.appendChild(entry);
+            }
+          });
+        });
+      });
+    });
+  }
+
+  // Render both save files and transcripts
+  
+  renderDirectory("Transcripts", transcriptPath);
+  renderDirectory("Save Files", savePath);
+}
+
+function downloadFromBrowserFS(fs, path, filename) {
+  fs.readFile(path, (err, data) => {
+    if (err) {
+      alert("Error reading file: " + err.message);
+      return;
+    }
+
+    // Convert Buffer to Blob
+    const blob = new Blob([data], { type: "application/octet-stream" });
+
+    // Trigger download
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = filename || path.split("/").pop();
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(a.href);
+  });
+}
+
+function formatTimestamp(date) {
+  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+}
+
+function deleteFromBrowserFS(fs, path, filename, entry) {
+  if (!confirm(`Delete "${filename}"? This cannot be undone.`)) return;
+
+  fs.unlink(path, (err) => {
+    if (err) {
+      alert("Error deleting file: " + err.message);
+      return;
+    }
+    entry.remove();
+  });
+}

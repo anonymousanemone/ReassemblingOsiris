@@ -1,4 +1,0 @@
-darklight.js
-game.css
-scrollfix.js
-custom.css

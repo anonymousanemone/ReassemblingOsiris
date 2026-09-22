@@ -1,0 +1,91 @@
+{
+  "root-path": "/Images/",
+  "transport-home": {
+    "Avaris": "Avaris-Marketplace",
+    "Heliopolis": "Heliopolis-Marketplace",
+    "Memphis": "Memphis-Marketplace",
+    "Oxyrhynchos": "Marketplace of Oxyrhynchos",
+    "Amarna": "Outside the Walled Village",
+    "Abydos": "Entrance to the Osireion",
+    "Thebes": "Temple of Tawosret",
+    "Elephantine": "Elephantine-Marketplace"
+  },
+  "Avaris": {
+    "default": "region-graphics/avaris.png",
+    "Avaris-Marketplace": ""
+  },
+  "Busiris": {
+    "default": "region-graphics/busiris.png",
+    "Central Court": "busiris_icons/centralcourt.png",
+    "Pillar Hall": "busiris_icons/pillarhall.png",
+    "Hallway": "busiris_icons/hallway.png",
+    "Temple Repository": "busiris_icons/templerepos.png",
+    "Crypt of Osiris": "busiris_icons/osiriscrypt.png",
+    "Pillar Crypt": "busiris_icons/pillarcrypt.png",
+    "Corridor of Procession East": "busiris_icons/corr_proc_east.png",
+    "Shrine Room": "busiris_icons/shrineroom.png",
+    "Double Axe Hall": "busiris_icons/doubleaxehall.png",
+    "Corridor of Procession West": "busiris_icons/corr_proc_west.png",
+    "West Magazines": "busiris_icons/westmag.png",
+    "South Propylaeum": "busiris_icons/southprop.png",
+    "North Corridor": "busiris_icons/northcorridor.png",
+    "Corridor of the Draught Board": "busiris_icons/draughtboard.png",
+    "Workshops": "busiris_icons/workshops.png",
+    "Jail Cell": "busiris_icons/jailcell.png",
+    "Court of the Stone Spout": "busiris_icons/stonespout.png",
+    "Lobby": "busiris_icons/lobby.png",
+    "Tricolumnar Hall": "busiris_icons/tricolumnhall.png",
+    "Upper Hallway": "busiris_icons/upperhallway.png",
+    "Treasury": "busiris_icons/treasury.png",
+    "Great Hall": "busiris_icons/greathall.png",
+    "Porch": "busiris_icons/westporch.png"
+  },
+  "Memphis": {
+    "default": "region-graphics/memphis.png",
+    "Memphis-Marketplace": ""
+  },
+  "Oxyrhynchos": {
+    "default": "region-graphics/oxyrhynchus.png",
+    "Marketplace of Oxyrhynchos": "",
+    "Junkyard": "",
+    "Nile Riverbank": ""
+  },
+  "Amarna": {
+    "default": "region-graphics/amarna.png",
+    "Outside the Walled Village": "",
+    "Workmen's Village": "",
+    "Ruined City": "",
+    "Small Aten Temple": "",
+    "Sanctuary": "",
+    "Underground chapel": ""
+  },
+  "Abydos": {
+    "default": "region-graphics/abydos.png",
+    "Entrance to the Osireion": "",
+    "North Passage": "",
+    "Great Hall": "",
+    "South Chamber": "",
+    "Sloped Passage": "",
+    "First Transverse Chamber": "",
+    "Central Nave": "",
+    "Tomb of Osiris": ""
+  },
+  "Thebes": {
+    "default": "region-graphics/thebes.png",
+    "Temple of Thutmoses III": "",
+    "Ramesseum": "",
+    "Temple of Thutmoses IV": "",
+    "Temple of Tawosret": "",
+    "Temple of Merneptah": "",
+    "Collection of Three Temples": "",
+    "Temple of Amenhotep III": "",
+    "Memnon Colossi": "",
+    "Temple of Horemheb": "",
+    "Temple of Ramesses III": "",
+    "House of Life": ""
+  },
+  "Elephantine": {
+    "default": "region-graphics/elephantine.png",
+    "Elephantine-Marketplace": ""
+  }
+}
