@@ -1794,6 +1794,7 @@ Corridor of Procession West is a corridor in Busiris. It is west of Corridor of 
 [Palace exit]
 
 Palace exit is a secret door. It is west of Corridor of Procession West and east of the Temple of Tawosret. "It's the exit! You feel an immense sense of relief just looking at this door."
+[The description of palace exit is "An imposing door by the Corridor of Procession West. With all the chaos, this might be your chance!".]
 
 [Hallway]
 
@@ -2104,8 +2105,6 @@ To end the sacrifice:
 	now palace exit is revealed;
 	now palace exit is open;
 	wait for any key;
-
-The description of palace exit is "An imposing door by the Corridor of Procession West. With all the chaos, this might be your chance!".
 
 Instead of going through palace exit:
 	now the player is in The Temple of Tawosret;

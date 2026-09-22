@@ -268,7 +268,7 @@ hr {
 }
 
 .quick-menu-body {
-  padding: 0 2rem 0 2rem;
+  /* padding: 0 2rem 0 2rem; */
   border-top: none;
   border-radius: 0;
 }
@@ -782,6 +782,13 @@ hr {
 .dpad-btn:active { background: var(--fg); color: var(--bg); }
 .dpad-btn.disabled { opacity: 0.3; pointer-events: none; cursor: default; }
 .dpad-btn.disabled:active { background: var(--bg); color: var(--fg); }
+
+/* applied to sidebar command controls while the interpreter is waiting for a
+   single keypress (typing bar hidden) rather than a typed command; kept
+   separate from .disabled so it doesn't clobber the per-direction
+   availability state set by updateDirectionButtons() */
+.dpad-btn.key-wait-disabled,
+.command-link.key-wait-disabled { opacity: 0.3; pointer-events: none; cursor: default; }
 .compass .dpad-btn { position: absolute; box-sizing: border-box; }
 .compass .north      { width: 20%; height: 37%; left: 40%; top: 0%; }
 .compass .north-west  { width: 20%; height: 20%; left: 17%; top: 17%; }
@@ -797,10 +804,11 @@ hr {
   display: flex; align-items: center; justify-content: center; color: var(--fg);
 }
 .bottom-controls {
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
+  gap: 3%;
 }
 .bottom-controls .dpad-btn { width: 100%; aspect-ratio: 1; }
