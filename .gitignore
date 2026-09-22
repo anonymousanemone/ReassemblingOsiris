@@ -5,4 +5,9 @@ DCproject.inform/Settings.plist
 DCproject.materials/Release
 DCproject.inform/Build
 DCproject.inform/Skein.skein
-.DS_Store
+DCproject.inform/Metadata.iFiction
+DCproject.inform/Release.blurb
+
+Images/WIP_imgs
+
+*/.DS_Store
