@@ -100,16 +100,36 @@ function saveTranscript() {
   }
 }
 
+// Called from story.ni's "switching the story transcript on/off" rules to
+// sync the button with the *confirmed* transcript state 
+function toggleTranscriptButton(isOff) {
+  const button = document.getElementById("save-transcript");
+  if (!button) return;
+
+  transcriptOn = !isOff;
+  button.textContent = transcriptOn ? "Stop Transcript" : "Save Transcript";
+  button.classList.toggle("active", transcriptOn);
+}
+
 vorple.file.transcriptFilePrompt = function (callback) {
-    // Vorple's default filePrompt() re-uses the same suggested filename across
-    // page reloads, which silently pops up a blocking "File already exists.
-    // Overwrite?" dialog that nothing here answers -- every replay in the same
-    // browser session then collides with the previous one's transcript file.
-    // A timestamped filename can never collide, so we build the path ourselves
-    // and skip the prompt (and the dialog) entirely.
-    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-    const filename = "transcript-" + timestamp + ".txt";
-    callback(vorple.file.TRANSCRIPT_PATH + "/" + filename);
+    // Show the same vex dialog as save/restore game but always append a
+    // timestamp to the entered name and skip filePrompt's exists-check
+    window.vex.dialog.open({
+        message: "Enter filename:",
+        input: '<input name="filename" type="text" required />',
+        buttons: [
+            Object.assign({}, window.vex.dialog.buttons.YES, { text: "Save" }),
+            Object.assign({}, window.vex.dialog.buttons.NO, { text: "Cancel" }),
+        ],
+        callback: function (data) {
+            if (!data) return callback(null);
+
+            const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+            const baseName = data.filename.replace(/\.txt$/i, "");
+            const filename = baseName + "-" + timestamp + ".txt";
+            callback(vorple.file.TRANSCRIPT_PATH + "/" + filename);
+        },
+    });
 };
 
 function downloadFile(data, filename, type) {
@@ -290,7 +310,10 @@ function downloadFromBrowserFS(fs, path, filename) {
 }
 
 function formatTimestamp(date) {
-  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+  return date.toLocaleString(undefined, {
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
 }
 
 function deleteFromBrowserFS(fs, path, filename, entry) {

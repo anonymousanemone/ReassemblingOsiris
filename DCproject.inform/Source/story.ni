@@ -17,6 +17,8 @@ Include Vorple Multimedia by Juhana Leinonen.
 Include Vorple Screen Effects by Juhana Leinonen.
 Include Vorple Status Line by Juhana Leinonen.
 Include Vorple Tooltips by Juhana Leinonen.
+
+Include Object Response Tests by Juhana Leinonen.
  
 Release along with the "Vorple" interpreter.
 Release along with a file of "bg1" called "chariot.png".
@@ -29,11 +31,34 @@ Scream is a Vorple style.
 
 Release along with cover art ("Vase painting of Medea on her chariot").
 
-Part 1 - Adjustments - not for release
+Part 1 - Testing - not for release
 
 [When play begins:
 	choose row 1 in Table of Basic Help Options; 	
 	now description entry is "Even the most clever sorceresses can use a bit of HELP. Fear not--you are in good company! [line break] Select the 'Instructions for Play' to learn more about how to navigate Egypt.[paragraph break]Some general guidelines for this game:[line break]	Make sure to examinine everything![line break]	If you're stuck, it may be time to travel to a new place.[line break]	Medea is very clever, so make sure to pay attention to how she describes things!";]
+
+To wait for any key:
+	do nothing.
+	
+After reading a command (this is the ignore beta-comments rule):
+	if the player's command matches the regular expression "^\p":
+		say "(Noted.)";
+		reject the player's command.
+	
+Test winEntireGame with "scenes / test abydosSequential / 5 / test amarnaSequential / 7 /test heal / "
+
+Test abydosSequential with "x door / say sun / s / s / s / take plank / take ankh / n / e / 
+	e / e / e / x sarcophagus / unlock sarcophagus with ankh / open sarcophagus / take head / w / w / w / w / n / n / enter chariot"
+	
+Test amarnaSequential with "n / talk to workman / show head to workman / s / enter oxcart / w / exit / n / in / x shrine / down / x ceiling / try examining / try touching / touch east mural / touch west mural / touch second statue / touch third statue / x lump / take brain / up / out / s / enter oxcart / e / exit / enter chariot"
+
+Test thebes1Sequential with "s / s / s / x man / talk to attendant / n / n / n / n / n / talk to attendant / w " 
+	
+Test brainMinimum with "talk to workman / show head to workman / gonear underground chapel / touch east mural / touch west mural / touch second statue / touch third statue / take brain" in the Workmen's Village.
+	
+[taking, dropping, examining, ]
+
+
 
 Part 3 - General Game Declarations
 
@@ -43,9 +68,25 @@ Section 1 - Transcript printing
 
 transcript-on is a truth state that varies. transcript-on is false.
 
-Carry out switching the story transcript on:
-	execute JavaScript command "toggleTranscriptButton(false);";
-	now transcript-on is true.
+[The Standard Rules' own "switch the story transcript on rule" (see Glulx.i6t)
+only actually opens the transcript file after the player picks a filename in
+the browser's prompt; if they cancel, gg_scriptstr is left at 0 and the rule
+prints "Attempt to begin transcript failed." instead of starting a transcript.
+Testing gg_scriptstr after that rule has run is how we tell the two cases
+apart, instead of assuming the attempt always succeeds.]
+To decide whether the story transcript stream is open:
+	(- (gg_scriptstr ~= 0) -).
+
+This is the sync transcript button rule:
+	if the story transcript stream is open:
+		execute JavaScript command "toggleTranscriptButton(false);";
+		now transcript-on is true;
+	otherwise:
+		execute JavaScript command "toggleTranscriptButton(true);".
+
+The sync transcript button rule is listed after the switch the story
+	transcript on rule in the carry out switching the story transcript on
+	rulebook.
 
 Carry out switching the story transcript off:
 	execute JavaScript command "toggleTranscriptButton(true);";
@@ -97,9 +138,7 @@ For printing a locale paragraph about a door (called the item)
 
 An herb-plant is a kind of scenery supporter.
 
-For printing a locale paragraph about a thing (called the item) when the item is on an herb-plant (this is the don't mention things on herb-plants rule):
-	set the locale priority of the item to 0;
-	continue the activity.
+The describe what's on scenery supporters in room descriptions rule is not listed in any rulebook.
 
 Herbs are a kind of thing.
 
@@ -365,7 +404,7 @@ The Entrance to the Osireion is a room in Abydos. "You stand before an inconspic
 	[if the stone door is locked][paragraph break]The door to the Osireion is firmly shut. Inscriptions run up and down the doors, but you see no handle. [end if]
 	[if Osiris' head is unacquired][paragraph break][print-hint the H1]"
 	
-H1 is a tutorial-object. The hint-content is "Always try to 'EXAMINE [bracket]an object[close bracket]' for more clues. You can also try to 'GO SOUTH' through the door or 'ENTER [bracket]the door[close bracket]'.".
+H1 is a tutorial-object. The hint-content is "Always try to 'EXAMINE [bracket]an object[close bracket]' for more clues. You can also try to 'GO SOUTH' through the door or 'OPEN [bracket]the door[close bracket]'.".
 	
 A room memory rule for the North Passage:
 	if the north passage is not visited:
@@ -374,7 +413,7 @@ A room memory rule for the North Passage:
 The stone door is a locked closed door. It is scenery. The stone door is south of the Entrance to the Osireion and north of the North Passage. Include (- has animate -) when defining the door. The print-name is "stone door".
 The description of the stone door is "[If the door is open]The dark corridor beyond the open door yawns at you. [end if]The forbidding stone door is engraved with a riddle: [line break]    I am yesterday, veiled in shadows. [line break]    I am tomorrow, cloaked in flames. [line break]    A union of gods, a cycle complete.[if Osiris' head is unacquired][paragraph break][print-hint the H2]"
 
-H2 is a tutorial-object. The hint-content is "Time to guess the riddle. But remember, the parser will rarely accept a naked command, even if it just prompted you with a question. Instead, 'SAY [bracket]your answer[close bracket] TO [bracket]the door[close bracket].".
+H2 is a tutorial-object. The hint-content is "Time to guess the riddle. But remember, the parser will rarely accept a naked command, even if it just prompted you with a question. Instead, 'SAY [bracket]your answer[close bracket] TO [bracket]the door[close bracket]. Similarly, punctuation is almost never useful.".
 
 Instead of opening the stone door:
 	if the door is locked:
@@ -510,9 +549,9 @@ The painted roof is scenery in the Tomb of Osiris. The description of the painte
 
 Instead of examining the walls in the Tomb of Osiris, say "The hieroglyphs here are meticulously carved, detailing invocations to the gods and protective spells. Some portions of the text are damaged, yet the overall message of guidance and protection is clear.".
 
-The sarcophagus is a closed, locked container. It is scenery. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Bright swirls of blue decorated much of the lid, complete with tiny figures and symbols of life, prosperity, and health. Its occupant must have made it auto-update every now and then to keep up with the most popular trends. [if Osiris' head is unacquired][paragraph break][print-hint the H4a]". The sarcophagus has matching key the faience ankh. The print-name is "sarcophagus".
+The sarcophagus is a closed, locked container. It is scenery. It is in the Tomb of Osiris. The description of the sarcophagus is "The sarcophagus is a masterpiece of New Kingdom artistry. Crafted from cedar wood, its surface is painted with intricate designs. Bright swirls of inlaid faience decorated much of the lid, complete with tiny figures and symbols of life, prosperity, and health. Its occupant must have made it auto-update every now and then to keep up with the most popular trends. [if Osiris' head is unacquired][paragraph break][print-hint the H4a]". The sarcophagus has matching key the faience ankh. The print-name is "sarcophagus".
 
-H4a is a tutorial-object. The hint-content is "To find out what's inside, you better OPEN it first."
+H4a is a tutorial-object. The hint-content is "To find out what's inside, you better 'OPEN [bracket]the sarcophagus[close bracket]' first."
 
 Instead of opening the locked sarcophagus:
 	say "The sarcophagus seems stuck, as if sealed shut by magic. [if Osiris' head is unacquired][paragraph break][print-hint the H5][line break]".
@@ -522,7 +561,7 @@ After reading a command:
 		say "...You feel a mysterious, ancient presence in the room. It's silently judging your spelling. [paragraph break]";
 		replace the matched text with "sarcophagus".
 
-H5 is a tutorial-object. The hint-content is "Perhaps you can use something to UNLOCK it."
+H5 is a tutorial-object. The hint-content is "You can 'UNLOCK [bracket]the sarcophagus[close bracket] WITH [bracket]the matching key[close bracket]'. Sometimes, the matching key is not always a key and may take the form of other objects. Read descriptions carefully to find clues."
 
 Instead of unlocking the sarcophagus with the faience ankh:
 	now the sarcophagus is unlocked;
@@ -970,25 +1009,24 @@ Instead of talking to the Ramesseum attendant:
 		choose a random row in Table of Ramesseum Attendant's General Chatter;
 		say "[chatter entry]".
 
-The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "Painted sand stone reliefs cover the [set-link mortuary temple of Thutmoses IV]. The vast temenos wall loom over you, making this temple look the same as any other temple in this area. "
-	
-The mortuary temple of Thutmoses IV is scenery in the Temple of Thutmoses IV. The print-name is "temple". The description is "You see a scattering of faience stelae at the base of the imposing enclosure wall, some of them encrusted in gold. As you look closer at the temple walls itself, you can see images of Thutmose IV (of course), Amun-Min (you wonder if he puts his weapon of mass destructuction for use besides his own hands), and some god  carrying an offering table with scepters, ankhs, and vases."
+[The Temple of Thutmoses IV is south of the Ramesseum. It is in Thebes. "Painted sand stone reliefs cover the [set-link mortuary temple of Thutmoses IV]. The vast temenos wall loom over you, making this temple look the same as any other temple in this area. "]
 
-The Temple of Tawosret is south of the Temple of Thutmoses IV. It is in Thebes. "Little remains of the Temple of Tawosret, thoroughly destroyed after Ramesses III got his grubby hands on it. Tawosret, along with Hatshepsut, were some of the few women who ruled Egypt as a pharaoh. Given their destroyed temples, the Egyptians sure seem to hate women as much the Greeks... 
+The Temple of Tawosret is south of the Ramesseum. It is in Thebes. "Little remains of the Temple of Tawosret, thoroughly destroyed after Ramesses III got his grubby hands on it. Tawosret, along with Hatshepsut, were some of the few women who ruled Egypt as a pharaoh. Given their destroyed temples, the Egyptians sure seem to hate women as much the Greeks... 
 [paragraph break]You can look around Thebes for something—or maybe someone—useful. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]"
 
+The Temple of Thutmoses IV is scenery in the Temple of Tawosret. The print-name is "temple". The description is "You see a scattering of faience stelae at the base of the imposing enclosure wall, some of them encrusted in gold. As you look closer at the temple walls itself, you can see images of Thutmose IV (of course), Amun-Min (you wonder if he puts his weapon of mass destructuction for use besides his own hands), and some god  carrying an offering table with scepters, ankhs, and vases."
 
-The Temple of Merneptah is south of the Temple of Tawosret. It is in Thebes. "Here, the shadow of Ramesses II's reign looms. Merneptah, his thirteenth son, came into the throne at the advanced age of 55 and died not ten years later. His mortuary temple reflects his hasty ascent and further ascent, made largely from recut and reinscribed stone from nearby temples (Amenhotep III turns in his tomb)."
+Another Group of Temples is a room. It is south of the Temple of Tawosret. It is in Thebes. "You see the temples of [set-link Temple of Thutmoses I], [set-link Temple of Amenhotep Son of Hapu], and [set-link Smaller Temple of Thutmoses III]."
 
-A Collection of Three Temples is a room. It is south of the Temple of Merneptah. It is in Thebes. "You see the temples of [set-link Temple of Thutmoses I], [set-link Temple of Amenhotep Son of Hapu], and [set-link Smaller Temple of Thutmoses III]."
+The Temple of Thutmoses I is scenery in Another Group of Temples. "The Temple of Thutmoses I is here, flanked by a row of weathered sphinxes." The print-name is "Thutmoses I".
 
-The Temple of Thutmoses I is scenery in the Collection of Three Temples. "The Temple of Thutmoses I is here, flanked by a row of weathered sphinxes." The print-name is "Thutmoses I".
+The Temple of Merneptah is scenery in Another Group of Temples. "Here, the shadow of Ramesses II's reign looms. Merneptah, his thirteenth son, came into the throne at the advanced age of 55 and died not ten years later. His mortuary temple reflects his hasty ascent and further ascent, made largely from recut and reinscribed stone from nearby temples (Amenhotep III turns in his tomb)."
 
-The Temple of Amenhotep Son of Hapu is scenery in the Collection of Three Temples. "The Temple of Amenhotep, Son of Hapu is here. He was revered as a scribe and later deified for his great wisdom." The print-name is "Amenhotep Son of Hapu".
+The Temple of Amenhotep Son of Hapu is scenery in Another Group of Temples. "The Temple of Amenhotep, Son of Hapu is here. He was revered as a scribe and later deified for his great wisdom." The print-name is "Amenhotep Son of Hapu".
 
-The Smaller Temple of Thutmoses III is scenery in the Collection of Three Temples. "The smaller Temple of Thutmoses III is here. It's also honoring Thutmoses III  -- just at a smaller scale. It's not about the size of the temple but the quality of the offerings." The print-name is "Thutmoses III".
+The Smaller Temple of Thutmoses III is scenery in Another Group of Temples. "The smaller Temple of Thutmoses III is here. It's also honoring Thutmoses III  -- just at a smaller scale. It's not about the size of the temple but the quality of the offerings." The print-name is "Thutmoses III".
 
-The Temple of Amenhotep III is east of the the Collection of Three Temples. It is in Thebes. "Amenhotep III's vast [set-link mortuary temple] lies here. Even in partial ruin, the temple reflects the grandeur of his reign."
+The Temple of Amenhotep III is east of Another Group of Temples. It is in Thebes. "Amenhotep III's vast [set-link mortuary temple] lies here. Even in partial ruin, the temple reflects the grandeur of his reign."
 
 The mortuary temple of Amenhotep III is scenery in the Temple of Amenhotep III. The print-name is "mortuary temple".
 
@@ -1020,7 +1058,7 @@ Instead of putting the heart scarab on the northern statue of Amenhotep III:
 	say "The panel at the base of the statue slides open to reveal the heart of Osiris. Hooray![paragraph break]".
 
 
-The Temple of Horemheb is south of the collection of three temples. It is in Thebes. "This [set-link mortuary temple of Horemheb] stands as tribute to Aÿ and Horemheb."
+The Temple of Horemheb is south of Another Group of Temples. It is in Thebes. "This [set-link mortuary temple of Horemheb] stands as tribute to Aÿ and Horemheb."
 
 The mortuary temple of Horemheb is in the Temple of Horemheb. The print-name is "temple".
 
@@ -1028,7 +1066,7 @@ The mortuary temple of Horemheb is in the Temple of Horemheb. The print-name is 
 The Horemheb attendant is a man in the Temple of Horemheb. The printed name of the Horemheb attendant is "temple attendant". The description of the Horemheb attendant is "He sweeps in short, irritable strokes, like a man keeping score of something." Understand "attendant" or "priest" as the Horemheb attendant when the location is the Temple of Horemheb.
 
 Rule for writing a paragraph about the Horemheb attendant when the location is the Temple of Horemheb:
-	say "[first time]A temple attendant sweeps the floor with visible resentment.[line break][only]".
+	say "A temple attendant sweeps the floor with visible resentment.[line break]".
 
 The greeting dialogue of the Horemheb attendant is "The attendant glances up, surprised anyone's bothered to actually talk to him. 'Oh--a visitor who talks back. Most people just stare at the reliefs and leave.'"
 
@@ -2755,7 +2793,7 @@ The title is "Untitled Fragment".
 The content is "(TBD)".
 
 
-Part 2 - Prologue - for release only
+Part 10 - Prologue - for release only
 
 When play begins: 
 	say "[scream style]YOU WILL BE PROMPTED TO SAVE A TRANSCRIPT.[end style]";

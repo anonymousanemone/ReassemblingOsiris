@@ -73,11 +73,12 @@ function moveGameport(event) {
     const target = document.getElementById("vorple");
     if (!target) return;
     const isTouchDevice = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+    if (!isTouchDevice) return;
     let hintShown = false;
     let tapHandler = null;
 
     vorple.addEventListener("expectKeypress", function () {
-      if (isTouchDevice && !hintShown && typeof toastr !== "undefined") {
+      if (!hintShown && typeof toastr !== "undefined") {
         toastr.info("Tap anywhere to continue", "", { timeOut: 2500 });
         hintShown = true;
       }
@@ -103,32 +104,56 @@ function moveGameport(event) {
 
   vorple.addEventListener("init", enableTapToContinue);
 
+  // Enables/disables every sidebar control that sends a command to the game
+  function setCommandControlsEnabled(enabled) {
+    document.querySelectorAll(".dpad-btn, .command-link").forEach(el => {
+      el.classList.toggle("key-wait-disabled", !enabled);
+    });
+    document.querySelectorAll(".game-command-btn").forEach(btn => {
+      btn.disabled = !enabled;
+    });
+  }
+
   // During a "wait for any key" pause the typing bar/prompt is hidden, so a
   // command sent from the sidebar wouldn't reach the game as expected.
   // Disable the sidebar's command buttons for the duration of the pause and
   // restore them once the keypress is satisfied.
   function disableCommandButtonsDuringKeypress() {
-    const commandControls = document.querySelectorAll(".dpad-btn, .command-link");
-    const commandButtons = document.querySelectorAll(".game-command-btn");
-
     vorple.addEventListener("expectKeypress", function () {
-      commandControls.forEach(el => el.classList.add("key-wait-disabled"));
-      commandButtons.forEach(btn => btn.disabled = true);
+      setCommandControlsEnabled(false);
     });
 
     vorple.addEventListener("submitKeypress", function () {
-      commandControls.forEach(el => el.classList.remove("key-wait-disabled"));
-      commandButtons.forEach(btn => btn.disabled = false);
+      setCommandControlsEnabled(true);
     });
   }
 
   vorple.addEventListener("init", disableCommandButtonsDuringKeypress);
 
+  // block queuing commands via sidebar buttons while prompt is hidden with 
+  // "hide the prompt" commands within the inform file
+  function disableCommandButtonsWhilePromptHidden() {
+    const originalHide = vorple.prompt.hide;
+    const originalUnhide = vorple.prompt.unhide;
+
+    vorple.prompt.hide = function (...args) {
+      setCommandControlsEnabled(false);
+      return originalHide.apply(vorple.prompt, args);
+    };
+
+    vorple.prompt.unhide = function (...args) {
+      setCommandControlsEnabled(true);
+      return originalUnhide.apply(vorple.prompt, args);
+    };
+  }
+
+  vorple.addEventListener("init", disableCommandButtonsWhilePromptHidden);
+
 function updateDirectionButtons(availableDirections) {
   const available = new Set(
     availableDirections.split(",").map(d => d.trim().toUpperCase()).filter(Boolean)
   );
-  document.querySelectorAll(".dpad-btn[data-command]").forEach(btn => {
+  document.querySelectorAll(".dpad-btn[data-command]:not(.compass-center)").forEach(btn => {
     btn.classList.toggle("disabled", !available.has(btn.dataset.command.toUpperCase()));
   });
 }

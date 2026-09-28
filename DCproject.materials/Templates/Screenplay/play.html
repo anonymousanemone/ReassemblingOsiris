@@ -57,7 +57,7 @@
 								<div class="vorple-commandlink dpad-btn north" title="North" data-command="NORTH" onclick="vorple.prompt.queueCommand('NORTH')"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2 L16 12 L12 22 L8 12 Z"/></svg></div>
 								<div class="vorple-commandlink dpad-btn north-east" title="Northeast" data-command="NORTHEAST" onclick="vorple.prompt.queueCommand('NORTHEAST')"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" style="transform:rotate(45deg)"><path d="M12 5 L18 17 L6 17 Z"/></svg></div>
 								<div class="vorple-commandlink dpad-btn west" title="West" data-command="WEST" onclick="vorple.prompt.queueCommand('WEST')"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="transform:rotate(-90deg)"><path d="M12 2 L16 12 L12 22 L8 12 Z"/></svg></div>
-								<div class="compass-center">
+								<div class="vorple-commandlink dpad-btn compass-center" title="Look" data-command="LOOK" onclick="vorple.prompt.queueCommand('LOOK')">
 									<svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
 										<line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
 										<line x1="6.3" y1="6.3" x2="17.7" y2="17.7"/><line x1="17.7" y1="6.3" x2="6.3" y2="17.7"/>
@@ -90,16 +90,13 @@
 		</div>
 
 		<div class="d-flex flex-wrap gap-2 flex-shrink-0 game-actions">
-			<button class="btn-theme flex-fill py-2 game-command-btn" onclick="saveGame()">Save Game</button>
-			<button class="btn-theme flex-fill py-2 game-command-btn" onclick="restoreGame()">Restore Game</button>
-			<button class="btn-theme flex-fill py-2 game-command-btn" id="save-transcript" onclick="saveTranscript()">Save Transcript</button>
-			<button class="btn-theme flex-fill py-2" onclick="toggleFiles(true); showFileExplorer();">Files</button>
-			<button class="btn-theme flex-fill py-2" onclick="location.href='index.html'">Exit</button>
+			<button class="btn-theme flex-fill game-command-btn" onclick="saveGame()">Save Game</button>
+			<button class="btn-theme flex-fill game-command-btn" onclick="restoreGame()">Restore Game</button>
+			<button class="btn-theme flex-fill game-command-btn" id="save-transcript" onclick="saveTranscript()">Save Transcript</button>
+			<button class="btn-theme flex-fill" onclick="toggleFiles(true); showFileExplorer();">Files</button>
+			<button class="btn-theme flex-fill" onclick="location.href='index.html'">Exit</button>
 		</div>
 	</div>
-
-
-
 
   <!-- where the game generates -->
 	<div class="container">  
