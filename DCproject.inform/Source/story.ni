@@ -45,19 +45,35 @@ After reading a command (this is the ignore beta-comments rule):
 		say "(Noted.)";
 		reject the player's command.
 	
-Test winEntireGame with "scenes / test abydosSequential / 5 / test amarnaSequential / 7 /test heal / "
+Test gameSequential with "scenes / test abydosSequential / 5 / test amarnaSequential / 7 /test thebes1Sequential / z / z / z / z / z / z / z / z / z / z"
+
+Test gettoBusiris with "scenes / test head / test brain / test heal / z / z / z / z / z / z / z / z / z / z "
 
 Test abydosSequential with "x door / say sun / s / s / s / take plank / take ankh / n / e / 
 	e / e / e / x sarcophagus / unlock sarcophagus with ankh / open sarcophagus / take head / w / w / w / w / n / n / enter chariot"
 	
+Test startAmarna with "scenes / test abydosSequential / 5"
+	
 Test amarnaSequential with "n / talk to workman / show head to workman / s / enter oxcart / w / exit / n / in / x shrine / down / x ceiling / try examining / try touching / touch east mural / touch west mural / touch second statue / touch third statue / x lump / take brain / up / out / s / enter oxcart / e / exit / enter chariot"
 
-Test thebes1Sequential with "s / s / s / x man / talk to attendant / n / n / n / n / n / talk to attendant / w " 
+Test thebes1Sequential with "s / s  / x man / talk to attendant / n / n / n / talk to attendant / w / x papyri / read papyri / read head_003 / take mucus / gonear buds of the unique bush / x unique bush / take buds / gonear snb-plant / take bud of snb-plant / gonear house of life / twist buds / soak buds in mucus / lace buds with snb-plant / knot bundle / e / s / s / s / apply medicine on heracles /  I have indeed applied something to all his sore spots " 
+
+[TODO: allow "twist buds left" twist bud leftwise twist left buds, twist-left buds
+
+allow fit bundle with knots
+
+heracles/man unclear]
 	
-Test brainMinimum with "talk to workman / show head to workman / gonear underground chapel / touch east mural / touch west mural / touch second statue / touch third statue / take brain" in the Workmen's Village.
+Test brain with "talk to workman / show head to workman / gonear underground chapel / touch east mural / touch west mural / touch second statue / touch third statue / take brain" in the Workmen's Village.
+
+		
+Test head with "look / unlock sarcophagus with ankh / take head" in Tomb of Osiris holding faience ankh.
 	
 [taking, dropping, examining, ]
 
+Test heal with "purloin prepared medicine / I have indeed applied something to all his sore spots" in the temple of Horemheb.
+
+Test fish with "take rod / take knife / take bait / bait rod / e" in Marketplace of Oxyrhynchos.
 
 
 Part 3 - General Game Declarations
@@ -200,7 +216,9 @@ To say set-link (target - a thing):
 	if the call-name of target is non-empty:
 		place a link to the command "examine [call-name of target]" called link name reading "[print-name of target]";
 	otherwise:
-		place a link to the command "examine [print-name of target]" called link name reading "[print-name of target]".
+		place a link to the command "examine [print-name of target]" called link name reading "[print-name of target]";
+	now the target is not marked for listing;
+	now the target is mentioned.
 	
 Rule for printing the name of a direction (called way) while listing exits:
 	if Vorple is supported:
@@ -574,8 +592,6 @@ Instead of unlocking the sarcophagus with the faience ankh:
 
 Osiris' head is a body part. It is in the sarcophagus. Osiris' head can be taken. Understand "Osiris" as Osiris' head. Include (- has animate -) when defining Osiris' head. Osiris' head can be smart or dumb. Osiris' head is dumb. The description of Osiris' head is "Osiris, in all his glorious, head-only form. He's green."
 		
-Test head with "look / unlock sarcophagus with ankh / take head" in Tomb of Osiris holding faience ankh.
-		
 
  Part 4 - Talking Osiris Agenda
 [this entire part must be completed in order]
@@ -623,13 +639,13 @@ Next Instructions is a scene. Next Instructions begin when Exploration Ends. Nex
 	
 Section 2 - Workmen's village
 
-Outside the Walled Village is a room in Amarna. "You have reached Amarna, although you don't really know where to go from here. You are surrounded by quite a bit of rubble. This seems to have once been a great city to the west. Directly north, you see a walled cluster of buildings and hear the faint sound of hubbub. This might be a workmen's village. But it is entirely walled and only has one gate. That seems to be a fire hazard. You would know about those. A gnarled [set-link wormwood bush] clings to a crack in the rubble nearby, silvery-green and bitter-smelling.  [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]";
+Outside the Walled Village is a room in Amarna. "You have reached Amarna, although you don't really know where to go from here. You are surrounded by quite a bit of rubble. This seems to have once been a great city to the west. Directly north, you see a walled cluster of buildings and hear the faint sound of hubbub. This might be a workmen's village. But it is entirely walled and only has one gate. That seems to be a fire hazard. You would know about those. A gnarled [set-link wormwood bush] clings to a crack in the rubble nearby, silvery-green and bitter-smelling. [if the sun chariot is in the location]Your [sun chariot] is parked nearby.[end if]";
 
 The wormwood bush is an herb-plant in Outside the Walled Village. The print-name is "wormwood bush". The description is "A shrub with silvery leaves that's clung onto the rubble, smelling faintly bitter and medicinal. [if wormwood leaves is on the wormwood bush]A few sprigs of [set-link wormwood leaves] look easy enough to strip off.[otherwise]You've already stripped what leaves you could reach.[end if]".
 
 Instead of taking the wormwood bush, say "Leave this poor shrub alone. If you must, a few leaves will suffice."
 
-Wormwood leaves are on the wormwood bush. The description is "A handful of silvery-green leaves, bitter and pungent even before you crush them."
+Wormwood leaves are on the wormwood bush. The description is "A handful of silvery-green leaves, bitter and pungent even before you crush them." The print-name is "wormwood leaves".
 
 [in the future, maybe add security checkpoint moment as Medea walks through gate?]
 
@@ -862,9 +878,6 @@ To trigger the end sequence:
 	say "You hear something from up above! Looking up at the ceiling, you see a gray lump fall from the duck-bearing man's head right to your feet. Is that a...?";
 	move Osiris' brain to the Underground Chapel.
 	
-Test brain1 with "talk to workman / show head to workman / gonear chapel" in the Workmen's Village.
-
-Test brain2 with "touch east mural / touch west mural / touch second statue / touch third statue / take brain" in Underground Chapel.
 
 Osiris' brain is a body part. Understand "brain" as Osiris' brain. The description of the brain is "A brain. It feels like it is pulsating in your hands." The print-name is "[if unexamined]lump[otherwise]brain[end if]".
 
@@ -938,8 +951,6 @@ Every turn during Next Instructions:
 Carry out talking to the uncurious workman:
 	say "The workman grunts, uninterested in further conversation. He's busy loitering." instead.
 	
-	
-test Amarna with "look / n" in The small aten temple holding the head.
 
 Chapter 3 - Thebes-Heart
 
@@ -954,9 +965,6 @@ Every turn during Buddy Heracles:
 		now Heracles is in the location;
 		if the location is in Busiris:
 			say "Heracles follows you with a grunt.".
-
-Test heal with "purloin prepared medicine / I have indeed applied something to all his sore spots" in the temple of Horemheb.
-
 
 Section 1 - All the Locations
 
@@ -1222,7 +1230,7 @@ Instead of talking to unconscious Heracles:
 When brain acquisition ends:
 	now Heracles is in the Temple of Horemheb.
 
-The vial of plant mucus is on the brewing table. The description is "A small glass vial with extracted plant mucus inside."
+The vial of plant mucus is on the wooden table. The description is "A small glass vial with extracted plant mucus inside."
 
 The buds of a Unique Bush are on top of the Unique Bush. The description is "A rare and magical bush said to have healing properties. It bears buds of a mystical nature." The print-name is "buds". 
 
@@ -2534,8 +2542,6 @@ Carry out fishing:
 		now the fishing rod is unbaited;
 	otherwise:
 		say “And pulled up nothing.”;]
-
-Test fish with "take rod / take knife / take bait / bait rod / e" in Marketplace of Oxyrhynchos.
 			
 Chapter 7 - Elephantine-Torso
 

@@ -274,6 +274,7 @@ hr {
   /* padding: 0 2rem 0 2rem; */
   border-top: none;
   border-radius: 0;
+  max-width: 170px;
 }
 
 .quick-menu-body a {
@@ -770,12 +771,12 @@ hr {
   width: 100%;
   max-width: 260px;
   margin: 0 auto;
+  max-width: 170px;
 }
 .compass {
   position: relative;
   width: 100%;
   aspect-ratio: 1;
-  max-width: 170px;
 }
 .dpad-btn {
   border: 1.5px solid var(--fg);
